@@ -20,15 +20,6 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.Vector;
 
-import net.didion.jwnl.JWNL;
-import net.didion.jwnl.JWNLException;
-import net.didion.jwnl.data.IndexWord;
-import net.didion.jwnl.data.POS;
-import net.didion.jwnl.data.PointerType;
-import net.didion.jwnl.data.Synset;
-import net.didion.jwnl.data.relationship.RelationshipFinder;
-import net.didion.jwnl.data.relationship.RelationshipList;
-import net.didion.jwnl.dictionary.Dictionary;
 
 	
 

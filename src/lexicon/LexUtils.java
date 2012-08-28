@@ -81,7 +81,7 @@ public class LexUtils {
 		
 		}catch (Exception ex){
 			
-			common.Utility.log.debug(ex.getMessage());
+			System.out.println(ex.getMessage());
 		}
 		
 		return simwords;
@@ -105,7 +105,7 @@ public class LexUtils {
 			iw1= Dictionary.getInstance().lookupIndexWord(pos, w1);
 			iw2= Dictionary.getInstance().lookupIndexWord(pos, w2);
 			for (Synset s1:iw1.getSenses()){
-				common.Utility.log.debug("pos");
+				
 				for (Synset s2:iw2.getSenses()){
 					RelationshipList rl =RelationshipFinder.getInstance().findRelationships(s1, s2, PointerType.HYPONYM);
 					
@@ -119,7 +119,7 @@ public class LexUtils {
 		
 		}catch (Exception ex){
 			
-			common.Utility.log.debug(ex.getMessage());
+			System.out.println(ex.getMessage());
 		}
 		
 		
