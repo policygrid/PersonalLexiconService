@@ -1,0 +1,1153 @@
+He_PPHS1 is_VBZ abandoned_VVN
+(ncsubj abandoned He _)
+(aux abandoned is)
+(passive abandoned)
+
+He_PPHS1 is_VBZ abandoned_VVN by_II her_PPHO1
+*** Warning: no matching parse
+
+He_PPHS1 is_VBZ asked_VVN out_RP
+(ncsubj asked He _)
+(aux asked is)
+(passive asked)
+(ncmod prt asked out)
+
+He_PPHS1 is_VBZ asked_VVN out_RP by_II Lee_NP1
+*** Warning: no matching parse
+
+He_PPHS1 is_VBZ allowed_VVN an_AT1 abacus_NN1
+(ncsubj allowed He _)
+(aux allowed is)
+(passive allowed)
+(obj2 allowed abacus)
+(det abacus an)
+
+He_PPHS1 is_VBZ promised_VVN an_AT1 abacus_NN1
+(ncsubj promised He _)
+(aux promised is)
+(passive promised)
+(obj2 promised abacus)
+(det abacus an)
+
+He_PPHS1 is_VBZ allowed_VVN an_AT1 abacus_NN1 by_II her_PPHO1
+(ncsubj allowed He _)
+(ncmod _ allowed by)
+(dobj by her)
+(aux allowed is)
+(passive allowed)
+(obj2 allowed abacus)
+(det abacus an)
+
+He_PPHS1 is_VBZ promised_VVN an_AT1 abacus_NN1 by_II her_PPHO1
+(ncsubj promised He _)
+(ncmod _ promised by)
+(dobj by her)
+(aux promised is)
+(passive promised)
+(obj2 promised abacus)
+(det abacus an)
+
+He_PPHS1 is_VBZ given_VVN it_PPH1 back_RL
+(ncsubj given He _)
+(aux given is)
+(passive given)
+(dobj given it)
+(ncmod prt given back)
+
+He_PPHS1 is_VBZ given_VVN back_RL his_APP$ abacus_NN1
+(ncsubj given He _)
+(aux given is)
+(passive given)
+(obj2 given abacus)
+(det abacus his)
+(ncmod prt given back)
+
+He_PPHS1 is_VBZ given_VVN it_PPH1 back_RL by_II her_PPHO1
+(ncsubj given He _)
+(ncmod _ given by)
+(dobj by her)
+(aux given is)
+(passive given)
+(dobj given it)
+(ncmod prt given back)
+
+He_PPHS1 is_VBZ given_VVN back_RL his_APP$ abacus_NN1 by_II Kim_NP1
+(ncsubj given He _)
+(ncmod _ given by)
+(dobj by Kim)
+(aux given is)
+(passive given)
+(obj2 given abacus)
+(det abacus his)
+(ncmod prt given back)
+
+He_PPHS1 is_VBZ advised_VVN of_IO their_APP$ message_NN1
+(ncsubj advised He _)
+(aux advised is)
+(passive advised)
+(iobj advised of)
+(dobj of message)
+(det message their)
+
+He_PPHS1 is_VBZ advised_VVN of_IO their_APP$ message_NN1 by_II her_PPHO1
+(ncsubj advised He _)
+(ncmod _ advised by)
+(dobj by her)
+(aux advised is)
+(passive advised)
+(iobj advised of)
+(dobj of message)
+(det message their)
+
+He_PPHS1 is_VBZ carried_VVN back_RL to_II the_AT abbey_NN1
+(ncsubj carried He _)
+(aux carried is)
+(passive carried)
+(iobj carried to)
+(dobj to abbey)
+(det abbey the)
+(ncmod prt carried back)
+
+He_PPHS1 is_VBZ carried_VVN back_RL to_II the_AT abbey_NN1 by_II them_PPHO2
+(ncsubj carried He _)
+(ncmod _ carried by)
+(dobj by them)
+(aux carried is)
+(passive carried)
+(iobj carried to)
+(dobj to abbey)
+(det abbey the)
+(ncmod prt carried back)
+
+He_PPHS1 is_VBZ carried_VVN back_RL by_II them_PPHO2 to_II the_AT abbey_NN1
+(ncsubj carried He _)
+(aux carried is)
+(passive carried)
+(iobj carried to)
+(iobj carried by)
+(dobj to abbey)
+(det abbey the)
+(dobj by them)
+(ncmod prt carried back)
+
+He_PPHS1 is_VBZ allowed_VVN into_II the_AT abbey_NN1
+(ncsubj allowed He _)
+(aux allowed is)
+(passive allowed)
+(iobj allowed into)
+(dobj into abbey)
+(det abbey the)
+
+He_PPHS1 is_VBZ allowed_VVN into_II the_AT abbey_NN1 by_II them_PPHO2
+(ncsubj allowed He _)
+(ncmod _ allowed by)
+(dobj by them)
+(aux allowed is)
+(passive allowed)
+(iobj allowed into)
+(dobj into abbey)
+(det abbey the)
+
+He_PPHS1 is_VBZ allowed_VVN by_II them_PPHO2 into_II the_AT abbey_NN1
+(ncsubj allowed He _)
+(aux allowed is)
+(passive allowed)
+(iobj allowed into)
+(iobj allowed by)
+(dobj into abbey)
+(det abbey the)
+(dobj by them)
+
+The_AT message_NN1 was_VBDZ put_VVN well_RR
+(ncsubj put message _)
+(ncmod _ put well)
+(aux put was)
+(passive put)
+(det message The)
+
+The_AT message_NN1 was_VBDZ put_VVN resolutely_RR
+(ncsubj put message _)
+(ncmod _ put resolutely)
+(aux put was)
+(passive put)
+(det message The)
+
+The_AT message_NN1 was_VBDZ put_VVN well_RR by_II him_PPHO1
+(ncsubj put message _)
+(ncmod _ put by)
+(dobj by him)
+(ncmod _ put well)
+(aux put was)
+(passive put)
+(det message The)
+
+The_AT message_NN1 was_VBDZ put_VVN resolutely_RR by_II him_PPHO1
+(ncsubj put message _)
+(ncmod _ put by)
+(dobj by him)
+(ncmod _ put resolutely)
+(aux put was)
+(passive put)
+(det message The)
+
+She_PPHS1 was_VBDZ promised_VVN that_CST he_PPHS1 would_VM help_VV0
+(ncsubj promised She _)
+(aux promised was)
+(passive promised)
+(ccomp that promised help)
+(ncsubj help he _)
+(aux help would)
+
+She_PPHS1 was_VBDZ promised_VVN by_II him_PPHO1 that_CST he_PPHS1 would_VM help_VV0
+(ncsubj promised She _)
+(aux promised was)
+(passive promised)
+(ccomp that promised help)
+(iobj promised by)
+(ncsubj help he _)
+(aux help would)
+(dobj by him)
+
+She_PPHS1 was_VBDZ promised_VVN that_CST he_PPHS1 would_VM help_VV0 by_II him_PPHO1
+(ncsubj promised She _)
+(ncmod _ promised by)
+(dobj by him)
+(aux promised was)
+(passive promised)
+(ccomp that promised help)
+(ncsubj help he _)
+(aux help would)
+
+She_PPHS1 was_VBDZ had_VHN on_RP that_CST he_PPHS1 would_VM help_VV0
+(ncsubj had She _)
+(aux had was)
+(passive had)
+(ccomp that had help)
+(ncmod prt had on)
+(ncsubj help he _)
+(aux help would)
+
+She_PPHS1 was_VBDZ had_VHN on_RP by_II them_PPHO2 that_CST he_PPHS1 would_VM help_VV0
+(ncsubj had She _)
+(aux had was)
+(passive had)
+(ccomp that had help)
+(iobj had by)
+(ncmod prt had on)
+(ncsubj help he _)
+(aux help would)
+(dobj by them)
+
+She_PPHS1 was_VBDZ bet_VVN an_AT1 abacus_NN1 that_CST he_PPHS1 could_VM do_VD0 it_PPH1
+(ncsubj bet She _)
+(aux bet was)
+(passive bet)
+(ccomp that bet do)
+(dobj bet abacus)
+(ncsubj do he _)
+(aux do could)
+(dobj do it)
+(det abacus an)
+
+She_PPHS1 was_VBDZ bet_VVN an_AT1 abacus_NN1 by_II him_PPHO1 that_CST he_PPHS1 could_VM do_VD0 it_PPH1
+(ncsubj bet She _)
+(aux bet was)
+(passive bet)
+(ccomp that bet do)
+(dobj bet abacus)
+(ncsubj do he _)
+(aux do could)
+(dobj do it)
+(det abacus an)
+(ncmod _ abacus by)
+(dobj by him)
+
+He_PPHS1 was_VBDZ petitioned_VVN that_CST they_PPHS2 be_VB0 allowed_VVN to_TO help_VV0
+(ncsubj petitioned He _)
+(aux petitioned was)
+(passive petitioned)
+(ccomp that petitioned allowed)
+(ncsubj allowed they _)
+(aux allowed be)
+(passive allowed)
+(xcomp to allowed help)
+
+He_PPHS1 was_VBDZ petitioned_VVN by_II them_PPHO2 that_CST they_PPHS2 be_VB0 allowed_VVN to_TO help_VV0
+(ncsubj petitioned He _)
+(aux petitioned was)
+(passive petitioned)
+(ccomp that petitioned allowed)
+(iobj petitioned by)
+(ncsubj allowed they _)
+(aux allowed be)
+(passive allowed)
+(xcomp to allowed help)
+(dobj by them)
+
+He_PPHS1 was_VBDZ asked_VVN what_DDQ he_PPHS1 would_VM do_VD0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(ccomp _ asked do)
+(obj do what _)
+(ncsubj do he _)
+(aux do would)
+
+He_PPHS1 was_VBDZ asked_VVN by_II them_PPHO2 what_DDQ he_PPHS1 would_VM do_VD0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(ccomp _ asked do)
+(iobj asked by)
+(obj do what _)
+(ncsubj do he _)
+(aux do would)
+(dobj by them)
+
+He_PPHS1 was_VBDZ asked_VVN whether_CSW he_PPHS1 would_VM help_VV0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(ccomp _ asked whether)
+(ccomp _ whether help)
+(ncsubj help he _)
+(aux help would)
+
+He_PPHS1 was_VBDZ asked_VVN by_II them_PPHO2 whether_CSW he_PPHS1 would_VM help_VV0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(ccomp _ asked whether)
+(iobj asked by)
+(ccomp _ whether help)
+(ncsubj help he _)
+(aux help would)
+(dobj by them)
+
+He_PPHS1 was_VBDZ asked_VVN what_DDQ to_TO do_VD0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(obj2 asked what)
+(comp do what)
+(xmod to what do)
+
+He_PPHS1 was_VBDZ asked_VVN by_II them_PPHO2 what_DDQ to_TO do_VD0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(iobj asked by)
+(dobj asked what)
+(comp do what)
+(xmod to what do)
+(dobj by them)
+
+He_PPHS1 was_VBDZ asked_VVN whether_CSW to_TO help_VV0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(xcomp _ asked whether)
+(xcomp to whether help)
+
+He_PPHS1 was_VBDZ asked_VVN by_II them_PPHO2 whether_CSW to_TO help_VV0
+(ncsubj asked He _)
+(aux asked was)
+(passive asked)
+(xcomp _ asked whether)
+(iobj asked by)
+(xcomp to whether help)
+(dobj by them)
+
+He_PPHS1 was_VBDZ acknowledged_VVN an_AT1 able_JJ host_NN1
+(ncsubj acknowledged He _)
+(aux acknowledged was)
+(passive acknowledged)
+(obj2 acknowledged host)
+(det host an)
+(ncmod _ host able)
+
+He_PPHS1 was_VBDZ acknowledged_VVN an_AT1 able_JJ host_NN1 by_II them_PPHO2
+(ncsubj acknowledged He _)
+(ncmod _ acknowledged by)
+(dobj by them)
+(aux acknowledged was)
+(passive acknowledged)
+(obj2 acknowledged host)
+(det host an)
+(ncmod _ host able)
+
+He_PPHS1 was_VBDZ acknowledged_VVN by_II them_PPHO2 an_AT1 able_JJ host_NN1
+(ncsubj acknowledged He _)
+(aux acknowledged was)
+(passive acknowledged)
+(iobj acknowledged by)
+(dobj acknowledged host)
+(det host an)
+(ncmod _ host able)
+(dobj by them)
+
+He_PPHS1 was_VBDZ acknowledged_VVN resolute_JJ
+(ncsubj acknowledged He _)
+(aux acknowledged was)
+(passive acknowledged)
+(xcomp _ acknowledged resolute)
+
+He_PPHS1 was_VBDZ acknowledged_VVN by_II them_PPHO2 resolute_JJ
+(ncsubj acknowledged He _)
+(aux acknowledged was)
+(passive acknowledged)
+(iobj acknowledged by)
+(xcomp _ acknowledged resolute)
+(dobj by them)
+
+He_PPHS1 was_VBDZ acknowledged_VVN resolute_JJ by_II them_PPHO2
+(ncsubj acknowledged He _)
+(ncmod _ acknowledged by)
+(dobj by them)
+(aux acknowledged was)
+(passive acknowledged)
+(xcomp _ acknowledged resolute)
+
+It_PPH1 is_VBZ sanded_VVN down_RP better_RRR
+(ncsubj sanded It _)
+(ncmod _ sanded better)
+(aux sanded is)
+(passive sanded)
+(ncmod prt sanded down)
+
+It_PPH1 is_VBZ sanded_VVN down_RP better_RRR by_II them_PPHO2
+(ncsubj sanded It _)
+(ncmod _ sanded by)
+(dobj by them)
+(ncmod _ sanded better)
+(aux sanded is)
+(passive sanded)
+(ncmod prt sanded down)
+
+He_PPHS1 was_VBDZ condemned_VVN as_CSA crazy_JJ
+(ncsubj condemned He _)
+(aux condemned was)
+(passive condemned)
+(xcomp _ condemned as)
+(xcomp _ as crazy)
+
+He_PPHS1 was_VBDZ condemned_VVN by_II them_PPHO2 as_CSA crazy_JJ
+(ncsubj condemned He _)
+(aux condemned was)
+(passive condemned)
+(xcomp _ condemned as)
+(iobj condemned by)
+(xcomp _ as crazy)
+(dobj by them)
+
+He_PPHS1 was_VBDZ condemned_VVN as_CSA crazy_JJ by_II them_PPHO2
+(ncsubj condemned He _)
+(ncmod _ condemned by)
+(dobj by them)
+(aux condemned was)
+(passive condemned)
+(xcomp _ condemned as)
+(xcomp _ as crazy)
+
+He_PPHS1 was_VBDZ put_VVN down_RP as_CSA crazy_JJ
+(ncsubj put He _)
+(aux put was)
+(passive put)
+(xcomp _ put as)
+(xcomp _ as crazy)
+(ncmod prt put down)
+
+He_PPHS1 was_VBDZ put_VVN down_RP as_CSA crazy_JJ by_II them_PPHO2
+(ncsubj put He _)
+(ncmod _ put by)
+(dobj by them)
+(aux put was)
+(passive put)
+(xcomp _ put as)
+(xcomp _ as crazy)
+(ncmod prt put down)
+
+She_PPHS1 was_VBDZ advised_VVN to_TO help_VV0 him_PPHO1
+(ncsubj advised She _)
+(aux advised was)
+(passive advised)
+(xcomp to advised help)
+(dobj help him)
+
+She_PPHS1 was_VBDZ advised_VVN by_II them_PPHO2 to_TO help_VV0 him_PPHO1
+(ncsubj advised She _)
+(aux advised was)
+(passive advised)
+(iobj advised by)
+(xcomp to advised help)
+(dobj help him)
+(dobj by them)
+
+She_PPHS1 was_VBDZ advised_VVN to_TO help_VV0 him_PPHO1 by_II them_PPHO2
+(ncsubj advised She _)
+(ncmod _ advised by)
+(dobj by them)
+(aux advised was)
+(passive advised)
+(xcomp to advised help)
+(dobj help him)
+
+He_PPHS1 was_VBDZ drawn_VVN on_RP to_TO help_VV0 her_PPHO1
+(ncsubj drawn He _)
+(aux drawn was)
+(passive drawn)
+(xcomp to drawn help)
+(dobj help her)
+(ncmod prt drawn on)
+
+He_PPHS1 was_VBDZ drawn_VVN on_RP by_II them_PPHO2 to_TO help_VV0 her_PPHO1
+(ncsubj drawn He _)
+(aux drawn was)
+(passive drawn)
+(iobj drawn by)
+(xcomp to drawn help)
+(dobj help her)
+(dobj by them)
+(ncmod prt drawn on)
+
+He_PPHS1 was_VBDZ counted_VVN on_RP to_TO help_VV0 them_PPHO2
+(ncsubj counted He _)
+(aux counted was)
+(passive counted)
+(xcomp to counted help)
+(dobj help them)
+(ncmod prt counted on)
+
+He_PPHS1 was_VBDZ counted_VVN on_RP by_II them_PPHO2 to_TO help_VV0 them_PPHO2
+(ncsubj counted He _)
+(aux counted was)
+(passive counted)
+(iobj counted by)
+(xcomp to counted help)
+(dobj help them)
+(dobj by them)
+(ncmod prt counted on)
+
+He_PPHS1 was_VBDZ appealed_VVN to_II to_TO help_VV0 them_PPHO2
+(ncsubj appealed He _)
+(aux appealed was)
+(passive appealed)
+(xcomp _ appealed to)
+(xcomp to to help)
+(dobj help them)
+
+He_PPHS1 is_VBZ come_VVN down_RP on_RP to_TO help_VV0 them_PPHO2
+(ncsubj come He _)
+(aux come is)
+(passive come)
+(xcomp to come help)
+(dobj help them)
+(ncmod prt come on)
+(ncmod prt come down)
+
+Does_VDZ Lee_NP1 abandon_VV0 her_PPHO1 ?_?
+(ncsubj abandon Lee _)
+(dobj abandon her)
+
+Does_VDZ n't_XX Lee_NP1 abandon_VV0 her_PPHO1 ?_?
+(ncmod _ abandon n't)
+(ncsubj abandon Lee _)
+(dobj abandon her)
+
+Can_VM Lee_NP1 abandon_VV0 her_PPHO1 ?_?
+(ncsubj abandon Lee _)
+(dobj abandon her)
+
+Ca_VM n't_XX Lee_NP1 abandon_VV0 her_PPHO1 ?_?
+(ncmod _ abandon n't)
+(ncsubj abandon Lee _)
+(dobj abandon her)
+
+Can_VM she_PPHS1 not_XX help_VV0 ?_?
+(ncsubj help she _)
+(ncmod _ help not)
+
+Ought_VMK he_PPHS1 to_TO help_VV0 ?_?
+(aux help Ought)
+(ncsubj help he _)
+
+Has_VHZ he_PPHS1 helped_VVD ?_?
+(ncsubj helped he _)
+
+Is_VBZ he_PPHS1 helping_VVG ?_?
+(ncsubj helping he _)
+
+Was_VBDZ she_PPHS1 abandoned_VVD ?_?
+(ncsubj abandoned she _)
+
+Is_VBZ he_PPHS1 the_AT abbot_NN1 ?_?
+(xcomp _ Is abbot)
+(ncsubj Is he _)
+(det abbot the)
+
+Is_VBZ n't_XX he_PPHS1 the_AT abbot_NN1 ?_?
+(ncmod _ Is n't)
+(xcomp _ Is abbot)
+(ncsubj Is he _)
+(det abbot the)
+
+Is_VBZ he_PPHS1 not_XX the_AT abbot_NN1 ?_?
+*** Warning: no matching parse
+
+Is_VBZ he_PPHS1 in_II the_AT abbey_NN1 ?_?
+(pcomp Is in)
+(ncsubj Is he _)
+(dobj in abbey)
+(det abbey the)
+
+Is_VBZ n't_XX he_PPHS1 in_II the_AT abbey_NN1 ?_?
+(pcomp Is in)
+(ncmod _ Is n't)
+(ncsubj Is he _)
+(dobj in abbey)
+(det abbey the)
+
+Is_VBZ he_PPHS1 not_XX in_II the_AT abbey_NN1 ?_?
+(pcomp Is in)
+(ncmod _ Is not)
+(ncsubj Is he _)
+(dobj in abbey)
+(det abbey the)
+
+Is_VBZ he_PPHS1 crazy_JJ ?_?
+(xcomp _ Is crazy)
+(ncsubj Is he _)
+
+Is_VBZ n't_XX he_PPHS1 crazy_JJ ?_?
+(xcomp _ Is crazy)
+(ncmod _ Is n't)
+(ncsubj Is he _)
+
+Is_VBZ he_PPHS1 not_XX crazy_JJ ?_?
+(xcomp _ Is crazy)
+(ncsubj Is he _)
+(ncmod _ crazy not)
+
+Are_VBR there_EX any_DD abbots_NN2 ?_?
+(xcomp _ Are abbots)
+(ncsubj Are there _)
+(det abbots any)
+
+Are_VBR there_EX any_DD abbots_NN2 here_RL ?_?
+(ncmod _ Are here)
+(xcomp _ Are abbots)
+(ncsubj Are there _)
+(det abbots any)
+
+Are_VBR n't_XX there_EX any_DD abbots_NN2 ?_?
+(ncmod _ Are n't)
+(xcomp _ Are abbots)
+(ncsubj Are there _)
+(det abbots any)
+
+Was_VBDZ it_PPH1 Lee_NP1 who_PNQS helped_VVD ?_?
+(xcomp _ Was Lee)
+(ncsubj Was it _)
+(cmod _ Lee helped)
+(ncsubj helped who _)
+
+Was_VBDZ n't_XX it_PPH1 Lee_NP1 who_PNQS helped_VVD ?_?
+(ncmod _ Was n't)
+(xcomp _ Was Lee)
+(ncsubj Was it _)
+(cmod _ Lee helped)
+(ncsubj helped who _)
+
+Was_VBDZ it_PPH1 in_II the_AT abbey_NN1 that_CST he_PPHS1 abandoned_VVD her_PPHO1 ?_?
+(pcomp Was in)
+(ncsubj Was it _)
+(dobj in abbey)
+(dobj in :)
+(det : the)
+(det abbey the)
+(ccomp that abbey abandoned)
+(ncsubj abandoned he _)
+(dobj abandoned her)
+
+He_PPHS1 agrees_VVZ with_IW the_AT abbot_NN1 and_CC with_IW the_AT host_NN1
+(ncsubj agrees He _)
+(iobj agrees and)
+(conj and with)
+(dobj with host)
+(det host the)
+(dobj with abbot)
+(det abbot the)
+
+He_PPHS1 agrees_VVZ with_IW the_AT abbot_NN1 or_CC with_IW the_AT host_NN1
+(ncsubj agrees He _)
+(iobj agrees or)
+(conj or with)
+(dobj with host)
+(det host the)
+(dobj with abbot)
+(det abbot the)
+
+He_PPHS1 agrees_VVZ both_LE with_IW the_AT abbot_NN1 and_CC with_IW the_AT host_NN1
+(ncsubj agrees He _)
+(iobj agrees and)
+(conj and with)
+(dobj with host)
+(det host the)
+(dobj with abbot)
+(det abbot the)
+
+He_PPHS1 agrees_VVZ either_LE with_IW the_AT abbot_NN1 or_CC with_IW the_AT host_NN1
+*** Warning: no matching parse
+
+He_PPHS1 agrees_VVZ neither_LE with_IW the_AT abbot_NN1 nor_CC with_IW the_AT host_NN1
+*** Warning: no matching parse
+
+He_PPHS1 agrees_VVZ with_IW the_AT abbot_NN1 but_CCB not_XX with_IW the_AT host_NN1
+(ncsubj agrees He _)
+(iobj agrees but)
+(conj but with)
+(conj but not)
+(dobj with host)
+(det host the)
+(dobj with abbot)
+(det abbot the)
+
+He_PPHS1 agrees_VVZ with_IW the_AT abbot_NN1 but_CCB not_XX on_II the_AT host_NN1
+(ncsubj agrees He _)
+(iobj agrees but)
+(conj but with)
+(conj but not)
+(dobj on host)
+(det host the)
+(dobj with abbot)
+(det abbot the)
+
+He_PPHS1 agrees_VVZ with_IW and_CC on_II the_AT abbot_NN1
+(ncsubj agrees He _)
+(iobj agrees and)
+(dobj and abbot)
+(det abbot the)
+(conj and with)
+(conj and on)
+
+He_PPHS1 puts_VVZ it_PPH1 either_LE in_II or_CC outside_II the_AT abbey_NN1
+(ncsubj puts He _)
+(iobj puts or)
+(dobj puts it)
+(dobj or abbey)
+(det abbey the)
+(conj or in)
+(conj or outside)
+
+He_PPHS1 puts_VVZ them_PPHO2 both_LE in_II and_CC outside_II the_AT abbey_NN1
+(ncsubj puts He _)
+(iobj puts and)
+(dobj puts them)
+(dobj and abbey)
+(det abbey the)
+(conj and in)
+(conj and outside)
+
+He_PPHS1 puts_VVZ them_PPHO2 outside_RL but_CCB not_XX in_II the_AT abbey_NN1
+(ncsubj puts He _)
+(ncmod _ puts but)
+(conj but outside)
+(conj but not)
+(dobj in abbey)
+(det abbey the)
+(dobj puts them)
+
+She_PPHS1 appears_VVZ both_LE resolute_JJ and_CC confident_JJ
+(ncsubj appears She _)
+(xcomp _ appears and)
+(conj and resolute)
+(conj and confident)
+
+He_PPHS1 appears_VVZ neither_LE resolute_JJ nor_CC confident_JJ
+(ncsubj appears He _)
+(xcomp _ appears nor)
+(conj nor resolute)
+(conj nor confident)
+
+She_PPHS1 appears_VVZ both_LE eager_JJ to_TO help_VV0 us_PPIO2 and_CC anxious_JJ to_TO start_VV0
+(ncsubj appears She _)
+(xcomp _ appears and)
+(conj and eager)
+(conj and anxious)
+(xcomp to anxious start)
+(xcomp to eager help)
+(dobj help us)
+
+He_PPHS1 is_VBZ too_RG crazy_JJ and_CC fearful_JJ
+(ncsubj is He _)
+(xcomp _ is and)
+(ncmod _ and too)
+(conj and crazy)
+(conj and fearful)
+
+She_PPHS1 is_VBZ so_RG resolute_JJ and_CC confident_JJ
+(ncsubj is She _)
+(xcomp _ is and)
+(ncmod _ and so)
+(conj and resolute)
+(conj and confident)
+
+She_PPHS1 is_VBZ adamant_JJ and_CC confident_JJ that_CST she_PPHS1 can_VM help_VV0
+(ncsubj is She _)
+(xcomp _ is and)
+(xcomp _ is :)
+(ccomp that and help)
+(ncsubj help she _)
+(aux help can)
+(conj and adamant)
+(conj and confident)
+
+It_PPH1 is_VBZ clear_JJ and_CC certain_JJ that_CST she_PPHS1 can_VM help_VV0
+(ncsubj is It _)
+(xcomp _ is and)
+(xcomp _ is :)
+(ccomp that and help)
+(ncsubj help she _)
+(aux help can)
+(conj and clear)
+(conj and certain)
+
+That_CST she_PPHS1 can_VM help_VV0 is_VBZ clear_JJ and_CC certain_JJ
+(csubj is help _)
+(xcomp _ is and)
+(conj and clear)
+(conj and certain)
+(ncsubj help she _)
+(aux help can)
+
+Lee_NP1 may_VM help_VV0 us_PPIO2 or_CC he_PPHS1 may_VM not_XX help_VV0 us_PPIO2
+(conj help or)
+(conj or help)
+(ncsubj help he _)
+(aux help may)
+(ncmod _ help not)
+(dobj help us)
+(ncsubj help Lee _)
+(aux help may)
+(dobj help us)
+
+Lee_NP1 will_VM either_LE help_VV0 or_CC not_XX help_VV0
+(ncsubj or Lee _)
+(aux or will)
+(conj or help)
+(conj or help)
+(ncmod _ help not)
+
+Lee_NP1 will_VM neither_LE help_VV0 nor_CC allow_VV0 Kim_NP1 to_TO help_VV0
+(ncsubj nor Lee _)
+(aux nor will)
+(conj nor help)
+(conj nor allow)
+(ncsubj help Kim _)
+(xcomp to allow help)
+(dobj allow Kim)
+
+That_CST he_PPHS1 wo_VM n't_XX help_VV0 both_LE amazes_VVZ and_CC amuses_VVZ Sandy_NP1
+(csubj and help _)
+(dobj and Sandy)
+(conj and amazes)
+(conj and amuses)
+(ncsubj help he _)
+(aux help wo)
+(ncmod _ help n't)
+
+Kim_NP1 will_VM neither_LE help_VV0 nor_CC abandon_VV0 Lee_NP1
+(ncsubj nor Kim _)
+(aux nor will)
+(dobj nor Lee)
+(conj nor help)
+(conj nor abandon)
+
+That_CST he_PPHS1 is_VBZ crazy_JJ both_LE amazes_VVZ and_CC amuses_VVZ Lee_NP1
+(csubj and is _)
+(dobj and Lee)
+(conj and amazes)
+(conj and amuses)
+(ncsubj is he _)
+(xcomp _ is crazy)
+
+It_PPH1 amazes_VVZ or_CC amuses_VVZ Lee_NP1 that_CST he_PPHS1 is_VBZ crazy_JJ
+(ncsubj or It _)
+(ccomp that or is)
+(dobj or Lee)
+(ncsubj is he _)
+(xcomp _ is crazy)
+(conj or amazes)
+(conj or amuses)
+
+Lee_NP1 wo_VM n't_XX help_VV0 but_CCB he_PPHS1 will_VM allow_VV0 Kim_NP1 to_TO help_VV0
+(conj help but)
+(conj but allow)
+(ncsubj allow he _)
+(aux allow will)
+(ncsubj help Kim _)
+(xcomp to allow help)
+(dobj allow Kim)
+(ncsubj help Lee _)
+(aux help wo)
+(ncmod _ help n't)
+
+Lee_NP1 wo_VM n't_XX help_VV0 and_CC Kim_NP1 wo_VM n't_XX apologize_VV0
+(conj help and)
+(conj and apologize)
+(ncsubj apologize Kim _)
+(aux apologize wo)
+(ncmod _ apologize n't)
+(ncsubj help Lee _)
+(aux help wo)
+(ncmod _ help n't)
+
+Either_LE Kim_NP1 helps_VVZ or_CC Lee_NP1 helps_VVZ
+(conj helps or)
+(conj or helps)
+(ncsubj helps Lee _)
+(ncsubj helps Kim _)
+
+He_PPHS1 is_VBZ not_XX the_AT abbot_NN1 but_CCB his_APP$ host_NN1
+(ncsubj is He _)
+(xcomp _ is but)
+(ncmod _ is not)
+(conj but abbot)
+(conj but host)
+(det host his)
+(det abbot the)
+
+He_PPHS1 is_VBZ the_AT host_NN1 but_CCB not_XX the_AT abbot_NN1
+(ncsubj is He _)
+(xcomp _ is but)
+(conj but host)
+(conj but abbot)
+(ncmod _ abbot not)
+(det abbot the)
+(det host the)
+
+He_PPHS1 is_VBZ in_II the_AT abbey_NN1 but_CCB not_XX outside_II it_PPH1
+(ncsubj is He _)
+(pcomp is but)
+(conj but in)
+(conj but not)
+(dobj outside it)
+(dobj in abbey)
+(det abbey the)
+
+He_PPHS1 is_VBZ not_XX crazy_JJ but_CCB anxious_JJ
+(ncsubj is He _)
+(xcomp _ is but)
+(conj but crazy)
+(conj but anxious)
+(ncmod _ crazy not)
+
+He_PPHS1 is_VBZ crazy_JJ but_CCB not_XX anxious_JJ
+(ncsubj is He _)
+(xcomp _ is but)
+(conj but crazy)
+(ncmod _ anxious not)
+(conj but anxious)
+
+He_PPHS1 is_VBZ crazy_JJ and_CC anxious_JJ
+(ncsubj is He _)
+(xcomp _ is and)
+(conj and crazy)
+(conj and anxious)
+
+He_PPHS1 is_VBZ crazy_JJ or_CC anxious_JJ
+(ncsubj is He _)
+(xcomp _ is or)
+(conj or crazy)
+(conj or anxious)
+
+He_PPHS1 is_VBZ crazy_JJ and_CC in_II the_AT abbey_NN1
+(ncsubj is He _)
+(xcomp _ is and)
+(conj and crazy)
+(dobj in abbey)
+(det abbey the)
+
+He_PPHS1 is_VBZ in_II the_AT abbey_NN1 but_CCB not_XX crazy_JJ
+(ncsubj is He _)
+(xcomp _ is but)
+(conj but in)
+(conj but crazy)
+(ncmod _ crazy not)
+(dobj in abbey)
+(det abbey the)
+
+Kim_NP1 and_CC Lee_NP1 are_VBR here_RL
+(ncsubj are and _)
+(ncmod prt are here)
+(conj and Kim)
+(conj and Lee)
+
+Kim_NP1 and_CC Lee_NP1 and_CC Sandy_NP1 are_VBR here_RL
+(ncsubj are and _)
+(ncmod prt are here)
+(conj and Kim)
+(conj and and)
+(conj and Lee)
+(conj and Sandy)
+
+Kim_NP1 Lee_NP1 and_CC Sandy_NP1 are_VBR here_RL
+(ncsubj are and _)
+(ncmod prt are here)
+(conj and Kim)
+(conj and Lee)
+(conj and Sandy)
+
+Both_LE Kim_NP1 and_CC Sandy_NP1 are_VBR here_RL
+(ncsubj are and _)
+(ncmod prt are here)
+(conj and Kim)
+(conj and Sandy)
+
+Either_LE Kim_NP1 or_CC Lee_NP1 is_VBZ here_RL
+(ncsubj is or _)
+(ncmod prt is here)
+(conj or Kim)
+(conj or Lee)
+
+The_AT abbot_NN1 or_CC his_APP$ host_NN1 has_VHZ apologized_VVD
+(ncsubj apologized or _)
+(aux apologized has)
+(conj or abbot)
+(conj or host)
+(det host his)
+(det abbot The)
+
+The_AT abbot_NN1 or_CC his_APP$ host_NN1 have_VH0 apologized_VVD
+(ncsubj apologized or _)
+(aux apologized have)
+(conj or abbot)
+(conj or host)
+(det host his)
+(det abbot The)
+
+The_AT abbots_NN2 or_CC Lee_NP1 have_VH0 apologized_VVD
+(ncsubj apologized or _)
+(aux apologized have)
+(conj or abbots)
+(conj or Lee)
+(det abbots The)
+
+Lee_NP1 or_CC the_AT abbots_NN2 have_VH0 apologized_VVD
+(ncsubj apologized or _)
+(aux apologized have)
+(conj or Lee)
+(conj or abbots)
+(det abbots the)
+
+The_AT abbots_NN2 or_CC their_APP$ hosts_NN2 have_VH0 apologized_VVD
+(ncsubj apologized or _)
+(aux apologized have)
+(conj or abbots)
+(conj or hosts)
+(det hosts their)
+(det abbots The)
+
+Neither_LE the_AT abbots_NN2 nor_CC their_APP$ hosts_NN2 are_VBR here_RL
+(ncsubj are nor _)
+(ncmod prt are here)
+(conj nor abbots)
+(conj nor hosts)
+(det hosts their)
+(det abbots the)
+
+Neither_LE the_AT abbot_NN1 nor_CC his_APP$ host_NN1 are_VBR here_RL
+(ncsubj are nor _)
+(ncmod prt are here)
+(conj nor abbot)
+(conj nor host)
+(det host his)
+(det abbot the)
+
+Neither_LE the_AT abbots_NN2 nor_CC their_APP$ host_NN1 are_VBR here_RL
+(ncsubj are nor _)
+(ncmod prt are here)
+(conj nor abbots)
+(conj nor host)
+(det host their)
+(det abbots the)
+
+Neither_LE their_APP$ host_NN1 nor_CC the_AT abbots_NN2 are_VBR here_RL
+(ncsubj are nor _)
+(ncmod prt are here)
+(conj nor host)
+(conj nor abbots)
+(det abbots the)
+(det host their)
+
+Either_LE the_AT abbots_NN2 or_CC the_AT hosts_NN2 are_VBR here_RL
+(ncsubj are or _)
+(ncmod prt are here)
+(conj or abbots)
+(conj or hosts)
+(det hosts the)
+(det abbots the)
+
+Either_LE the_AT abbot_NN1 or_CC his_APP$ host_NN1 are_VBR here_RL
+(ncsubj are or _)
+(ncmod prt are here)
+(conj or abbot)
+(conj or host)
+(det host his)
+(det abbot the)
+
+He_PPHS1 helps_VVZ not_XX the_AT abbot_NN1 but_CCB his_APP$ host_NN1
+(ncsubj helps He _)
+(dobj helps but)
+(conj but abbot)
+(conj but host)
+(det host his)
+(ncmod _ abbot not)
+(det abbot the)
+
+His_APP$ desire_NN1 and_CC anxiety_NN1 to_TO help_VV0 are_VBR convenient_JJ
+(ncsubj are and _)
+(xcomp _ are convenient)
+(det and His)
+(comp help and)
+(xmod to and help)
+(conj and desire)
+(conj and anxiety)
+
+His_APP$ desire_NN1 or_CC anxiety_NN1 to_TO help_VV0 is_VBZ convenient_JJ
+(ncsubj is or _)
+(xcomp _ is convenient)
+(det or His)
+(comp help or)
+(xmod to or help)
+(conj or desire)
+(conj or anxiety)
+
+The_AT younger_JJR abbots_NN2 and_CC abbeys_NN2 are_VBR inessential_JJ
+(ncsubj are and _)
+(xcomp _ are inessential)
+(det and The)
+(ncmod _ and younger)
+(conj and abbots)
+(conj and abbeys)
+
+His_APP$ crazy_JJ doubt_NN1 or_CC anxiety_NN1 is_VBZ not_XX helping_VVG him_PPHO1
+(ncsubj helping or _)
+(aux helping is)
+(ncmod _ helping not)
+(dobj helping him)
+(det or His)
+(conj or doubt)
+(conj or anxiety)
+(ncmod _ doubt crazy)
+
+His_APP$ crazy_JJ doubts_NN2 or_CC anxieties_NN2 are_VBR not_XX helping_VVG him_PPHO1
+(ncsubj helping or _)
+(aux helping are)
+(ncmod _ helping not)
+(dobj helping him)
+(det or His)
+(conj or doubts)
+(conj or anxieties)
+(ncmod _ doubts crazy)
+

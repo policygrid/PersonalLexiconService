@@ -1,0 +1,158 @@
+                RUNNING THE RASP TOOLS / PROBABILISTIC PARSER
+
+The shell script rasp.sh invokes the sentence boundary detector -
+tokeniser - tagger - morphological analyser - parser on raw text. The
+script rasp_parse.sh invokes just the probabilistic parser on text that
+has already been processed by the previous stages.
+
+BEFORE trying to run either script for the first time, edit them to
+insert the appropriate value for the shell variable RASP, which should
+be the file system pathname where you have installed the RASP tools.
+
+rasp.sh
+-------
+
+rasp.sh [-m] [-p parser-options]
+
+The command operates as a filter, reading from the standard input and
+writing to the standard output.
+
+Command-line options are:
+
+  -m Analyse with multiple tags per word (so that mistaggings are
+     less likely).
+
+  -p Pass the immediately following string as options to the parser (see
+     below for parser options).
+
+Examples of running the command are:
+
+  ./rasp.sh -m < file.txt > analysed.txt
+
+  echo "This is a test." | ./rasp.sh -p'-os -u'
+
+Additional ways of modifying the behaviour of the system are via the
+shell environment variables
+
+  rasp_sentence
+  rasp_tokenise
+  rasp_tag
+  rasp_morph
+  rasp_parse
+
+One or more of these can be set (in the unix shell environment) to a
+different command that RASP should use instead of the normal one, e.g.
+(in a Bourne-like shell)
+
+  echo "^ He helps." | rasp_sentence=cat rasp_morph=cat rasp_parse=cat ./rasp.sh
+
+would use the system command "cat" instead of the sentence boundary
+detector, morphological analyser and parser. This might be useful if the
+text was already marked up with sentence boundary markers, and the user
+did not want either the morphological analyser or parser to be run.
+
+
+rasp_parse.sh
+-------------
+
+rasp_parse.sh [-e] [-i <initforms>] [-l <logfile>] [-n <nparses>]
+              [-o <outformat>] [-s] [-t <timeout>] [-u]
+              [-w <wordlimit>] [-x]
+
+The command operates as a filter, reading from the standard input and
+writing to the standard output.
+
+Command-line options are:
+
+ 
+  -e Output analyses in a form suitable for input to the PARSEVAL
+     or greval programs.
+
+  -i Pass Lisp forms to be evaluated before parsing any sentences.
+
+  -l Specify a filename for the output of logging information. By
+     default, diagnostic information is output to a file called
+     /tmp/<username>-rasp_parse.sh-log; this option should be used if
+     a single user is running more than one parser process
+     simultaneously, otherwise the log files will overwrite each
+     other.
+
+  -n Give the maximum number of parses that should be produced for
+     each sentence. The default is 1; a value of zero indicates all
+     parses.
+
+  -o Specify the form of output from the parser. Possible values are:
+
+     a   trees labelled with grammr aliases
+     g   grammatical relations (the default);
+     i 	 grammatical relations weighted using a variant of the
+         	inside-outside algorithm 
+     w   weighted grammatical relations computed from the top n trees
+         	(only useful if the number of parses option -n is set to >1)  
+     s   shallow phrasal-level trees (sparkle format);
+     z   shallow phrasal-level trees (susanne format);
+     t   trees labelled with grammar rule names;
+     u   UPenn treebank style trees (but NOT following the treebank
+         annotation guidelines and using different node labels).
+     p   print ALL of the above formats
+
+  -s Turn on the use of verb subcategorisation frame probabilities;
+     there is built-in information for around 500 verbs.
+
+  -t Set a CPU time limit (in seconds) for the processing of each
+     sentence (default 20).
+
+  -u Turn off the numbering of words in sentences.
+
+  -w Give the maximum number of words in a sentence that the parser
+     should attempt to process.
+
+  -x Turn off the use of a list of phrasal verbs that normally allows
+     more accurate identification of verb-particle constructions.
+
+The input should be part-of-speech tagged text, in one of two
+alternative formats. The first format is where each word has a single
+tag, prefixed by underscore "_", and each sentence is preceded by ^_^
+and is on a separate line, e.g.
+
+  ^_^ Yesterday_RT Swapo_NP1 register+ed_VVD its_APP$ opposition_NN1 
+
+The tagset assumed is CLAWS2 (see
+<http://www.comp.lancs.ac.uk/computing/research/ucrel/claws2tags.html>),
+and sentence boundaries and tokenisation should be as done by the
+supplied modules. Words should be lemmatised, as above, if the parser is
+to use its phrasal verb or subcategorisation information.
+
+The second input format allows a single word to have several possible
+part-of-speech labels (each with a probability), to mitigate the
+effects of incorrect tag assignment. The parser then choses the most
+likely tag given the global structure of the sentence. Each word
+should be on a separate line, and each sentence prefixed with "^",
+for instance:
+
+  ^ ^_^:1 
+  Yesterday Yesterday_RT:1 
+  Swapo Swapo_NP1:1 
+  registered registered_JJ:0.00203291 register+ed_VVD:0.966428 
+  its its_APP$:1 
+  opposition opposition_NNJ1:0.201115 opposition_NN1:0.798885 
+
+Thus, each line is <wordform> [<lemmatised-word>_<tag>:<probability>]+.
+The parser has a full treatment of quotation in the cases where it
+is balanced -- assumed to be when there is an even number of quotation
+marks in the sentence. If there is an odd number then all quotation
+marks are ignored.
+
+Examples of usage of rasp_parse.sh:
+
+  ./rasp_parse.sh -l/tmp/log1 -s -t5 < tagged.txt
+
+  ./rasp_parse.sh -n1000 -ogw <<EOF
+  ^_^ Yesterday_RT Swapo_NP1 register+ed_VVD its_APP$ opposition_NN1
+  EOF
+
+In more advanced use (see `Tuning' in $RASP/manuals/tsg-doc.pdf) the
+parameter +disabled-rules+ can be edited in rasp_parse.sh to control
+the use of marked rules in the grammar: eg (defparameter
++disabled-rules+ nil) allows use of rules for elliptical,
+dialogue-like language to be evoked which are by default disabled.

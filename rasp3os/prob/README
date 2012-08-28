@@ -1,0 +1,28 @@
+PROBABILISTIC PARSER FILES
+
+code/
+
+code for PGLR parser, gr extraction etc
+
+corpus/
+
+grammar development corpus with trees, gr output etc for training
+parser, checking grammar coverage etc
+
+data/
+
+lalr(1) table etc for PGLR parser, various training methods and data 
+
+greval/
+
+GR scheme evaluation code, Parc700 data reformatted etc
+
+teval/
+
+Parseval tree-based evaluation on Susanne data, old trees
+
+EJB
+1/2/06
+
+
+

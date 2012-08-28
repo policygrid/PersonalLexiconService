@@ -1,0 +1,77 @@
+                 HINTS FOR PRACTICAL USE OF THE ANLT
+
+
+1. Parsing non-trivial sentences with the full ANLT grammar may result
+in the Lisp system running out of space in its default configuration.
+When this happens you will get sets of error messages like:
+
+;;; Failed to re-enable EGC after the memory manager disabled it for memory
+;;; reorganization:
+;;;  EGC could not be enabled because the dynamic GC is disabled.
+>>Error: GC and EGC disabled: not enough storage after GC.  CONSers are now using the
+         storage normally reserved for copying currently allocated dynamic storage.
+
+EPHEMERAL-GC:
+   Optional arg 0 (FORCE-TO-DYNAMIC): NIL
+   Optional arg 1 (DISABLING-EGC): NIL
+:C  0: Continue the current computation with GC and EGC disabled. The next GC might fail.
+:A  1: Abort to Lisp Top Level
+
+or
+
+Error: An explicit gc call caused tenuring and a need for 8912896 more bytes of heap.
+The operating system will not make the space available.
+
+or
+
+Error: An explicit gc call caused a need for 34865152 more bytes of
+       heap.
+This would exceed the image size limit set at initial build.
+  [condition type: STORAGE-CONDITION]
+
+
+A solution to this problem is to configure Lisp so that the Lisp process
+can grow larger than the default. In Lucid CL, this can be done with the
+call:
+
+(change-memory-management :growth-limit 1500 ; 96MB
+   :growth-rate 24) ; 1.5MB
+
+In Allegro CL, re-installing the Lisp system specifying a larger store limit
+at initial build time should solve the problem; an alternative which is
+sometimes sufficient is to reduce the percentage by which the Lisp process
+grows each time it needs to expand:
+
+(progn
+   (setf (sys:gsgc-parameter :free-percent-new) 10)
+   (setf (sys:gsgc-parameter :expansion-free-percent-new) 15)
+   (setf (sys:gsgc-parameter :expansion-free-percent-old) 20))
+
+In KCL and AKCL, garbage collections my become excessively frequent unless
+the storage allocated to certain types - and certainly to 'relocatable pages'
+- is explicitly increased. See the Lisp manual for the functions 'room',
+'system:allocate' and 'system:allocate-relocatable-pages'.
+
+
+2. Output from the GDE can be directed to a file even if input comes
+interactively by using the built-in Lisp 'dribble' function. This is
+particularly useful when the parser returns many parses for a single
+sentence. A call to 'dribble' with a single argument, the name of a file,
+puts everything that appears on the terminal in the file. 'Dribble' without
+any arguments stops output to the file. E.g.
+
+   !(dribble "results1")
+   <long / ambiguous sentence>
+   <more sentences>
+   ...
+   !(dribble)
+
+
+3. The morphological analyser cannot analyse words containing uppercase
+letters or digits (the current spelling rules for English restrict the
+surface alphabet to only lower case letters). Text should therefore be edited
+to lowercase before attempting to parse it, and/or exceptional words input
+directly to the GDE lexicon. Also, with the current interface between the
+parser and lexicon system, multi-word lexical items (e.g. "absolute zero")
+cannot be analysed as single units, even though they appear in the supplied
+morphological analyser lexicons.

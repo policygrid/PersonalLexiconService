@@ -1,0 +1,167 @@
+%
+\newenvironment{display}%
+   {\begin{center}
+    \begin{minipage}[t]{5.4in}}%
+   {\end{minipage}
+    \end{center}}
+%
+\newenvironment{jex}%
+   {\begin{display}}%
+   {\end{display}}
+%
+\newcommand{\bs}{$\backslash$}
+%
+
+\section{Semantic Scoping and Post-Processing Module}
+
+The module consists of two parts. The first is a simple quantifier
+scoper based on Vestre (1991). The second, applying to the output of
+this, is a post-processor which carries out a set of simplifications.
+The scoper produces a single scoping of an SR, where the order of
+scoped quantifiers simply reflects their left to right order in the
+input. The only constraint is that a quantified event (marked with
+{\tt uqe}) associated with a proposition or embedded proposition is
+assigned narrower scope than all the other quantifiers associated with
+that proposition.
+
+Scoping is local to an embedded proposition in that the quantifier
+which is the translation of an embedded clause is not scoped outside
+of the predicate of the higher clause. For example, the SR assigned by
+the grammar to the sentence {\it an abbot knows an acquaintance helps}
+is:
+
+\begin{jex}
+\begin{verbatim}
+(DECL 
+   (KNOW (uqe (some (e1) (PRES e1)))
+      (uq (some (x1) (and (sg x1) (ABBOT x1)))) 
+      (HELP (uqe (some (e2) (PRES e2)))
+         (uq (some (x2) (and (sg x2) (ACQUAINTANCE x2)))))))
+\end{verbatim}
+\end{jex}
+
+which receives the scoping:
+
+\begin{jex}
+\begin{verbatim}
+(DECL 
+   (some (x1) (and (sg x1) (ABBOT x1)) 
+      (some (e1) (PRES e1) 
+         (KNOW e1 x1 
+            (some (x2) (and (sg x2) (ACQUAINTANCE x2)) 
+               (some (e2) (PRES e2) (HELP e2 x2)))))))
+\end{verbatim}
+\end{jex}
+
+Representations of noun phrases deriving from quantifiers other than
+{\tt the}, {\tt some} or {\tt every} have a definiteness specification
+{\tt def} inserted when appropriate. The default is assumed to be
+indefinite. Likewise, representations of kind interpretations have a
+{\tt generic} specification added.
+
+\subsection{Post-Processing}
+
+The post-processor takes a scoped SR and performs a set of
+simplifications on it. The simplifications applied are:
+
+\begin{itemize}
+\item A formula representing a named person is replaced by just the name
+itself, e.g. {\tt (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))}
+becomes {\tt KIM}.
+
+\item A formula representing a number is replaced by the number itself, e.g.
+the representation of the string ``three hundred and sixty five",
+{\tt (NN (+ (* \bs 3 \bs 100) (+ \bs 60 \bs 5)))}, becomes {\tt 365}. A
+number formula can also be a range, e.g. {\tt (NN (RANGE (NN \bs 2)
+(NN \bs 3)))}, which becomes {\tt (RANGE 2 3)}.
+
+\item A non-atomic formula representing a complex predicate (typically
+a phrasal verb) is replaced by an appropriate atomic predicate name, e.g.
+{\tt (CP BRING BACK)} becomes {\tt BRING-BACK}.
+
+\item A non-atomic formula representing a compound is replaced by
+an appropriate atomic name, e.g. {\tt (compound BUTTER MOUNTAIN)} becomes
+{\tt BUTTER\_MOUNTAIN}.
+
+\item A formula that is recognised as representing a possession relation is
+replaced by a {\tt POSSESSED-BY} predicate, e.g. {\tt (lambda (R1) (R1 x1 KIM))}
+becomes {\tt (POSSESSED-BY x1 KIM)}.
+
+\item A formula produced from the scoping of a complex quantifer corresponding
+to a comparative or adjective of degree, such as ``more abbots than ..."
+
+\begin{jex}
+\begin{verbatim}
+(((more than)
+    (lambda (c1)
+       (and (pl c1) (ABBOT c1) (some (e2) ...))))
+ (x2) (and (pl x2) (ABBOT x2)) ...)
+\end{verbatim}
+\end{jex}
+
+is replaced by
+
+\begin{jex}
+\begin{verbatim}
+(((more than)
+    (?quant (c1) (and (pl c1) (ABBOT c1)) (some (e2) ...)))
+ (x2) (and (pl x2) (ABBOT x2)) ...)
+\end{verbatim}
+\end{jex}
+
+\item Nested {\tt and}s are simplified.
+\end{itemize}
+
+\pagebreak
+
+\section{Conclusions and Further Work}
+
+The resulting grammar has very wide syntactic and semantic coverage:
+it is arguably the widest coverage grammar which has been developed
+for English in a declarative unification-based formalism, though it
+lacks the depth of analysis of a system such as the Core Language
+Engine (Alshawi 1992). Nevertheless there are many inadequacies which
+remain; these include:
+
+\begin{description}
+
+\item[Punctuation and Tokenisation] The grammar does not take account
+of punctuation, taking unpunctuated and tokenised text as input. Since
+many aspects of punctuation do not reflect syntactic distinctions,
+this is appropriate in general (e.g. Nunberg, 1990). What is required
+is a text preprocessor capable of tokenising input for lexical access
+and `parcelling' units for syntactic and compositional semantic
+analysis.  In this way problems of parentheticals and other
+sub-sentential constituents which are related via discourse relations,
+such as elaboration, and not by syntactic relations can be recognised
+and parsed individually. However, some limited aspects of punctuation,
+such as the occurrence of commas in coordination and after preposed
+constituents, need to be integrated with the grammatical description.
+
+\item[Ambiguity] The grammar, particularly in conjunction with the
+large lexicon, assigns large numbers of analyses to many
+naturally-occurring sentences. A number of these analyses are the
+result of errors in the lexicon and can be ameliorated by production
+of a specialised lexicon for a specific application. However, in
+general some technique will always be required for selecting amongst
+alternative analyses. Briscoe \& Carroll (1991, 1992) and Carroll \&
+Briscoe (1992) describe a technique based on probabilistic selection
+of the syntactically most likely parse. However, in domain-dependent
+applications semantic filtering of the possible analyses may be
+feasible and preferable (e.g. Alshawi, 1992).
+
+\item[Semantic Framework] The semantic approach of rule-to-rule
+translation into formulae of the lambda calculus results in verbose,
+multiple specifications of the semantics of individual rules and very
+complex formulae associated with sub-analyses. A more perspicuous
+semantics might be developed by constructing well-formed formulae
+using unification (Pollard \& Sag 1987, Alshawi 1992).
+
+\item[Coverage] Inadequacies of coverage are continuously emerging and
+most are straightforward to remedy by addition of a few simple rules.
+However areas in which the current framework is possibly inadequate
+but certainly inelegant, and where the current grammar is deficient
+include: coordination, adjectival and adverbial modification, multiple
+and echo wh-questions, gapping, sluicing, and complex ellipsis.
+
+\end{description}

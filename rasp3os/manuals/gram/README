@@ -1,0 +1,20 @@
+                      DOCUMENTATION FOR GRAMMAR
+
+
+The documentation is in LaTeX format. To print it out, execute the latex
+command on the file 'trep.tex' twice. Then convert the resulting dvi file to
+postscript with dvips (note that dvitops will not give correct results), i.e.
+
+   dvips trep.dvi > trep.ps
+
+and send the postscript (in 'trep.ps') to a postscript printer. This
+directory already contains a postscript version of the documentation in
+'trep.ps' which is ready for printing.
+
+The documentation is 320 pages in length, 162 of which is taken up by a
+listing of the grammar (in appendix 3). To omit this appendix, remove
+the line
+
+   \input{trep9.append3}
+
+from 'trep.tex' before invoking LaTeX.

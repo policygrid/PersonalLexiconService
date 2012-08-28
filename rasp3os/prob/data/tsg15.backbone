@@ -1,0 +1,1261 @@
+; Backbone from /local/scratch/rfw22/rasp3/train-new/tsg15
+
+Terminals +pcl-22 +pco-28 +pda-21 +pdo-23 +pel-17 +pex-19 +plb-24 +pqo-18 +pqu-20 +prb-25 +psc-26 +psl-27 A0-52@ A1-62 CJ-54@ CP-55@ DT-59@ IJ-36 N0-50@ NG-38@ P0-53@ PT-37 Tu-33@ V0-43@ V0-56@ V1-60 nopunct-58.
+
+Tcats
+   +pcl-22 [PUNCT colon]
+   +pco-28 [PUNCT comma]
+   +pda-21 [PUNCT dash]
+   +pdo-23 [PUNCT dot]
+   +pel-17 [PUNCT ellip]
+   +pex-19 [PUNCT exmark]
+   +plb-24 [PUNCT lbrack]
+   +pqo-18 [PUNCT quote]
+   +pqu-20 [PUNCT qumark]
+   +prb-25 [PUNCT rbrack]
+   +psc-26 [PUNCT semicolon]
+   +psl-27 [PUNCT slash]
+   A0-52@ [N +, V +, BAR 0, ATYPE @10, AFORM @11, ASUBCAT @15, ADV @21, MOD @24105, CONJ @24128, QUOTE @24106, TA @24107]
+   A1-62 [N +, V +, BAR 1, ATYPE @10, AFORM @2770, ASUBCAT @15, WH -, ADV @2772, MOD -, CONJ -, QUOTE @23794, TA @23795]
+   CJ-54@ [MINOR CONJ, CJTYPE @19, TA @6494]
+   CP-55@ [MINOR COMP, TA @11567]
+   DT-59@ [MINOR DET, PLU @11649, POSS @11650, WH @20]
+   IJ-36 [MINOR INTERJ]
+   N0-50@ [N +, V -, BAR 0, PLU @7, POSS @8, NTYPE @9, NSUBCAT @14, WH @20, MOD @23185, CONJ @23202, QUOTE @23186, TA @23187]
+   NG-38@ [MINOR NOT]
+   P0-53@ [N -, V -, BAR 0, PSUBCAT @13, PFORM @16, ADJ @18, MOD @23638, CONJ @23662, QUOTE @23639, TA @23640]
+   PT-37 [MINOR PRT]
+   Tu-33@ [N +, V -, BAR 2, PLU @7, POSS @8, NTYPE @9, WH @20, MOD @1112, CONJ @1113, SCOLON @3355, COLON @1114, DASH @1115, DOT @1116, QUOTE @2187, TA @1117, BAL @1118, BRACK @1119, COMMA @1120, TXTCAT UNIT, TXT @1121]
+   V0-43@ [N -, V +, BAR 0, PLU @82, VSUBCAT @2176, PRT @2177, AUX @23, VFORM @24, FIN @28, CONJ @2178, QUOTE @2179, TA @2180]
+   V0-56@ [N -, V +, BAR 0, PLU @7, AUX @23, VFORM @24, INV @25, FIN @28, CONJ @17185, QUOTE @17178, TA @17179]
+   V1-60 [N -, V +, BAR 1, PLU @12251, MOD @12252, AUX @12253, VFORM @12254, COMP -, FIN +, CONJ -, SCOLON -, QUOTE @12255]
+   nopunct-58 [N -, V +, BAR 1, PLU @10248, MOD @10249, AUX @10250, VFORM @10251, FIN +, CONJ -, SCOLON -, COLON -, DASH -, DOT -, QUOTE -, TA -, COMMA -].
+
+Non-terminals A0-52 A1-51 A1-57 A2-44 A2-45 A2-46+ Bp-13 CJ-54 CP-55 DT-59 Ep-14 IJ-39+ N0-50 N1-30 N1-35+ N2-34+ NG-38 P0-53 P1-61 P2-47 P2-48 P2-49+ Ta-16 Tp-12 Tph-15 Tu-29 Tu-32 Tu-33 V0-43 V0-56 V1-40 V1-41 V1-42+.
+
+NTcats
+   A0-52 [N +, V +, BAR 0, ATYPE @10, AFORM @11, ASUBCAT @15, ADV @21, MOD @24105, CONJ @24128, QUOTE @24106, TA @24107]
+   A1-51 [N +, V +, BAR 1, ATYPE @10, AFORM @11, ASUBCAT @15, ADV @21, MOD @9646, CONJ -, QUOTE @3133, TA @3134]
+   A1-57 [N +, V +, BAR 1, ATYPE @10, AFORM @11, ASUBCAT @15, ADV @21, MOD @3121, CONJ -, QUOTE -, TA @3122, BRACK +]
+   A2-44 [N +, V +, BAR 2, ATYPE @9029, AFORM @9030, ASUBCAT @9031, ADV @9032, MOD @9033, CONJ -, SCOLON +, QUOTE @9034, TA @9035]
+   A2-45 [N +, V +, BAR 2, ATYPE @10, AFORM @11, ASUBCAT @15, ADV @21, MOD @22, CONJ @2787, SCOLON -, QUOTE @9018, TA @2786]
+   A2-46+ [N +, V +, BAR 2, ATYPE @9029, AFORM @9030, ASUBCAT @9031, ADV @9032, MOD @9033, CONJ -, SCOLON +, QUOTE @9034, TA @9035]
+   Bp-13 [CONJ @195, SCOLON @196, COLON @197, DASH @198, DOT @199, QUOTE @200, TA @201, BAL @202, BRACK @203, COMMA @204, TXTCAT BEGPUNCT, TXT @205]
+   CJ-54 [MINOR CONJ, CJTYPE @19, TA @6494]
+   CP-55 [MINOR COMP, TA @11567]
+   DT-59 [MINOR DET, PLU @11649, POSS @11650, WH @20]
+   Ep-14 [CONJ @184, SCOLON @185, COLON @186, DASH @187, DOT @188, QUOTE @189, TA @190, BAL @191, BRACK @192, COMMA @193, TXTCAT ENDPUNCT, TXT @194]
+   IJ-39+ [MINOR INTERJ]
+   N0-50 [N +, V -, BAR 0, PLU @7, POSS @8, NTYPE @9, NSUBCAT @14, WH @20, MOD @23185, CONJ @23202, QUOTE @23186, TA @23187]
+   N1-30 [N +, V -, BAR 1, PLU @7698, POSS @7699, NTYPE @7700, WH @7701, MOD @7702, CONJ -, SCOLON +, COLON @7703, DASH @7704, DOT @7705, QUOTE @7706, TA @7707, BAL @7708, BRACK @7709, COMMA @7710, TXTCAT UNIT, TXT PH]
+   N1-35+ [N +, V -, BAR 1, PLU @7698, POSS @7699, NTYPE @7700, WH @7701, MOD @7702, CONJ -, SCOLON +, COLON @7703, DASH @7704, DOT @7705, QUOTE @7706, TA @7707, BAL @7708, BRACK @7709, COMMA @7710, TXTCAT UNIT, TXT PH]
+   N2-34+ [N +, V -, BAR 2, PLU @5493, POSS -, NTYPE @5494, WH @5495, MOD @5496, CONJ -, SCOLON +, COLON @5497, DASH @5498, DOT @5499, QUOTE @5500, TA @5501, BAL @5502, BRACK @5503, COMMA @5504, TXTCAT UNIT, TXT PH]
+   NG-38 [MINOR NOT]
+   P0-53 [N -, V -, BAR 0, PSUBCAT @13, PFORM @16, ADJ @18, MOD @23638, CONJ @23662, QUOTE @23639, TA @23640]
+   P1-61 [N -, V -, BAR 1, PSUBCAT @13, PFORM @16, ADJ @18, WH @20, MOD @22, CONJ -, QUOTE @23594]
+   P2-47 [N -, V -, BAR 2, PSUBCAT @8812, PFORM @8813, ADJ @8814, WH @8815, MOD @8816, CONJ -, SCOLON +, QUOTE @8817]
+   P2-48 [N -, V -, BAR 2, PSUBCAT @13, PFORM @16, ADJ @18, WH @20, MOD @22, CONJ @2832, SCOLON -, QUOTE @5439]
+   P2-49+ [N -, V -, BAR 2, PSUBCAT @8812, PFORM @8813, ADJ @8814, WH @8815, MOD @8816, CONJ -, SCOLON +, QUOTE @8817]
+   Ta-16 [CONJ @2962, SCOLON @2967, COLON @2977, DASH @34, DOT @35, QUOTE @2970, TA @2963, BAL @572, BRACK @39, COMMA @40, TXTCAT ADJUNCT, TXT @2964]
+   Tp-12 [T +]
+   Tph-15 [CONJ @3193, SCOLON @52, COLON @53, DASH @54, DOT @55, QUOTE @56, TA @57, BAL @58, BRACK @59, COMMA @60, TXTCAT UNIT, TXT PH]
+   Tu-29 [N -, V +, BAR 2, PLU @273, WH @274, AUX @275, VFORM @276, INV @277, IMP @26, COMP @278, FIN @28, CONJ @279, SCOLON @3385, COLON @280, DASH @281, DOT @282, QUOTE @164, TA @283, BAL @284, BRACK @285, COMMA @286, TXTCAT UNIT, TXT @290]
+   Tu-32 [N +, V -, BAR 1, PLU @2329, POSS @2330, NTYPE @9, WH @2331, MOD @2332, CONJ @2661, SCOLON -, COLON @2333, DASH @2334, DOT @2335, QUOTE @2336, TA @2337, BAL @2338, BRACK @2339, COMMA @2340, TXTCAT UNIT, TXT @2668]
+   Tu-33 [N +, V -, BAR 2, PLU @7, POSS @8, NTYPE @9, WH @20, MOD @1112, CONJ @1113, SCOLON @3355, COLON @1114, DASH @1115, DOT @1116, QUOTE @2187, TA @1117, BAL @1118, BRACK @1119, COMMA @1120, TXTCAT UNIT, TXT @1121]
+   V0-43 [N -, V +, BAR 0, PLU @82, VSUBCAT @2176, PRT @2177, AUX @23, VFORM @24, FIN @28, CONJ @2178, QUOTE @2179, TA @2180]
+   V0-56 [N -, V +, BAR 0, PLU @7, AUX @23, VFORM @24, INV @25, FIN @28, CONJ @17185, QUOTE @17178, TA @17179]
+   V1-40 [N -, V +, BAR 1, PLU @9224, MOD @9225, AUX @9226, VFORM @9227, FIN @9228, CONJ -, SCOLON +, QUOTE @9229]
+   V1-41 [N -, V +, BAR 1, PLU @7, MOD @1993, AUX @1994, VFORM @1995, FIN @28, CONJ @2738, SCOLON -, QUOTE @2917]
+   V1-42+ [N -, V +, BAR 1, PLU @9224, MOD @9225, AUX @9226, VFORM @9227, FIN @9228, CONJ -, SCOLON +, QUOTE @9229].
+
+Let T'/10 T'-11 --> Tp-12.
+Let T/txt-ph1-r Tp-12 --> Tph-15 +pqu-20.
+Let T/txt-ph2-r Tp-12 --> Tph-15 +pex-19.
+Let T/txt-sc1/-- Tp-12 --> Tu-29.
+Let T/txt-sc1/-+ Tp-12 --> Tu-29 Ep-14.
+Let T/txt-sc1/+- Tp-12 --> Bp-13 Tu-29.
+Let T/txt-sc1/++ Tp-12 --> Bp-13 Tu-29 Ep-14.
+Let T/txt-sc2/- Tu-29 --> Tu-29 Tu-29.
+Let T/txt-sc2/+ Tu-29 --> Tu-29 Tu-29 Ep-14.
+Let Beg-punct1/- Bp-13 --> +pda-21.
+Let Beg-punct1/+ Bp-13 --> +pda-21 +prb-25.
+Let Beg-punct2/-- Bp-13 --> +pcl-22.
+Let Beg-punct2/-+ Bp-13 --> +pcl-22 +prb-25.
+Let Beg-punct2/+- Bp-13 --> +pcl-22 +pda-21.
+Let Beg-punct2/++ Bp-13 --> +pcl-22 +pda-21 +prb-25.
+Let Beg-punct3 Bp-13 --> +prb-25.
+Let End-punct1/--- Ep-14 --> +pqu-20.
+Let End-punct1/--+ Ep-14 --> +pqu-20 +pel-17.
+Let End-punct1/-+- Ep-14 --> +pqu-20 +pdo-23.
+Let End-punct1/-++ Ep-14 --> +pqu-20 +pdo-23 +pel-17.
+Let End-punct1/+-- Ep-14 --> +pqu-20 +pex-19.
+Let End-punct1/+-+ Ep-14 --> +pqu-20 +pex-19 +pel-17.
+Let End-punct1/++- Ep-14 --> +pqu-20 +pex-19 +pdo-23.
+Let End-punct1/+++ Ep-14 --> +pqu-20 +pex-19 +pdo-23 +pel-17.
+Let End-punct2/-- Ep-14 --> +pex-19.
+Let End-punct2/-+ Ep-14 --> +pex-19 +pel-17.
+Let End-punct2/+- Ep-14 --> +pex-19 +pdo-23.
+Let End-punct2/++ Ep-14 --> +pex-19 +pdo-23 +pel-17.
+Let End-punct3/- Ep-14 --> +pdo-23.
+Let End-punct3/+ Ep-14 --> +pdo-23 +pel-17.
+Let Ta/ellipses Ta-16 --> +pel-17.
+Let T/txt-cl1/- Tu-29 --> Tu-29 +psc-26.
+Let T/txt-cl1/+ Tu-29 --> Tu-29 Ep-14 +psc-26.
+Let T/txt-cl2 Tu-29 --> Tu-29 Ep-14 +pda-21.
+Let T/txt-cl3 Tu-29 --> Tu-29 Ep-14 +pco-28.
+Let T/txt-cl-brack/- Tp-12 --> +plb-24 Tu-29 +prb-25.
+Let T/txt-cl-brack/+ Tp-12 --> +plb-24 Tu-29 Ep-14 +prb-25.
+Let T/txt-cl-brack-r Tp-12 --> +plb-24 Tu-29 +prb-25 +pdo-23.
+Let S/s-quo/-- Tu-29 --> +pqo-18 Tu-29 +pqo-18.
+Let S/s-quo/-+ Tu-29 --> +pqo-18 Tu-29 +pco-28 +pqo-18.
+Let S/s-quo/+- Tu-29 --> +pqo-18 Tu-29 Ep-14 +pqo-18.
+Let S/s-quo/++ Tu-29 --> +pqo-18 Tu-29 Ep-14 +pco-28 +pqo-18.
+Let NP/np-quo/---- Tu-33 --> +pqo-18 Tu-33 +pqo-18.
+Let NP/np-quo/---+ Tu-33 --> +pqo-18 Tu-33 +pco-28 +pqo-18.
+Let NP/np-quo/--+- Tu-33 --> +pqo-18 Tu-33 Ep-14 +pqo-18.
+Let NP/np-quo/--++ Tu-33 --> +pqo-18 Tu-33 Ep-14 +pco-28 +pqo-18.
+Let NP/np-quo/-+-- Tu-33 --> +pqo-18 +pco-28 Tu-33 +pqo-18.
+Let NP/np-quo/-+-+ Tu-33 --> +pqo-18 +pco-28 Tu-33 +pco-28 +pqo-18.
+Let NP/np-quo/-++- Tu-33 --> +pqo-18 +pco-28 Tu-33 Ep-14 +pqo-18.
+Let NP/np-quo/-+++ Tu-33 --> +pqo-18 +pco-28 Tu-33 Ep-14 +pco-28 +pqo-18.
+Let NP/np-quo/+--- Tu-33 --> +pqo-18 IJ-39+ Tu-33 +pqo-18.
+Let NP/np-quo/+--+ Tu-33 --> +pqo-18 IJ-39+ Tu-33 +pco-28 +pqo-18.
+Let NP/np-quo/+-+- Tu-33 --> +pqo-18 IJ-39+ Tu-33 Ep-14 +pqo-18.
+Let NP/np-quo/+-++ Tu-33 --> +pqo-18 IJ-39+ Tu-33 Ep-14 +pco-28 +pqo-18.
+Let NP/np-quo/++-- Tu-33 --> +pqo-18 IJ-39+ +pco-28 Tu-33 +pqo-18.
+Let NP/np-quo/++-+ Tu-33 --> +pqo-18 IJ-39+ +pco-28 Tu-33 +pco-28 +pqo-18.
+Let NP/np-quo/+++- Tu-33 --> +pqo-18 IJ-39+ +pco-28 Tu-33 Ep-14 +pqo-18.
+Let NP/np-quo/++++ Tu-33 --> +pqo-18 IJ-39+ +pco-28 Tu-33 Ep-14 +pco-28 +pqo-18.
+Let NP/interj-quo/---- Tu-33 --> +pqo-18 IJ-36 +pqo-18.
+Let NP/interj-quo/---+ Tu-33 --> +pqo-18 IJ-36 +pco-28 +pqo-18.
+Let NP/interj-quo/--+- Tu-33 --> +pqo-18 IJ-36 Ep-14 +pqo-18.
+Let NP/interj-quo/--++ Tu-33 --> +pqo-18 IJ-36 Ep-14 +pco-28 +pqo-18.
+Let NP/interj-quo/-+-- Tu-33 --> +pqo-18 +pco-28 IJ-36 +pqo-18.
+Let NP/interj-quo/-+-+ Tu-33 --> +pqo-18 +pco-28 IJ-36 +pco-28 +pqo-18.
+Let NP/interj-quo/-++- Tu-33 --> +pqo-18 +pco-28 IJ-36 Ep-14 +pqo-18.
+Let NP/interj-quo/-+++ Tu-33 --> +pqo-18 +pco-28 IJ-36 Ep-14 +pco-28 +pqo-18.
+Let NP/interj-quo/+--- Tu-33 --> +pqo-18 IJ-39+ IJ-36 +pqo-18.
+Let NP/interj-quo/+--+ Tu-33 --> +pqo-18 IJ-39+ IJ-36 +pco-28 +pqo-18.
+Let NP/interj-quo/+-+- Tu-33 --> +pqo-18 IJ-39+ IJ-36 Ep-14 +pqo-18.
+Let NP/interj-quo/+-++ Tu-33 --> +pqo-18 IJ-39+ IJ-36 Ep-14 +pco-28 +pqo-18.
+Let NP/interj-quo/++-- Tu-33 --> +pqo-18 IJ-39+ +pco-28 IJ-36 +pqo-18.
+Let NP/interj-quo/++-+ Tu-33 --> +pqo-18 IJ-39+ +pco-28 IJ-36 +pco-28 +pqo-18.
+Let NP/interj-quo/+++- Tu-33 --> +pqo-18 IJ-39+ +pco-28 IJ-36 Ep-14 +pqo-18.
+Let NP/interj-quo/++++ Tu-33 --> +pqo-18 IJ-39+ +pco-28 IJ-36 Ep-14 +pco-28 +pqo-18.
+Let S/s_np-quo/-- Tu-29 --> Tu-29 Tu-33.
+Let S/s_np-quo/-+ Tu-29 --> Tu-29 +pcl-22 Tu-33.
+Let S/s_np-quo/+- Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_np-quo/++ Tu-29 --> Tu-29 +pco-28 +pcl-22 Tu-33.
+Let S/s_s-quo/-- Tu-29 --> Tu-29 Tu-29.
+Let S/s_s-quo/-+ Tu-29 --> Tu-29 +pcl-22 Tu-29.
+Let S/s_s-quo/+- Tu-29 --> Tu-29 +pco-28 Tu-29.
+Let S/s_s-quo/++ Tu-29 --> Tu-29 +pco-28 +pcl-22 Tu-29.
+Let S/np-quo_s/--- Tu-29 --> Tu-33 Tu-29.
+Let S/np-quo_s/--+ Tu-29 --> Tu-33 Tu-29 V1-41.
+Let S/np-quo_s/-+- Tu-29 --> Tu-33 Tu-29 +pco-28.
+Let S/np-quo_s/-++ Tu-29 --> Tu-33 Tu-29 +pco-28 V1-41.
+Let S/np-quo_s/+-- Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/np-quo_s/+-+ Tu-29 --> Tu-33 +pco-28 Tu-29 V1-41.
+Let S/np-quo_s/++- Tu-29 --> Tu-33 +pco-28 Tu-29 +pco-28.
+Let S/np-quo_s/+++ Tu-29 --> Tu-33 +pco-28 Tu-29 +pco-28 V1-41.
+Let S/s-quo_s/- Tu-29 --> Tu-29 Tu-29.
+Let S/s-quo_s/+ Tu-29 --> Tu-29 +pco-28 Tu-29.
+Let S/np-quo_v_np/- Tu-29 --> Tu-33 V0-43 Tu-33.
+Let S/np-quo_v_np/+ Tu-29 --> Tu-33 +pco-28 V0-43 Tu-33.
+Let S/s-quo_v_np/- Tu-29 --> Tu-29 V0-43 Tu-33.
+Let S/s-quo_v_np/+ Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33.
+Let S/np-quo_v_np_pco_n1/- Tu-29 --> Tu-33 V0-43 Tu-33 +pco-28 Tu-32.
+Let S/np-quo_v_np_pco_n1/+ Tu-29 --> Tu-33 +pco-28 V0-43 Tu-33 +pco-28 Tu-32.
+Let S/np-quo_v_np_pco_np/- Tu-29 --> Tu-33 V0-43 Tu-33 +pco-28 Tu-33.
+Let S/np-quo_v_np_pco_np/+ Tu-29 --> Tu-33 +pco-28 V0-43 Tu-33 +pco-28 Tu-33.
+Let S/s-quo_v_np_pco_n1/- Tu-29 --> Tu-29 V0-43 Tu-33 +pco-28 Tu-32.
+Let S/s-quo_v_np_pco_n1/+ Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33 +pco-28 Tu-32.
+Let S/s-quo_v_np_pco_np/- Tu-29 --> Tu-29 V0-43 Tu-33 +pco-28 Tu-33.
+Let S/s-quo_v_np_pco_np/+ Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33 +pco-28 Tu-33.
+Let N1/n1-quo-r/-- Tu-32 --> +pqo-18 Tu-32 +pqo-18.
+Let N1/n1-quo-r/-+ Tu-32 --> +pqo-18 Tu-32 +pco-28 +pqo-18.
+Let N1/n1-quo-r/+- Tu-32 --> +pqo-18 Tu-32 Ep-14 +pqo-18.
+Let N1/n1-quo-r/++ Tu-32 --> +pqo-18 Tu-32 Ep-14 +pco-28 +pqo-18.
+Let VP/vp-quo/-- V1-41 --> +pqo-18 V1-41 +pqo-18.
+Let VP/vp-quo/-+ V1-41 --> +pqo-18 V1-41 +pco-28 +pqo-18.
+Let VP/vp-quo/+- V1-41 --> +pqo-18 V1-41 Ep-14 +pqo-18.
+Let VP/vp-quo/++ V1-41 --> +pqo-18 V1-41 Ep-14 +pco-28 +pqo-18.
+Let AP/ap-quo/-- A2-45 --> +pqo-18 A2-45 +pqo-18.
+Let AP/ap-quo/-+ A2-45 --> +pqo-18 A2-45 +pco-28 +pqo-18.
+Let AP/ap-quo/+- A2-45 --> +pqo-18 A2-45 Ep-14 +pqo-18.
+Let AP/ap-quo/++ A2-45 --> +pqo-18 A2-45 Ep-14 +pco-28 +pqo-18.
+Let PP/pp-quo/-- P2-48 --> +pqo-18 P2-48 +pqo-18.
+Let PP/pp-quo/-+ P2-48 --> +pqo-18 P2-48 +pco-28 +pqo-18.
+Let PP/pp-quo/+- P2-48 --> +pqo-18 P2-48 Ep-14 +pqo-18.
+Let PP/pp-quo/++ P2-48 --> +pqo-18 P2-48 Ep-14 +pco-28 +pqo-18.
+Let N/quo_n-r N0-50 --> +pqo-18 N0-50 +pqo-18.
+Let A/quo_a-r A0-52 --> +pqo-18 A0-52 +pqo-18.
+Let V/quo_v-r V0-43 --> +pqo-18 V0-43 +pqo-18.
+Let P/quo_p-r P0-53 --> +pqo-18 P0-53 +pqo-18.
+Let T/npq Tu-33 --> Tu-33 +pqu-20.
+Let Tcl/interj_c_s Tu-29 --> IJ-39+ +pco-28 Tu-29.
+Let Tcl/interj_c_vp Tu-29 --> IJ-39+ +pco-28 V1-41.
+Let Tcl/s_c_interj Tu-29 --> Tu-29 +pco-28 IJ-39+.
+Let Tcl/interj_d_s Tu-29 --> IJ-39+ +pda-21 Tu-29.
+Let Tcl/s_d_interj Tu-29 --> Tu-29 +pda-21 IJ-39+.
+Let S/ij-r Tu-29 --> IJ-39+.
+Let T/s_leta Tu-29 --> Tu-29 Ta-16.
+Let T/s_leta-cl Tu-29 --> Tu-29 Ta-16.
+Let T/conj_lmta CJ-54 --> CJ-54 Ta-16.
+Let T/comp_lmta CP-55 --> CP-55 Ta-16.
+Let T/prep_lmta P0-53 --> P0-53 Ta-16.
+Let T/auxv_lmta V0-56 --> V0-56 Ta-16.
+Let T/np_lmta Tu-33 --> Tu-33 Ta-16.
+Let T/n1_lmta-r Tu-32 --> Tu-32 Ta-16.
+Let T/n_lmta-r N0-50 --> N0-50 Ta-16.
+Let T/np_leta-cl Tu-33 --> Tu-33 Ta-16.
+Let T/v_lmta-r V0-43 --> V0-43 Ta-16.
+Let T/adv_lmta A0-52 --> A0-52 Ta-16.
+Let T/not_lmta NG-38 --> NG-38 Ta-16.
+Let T/rmta_n1 Tu-32 --> Ta-16 Tu-32.
+Let T/rmta_a1 A1-57 --> Ta-16 A1-51.
+Let T/rmta_s/-- Tu-29 --> Ta-16 Tu-29.
+Let T/rmta_s/-+ Tu-29 --> Ta-16 +pcl-22 Tu-29.
+Let T/rmta_s/+- Tu-29 --> Ta-16 +pda-21 Tu-29.
+Let T/rmta_s/++ Tu-29 --> Ta-16 +pda-21 +pcl-22 Tu-29.
+Let Taph/colon/- Ta-16 --> +pcl-22 Tph-15.
+Let Taph/colon/+ Ta-16 --> +pcl-22 Tph-15 Ta-16.
+Let Taph/dash+/-- Ta-16 --> +pda-21 Tph-15 +pda-21.
+Let Taph/dash+/-+ Ta-16 --> +pda-21 Tph-15 +pex-19 +pda-21.
+Let Taph/dash+/+- Ta-16 --> +pda-21 Tph-15 +pqo-18 +pda-21.
+Let Taph/dash+/++ Ta-16 --> +pda-21 Tph-15 +pqo-18 +pex-19 +pda-21.
+Let Taph/dash-/- Ta-16 --> +pda-21 Tph-15.
+Let Taph/dash-/+ Ta-16 --> +pda-21 Tph-15 Ta-16.
+Let Taph/comma+/- Ta-16 --> +pco-28 Tph-15 +pco-28.
+Let Taph/comma+/+ Ta-16 --> +pco-28 Tph-15 +pco-28 Ta-16.
+Let Taph/comma-b Ta-16 --> Tph-15 +pco-28.
+Let Taph/brack1/- Ta-16 --> +plb-24 Tph-15 +prb-25.
+Let Taph/brack1/+ Ta-16 --> +plb-24 Tph-15 Ta-16 +prb-25.
+Let Taph/brack2 Ta-16 --> +plb-24 Tu-33 Ta-16 +prb-25.
+Let Tacl/colon Ta-16 --> +pcl-22 Tu-29.
+Let Tacl/dash- Ta-16 --> +pda-21 Tu-29.
+Let Tacl/dash+/- Ta-16 --> +pda-21 Tu-29 +pda-21.
+Let Tacl/dash+/+ Ta-16 --> +pda-21 Tu-29 Ep-14 +pda-21.
+Let Tacl/comma+ Ta-16 --> +pco-28 Tu-29 +pco-28.
+Let Tacl/comma-e Ta-16 --> +pco-28 Tu-29.
+Let Tacl/brack/- Ta-16 --> +plb-24 Tu-29 +prb-25.
+Let Tacl/brack/+ Ta-16 --> +plb-24 Tu-29 Ep-14 +prb-25.
+Let Tph/np/------ Tph-15 --> Tu-33.
+Let Tph/np/-----+ Tph-15 --> Tu-33 P2-48.
+Let Tph/np/----+- Tph-15 --> Tu-33 +pco-28.
+Let Tph/np/----++ Tph-15 --> Tu-33 +pco-28 P2-48.
+Let Tph/np/---+-- Tph-15 --> N2-34+ Tu-33.
+Let Tph/np/---+-+ Tph-15 --> N2-34+ Tu-33 P2-48.
+Let Tph/np/---++- Tph-15 --> N2-34+ Tu-33 +pco-28.
+Let Tph/np/---+++ Tph-15 --> N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/--+--- Tph-15 --> P2-48 Tu-33.
+Let Tph/np/--+--+ Tph-15 --> P2-48 Tu-33 P2-48.
+Let Tph/np/--+-+- Tph-15 --> P2-48 Tu-33 +pco-28.
+Let Tph/np/--+-++ Tph-15 --> P2-48 Tu-33 +pco-28 P2-48.
+Let Tph/np/--++-- Tph-15 --> P2-48 N2-34+ Tu-33.
+Let Tph/np/--++-+ Tph-15 --> P2-48 N2-34+ Tu-33 P2-48.
+Let Tph/np/--+++- Tph-15 --> P2-48 N2-34+ Tu-33 +pco-28.
+Let Tph/np/--++++ Tph-15 --> P2-48 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/-+---- Tph-15 --> Tu-33 Tu-33.
+Let Tph/np/-+---+ Tph-15 --> Tu-33 Tu-33 P2-48.
+Let Tph/np/-+--+- Tph-15 --> Tu-33 Tu-33 +pco-28.
+Let Tph/np/-+--++ Tph-15 --> Tu-33 Tu-33 +pco-28 P2-48.
+Let Tph/np/-+-+-- Tph-15 --> Tu-33 N2-34+ Tu-33.
+Let Tph/np/-+-+-+ Tph-15 --> Tu-33 N2-34+ Tu-33 P2-48.
+Let Tph/np/-+-++- Tph-15 --> Tu-33 N2-34+ Tu-33 +pco-28.
+Let Tph/np/-+-+++ Tph-15 --> Tu-33 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/-++--- Tph-15 --> Tu-33 P2-48 Tu-33.
+Let Tph/np/-++--+ Tph-15 --> Tu-33 P2-48 Tu-33 P2-48.
+Let Tph/np/-++-+- Tph-15 --> Tu-33 P2-48 Tu-33 +pco-28.
+Let Tph/np/-++-++ Tph-15 --> Tu-33 P2-48 Tu-33 +pco-28 P2-48.
+Let Tph/np/-+++-- Tph-15 --> Tu-33 P2-48 N2-34+ Tu-33.
+Let Tph/np/-+++-+ Tph-15 --> Tu-33 P2-48 N2-34+ Tu-33 P2-48.
+Let Tph/np/-++++- Tph-15 --> Tu-33 P2-48 N2-34+ Tu-33 +pco-28.
+Let Tph/np/-+++++ Tph-15 --> Tu-33 P2-48 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/+----- Tph-15 --> CJ-54 Tu-33.
+Let Tph/np/+----+ Tph-15 --> CJ-54 Tu-33 P2-48.
+Let Tph/np/+---+- Tph-15 --> CJ-54 Tu-33 +pco-28.
+Let Tph/np/+---++ Tph-15 --> CJ-54 Tu-33 +pco-28 P2-48.
+Let Tph/np/+--+-- Tph-15 --> CJ-54 N2-34+ Tu-33.
+Let Tph/np/+--+-+ Tph-15 --> CJ-54 N2-34+ Tu-33 P2-48.
+Let Tph/np/+--++- Tph-15 --> CJ-54 N2-34+ Tu-33 +pco-28.
+Let Tph/np/+--+++ Tph-15 --> CJ-54 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/+-+--- Tph-15 --> CJ-54 P2-48 Tu-33.
+Let Tph/np/+-+--+ Tph-15 --> CJ-54 P2-48 Tu-33 P2-48.
+Let Tph/np/+-+-+- Tph-15 --> CJ-54 P2-48 Tu-33 +pco-28.
+Let Tph/np/+-+-++ Tph-15 --> CJ-54 P2-48 Tu-33 +pco-28 P2-48.
+Let Tph/np/+-++-- Tph-15 --> CJ-54 P2-48 N2-34+ Tu-33.
+Let Tph/np/+-++-+ Tph-15 --> CJ-54 P2-48 N2-34+ Tu-33 P2-48.
+Let Tph/np/+-+++- Tph-15 --> CJ-54 P2-48 N2-34+ Tu-33 +pco-28.
+Let Tph/np/+-++++ Tph-15 --> CJ-54 P2-48 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/++---- Tph-15 --> CJ-54 Tu-33 Tu-33.
+Let Tph/np/++---+ Tph-15 --> CJ-54 Tu-33 Tu-33 P2-48.
+Let Tph/np/++--+- Tph-15 --> CJ-54 Tu-33 Tu-33 +pco-28.
+Let Tph/np/++--++ Tph-15 --> CJ-54 Tu-33 Tu-33 +pco-28 P2-48.
+Let Tph/np/++-+-- Tph-15 --> CJ-54 Tu-33 N2-34+ Tu-33.
+Let Tph/np/++-+-+ Tph-15 --> CJ-54 Tu-33 N2-34+ Tu-33 P2-48.
+Let Tph/np/++-++- Tph-15 --> CJ-54 Tu-33 N2-34+ Tu-33 +pco-28.
+Let Tph/np/++-+++ Tph-15 --> CJ-54 Tu-33 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/np/+++--- Tph-15 --> CJ-54 Tu-33 P2-48 Tu-33.
+Let Tph/np/+++--+ Tph-15 --> CJ-54 Tu-33 P2-48 Tu-33 P2-48.
+Let Tph/np/+++-+- Tph-15 --> CJ-54 Tu-33 P2-48 Tu-33 +pco-28.
+Let Tph/np/+++-++ Tph-15 --> CJ-54 Tu-33 P2-48 Tu-33 +pco-28 P2-48.
+Let Tph/np/++++-- Tph-15 --> CJ-54 Tu-33 P2-48 N2-34+ Tu-33.
+Let Tph/np/++++-+ Tph-15 --> CJ-54 Tu-33 P2-48 N2-34+ Tu-33 P2-48.
+Let Tph/np/+++++- Tph-15 --> CJ-54 Tu-33 P2-48 N2-34+ Tu-33 +pco-28.
+Let Tph/np/++++++ Tph-15 --> CJ-54 Tu-33 P2-48 N2-34+ Tu-33 +pco-28 P2-48.
+Let Tph/n1-r/----- Tph-15 --> Tu-32.
+Let Tph/n1-r/----+ Tph-15 --> N1-35+ Tu-32.
+Let Tph/n1-r/---+- Tph-15 --> NG-38 Tu-32.
+Let Tph/n1-r/---++ Tph-15 --> NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/--+-- Tph-15 --> P2-48 Tu-32.
+Let Tph/n1-r/--+-+ Tph-15 --> P2-48 N1-35+ Tu-32.
+Let Tph/n1-r/--++- Tph-15 --> P2-48 NG-38 Tu-32.
+Let Tph/n1-r/--+++ Tph-15 --> P2-48 NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/-+--- Tph-15 --> Tu-33 Tu-32.
+Let Tph/n1-r/-+--+ Tph-15 --> Tu-33 N1-35+ Tu-32.
+Let Tph/n1-r/-+-+- Tph-15 --> Tu-33 NG-38 Tu-32.
+Let Tph/n1-r/-+-++ Tph-15 --> Tu-33 NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/-++-- Tph-15 --> Tu-33 P2-48 Tu-32.
+Let Tph/n1-r/-++-+ Tph-15 --> Tu-33 P2-48 N1-35+ Tu-32.
+Let Tph/n1-r/-+++- Tph-15 --> Tu-33 P2-48 NG-38 Tu-32.
+Let Tph/n1-r/-++++ Tph-15 --> Tu-33 P2-48 NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/+---- Tph-15 --> CJ-54 Tu-32.
+Let Tph/n1-r/+---+ Tph-15 --> CJ-54 N1-35+ Tu-32.
+Let Tph/n1-r/+--+- Tph-15 --> CJ-54 NG-38 Tu-32.
+Let Tph/n1-r/+--++ Tph-15 --> CJ-54 NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/+-+-- Tph-15 --> CJ-54 P2-48 Tu-32.
+Let Tph/n1-r/+-+-+ Tph-15 --> CJ-54 P2-48 N1-35+ Tu-32.
+Let Tph/n1-r/+-++- Tph-15 --> CJ-54 P2-48 NG-38 Tu-32.
+Let Tph/n1-r/+-+++ Tph-15 --> CJ-54 P2-48 NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/++--- Tph-15 --> CJ-54 Tu-33 Tu-32.
+Let Tph/n1-r/++--+ Tph-15 --> CJ-54 Tu-33 N1-35+ Tu-32.
+Let Tph/n1-r/++-+- Tph-15 --> CJ-54 Tu-33 NG-38 Tu-32.
+Let Tph/n1-r/++-++ Tph-15 --> CJ-54 Tu-33 NG-38 N1-35+ Tu-32.
+Let Tph/n1-r/+++-- Tph-15 --> CJ-54 Tu-33 P2-48 Tu-32.
+Let Tph/n1-r/+++-+ Tph-15 --> CJ-54 Tu-33 P2-48 N1-35+ Tu-32.
+Let Tph/n1-r/++++- Tph-15 --> CJ-54 Tu-33 P2-48 NG-38 Tu-32.
+Let Tph/n1-r/+++++ Tph-15 --> CJ-54 Tu-33 P2-48 NG-38 N1-35+ Tu-32.
+Let Tph/pp/--- Tph-15 --> P2-48.
+Let Tph/pp/--+ Tph-15 --> P2-49+ P2-48.
+Let Tph/pp/-+- Tph-15 --> NG-38 P2-48.
+Let Tph/pp/-++ Tph-15 --> NG-38 P2-49+ P2-48.
+Let Tph/pp/+-- Tph-15 --> Tu-33 P2-48.
+Let Tph/pp/+-+ Tph-15 --> Tu-33 P2-49+ P2-48.
+Let Tph/pp/++- Tph-15 --> Tu-33 NG-38 P2-48.
+Let Tph/pp/+++ Tph-15 --> Tu-33 NG-38 P2-49+ P2-48.
+Let Tph/ap/--- Tph-15 --> A2-45.
+Let Tph/ap/--+ Tph-15 --> A2-46+ A2-45.
+Let Tph/ap/-+- Tph-15 --> NG-38 A2-45.
+Let Tph/ap/-++ Tph-15 --> NG-38 A2-46+ A2-45.
+Let Tph/ap/+-- Tph-15 --> Tu-33 A2-45.
+Let Tph/ap/+-+ Tph-15 --> Tu-33 A2-46+ A2-45.
+Let Tph/ap/++- Tph-15 --> Tu-33 NG-38 A2-45.
+Let Tph/ap/+++ Tph-15 --> Tu-33 NG-38 A2-46+ A2-45.
+Let Tph/vp/- Tph-15 --> V1-41.
+Let Tph/vp/+ Tph-15 --> V1-42+ V1-41.
+Let NP/np_pco Tu-33 --> Tu-33 +pco-28.
+Let N1/n1_pco-r N1-30 --> Tu-32 +pco-28.
+Let PP/pp_pco P2-47 --> P2-48 +pco-28.
+Let AP/ap_pco A2-44 --> A2-45 +pco-28.
+Let VP/v1_pco V1-40 --> V1-41 +pco-28.
+Let S/pp-np_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-np_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-ing_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-ing_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-inf_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-inf_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-prt_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-prt_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-sfin_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-sfin_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-sinf_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-sinf_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-sing_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-sing_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-whs_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-whs_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-pp_s/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-pp_s/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/pp-ap_s-r/- Tu-29 --> P2-48 Tu-29.
+Let S/pp-ap_s-r/+ Tu-29 --> P2-48 +pco-28 Tu-29.
+Let S/ppart_s-r/- Tu-29 --> V1-41 Tu-29.
+Let S/ppart_s-r/+ Tu-29 --> V1-41 +pco-28 Tu-29.
+Let S/past_s-r/- Tu-29 --> V0-43 Tu-29.
+Let S/past_s-r/+ Tu-29 --> V0-43 +pco-28 Tu-29.
+Let S/ing_s-r/- Tu-29 --> V1-41 Tu-29.
+Let S/ing_s-r/+ Tu-29 --> V1-41 +pco-28 Tu-29.
+Let S/np-nt-adv_s/- Tu-29 --> Tu-33 Tu-29.
+Let S/np-nt-adv_s/+ Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/np-ms-adv_s/- Tu-29 --> Tu-33 Tu-29.
+Let S/np-ms-adv_s/+ Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/adv_s/- Tu-29 --> A2-45 Tu-29.
+Let S/adv_s/+ Tu-29 --> A2-45 +pco-28 Tu-29.
+Let S/ap_s-r Tu-29 --> A2-45 +pco-28 Tu-29.
+Let S/s_pco_pp Tu-29 --> Tu-29 +pco-28 P2-48.
+Let S/s_pco_ppart Tu-29 --> Tu-29 +pco-28 V1-41.
+Let S/s_pco_past-r Tu-29 --> Tu-29 +pco-28 V1-41.
+Let S/s_pco_ing Tu-29 --> Tu-29 +pco-28 V1-41.
+Let S/s_pco_np-nt-adv Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_pco_np-ms-adv Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_pco_adv Tu-29 --> Tu-29 +pco-28 A2-45.
+Let S/s_pco_a1-r Tu-29 --> Tu-29 +pco-28 A1-51.
+Let S/s_pco_np-voc-r Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_np-voc-r Tu-29 --> Tu-29 Tu-33.
+Let S/s_pco_np-voc1-r Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_pco_np-voc2-r Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/np-voc_pco_s1-r Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/np-voc_pco_s2 Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/np-voc_pco_s3 Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/np-wh_pco_s Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/s_pco_np-wh Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_np-refl-r/- Tu-29 --> Tu-29 Tu-33.
+Let S/s_np-refl-r/+ Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/np-refl_pco_s Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/s_tag-qu/- Tu-29 --> Tu-29 +pco-28 V0-56 Tu-33 +pqu-20.
+Let S/s_tag-qu/+ Tu-29 --> Tu-29 +pco-28 V0-56 NG-38 Tu-33 +pqu-20.
+Let S/np-nm_pco_s-r Tu-29 --> Tu-33 +pco-28 Tu-29.
+Let S/s_pco_np-nm-r Tu-29 --> Tu-29 +pco-28 Tu-33.
+Let S/s_pco_v_np-name-r Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33.
+Let S/s_pco_v_np-name_pco_n1-nm-r Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33 +pco-28 Tu-32.
+Let S/s_pco_v_np-name_pco_np-nm-r Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33 +pco-28 Tu-33.
+Let S/s_pco_v_np-pro-r Tu-29 --> Tu-29 +pco-28 V0-43 Tu-33.
+Let S/np_vp Tu-29 --> Tu-33 V1-41.
+Let S/n1_vp Tu-29 --> Tu-32 V1-41.
+Let S/np-poss_vp-r Tu-29 --> Tu-33 V1-41.
+Let S/np_ing-r Tu-29 --> Tu-33 V1-41.
+Let S/n1_ing-r Tu-29 --> Tu-32 V1-41.
+Let S/scomp_vp-r Tu-29 --> Tu-29 V1-41.
+Let S/s-ing_vp-r Tu-29 --> Tu-29 V1-41.
+Let S/s-wh_vp-r Tu-29 --> Tu-29 V1-41.
+Let S/ing_vp-r Tu-29 --> V1-41 V1-41.
+Let S/inf_vp-r Tu-29 --> V1-41 V1-41.
+Let S/pp_vp-r Tu-29 --> P2-48 V1-41.
+Let S/advp_vp-r Tu-29 --> A2-45 V1-41.
+Let S/s_be_vp-r/- Tu-29 --> Tu-29 V0-56 nopunct-58.
+Let S/s_be_vp-r/+ Tu-29 --> Tu-29 V0-56 NG-38 nopunct-58.
+Let S/s-wh_be_vp-r Tu-29 --> Tu-29 V0-56 nopunct-58.
+Let S/sai/- Tu-29 --> V0-56 Tu-29.
+Let S/sai/+ Tu-29 --> V0-56 NG-38 Tu-29.
+Let S/sai-be1-r/--- Tu-29 --> V0-56 Tu-33 Tu-33.
+Let S/sai-be1-r/--+ Tu-29 --> V0-56 Tu-33 Tu-33 A2-45.
+Let S/sai-be1-r/-+- Tu-29 --> V0-56 Tu-33 NG-38 Tu-33.
+Let S/sai-be1-r/-++ Tu-29 --> V0-56 Tu-33 NG-38 Tu-33 A2-45.
+Let S/sai-be1-r/+-- Tu-29 --> V0-56 NG-38 Tu-33 Tu-33.
+Let S/sai-be1-r/+-+ Tu-29 --> V0-56 NG-38 Tu-33 Tu-33 A2-45.
+Let S/sai-be1-r/++- Tu-29 --> V0-56 NG-38 Tu-33 NG-38 Tu-33.
+Let S/sai-be1-r/+++ Tu-29 --> V0-56 NG-38 Tu-33 NG-38 Tu-33 A2-45.
+Let S/sai-be-n1-r/--- Tu-29 --> V0-56 Tu-33 Tu-32.
+Let S/sai-be-n1-r/--+ Tu-29 --> V0-56 Tu-33 Tu-32 A2-45.
+Let S/sai-be-n1-r/-+- Tu-29 --> V0-56 Tu-33 NG-38 Tu-32.
+Let S/sai-be-n1-r/-++ Tu-29 --> V0-56 Tu-33 NG-38 Tu-32 A2-45.
+Let S/sai-be-n1-r/+-- Tu-29 --> V0-56 NG-38 Tu-33 Tu-32.
+Let S/sai-be-n1-r/+-+ Tu-29 --> V0-56 NG-38 Tu-33 Tu-32 A2-45.
+Let S/sai-be-n1-r/++- Tu-29 --> V0-56 NG-38 Tu-33 NG-38 Tu-32.
+Let S/sai-be-n1-r/+++ Tu-29 --> V0-56 NG-38 Tu-33 NG-38 Tu-32 A2-45.
+Let S/sai-be2/-- Tu-29 --> V0-56 Tu-33 P2-48.
+Let S/sai-be2/-+ Tu-29 --> V0-56 Tu-33 NG-38 P2-48.
+Let S/sai-be2/+- Tu-29 --> V0-56 NG-38 Tu-33 P2-48.
+Let S/sai-be2/++ Tu-29 --> V0-56 NG-38 Tu-33 NG-38 P2-48.
+Let S/sai-be3/-- Tu-29 --> V0-56 Tu-33 A2-45.
+Let S/sai-be3/-+ Tu-29 --> V0-56 Tu-33 NG-38 A2-45.
+Let S/sai-be3/+- Tu-29 --> V0-56 NG-38 Tu-33 A2-45.
+Let S/sai-be3/++ Tu-29 --> V0-56 NG-38 Tu-33 NG-38 A2-45.
+Let S/sai-be4/-- Tu-29 --> V0-56 Tu-33 PT-37.
+Let S/sai-be4/-+ Tu-29 --> V0-56 Tu-33 NG-38 PT-37.
+Let S/sai-be4/+- Tu-29 --> V0-56 NG-38 Tu-33 PT-37.
+Let S/sai-be4/++ Tu-29 --> V0-56 NG-38 Tu-33 NG-38 PT-37.
+Let S/sai-ought/-- Tu-29 --> V0-56 Tu-33 V1-41.
+Let S/sai-ought/-+ Tu-29 --> V0-56 Tu-33 NG-38 V1-41.
+Let S/sai-ought/+- Tu-29 --> V0-56 NG-38 Tu-33 V1-41.
+Let S/sai-ought/++ Tu-29 --> V0-56 NG-38 Tu-33 NG-38 V1-41.
+Let S/comp Tu-29 --> CP-55 Tu-29.
+Let S/np-wh_s-gap Tu-29 --> Tu-33 Tu-29.
+Let S/np-wh_vp Tu-29 --> Tu-33 V1-41.
+Let S/pp-wh_s Tu-29 --> P2-48 Tu-29.
+Let S/pp-np-wh_s Tu-29 --> P2-48 Tu-29.
+Let S/pp-wh_s-be Tu-29 --> P2-48 V1-41.
+Let S/what_pp-if-r Tu-29 --> DT-59 P2-48.
+Let S/imp Tu-29 --> V1-41.
+Let S/cj-beg_s Tu-29 --> CJ-54 Tu-29.
+Let S/cj-end_s/-- Tu-29 --> CJ-54 Tu-29.
+Let S/cj-end_s/-+ Tu-29 --> CJ-54 +prb-25 Tu-29.
+Let S/cj-end_s/+- Tu-29 --> +plb-24 CJ-54 Tu-29.
+Let S/cj-end_s/++ Tu-29 --> +plb-24 CJ-54 +prb-25 Tu-29.
+Let S/s_s-coord/- Tu-29 --> Tu-29 Tu-29.
+Let S/s_s-coord/+ Tu-29 --> Tu-29 +pco-28 Tu-29.
+Let S/s_s-coord-r/- Tu-29 --> Tu-29 Tu-29.
+Let S/s_s-coord-r/+ Tu-29 --> Tu-29 +pco-28 Tu-29.
+Let V/v_prt V0-43 --> V0-43 PT-37.
+Let V1/v_n_of_np V1-41 --> V0-43 N0-50 P0-53 Tu-33.
+Let V1/v V1-41 --> V0-43.
+Let V1/v_np V1-41 --> V0-43 Tu-33.
+Let V1/v_np-pro V1-41 --> V0-43 Tu-33.
+Let V1/v_np-name V1-41 --> V0-43 Tu-33.
+Let V1/v_np-tit V1-41 --> V0-43 Tu-33.
+Let V1/v_np-pl V1-41 --> V0-43 Tu-33.
+Let V1/v_np-org V1-41 --> V0-43 Tu-33.
+Let V1/v_np-refl V1-41 --> V0-43 Tu-33.
+Let V1/v_np-dir V1-41 --> V0-43 Tu-33.
+Let V1/v_n1 V1-41 --> V0-43 Tu-32.
+Let V1/v_n1-tit V1-41 --> V0-43 Tu-32.
+Let V1/v_np-ms V1-41 --> V0-43 Tu-33.
+Let V1/v_np-num V1-41 --> V0-43 Tu-33.
+Let V1/v_np_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-pro_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-name_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-tit_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-pl_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-org_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-refl_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_n1_prt V1-41 --> V0-43 Tu-32 PT-37.
+Let V1/v_n1-tit_prt V1-41 --> V0-43 Tu-32 PT-37.
+Let V1/v_np-ms_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_np-num_prt V1-41 --> V0-43 Tu-33 PT-37.
+Let V1/v_pp V1-41 --> V0-43 P2-48.
+Let V1/v_pp-of V1-41 --> V0-43 P2-48.
+Let V1/v_pp-wh V1-41 --> V0-43 P2-48.
+Let V1/v_inf V1-41 --> V0-43 V1-41.
+Let V1/v_ing V1-41 --> V0-43 V1-41.
+Let V1/v_ing_pp V1-41 --> V0-43 V1-41 P2-48.
+Let V1/v_pp_ing-hs-r V1-41 --> V0-43 P2-48 V1-41.
+Let V1/v_ppart V1-41 --> V0-43 V1-41.
+Let V1/v_bse V1-41 --> V0-43 V1-41.
+Let V1/v_s V1-41 --> V0-43 Tu-29.
+Let V1/v_tcl V1-41 --> V0-43 Ta-16.
+Let V1/v_s-subjgap-r V1-41 --> V0-43 V1-60.
+Let V1/v_ap V1-41 --> V0-43 A2-45.
+Let V1/v_np_np V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_np-pl V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_np-org V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_np-name V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_np-tit V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_np-ms V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_np-num V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_n1_np V1-41 --> V0-43 Tu-32 Tu-33.
+Let V1/v_np-pro_np V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-pl V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-org V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-name V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-tit V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-pro V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-ms V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pro_np-num V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np-pl V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np-org V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np-name V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np-tit V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np-ms V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-name_np-num V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np-pl-r V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np-org-r V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np-pl V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np-org V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np-name V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np-name V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np-tit V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np-tit V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np-ms V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np-ms V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-pl_np-num V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-org_np-num V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-refl_np V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-refl_np-pl V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-refl_np-name V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-refl_np-tit V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-refl_np-ms V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np-refl_np-num V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_prt_np V1-41 --> V0-43 Tu-33 PT-37 Tu-33.
+Let V1/v_np_prt_n1 V1-41 --> V0-43 Tu-33 PT-37 Tu-32.
+Let V1/v_n1_prt_np V1-41 --> V0-43 Tu-32 PT-37 Tu-33.
+Let V1/v_np-pro_prt_np V1-41 --> V0-43 Tu-33 PT-37 Tu-33.
+Let V1/v_np-name_prt_np V1-41 --> V0-43 Tu-33 PT-37 Tu-33.
+Let V1/v_np-pl_prt_np V1-41 --> V0-43 Tu-33 PT-37 Tu-33.
+Let V1/v_np-org_prt_np V1-41 --> V0-43 Tu-33 PT-37 Tu-33.
+Let V1/v_np-refl_prt_np V1-41 --> V0-43 Tu-33 PT-37 Tu-33.
+Let V1/v_np_np_prt V1-41 --> V0-43 Tu-33 Tu-33 PT-37.
+Let V1/v_np_np-wh V1-41 --> V0-43 Tu-33 Tu-33.
+Let V1/v_np_inf V1-41 --> V0-43 Tu-33 V1-41.
+Let V1/v_np_prt_inf V1-41 --> V0-43 Tu-33 PT-37 V1-41.
+Let V1/v_np_ing V1-41 --> V0-43 Tu-33 V1-41.
+Let V1/v_np_ing_pp V1-41 --> V0-43 Tu-33 V1-41 P2-48.
+Let V1/v_poss_ing V1-41 --> V0-43 Tu-33 V1-41.
+Let V1/v_poss_ing_pp V1-41 --> V0-43 Tu-33 V1-41 P2-48.
+Let V1/v_np_prt_ing V1-41 --> V0-43 Tu-33 PT-37 V1-41.
+Let V1/v_np_pp V1-41 --> V0-43 Tu-33 P2-48.
+Let V1/v_np_prt_pp V1-41 --> V0-43 Tu-33 PT-37 P2-48.
+Let V1/v_np_of-np V1-41 --> V0-43 Tu-33 P2-48.
+Let V1/v_np_of-ing V1-41 --> V0-43 Tu-33 P2-48.
+Let V1/v_n1_pp V1-41 --> V0-43 Tu-32 P2-48.
+Let V1/v_pp_np-hs-r V1-41 --> V0-43 P2-48 Tu-33.
+Let V1/v_np_pp-wh V1-41 --> V0-43 Tu-33 P2-48.
+Let V1/v_pp_pp V1-41 --> V0-43 P2-48 P2-48.
+Let V1/v_pp_pp-wh V1-41 --> V0-43 P2-48 P2-48.
+Let V1/v_pp_s V1-41 --> V0-43 P2-48 Tu-29.
+Let V1/v_pp_s-wh V1-41 --> V0-43 P2-48 Tu-29.
+Let V1/v_pp_np-wh V1-41 --> V0-43 P2-48 Tu-33.
+Let V1/v_pp_inf V1-41 --> V0-43 P2-48 V1-41.
+Let V1/v_pp_ap V1-41 --> V0-43 P2-48 A2-45.
+Let V1/v_np_pp_pp V1-41 --> V0-43 Tu-33 P2-48 P2-48.
+Let V1/v_np_np-ms_inf V1-41 --> V0-43 Tu-33 Tu-33 V1-41.
+Let V1/v_np_np-nt_inf V1-41 --> V0-43 Tu-33 Tu-33 V1-41.
+Let V1/v_np_np-ms_pp V1-41 --> V0-43 Tu-33 Tu-33 P2-48.
+Let V1/v_np_np-nt_pp V1-41 --> V0-43 Tu-33 Tu-33 P2-48.
+Let V1/v_np_s V1-41 --> V0-43 Tu-33 Tu-29.
+Let V1/v_np_prt_s V1-41 --> V0-43 Tu-33 PT-37 Tu-29.
+Let V1/v_np_ap V1-41 --> V0-43 Tu-33 A2-45.
+Let V1/v_ap_np-hs-r V1-41 --> V0-43 A2-45 Tu-33.
+Let V1/v_np_prt_ap V1-41 --> V0-43 Tu-33 PT-37 A2-45.
+Let V1/v_np_np_s V1-41 --> V0-43 Tu-33 Tu-33 Tu-29.
+Let V1/adv_vp V1-41 --> A2-45 V1-41.
+Let V1/vp_advp V1-41 --> V1-41 A2-45.
+Let V1/vp_pp V1-41 --> V1-41 P2-48.
+Let V1/vp_np-nt-adv V1-41 --> V1-41 Tu-33.
+Let V1/vp_np-ms-adv V1-41 --> V1-41 Tu-33.
+Let V1/np-nt-adv_vp-r V1-41 --> Tu-33 V1-41.
+Let V1/np-ms-adv_vp-r V1-41 --> Tu-33 V1-41.
+Let V1/vp_inf-r V1-41 --> V1-41 V1-41.
+Let V1/not_vp V1-41 --> NG-38 V1-41.
+Let V1/cj-beg_vp V1-41 --> CJ-54 V1-41.
+Let V1/cj-end_vp/-- V1-41 --> CJ-54 V1-41.
+Let V1/cj-end_vp/-+ V1-41 --> CJ-54 +prb-25 V1-41.
+Let V1/cj-end_vp/+- V1-41 --> +plb-24 CJ-54 V1-41.
+Let V1/cj-end_vp/++ V1-41 --> +plb-24 CJ-54 +prb-25 V1-41.
+Let V1/vp_vp-coord/- V1-41 --> V1-41 V1-41.
+Let V1/vp_vp-coord/+ V1-41 --> V1-41 +pco-28 V1-41.
+Let V1/vp_vp-coord-r/- V1-41 --> V1-41 V1-41.
+Let V1/vp_vp-coord-r/+ V1-41 --> V1-41 +pco-28 V1-41.
+Let V/cj-beg_v V0-43 --> CJ-54 V0-43.
+Let V/cj-end_v V0-43 --> CJ-54 V0-43.
+Let V/sl-end_v V0-43 --> +psl-27 V0-43.
+Let V/v_v-coord/- V0-43 --> V0-43 V0-43.
+Let V/v_v-coord/+ V0-43 --> V0-43 +pco-28 V0-43.
+Let V/v_v-coord-r/- V0-43 --> V0-43 V0-43.
+Let V/v_v-coord-r/+ V0-43 --> V0-43 +pco-28 V0-43.
+Let V1/be_ppart/-- V1-41 --> V0-56 V1-41.
+Let V1/be_ppart/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/be_ppart/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/be_ppart/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/be_past-r/-- V1-41 --> V0-56 V1-41.
+Let V1/be_past-r/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/be_past-r/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/be_past-r/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/be_ing/-- V1-41 --> V0-56 V1-41.
+Let V1/be_ing/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/be_ing/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/be_ing/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/be_inf/-- V1-41 --> V0-56 V1-41.
+Let V1/be_inf/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/be_inf/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/be_inf/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/be_pp/--- V1-41 --> V0-56 P2-48.
+Let V1/be_pp/--+ V1-41 --> V0-56 NG-38 P2-48.
+Let V1/be_pp/-+- V1-41 --> V0-56 P2-48 P2-48.
+Let V1/be_pp/-++ V1-41 --> V0-56 P2-48 NG-38 P2-48.
+Let V1/be_pp/+-- V1-41 --> V0-56 A2-45 P2-48.
+Let V1/be_pp/+-+ V1-41 --> V0-56 A2-45 NG-38 P2-48.
+Let V1/be_pp/++- V1-41 --> V0-56 A2-45 P2-48 P2-48.
+Let V1/be_pp/+++ V1-41 --> V0-56 A2-45 P2-48 NG-38 P2-48.
+Let V1/be_prt/- V1-41 --> V0-56 PT-37.
+Let V1/be_prt/+ V1-41 --> V0-56 NG-38 PT-37.
+Let V1/be_ap/- V1-41 --> V0-56 A2-45.
+Let V1/be_ap/+ V1-41 --> V0-56 P2-48 A2-45.
+Let V1/be_np/---- V1-41 --> V0-56 Tu-33.
+Let V1/be_np/---+ V1-41 --> V0-56 Tu-33 PT-37.
+Let V1/be_np/--+- V1-41 --> V0-56 NG-38 Tu-33.
+Let V1/be_np/--++ V1-41 --> V0-56 NG-38 Tu-33 PT-37.
+Let V1/be_np/-+-- V1-41 --> V0-56 P2-48 Tu-33.
+Let V1/be_np/-+-+ V1-41 --> V0-56 P2-48 Tu-33 PT-37.
+Let V1/be_np/-++- V1-41 --> V0-56 P2-48 NG-38 Tu-33.
+Let V1/be_np/-+++ V1-41 --> V0-56 P2-48 NG-38 Tu-33 PT-37.
+Let V1/be_np/+--- V1-41 --> V0-56 A2-45 Tu-33.
+Let V1/be_np/+--+ V1-41 --> V0-56 A2-45 Tu-33 PT-37.
+Let V1/be_np/+-+- V1-41 --> V0-56 A2-45 NG-38 Tu-33.
+Let V1/be_np/+-++ V1-41 --> V0-56 A2-45 NG-38 Tu-33 PT-37.
+Let V1/be_np/++-- V1-41 --> V0-56 A2-45 P2-48 Tu-33.
+Let V1/be_np/++-+ V1-41 --> V0-56 A2-45 P2-48 Tu-33 PT-37.
+Let V1/be_np/+++- V1-41 --> V0-56 A2-45 P2-48 NG-38 Tu-33.
+Let V1/be_np/++++ V1-41 --> V0-56 A2-45 P2-48 NG-38 Tu-33 PT-37.
+Let V1/be_n1/---- V1-41 --> V0-56 Tu-32.
+Let V1/be_n1/---+ V1-41 --> V0-56 Tu-32 PT-37.
+Let V1/be_n1/--+- V1-41 --> V0-56 NG-38 Tu-32.
+Let V1/be_n1/--++ V1-41 --> V0-56 NG-38 Tu-32 PT-37.
+Let V1/be_n1/-+-- V1-41 --> V0-56 P2-48 Tu-32.
+Let V1/be_n1/-+-+ V1-41 --> V0-56 P2-48 Tu-32 PT-37.
+Let V1/be_n1/-++- V1-41 --> V0-56 P2-48 NG-38 Tu-32.
+Let V1/be_n1/-+++ V1-41 --> V0-56 P2-48 NG-38 Tu-32 PT-37.
+Let V1/be_n1/+--- V1-41 --> V0-56 A2-45 Tu-32.
+Let V1/be_n1/+--+ V1-41 --> V0-56 A2-45 Tu-32 PT-37.
+Let V1/be_n1/+-+- V1-41 --> V0-56 A2-45 NG-38 Tu-32.
+Let V1/be_n1/+-++ V1-41 --> V0-56 A2-45 NG-38 Tu-32 PT-37.
+Let V1/be_n1/++-- V1-41 --> V0-56 A2-45 P2-48 Tu-32.
+Let V1/be_n1/++-+ V1-41 --> V0-56 A2-45 P2-48 Tu-32 PT-37.
+Let V1/be_n1/+++- V1-41 --> V0-56 A2-45 P2-48 NG-38 Tu-32.
+Let V1/be_n1/++++ V1-41 --> V0-56 A2-45 P2-48 NG-38 Tu-32 PT-37.
+Let V1/be_s V1-41 --> V0-56 Tu-29.
+Let V1/be_ta V1-41 --> V0-56 Ta-16.
+Let V1/be_t-quo/- V1-41 --> V0-56 Tu-29.
+Let V1/be_t-quo/+ V1-41 --> V0-56 +pcl-22 Tu-29.
+Let V1/be_adv_ppart V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/be_adv_past-r V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/be_adv_ing V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/be_adv_inf V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/be_adv_pp/- V1-41 --> V0-56 Tu-33 P2-48.
+Let V1/be_adv_pp/+ V1-41 --> V0-56 Tu-33 NG-38 P2-48.
+Let V1/be_adv_ap/- V1-41 --> V0-56 Tu-33 A2-45.
+Let V1/be_adv_ap/+ V1-41 --> V0-56 Tu-33 NG-38 A2-45.
+Let V1/be_adv_np/-- V1-41 --> V0-56 Tu-33 Tu-33.
+Let V1/be_adv_np/-+ V1-41 --> V0-56 Tu-33 Tu-33 PT-37.
+Let V1/be_adv_np/+- V1-41 --> V0-56 Tu-33 NG-38 Tu-33.
+Let V1/be_adv_np/++ V1-41 --> V0-56 Tu-33 NG-38 Tu-33 PT-37.
+Let V1/be_adv_n1/-- V1-41 --> V0-56 Tu-33 Tu-32.
+Let V1/be_adv_n1/-+ V1-41 --> V0-56 Tu-33 Tu-32 PT-37.
+Let V1/be_adv_n1/+- V1-41 --> V0-56 Tu-33 NG-38 Tu-32.
+Let V1/be_adv_n1/++ V1-41 --> V0-56 Tu-33 NG-38 Tu-32 PT-37.
+Let V1/do_bse/-- V1-41 --> V0-56 V1-41.
+Let V1/do_bse/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/do_bse/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/do_bse/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/do_np/-- V1-41 --> V0-56 Tu-33.
+Let V1/do_np/-+ V1-41 --> V0-56 P2-48 Tu-33.
+Let V1/do_np/+- V1-41 --> V0-56 A2-45 Tu-33.
+Let V1/do_np/++ V1-41 --> V0-56 A2-45 P2-48 Tu-33.
+Let V1/do_np_np/-- V1-41 --> V0-56 Tu-33 Tu-33.
+Let V1/do_np_np/-+ V1-41 --> V0-56 P2-48 Tu-33 Tu-33.
+Let V1/do_np_np/+- V1-41 --> V0-56 A2-45 Tu-33 Tu-33.
+Let V1/do_np_np/++ V1-41 --> V0-56 A2-45 P2-48 Tu-33 Tu-33.
+Let V1/do_np_pp V1-41 --> V0-56 Tu-33 P2-48.
+Let V1/do_pp V1-41 --> V0-56 P2-48.
+Let V1/do_as-pp V1-41 --> V0-56 P2-48.
+Let V1/do_as-s V1-41 --> V0-56 P2-48.
+Let V1/do_adv_bse V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/to_bse/- V1-41 --> V0-56 V1-41.
+Let V1/to_bse/+ V1-41 --> V0-56 A2-45 V1-41.
+Let V1/to_adv_bse V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/have_ppart-r/-- V1-41 --> V0-56 V1-41.
+Let V1/have_ppart-r/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/have_ppart-r/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/have_ppart-r/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/have_past/-- V1-41 --> V0-56 V1-41.
+Let V1/have_past/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/have_past/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/have_past/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/have_inf/-- V1-41 --> V0-56 V1-41.
+Let V1/have_inf/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/have_inf/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/have_inf/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/have_np_ppt/-- V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/have_np_ppt/-+ V1-41 --> V0-56 Tu-33 P2-48 V1-41.
+Let V1/have_np_ppt/+- V1-41 --> V0-56 Tu-33 A2-45 V1-41.
+Let V1/have_np_ppt/++ V1-41 --> V0-56 Tu-33 A2-45 P2-48 V1-41.
+Let V1/have_np_bse/-- V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/have_np_bse/-+ V1-41 --> V0-56 Tu-33 P2-48 V1-41.
+Let V1/have_np_bse/+- V1-41 --> V0-56 Tu-33 A2-45 V1-41.
+Let V1/have_np_bse/++ V1-41 --> V0-56 Tu-33 A2-45 P2-48 V1-41.
+Let V1/have_np/-- V1-41 --> V0-56 Tu-33.
+Let V1/have_np/-+ V1-41 --> V0-56 P2-48 Tu-33.
+Let V1/have_np/+- V1-41 --> V0-56 A2-45 Tu-33.
+Let V1/have_np/++ V1-41 --> V0-56 A2-45 P2-48 Tu-33.
+Let V1/have_n1/-- V1-41 --> V0-56 Tu-32.
+Let V1/have_n1/-+ V1-41 --> V0-56 P2-48 Tu-32.
+Let V1/have_n1/+- V1-41 --> V0-56 A2-45 Tu-32.
+Let V1/have_n1/++ V1-41 --> V0-56 A2-45 P2-48 Tu-32.
+Let V1/have_adv_ppart-r V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/have_adv_past V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/have_adv_inf V1-41 --> V0-56 Tu-33 V1-41.
+Let V1/have_np_adv_ppt V1-41 --> V0-56 Tu-33 Tu-33 V1-41.
+Let V1/have_np_adv_bse V1-41 --> V0-56 Tu-33 Tu-33 V1-41.
+Let V1/have_adv_np V1-41 --> V0-56 Tu-33 Tu-33.
+Let V1/have_adv_n1 V1-41 --> V0-56 Tu-33 Tu-32.
+Let V1/have_adver_bse V1-41 --> V0-56 A0-52 V1-41.
+Let V1/have_advest_bse V1-41 --> V0-56 A0-52 V1-41.
+Let V1/have_np_on/- V1-41 --> V0-56 Tu-33 PT-37.
+Let V1/have_np_on/+ V1-41 --> V0-56 Tu-33 PT-37 Tu-29.
+Let V1/had_on/-- V1-41 --> V0-56 PT-37.
+Let V1/had_on/-+ V1-41 --> V0-56 PT-37 Tu-29.
+Let V1/had_on/+- V1-41 --> V0-56 PT-37 P2-48.
+Let V1/had_on/++ V1-41 --> V0-56 PT-37 P2-48 Tu-29.
+Let V1/have_as V1-41 --> V0-56 P2-48.
+Let V1/modal_bse/-- V1-41 --> V0-56 V1-41.
+Let V1/modal_bse/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/modal_bse/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/modal_bse/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/cat_inf/-- V1-41 --> V0-56 V1-41.
+Let V1/cat_inf/-+ V1-41 --> V0-56 P2-48 V1-41.
+Let V1/cat_inf/+- V1-41 --> V0-56 A2-45 V1-41.
+Let V1/cat_inf/++ V1-41 --> V0-56 A2-45 P2-48 V1-41.
+Let V1/be-ellip_pdo V1-41 --> V0-56 NG-38 +pdo-23.
+Let V1/do-ellip_pdo V1-41 --> V0-56 NG-38 +pdo-23.
+Let V1/have-ellip_pdo-r/- V1-41 --> V0-56 NG-38 +pdo-23.
+Let V1/have-ellip_pdo-r/+ V1-41 --> V0-56 NG-38 V0-43 +pdo-23.
+Let V1/to-ellip_pdo-r/- V1-41 --> V0-56 +pdo-23.
+Let V1/to-ellip_pdo-r/+ V1-41 --> V0-56 NG-38 +pdo-23.
+Let V1/modal-ellip_pdo-r/- V1-41 --> V0-56 +pdo-23.
+Let V1/modal-ellip_pdo-r/+ V1-41 --> V0-56 NG-38 +pdo-23.
+Let V1/cat-ellip_pdo-r/-- V1-41 --> V0-56 +pdo-23.
+Let V1/cat-ellip_pdo-r/-+ V1-41 --> V0-56 V0-43 +pdo-23.
+Let V1/cat-ellip_pdo-r/+- V1-41 --> V0-56 NG-38 +pdo-23.
+Let V1/cat-ellip_pdo-r/++ V1-41 --> V0-56 NG-38 V0-43 +pdo-23.
+Let V1/be-ellip_pco V1-41 --> V0-56 NG-38 +pco-28.
+Let V1/do-ellip_pco V1-41 --> V0-56 NG-38 +pco-28.
+Let V1/have-ellip_pco-r/- V1-41 --> V0-56 NG-38 +pco-28.
+Let V1/have-ellip_pco-r/+ V1-41 --> V0-56 NG-38 V0-43 +pco-28.
+Let V1/to-ellip_pco-r/- V1-41 --> V0-56 +pco-28.
+Let V1/to-ellip_pco-r/+ V1-41 --> V0-56 NG-38 +pco-28.
+Let V1/modal-ellip_pco-r/- V1-41 --> V0-56 +pco-28.
+Let V1/modal-ellip_pco-r/+ V1-41 --> V0-56 NG-38 +pco-28.
+Let V1/cat-ellip_pco-r/-- V1-41 --> V0-56 +pco-28.
+Let V1/cat-ellip_pco-r/-+ V1-41 --> V0-56 V0-43 +pco-28.
+Let V1/cat-ellip_pco-r/+- V1-41 --> V0-56 NG-38 +pco-28.
+Let V1/cat-ellip_pco-r/++ V1-41 --> V0-56 NG-38 V0-43 +pco-28.
+Let V1/do_gap-r V1-41 --> V0-56.
+Let V1/have_gap-r V1-41 --> V0-56.
+Let V1/be_gap-r V1-41 --> V0-56.
+Let V1/mod_gap-r V1-41 --> V0-56.
+Let V/cj-beg_aux V0-56 --> CJ-54 V0-56.
+Let V/cj-end_aux V0-56 --> CJ-54 V0-56.
+Let V/aux_aux-coord/- V0-56 --> V0-56 V0-56.
+Let V/aux_aux-coord/+ V0-56 --> V0-56 +pco-28 V0-56.
+Let V1/be_n1-np-ucc-r/- V1-41 --> V0-56 Tu-32 Tu-33.
+Let V1/be_n1-np-ucc-r/+ V1-41 --> V0-56 NG-38 Tu-32 Tu-33.
+Let V1/be_np_n1-ucc-r/- V1-41 --> V0-56 Tu-33 Tu-32.
+Let V1/be_np_n1-ucc-r/+ V1-41 --> V0-56 NG-38 Tu-33 Tu-32.
+Let V1/be_ap_np-ucc-r/- V1-41 --> V0-56 A2-45 Tu-33.
+Let V1/be_ap_np-ucc-r/+ V1-41 --> V0-56 NG-38 A2-45 Tu-33.
+Let V1/be_np_ap-ucc-r/- V1-41 --> V0-56 Tu-33 A2-45.
+Let V1/be_np_ap-ucc-r/+ V1-41 --> V0-56 NG-38 Tu-33 A2-45.
+Let V1/be_np_pp-ucc-r/- V1-41 --> V0-56 Tu-33 P2-48.
+Let V1/be_np_pp-ucc-r/+ V1-41 --> V0-56 NG-38 Tu-33 P2-48.
+Let V1/be_ap_pp-ucc-r/- V1-41 --> V0-56 A2-45 P2-48.
+Let V1/be_ap_pp-ucc-r/+ V1-41 --> V0-56 NG-38 A2-45 P2-48.
+Let V1/be_pp_ap-ucc-r/- V1-41 --> V0-56 P2-48 A2-45.
+Let V1/be_pp_ap-ucc-r/+ V1-41 --> V0-56 NG-38 P2-48 A2-45.
+Let V1/be_vp_pp-ucc-r V1-41 --> V0-56 V1-41 P2-48.
+Let V1/be_pp_vp-ucc-r/- V1-41 --> V0-56 P2-48 V1-41.
+Let V1/be_pp_vp-ucc-r/+ V1-41 --> V0-56 NG-38 P2-48 V1-41.
+Let V1/be_vp_ap-ucc-r V1-41 --> V0-56 V1-41 A2-45.
+Let V1/be_ap_vp-ucc-r V1-41 --> V0-56 A2-45 V1-41.
+Let N0/n-num_n-num N0-50 --> N0-50 N0-50.
+Let N0/n-num_pco_n-num N0-50 --> N0-50 +pco-28 N0-50.
+Let N0/dec-num N0-50 --> N0-50 +pdo-23 N0-50.
+Let N0/range-num1 N0-50 --> N0-50 +pda-21 N0-50.
+Let N0/range-num2 N0-50 --> N0-50 +pcl-22 N0-50.
+Let N1/cplx-nt/--- Tu-32 --> N0-50 N0-50.
+Let N1/cplx-nt/--+ Tu-32 --> N0-50 +pco-28 N0-50.
+Let N1/cplx-nt/-+- Tu-32 --> N0-50 N0-50 N0-50.
+Let N1/cplx-nt/-++ Tu-32 --> N0-50 N0-50 +pco-28 N0-50.
+Let N1/cplx-nt/+-- Tu-32 --> N0-50 N0-50 N0-50.
+Let N1/cplx-nt/+-+ Tu-32 --> N0-50 N0-50 +pco-28 N0-50.
+Let N1/cplx-nt/++- Tu-32 --> N0-50 N0-50 N0-50 N0-50.
+Let N1/cplx-nt/+++ Tu-32 --> N0-50 N0-50 N0-50 +pco-28 N0-50.
+Let N1/n-nt_a-nt Tu-32 --> N0-50 A0-52.
+Let N0/deg_n1-num N0-50 --> A0-52 N0-50.
+Let NP/det_n-num Tu-33 --> DT-59 N0-50.
+Let NP/n-num Tu-33 --> N0-50.
+Let NP/det_ord_np/- Tu-33 --> A0-52 Tu-33.
+Let NP/det_ord_np/+ Tu-33 --> DT-59 A0-52 Tu-33.
+Let NP/num_ord_np Tu-33 --> N0-50 A0-52 Tu-33.
+Let NP/n1-plu Tu-33 --> Tu-32.
+Let NP/n1-ms Tu-33 --> Tu-32.
+Let NP/n1-name Tu-33 --> Tu-32.
+Let NP/n1-nt Tu-33 --> Tu-32.
+Let NP/n1-pl Tu-33 --> Tu-32.
+Let NP/n1-org Tu-33 --> Tu-32.
+Let NP/n1-dir-adv Tu-33 --> Tu-32.
+Let NP/n1-tit Tu-33 --> Tu-32.
+Let NP/n1-pretit-r Tu-33 --> Tu-32.
+Let NP/det_n1 Tu-33 --> DT-59 Tu-32.
+Let NP/det_n1-wh Tu-33 --> DT-59 Tu-32.
+Let NP/det_det_n1 Tu-33 --> DT-59 DT-59 Tu-32.
+Let NP/not_det_n1-r Tu-33 --> NG-38 DT-59 Tu-32.
+Let NP/part_n2-r Tu-33 --> N0-50 Tu-33.
+Let NP/part_n1-r Tu-33 --> N0-50 Tu-32.
+Let NP/det_part_n2/- Tu-33 --> DT-59 N0-50 Tu-33.
+Let NP/det_part_n2/+ Tu-33 --> DT-59 N0-50 P0-53 Tu-33.
+Let NP/part Tu-33 --> N0-50.
+Let NP/np-poss_n1 Tu-33 --> Tu-33 Tu-32.
+Let NP/np_n-poss Tu-33 --> Tu-33 N0-50.
+Let NP/np_n-poss-ellip-r Tu-33 --> Tu-33 N0-50.
+Let NP/det_np-pro-r Tu-33 --> DT-59 Tu-33.
+Let NP/ap_np-pro-r Tu-33 --> A2-45 Tu-33.
+Let NP/det-wh_ap_np-pro-r Tu-33 --> DT-59 A2-45 Tu-33.
+Let NP/ppart_np-pro-r Tu-33 --> V0-43 Tu-33.
+Let NP/det-wh_ppart_np-pro-r Tu-33 --> DT-59 V0-43 Tu-33.
+Let NP/np-pro_pp-r Tu-33 --> Tu-33 P2-48.
+Let NP/np-pro_inf-r Tu-33 --> Tu-33 V1-41.
+Let NP/np-whpro_inf Tu-33 --> Tu-33 V1-41.
+Let NP/np-pro_ing-r Tu-33 --> Tu-33 V1-41.
+Let NP/np-pro_ppart-r Tu-33 --> Tu-33 V1-41.
+Let NP/np-pro_s-r Tu-33 --> Tu-33 Tu-29.
+Let NP/np-pro_s-wh Tu-33 --> Tu-33 Tu-29.
+Let NP/np-pro_rel-r Tu-33 --> Tu-33 CP-55 V1-41.
+Let NP/np-pro_ap-r/- Tu-33 --> Tu-33 A2-45.
+Let NP/np-pro_ap-r/+ Tu-33 --> Tu-33 +pco-28 A2-45.
+Let NP/np-pro_n-r Tu-33 --> Tu-33 N0-50.
+Let NP/np-pro_a1-er Tu-33 --> Tu-33 A1-51.
+Let NP/np_a1 Tu-33 --> Tu-33 A1-51.
+Let NP/np_pco_ap-r Tu-33 --> Tu-33 +pco-28 A2-45.
+Let NP/np_a1-prd Tu-33 --> Tu-33 A1-51.
+Let NP/np_a1-post Tu-33 --> Tu-33 A1-51.
+Let NP/np_a1-temp Tu-33 --> Tu-33 A1-51.
+Let NP/np_a1-pl Tu-33 --> Tu-33 A1-51.
+Let NP/np_np-refl Tu-33 --> Tu-33 Tu-33.
+Let NP/np-nt_a1-nt Tu-33 --> Tu-33 A1-51.
+Let NP/np-nt_np-nt Tu-33 --> Tu-33 Tu-33.
+Let NP/np-ms_a1-r Tu-33 --> Tu-33 A1-51.
+Let NP/n1_n1-name-r Tu-33 --> Tu-32 Tu-32.
+Let NP/n1-name_np-r Tu-33 --> Tu-32 Tu-33.
+Let NP/np_np-name Tu-33 --> Tu-33 Tu-33.
+Let NP/n-pretit_n2-name Tu-33 --> N0-50 Tu-33.
+Let NP/n2-name_n-posttit/--- Tu-33 --> Tu-33 N0-50.
+Let NP/n2-name_n-posttit/--+ Tu-33 --> Tu-33 N0-50 +prb-25.
+Let NP/n2-name_n-posttit/-+- Tu-33 --> Tu-33 +plb-24 N0-50.
+Let NP/n2-name_n-posttit/-++ Tu-33 --> Tu-33 +plb-24 N0-50 +prb-25.
+Let NP/n2-name_n-posttit/+-- Tu-33 --> Tu-33 +pco-28 N0-50.
+Let NP/n2-name_n-posttit/+-+ Tu-33 --> Tu-33 +pco-28 N0-50 +prb-25.
+Let NP/n2-name_n-posttit/++- Tu-33 --> Tu-33 +pco-28 +plb-24 N0-50.
+Let NP/n2-name_n-posttit/+++ Tu-33 --> Tu-33 +pco-28 +plb-24 N0-50 +prb-25.
+Let NP/np-name_pp-of Tu-33 --> Tu-33 P2-48.
+Let NP/n-dir_np-name Tu-33 --> N0-50 Tu-33.
+Let NP/ap_np-name-r Tu-33 --> A2-45 Tu-33.
+Let NP/n-num_np-name Tu-33 --> N0-50 Tu-33.
+Let NP/np-name_n-num/- Tu-33 --> Tu-33 N0-50.
+Let NP/np-name_n-num/+ Tu-33 --> Tu-33 +pco-28 N0-50.
+Let NP/np-name_np-ms Tu-33 --> Tu-33 Tu-33.
+Let NP/np-ms_np-name Tu-33 --> Tu-33 Tu-33.
+Let NP/np-nt_np-name Tu-33 --> Tu-33 Tu-33.
+Let NP/np-pl_pco_np-name Tu-33 --> Tu-33 +pco-28 Tu-33.
+Let NP/np_np-org Tu-33 --> Tu-33 Tu-33.
+Let NP/np-ms_n1 Tu-33 --> Tu-33 Tu-32.
+Let NP/n1-nt_np-nt Tu-33 --> Tu-32 DT-59 N0-50.
+Let NP/np-num_np-temp Tu-33 --> Tu-33 N0-50 N0-50.
+Let NP/det_a1-r/-- Tu-33 --> DT-59 A1-51.
+Let NP/det_a1-r/-+ Tu-33 --> DT-59 A0-52 A1-51.
+Let NP/det_a1-r/+- Tu-33 --> DT-59 Tu-32 A1-51.
+Let NP/det_a1-r/++ Tu-33 --> DT-59 Tu-32 A0-52 A1-51.
+Let NP/det_a1-att-r/- Tu-33 --> DT-59 A1-51.
+Let NP/det_a1-att-r/+ Tu-33 --> DT-59 Tu-32 A1-51.
+Let NP/det_det_a-er Tu-33 --> DT-59 DT-59 A0-52.
+Let NP/det_a1-att_n1-plu-r Tu-33 --> DT-59 A1-51 Tu-32.
+Let NP/det_a1-att_n1-nt-r Tu-33 --> DT-59 A1-51 Tu-32.
+Let NP/det_ing-r/- Tu-33 --> DT-59 V0-43.
+Let NP/det_ing-r/+ Tu-33 --> DT-59 V0-43 PT-37.
+Let NP/det_ppart-r/- Tu-33 --> DT-59 V0-43.
+Let NP/det_ppart-r/+ Tu-33 --> DT-59 V0-43 PT-37.
+Let NP/det_v-bse-pt-r Tu-33 --> DT-59 V0-43 PT-37.
+Let NP/det_ap_pp-r Tu-33 --> DT-59 A2-45 P2-48.
+Let NP/a1-dg_np-r Tu-33 --> A1-51 Tu-33.
+Let NP/a1-cat_np-r Tu-33 --> A1-51 Tu-33.
+Let N1/n Tu-32 --> N0-50.
+Let N1/n-name Tu-32 --> N0-50.
+Let N1/n-nt Tu-32 --> N0-50.
+Let N1/n-pl Tu-32 --> N0-50.
+Let N1/n-org Tu-32 --> N0-50.
+Let N1/n-ms Tu-32 --> N0-50.
+Let N1/n-dir Tu-32 --> N0-50.
+Let N1/n-tit Tu-32 --> N0-50.
+Let N1/n-pretit Tu-32 --> N0-50.
+Let N1/ap_n1/- Tu-32 --> A2-45 Tu-32.
+Let N1/ap_n1/+ Tu-32 --> A2-45 +pco-28 Tu-32.
+Let N1/deg_n1-ms Tu-32 --> A0-52 Tu-32.
+Let N1/n1-poss_n1-r Tu-32 --> Tu-32 Tu-32.
+Let N1/n1_n-poss-r Tu-32 --> Tu-32 N0-50.
+Let N1/ap_ing-r Tu-32 --> A2-45 V0-43.
+Let N1/ing_pp-of-r Tu-32 --> V0-43 P2-48.
+Let N1/ppart_n1-r/- Tu-32 --> V0-43 Tu-32.
+Let N1/ppart_n1-r/+ Tu-32 --> V0-43 +pco-28 Tu-32.
+Let N1/ing_n1-r/-- Tu-32 --> V0-43 Tu-32.
+Let N1/ing_n1-r/-+ Tu-32 --> V0-43 +pco-28 Tu-32.
+Let N1/ing_n1-r/+- Tu-32 --> N0-50 V0-43 Tu-32.
+Let N1/ing_n1-r/++ Tu-32 --> N0-50 V0-43 +pco-28 Tu-32.
+Let N1/bse_n1-r/- Tu-32 --> V0-43 Tu-32.
+Let N1/bse_n1-r/+ Tu-32 --> V0-43 +pco-28 Tu-32.
+Let N1/n_n1-dir-r Tu-32 --> N0-50 Tu-32.
+Let N1/n_n1-ms-r Tu-32 --> N0-50 Tu-32.
+Let N1/n_n1-nt-r Tu-32 --> N0-50 Tu-32.
+Let N1/n_n1 Tu-32 --> N0-50 Tu-32.
+Let N1/n-name_n1 Tu-32 --> N0-50 Tu-32.
+Let N1/n-name_n1-name Tu-32 --> N0-50 Tu-32.
+Let N1/n-name_n1-org Tu-32 --> N0-50 Tu-32.
+Let N1/n-name_n1-pl Tu-32 --> N0-50 Tu-32.
+Let N1/n-nt_n1-nt Tu-32 --> N0-50 Tu-32.
+Let N1/n-ms_n1-ms Tu-32 --> N0-50 Tu-32.
+Let N1/n_n1-pl Tu-32 --> N0-50 Tu-32.
+Let N1/n-pl_n1 Tu-32 --> N0-50 Tu-32.
+Let N1/n-pl_n1-pl Tu-32 --> N0-50 Tu-32.
+Let N1/n-org_n1 Tu-32 --> N0-50 Tu-32.
+Let N1/n-org_n1-pl Tu-32 --> N0-50 Tu-32.
+Let N1/n-pl_n1-org Tu-32 --> N0-50 Tu-32.
+Let N1/n-org_n1-org Tu-32 --> N0-50 Tu-32.
+Let N1/n-tit_n1-name Tu-32 --> N0-50 Tu-32.
+Let N1/n-num_n1 Tu-32 --> N0-50 Tu-32.
+Let N1/n-num_n1-nt Tu-32 --> N0-50 Tu-32.
+Let N1/n-num_n1-ms Tu-32 --> N0-50 Tu-32.
+Let N1/n-ms_n-num Tu-32 --> N0-50 N0-50.
+Let N1/n_n-num Tu-32 --> N0-50 N0-50.
+Let N1/n-num_n1-pl Tu-32 --> N0-50 Tu-32.
+Let N1/n-pl_n-num Tu-32 --> N0-50 N0-50.
+Let N/np-name_n-pl/- N0-50 --> Tu-33 N0-50.
+Let N/np-name_n-pl/+ N0-50 --> Tu-33 +pco-28 N0-50.
+Let N/n-pl_np-name N0-50 --> N0-50 Tu-33.
+Let N/n1-nt_n N0-50 --> Tu-32 N0-50.
+Let N/n1-nt_n-org N0-50 --> Tu-32 N0-50.
+Let N/n1-ms_n-pl N0-50 --> Tu-32 N0-50.
+Let N/n-pl_n N0-50 --> N0-50 N0-50.
+Let N/n-pl_n-dir N0-50 --> N0-50 N0-50.
+Let N/n1-ms_n-org N0-50 --> Tu-32 N0-50.
+Let N/n1_n-org N0-50 --> Tu-32 N0-50.
+Let N/n-org_n N0-50 --> N0-50 N0-50.
+Let N/n1-org_n-tit N0-50 --> Tu-32 N0-50.
+Let N/n-dir_n N0-50 --> N0-50 N0-50.
+Let N/n-dir_n-pl N0-50 --> N0-50 N0-50.
+Let N/n-dir_n-org N0-50 --> N0-50 N0-50.
+Let N/n-pretit_n-tit N0-50 --> N0-50 N0-50.
+Let N/n-pretit_n-pretit N0-50 --> N0-50 N0-50.
+Let N/n_n-tit N0-50 --> N0-50 N0-50.
+Let N/n-name_n-tit N0-50 --> N0-50 N0-50.
+Let N/n-tit_n-pretit N0-50 --> N0-50 N0-50.
+Let N/n-part_n N0-50 --> N0-50 N0-50.
+Let N/n-name-abbrev-r N0-50 --> N0-50 +pdo-23.
+Let N/n1-tit_n-ms N0-50 --> Tu-32 N0-50.
+Let N/n1-tit_n-nm N0-50 --> Tu-32 N0-50.
+Let N1/n_s Tu-32 --> N0-50 Tu-29.
+Let N1/n-nt_s Tu-32 --> N0-50 Tu-29.
+Let N1/n-pl_s Tu-32 --> N0-50 Tu-29.
+Let N1/n-org_s Tu-32 --> N0-50 Tu-29.
+Let N1/n-ms_s Tu-32 --> N0-50 Tu-29.
+Let N1/n_pp-of Tu-32 --> N0-50 P2-48.
+Let N1/n_rel Tu-32 --> N0-50 CP-55 V1-41.
+Let N1/n-nt_rel Tu-32 --> N0-50 CP-55 V1-41.
+Let N1/n-pl_rel Tu-32 --> N0-50 CP-55 V1-41.
+Let N1/n-org_rel Tu-32 --> N0-50 CP-55 V1-41.
+Let N1/n-ms_rel Tu-32 --> N0-50 CP-55 V1-41.
+Let N1/n_inf Tu-32 --> N0-50 V1-41.
+Let N1/n-nt_inf Tu-32 --> N0-50 V1-41.
+Let N1/n-pl_inf Tu-32 --> N0-50 V1-41.
+Let N1/n-org_inf Tu-32 --> N0-50 V1-41.
+Let N1/n-ms_inf Tu-32 --> N0-50 V1-41.
+Let N1/n_ppart Tu-32 --> N0-50 V1-41.
+Let N1/n-nt_ppart Tu-32 --> N0-50 V1-41.
+Let N1/n-pl_ppart Tu-32 --> N0-50 V1-41.
+Let N1/n-org_ppart Tu-32 --> N0-50 V1-41.
+Let N1/n-ms_ppart Tu-32 --> N0-50 V1-41.
+Let N1/n_ing Tu-32 --> N0-50 V1-41.
+Let N1/n-nt_ing Tu-32 --> N0-50 V1-41.
+Let N1/n-pl_ing Tu-32 --> N0-50 V1-41.
+Let N1/n-org_ing Tu-32 --> N0-50 V1-41.
+Let N1/n-ms_ing Tu-32 --> N0-50 V1-41.
+Let N1/n1_pp1 Tu-32 --> Tu-32 P2-48.
+Let N1/n1_pp2 Tu-32 --> Tu-32 P2-48.
+Let N1/n1_pp3 Tu-32 --> Tu-32 P2-48.
+Let N1/n1_pp4 Tu-32 --> Tu-32 P2-48.
+Let N1/n1_pp5 Tu-32 --> Tu-32 P2-48.
+Let N1/n1_np-nt_pp-r/-- Tu-32 --> Tu-32 Tu-33 P2-48.
+Let N1/n1_np-nt_pp-r/-+ Tu-32 --> Tu-32 Tu-33 +pco-28 P2-48.
+Let N1/n1_np-nt_pp-r/+- Tu-32 --> Tu-32 +pco-28 Tu-33 P2-48.
+Let N1/n1_np-nt_pp-r/++ Tu-32 --> Tu-32 +pco-28 Tu-33 +pco-28 P2-48.
+Let N1/n1_np-ms_pp-r/-- Tu-32 --> Tu-32 Tu-33 P2-48.
+Let N1/n1_np-ms_pp-r/-+ Tu-32 --> Tu-32 Tu-33 +pco-28 P2-48.
+Let N1/n1_np-ms_pp-r/+- Tu-32 --> Tu-32 +pco-28 Tu-33 P2-48.
+Let N1/n1_np-ms_pp-r/++ Tu-32 --> Tu-32 +pco-28 Tu-33 +pco-28 P2-48.
+Let N1/n1_np-dir_pp-r/-- Tu-32 --> Tu-32 Tu-33 P2-48.
+Let N1/n1_np-dir_pp-r/-+ Tu-32 --> Tu-32 Tu-33 +pco-28 P2-48.
+Let N1/n1_np-dir_pp-r/+- Tu-32 --> Tu-32 +pco-28 Tu-33 P2-48.
+Let N1/n1_np-dir_pp-r/++ Tu-32 --> Tu-32 +pco-28 Tu-33 +pco-28 P2-48.
+Let N1/n1_s-wh Tu-32 --> Tu-32 Tu-29.
+Let N1/n1_pp-wh-r Tu-32 --> Tu-32 P2-48.
+Let N1/n1_pp-wh-np-r Tu-32 --> Tu-32 P2-48.
+Let NP/cj-beg_np Tu-33 --> CJ-54 Tu-33.
+Let NP/cj-end_np/----- Tu-33 --> CJ-54 Tu-33.
+Let NP/cj-end_np/----+ Tu-33 --> CJ-54 +pco-28 Tu-33.
+Let NP/cj-end_np/---+- Tu-33 --> CJ-54 A2-45 Tu-33.
+Let NP/cj-end_np/---++ Tu-33 --> CJ-54 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/--+-- Tu-33 --> CJ-54 NG-38 Tu-33.
+Let NP/cj-end_np/--+-+ Tu-33 --> CJ-54 NG-38 +pco-28 Tu-33.
+Let NP/cj-end_np/--++- Tu-33 --> CJ-54 NG-38 A2-45 Tu-33.
+Let NP/cj-end_np/--+++ Tu-33 --> CJ-54 NG-38 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/-+--- Tu-33 --> CJ-54 +prb-25 Tu-33.
+Let NP/cj-end_np/-+--+ Tu-33 --> CJ-54 +prb-25 +pco-28 Tu-33.
+Let NP/cj-end_np/-+-+- Tu-33 --> CJ-54 +prb-25 A2-45 Tu-33.
+Let NP/cj-end_np/-+-++ Tu-33 --> CJ-54 +prb-25 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/-++-- Tu-33 --> CJ-54 +prb-25 NG-38 Tu-33.
+Let NP/cj-end_np/-++-+ Tu-33 --> CJ-54 +prb-25 NG-38 +pco-28 Tu-33.
+Let NP/cj-end_np/-+++- Tu-33 --> CJ-54 +prb-25 NG-38 A2-45 Tu-33.
+Let NP/cj-end_np/-++++ Tu-33 --> CJ-54 +prb-25 NG-38 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/+---- Tu-33 --> +plb-24 CJ-54 Tu-33.
+Let NP/cj-end_np/+---+ Tu-33 --> +plb-24 CJ-54 +pco-28 Tu-33.
+Let NP/cj-end_np/+--+- Tu-33 --> +plb-24 CJ-54 A2-45 Tu-33.
+Let NP/cj-end_np/+--++ Tu-33 --> +plb-24 CJ-54 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/+-+-- Tu-33 --> +plb-24 CJ-54 NG-38 Tu-33.
+Let NP/cj-end_np/+-+-+ Tu-33 --> +plb-24 CJ-54 NG-38 +pco-28 Tu-33.
+Let NP/cj-end_np/+-++- Tu-33 --> +plb-24 CJ-54 NG-38 A2-45 Tu-33.
+Let NP/cj-end_np/+-+++ Tu-33 --> +plb-24 CJ-54 NG-38 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/++--- Tu-33 --> +plb-24 CJ-54 +prb-25 Tu-33.
+Let NP/cj-end_np/++--+ Tu-33 --> +plb-24 CJ-54 +prb-25 +pco-28 Tu-33.
+Let NP/cj-end_np/++-+- Tu-33 --> +plb-24 CJ-54 +prb-25 A2-45 Tu-33.
+Let NP/cj-end_np/++-++ Tu-33 --> +plb-24 CJ-54 +prb-25 A2-45 +pco-28 Tu-33.
+Let NP/cj-end_np/+++-- Tu-33 --> +plb-24 CJ-54 +prb-25 NG-38 Tu-33.
+Let NP/cj-end_np/+++-+ Tu-33 --> +plb-24 CJ-54 +prb-25 NG-38 +pco-28 Tu-33.
+Let NP/cj-end_np/++++- Tu-33 --> +plb-24 CJ-54 +prb-25 NG-38 A2-45 Tu-33.
+Let NP/cj-end_np/+++++ Tu-33 --> +plb-24 CJ-54 +prb-25 NG-38 A2-45 +pco-28 Tu-33.
+Let NP/np_np-coord/- Tu-33 --> Tu-33 Tu-33.
+Let NP/np_np-coord/+ Tu-33 --> Tu-33 +pco-28 Tu-33.
+Let NP/n1_np-coord-r/- Tu-33 --> Tu-32 Tu-33.
+Let NP/n1_np-coord-r/+ Tu-33 --> Tu-32 +pco-28 Tu-33.
+Let NP/np_psc_np-coord Tu-33 --> Tu-33 +psc-26 Tu-33.
+Let N1/cj-beg_n1 Tu-32 --> CJ-54 Tu-32.
+Let N1/cj-end_n1 Tu-32 --> CJ-54 Tu-32.
+Let N1/n1_n1-coord/- Tu-32 --> Tu-32 Tu-32.
+Let N1/n1_n1-coord/+ Tu-32 --> Tu-32 +pco-28 Tu-32.
+Let N/cj-beg_n N0-50 --> CJ-54 N0-50.
+Let N/cj-end_n N0-50 --> CJ-54 N0-50.
+Let N/sl-end_n N0-50 --> +psl-27 N0-50.
+Let N/n_n-coord/- N0-50 --> N0-50 N0-50.
+Let N/n_n-coord/+ N0-50 --> N0-50 +pco-28 N0-50.
+Let N/det_det-coord DT-59 --> DT-59 CJ-54 DT-59.
+Let P1/p_np P1-61 --> P0-53 Tu-33.
+Let P1/p_np-name P1-61 --> P0-53 Tu-33.
+Let P1/p_np-tit P1-61 --> P0-53 Tu-33.
+Let P1/p_np-pl P1-61 --> P0-53 Tu-33.
+Let P1/p_np-org P1-61 --> P0-53 Tu-33.
+Let P1/p_np-pro P1-61 --> P0-53 Tu-33.
+Let P1/p_refl P1-61 --> P0-53 Tu-33.
+Let P1/p_np-ms P1-61 --> P0-53 Tu-33.
+Let P1/p_np-num P1-61 --> P0-53 Tu-33.
+Let P1/p_np-nt P1-61 --> P0-53 Tu-33.
+Let P1/p_np-dir P1-61 --> P0-53 Tu-33.
+Let P1/p_n1 P1-61 --> P0-53 Tu-32.
+Let P1/p_np-poss-r P1-61 --> P0-53 Tu-33.
+Let P1/p_np-poss-ellip-r P1-61 --> P0-53 Tu-33.
+Let P1/p_ap-pl P1-61 --> P0-53 A2-45.
+Let P1/p_a1-r P1-61 --> P0-53 A1-51.
+Let P1/p_s P1-61 --> P0-53 Tu-29.
+Let P1/p_ap-sfin P1-61 --> P0-53 A2-45.
+Let P1/p_s-wh P1-61 --> P0-53 Tu-29.
+Let P1/p_pp P1-61 --> P0-53 P2-48.
+Let P1/p_sinf P1-61 --> P0-53 Tu-33 V1-41.
+Let P1/p_sing P1-61 --> P0-53 Tu-33 V1-41.
+Let P1/p_sing-poss P1-61 --> P0-53 Tu-33 V1-41.
+Let P1/p_ing P1-61 --> P0-53 V1-41.
+Let P1/p_inf P1-61 --> P0-53 V1-41.
+Let P1/p_ppart P1-61 --> P0-53 V1-41.
+Let P1/as_ap P1-61 --> P0-53 A2-45.
+Let P1/as_pp P1-61 --> P0-53 P2-48.
+Let P1/as_vp-past P1-61 --> P0-53 V1-41.
+Let P1/as_vp-pres P1-61 --> P0-53 V1-41.
+Let P1/as_vp-bse P1-61 --> P0-53 V1-41.
+Let P1/than_ap P1-61 --> P0-53 A2-45.
+Let P1/than_vp-past P1-61 --> P0-53 V1-41.
+Let P1/than_vp-pres P1-61 --> P0-53 V1-41.
+Let P1/than_vp-bse P1-61 --> P0-53 V1-41.
+Let P1/for_ap-er-r P1-61 --> P0-53 A2-45.
+Let P1/prt-r P1-61 --> P0-53.
+Let P1/prt-of P1-61 --> P0-53.
+Let P1/p-wh P1-61 --> P0-53.
+Let PP/p1 P2-48 --> P1-61.
+Let PP/adv_p1 P2-48 --> A2-45 P1-61.
+Let PP/p1_p1 P2-48 --> P0-53 N0-50 P1-61.
+Let PP/cj-beg_pp P2-48 --> CJ-54 P2-48.
+Let PP/cj-end_pp/- P2-48 --> CJ-54 P2-48.
+Let PP/cj-end_pp/+ P2-48 --> CJ-54 NG-38 P2-48.
+Let PP/pp_pp-coord/- P2-48 --> P2-48 P2-48.
+Let PP/pp_pp-coord/+ P2-48 --> P2-48 +pco-28 P2-48.
+Let P/cj-beg_p P0-53 --> CJ-54 P0-53.
+Let P/cj-end_p/- P0-53 --> CJ-54 P0-53.
+Let P/cj-end_p/+ P0-53 --> CJ-54 NG-38 P0-53.
+Let P/sl-end_p P0-53 --> +psl-27 P0-53.
+Let P/p_p-coord P0-53 --> P0-53 P0-53.
+Let A1/a A1-51 --> A0-52.
+Let A1/dg_a1 A1-51 --> A0-52 A1-51.
+Let A1/not_a1 A1-51 --> NG-38 A1-51.
+Let A1/adv_a1 A1-51 --> A2-45 A1-51.
+Let A1/adv_a-er A1-51 --> A0-52 A0-52.
+Let A1/det_a-er A1-51 --> DT-59 A0-52.
+Let A1/n_a-r A1-51 --> N0-50 A0-52.
+Let A1/n_a A1-51 --> N0-50 A0-52.
+Let A1/n-dir_a A1-51 --> N0-50 A0-52.
+Let A1/a-er_adv A1-51 --> A0-52 A0-52.
+Let A1/advp_ppart-r A1-51 --> A2-45 V0-43.
+Let A1/advp_ing-r A1-51 --> A2-45 V0-43.
+Let AP/det_ord_a1/- A1-51 --> A0-52 A1-62.
+Let AP/det_ord_a1/+ A1-51 --> DT-59 A0-52 A1-62.
+Let AP/num_ord_a1 A1-51 --> N0-50 A0-52 A1-62.
+Let A1/a_pp A1-51 --> A0-52 P2-48.
+Let A1/a_pp-of A1-51 --> A0-52 P2-48.
+Let A1/a_pp-for A1-51 --> A0-52 P2-48.
+Let A1/a_pp-with A1-51 --> A0-52 P2-48.
+Let A1/a_pp-than A1-51 --> A0-52 P2-48.
+Let A1/a_pp-as A1-51 --> A0-52 P2-48.
+Let A1/a_pp_pp A1-51 --> A0-52 P2-48 P2-48.
+Let A1/a_pp-s A1-51 --> A0-52 P2-48.
+Let A1/a_pp_pp-s A1-51 --> A0-52 P2-48 P2-48.
+Let A1/a_pp-wh A1-51 --> A0-52 P2-48.
+Let A1/a_pp_pp-wh A1-51 --> A0-52 P2-48 P2-48.
+Let A1/a_s A1-51 --> A0-52 Tu-29.
+Let A1/a_pp_s A1-51 --> A0-52 P2-48 Tu-29.
+Let A1/a_inf A1-51 --> A0-52 V1-41.
+Let A1/a_ing A1-51 --> A0-52 V1-41.
+Let A1/adv_np A1-51 --> A0-52 Tu-33.
+Let A1/a1_pp A1-51 --> A1-51 P2-48.
+Let A1/a1_pp-with A1-51 --> A1-51 P2-48.
+Let AP/a1 A2-45 --> A1-51.
+Let AP/adv_adv A2-45 --> A0-52 A0-52.
+Let AP/a_a-post A2-45 --> A0-52 A0-52.
+Let AP/adv_adv-pl A2-45 --> A0-52 A0-52.
+Let AP/adv_pp-of-r A2-45 --> A0-52 P2-48.
+Let AP/dg_ppart-r A2-45 --> A0-52 V0-43.
+Let AP/dg_ing-r A2-45 --> A0-52 V0-43.
+Let AP/cj-beg_ap A2-45 --> CJ-54 A2-45.
+Let AP/cj-end_ap A2-45 --> CJ-54 A2-45.
+Let AP/ap_ap-coord/- A2-45 --> A2-45 A2-45.
+Let AP/ap_ap-coord/+ A2-45 --> A2-45 +pco-28 A2-45.
+Let AP/ap_ap-coord-r/- A2-45 --> A2-45 A2-45.
+Let AP/ap_ap-coord-r/+ A2-45 --> A2-45 +pco-28 A2-45.
+Let A/cj-beg_a A0-52 --> CJ-54 A0-52.
+Let A/cj-end_a/- A0-52 --> CJ-54 A0-52.
+Let A/cj-end_a/+ A0-52 --> CJ-54 NG-38 A0-52.
+Let A/sl-end_a A0-52 --> +psl-27 A0-52.
+Let A/a_a-coord/- A0-52 --> A0-52 A0-52.
+Let A/a_a-coord/+ A0-52 --> A0-52 +pco-28 A0-52.
+Let A/a_ppart-coord/- A0-52 --> A0-52 V0-43.
+Let A/a_ppart-coord/+ A0-52 --> A0-52 +pco-28 V0-43.
+Let A/ppart_a-coord/- A0-52 --> V0-43 A0-52.
+Let A/ppart_a-coord/+ A0-52 --> V0-43 +pco-28 A0-52.
+Let A/a_ing-coord/- A0-52 --> A0-52 V0-43.
+Let A/a_ing-coord/+ A0-52 --> A0-52 +pco-28 V0-43.
+Let A/ing_a-coord/- A0-52 --> V0-43 A0-52.
+Let A/ing_a-coord/+ A0-52 --> V0-43 +pco-28 A0-52.
+Let A/adv_nt-coord/- A0-52 --> A0-52 Tu-33.
+Let A/adv_nt-coord/+ A0-52 --> A0-52 +pco-28 Tu-33.
+Let A/adv_pp-coord/- A0-52 --> A0-52 P2-48.
+Let A/adv_pp-coord/+ A0-52 --> A0-52 +pco-28 P2-48.
+Let A/pp_adv-coord/- A0-52 --> P2-48 A0-52.
+Let A/pp_adv-coord/+ A0-52 --> P2-48 +pco-28 A0-52.
+Let CJ/beg_beg CJ-54 --> CJ-54 CJ-54.
+Let P2-49/+ P2-49+ --> P2-47 P2-49+.
+Let P2-49/- P2-49+ --> P2-47.
+Let A2-46/+ A2-46+ --> A2-44 A2-46+.
+Let A2-46/- A2-46+ --> A2-44.
+Let V1-42/+ V1-42+ --> V1-40 V1-42+.
+Let V1-42/- V1-42+ --> V1-40.
+Let IJ-39/+ IJ-39+ --> IJ-36 IJ-39+.
+Let IJ-39/- IJ-39+ --> IJ-36.
+Let N1-35/+ N1-35+ --> N1-30 N1-35+.
+Let N1-35/- N1-35+ --> N1-30.
+Let N2-34/+ N2-34+ --> Tu-33 N2-34+.
+Let N2-34/- N2-34+ --> Tu-33.
+Let DT-59/@ DT-59 --> DT-59@.
+Let V0-56/@ V0-56 --> V0-56@.
+Let CP-55/@ CP-55 --> CP-55@.
+Let CJ-54/@ CJ-54 --> CJ-54@.
+Let P0-53/@ P0-53 --> P0-53@.
+Let A0-52/@ A0-52 --> A0-52@.
+Let N0-50/@ N0-50 --> N0-50@.
+Let V0-43/@ V0-43 --> V0-43@.
+Let NG-38/@ NG-38 --> NG-38@.
+Let Tu-33/@ Tu-33 --> Tu-33@.
+
+End

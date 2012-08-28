@@ -1,0 +1,108 @@
+                    RASP - Robust Parsing System for English
+
+                       THIRD RELEASE, OPEN-SOURCE VERSION
+
+                                 February 2011
+
+
+LICENCE
+
+This version of RASP is released under the LGPL open-source licence.
+See COPYING and COPYING.LESSER for details.
+
+
+CONTENTS
+
+There are a number of directories at the top level. They are:
+
+  "gde" -- executables and help files for the grammar development
+  environment and parser. The directory also contains a "README" file
+  giving instructions on how use the environment on its own to develop
+  grammars.
+
+  "manuals" -- documentation for the PoS tagset used, gde and grammar,
+  tsg-doc.pdf is a general `howto' and `best practice' document for
+  RASP which we recommend every user reads
+
+  "morph" -- contains executables and source code for the Sussex
+  lemmatiser / morph analysis and generation system (see "README" file).
+
+  "prob" -- contains the grammar used for parsing and associated
+  statistical model, training material, the gramar development corpus,
+  and evaluation data and source code for carrying out evaluations.
+
+  "scripts" -- unix shell scripts for running the whole analysis system,
+  or just the parser.
+
+  "sentence" -- executables and source code for sentence boundary
+  detection.
+
+  "tag" -- executables and source code for the PoS tagger, and data files
+  (lexicon etc) to allow it to be used in conjunction with the tag
+  sequence grammar.
+
+  "tokenise" -- executables and source code for tokenisation (assuming
+  previous sentence boundary detection) and compatible with the tagger,
+  morphological analysis and parser.
+
+To run the whole system on English text, see the section below on
+running the system, and also the file "scripts/README".  To use any of
+the modules on its own, see the "README" file in the relevant
+directory.
+
+
+PRE-BUILT BINARIES
+
+Binaries are supplied for the following architecture/OS combinations:
+
+ix86_linux
+ix86_darwin (Mac OS X on Intel Core Solo/Duo)
+x86_64_linux
+x86_64_darwin (Mac OS X on Intel Core 2 and above)
+
+RUNNING THE SYSTEM
+
+There are two shell scripts, rasp.sh and rasp_parse.sh, in the scripts
+directory which run the complete RASP NL analysis system and just the
+parser respectively.
+
+You will need to change the value of the variable RASP in both scripts
+to be the appropriate value for your system (see the files themselves
+for examples).
+
+Examples of usage of rasp.sh (assuming "scripts" is the current
+directory):
+
+  $ ./rasp.sh -m < file.txt > analysed.txt
+  $ echo "This is a test." | ./rasp.sh -p'-os -u'
+  $ ./rasp.sh -m < README > README.parses
+
+Examples of usage of rasp_parse.sh: 
+
+  $ ./rasp_parse.sh -l/tmp/log1 -s -t5 < tagged.txt
+  $ ./rasp_parse.sh -n1000 -ogw <<EOF
+  ^_^ Yesterday_RT Swapo_NP1 register+ed_VVD its_APP$ opposition_NN1
+  EOF
+
+README files are also provided in each component's directory.
+
+SUPPORT
+
+The RASP system is derived in part from portions of the Alvey NL Tools;
+see <http://www.cl.cam.ac.uk/Research/NL/anlt.html>. Development of the
+RASP system was funded by the UK EPSRC within the project "Robust
+Accurate Statistical Parsing (RASP)" (grants GR/N36462 and GR/N36493).
+
+The system is distributed for non-commercial use, and without any
+guarantee of support. We do however welcome reports of bugs or
+shortcomings; also fixes or work-rounds sent as email. But before
+reporting a bug, please read the documentation for the software and
+grammar since the behaviour may already be known about, or be an
+intentional feature. Contact information for the  RASP developers
+can be found on the iLexIR website <http://ilexir.co.uk/>.
+
+More extensive support and advice is available on a paid consultancy
+basis.
+
+This open-source distribution is a cut-down version of the CVS archive and
+may contain references to files that are not included.

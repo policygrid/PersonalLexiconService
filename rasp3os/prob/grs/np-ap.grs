@@ -1,0 +1,964 @@
+Kim_NP1 abandoned_VVD Lee_NP1
+(ncsubj abandoned Kim _)
+(dobj abandoned Lee)
+
+He_PPHS1 abandoned_VVD her_PPHO1
+(ncsubj abandoned He _)
+(dobj abandoned her)
+
+Who_PNQS abandoned_VVD her_PPHO1
+(ncsubj abandoned Who _)
+(dobj abandoned her)
+
+He_PPHS1 abandoned_VVD whose_DDQ$
+(ncsubj abandoned He _)
+(dobj abandoned whose)
+
+The_AT host_NN1 whose_DDQ$ acquaintance_NN1 is_VBZ appreciated_VVN is_VBZ crazy_JJ
+(ncsubj is host _)
+(xcomp _ is crazy)
+(det host The)
+(cmod _ host appreciated)
+(ncsubj appreciated acquaintance _)
+(aux appreciated is)
+(passive appreciated)
+(det acquaintance whose)
+
+All_DB is_VBZ crazy_JJ
+(ncsubj is All _)
+(xcomp _ is crazy)
+
+Half_DB is_VBZ crazy_JJ
+(ncsubj is Half _)
+(xcomp _ is crazy)
+
+Half_DB are_VBR crazy_JJ
+(ncsubj are Half _)
+(xcomp _ are crazy)
+
+Both_DB2 are_VBR crazy_JJ
+(ncsubj are Both _)
+(xcomp _ are crazy)
+
+Some_DD are_VBR crazy_JJ
+(ncsubj are Some _)
+(xcomp _ are crazy)
+
+Many_DD2 are_VBR crazy_JJ
+(ncsubj are Many _)
+(xcomp _ are crazy)
+
+Three_MC are_VBR crazy_JJ
+(ncsubj are Three _)
+(xcomp _ are crazy)
+
+None_PN are_VBR crazy_JJ
+(ncsubj are None _)
+(xcomp _ are crazy)
+
+Each_DD1 is_VBZ crazy_JJ
+(ncsubj is Each _)
+(xcomp _ is crazy)
+
+Neither_DD1 is_VBZ crazy_JJ
+(ncsubj is Neither _)
+(xcomp _ is crazy)
+
+One_PN1 is_VBZ crazy_JJ
+(ncsubj is One _)
+(xcomp _ is crazy)
+
+This_DD1 mood_NN1 is_VBZ crazy_JJ
+(ncsubj is mood _)
+(xcomp _ is crazy)
+(det mood This)
+
+The_AT mood_NN1 is_VBZ crazy_JJ
+(ncsubj is mood _)
+(xcomp _ is crazy)
+(det mood The)
+
+A_AT1 mood_NN1 is_VBZ crazy_JJ
+(ncsubj is mood _)
+(xcomp _ is crazy)
+(det mood A)
+
+The_AT abbot_NN1 's_$ mood_NN1 is_VBZ crazy_JJ
+(ncsubj is mood _)
+(xcomp _ is crazy)
+(ncmod poss mood abbot)
+(det abbot The)
+
+Kim_NP1 's_$ discovery_NN1 is_VBZ gratifying_JJ
+(ncsubj is discovery _)
+(xcomp _ is gratifying)
+(ncmod poss discovery Kim)
+
+The_AT abbot_NN1 's_$ is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(ncmod poss ellip abbot)
+(det abbot The)
+
+Kim_NP1 's_$ is_VBZ crazy_JJ
+(ncsubj is Kim _)
+(xcomp _ is crazy)
+(ncmod poss ellip Kim)
+
+Some_DD abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(det abbots Some)
+
+All_DB2 abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(ncmod part abbots All)
+
+Three_MC abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(ncmod _ abbots Three)
+
+The_AT third_MD abbot_NN1 is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+(ncmod _ abbot third)
+
+Any_DD three_MC abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(det abbots Any)
+(ncmod _ abbots three)
+
+Nearly_RR all_DB abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(ncmod _ abbots Nearly)
+(ncmod part abbots all)
+
+Both_DB2 abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(ncmod part abbots Both)
+
+Anxiety_NN1 is_VBZ permissible_JJ
+(ncsubj is Anxiety _)
+(xcomp _ is permissible)
+
+Many_DA2 abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(ncmod _ abbots Many)
+
+Three_MC abbots_NN2 are_VBR anxious_JJ
+(ncsubj are abbots _)
+(xcomp _ are anxious)
+(ncmod _ abbots Three)
+
+Too_RG many_DA2 abbots_NN2 are_VBR anxious_JJ
+(ncsubj are abbots _)
+(xcomp _ are anxious)
+(ncmod _ abbots many)
+(ncmod _ many Too)
+
+The_AT three_MC abbots_NN2 helped_VVD us_PPIO2
+(ncsubj helped abbots _)
+(dobj helped us)
+(det abbots The)
+(ncmod _ abbots three)
+
+The_AT many_DA2 abbots_NN2 helped_VVD us_PPIO2
+(ncsubj helped abbots _)
+(dobj helped us)
+(det abbots The)
+(ncmod _ abbots many)
+
+Much_DA1 anxiety_NN1 appears_VVZ inessential_JJ
+(ncsubj appears Much _)
+(xcomp _ appears inessential)
+(ncmod _ Much anxiety)
+
+Too_RG much_DA1 anxiety_NN1 might_VM amaze_VV0 him_PPHO1
+(ncsubj amaze anxiety _)
+(aux amaze might)
+(dobj amaze him)
+(ncmod _ anxiety much)
+(ncmod _ much Too)
+
+Both_DB2 of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Both _)
+(xcomp _ are crazy)
+(ncmod _ Both of)
+(dobj of abbots)
+(det abbots the)
+
+All_DB2 of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are All _)
+(xcomp _ are crazy)
+(ncmod _ All of)
+(dobj of abbots)
+(det abbots the)
+
+Half_DB of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Half _)
+(xcomp _ are crazy)
+(ncmod _ Half of)
+(dobj of abbots)
+(det abbots the)
+
+Some_DD of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Some _)
+(xcomp _ are crazy)
+(ncmod _ Some of)
+(dobj of abbots)
+(det abbots the)
+
+None_PN of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are None _)
+(xcomp _ are crazy)
+(ncmod _ None of)
+(dobj of abbots)
+(det abbots the)
+
+Many_DA2 of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Many _)
+(xcomp _ are crazy)
+(ncmod _ Many of)
+(dobj of abbots)
+(det abbots the)
+
+Few_DA2 of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Few _)
+(xcomp _ are crazy)
+(ncmod _ Few of)
+(dobj of abbots)
+(det abbots the)
+
+Several_DA2 of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Several _)
+(xcomp _ are crazy)
+(ncmod _ Several of)
+(dobj of abbots)
+(det abbots the)
+
+Much_DA1 of_IO your_APP$ anxiety_NN1 is_VBZ unnecessary_JJ
+(ncsubj is Much _)
+(xcomp _ is unnecessary)
+(ncmod _ Much of)
+(dobj of anxiety)
+(det anxiety your)
+
+Much_DA1 of_IO your_APP$ anxiety_NN1 is_VBZ necessary_JJ
+(ncsubj is Much _)
+(xcomp _ is necessary)
+(ncmod _ Much of)
+(dobj of anxiety)
+(det anxiety your)
+
+Three_MC of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Three _)
+(xcomp _ are crazy)
+(ncmod _ Three of)
+(dobj of abbots)
+(det abbots the)
+
+Most_DAT of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are Most _)
+(xcomp _ are crazy)
+(ncmod _ Most of)
+(dobj of abbots)
+(det abbots the)
+
+More_DAR of_IO the_AT abbots_NN2 are_VBR crazy_JJ
+(ncsubj are More _)
+(xcomp _ are crazy)
+(ncmod _ More of)
+(dobj of abbots)
+(det abbots the)
+
+Half_DB the_AT abbots_NN2 are_VBR crazy_JJ
+*** Warning: no matching parse
+
+All_DB the_AT abbots_NN2 are_VBR crazy_JJ
+*** Warning: no matching parse
+
+Both_DB2 the_AT abbots_NN2 are_VBR crazy_JJ
+*** Warning: no matching parse
+
+He_PPHS1 is_VBZ such_DA an_AT1 abbot_NN1
+(ncsubj is He _)
+(xcomp _ is abbot)
+(det abbot an)
+(det abbot such)
+
+What_DDQ an_AT1 abbot_NN1 he_PPHS1 is_VBZ
+(obj is abbot _)
+(ncsubj is he _)
+(det abbot an)
+(det abbot What)
+
+He_PPHS1 is_VBZ double_REX my_APP$ age_NN1
+(ncsubj is He _)
+(ncmod _ is double)
+(comp double age)
+(det age my)
+
+He_PPHS1 is_VBZ twice_RR my_APP$ age_NN1
+(ncsubj is He _)
+(xcomp _ is age)
+(ncmod _ age twice)
+(det age my)
+
+Each_DD1 of_IO the_AT abbots_NN2 is_VBZ crazy_JJ
+(ncsubj is Each _)
+(xcomp _ is crazy)
+(ncmod _ Each of)
+(dobj of abbots)
+(det abbots the)
+
+One_MC1 of_IO the_AT abbots_NN2 is_VBZ crazy_JJ
+(ncsubj is One _)
+(xcomp _ is crazy)
+(ncmod _ One of)
+(dobj of abbots)
+(det abbots the)
+
+Either_DD1 of_IO the_AT abbots_NN2 is_VBZ crazy_JJ
+(ncsubj is Either _)
+(xcomp _ is crazy)
+(ncmod _ Either of)
+(dobj of abbots)
+(det abbots the)
+
+Neither_DD1 of_IO the_AT abbots_NN2 is_VBZ crazy_JJ
+(ncsubj is Neither _)
+(xcomp _ is crazy)
+(ncmod _ Neither of)
+(dobj of abbots)
+(det abbots the)
+
+The_AT abbot_NN1 is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+
+The_AT back_NN1 of_IO the_AT abbey_NN1 is_VBZ ablaze_JA
+(ncsubj is back _)
+(xcomp _ is ablaze)
+(det back The)
+(iobj back of)
+(dobj of abbey)
+(det abbey the)
+
+The_AT message_NN1 that_CST he_PPHS1 apologized_VVD did_VDD n't_XX account_VV0 for_IF his_APP$ mood_NN1
+(ncsubj account message _)
+(ncsubj account : _)
+(aux account did)
+(ncmod _ account n't)
+(iobj account for)
+(dobj for mood)
+(det mood his)
+(det : The)
+(det message The)
+(ccomp that message apologized)
+(ncsubj apologized he _)
+
+He_PPHS1 acknowledges_VVZ the_AT provision_NN1 that_CST he_PPHS1 apologize_VV0
+(ncsubj acknowledges He _)
+(dobj acknowledges provision)
+(dobj acknowledges :)
+(det : the)
+(det provision the)
+(ccomp that provision apologize)
+(ncsubj apologize he _)
+
+They_PPHS2 give_VV0 him_PPHO1 the_AT message_NN1 to_TO abandon_VV0 the_AT abbey_NN1
+(ncsubj give They _)
+(obj2 give message)
+(dobj give him)
+(det message the)
+(comp abandon message)
+(xmod to message abandon)
+(dobj abandon abbey)
+(det abbey the)
+
+The_AT busy_JJ abbot_NN1 does_VDZ n't_XX abandon_VV0 his_APP$ abbey_NN1
+(ncsubj abandon abbot _)
+(aux abandon does)
+(ncmod _ abandon n't)
+(dobj abandon abbey)
+(det abbey his)
+(det abbot The)
+(ncmod _ abbot busy)
+
+The_AT busy_JJ confident_JJ resolute_JJ abbot_NN1 abdicates_VVZ
+(ncsubj abdicates abbot _)
+(det abbot The)
+(ncmod _ abbot busy)
+(ncmod _ abbot confident)
+(ncmod _ abbot resolute)
+
+The_AT abbot_NN1 busy_JJ helping_VVG Lee_NP1 is_VBZ crazy_JJ
+(ncsubj is busy _)
+(xcomp _ is crazy)
+(ncmod _ busy abbot)
+(det busy The)
+(xcomp _ busy helping)
+(dobj helping Lee)
+
+The_AT abbot_NN1 eager_JJ that_CST you_PPY help_VV0 is_VBZ crazy_JJ
+(ncsubj is eager _)
+(ncsubj is : _)
+(xcomp _ is crazy)
+(ncmod _ : abbot)
+(ncmod _ eager abbot)
+(det : The)
+(det eager The)
+(ccomp that eager help)
+(ncsubj help you _)
+
+The_AT abbot_NN1 inside_II the_AT abbey_NN1 is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+(ncmod _ abbot inside)
+(dobj inside abbey)
+(det abbey the)
+
+The_AT abbot_NN1 with_IW crazy_JJ moods_NN2 is_VBZ here_RL
+(ncsubj is abbot _)
+(ncmod prt is here)
+(det abbot The)
+(ncmod _ abbot with)
+(dobj with moods)
+(ncmod _ moods crazy)
+
+An_AT1 acquaintance_NN1 of_IO the_AT abbot_NN1 's_$ is_VBZ here_RL
+(ncsubj is acquaintance _)
+(ncmod prt is here)
+(det acquaintance An)
+(iobj acquaintance of)
+(dobj of abbot)
+(ncmod poss ellip abbot)
+(det abbot the)
+
+An_AT1 acquaintance_NN1 of_IO Lee_NP1 's_$ is_VBZ here_RL
+(ncsubj is acquaintance _)
+(ncmod prt is here)
+(det acquaintance An)
+(iobj acquaintance of)
+(dobj of Lee)
+(ncmod poss ellip Lee)
+
+The_AT abbot_NN1 to_TO apologize_VV0 to_II is_VBZ absent_JJ
+(ncsubj is abbot _)
+(xcomp _ is absent)
+(det abbot The)
+(comp apologize abbot)
+(xmod to abbot apologize)
+(ncmod prt apologize to)
+
+The_AT abbot_NN1 agreeing_VVG with_IW Lee_NP1 is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+(ncsubj agreeing abbot _)
+(xmod _ abbot agreeing)
+(iobj agreeing with)
+(dobj with Lee)
+
+The_AT abbot_NN1 amused_VVN that_CST he_PPHS1 apologized_VVD is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+(passive amused)
+(ncsubj amused abbot obj)
+(xmod _ abbot amused)
+(ccomp that amused apologized)
+(ncsubj apologized he _)
+
+The_AT abbot_NN1 who_PNQS abandoned_VVD Lee_NP1 is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+(cmod _ abbot abandoned)
+(ncsubj abandoned who _)
+(dobj abandoned Lee)
+
+The_AT abbot_NN1 who_PNQS Lee_NP1 abandoned_VVD is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(det abbot The)
+(cmod _ abbot abandoned)
+(obj abandoned who _)
+(ncsubj abandoned Lee _)
+
+The_AT abbot_NN1 Lee_NP1 abandoned_VVD is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(ncsubj is : _)
+(xcomp _ is crazy)
+(det : The)
+(det abbot The)
+(ccomp _ abbot abandoned)
+(ncsubj abandoned Lee _)
+
+Whichever_DDQV he_PPHS1 abandoned_VVD is_VBZ crazy_JJ
+(csubj is abandoned _)
+(xcomp _ is crazy)
+(obj abandoned Whichever _)
+(ncsubj abandoned he _)
+
+Whichever_DDQV abbot_NN1 he_PPHS1 abandoned_VVD is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(ncsubj is : _)
+(xcomp _ is crazy)
+(det : Whichever)
+(det abbot Whichever)
+(ccomp _ abbot abandoned)
+(ncsubj abandoned he _)
+
+Whichever_DDQV appears_VVZ scared_JJ is_VBZ crazy_JJ
+(csubj is appears _)
+(xcomp _ is crazy)
+(ncsubj appears Whichever _)
+(xcomp _ appears scared)
+
+Whichever_DDQV abbot_NN1 appears_VVZ scared_JJ is_VBZ crazy_JJ
+(csubj is appears _)
+(xcomp _ is crazy)
+(ncsubj appears abbot _)
+(xcomp _ appears scared)
+(det abbot Whichever)
+
+Sandy_NP1 Jones_NP1 is_VBZ crazy_JJ
+(ncsubj is Jones _)
+(xcomp _ is crazy)
+(ncmod _ Jones Sandy)
+
+Ms_NP1 Jones_NP1 is_VBZ crazy_JJ
+(ncsubj is Jones _)
+(xcomp _ is crazy)
+(ncmod _ Jones Ms)
+
+Ms_NP1 Sandy_NP1 Jones_NP1 is_VBZ crazy_JJ
+(ncsubj is Jones _)
+(xcomp _ is crazy)
+(ncmod _ Jones Ms)
+(ncmod _ Jones Sandy)
+
+Kim_NP1 Jones_NP1 esq._NNSA1 is_VBZ crazy_JJ
+(ncsubj is Jones _)
+(xcomp _ is crazy)
+(ncmod _ Jones esq.)
+(ncmod _ Jones Kim)
+
+Mr_NP1 Kim_NP1 Jones_NP1 esq._NNSA1 is_VBZ crazy_JJ
+(ncsubj is Jones _)
+(xcomp _ is crazy)
+(ncmod _ Jones esq.)
+(ncmod _ Jones Mr)
+(ncmod _ Jones Kim)
+
+The_AT abbey_NN1 abacus_NN1 is_VBZ here_RL
+(ncsubj is abacus _)
+(ncmod prt is here)
+(det abacus The)
+(ncmod _ abacus abbey)
+
+A_ZZ1 full_JJ acquaintance_NN1 is_VBZ here_RL
+(ncsubj is acquaintance _)
+(ncmod prt is here)
+(ncmod _ acquaintance A)
+(ncmod _ acquaintance full)
+
+The_AT abbey_NN1 full_JJ provision_NN1 is_VBZ here_RL
+(ncsubj is provision _)
+(ncmod prt is here)
+(det provision The)
+(ncmod _ provision abbey)
+(ncmod _ provision full)
+
+The_AT abbey_NN1 full_JJ provision_NN1 condition_NN1 is_VBZ here_RL
+(ncsubj is condition _)
+(ncmod prt is here)
+(det condition The)
+(ncmod _ condition abbey)
+(ncmod _ condition full)
+(ncmod _ condition provision)
+
+The_AT abbey_NN1 abbot_NN1 provision_NN1 condition_NN1 is_VBZ here_RL
+(ncsubj is condition _)
+(ncmod prt is here)
+(det condition The)
+(ncmod _ condition abbey)
+(ncmod _ condition abbot)
+(ncmod _ condition provision)
+
+The_AT abbey_NN1 abbots_NN2 are_VBR here_RL
+(ncsubj are abbots _)
+(ncmod prt are here)
+(det abbots The)
+(ncmod _ abbots abbey)
+
+The_AT abbeys_NN2 abbots_NN2 are_VBR here_RL
+(ncsubj are abbots _)
+(ncmod prt are here)
+(det abbots The)
+(ncmod _ abbots abbeys)
+
+The_AT abandoned_VVN abbey_NN1 is_VBZ here_RL
+(ncsubj is abbey _)
+(ncmod prt is here)
+(det abbey The)
+(ncsubj abandoned abbey obj)
+(ncmod _ abbey abandoned)
+
+The_AT accept_VV0 condition_NN1 is_VBZ here_RL
+(ncsubj is condition _)
+(ncmod prt is here)
+(det condition The)
+(ncmod _ condition accept)
+
+Typically_RR ,_, an_AT1 abbot_NN1 ,_, I_PPHS1 think_VV0
+(ncmod _ abbot Typically)
+(ta comma think abbot)
+(ncsubj think I _)
+(det abbot an)
+
+An_AT1 abbot_NN1 ,_, certainly_RR ,_, I_PPHS1 think_VV0
+(ta comma think abbot)
+(ncmod _ think certainly)
+(ncsubj think I _)
+(det abbot An)
+
+The_AT abbey_NN1 behind_RL ,_, I_PPHS1 think_VV0
+(ta comma think abbey)
+(ncsubj think I _)
+(ncmod _ abbey behind)
+(det abbey The)
+
+The_AT action_NN1 after_RA ,_, I_PPHS1 think_VV0
+*** Warning: no parses
+
+The_AT resolute_JJ are_VBR here_RL
+(ncsubj are resolute _)
+(ncmod prt are here)
+(det resolute The)
+
+The_AT very_RG resolute_JJ are_VBR here_RL
+(ncsubj are resolute _)
+(ncmod prt are here)
+(det resolute The)
+(ncmod _ resolute very)
+
+The_AT nearly_RR resolute_JJ are_VBR here_RL
+(ncsubj are resolute _)
+(ncmod prt are here)
+(det resolute The)
+(ncmod _ resolute nearly)
+
+The_AT too_RG resolute_JJ are_VBR here_RL
+(ncsubj are resolute _)
+(ncmod prt are here)
+(det resolute The)
+(ncmod _ resolute too)
+
+The_AT easiest_JJT ,_, I_PPHS1 think_VV0
+(ta comma think easiest)
+(ncsubj think I _)
+(det easiest The)
+
+The_AT more_DAR resolute_JJ are_VBR here_RL
+(ncsubj are resolute _)
+(ncmod prt are here)
+(det resolute The)
+(ncmod _ resolute more)
+
+The_AT more_DAR resolute_JJ is_VBZ here_RL
+(ncsubj is resolute _)
+(ncmod prt is here)
+(det resolute The)
+(ncmod _ resolute more)
+
+The_AT most_DAT resolute_JJ are_VBR here_RL
+(ncsubj are resolute _)
+(ncmod prt are here)
+(ncmod _ most resolute)
+(det resolute The)
+
+The_AT most_DAT resolute_JJ is_VBZ here_RL
+(ncsubj is resolute _)
+(ncmod prt is here)
+(ncmod _ most resolute)
+(det resolute The)
+
+The_AT easiest_JJT is_VBZ here_RL
+(ncsubj is easiest _)
+(ncmod prt is here)
+(det easiest The)
+
+The_AT easier_JJR is_VBZ here_RL
+(ncsubj is easier _)
+(ncmod prt is here)
+(det easier The)
+
+She_PPHS1 is_VBZ busy_JJ
+(ncsubj is She _)
+(xcomp _ is busy)
+
+It_PPH1 is_VBZ full_JJ up_RP
+(ncsubj is It _)
+(ncmod _ is up)
+(xcomp _ is full)
+
+She_PPHS1 is_VBZ anxious_JJ about_II everything_PN1
+(ncsubj is She _)
+(xcomp _ is anxious)
+(iobj anxious about)
+(dobj about everything)
+
+She_PPHS1 is_VBZ anxious_JJ about_II him_PPHO1
+(ncsubj is She _)
+(xcomp _ is anxious)
+(iobj anxious about)
+(dobj about him)
+
+It_PPH1 is_VBZ made_VVN up_RP of_IO abbeys_NN2
+(ncsubj made It _)
+(aux made is)
+(passive made)
+(iobj made of)
+(dobj of abbeys)
+(ncmod prt made up)
+
+It_PPH1 is_VBZ situated_VVN by_II the_AT abbey_NN1
+(ncsubj situated It _)
+(aux situated is)
+(passive situated)
+(iobj situated by)
+(dobj by abbey)
+(det abbey the)
+
+He_PPHS1 is_VBZ accountable_JJ to_II us_PPIO2 for_IF his_APP$ actions_NN2
+(ncsubj is He _)
+(xcomp _ is accountable)
+(iobj accountable for)
+(iobj accountable to)
+(dobj for actions)
+(det actions his)
+(dobj to us)
+
+She_PPHS1 is_VBZ aware_JJ that_CST he_PPHS1 might_VM not_XX apologize_VV0
+(ncsubj is She _)
+(xcomp _ is aware)
+(xcomp _ is :)
+(ccomp that aware apologize)
+(ncsubj apologize he _)
+(aux apologize might)
+(ncmod _ apologize not)
+
+That_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0 is_VBZ convenient_JJ
+(csubj is is _)
+(xcomp _ is convenient)
+(ncsubj is he _)
+(xcomp _ is able)
+(xcomp to able help)
+
+It_PPH1 is_VBZ convenient_JJ that_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0
+(ncsubj is It _)
+(xcomp _ is convenient)
+(xcomp _ is :)
+(ccomp that convenient is)
+(ncsubj is he _)
+(xcomp _ is able)
+(xcomp to able help)
+
+It_PPH1 is_VBZ convenient_JJ that_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0 me_PPIO1
+(ncsubj is It _)
+(xcomp _ is convenient)
+(xcomp _ is :)
+(ccomp that convenient is)
+(ncsubj is he _)
+(xcomp _ is able)
+(xcomp to able help)
+(dobj help me)
+
+That_CST he_PPHS1 would_VM n't_XX apologize_VV0 was_VBDZ clear_JJ to_II me_PPIO1
+(csubj was apologize _)
+(xcomp _ was clear)
+(iobj clear to)
+(dobj to me)
+(ncsubj apologize he _)
+(aux apologize would)
+(ncmod _ apologize n't)
+
+It_PPH1 was_VBDZ clear_JJ to_II me_PPIO1 that_CST he_PPHS1 would_VM n't_XX apologize_VV0
+(ncsubj was It _)
+(xcomp _ was clear)
+(xcomp _ was :)
+(ccomp (to (lambda (c1) (lambda (v1) c1))) clear
+ (to (lambda (c2) (lambda (v2) v2))))
+(ncsubj apologize he _)
+(aux apologize would)
+(ncmod _ apologize n't)
+(dobj to me)
+
+She_PPHS1 was_VBDZ eager_JJ that_CST he_PPHS1 apologize_VV0
+(ncsubj was She _)
+(xcomp _ was eager)
+(xcomp _ was :)
+(ccomp that eager apologize)
+(ncsubj apologize he _)
+
+That_CST he_PPHS1 apologize_VV0 is_VBZ necessary_JJ
+(csubj is apologize _)
+(xcomp _ is necessary)
+(ncsubj apologize he _)
+
+It_PPH1 is_VBZ necessary_JJ that_CST he_PPHS1 apologize_VV0
+(ncsubj is It _)
+(xcomp _ is necessary)
+(xcomp _ is :)
+(ccomp that necessary apologize)
+(ncsubj apologize he _)
+
+He_PPHS1 is_VBZ eager_JJ for_IF us_PPIO2 to_TO apologize_VV0
+(ncsubj is He _)
+(xcomp _ is eager)
+(ccomp _ eager for)
+(ccomp _ for us)
+(ncsubj apologize us _)
+
+For_IF him_PPHO1 to_TO apologize_VV0 is_VBZ inessential_JJ
+(ncsubj is For inv)
+(xcomp _ is inessential)
+(dobj For him)
+(arg apologize him)
+(xmod to him apologize)
+
+It_PPH1 is_VBZ inessential_JJ for_IF him_PPHO1 to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is inessential)
+(ccomp _ inessential for)
+(ccomp _ for him)
+(ncsubj apologize him _)
+
+To_TO apologize_VV0 is_VBZ normal_JJ
+(xsubj is apologize _)
+(xcomp _ is normal)
+
+It_PPH1 is_VBZ normal_JJ to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is normal)
+(xcomp to normal apologize)
+
+It_PPH1 is_VBZ crazy_JJ of_IO him_PPHO1 to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is crazy)
+(iobj crazy of)
+(dobj of him)
+(arg apologize him)
+(xmod to him apologize)
+
+He_PPHS1 is_VBZ ready_JJ to_TO abandon_VV0 her_PPHO1
+(ncsubj is He _)
+(xcomp _ is ready)
+(xcomp to ready abandon)
+(dobj abandon her)
+
+She_PPHS1 is_VBZ ready_JJ to_TO abandon_VV0
+(ncsubj is She _)
+(xcomp _ is ready)
+(xcomp to ready abandon)
+
+She_PPHS1 is_VBZ ready_JJ for_IF us_PPIO2 to_TO abandon_VV0
+(ncsubj is She _)
+(xcomp _ is ready)
+(ccomp _ ready for)
+(ccomp _ for us)
+(ncsubj abandon us _)
+
+He_PPHS1 is_VBZ certain_JJ to_TO help_VV0
+(ncsubj is He _)
+(xcomp _ is certain)
+(xcomp to certain help)
+
+That_CST he_PPHS1 apologized_VVD is_VBZ certain_JJ to_TO amuse_VV0 her_PPHO1
+(csubj is apologized _)
+(xcomp _ is certain)
+(xcomp to certain amuse)
+(dobj amuse her)
+(ncsubj apologized he _)
+
+He_PPHS1 is_VBZ eager_JJ to_TO help_VV0 her_PPHO1
+(ncsubj is He _)
+(xcomp _ is eager)
+(xcomp to eager help)
+(dobj help her)
+
+He_PPHS1 is_VBZ busy_JJ helping_VVG her_PPHO1
+(ncsubj is He _)
+(xcomp _ is busy)
+(xcomp _ busy helping)
+(dobj helping her)
+
+He_PPHS1 was_VBDZ scared_VVN crazy_JJ
+(ncsubj scared He _)
+(aux scared was)
+(passive scared)
+(xcomp _ scared crazy)
+
+He_PPHS1 is_VBZ easy_JJ to_TO abandon_VV0
+(ncsubj is He _)
+(xcomp _ is easy)
+(xcomp to easy abandon)
+
+He_PPHS1 is_VBZ easy_JJ for_IF her_PPHO1 to_TO abandon_VV0
+(ncsubj is He _)
+(xcomp _ is easy)
+(ccomp _ easy for)
+(ccomp _ for her)
+(ncsubj abandon her _)
+
+He_PPHS1 is_VBZ confident_JJ of_IO being_VBG resolute_JJ
+(ncsubj is He _)
+(xcomp _ is confident)
+(xcomp _ confident of)
+(xcomp _ of being)
+(xcomp _ being resolute)
+
+He_PPHS1 is_VBZ confident_JJ of_IO her_PPHO1 having_VHG been_VBN resolute_JJ
+(ncsubj is He _)
+(xcomp _ is confident)
+(ccomp _ confident of)
+(ccomp _ of her)
+(ncsubj been her _)
+(aux been having)
+(xcomp _ been resolute)
+
+He_PPHS1 is_VBZ confident_JJ of_IO her_PPHO1 being_VBG resolute_JJ
+(ncsubj is He _)
+(xcomp _ is confident)
+(ccomp _ confident of)
+(ccomp _ of her)
+(ncsubj being her _)
+(xcomp _ being resolute)
+
+It_PPH1 is_VBZ not_XX clear_JJ who_PNQS she_PPHS1 abandoned_VVD
+(ncsubj is It _)
+(xcomp _ is :)
+(xcomp _ is clear)
+(ncmod _ : not)
+(ncmod _ clear not)
+(ccomp _ clear abandoned)
+(obj abandoned who _)
+(ncsubj abandoned she _)
+
+It_PPH1 is_VBZ not_XX clear_JJ whether_CSW she_PPHS1 abandoned_VVD him_PPHO1
+> Error: Unexpected end of file on #<FILE-CHARACTER-INPUT-STREAM ("/private/var/automount/home/j/jo/johnca/MacHome/Desktop/nrasp/corpus/np-ap.trees1" [4]) #x5E7D0AE>
+> While executing: CCL::%READ-CHAR-NO-EOF
+> Type :POP to abort.
+Type :? for other options.
+1 > 

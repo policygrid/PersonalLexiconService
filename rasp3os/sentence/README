@@ -1,0 +1,21 @@
+
+The tool in this directory identifies sentence boundaries in plain ASCII
+(7-bit) encoded English text. The output is suitable for
+futher processing by the 'tokenise' tool also provided here. The file
+sentence.flex was written by John Carroll (University of Sussex, 2003)
+based on earlier work by Eirik Hektoen, Guido Minnen and Greg
+Grefenstette.
+
+The sentence boundary detector uses the immediate context (capitals,
+other punctuation etc.) to distinguish between periods used to end
+sentences and those used to end abbreviations (including titles and
+initials).  The program assumes there is a sentence boundary wherever
+there is a blank line, or whitespace preceded by valid sentence final
+punctuation and followed by a capital letter.
+
+The program is based on a set of relatively simple rules, and is
+therefore far from failproof.
+
+Example usage:
+
+$ sentence < sentence.test

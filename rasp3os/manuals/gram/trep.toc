@@ -1,0 +1,95 @@
+\contentsline {section}{\numberline {1}Overview}{1}
+\contentsline {section}{\numberline {2}The Grammar Formalism}{2}
+\contentsline {subsection}{\numberline {2.1}Rule Types}{4}
+\contentsline {subsubsection}{\numberline {2.1.1}Feature Declarations}{4}
+\contentsline {subsubsection}{\numberline {2.1.2}Feature Set Declarations}{4}
+\contentsline {subsubsection}{\numberline {2.1.3}Alias Declarations}{5}
+\contentsline {subsubsection}{\numberline {2.1.4}Category Declarations}{5}
+\contentsline {subsubsection}{\numberline {2.1.5}Immediate Dominance Rules}{5}
+\contentsline {subsubsection}{\numberline {2.1.6}Linear Precedence Rules}{8}
+\contentsline {subsubsection}{\numberline {2.1.7}Phrase Structure Rules}{8}
+\contentsline {subsubsection}{\numberline {2.1.8}Feature Propagation Rules}{9}
+\contentsline {subsubsection}{\numberline {2.1.9}Feature Default Rules}{10}
+\contentsline {subsubsection}{\numberline {2.1.10}Metarules}{10}
+\contentsline {subsubsection}{\numberline {2.1.11}Top Category Declaration}{13}
+\contentsline {subsection}{\numberline {2.2}Metagrammar Interpretation}{13}
+\contentsline {section}{\numberline {3}Syntactic Features}{15}
+\contentsline {subsection}{\numberline {3.1}The Feature Make-up of Categories}{15}
+\contentsline {subsubsection}{\numberline {3.1.1}Major Categories}{15}
+\contentsline {subsubsection}{\numberline {3.1.2}Minor Categories}{36}
+\contentsline {subsubsection}{\numberline {3.1.3}Other Features}{38}
+\contentsline {subsection}{\numberline {3.2}Feature Propagation}{39}
+\contentsline {subsubsection}{\numberline {3.2.1}Capturing the HFC}{39}
+\contentsline {subsubsection}{\numberline {3.2.2}Capturing the FFP}{39}
+\contentsline {subsubsection}{\numberline {3.2.3}Capturing the CAP}{41}
+\contentsline {subsubsection}{\numberline {3.2.4}Other Propagations}{42}
+\contentsline {subsubsection}{\numberline {3.2.5}Feature Defaults}{43}
+\contentsline {section}{\numberline {4}Semantics}{44}
+\contentsline {subsection}{\numberline {4.1}The Semantics of Sentences}{44}
+\contentsline {subsection}{\numberline {4.2}The Semantics of Noun Phrases}{46}
+\contentsline {subsection}{\numberline {4.3}Events and N2s, A2s and P2s}{47}
+\contentsline {subsection}{\numberline {4.4}Building Semantic Representations}{47}
+\contentsline {section}{\numberline {5}Category Structure and Semantics}{50}
+\contentsline {subsection}{\numberline {5.1}N2}{50}
+\contentsline {subsubsection}{\numberline {5.1.1}Top Level Structure}{50}
+\contentsline {subsubsection}{\numberline {5.1.2}Modifiers}{50}
+\contentsline {subsubsection}{\numberline {5.1.3}Complements}{52}
+\contentsline {subsubsection}{\numberline {5.1.4}N2 Semantics}{52}
+\contentsline {subsubsection}{\numberline {5.1.5}Possessive N2}{55}
+\contentsline {subsubsection}{\numberline {5.1.6}Partitives}{56}
+\contentsline {subsubsection}{\numberline {5.1.7}Pronominals}{57}
+\contentsline {subsubsection}{\numberline {5.1.8}Free Relatives}{58}
+\contentsline {subsubsection}{\numberline {5.1.9}WH N2s}{58}
+\contentsline {subsubsection}{\numberline {5.1.10}Non-restrictive Modification}{59}
+\contentsline {subsubsection}{\numberline {5.1.11}Deixis}{59}
+\contentsline {subsubsection}{\numberline {5.1.12}Bare Plurals}{60}
+\contentsline {subsubsection}{\numberline {5.1.13}Names}{60}
+\contentsline {subsubsection}{\numberline {5.1.14}Headless N2s}{61}
+\contentsline {subsubsection}{\numberline {5.1.15}Compounds}{61}
+\contentsline {subsection}{\numberline {5.2}P2}{62}
+\contentsline {subsubsection}{\numberline {5.2.1}The Structure of P2}{62}
+\contentsline {subsubsection}{\numberline {5.2.2}The Semantics of P2}{63}
+\contentsline {subsection}{\numberline {5.3}A2}{64}
+\contentsline {subsubsection}{\numberline {5.3.1}The Structure of A2}{64}
+\contentsline {subsubsection}{\numberline {5.3.2}The Semantics of A2s}{65}
+\contentsline {subsection}{\numberline {5.4}VP}{67}
+\contentsline {subsubsection}{\numberline {5.4.1}The Structure of VP}{67}
+\contentsline {subsubsection}{\numberline {5.4.2}Complements}{67}
+\contentsline {subsubsection}{\numberline {5.4.3}Modifiers}{67}
+\contentsline {subsubsection}{\numberline {5.4.4}Auxiliaries}{68}
+\contentsline {subsubsection}{\numberline {5.4.5}The Semantics of VPs}{68}
+\contentsline {subsubsection}{\numberline {5.4.6}Phrasal Verbs}{71}
+\contentsline {subsubsection}{\numberline {5.4.7}Pro VPs}{71}
+\contentsline {subsection}{\numberline {5.5}S}{73}
+\contentsline {subsubsection}{\numberline {5.5.1}The Structure of S}{73}
+\contentsline {subsubsection}{\numberline {5.5.2}Modifiers of S}{73}
+\contentsline {subsubsection}{\numberline {5.5.3}Semantics of S}{74}
+\contentsline {subsection}{\numberline {5.6}X2}{76}
+\contentsline {section}{\numberline {6}Constructions}{78}
+\contentsline {subsection}{\numberline {6.1}Passive}{78}
+\contentsline {subsection}{\numberline {6.2}Subject-Auxiliary Inversion}{81}
+\contentsline {subsection}{\numberline {6.3}Extraposition}{85}
+\contentsline {subsection}{\numberline {6.4}Unbounded Dependencies}{86}
+\contentsline {subsubsection}{\numberline {6.4.1}Unbounded Dependency Syntax}{86}
+\contentsline {subsubsection}{\numberline {6.4.2}Unbounded Dependency Semantics}{91}
+\contentsline {subsubsection}{\numberline {6.4.3}Topicalisation}{94}
+\contentsline {subsubsection}{\numberline {6.4.4}Wh-questions}{95}
+\contentsline {subsubsection}{\numberline {6.4.5}Relative Clauses}{96}
+\contentsline {subsubsection}{\numberline {6.4.6}Tough Adjectives}{99}
+\contentsline {subsubsection}{\numberline {6.4.7}It-Clefts}{100}
+\contentsline {subsection}{\numberline {6.5}Agreement and Control}{101}
+\contentsline {subsubsection}{\numberline {6.5.1}Syntactic Agreement}{101}
+\contentsline {subsubsection}{\numberline {6.5.2}The Semantics of Control}{104}
+\contentsline {subsection}{\numberline {6.6}Negation}{108}
+\contentsline {subsection}{\numberline {6.7}Coordination}{111}
+\contentsline {subsection}{\numberline {6.8}Comparatives}{118}
+\contentsline {subsubsection}{\numberline {6.8.1}Syntax}{118}
+\contentsline {subsubsection}{\numberline {6.8.2}Semantics of Nominal Comparatives}{121}
+\contentsline {subsubsection}{\numberline {6.8.3}Semantics of Adjectival Comparatives}{124}
+\contentsline {section}{\numberline {7}Semantic Scoping and Post-Processing Module}{126}
+\contentsline {subsection}{\numberline {7.1}Post-Processing}{126}
+\contentsline {section}{\numberline {8}Conclusions and Further Work}{128}
+\contentsline {section}{\numberline {9}References}{129}
+\contentsline {section}{Appendix 1: Sample Lexical Entries}{i}
+\contentsline {section}{Appendix 2: Sample Test Sentences}{viii}
+\contentsline {section}{Appendix 3: Grammar Listing}{xxi}

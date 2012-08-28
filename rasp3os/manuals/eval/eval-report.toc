@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Evaluation System}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Output Formats}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Relation Summary}{4}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Summary}{5}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Sentence Summary}{5}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}GR Match}{5}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Slots}{5}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Slot Match}{7}{subsubsection.2.2.2}
+\contentsline {section}{\numberline {3}Slot Comparison}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}All}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Head-Dependent}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Head-Dependent-NCSUBJ}{8}{subsection.3.3}
+\contentsline {section}{\numberline {4}GR-Type Match}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Original}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Equality Based}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Subsumption Based}{10}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Hierarchy Based}{10}{subsection.4.4}
+\contentsline {section}{\numberline {5}Resources}{11}{section.5}
+\contentsline {subsection}{\numberline {5.1}Test Files and Gold Standard}{11}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Gold Standard - Parc700 Depbank}{11}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Text and Pre-processed Files}{11}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Running the Evaluation System}{12}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Input Formats}{12}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Script Parameters}{13}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Error Messages}{15}{subsubsection.5.2.3}
+\contentsline {section}{\numberline {6}Current System Performance}{16}{section.6}

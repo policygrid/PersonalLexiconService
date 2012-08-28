@@ -1,0 +1,1462 @@
+The_AT crazy_JJ abandon_VV0 the_AT abbey_NN1
+(ncsubj abandon crazy _)
+(dobj abandon abbey)
+(det abbey the)
+(det crazy The)
+
+Mine_PP$ abandons_VVZ the_AT abbot_NN1 's_$
+(ncsubj abandons Mine _)
+(dobj abandons abbot)
+(ncmod poss ellip abbot)
+(det abbot the)
+
+Kim_NP1 has_VHZ to_TO abdicate_VV0
+(ncsubj abdicate Kim _)
+(ncmod prt has to)
+(aux has abdicate)
+
+Kim_NP1 ought_VMK to_TO abdicate_VV0
+(ncsubj abdicate Kim _)
+(ncmod prt ought to)
+(aux abdicate ought)
+
+Kim_NP1 has_VHZ been_VBN abdicating_VVG
+(ncsubj abdicating Kim _)
+(aux abdicating has)
+(aux abdicating been)
+
+Kim_NP1 had_VHD been_VBN abdicating_VVG
+(ncsubj abdicating Kim _)
+(aux abdicating had)
+(aux abdicating been)
+
+Kim_NP1 may_VM have_VH0 abdicated_VVN
+(ncsubj abdicated Kim _)
+(aux abdicated may)
+(aux abdicated have)
+
+Kim_NP1 may_VM be_VB0 abdicating_VVG
+(ncsubj abdicating Kim _)
+(aux abdicating may)
+(aux abdicating be)
+
+Kim_NP1 may_VM have_VH0 been_VBN abdicating_VVG
+(ncsubj abdicating Kim _)
+(aux abdicating may)
+(aux abdicating have)
+(aux abdicating been)
+
+It_PPH1 may_VM have_VH0 been_VBN raining_VVG
+(ncsubj raining It _)
+(aux raining may)
+(aux raining have)
+(aux raining been)
+
+Kim_NP1 has_VHZ to_TO have_VH0 abdicated_VVN
+(ncsubj abdicated Kim _)
+(ncmod prt has to)
+(aux has abdicated)
+(aux abdicated have)
+
+Kim_NP1 has_VHZ to_TO be_VB0 abdicating_VVG
+(ncsubj abdicating Kim _)
+(ncmod prt has to)
+(aux has abdicating)
+(aux abdicating be)
+
+Kim_NP1 has_VHZ to_TO have_VH0 been_VBN abdicating_VVG
+(ncsubj abdicating Kim _)
+(ncmod prt has to)
+(aux has abdicating)
+(aux abdicating have)
+(aux abdicating been)
+
+Kim_NP1 will_VM have_VH0 abdicated_VVN
+(ncsubj abdicated Kim _)
+(aux abdicated will)
+(aux abdicated have)
+
+Kim_NP1 will_VM be_VB0 abdicating_VVG
+(ncsubj abdicating Kim _)
+(aux abdicating will)
+(aux abdicating be)
+
+Kim_NP1 will_VM have_VH0 been_VBN abdicating_VVG
+(ncsubj abdicating Kim _)
+(aux abdicating will)
+(aux abdicating have)
+(aux abdicating been)
+
+Kim_NP1 appears_VVZ to_TO be_VB0 abdicating_VVG
+(ncsubj appears Kim _)
+(xcomp to appears abdicating)
+(aux abdicating be)
+
+Kim_NP1 appears_VVZ to_TO have_VH0 abdicated_VVN
+(ncsubj appears Kim _)
+(xcomp to appears abdicated)
+(aux abdicated have)
+
+Kim_NP1 abdicates_VVZ
+(ncsubj abdicates Kim _)
+
+It_PPH1 rains_VVZ
+(ncsubj rains It _)
+
+Kim_NP1 answers_VVZ back_RL
+(ncsubj answers Kim _)
+(ncmod prt answers back)
+
+It_PPH1 is_VBZ bucketing_VVG down_RP
+(ncsubj bucketing It _)
+(aux bucketing is)
+(ncmod prt bucketing down)
+
+Kim_NP1 abandoned_VVD Fido_NP1
+(ncsubj abandoned Kim _)
+(dobj abandoned Fido)
+
+Kim_NP1 let_VVD Fido_NP1 out_RP
+(ncsubj let Kim _)
+(dobj let Fido)
+(ncmod prt let out)
+
+Kim_NP1 let_VVD out_RP Fido_NP1
+(ncsubj let Kim _)
+(dobj let Fido)
+(ncmod prt let out)
+
+Kim_NP1 gives_VVZ Lee_NP1 the_AT butter_NN1
+(ncsubj gives Kim _)
+(obj2 gives butter)
+(dobj gives Lee)
+(det butter the)
+
+Kim_NP1 gives_VVZ the_AT abbot_NN1 some_DD butter_NN1
+(ncsubj gives Kim _)
+(obj2 gives butter)
+(dobj gives abbot)
+(det butter some)
+(det abbot the)
+
+Kim_NP1 gives_VVZ the_AT abbot_NN1 back_RL the_AT butter_NN1
+(ncsubj gives Kim _)
+(ncmod prt gives back)
+(obj2 gives butter)
+(dobj gives abbot)
+(det butter the)
+(det abbot the)
+
+Kim_NP1 gives_VVZ the_AT abbot_NN1 the_AT butter_NN1 back_RL
+(ncsubj gives Kim _)
+(ncmod prt gives back)
+(obj2 gives butter)
+(dobj gives abbot)
+(det butter the)
+(det abbot the)
+
+Kim_NP1 gives_VVZ them_PPHO2 the_AT abbot_NN1 back_RL
+(ncsubj gives Kim _)
+(ncmod prt gives back)
+(obj2 gives abbot)
+(dobj gives them)
+(det abbot the)
+
+Kim_NP1 looks_VVZ at_II Sandy_NP1
+(ncsubj looks Kim _)
+(iobj looks at)
+(dobj at Sandy)
+
+Kim_NP1 reflects_VVZ upon_II his_APP$ discovery_NN1
+(ncsubj reflects Kim _)
+(iobj reflects upon)
+(dobj upon discovery)
+(det discovery his)
+
+Kim_NP1 abdicates_VVZ from_II the_AT abbey_NN1
+(ncsubj abdicates Kim _)
+(iobj abdicates from)
+(dobj from abbey)
+(det abbey the)
+
+Kim_NP1 acts_VVZ for_IF the_AT abbot_NN1
+(ncsubj acts Kim _)
+(iobj acts for)
+(dobj for abbot)
+(det abbot the)
+
+Kim_NP1 acts_VVZ as_CSA the_AT abbot_NN1
+(ncsubj acts Kim _)
+(iobj acts as)
+(dobj as abbot)
+(det abbot the)
+
+The_AT abbot_NN1 appeared_VVD in_II the_AT abbey_NN1
+(ncsubj appeared abbot _)
+(iobj appeared in)
+(dobj in abbey)
+(det abbey the)
+(det abbot The)
+
+Kim_NP1 made_VVD off_RP with_IW the_AT butter_NN1
+(ncsubj made Kim _)
+(iobj made with)
+(dobj with butter)
+(det butter the)
+(ncmod prt made off)
+
+Kim_NP1 breaks_VVZ away_RL from_II the_AT abbey_NN1
+(ncsubj breaks Kim _)
+(iobj breaks from)
+(dobj from abbey)
+(det abbey the)
+(ncmod prt breaks away)
+
+The_AT abbot_NN1 ended_VVD up_RP at_II the_AT abbey_NN1
+(ncsubj ended abbot _)
+(iobj ended at)
+(dobj at abbey)
+(det abbey the)
+(ncmod prt ended up)
+(det abbot The)
+
+Kim_NP1 gives_VVZ the_AT butter_NN1 to_II Sandy_NP1
+(ncsubj gives Kim _)
+(iobj gives to)
+(dobj gives butter)
+(dobj to Sandy)
+(det butter the)
+
+Kim_NP1 brings_VVZ the_AT butter_NN1 back_RL for_IF Sandy_NP1
+(ncsubj brings Kim _)
+(iobj brings for)
+(ncmod prt brings back)
+(dobj brings butter)
+(dobj for Sandy)
+(det butter the)
+
+Kim_NP1 brings_VVZ them_PPHO2 back_RL for_IF Sandy_NP1
+(ncsubj brings Kim _)
+(iobj brings for)
+(ncmod prt brings back)
+(dobj brings them)
+(dobj for Sandy)
+
+Kim_NP1 brings_VVZ back_RL the_AT butter_NN1 for_IF Sandy_NP1
+(ncsubj brings Kim _)
+(iobj brings for)
+(dobj brings butter)
+(dobj for Sandy)
+(det butter the)
+(ncmod prt brings back)
+
+Kim_NP1 advises_VVZ Sandy_NP1 of_IO the_AT discovery_NN1
+(ncsubj advises Kim _)
+(iobj advises of)
+(dobj advises Sandy)
+(dobj of discovery)
+(det discovery the)
+
+Kim_NP1 asks_VVZ Sandy_NP1 for_IF the_AT provisions_NN2
+(ncsubj asks Kim _)
+(iobj asks for)
+(dobj asks Sandy)
+(dobj for provisions)
+(det provisions the)
+
+Kim_NP1 carries_VVZ the_AT message_NN1 back_RL to_II the_AT abbey_NN1
+(ncsubj carries Kim _)
+(iobj carries to)
+(ncmod prt carries back)
+(dobj carries message)
+(dobj to abbey)
+(det abbey the)
+(det message the)
+
+Kim_NP1 carries_VVZ them_PPHO2 back_RL to_II the_AT abbey_NN1
+(ncsubj carries Kim _)
+(iobj carries to)
+(ncmod prt carries back)
+(dobj carries them)
+(dobj to abbey)
+(det abbey the)
+
+Kim_NP1 carries_VVZ back_RL the_AT message_NN1 to_II the_AT abbey_NN1
+(ncsubj carries Kim _)
+(iobj carries to)
+(dobj carries message)
+(dobj to abbey)
+(det abbey the)
+(det message the)
+(ncmod prt carries back)
+
+Kim_NP1 appeals_VVZ to_II Sandy_NP1 against_II the_AT conditions_NN2
+(ncsubj appeals Kim _)
+(iobj appeals against)
+(iobj appeals to)
+(dobj against conditions)
+(det conditions the)
+(dobj to Sandy)
+
+Kim_NP1 appeals_VVZ against_II the_AT conditions_NN2 to_II Sandy_NP1
+(ncsubj appeals Kim _)
+(iobj appeals to)
+(iobj appeals against)
+(dobj to Sandy)
+(dobj against conditions)
+(det conditions the)
+
+Sandy_NP1 comes_VVZ down_RP on_II Kim_NP1 for_IF his_APP$ doubts_NN2
+(ncsubj comes Sandy _)
+(iobj comes for)
+(iobj comes on)
+(dobj for doubts)
+(det doubts his)
+(dobj on Kim)
+(ncmod prt comes down)
+
+Sandy_NP1 comes_VVZ down_RP for_IF his_APP$ doubts_NN2 on_II Kim_NP1
+(ncsubj comes Sandy _)
+(iobj comes on)
+(iobj comes for)
+(dobj on Kim)
+(dobj for doubts)
+(det doubts his)
+(ncmod prt comes down)
+
+Kim_NP1 turned_VVD the_AT abbot_NN1 's_$ mood_NN1 from_II a_AT1 doubt_NN1 into_II an_AT1 anxiety_NN1
+(ncsubj turned Kim _)
+(iobj turned into)
+(iobj turned from)
+(dobj turned mood)
+(dobj into anxiety)
+(det anxiety an)
+(dobj from doubt)
+(det doubt a)
+(ncmod poss mood abbot)
+(det abbot the)
+
+Kim_NP1 turned_VVD the_AT abbot_NN1 's_$ mood_NN1 into_II an_AT1 anxiety_NN1 from_II a_AT1 doubt_NN1
+(ncsubj turned Kim _)
+(iobj turned from)
+(iobj turned into)
+(dobj turned mood)
+(dobj from doubt)
+(det doubt a)
+(dobj into anxiety)
+(det anxiety an)
+(ncmod poss mood abbot)
+(det abbot the)
+
+He_PPHS1 falls_VVZ against_II the_AT abbot_NN1
+(ncsubj falls He _)
+(iobj falls against)
+(dobj against abbot)
+(det abbot the)
+
+He_PPHS1 gets_VVZ behind_II the_AT abbot_NN1
+(ncsubj gets He _)
+(iobj gets behind)
+(dobj behind abbot)
+(det abbot the)
+
+He_PPHS1 ended_VVD up_RP in_II athens_NN2
+(ncsubj ended He _)
+(iobj ended in)
+(dobj in athens)
+(ncmod prt ended up)
+
+She_PPHS1 puts_VVZ the_AT abacus_NN1 in_II the_AT abbey_NN1
+(ncsubj puts She _)
+(iobj puts in)
+(dobj puts abacus)
+(dobj in abbey)
+(det abbey the)
+(det abacus the)
+
+It_PPH1 cost_VVD much_DA1 anxiety_NN1
+(ncsubj cost It _)
+(dobj cost anxiety)
+(ncmod _ anxiety much)
+
+It_PPH1 costs_VVZ him_PPHO1 his_APP$ abacus_NN1
+(ncsubj costs It _)
+(obj2 costs abacus)
+(dobj costs him)
+(det abacus his)
+
+It_PPH1 sets_VVZ him_PPHO1 back_RL his_APP$ abacus_NN1
+(ncsubj sets It _)
+(ncmod prt sets back)
+(obj2 sets abacus)
+(dobj sets him)
+(det abacus his)
+
+This_DD1 augurs_VVZ well_RR
+(ncsubj augurs This _)
+(ncmod _ augurs well)
+
+He_PPHS1 acts_VVZ resolutely_RR
+(ncsubj acts He _)
+(ncmod _ acts resolutely)
+
+The_AT message_NN1 comes_VVZ across_RP well_RR
+(ncsubj comes message _)
+(ncmod _ comes well)
+(ncmod prt comes across)
+(det message The)
+
+This_DD1 augurs_VVZ well_RR for_IF him_PPHO1
+(ncsubj augurs This _)
+(ncmod _ augurs for)
+(dobj for him)
+(ncmod _ augurs well)
+
+He_PPHS1 acquits_VVZ himself_PPX1 well_RR
+(ncsubj acquits He _)
+(ncmod _ acquits well)
+(dobj acquits himself)
+
+Kim_NP1 anticipates_VVZ that_CST Sandy_NP1 will_VM fall_VV0 over_RP
+(ncsubj anticipates Kim _)
+(ccomp that anticipates fall)
+(ncsubj fall Sandy _)
+(aux fall will)
+(ncmod prt fall over)
+
+Kim_NP1 anticipates_VVZ Sandy_NP1 will_VM fall_VV0 over_RP
+(ncsubj anticipates Kim _)
+(ccomp _ anticipates fall)
+(ncsubj fall Sandy _)
+(aux fall will)
+(ncmod prt fall over)
+
+She_PPHS1 lets_VVZ on_RP that_CST she_PPHS1 knows_VVZ him_PPHO1
+(ncsubj lets She _)
+(ccomp that lets knows)
+(ncsubj knows she _)
+(dobj knows him)
+(ncmod prt lets on)
+
+She_PPHS1 lets_VVZ on_RP she_PPHS1 knows_VVZ him_PPHO1
+(ncsubj lets She _)
+(ccomp _ lets knows)
+(ncsubj knows she _)
+(dobj knows him)
+(ncmod prt lets on)
+
+It_PPH1 appears_VVZ that_CST she_PPHS1 knows_VVZ him_PPHO1
+(ncsubj appears It _)
+(ccomp that appears knows)
+(ncsubj knows she _)
+(dobj knows him)
+
+It_PPH1 turns_VVZ out_RP she_PPHS1 knows_VVZ him_PPHO1
+(ncsubj turns It _)
+(ccomp _ turns knows)
+(ncsubj knows she _)
+(dobj knows him)
+(ncmod prt turns out)
+
+That_CST he_PPHS1 did_VDD n't_XX help_VV0 mattered_VVD
+(csubj mattered help that)
+(ncsubj help he _)
+(aux help did)
+(ncmod _ help n't)
+
+It_PPH1 mattered_VVD that_CST he_PPHS1 did_VDD n't_XX help_VV0
+(ncsubj mattered It _)
+(ccomp that mattered help)
+(ncsubj help he _)
+(aux help did)
+(ncmod _ help n't)
+
+Sandy_NP1 promises_VVZ her_PPHO1 that_CST he_PPHS1 will_VM help_VV0
+(ncsubj promises Sandy _)
+(ccomp that promises help)
+(dobj promises her)
+(ncsubj help he _)
+(aux help will)
+
+She_PPHS1 did_VDD have_VH0 him_PPHO1 on_RP that_CST she_PPHS1 knows_VVZ him_PPHO1
+(ncsubj have She _)
+(aux have did)
+(ccomp that have knows)
+(dobj have him)
+(ncmod prt have on)
+(ncsubj knows she _)
+(dobj knows him)
+
+That_CST he_PPHS1 apologized_VVD amuses_VVZ her_PPHO1
+(csubj amuses apologized that)
+(dobj amuses her)
+(ncsubj apologized he _)
+
+It_PPH1 amuses_VVZ her_PPHO1 that_CST he_PPHS1 apologized_VVD
+(ncsubj amuses It _)
+(ccomp that amuses apologized)
+(dobj amuses her)
+(ncsubj apologized he _)
+
+She_PPHS1 acknowledged_VVD to_II him_PPHO1 that_CST she_PPHS1 had_VHD apologized_VVD
+(ncsubj acknowledged She _)
+(ccomp that acknowledged apologized)
+(iobj acknowledged to)
+(ncsubj apologized she _)
+(aux apologized had)
+(dobj to him)
+
+She_PPHS1 agrees_VVZ with_IW him_PPHO1 that_CST he_PPHS1 should_VM help_VV0 Lee_NP1
+(ncsubj agrees She _)
+(ccomp that agrees help)
+(iobj agrees with)
+(ncsubj help he _)
+(aux help should)
+(dobj help Lee)
+(dobj with him)
+
+She_PPHS1 gets_VVZ through_RP to_II him_PPHO1 that_CST he_PPHS1 should_VM help_VV0 Lee_NP1
+(ncsubj gets She _)
+(ccomp that gets help)
+(iobj gets to)
+(ncsubj help he _)
+(aux help should)
+(dobj help Lee)
+(dobj to him)
+(ncmod prt gets through)
+
+That_CST Lee_NP1 should_VM apologize_VV0 matters_VVZ to_II her_PPHO1
+(csubj matters apologize that)
+(iobj matters to)
+(dobj to her)
+(ncsubj apologize Lee _)
+(aux apologize should)
+
+It_PPH1 matters_VVZ to_II her_PPHO1 that_CST Lee_NP1 should_VM apologize_VV0
+(ncsubj matters It _)
+(ccomp that matters apologize)
+(iobj matters to)
+(ncsubj apologize Lee _)
+(aux apologize should)
+(dobj to her)
+
+It_PPH1 dawned_VVD on_II him_PPHO1 that_CST he_PPHS1 ought_VMK to_TO help_VV0 Kim_NP1
+(ncsubj dawned It _)
+(ccomp that dawned help)
+(iobj dawned on)
+(ncsubj help he _)
+(ncmod prt ought to)
+(aux help ought)
+(dobj help Kim)
+(dobj on him)
+
+He_PPHS1 bet_VVD her_PPHO1 his_APP$ abacus_NN1 that_CST he_PPHS1 could_VM do_VD0 it_PPH1
+(ncsubj bet He _)
+(ccomp that bet do)
+(obj2 bet abacus)
+(dobj bet her)
+(ncsubj do he _)
+(aux do could)
+(dobj do it)
+(det abacus his)
+
+Kim_NP1 arranges_VVZ for_IF Sandy_NP1 to_TO help_VV0 him_PPHO1
+(ncsubj arranges Kim _)
+(iobj arranges for)
+(xcomp to arranges help)
+(dobj help him)
+(dobj for Sandy)
+
+Kim_NP1 arranged_VVD with_IW Lee_NP1 for_IF him_PPHO1 to_TO help_VV0 her_PPHO1
+(ncsubj arranged Kim _)
+(ccomp _ arranged for)
+(iobj arranged with)
+(ccomp _ for him)
+(ncsubj help him _)
+(dobj help her)
+(dobj with Lee)
+
+Kim_NP1 advises_VVZ that_CST Sandy_NP1 help_VV0 him_PPHO1
+(ncsubj advises Kim _)
+(ccomp that advises help)
+(ncsubj help Sandy _)
+(dobj help him)
+
+Kim_NP1 petitioned_VVD Sandy_NP1 that_CST she_PPHS1 help_VV0 him_PPHO1
+(ncsubj petitioned Kim _)
+(ccomp that petitioned help)
+(dobj petitioned Sandy)
+(ncsubj help she _)
+(dobj help him)
+
+Kim_NP1 arranged_VVD with_IW Lee_NP1 that_CST he_PPHS1 help_VV0 her_PPHO1
+(ncsubj arranged Kim _)
+(ccomp that arranged help)
+(iobj arranged with)
+(ncsubj help he _)
+(dobj help her)
+(dobj with Lee)
+
+Lee_NP1 asks_VVZ whether_CSW Kim_NP1 abdicated_VVD
+(ncsubj asks Lee _)
+(ccomp _ asks whether)
+(ccomp _ whether abdicated)
+(ncsubj abdicated Kim _)
+
+Lee_NP1 asks_VVZ if_CS Kim_NP1 abdicated_VVD
+(ncsubj asks Lee _)
+(ccomp _ asks if)
+(ccomp _ if abdicated)
+(ncsubj abdicated Kim _)
+
+Lee_NP1 asks_VVZ who_PNQS abdicated_VVD
+(ncsubj asks Lee _)
+(ccomp _ asks abdicated)
+(ncsubj abdicated who _)
+
+Lee_NP1 asks_VVZ who_PNQS Kim_NP1 helped_VVD
+(ncsubj asks Lee _)
+(ccomp _ asks helped)
+(obj helped who _)
+(ncsubj helped Kim _)
+
+Lee_NP1 figures_VVZ out_RP whether_CSW Kim_NP1 abdicated_VVD
+(ncsubj figures Lee _)
+(ccomp _ figures whether)
+(ccomp _ whether abdicated)
+(ncsubj abdicated Kim _)
+(ncmod prt figures out)
+
+Lee_NP1 figures_VVZ out_RP who_PNQS Kim_NP1 helped_VVD
+(ncsubj figures Lee _)
+(ccomp _ figures helped)
+(obj helped who _)
+(ncsubj helped Kim _)
+(ncmod prt figures out)
+
+Lee_NP1 knows_VVZ about_II whether_CSW Kim_NP1 abdicated_VVD
+(ncsubj knows Lee _)
+(pcomp knows about)
+(ccomp _ about whether)
+(ccomp _ whether abdicated)
+(ncsubj abdicated Kim _)
+
+Lee_NP1 knows_VVZ about_RP who_PNQS Kim_NP1 helped_VVD
+(ncsubj knows Lee _)
+(ccomp _ knows helped)
+(obj helped who _)
+(ncsubj helped Kim _)
+(ncmod prt knows about)
+
+Lee_NP1 asks_VVZ Sandy_NP1 whether_CSW Kim_NP1 abdicated_VVD
+(ncsubj asks Lee _)
+(ccomp _ asks whether)
+(dobj asks Sandy)
+(ccomp _ whether abdicated)
+(ncsubj abdicated Kim _)
+
+Lee_NP1 asks_VVZ Sandy_NP1 who_PNQS Kim_NP1 helped_VVD
+(ncsubj asks Lee _)
+(ccomp _ asks helped)
+(dobj asks Sandy)
+(obj helped who _)
+(ncsubj helped Kim _)
+
+Kim_NP1 would_VM appreciate_VV0 it_PPH1 if_CS Sandy_NP1 abdicated_VVD
+(ncsubj appreciate Kim _)
+(aux appreciate would)
+(ccomp _ appreciate if)
+(dobj appreciate it)
+(ccomp _ if abdicated)
+(ncsubj abdicated Sandy _)
+
+Lee_NP1 dictated_VVD to_II Sandy_NP1 whether_CSW she_PPHS1 should_VM abdicate_VV0
+(ncsubj dictated Lee _)
+(ccomp _ dictated whether)
+(iobj dictated to)
+(ccomp _ whether abdicate)
+(ncsubj abdicate she _)
+(aux abdicate should)
+(dobj to Sandy)
+
+Lee_NP1 dictated_VVD to_II Sandy_NP1 who_PNQS she_PPHS1 should_VM help_VV0
+(ncsubj dictated Lee _)
+(ccomp _ dictated help)
+(iobj dictated to)
+(obj help who _)
+(ncsubj help she _)
+(aux help should)
+(dobj to Sandy)
+
+Lee_NP1 arranged_VVD with_IW Sandy_NP1 whether_CSW they_PPHS2 should_VM help_VV0
+(ncsubj arranged Lee _)
+(ccomp _ arranged whether)
+(iobj arranged with)
+(ccomp _ whether help)
+(ncsubj help they _)
+(aux help should)
+(dobj with Sandy)
+
+Lee_NP1 arranged_VVD with_IW Sandy_NP1 who_PNQS they_PPHS2 should_VM help_VV0
+(ncsubj arranged Lee _)
+(ccomp _ arranged help)
+(iobj arranged with)
+(obj help who _)
+(ncsubj help they _)
+(aux help should)
+(dobj with Sandy)
+
+It_PPH1 dawned_VVD on_II him_PPHO1 who_PNQS he_PPHS1 had_VHD helped_VVN
+(ncsubj dawned It _)
+(ccomp _ dawned helped)
+(iobj dawned on)
+(obj helped who _)
+(ncsubj helped he _)
+(aux helped had)
+(dobj on him)
+
+Kim_NP1 asks_VVZ whether_CSW to_TO abdicate_VV0
+(ncsubj asks Kim _)
+(xcomp _ asks whether)
+(xcomp to whether abdicate)
+
+Kim_NP1 asks_VVZ who_PNQS to_TO help_VV0
+(ncsubj asks Kim _)
+(dobj asks who)
+(obj help who)
+(xmod to who help)
+
+Kim_NP1 figures_VVZ out_RP whether_CSW to_TO abdicate_VV0
+(ncsubj figures Kim _)
+(xcomp _ figures whether)
+(xcomp to whether abdicate)
+(ncmod prt figures out)
+
+Kim_NP1 figures_VVZ out_RP who_PNQS to_TO help_VV0
+(ncsubj figures Kim _)
+(dobj figures who)
+(obj help who)
+(xmod to who help)
+(ncmod prt figures out)
+
+Kim_NP1 knows_VVZ about_II whether_CSW to_TO abdicate_VV0
+(ncsubj knows Kim _)
+(pcomp knows about)
+(xcomp _ about whether)
+(xcomp to whether abdicate)
+
+Kim_NP1 knows_VVZ about_RP who_PNQS to_TO help_VV0
+(ncsubj knows Kim _)
+(dobj knows who)
+(obj help who)
+(xmod to who help)
+(ncmod prt knows about)
+
+Kim_NP1 advised_VVD Lee_NP1 whether_CSW to_TO abdicate_VV0
+(ncsubj advised Kim _)
+(xcomp _ advised whether)
+(dobj advised Lee)
+(xcomp to whether abdicate)
+
+Kim_NP1 advised_VVD Lee_NP1 who_PNQS to_TO help_VV0
+(ncsubj advised Kim _)
+(obj2 advised who)
+(dobj advised Lee)
+(obj help who)
+(xmod to who help)
+
+Lee_NP1 dictated_VVD to_II Sandy_NP1 whether_CSW to_TO abdicate_VV0
+(ncsubj dictated Lee _)
+(xcomp _ dictated whether)
+(iobj dictated to)
+(xcomp to whether abdicate)
+(dobj to Sandy)
+
+Lee_NP1 dictated_VVD to_II Sandy_NP1 who_PNQS to_TO help_VV0
+(ncsubj dictated Lee _)
+(iobj dictated to)
+(dobj dictated who)
+(obj help who)
+(xmod to who help)
+(dobj to Sandy)
+
+Lee_NP1 arranged_VVD with_IW Sandy_NP1 whether_CSW to_TO help_VV0
+(ncsubj arranged Lee _)
+(xcomp _ arranged whether)
+(iobj arranged with)
+(xcomp to whether help)
+(dobj with Sandy)
+
+Lee_NP1 arranged_VVD with_IW Sandy_NP1 who_PNQS to_TO help_VV0
+(ncsubj arranged Lee _)
+(iobj arranged with)
+(dobj arranged who)
+(obj help who)
+(xmod to who help)
+(dobj with Sandy)
+
+Kim_NP1 appeared_VVD a_AT1 confident_JJ host_NN1
+(ncsubj appeared Kim _)
+(dobj appeared host)
+(det host a)
+(ncmod _ host confident)
+
+Kim_NP1 looked_VVD a_AT1 confident_JJ host_NN1
+(ncsubj looked Kim _)
+(dobj looked host)
+(det host a)
+(ncmod _ host confident)
+
+Kim_NP1 turned_VVD out_RP a_AT1 confident_JJ host_NN1
+(ncsubj turned Kim _)
+(dobj turned host)
+(det host a)
+(ncmod _ host confident)
+(ncmod prt turned out)
+
+Kim_NP1 ended_VVD up_RP a_AT1 confident_JJ host_NN1
+(ncsubj ended Kim _)
+(dobj ended host)
+(det host a)
+(ncmod _ host confident)
+(ncmod prt ended up)
+
+Kim_NP1 appeared_VVD confident_JJ
+(ncsubj appeared Kim _)
+(xcomp _ appeared confident)
+
+Kim_NP1 turned_VVD out_RP confident_JJ
+(ncsubj turned Kim _)
+(xcomp _ turned confident)
+(ncmod prt turned out)
+
+Kim_NP1 looked_VVD confident_JJ
+(ncsubj looked Kim _)
+(xcomp _ looked confident)
+
+Kim_NP1 appears_VVZ to_TO have_VH0 helped_VVN Lee_NP1
+(ncsubj appears Kim _)
+(xcomp to appears helped)
+(aux helped have)
+(obj2 helped Lee)
+
+Kim_NP1 turned_VVD out_RP to_TO have_VH0 helped_VVN Lee_NP1
+(ncsubj turned Kim _)
+(xcomp to turned helped)
+(aux helped have)
+(obj2 helped Lee)
+(ncmod prt turned out)
+
+Kim_NP1 agreed_VVD to_TO help_VV0 Lee_NP1
+(ncsubj agreed Kim _)
+(xcomp to agreed help)
+(dobj help Lee)
+
+Kim_NP1 is_VBZ setting_VVG out_RP to_TO help_VV0 Lee_NP1
+(ncsubj setting Kim _)
+(aux setting is)
+(xcomp to setting help)
+(dobj help Lee)
+(ncmod prt setting out)
+
+Kim_NP1 started_VVD helping_VVG Lee_NP1
+(ncsubj started Kim _)
+(xcomp _ started helping)
+(dobj helping Lee)
+
+Kim_NP1 carried_VVD on_II helping_VVG Lee_NP1
+(ncsubj carried Kim _)
+(xcomp _ carried on)
+(xcomp _ on helping)
+(dobj helping Lee)
+
+Lee_NP1 could_VM do_VD0 with_IW being_VBG looked_VVN at_RP
+(ncsubj do Lee _)
+(xmod _ do with)
+(xcomp _ with looked)
+(aux looked being)
+(passive looked)
+(ncmod prt looked at)
+(aux do could)
+
+Kim_NP1 anticipated_VVD helping_VVG Lee_NP1
+(ncsubj anticipated Kim _)
+(xcomp _ anticipated helping)
+(dobj helping Lee)
+
+Kim_NP1 is_VBZ putting_VVG off_RP helping_VVG Lee_NP1
+(ncsubj putting Kim _)
+(aux putting is)
+(xcomp _ putting helping)
+(dobj helping Lee)
+(ncmod prt putting off)
+
+Lee_NP1 is_VBZ banking_VVG on_II being_VBG looked_VVN at_RP
+(ncsubj banking Lee _)
+(aux banking is)
+(xcomp _ banking on)
+(xcomp _ on looked)
+(aux looked being)
+(passive looked)
+(ncmod prt looked at)
+
+Kim_NP1 will_VM get_VV0 around_RP to_II abdicating_VVG
+(ncsubj get Kim _)
+(aux get will)
+(xcomp _ get to)
+(xcomp _ to abdicating)
+(ncmod prt get around)
+
+Kim_NP1 did_VDD n't_XX dare_VV0 help_VV0 Lee_NP1
+(ncsubj dare Kim _)
+(aux dare did)
+(ncmod _ dare n't)
+(xcomp _ dare help)
+(dobj help Lee)
+
+Kim_NP1 appears_VVZ to_II Lee_NP1 to_TO be_VB0 falling_VVG over_RP
+(ncsubj appears Kim _)
+(iobj appears to)
+(xcomp to appears falling)
+(aux falling be)
+(ncmod prt falling over)
+(dobj to Lee)
+
+Lee_NP1 conspired_VVN with_IW Kim_NP1 to_TO abandon_VV0 Sandy_NP1
+(ncsubj conspired Lee _)
+(iobj conspired with)
+(xcomp to conspired abandon)
+(dobj abandon Sandy)
+(dobj with Kim)
+
+Kim_NP1 promised_VVD Lee_NP1 to_TO help_VV0 him_PPHO1
+(ncsubj promised Kim _)
+(ncsubj help Lee _)
+(xcomp to promised help)
+(dobj promised Lee)
+(dobj help him)
+
+Kim_NP1 strikes_VVZ me_PPIO1 as_CSA confident_JJ
+(ncsubj strikes Kim _)
+(xcomp _ strikes as)
+(dobj strikes me)
+(xcomp _ as confident)
+
+Kim_NP1 strikes_VVZ me_PPIO1 as_CSA a_AT1 confident_JJ host_NN1
+(ncsubj strikes Kim _)
+(iobj strikes as)
+(dobj strikes me)
+(dobj as host)
+(det host a)
+(ncmod _ host confident)
+
+She_PPHS1 acknowledged_VVD him_PPHO1 an_AT1 acquaintance_NN1
+(ncsubj acknowledged She _)
+(obj2 acknowledged acquaintance)
+(dobj acknowledged him)
+(det acquaintance an)
+
+She_PPHS1 acknowledged_VVD it_PPH1 necessary_JJ that_CST he_PPHS1 help_VV0
+(ncsubj acknowledged She _)
+(xcomp _ acknowledged necessary)
+(ncsubj necessary it _)
+(dobj acknowledged it _)
+(ccomp that necessary help)
+(ncsubj help he _)
+
+She_PPHS1 made_VVD him_PPHO1 out_RP crazy_JJ
+(ncsubj made She _)
+(ncmod prt made out)
+(ncsubj crazy him _)
+(dobj made him)
+
+She_PPHS1 counts_VVZ him_PPHO1 crazy_JJ
+(ncsubj counts She _)
+(xcomp _ counts crazy)
+(ncsubj crazy him _)
+(dobj counts him _)
+
+She_PPHS1 sanded_VVD it_PPH1 down_RP normal_JJ
+(ncsubj sanded She _)
+(ncmod prt sanded down)
+(ncsubj normal it _)
+(dobj sanded it)
+
+She_PPHS1 condemned_VVD him_PPHO1 as_CSA crazy_JJ
+(ncsubj condemned She _)
+(xcomp _ condemned as)
+(dobj condemned him)
+(xcomp _ as crazy)
+
+She_PPHS1 was_VBDZ putting_VVG him_PPHO1 down_RP as_CSA crazy_JJ
+(ncsubj putting She _)
+(aux putting was)
+(xcomp _ putting as)
+(ncmod prt putting down)
+(dobj putting him)
+(xcomp _ as crazy)
+
+She_PPHS1 knows_VVZ him_PPHO1 to_TO be_VB0 crazy_JJ
+(ncsubj knows She _)
+(ncsubj be him _)
+(xcomp to knows be)
+(dobj knows him)
+(xcomp _ be crazy)
+
+She_PPHS1 made_VVD him_PPHO1 out_RP to_TO be_VB0 crazy_JJ
+(ncsubj made She _)
+(ncsubj be him _)
+(ncmod prt made out)
+(xcomp to made be)
+(dobj made him)
+(xcomp _ be crazy)
+
+She_PPHS1 allows_VVZ for_IF him_PPHO1 to_TO be_VB0 anxious_JJ
+(ncsubj allows She _)
+(iobj allows for)
+(xcomp to allows be)
+(xcomp _ be anxious)
+(dobj for him)
+
+She_PPHS1 advised_VVD Kim_NP1 to_TO help_VV0 Lee_NP1
+(ncsubj advised She _)
+(ncsubj help Kim _)
+(xcomp to advised help)
+(dobj advised Kim)
+(dobj help Lee)
+
+She_PPHS1 draws_VVZ on_II him_PPHO1 to_TO help_VV0 her_PPHO1
+(ncsubj draws She _)
+(iobj draws on)
+(xcomp to draws help)
+(dobj help her)
+(dobj on him)
+
+She_PPHS1 looks_VVZ to_II him_PPHO1 to_TO help_VV0 her_PPHO1
+(ncsubj looks She _)
+(iobj looks to)
+(xcomp to looks help)
+(dobj help her)
+(dobj to him)
+
+He_PPHS1 comes_VVZ down_RP on_II us_PPIO2 to_TO help_VV0 him_PPHO1
+(ncsubj comes He _)
+(iobj comes on)
+(xcomp to comes help)
+(dobj help him)
+(dobj on us)
+(ncmod prt comes down)
+
+It_PPH1 hurts_VVZ her_PPHO1 to_TO abandon_VV0 him_PPHO1
+(ncsubj hurts It _)
+(ncsubj abandon her _)
+(xcomp to hurts abandon)
+(dobj hurts her)
+(dobj abandon him)
+
+To_TO abandon_VV0 him_PPHO1 hurts_VVZ her_PPHO1
+(xsubj hurts abandon to)
+(dobj hurts her)
+(dobj abandon him)
+
+It_PPH1 behoves_VVZ Kim_NP1 to_TO abdicate_VV0
+(ncsubj behoves It _)
+(ncsubj abdicate Kim _)
+(xcomp to behoves abdicate)
+(dobj behoves Kim)
+
+It_PPH1 falls_VVZ to_II Kim_NP1 to_TO abdicate_VV0
+(ncsubj falls It _)
+(iobj falls to)
+(xcomp to falls abdicate)
+(dobj to Kim)
+
+She_PPHS1 anticipated_VVD him_PPHO1 helping_VVG
+(ncsubj anticipated She _)
+(ncsubj helping him _)
+(xcomp _ anticipated helping)
+(dobj anticipated him)
+
+She_PPHS1 figured_VVD on_II him_PPHO1 helping_VVG
+(ncsubj figured She _)
+(ccomp _ figured on)
+(ccomp _ on him)
+(ncsubj helping him _)
+
+She_PPHS1 hears_VVZ him_PPHO1 apologizing_VVG
+(ncsubj hears She _)
+(ncsubj apologizing him _)
+(xcomp _ hears apologizing)
+(dobj hears him)
+
+She_PPHS1 puts_VVZ him_PPHO1 off_RP helping_VVG
+(ncsubj puts She _)
+(ncmod prt puts off)
+(xcomp _ puts helping)
+(ncsubj helping him _)
+
+She_PPHS1 looks_VVZ at_II Kim_NP1 helping_VVG the_AT abbot_NN1
+(ncsubj looks She _)
+(ccomp _ looks at)
+(ccomp _ at Kim)
+(ncsubj helping Kim _)
+(dobj helping abbot)
+(det abbot the)
+
+Kim_NP1 gives_VVZ himself_PPX1 over_RP to_II helping_VVG the_AT abbot_NN1
+(ncsubj gives Kim _)
+(xcomp _ gives to)
+(ncmod prt gives over)
+(dobj gives himself)
+(xcomp _ to helping)
+(dobj helping abbot)
+(det abbot the)
+
+She_PPHS1 makes_VVZ Lee_NP1 help_VV0 her_PPHO1
+(ncsubj makes She _)
+(ccomp _ makes help)
+(ncsubj help Lee _)
+(dobj help her)
+
+She_PPHS1 sees_VVZ Kim_NP1 fall_VV0 over_RP
+(ncsubj sees She _)
+(ccomp _ sees fall)
+(ncsubj fall Kim _)
+(ncmod prt fall over)
+
+She_PPHS1 looks_VVZ at_II him_PPHO1 fall_VV0 over_RP
+(ncsubj looks She _)
+(ccomp _ looks at)
+(ccomp _ at fall)
+(ncsubj fall him _)
+(ncmod prt fall over)
+
+She_PPHS1 gets_VVZ Kim_NP1 looked_VVD at_RP
+(ncsubj gets She _)
+(ccomp _ gets looked)
+(ncsubj looked Kim _)
+(ncmod prt looked at)
+
+She_PPHS1 sees_VVZ Kim_NP1 looked_VVD at_RP
+(ncsubj sees She _)
+(ccomp _ sees looked)
+(ncsubj looked Kim _)
+(ncmod prt looked at)
+
+It_PPH1 hurts_VVZ to_TO fall_VV0
+(ncsubj hurts It _)
+(xcomp to hurts fall)
+
+To_TO fall_VV0 hurts_VVZ
+(xsubj hurts fall to)
+
+She_PPHS1 is_VBZ busy_JJ
+(ncsubj is She _)
+(xcomp _ is busy)
+
+The_AT abbey_NN1 is_VBZ full_JJ up_RP
+(ncsubj is abbey _)
+(ncmod _ is up)
+(xcomp _ is full)
+(det abbey The)
+
+She_PPHS1 is_VBZ anxious_JJ about_II everything_PN1
+(ncsubj is She _)
+(xcomp _ is anxious)
+(iobj anxious about)
+(dobj about everything)
+
+She_PPHS1 is_VBZ anxious_JJ about_II him_PPHO1
+(ncsubj is She _)
+(xcomp _ is anxious)
+(iobj anxious about)
+(dobj about him)
+
+It_PPH1 is_VBZ made_VVN up_RP of_IO abbeys_NN2
+(ncsubj made It _)
+(aux made is)
+(passive made)
+(iobj made of)
+(dobj of abbeys)
+(ncmod prt made up)
+
+It_PPH1 is_VBZ situated_VVN by_II the_AT abbey_NN1
+(ncsubj situated It _)
+(aux situated is)
+(passive situated)
+(iobj situated by)
+(dobj by abbey)
+(det abbey the)
+
+He_PPHS1 is_VBZ accountable_JJ to_II us_PPIO2 for_IF his_APP$ actions_NN2
+(ncsubj is He _)
+(xcomp _ is accountable)
+(iobj accountable for)
+(iobj accountable to)
+(dobj for actions)
+(det actions his)
+(dobj to us)
+
+She_PPHS1 is_VBZ aware_JJ that_CST he_PPHS1 might_VM apologize_VV0
+(ncsubj is She _)
+(xcomp _ is aware)
+(ccomp that aware apologize)
+(ncsubj apologize he _)
+(aux apologize might)
+
+That_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0 is_VBZ convenient_JJ
+(csubj is is that)
+(xcomp _ is convenient)
+(ncsubj is he _)
+(xcomp _ is able)
+(xcomp to able help)
+
+It_PPH1 is_VBZ convenient_JJ that_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0
+(ncsubj is It _)
+(xcomp _ is convenient)
+(ccomp that convenient is)
+(ncsubj is he _)
+(xcomp _ is able)
+(xcomp to able help)
+
+It_PPH1 is_VBZ convenient_JJ that_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0 me_PPIO1
+(ncsubj is It _)
+(xcomp _ is convenient)
+(ccomp that convenient is)
+(ncsubj is he _)
+(xcomp _ is able)
+(xcomp to able help)
+(dobj help me)
+
+That_CST he_PPHS1 would_VM apologize_VV0 was_VBDZ clear_JJ to_II me_PPIO1
+(csubj was apologize that)
+(xcomp _ was clear)
+(iobj clear to)
+(dobj to me)
+(ncsubj apologize he _)
+(aux apologize would)
+
+It_PPH1 was_VBDZ clear_JJ to_II me_PPIO1 that_CST he_PPHS1 would_VM apologize_VV0
+(ncsubj was It _)
+(xcomp _ was clear)
+(ccomp that clear apologize)
+(pcomp clear to)
+(ncsubj apologize he _)
+(aux apologize would)
+(dobj to me)
+
+She_PPHS1 was_VBDZ eager_JJ that_CST he_PPHS1 apologize_VV0
+(ncsubj was She _)
+(xcomp _ was eager)
+(ccomp that eager apologize)
+(ncsubj apologize he _)
+
+That_CST he_PPHS1 apologize_VV0 is_VBZ necessary_JJ
+(csubj is apologize that)
+(xcomp _ is necessary)
+(ncsubj apologize he _)
+
+It_PPH1 is_VBZ necessary_JJ that_CST he_PPHS1 apologize_VV0
+(ncsubj is It _)
+(xcomp _ is necessary)
+(ccomp that necessary apologize)
+(ncsubj apologize he _)
+
+He_PPHS1 is_VBZ eager_JJ for_IF us_PPIO2 to_TO apologize_VV0
+(ncsubj is He _)
+(xcomp _ is eager)
+(ccomp _ eager for)
+(ccomp _ for us)
+(ncsubj apologize us _)
+
+For_IF him_PPHO1 to_TO apologize_VV0 is_VBZ inessential_JJ
+(csubj is For inv)
+(xcomp _ is inessential)
+(ccomp _ For him)
+(ncsubj apologize him _)
+
+It_PPH1 is_VBZ inessential_JJ for_IF him_PPHO1 to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is inessential)
+(ccomp _ inessential for)
+(ccomp _ for him)
+(ncsubj apologize him _)
+
+To_TO apologize_VV0 is_VBZ normal_JJ
+(xsubj is apologize to)
+(xcomp _ is normal)
+
+It_PPH1 is_VBZ normal_JJ to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is normal)
+(xcomp to normal apologize)
+
+It_PPH1 is_VBZ crazy_JJ of_IO him_PPHO1 to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is crazy)
+(iobj crazy of)
+(dobj of him)
+(arg apologize him)
+(xmod to him apologize)
+
+He_PPHS1 is_VBZ ready_JJ to_TO abandon_VV0 her_PPHO1
+(ncsubj is He _)
+(xcomp _ is ready)
+(xcomp to ready abandon)
+(dobj abandon her)
+
+She_PPHS1 is_VBZ ready_JJ to_TO abandon_VV0
+(ncsubj is She _)
+(xcomp _ is ready)
+(xcomp to ready abandon)
+
+She_PPHS1 is_VBZ ready_JJ for_IF us_PPIO2 to_TO abandon_VV0
+(ncsubj is She _)
+(xcomp _ is ready)
+(ccomp _ ready for)
+(ccomp _ for us)
+(ncsubj abandon us _)
+
+He_PPHS1 is_VBZ certain_JJ to_TO help_VV0
+(ncsubj is He _)
+(xcomp _ is certain)
+(xcomp to certain help)
+
+That_CST he_PPHS1 apologized_VVD is_VBZ certain_JJ to_TO amuse_VV0 her_PPHO1
+(csubj is apologized that)
+(xcomp _ is certain)
+(xcomp to certain amuse)
+(dobj amuse her)
+(ncsubj apologized he _)
+
+He_PPHS1 is_VBZ eager_JJ to_TO help_VV0 her_PPHO1
+(ncsubj is He _)
+(xcomp _ is eager)
+(xcomp to eager help)
+(dobj help her)
+
+He_PPHS1 is_VBZ busy_JJ helping_VVG her_PPHO1
+(ncsubj is He _)
+(xcomp _ is busy)
+(xcomp _ busy helping)
+(dobj helping her)
+
+He_PPHS1 was_VBDZ scared_VVN crazy_JJ
+(ncsubj scared He _)
+(aux scared was)
+(passive scared)
+(xcomp _ scared crazy)
+
+He_PPHS1 is_VBZ easy_JJ to_TO abandon_VV0
+(ncsubj is He _)
+(xcomp _ is easy)
+(xcomp to easy abandon)
+
+He_PPHS1 is_VBZ easy_JJ for_IF her_PPHO1 to_TO abandon_VV0
+(ncsubj is He _)
+(xcomp _ is easy)
+(ccomp _ easy for)
+(ccomp _ for her)
+(ncsubj abandon her _)
+
+He_PPHS1 is_VBZ confident_JJ of_IO being_VBG resolute_JJ
+(ncsubj is He _)
+(xcomp _ is confident)
+(xcomp _ confident of)
+(xcomp _ of being)
+(xcomp _ being resolute)
+
+He_PPHS1 is_VBZ confident_JJ of_IO her_PPHO1 having_VHG been_VBN resolute_JJ
+(ncsubj is He _)
+(xcomp _ is confident)
+(ccomp _ confident of)
+(ccomp _ of her)
+(ncsubj been her _)
+(aux been having)
+(xcomp _ been resolute)
+
+He_PPHS1 is_VBZ confident_JJ of_IO her_PPHO1 being_VBG resolute_JJ
+(ncsubj is He _)
+(xcomp _ is confident)
+(ccomp _ confident of)
+(ccomp _ of her)
+(ncsubj being her _)
+(xcomp _ being resolute)
+
+It_PPH1 is_VBZ clear_JJ who_PNQS she_PPHS1 abandoned_VVD
+(ncsubj is It _)
+(xcomp _ is clear)
+(ccomp _ clear abandoned)
+(obj abandoned who _)
+(ncsubj abandoned she _)
+
+It_PPH1 is_VBZ clear_JJ whether_CSW she_PPHS1 abandoned_VVD him_PPHO1
+(ncsubj is It _)
+(xcomp _ is clear)
+(cmod _ clear whether)
+(ccomp _ whether abandoned)
+(ncsubj abandoned she _)
+(dobj abandoned him)
+
+Whether_CSW she_PPHS1 abandoned_VVD him_PPHO1 is_VBZ clear_JJ
+(csubj is Whether inv)
+(xcomp _ is clear)
+(ccomp _ Whether abandoned)
+(ncsubj abandoned she _)
+(dobj abandoned him)
+
+Who_PNQS she_PPHS1 abandoned_VVD is_VBZ clear_JJ
+(csubj is abandoned _)
+(xcomp _ is clear)
+(obj abandoned Who _)
+(ncsubj abandoned she _)
+
+To_TO apologize_VV0 is_VBZ typical_JJ of_IO him_PPHO1
+(xsubj is apologize to)
+(xcomp _ is typical)
+(iobj typical of)
+(dobj of him)
+
+It_PPH1 is_VBZ typical_JJ of_IO him_PPHO1 to_TO apologize_VV0
+(ncsubj is It _)
+(xcomp _ is typical)
+(iobj typical of)
+(dobj of him)
+(arg apologize him)
+(xmod to him apologize)
+
+It_PPH1 is_VBZ clear_JJ to_II me_PPIO1 who_PNQS she_PPHS1 abandoned_VVD
+(ncsubj is It _)
+(xcomp _ is clear)
+(ccomp _ clear abandoned)
+(pcomp clear to)
+(obj abandoned who _)
+(ncsubj abandoned she _)
+(dobj to me)
+
+It_PPH1 is_VBZ clear_JJ to_II me_PPIO1 whether_CSW she_PPHS1 abandoned_VVD him_PPHO1
+(ncsubj is It _)
+(xcomp _ is clear)
+(cmod _ clear to)
+(ccomp _ whether abandoned)
+(ncsubj abandoned she _)
+(dobj abandoned him)
+(dobj to me)
+
+Whether_CSW she_PPHS1 abandoned_VVD him_PPHO1 is_VBZ clear_JJ to_II me_PPIO1
+(csubj is Whether inv)
+(xcomp _ is clear)
+(iobj clear to)
+(dobj to me)
+(ccomp _ Whether abandoned)
+(ncsubj abandoned she _)
+(dobj abandoned him)
+
+Who_PNQS she_PPHS1 abandoned_VVD is_VBZ clear_JJ to_II me_PPIO1
+(csubj is abandoned _)
+(xcomp _ is clear)
+(iobj clear to)
+(dobj to me)
+(obj abandoned Who _)
+(ncsubj abandoned she _)
+

@@ -1,0 +1,575 @@
+(|April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Dr._NNSB1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Dr._NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Dr_NNSB1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Dr_NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Ms_NP1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" |Ms_NP1|
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Ms._NNSB1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Ms._NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Miss_NNSB1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Miss_NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Mrs_NNSB1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Mrs_NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Mrs._NNSB1| |April_NP1| |Andrews_NP1| |is_VBZ| |my_APP$| |sister-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Mrs._NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |April_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |sister-in-law_NN1|)))))
+(|Mr._NNSB1| |Andrews_NP1| |is_VBZ| |my_APP$| |father-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Mr._NNSB1|
+   ("NP/n1-name" ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |father-in-law_NN1|)))))
+(|Mr_NNSB1| |Andrews_NP1| |is_VBZ| |my_APP$| |father-in-law_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Mr_NNSB1|
+   ("NP/n1-name" ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |father-in-law_NN1|)))))
+(|General_NNS1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-tit_n1-name" |General_NNS1| ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|General_NNS1| |Abraham_NP1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-tit_n1-name" |General_NNS1|
+    ("N1/n-name_n1-name" |Abraham_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|General_NNS1| |Abraham_NP1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-tit_n1-name" |General_NNS1|
+    ("N1/n-name_n1-name" |Abraham_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|Major-General_NNSB1| |Abraham_NP1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Major-General_NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |Abraham_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|Major_NNS1| |General_NNS1| |Abraham_NP1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-tit_n1-name" |Major_NNS1|
+    ("N1/n-tit_n1-name" |General_NNS1|
+     ("N1/n-name_n1-name" |Abraham_NP1| ("N1/n-name" |Andrews_NP1|)))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|President_NNS1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-tit_n1-name" |President_NNS1| ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|Vice-President_NNSB1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Vice-President_NNSB1|
+   ("NP/n1-name" ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|Deputy_NNSB1| |Director_NNSB1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Deputy_NNSB1|
+   ("NP/n-pretit_n2-name" |Director_NNSB1|
+    ("NP/n1-name" ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(|Deputy-Director_NP1| |Andrews_NP1| |is_VBZ| |dead_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" |Deputy-Director_NP1|
+    ("N1/n-name" |Andrews_NP1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |dead_JJ|)))))
+(CEO_NP1 |Frank_NP1| |Fuller_NP1| |has_VHZ| |retired_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" CEO_NP1
+    ("N1/n-name_n1-name" |Frank_NP1| ("N1/n-name" |Fuller_NP1|))))
+  ("V1/have_ppart-r/--" |has_VHZ| ("V1/v" |retired_VVN|))))
+(|Attorney-General_NNSB1| |Hutton_NP1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Attorney-General_NNSB1|
+   ("NP/n1-name" ("N1/n-name" |Hutton_NP1|)))
+  ("V1/v" |retired_VVD|)))
+(|Attorney_NNS1| |General_NNS1| |Hutton_NP1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-tit_n1-name" |Attorney_NNS1|
+    ("N1/n-tit_n1-name" |General_NNS1| ("N1/n-name" |Hutton_NP1|))))
+  ("V1/v" |retired_VVD|)))
+(|Vice-Chief_NNSB1| |Andrews_NP1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Vice-Chief_NNSB1|
+   ("NP/n1-name" ("N1/n-name" |Andrews_NP1|)))
+  ("V1/v" |retired_VVD|)))
+(|Vice_NNSB1| |Chief_NNS1| |Andrews_NP1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Vice_NNSB1|
+   ("NP/n1-name"
+    ("N1/n-tit_n1-name" |Chief_NNS1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/v" |retired_VVD|)))
+(|Fire-Chief_NP1| |Andrews_NP1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" |Fire-Chief_NP1| ("N1/n-name" |Andrews_NP1|)))
+  ("V1/v" |retired_VVD|)))
+(|Molly_NP1| |Andrews_NP1| |Ph.D._NNSA1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n2-name_n-posttit/---"
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |Molly_NP1| ("N1/n-name" |Andrews_NP1|)))
+   |Ph.D._NNSA1|)
+  ("V1/v" |retired_VVD|)))
+(|Molly_NP1| |Andrews_NP1| |B.Sc_NNSA1| |,_,| |Ph.D_NNSA1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n2-name_n-posttit/+--"
+   ("NP/n2-name_n-posttit/---"
+    ("NP/n1-name"
+     ("N1/n-name_n1-name" |Molly_NP1| ("N1/n-name" |Andrews_NP1|)))
+    |B.Sc_NNSA1|)
+   |,_,| |Ph.D_NNSA1|)
+  ("V1/v" |retired_VVD|)))
+(|Baroness_NNSB1| |Andrews_NP1| |,_,| |3rd_MD| |Duchess_NNSB1| |of_IO| |Windsor_NP1| |,_,| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("T/np_lmta"
+   ("NP/n-pretit_n2-name" |Baroness_NNSB1|
+    ("NP/n1-name" ("N1/n-name" |Andrews_NP1|)))
+   ("Taph/comma+/-" |,_,|
+    ("Tph/np/------"
+     ("NP/np-pro_pp-r"
+      ("NP/np-pro_n-r" ("NP/n-num" |3rd_MD|) |Duchess_NNSB1|)
+      ("PP/p1"
+       ("P1/p_np-name" |of_IO|
+        ("NP/n1-name" ("N1/n-name" |Windsor_NP1|))))))
+    |,_,|))
+  ("V1/v" |retired_VVD|)))
+(|Vice-Chancellor_NNSB1| |Andrews_NP1| |retired_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Vice-Chancellor_NNSB1|
+   ("NP/n1-name" ("N1/n-name" |Andrews_NP1|)))
+  ("V1/v" |retired_VVD|)))
+(|Prof._NNSB1| |Emeritus_NP1| |Andrews_NP1| |is_VBZ| |retired_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Prof._NNSB1|
+   ("NP/n1-name"
+    ("N1/n-name_n1-name" |Emeritus_NP1| ("N1/n-name" |Andrews_NP1|))))
+  ("V1/be_ppart/--" |is_VBZ| ("V1/v" |retired_VVN|))))
+(|Commissioners_NNSB2| |Andrews_NP1| |and_CC| |Hutton_NP1| |headed_VVD| |the_AT| |enquiry_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-pretit_n2-name" |Commissioners_NNSB2|
+   ("NP/n1-name"
+    ("N1/n-name"
+     ("N/n_n-coord/-" |Andrews_NP1|
+      ("N/cj-end_n" |and_CC| |Hutton_NP1|)))))
+  ("V1/v_np" |headed_VVD|
+   ("NP/det_n1" |the_AT| ("N1/n" |enquiry_NN1|)))))
+(|The_AT| |New_NP1| |York_NP1| |Times_NP1| |and_CC| |The_AT| |Guardian_NN1| |are_VBR| |newspapers_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np_np-coord/-"
+   ("NP/det_n1" |The_AT|
+    ("N1/n-name_n1-name" |New_NP1|
+     ("N1/n-name_n1-name" |York_NP1| ("N1/n-name" |Times_NP1|))))
+   ("NP/cj-end_np/-----" |and_CC|
+    ("NP/det_n1" |The_AT| ("N1/n" |Guardian_NN1|))))
+  ("V1/be_np/----" |are_VBR| ("NP/n1-plu" ("N1/n" |newspapers_NN2|)))))
+(IBM_NP1 |Plc._NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org" ("N1/n-name_n1-org" IBM_NP1 ("N1/n-org" |Plc._NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(IBM_NP1 |Plc_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org" ("N1/n-name_n1-org" IBM_NP1 ("N1/n-org" |Plc_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(IBM_NP1 PLC_NNJ |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org" ("N1/n-name_n1-org" IBM_NP1 ("N1/n-org" PLC_NNJ)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|ILexIR_NP1| |Ltd._NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org" |ILexIR_NP1| ("N1/n-org" |Ltd._NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|ILexIR_NP1| |Ltd_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org" |ILexIR_NP1| ("N1/n-org" |Ltd_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|ILexIR_NP1| |Limited_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org" |ILexIR_NP1| ("N1/n-org" |Limited_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|InXight_NP1| |Corp._NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org" |InXight_NP1| ("N1/n-org" |Corp._NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|InXight_NP1| |Corp_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org" |InXight_NP1| ("N1/n-org" |Corp_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|InXight_NP1| |Corporation_NNJ1| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org" |InXight_NP1| ("N1/n-org" |Corporation_NNJ1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Network_NN1| |Solutions_NN2| |Inc._NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-org"
+    ("N/n1_n-org" ("N1/n_n1" |Network_NN1| ("N1/n" |Solutions_NN2|))
+     |Inc._NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Network_NN1| |Solutions_NN2| |Inc_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-org"
+    ("N/n1_n-org" ("N1/n_n1" |Network_NN1| ("N1/n" |Solutions_NN2|))
+     |Inc_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Network_NN1| |Solutions_NN2| |Incorporated_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-org"
+    ("N/n1_n-org" ("N1/n_n1" |Network_NN1| ("N1/n" |Solutions_NN2|))
+     |Incorporated_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Thompson_NP1| |and_CC| |Jones_NP1| |Partners_NNJ2| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n1_n1-coord/-" ("N1/n-name" |Thompson_NP1|)
+    ("N1/cj-end_n1" |and_CC| ("N1/n-name_n1-org" |Jones_NP1| 
+     ("N1/n-org" |Partners_NNJ2|)))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Thompson_NP1| |and_CC| |Jones_NP1| |Partners_NNJ2| |are_VBR| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org"
+    ("N/n_n-coord/-" |Thompson_NP1|
+     ("N/cj-end_n" |and_CC| |Jones_NP1|))
+    ("N1/n-org" |Partners_NNJ2|)))
+  ("V1/be_ap/-" |are_VBR| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Thompson_NP1| |and_CC| |Jones_NP1| |Partners_NNJ2| |Inc._NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-name_n1-org"
+    ("N/n_n-coord/-" |Thompson_NP1|
+     ("N/cj-end_n" |and_CC| |Jones_NP1|))
+    ("N1/n-org_n1-org" |Partners_NNJ2| ("N1/n-org" |Inc._NNJ|))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Thomson_NP1| |and_CC| |Son_NNJ1| |are_VBR| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n1_n1-coord/-" ("N1/n-name" |Thomson_NP1|)
+    ("N1/cj-end_n1" |and_CC| ("N1/n-org" |Son_NNJ1|))))
+  ("V1/be_ap/-" |are_VBR| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Computer_NN1| |Consultants_NNJ2| |are_VBR| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-org"
+    ("N/n1_n-org" ("N1/n" |Computer_NN1|) |Consultants_NNJ2|)))
+  ("V1/be_ap/-" |are_VBR| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Computer_NN1| |Consultants_NNJ2| |Ltd._NNJ| |are_VBR| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-org_n1-org"
+    ("N/n1_n-org" ("N1/n" |Computer_NN1|) |Consultants_NNJ2|)
+    ("N1/n-org" |Ltd._NNJ|)))
+  ("V1/be_ap/-" |are_VBR| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|Associated_NNJ| |Press_NNJ| |is_VBZ| |bankrupt_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-org"
+   ("N1/n-org_n1-org" |Associated_NNJ| ("N1/n-org" |Press_NNJ|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |bankrupt_JJ|)))))
+(|The_AT| |Moorings_NN2| |,_,| |Thrifts_NP1| |Walk_NNL1| |,_,| |Cambridge_NP1| |,_,| CB4_NP1 1NR_NP1 |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |The_AT| ("N1/n" |Moorings_NN2|))
+  |,_,|
+  ("S/np_vp"
+   ("NP/n1-pl"
+    ("N1/n-pl"
+     ("N/n-pl_np-name"
+      ("T/n_lmta-r"
+       ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Thrifts_NP1|))
+        |Walk_NNL1|)
+       ("Taph/comma+/-" |,_,|
+        ("Tph/np/------" ("NP/n1-name" ("N1/n-name" |Cambridge_NP1|)))
+        |,_,|))
+      ("NP/n1-name"
+       ("N1/n-name_n1-name" CB4_NP1 ("N1/n-name" 1NR_NP1))))))
+   ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|)))))
+(24_MC |Gundreda_NP1| |Road_NNL1| |,_,| |Lewes_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pl_pco_np-name"
+   ("NP/n1-pl"
+    ("N1/n-num_n1-pl" 24_MC
+     ("N1/n-pl"
+      ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Gundreda_NP1|))
+       |Road_NNL1|))))
+   |,_,| ("NP/n1-name" ("N1/n-name" |Lewes_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(24_MC |Gundreda_NP1| |Rd._NNL1| |,_,| |Lewes_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pl_pco_np-name"
+   ("NP/n1-pl"
+    ("N1/n-num_n1-pl" 24_MC
+     ("N1/n-pl"
+      ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Gundreda_NP1|))
+       |Rd._NNL1|))))
+   |,_,| ("NP/n1-name" ("N1/n-name" |Lewes_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(24_MC |Gundreda_NP1| |Rd_NNL1| |,_,| |Lewes_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pl_pco_np-name"
+   ("NP/n1-pl"
+    ("N1/n-num_n1-pl" 24_MC
+     ("N1/n-pl"
+      ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Gundreda_NP1|))
+       |Rd_NNL1|))))
+   |,_,| ("NP/n1-name" ("N1/n-name" |Lewes_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(24_MC |,_,| |Gundreda_NP1| |Rd._NNL1| |,_,| |Lewes_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-num_np-name"
+   ("T/n_lmta-r" 24_MC
+    ("Taph/comma+/-" |,_,|
+     ("Tph/np/------"
+      ("NP/n1-pl"
+       ("N1/n-pl"
+        ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Gundreda_NP1|))
+         |Rd._NNL1|))))
+     |,_,|))
+   ("NP/n1-name" ("N1/n-name" |Lewes_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(24_MC |Chesterton_NP1| |Street_NNL1| |,_,| |Cambridge_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pl_pco_np-name"
+   ("NP/n1-pl"
+    ("N1/n-num_n1-pl" 24_MC
+     ("N1/n-pl"
+      ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Chesterton_NP1|))
+       |Street_NNL1|))))
+   |,_,| ("NP/n1-name" ("N1/n-name" |Cambridge_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(24_MC |Chesterton_NP1| |St._NNL1| |,_,| |Cambridge_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pl_pco_np-name"
+   ("NP/n1-pl"
+    ("N1/n-num_n1-pl" 24_MC
+     ("N1/n-pl"
+      ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Chesterton_NP1|))
+       |St._NNL1|))))
+   |,_,| ("NP/n1-name" ("N1/n-name" |Cambridge_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(24_MC |Chesterton_NP1| |St_NNL1| |,_,| |Cambridge_NP1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pl_pco_np-name"
+   ("NP/n1-pl"
+    ("N1/n-num_n1-pl" 24_MC
+     ("N1/n-pl"
+      ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Chesterton_NP1|))
+       |St_NNL1|))))
+   |,_,| ("NP/n1-name" ("N1/n-name" |Cambridge_NP1|)))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(234_MC |Ferdinand_NP1| |Avenue_NNL1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-pl"
+   ("N1/n-num_n1-pl" 234_MC
+    ("N1/n-pl"
+     ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Ferdinand_NP1|))
+      |Avenue_NNL1|))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(234_MC |Ferdinand_NP1| |Av._NNL1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-pl"
+   ("N1/n-num_n1-pl" 234_MC
+    ("N1/n-pl"
+     ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Ferdinand_NP1|))
+      |Av._NNL1|))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(234_MC |Ferdinand_NP1| |Ave._NNL1| |is_VBZ| |home._NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-pl"
+   ("N1/n-num_n1-pl" 234_MC
+    ("N1/n-pl"
+     ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Ferdinand_NP1|))
+      |Ave._NNL1|))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home._NN1|))))
+(234_MC |Ferdinand_NP1| |Ave_NNL1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-pl"
+   ("N1/n-num_n1-pl" 234_MC
+    ("N1/n-pl"
+     ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Ferdinand_NP1|))
+      |Ave_NNL1|))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(234_MC |Moreton_NP1| |Close_NNL1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-pl"
+   ("N1/n-num_n1-pl" 234_MC
+    ("N1/n-pl"
+     ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Moreton_NP1|))
+      |Close_NNL1|))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(234_MC |Moreton_NP1| |Cl._NNL1| |is_VBZ| |home_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-pl"
+   ("N1/n-num_n1-pl" 234_MC
+    ("N1/n-pl"
+     ("N/np-name_n-pl/-" ("NP/n1-name" ("N1/n-name" |Moreton_NP1|))
+      |Cl._NNL1|))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |home_NN1|))))
+(|He_PPHS1| |attended_VVD| |The_AT| |House_NNL1| |Finance_NN1| |Committee_NNJ1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/v_np-org" |attended_VVD|
+   ("NP/det_n1" |The_AT|
+    ("N1/n-org"
+     ("N/n1_n-org" ("N1/n" ("N/n-pl_n" |House_NNL1| |Finance_NN1|))
+      |Committee_NNJ1|))))))
+(|He_PPHS1| |is_VBZ| |a_AT1| |member_NN1| |of_IO| |The_AT| |Automobile_NN1| |Association_NNJ1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |a_AT1|
+    ("N1/n_pp-of" |member_NN1|
+     ("PP/p1"
+      ("P1/p_np-org" |of_IO|
+       ("NP/det_n1" |The_AT|
+        ("N1/n-org"
+         ("N/n1_n-org" ("N1/n" |Automobile_NN1|)
+          |Association_NNJ1|))))))))))
+(|He_PPHS1| |is_VBZ| |a_AT1| |member_NN1| |of_IO| |the_AT| |Royal_JJ| |Automobile_NN1| |Club_NNJ1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |a_AT1|
+    ("N1/n_pp-of" |member_NN1|
+     ("PP/p1"
+      ("P1/p_np-org" |of_IO|
+       ("NP/det_n1" |the_AT|
+        ("N1/ap_n1/-" ("AP/a1" ("A1/a" |Royal_JJ|))
+         ("N1/n-org"
+          ("N/n1_n-org" ("N1/n" |Automobile_NN1|) |Club_NNJ1|)))))))))))
+(|He_PPHS1| |is_VBZ| |with_IW| |The_AT| |Bank_NNL1| |of_IO| |England_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/be_pp/---" |is_VBZ|
+   ("PP/p1"
+    ("P1/p_np-pl" |with_IW|
+     ("NP/det_n1" |The_AT|
+      ("N1/n_pp-of" |Bank_NNL1|
+       ("PP/p1"
+        ("P1/p_np-name" |of_IO|
+         ("NP/n1-name" ("N1/n-name" |England_NP1|)))))))))))
+(|He_PPHS1| |is_VBZ| |a_AT1| |Companion_NN1| |of_IO| |the_AT| |Order_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |a_AT1|
+    ("N1/n_pp-of" |Companion_NN1|
+     ("PP/p1"
+      ("P1/p_np" |of_IO|
+       ("NP/det_n1" |the_AT| ("N1/n" |Order_NN1|)))))))))

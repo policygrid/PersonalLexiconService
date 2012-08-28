@@ -1,0 +1,130 @@
+Frequently_RR but_CCB not_XX without_IW some_DD anxiety_NN1 he_PPHS1 helped_VVD the_AT abbot_NN1
+(ncmod _ helped but)
+(ncsubj helped he _)
+(dobj helped abbot)
+(det abbot the)
+(conj but Frequently)
+(conj but not)
+(dobj without anxiety)
+(det anxiety some)
+
+He_PPHS1 helped_VVD the_AT abbot_NN1 frequently_RR but_CCB not_XX without_IW some_DD anxiety_NN1
+(ncsubj helped He _)
+(ncmod _ helped but)
+(conj but frequently)
+(conj but not)
+(dobj without anxiety)
+(det anxiety some)
+(dobj helped abbot)
+(det abbot the)
+
+She_PPHS1 gives_VVZ him_PPHO1 back_RL it_PPH1
+(ncsubj gives She _)
+(ncmod prt gives back)
+(obj2 gives it)
+(dobj gives him)
+
+She_PPHS1 gives_VVZ back_RL it_PPH1 to_II him_PPHO1
+(ncsubj gives She _)
+(iobj gives to)
+(dobj gives it)
+(dobj to him)
+(ncmod prt gives back)
+
+They_PPHS2 advised_VVD him_PPHO1 what_DDQ he_PPHS1 should_VM accept_VV0
+(ncsubj advised They _)
+(ccomp _ advised accept)
+(dobj advised him)
+(obj accept what _)
+(ncsubj accept he _)
+(aux accept should)
+
+She_PPHS1 arranged_VVD with_IW him_PPHO1 what_DDQ they_PPHS2 would_VM see_VV0
+(ncsubj arranged She _)
+(ccomp _ arranged see)
+(iobj arranged with)
+(obj see what _)
+(ncsubj see they _)
+(aux see would)
+(dobj with him)
+
+It_PPH1 dawned_VVD on_II him_PPHO1 what_DDQ he_PPHS1 should_VM do_VD0
+(ncsubj dawned It _)
+(ccomp _ dawned do)
+(iobj dawned on)
+(obj do what _)
+(ncsubj do he _)
+(aux do should)
+(dobj on him)
+
+He_PPHS1 acts_VVZ the_AT host_NN1
+(ncsubj acts He _)
+(dobj acts host)
+(det host the)
+
+He_PPHS1 ended_VVD up_RP abbot_NN1
+(ncsubj ended He _)
+(dobj ended abbot)
+(ncmod prt ended up)
+
+It_PPH1 appears_VVZ certain_JJ to_TO amuse_VV0 her_PPHO1 that_CST he_PPHS1 apologized_VVD
+(ncsubj appears It _)
+(xcomp _ appears certain)
+(xcomp to certain amuse)
+(ccomp that amuse apologized)
+(dobj amuse her)
+(ncsubj apologized he _)
+
+That_CST he_PPHS1 apologized_VVD appears_VVZ certain_JJ to_TO amuse_VV0 her_PPHO1
+(csubj appears apologized _)
+(xcomp _ appears certain)
+(xcomp to certain amuse)
+(dobj amuse her)
+(ncsubj apologized he _)
+
+He_PPHS1 will_VM get_VV0 caught_VVN
+(ncsubj get He _)
+(aux get will)
+(xcomp _ get caught)
+
+That_CST he_PPHS1 will_VM help_VV0 appears_VVZ to_II her_PPHO1 to_TO be_VB0 certain_JJ
+(csubj appears help _)
+(iobj appears to)
+(xcomp to appears be)
+(xcomp _ be certain)
+(dobj to her)
+(ncsubj help he _)
+(aux help will)
+
+That_CST he_PPHS1 accepted_VVD was_VBDZ made_VVN out_RP certain_JJ to_TO help_VV0
+(csubj made accepted _)
+(aux made was)
+(passive made)
+(xcomp _ made certain)
+(xcomp to certain help)
+(ncmod prt made out)
+(ncsubj accepted he _)
+
+It_PPH1 is_VBZ acknowledged_VVN certain_JJ to_TO help_VV0 that_CST he_PPHS1 accepted_VVD
+(ncsubj acknowledged It _)
+(aux acknowledged is)
+(passive acknowledged)
+(xcomp _ acknowledged certain)
+(xcomp to certain help)
+(ccomp that help accepted)
+(ncsubj accepted he _)
+
+That_CST he_PPHS1 accepted_VVD is_VBZ acknowledged_VVN certain_JJ to_TO help_VV0
+(csubj acknowledged accepted _)
+(aux acknowledged is)
+(passive acknowledged)
+(xcomp _ acknowledged certain)
+(xcomp to certain help)
+(ncsubj accepted he _)
+
+She_PPHS1 helps_VVZ frequently_RR and_CC with_IW abandon_NN1
+(ncsubj helps She _)
+(ncmod _ helps and)
+(conj and frequently)
+(dobj with abandon)
+

@@ -1,0 +1,568 @@
+GR output from *.trees1 in corpus/
+
+use rungrs1.sh called from makegrs.sh for all files
+
+Many of the following errors now fixed -- but some useful notes for
+further improvements etc
+
+EJB
+7/07/04
+
+******************
+names.grs
+
+Major_NNS1 General_NNS1 Abraham_NP1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews Major)
+(ncmod _ Andrews General)
+(ncmod _ Andrews Abraham)
+shld be
+(ncmod _ General Major) -- no correct parse?
+
+Molly_NP1 Andrews_NP1 B.Sc_NNSA1 ,_, Ph.D_NNSA1 retired_VVD
+(ncsubj retired <SEMANTICS FOR NODE NP/n2-name_n-posttit/+> _)
+(ncmod _ Andrews B.Sc)
+(ncmod _ Andrews Molly)
+shld be (ncsubj retired Andrews _) and it is when I run with gr-patch
+loaded interactively
+-- fixed
+
+Baroness_NNSB1 Andrews_NP1 ,_, 3rd_MD Duchess_NNSB1 of_IO Windsor_NP1 ,_, retired_VVD
+Correct parse would treat 3rd as mod, and Duchess as head
+
+The_AT Moorings_NN2 ,_, Thrifts_NP1 Walk_NNL1 ,_, Cambridge_NP1 ,_, CB4_NP1 1NR_NP1 is_VBZ home_NN1
+fixed .trees1
+
+The_AT New_NP1 York_NP1 Times_NP1
+(ncmod _ Times New)
+(ncmod _ Times York)
+shld be
+(ncmod _ York New) but all name sequences right-branching
+
+Thompson_NP1 and_CC Jones_NP1 Partners_NNJ2
+(conj and Thompson)
+(conj and Partners)
+cld be (conj and Jones) but no parse
+
+*********************
+
+numbers.grs
+
+Note: changed tsg-grs to ensure 1st April etc (ncmod *num* Apr 1st)a
+
+23rd_MD May_NPM1 ,_, 1993_MC was_VBDZ horrible_JJ
+(ncsubj was <SEMANTICS FOR NODE N1/cplx-nt/+-+> _)
+(xcomp _ was horrible)
+shld be and is with gr-patch
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+-- fixed
+
+ditto -- other cases for N1/cplx-nt in this file
+-- fixed 
+
+0208_MC 892_MC 5144_MC is_VBZ my_APP$ number_NN1
+fixed .trees1
+
+L10,4M_NNU is_VBZ a_AT1 lot_NN1 of_IO money_NN1
+Error: Comma not inside backquote, but interactively
+(ncsubj is L10,4M _)
+(xcomp _ is lot)
+(det lot a)
+(iobj lot of)
+(dobj of money)
+ I think this is wrongly printed (by Allegro I guess). You can fix the 
+> error by putting a pair of vertical bars around the L10,4M_NNU in the 
+> tree.
+>
+rest of file not analysed
+-- fixed
+
+**************************
+
+np-ap.grs
+
+The_AT abbot_NN1 's_$ is_VBZ crazy_JJ
+(ncsubj is abbot _)
+(xcomp _ is crazy)
+(ncmod poss ellip abbot)
+(det abbot The)
+really (ncsubj is ellip _)?
+
+Nearly_RR all_DB abbots_NN2 are_VBR crazy_JJ
+(ncsubj are abbots _)
+(xcomp _ are crazy)
+(ncmod _ abbots Nearly)
+(ncmod part abbots all)
+really (ncmod _ all Nearly) but Nearly_RR? (almost JB/RR)
+
+Much_DA1 anxiety_NN1 appears_VVZ inessential_JJ
+(ncsubj appears Much _)
+(xcomp _ appears inessential)
+(ncmod _ Much anxiety)
+anxiety head -- parse selection error -- fixed .trees1
+
+Half_DB the_AT abbots_NN2 are_VBR crazy_JJ
+All_DB the_AT abbots_NN2 are_VBR crazy_JJ
+Both_DB2 the_AT abbots_NN2 are_VBR crazy_JJ
+fixed in .trees1
+
+He_PPHS1 is_VBZ twice_RR my_APP$ age_NN1
+(ncsubj is He _)
+(xcomp _ is age)
+(ncmod _ age twice)
+(det age my)
+twice_RR->REX -- fixed
+
+The_AT message_NN1 that_CST he_PPHS1 apologized_VVD did_VDD n't_XX account_VV0 for_IF his_APP$ mood_NN1
+(ncsubj account message _)
+(ncsubj account : _)
+(det mood his)
+(det : The)
+fixed in tsg-grs
+
+He_PPHS1 acknowledges_VVZ the_AT provision_NN1 that_CST he_PPHS1 apologize_VV0
+The_AT abbot_NN1 eager_JJ that_CST you_PPY help_VV0 is_VBZ crazy_JJ
+The_AT abbot_NN1 Lee_NP1 abandoned_VVD is_VBZ crazy_JJ
+ditto -- above
+
+They_PPHS2 give_VV0 him_PPHO1 the_AT message_NN1 to_TO abandon_VV0 the_AT abbey_NN1
+(comp abandon message)
+shldn't be here, but keep in N1/n_inf etc?
+
+An_AT1 abbot_NN1 ,_, certainly_RR ,_, I_PPHS1 think_VV0
+(ta comma <SEMANTICS FOR NODE S/adv_s/+> abbot)
+(ncsubj think I _)
+(det abbot An)
+shld be and is with gr-patch
+(ta comma think abbot)
+(ncmod _ think certainly) -- fixed
+
+The_AT action_NN1 after_RA ,_, I_PPHS1 think_VV0
+fixed in .trees1 and tsg-grs
+
+It_PPH1 is_VBZ full_JJ up_RP
+(ncmod _ is up)
+shld be
+(ncmod _ full up) -- no JJ+Prt in tsg-grs
+
+She_PPHS1 is_VBZ aware_JJ that_CST he_PPHS1 might_VM not_XX apologize_VV0
+It_PPH1 is_VBZ convenient_JJ that_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0
+It_PPH1 is_VBZ convenient_JJ that_CST he_PPHS1 is_VBZ able_JJ to_TO help_VV0 me_PPIO1
+She_PPHS1 was_VBDZ eager_JJ that_CST he_PPHS1 apologize_VV0
+It_PPH1 is_VBZ necessary_JJ that_CST he_PPHS1 apologize_VV0
+colon GRs fixed in tsg-grs
+
+It_PPH1 was_VBDZ clear_JJ to_II me_PPIO1 that_CST he_PPHS1 would_VM n't_XX apologize_VV0
+now fixed in tsg-grs to:
+(ncsubj was It _)
+(xcomp _ was clear)
+(ccomp that clear apologize)
+(pcomp clear to)
+(ncsubj apologize he _)
+(aux apologize would)
+(ncmod _ apologize n't)
+(dobj to me)
+
+It_PPH1 is_VBZ not_XX clear_JJ whether_CSW she_PPHS1 abandoned_VVD him_PPHO1
+> Error: Unexpected end of file on #<FILE-CHARACTER-INPUT-STREAM ("/private/var/a
+utomount/home/j/jo/johnca/MacHome/Desktop/nrasp/corpus/np-ap.trees1" [4]) #x5E096
+4E>
+fixed in .trees1
+
+********************
+
+vp.grs
+
+Without_IW a_AT1 doubt_NN1 but_CCB with_IW some_DD anxiety_NN1 he_PPHS1 helped_V
+VD the_AT abbot_NN1
+(conj but Without) shld also be (conj but with) + following egs
+-- fixed
+
+Frequently_RR but_CCB not_XX without_IW some_DD anxiety_NN1 he_PPHS1 helped_VVD 
+the_AT abbot_NN1
+(conj but not) shld be (conj but without) + also (conj but Frequently)
++ following eg
+-- fixed
+
+He_PPHS1 is_VBZ crazy_JJ ,_, is_VBZ n't_XX he_PPHS1 ?_?
+(ncmod _ he n't)
+(ncsubj is He _)
+(xcomp _ is crazy)
+shld be (ta tag is is) + (ncmod _ is n't)
+-- fixed
+
+He_PPHS1 is_VBZ n't_XX crazy_JJ ,_, is_VBZ he_PPHS1 ?_?
+(ta tag is he) shld be (ta tag is is)
++ following tag egs
+-- fixed
+
+This_DD1 augurs_VVZ well_RR 
+(ncmod _ augurs well) shld be prt? + following egs
+-- fixed (but not in test1.grs where still RR)
+
+He_PPHS1 bet_VVD her_PPHO1 his_APP$ abacus_NN1 that_CST he_PPHS1 could_VM make_V
+V0 her_APP$ blush_NN1
+(det blush her) -- wrong tag for her + following eg
+
+He_PPHS1 petitioned_VVD them_PPHO2 that_CST they_PPHS2 let_VV0 him_PPHO1 appeal_VV0
+*** Warning: no matching parse
+He_PPHS1 petitioned_VVD them_PPHO2 they_PPHS2 let_VV0 him_PPHO1 appeal_VV0
+*** Warning: no matching parse
+-- fixed .trees1
+
+She_PPHS1 did_VDD n't_XX take_VV0 in_II whether_CSW he_PPHS1 helped_VVD
+(cmod _ take whether) shld be ccomp
+-- fixed .trees1
+
+They_PPHS2 asked_VVD him_PPHO1 who_PNQS to_II help_NN1
+*** Warning: no matching parse
+-- fixed .trees1
+
+It_PPH1 started_VVD off_RP convenient_JJ that_CST he_PPHS1 should_VM help_VV0
+(xcomp _ started :) -- fixed
+
+He_PPHS1 could_VM do_VD0 with_IW being_VBG more_DAR confident_JJ
+(xmod _ do with) -> xcomp?
+-- `do with' phrasal vb idiom + tsg-grs gap
+
+He_PPHS1 will_VM get_VV0 caught_VVN
+(ncsubj get He _) -> obj + (passive caught) + following eg
+-- get_VB0 corrected .trees1 etc
+
+It_PPH1 strikes_VVZ me_PPIO1 as_CSA conceivable_JJ that_CST he_PPHS1 would_VM  help_VV0
+(xcomp _ as :) -> fixed
+
+She_PPHS1 acknowledged_VVD it_PPH1 necessary_JJ that_CST he_PPHS1 help_VV0
+(xcomp _ acknowledged :) -> fixed
+
+To_II help_NN1 ought_VMK to_TO amuse_VV0 her_PPHO1
+(ncsubj amuse To inv) -- wrong tags
+-- fixed .trees1 etc
+
+That_CST he_PPHS1 is_VBZ crazy_JJ is_VBZ acknowledged_VVN by_II her_PPHO1
+(iobj acknowledged by) -> arg_mod??
+-- arg_mod never for passive by-phrase in tsg-grs
+
+For_IF her_PPHO1 to_TO help_VV0 us_PPIO2 is_VBZ inessential_JJ
+(csubj is For inv) (ccomp _ For her) ??
+-- consequence of PP-sinf analysis
+
+She_PPHS1 is_VBZ busy_JJ and_CC in_II the_AT mood_NN1
+(conj and busy) + need (conj and in) + following egs
+-- fixed
+
+It_PPH1 is_VBZ to_II the_AT abbot_NN1 that_CST he_PPHS1 gives_VVZ the_AT message_NN1
+(dobj to :) (det : the) -> fixed
+
+She_PPHS1 helps_VVZ frequently_RR and_CC with_IW abandon_NN1
+(conj and frequently) + need (conj and with)
+-- fixed
+
+************************
+
+subcat.grs
+
+I_PPHS1 sent_VVD him_PPHO1 as_CSA a_AT1 messenger_NN1
+they_PPHS2 appointed_VVD him_PPHO1 professor_NNS1
+he_PPHS1 seemed_VVD a_AT1 fool_NN
+(iobj sent as) 
+(obj2 appointed professor)
+(dobj seemed fool)
+-> xcomp (pace Delmonte)? + other egs
+
+he_PPHS1 combed_VVD the_AT woods_NN2 looking_VVG for_IF her_PPHO1
+(ncsubj looking woods _) -> wrong consequence of small clause analysis
++ assumption can predict (semantic) ctrl in these cases
+
+John_NP1 promised_VVD Mary_NP1 to_TO resign_VV0
+(ncsubj resign Mary _) -> wrong consequence of predicting (sem) ctrl
+structurally 
+
+they_PPHS2 made_VVD a_AT1 great_JJ fuss_NN1 about_II what_DDQ they_PPHS2 shoul
+d_VM do_VV0
+(ccomp _ made about) -> (ncmod _ fuss about) in which case not a diff. SCF
+
+he_PPHS1 thought_VVD about_II whether_CSW to_TO go_VV0
+he_PPHS1 ruled_VVD out_II paying_VVG her_AT debts_NN2
+(xcomp _ about whether) 
+(xcomp _ ruled out)
+-> c/pcomp? + other egs
+-- make inference of ctrl from xcomp easier? but (xcomp to X Vb)
+triggers it
+
+he_PPHS1 explained_VVD to_II her_PPHO1 how_RGQ she_PPHS1 did_VDD it_PPH1
+(ncsubj did how inv) etc -> fixed in .trees1
+
+he_PPHS1 got_VVD given_VVN a_AT book_NN1
+got_VBDZ -- fixed .trees1 etc
+
+he_PPHS1 looked_VVD at_II him_PPHO1 leave_VV0
+cmod -> ccomp -- fixed
+
+it_PPHS1 carves_VVZ easily_RP
+not RP in seclarge.lex!
+
+I_PPHS1 left_VVD it_PPH1 to_II Kim_NP1 to_TO fix_VV0
+(cmod _ left to) -> ccomp -- fixed .trees1
+
+******************
+
+spc.grs
+
+need following inference rules:
+(ncsubj X Y _) + (passive X) -> (ncsubj X Y obj)
+(iobj X by) + (passive X) -> (ncmod _ Y by)
+latter for `interleaved' / heavy-shifted passive cases e.g. 
+He_PPHS1 was_VBDZ petitioned_VVN by_II them_PPHO2 that_CST they_PPHS2 be_VB0  allowed_VVN to_TO help_VV0
+alternatively:
+(iobj/ncmod X by) + (passive X) -> (arg_mod X by)
+
+dobj -> obj2 cases corrected in tsg-grs
+even for meas/num phrases which mostly have no passive...
+
+`both' and other opening coord markers are not attached (analogous to
+semantically empty compls. like `that')
+
+Errors in coord fixed
+
+No matching parse problems fixed
+
+*******************
+
+wh.grs
+
+
+Which_DDQ abbot_NN1 do_VD0 I_PPIS1 have_VH0 some_DD doubts_NN2 about_II ?_?
+-- no analysis in which extraction is from NP(some doubts about e) but
+also non-extracted SCF for this pattern with `about NP' as arg of vb +
+similar other egs below
+
+My_APP$ doubts_NN2 all_DB of_IO which_DDQ are_VBR crazy_JJ do_VD0 n't_XX help
+_VV0 me_PPIO1
+(ccomp _ doubts are) -> (cmod ...) but no such analysis + similar
+other egs below 
+
+Who_PNQS did_VDD he_PPHS1 have_VH0 a_AT1 desire_NN1 to_TO help_VV0 ?_?
+(obj have Who _) -> (obj help Who _) v. likely inference where there
+are 2+ vbs -- last vb is most likely the head? (how to formulate this
+GR inference rule?) -- note exceptions, eg:
+Who_PNQS did_VDD she_PPHS1 promise_VV0 that_CST she_PPHS1 would_VM help_VV0 h
+im_PPHO1 ?_?
+By_II whom_PNQO was_VBDZ he_PPHS1 asked_VVD what_DDQ they_PPHS2 should_VM do_
+VD0 ?_?
+also many egs with (pcomp X Y) or (ncmod prt X Y) where (obj X wh)
+needs rebinding to (obj Y wh) -- more reliable inference?:
+Lee_NP1 ,_, Sandy_NP1 is_VBZ given_VVN the_AT butter_NN1 back_RL by_II
+other prep dangling cases:
+Kim_NP1 ,_, Lee_NP1 is_VBZ anxious_JJ about_II
+(iobj anxious about) bu no dobj, so (ta voc Kim) -> (dobj about Kim)?
+
+Who_PNQS was_VBDZ he_PPHS1 abandoned_VVD by_II ?_?
+By_II whom_PNQO was_VBDZ he_PPHS1 abandoned_VVD ?_?
+-- wrong VVN, but also no (passive abandoned) in closest correct
+analysis -- now fixed 
+
+What_DDQ did_VDD she_PPHS1 carry_VV0 on_RP with_IW ?_?
+(obj carry What _)
+(ncsubj carry she _)
+(ncmod prt carry with)
+(ncmod prt carry on)
+-- with not really prt + other sim. egs. since no gaps inside PP
+
+Who_PNQS did_VDD she_PPHS1 anticipate_VV0 would_VM help_VV0 ?_?
+-- wrong analysis but only one available, subj. extract. from sent.
+comps. not covered properly
+
+Who_PNQS did_VDD she_PPHS1 get_VV0 them_PPHO2 accepted_VVN by_II ?_?
+Who_PNQS did_VDD she_PPHS1 see_VV0 accepted_VVN by_II them_PPHO2 ?_?
+-- neither (passive accepted) + who attaches early
+
+What_DDQ was_VBDZ there_RL a_AT1 message_NN1 about_II ?_?
+Who_PNQS was_VBDZ it_PPH1 who_PNQS he_PPHS1 helped_VVD ?_?
+-- wrong analysis but only one, shld be /be-sai*
+
+How_RGQ easily_RR can_VM she_PPHS1 do_VD0 it_PPH1 ?_?
+How_RGQ easily_RR was_VBDZ he_PPHS1 being_VBG abandoned_VVN ?_
+-- fixed (How easily) in tsg-grs + .trees1
+
+The_AT abbot_NN1 Lee_NP1 knows_VVZ but_CCB Kim_NP1 does_VDZ n't_XX know_VV0
+-- no correct analysis in set
+
+********************
+
+test1.grs
+
+abdicating_JJ fixed in .trees1 etc
+
+GR inference:
+(csubj X Y _) -> (csubj X Y that)
+That_CST he_PPHS1 apologized_VVD amuses_VVZ her_PPHO1
+-- fixed in tsg-grs + xsubj -> to
+
+Lee_NP1 could_VM do_VD0 with_IW being_VBG looked_VVN at_RP
+(xmod _ do with) -> xcomp, but idiom
+
+banking_NN1 -> VVG fixed in .trees1 etc
+
+It_PPH1 is_VBZ crazy_JJ of_IO him_PPHO1 to_TO apologize_VV0
+-- neither analysis correct: (arg apologize him)
+
+****************************
+
+test2.grs
+
+Someone_PN1 anxious_JJ about_II Kim_NP1 came_VVD
++ (ncmod _ Someone anxious) - fixed in tsg-grs
+
+Kim_NP1 puts_VVZ the_AT butter_NN1 somewhere_RR
+shld be RP and prt analysis -- fixed in .trees1
+
+Whichever_DDQV abbot_NN1 abdicated_VVN came_VVD
+VVD -- fixed in .trees1 etc
+
+The_AT abbot_NN1 Kim_NP1 abandoned_VVD came_VVD
+(ccomp _ abbot abandoned) -> cmod
+
+fixed : in GRs
+
+*****************************
+
+test3.grs
+
+GRs with colons fixed
+
+Problems mostly same as wh.grs
+
+The_AT butter_NN1 much_DA1 of_IO which_DDQ Kim_NP1 has_VHZ is_VBZ crazy_JJ
+-- no correct analysis in set
+
+Some_DD butter_NN1 of_IO Kim_NP1 's_$ melted_VVD
+-- fixed .trees1
+
+Kim_NP1 helped_VVD Lee_NP1 before_RA he_PPHS1 abdicated_VVD
+Lee_NP1 helped_VVD Kim_NP1 after_RA Sandy_NP1 abdicated_VVD
+RA -> ICS fixed in .trees1 etc
+
+Kim_NP1 is_VBZ certainly_RR acknowledged_VVN crazy_JJ
+-- analysis corrected in .trees1
+
+***********************
+
+test4.grs
+
+The_AT many_DA2 who_PNQS abdicate_VV0 are_VBR rare_JJ
+-- fixed ncsubj in tsg-grs
+
+Lee_NP1 was_VBDZ skiing_NN1 here_RL where_CS Kim_NP1 abdicated_VVD
+skiing -> VVG, where -> RQS -- not fixed
+
+Kim_NP1 abdicated_VVD somewhere_RL crazy_JJ
+-- no analysis (somewhere crazy)
+
+Someone_PN1 helped_VVD by_II Kim_NP1
+-- VVN + came_VVD -- not fixed
+
+Kim_NP1 is_VBZ abandoning_VVG Lee_NP1 now_RT when_CS he_PPHS1 is_VBZ eager_JJ to
+_TO be_VB0 helped_VVN
+analysis fixed in .trees1
+
+**************************
+
+errors1.grs
+
+microeconomics_NN1 is_VBZ the_AT key_NN1 ,_, not_XX developing-country_JJ growth_NN1
+(xcomp _ is growth) no correct analysis of `NP , not N1' -- not fixed
+N1/n_n1 rule allows comma + right head?
+
+Nance_NP1 said_VVD
+ no matching parse -- fixed in .trees1
+
+It_PPH1 has_VHZ proven_VVN itself_PPX1 able_JJ to_II self-right_JB
+analysis fixed in .trees1
+
+At_II 4:30_MC a.m_RA they_PPHS2 limped_VVD
+no matching parse -- fixed .trees1
+
+But_CCB think_VV0 of_IO all_DB the_AT disasters_NN2
+Sony_NP1 picked_VVD partners_NN2 -_- Thompson_NP1 Corp_NNJ ,_, Philips_NP1 Plc_N
+NJ ,_, Pioneer_NN1
+semantics doesn't work cos of kleene star in Tph/np -- not fixed
+
+Seven_MC of_IO his_APP$ command_NN1 's_$ aircraft_NN
+analysis fixed in .trees1
+
+At_II 2:54_MC p.m_RA Croatian_JJ time_NNT1
+no matching parse -- not fixed -- moved to .trees0
+
+Albany_NP1 ,_, New_NP1 York_NP1 and_CC Boston_NP1 ,_, Ma._NP1 voted_VVD democrat_NN1
+No correct analysis / matching parse -- deleted .trees1
+
+Loved_VVN ones_MC2 came_VVD home_RL in_II body_NN1 bags_NN2
+no matching parse -- fixed in .trees1
+
+Kim_NP1 resigned_VVD in_II late_JJ 1991_MC
+no matching parse -- fixed in .trees1
+
+**********************
+
+errors2.grs
+
+Why_RRQ is_VBZ it_PPH1 that_CST it_PPH1 rains_VVZ all_DB the_AT time_NNT1 in_II 
+England_NP1 ?_?
+analysis fixed in .trees1
+
+The_AT rate_NN1 is_VBZ lower_JJR than_CSN last_MD month_NNT1 's_$
+analysis fixed in .trees1
+
+That_DD1 was_VBDZ a_AT1 really_RR stupid_JJ thing_NN1 to_TO do_VD0 ,_, you_PPY b
+lundering_JJ idiot_NN1 !_!
+no correct analysis -- not fixed
+
+This_DD1 pub_NN1 was_VBDZ bombed_VVN a_AT1 few_DA2 years_NNT2 ago_RA
+no matching parse -- fixed in .trees1
+
+The_AT gap_NN1 between_II the_AT unemployed_JJ and_CC employers_NN2 who_PNQS nee
+d_VV0 workers_NN2 widened_VVD
+analysis fixed in .trees1
+
+She_PPHS1 snogged_VVD the_AT bishop_NN1 a_AT1 lot_NN1
+a lot -- wrong analysis -- not fixed
+
+Houses_NNL2 were_VBDR built_VVN to_TO last_VV0 a_AT1 few_DA2 years_NNT2 ago_RA
+> Error: Unexpected end of file -- fixed
+
+Lots more egs!!!
+
+****************************
+
+fullgram-errors.grs
+
+No errors
+
+***************************
+
+
+punct1.grs
+
+He_PPHS1 made_VVD the_AT discovery_NN1 :_: Kim_NP1 was_VBDZ the_AT abbot_NN1 ;_;
+ Lee_NP1 was_VBDZ the_AT host_NN1
+analysis wrong -- no (ta ...) embedding Lee... -- not fixed
+
+Kim_NP1 (_( the_AT abbot_NN1 ,_, the_AT host_NN1 )_) appeared_VVD
+(ta bal Kim host) + (ta bal Kim abbot) kleene? - not fixed
+
+****************************
+
+punct2.grs
+
+We_PPIS2 saw_VVD the_AT movie_NN1 (_( which_DDQ had_VHD been_VBN banned_VVN in_I
+I Boston_NP1 )_) -_- Jane_NP1 wanted_VVD to_TO go_VV0 -_- but_CC we_PPIS2 were_VBDR unimpressed_VVN
+wrong analysis -- not fixed
+
+The_AT speakers_NN2 were_VBDR Ed_NP1 ;_; Rachel_NP1 ,_, a_AT linguist_NN1 ;_; and_CC Shirley_NP1
+wrong analysis -- not fixed
+

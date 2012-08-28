@@ -1,0 +1,1267 @@
+his_AT reputation_NN1 sank_VVD low_JJ
+(ncsubj sank reputation _)
+(xcomp _ sank low)
+(det reputation his)
+
+he_NP1 appears_VVZ distressed_VVN
+(ncsubj appears he _)
+(passive distressed)
+(xcomp _ appears distressed)
+
+he_NP1 appears_VVZ crazy_JJ
+(ncsubj appears he _)
+(xcomp _ appears crazy)
+
+he_NP1 meant_VVD well_RP
+(ncsubj meant he _)
+(ncmod prt meant well)
+
+He_NP1 seems_VVZ well_RP
+(ncsubj seems He _)
+(ncmod prt seems well)
+
+I_NP1 worked_VVZ as_CSA an_AT1 apprentice_NN1 cook_NN1
+(ncsubj worked I _)
+(iobj worked as)
+(dobj as cook)
+(det cook an)
+(ncmod _ cook apprentice)
+
+it_PPH1 annoys_VVZ them_PPHO2 that_CST she_PPHS1 left_VVD
+(ncsubj annoys it _)
+(ccomp that annoys left)
+(dobj annoys them)
+(ncsubj left she _)
+
+that_CST she_PPHS1 left_VVD annoys_VVZ them_PPHO2
+(csubj annoys left that)
+(dobj annoys them)
+(ncsubj left she _)
+
+to_TO read_VV0 pleases_VVZ them_PPHO2
+(xsubj pleases read to)
+(dobj pleases them)
+
+it_PPH1 remains_VVZ to_TO find_VV0 a_AT1 cure_NN1
+(ncsubj remains it _)
+(xcomp to remains find)
+(dobj find cure)
+(det cure a)
+
+it_PPH1 remains_VVZ for_IF us_PPHO2 to_TO find_VV0 a_AT1 cure_NN1
+(ncsubj remains it _)
+(iobj remains for)
+(xcomp to remains find)
+(dobj find cure)
+(det cure a)
+(dobj for us)
+
+it_PPH1 pleases_VVZ them_PPHO2 to_TO find_VV0 a_AT1 cure_NN1
+(ncsubj pleases it _)
+(ncsubj find them _)
+(xcomp to pleases find)
+(dobj pleases them)
+(dobj find cure)
+(det cure a)
+
+it_PPH1 matters_VVZ to_II them_PPHO2 that_CST she_PPHS1 left_VVD
+(ncsubj matters it _)
+(ccomp that matters left)
+(iobj matters to)
+(ncsubj left she _)
+(dobj to them)
+
+it_PPH1 occurred_VVD to_II them_PPHO2 to_TO watch_VV0
+(ncsubj occurred it _)
+(iobj occurred to)
+(xcomp to occurred watch)
+(dobj to them)
+
+that_CST she_PPHS1 left_VVD matters_VVZ to_II them_PPHO2
+(csubj matters left that)
+(iobj matters to)
+(dobj to them)
+(ncsubj left she _)
+
+I_PPHS1 prefer_VV0 for_IF her_PPHO1 to_TO do_VV0 it_PPH1
+(ncsubj prefer I _)
+(iobj prefer for)
+(xcomp to prefer do)
+(dobj do it)
+(dobj for her)
+
+he_PPHS1 asked_VVD how_RGQ she_PPHS1 did_VDD it_PPH1
+(ncsubj asked he _)
+(ccomp _ asked did)
+(arg_mod _ did how)
+(ncsubj did she _)
+(dobj did it)
+
+he_PPHS1 explained_VVD how_RGQ to_TO do_VV0 it_PPH1
+(ncsubj explained he _)
+(xcomp _ explained how)
+(xcomp to how do)
+(dobj do it)
+
+he_PPHS1 helped_VVD bake_VV0 the_AT cake_NN1
+(ncsubj helped he _)
+(xcomp _ helped bake)
+(dobj bake cake)
+(det cake the)
+
+his_AT hair_NN1 needs_VVZ combing_VVG
+(ncsubj needs hair _)
+(xcomp _ needs combing)
+(det hair his)
+
+she_PPHS1 stopped_VVD smoking_VVG
+(ncsubj stopped she _)
+(xcomp _ stopped smoking)
+
+she_PPHS1 discussed_VVD writing_VVG novels_NN2
+(ncsubj discussed she _)
+(xcomp _ discussed writing)
+(dobj writing novels)
+
+he_PPHS1 went_VVD
+(ncsubj went he _)
+
+They_PPHS2 met_VVD
+(ncsubj met They _)
+
+John_NP1 and_CC her_AT brother_NN1 met_VVD
+(ncsubj met and _)
+(conj and John)
+(conj and brother)
+(det brother her)
+
+he_PPHS1 loved_VVD her_PPHO1
+(ncsubj loved he _)
+(dobj loved her)
+
+he_PPHS1 painted_VVD the_AT car_NN1 black_JJ
+(ncsubj painted he _)
+(xcomp _ painted black)
+(ncsubj black car _)
+(dobj painted car _)
+(det car the)
+
+she_PPHS1 considered_VVD him_PPHO1 foolish_JJ
+(ncsubj considered she _)
+(xcomp _ considered foolish)
+(ncsubj foolish him _)
+(dobj considered him _)
+
+he_PPHS1 put_VVD it_PPH1 there_RL
+(ncsubj put he _)
+(dobj put it)
+(ncmod prt put there)
+
+they_PPHS2 mistakenly_RR thought_VVD him_PPHO1 here_RL
+(ncsubj thought they _)
+(ncmod _ thought mistakenly)
+(dobj thought him)
+(ncmod prt thought here)
+
+I_PPHS1 sent_VVD him_PPHO1 as_CSA a_AT1 messenger_NN1
+(ncsubj sent I _)
+(iobj sent as)
+(dobj sent him)
+(dobj as messenger)
+(det messenger a)
+
+she_PPHS1 served_VVD the_AT firm_NN1 as_CSA a_AT1 researcher_NN1
+(ncsubj served she _)
+(iobj served as)
+(dobj served firm)
+(dobj as researcher)
+(det researcher a)
+(det firm the)
+
+she_PPHS1 bought_VVD a_AT1 book_NN1 for_IF him_PPHO1
+(ncsubj bought she _)
+(iobj bought for)
+(dobj bought book)
+(dobj for him)
+(det book a)
+
+he_PPHS1 made_VVD her_PPHO1 sing_VV0
+(ncsubj made he _)
+(ccomp _ made sing)
+(ncsubj sing her _)
+
+he_PPHS1 helped_VVD her_PPHO1 bake_VV0 the_AT cake_NN1
+(ncsubj helped he _)
+(ccomp _ helped bake)
+(ncsubj bake her _)
+(dobj bake cake)
+(det cake the)
+
+I_PPHS1 kept_VVD them_PPHO2 laughing_VVG
+(ncsubj kept I _)
+(ncsubj laughing them _)
+(xcomp _ kept laughing)
+(dobj kept them)
+
+I_PPHS1 caught_VVD him_PPHO1 stealing_VVG
+(ncsubj caught I _)
+(ncsubj stealing him _)
+(xcomp _ caught stealing)
+(dobj caught him)
+
+he_PPHS1 combed_VVD the_AT woods_NN2 looking_VVG for_IF her_PPHO1
+(ncsubj combed he _)
+(ncsubj looking woods _)
+(xcomp _ combed looking)
+(dobj combed woods)
+(iobj looking for)
+(dobj for her)
+(det woods the)
+
+she_PPHS1 asked_VVD him_PPHO1 his_AT name_NN1
+(ncsubj asked she _)
+(obj2 asked name)
+(dobj asked him)
+(det name his)
+
+they_PPHS2 appointed_VVD him_PPHO1 professor_NNS1
+(ncsubj appointed they _)
+(obj2 appointed professor)
+(dobj appointed him)
+
+I_PPHS1 prevented_VVD her_PPHO1 from_II leaving_VVG
+(ncsubj prevented I _)
+(xcomp _ prevented from)
+(dobj prevented her)
+(xcomp _ from leaving)
+
+I_PPHS1 accused_VVD her_PPHO1 of_IO murdering_VVG her_AT husband_NN1
+(ncsubj accused I _)
+(xcomp _ accused of)
+(dobj accused her)
+(xcomp _ of murdering)
+(dobj murdering husband)
+(det husband her)
+
+he_PPHS1 wasted_VVD time_NNT1 on_II fussing_VVG with_IW his_AT hair_NN1
+(ncsubj wasted he _)
+(xcomp _ wasted on)
+(dobj wasted time)
+(xcomp _ on fussing)
+(iobj fussing with)
+(dobj with hair)
+(det hair his)
+
+he_PPHS1 told_VVD her_PPHO1 about_II climbing_VVG the_AT mountain_NN1
+(ncsubj told he _)
+(xcomp _ told about)
+(dobj told her)
+(xcomp _ about climbing)
+(dobj climbing mountain)
+(det mountain the)
+
+he_PPHS1 attributed_VVD his_AT failure_NN1 to_II noone_NP1 buying_VVG his_AT books_NN2
+(ncsubj attributed he _)
+(ccomp _ attributed to)
+(dobj attributed failure)
+(ccomp _ to noone)
+(ncsubj buying noone _)
+(dobj buying books)
+(det books his)
+(det failure his)
+
+They_PPHS2 asked_VVD him_PPHO1 about_II his_PPHO1 participating_VVG in_II the_AT conference_NN1
+(ncsubj asked They _)
+(ccomp _ asked about)
+(dobj asked him)
+(ccomp _ about his)
+(ncsubj participating his _)
+(iobj participating in)
+(dobj in conference)
+(det conference the)
+
+they_PPHS2 made_VVD a_AT1 great_JJ fuss_NN1 about_II whether_CSW they_PPHS2 should_VM participate_VV0
+(ncsubj made they _)
+(pcomp made about)
+(dobj made fuss)
+(ccomp _ about whether)
+(ccomp _ whether participate)
+(ncsubj participate they _)
+(aux participate should)
+(det fuss a)
+(ncmod _ fuss great)
+
+they_PPHS2 made_VVD a_AT1 great_JJ fuss_NN1 about_II what_DDQ they_PPHS2 should_VM do_VV0
+(ncsubj made they _)
+(ccomp _ made about)
+(dobj made fuss)
+(ccomp _ about do)
+(obj do what _)
+(ncsubj do they _)
+(aux do should)
+(det fuss a)
+(ncmod _ fuss great)
+
+they_PPHS2 made_VVD a_AT1 great_JJ fuss_NN1 about_II what_DDQ to_TO do_VV0
+(ncsubj made they _)
+(iobj made about)
+(dobj made fuss)
+(dobj about what)
+(obj do what)
+(xmod to what do)
+(det fuss a)
+(ncmod _ fuss great)
+
+they_PPHS2 made_VVD a_AT1 great_JJ fuss_NN1 about_II whether_CSW to_TO go_VV0
+(ncsubj made they _)
+(pcomp made about)
+(dobj made fuss)
+(xcomp _ about whether)
+(xcomp to whether go)
+(det fuss a)
+(ncmod _ fuss great)
+
+she_PPHS1 added_VVD the_AT flowers_NN2 to_II the_AT bouquet_NN1
+(ncsubj added she _)
+(iobj added to)
+(dobj added flowers)
+(dobj to bouquet)
+(det bouquet the)
+(det flowers the)
+
+I_PPHS1 considered_VVD that_AT problem_NN1 of_IO little_JJ concern_NN1
+(ncsubj considered I _)
+(iobj considered of)
+(dobj considered problem)
+(dobj of concern)
+(ncmod _ concern little)
+(det problem that)
+
+he_PPHS1 seemed_VVD a_AT1 fool_NN
+(ncsubj seemed he _)
+(dobj seemed fool)
+(det fool a)
+
+he_PPHS1 told_VVD the_AT audience_NN1 that_CST he_PPHS1 was_VBZ leaving_VVG
+(ncsubj told he _)
+(ccomp that told leaving)
+(dobj told audience)
+(ncsubj leaving he _)
+(aux leaving was)
+(det audience the)
+
+I_PPHS1 advised_VVD Mary_NP1 to_TO go_VV0
+(ncsubj advised I _)
+(ncsubj go Mary _)
+(xcomp to advised go)
+(dobj advised Mary)
+
+John_NP1 promised_VVD Mary_NP1 to_TO resign_VV0
+(ncsubj promised John _)
+(ncsubj resign Mary _)
+(xcomp to promised resign)
+(dobj promised Mary)
+
+they_PPHS2 badgered_VVD him_PPHO1 to_TO go_VV0
+(ncsubj badgered they _)
+(ncsubj go him _)
+(xcomp to badgered go)
+(dobj badgered him)
+
+he_PPHS1 gave_VVD a_AT1 big_JJ kiss_NN1 to_II his_AT mother_NN1
+(ncsubj gave he _)
+(iobj gave to)
+(dobj gave kiss)
+(dobj to mother)
+(det mother his)
+(det kiss a)
+(ncmod _ kiss big)
+
+I_PPHS1 found_VVD him_PPHO1 to_TO be_VB0 a_AT1 good_JJ doctor_NN1
+(ncsubj found I _)
+(ncsubj be him _)
+(xcomp to found be)
+(dobj found him)
+(xcomp _ be doctor)
+(det doctor a)
+(ncmod _ doctor good)
+
+he_PPHS1 wanted_VVD the_AT children_NN2 found_VVN
+(ncsubj wanted he _)
+(ccomp _ wanted found)
+(ncsubj found children _)
+(det children the)
+
+they_PPHS2 asked_VVD him_PPHO1 whether_CSW he_PPHS1 was_VBZ going_VVG
+(ncsubj asked they _)
+(ccomp _ asked whether)
+(dobj asked him)
+(ccomp _ whether going)
+(ncsubj going he _)
+(aux going was)
+
+they_PPHS2 asked_VVD him_PPHO1 what_DDQ he_PPHS1 was_VBZ doing_VVG
+(ncsubj asked they _)
+(ccomp _ asked doing)
+(dobj asked him)
+(obj doing what _)
+(ncsubj doing he _)
+(aux doing was)
+
+he_PPHS1 asked_VVD him_PPHO1 whether_CSW to_TO clean_VV0 the_AT house_NN1
+(ncsubj asked he _)
+(xcomp _ asked whether)
+(dobj asked him)
+(xcomp to whether clean)
+(dobj clean house)
+(det house the)
+
+he_PPHS1 asked_VVD him_PPHO1 what_DDQ to_TO do_VV0
+(ncsubj asked he _)
+(obj2 asked what)
+(dobj asked him)
+(obj do what)
+(xmod to what do)
+
+they_PPHS2 failed_VVD in_II attempting_VVG the_AT climb_NN1
+(ncsubj failed they _)
+(xcomp _ failed in)
+(xcomp _ in attempting)
+(dobj attempting climb)
+(det climb the)
+
+they_PPHS2 disapproved_VVD of_IO attempting_VVG the_AT climb_NN1
+(ncsubj disapproved they _)
+(xcomp _ disapproved of)
+(xcomp _ of attempting)
+(dobj attempting climb)
+(det climb the)
+
+they_PPHS2 worried_VVD about_II him_PPHO1 drinking_VVG
+(ncsubj worried they _)
+(ccomp _ worried about)
+(ccomp _ about him)
+(ncsubj drinking him _)
+
+he_PPHS1 conspired_VVD with_IW them_PPHO2 to_TO do_VV0 it_PPH1
+(ncsubj conspired he _)
+(iobj conspired with)
+(xcomp to conspired do)
+(dobj do it)
+(dobj with them)
+
+he_PPHS1 beckoned_VVD to_II him_PPHO1 to_TO come_VV0
+(ncsubj beckoned he _)
+(iobj beckoned to)
+(xcomp to beckoned come)
+(dobj to him)
+
+she_PPHS1 appealed_VVD to_II him_PPHO1 to_TO go_VV0
+(ncsubj appealed she _)
+(iobj appealed to)
+(xcomp to appealed go)
+(dobj to him)
+
+she_PPHS1 appealed_VVD to_II him_PPHO1 to_TO be_VB0 freed_JJ
+(ncsubj appealed she _)
+(iobj appealed to)
+(xcomp to appealed be)
+(xcomp _ be freed)
+(dobj to him)
+
+they_PPHS2 argued_VVD about_II his_PP$ coming_VVG
+(ncsubj argued they _)
+(ccomp _ argued about)
+(ccomp _ about his)
+(ncsubj coming his _)
+
+he_PPHS1 thought_VVD about_II whether_CSW he_PPHS1 wanted_VVD to_TO go_VV0
+(ncsubj thought he _)
+(pcomp thought about)
+(ccomp _ about whether)
+(ccomp _ whether wanted)
+(ncsubj wanted he _)
+(xcomp to wanted go)
+
+he_PPHS1 thought_VVD about_II what_DDQ he_PPHS1 wanted_VVD
+(ncsubj thought he _)
+(ccomp _ thought about)
+(ccomp _ about wanted)
+(obj wanted what _)
+(ncsubj wanted he _)
+
+he_PPHS1 thought_VVD about_II whether_CSW to_TO go_VV0
+(ncsubj thought he _)
+(pcomp thought about)
+(xcomp _ about whether)
+(xcomp to whether go)
+
+he_PPHS1 thought_VVD about_II what_DDQ to_TO do_VV0
+(ncsubj thought he _)
+(iobj thought about)
+(dobj about what)
+(obj do what)
+(xmod to what do)
+
+she_PPHS1 gave_VVD up_RL
+(ncsubj gave she _)
+(ncmod prt gave up)
+
+she_PPHS1 gave_VVD up_II
+(ncsubj gave she _)
+(ncmod prt gave up)
+
+he_PPHS1 ruled_VVD out_II paying_VVG her_AT debts_NN2
+(ncsubj ruled he _)
+(xcomp _ ruled out)
+(xcomp _ out paying)
+(dobj paying debts)
+(det debts her)
+
+he_PPHS1 ruled_VVD out_RP paying_VVG her_AT debts_NN2
+(ncsubj ruled he _)
+(xcomp _ ruled paying)
+(dobj paying debts)
+(det debts her)
+(ncmod prt ruled out)
+
+I_PPHS1 looked_VVD up_RL the_AT entry_NN1
+(ncsubj looked I _)
+(dobj looked entry)
+(det entry the)
+(ncmod prt looked up)
+
+I_PPHS1 looked_VVD the_AT entry_NN1 up_RL
+(ncsubj looked I _)
+(dobj looked entry)
+(ncmod prt looked up)
+(det entry the)
+
+I_PPHS1 separated_VVD out_II the_AT three_JJ boys_NN2 from_II the_AT crowd_NN1
+(ncsubj separated I _)
+(iobj separated from)
+(iobj separated out)
+(dobj from crowd)
+(det crowd the)
+(dobj out boys)
+(det boys the)
+(ncmod _ boys three)
+
+I_PPHS1 separated_VVD out_RP the_AT three_JJ boys_NN2 from_II the_AT crowd_NN1
+(ncsubj separated I _)
+(iobj separated from)
+(dobj separated boys)
+(dobj from crowd)
+(det crowd the)
+(det boys the)
+(ncmod _ boys three)
+(ncmod prt separated out)
+
+she_PPHS1 looked_VVD in_II on_II her_AT friend_NN1
+(ncsubj looked she _)
+(pcomp looked in)
+(iobj in on)
+(dobj on friend)
+(det friend her)
+
+she_PPHS1 looked_VVD in_RL on_II her_AT friend_NN1
+(ncsubj looked she _)
+(iobj looked on)
+(dobj on friend)
+(det friend her)
+(ncmod prt looked in)
+
+they_PPHS2 figured_VVD out_II whether_CSW she_PPHS1 had_VHD n't_XX done_VVD her_AT job_NN1
+(ncsubj figured they _)
+(pcomp figured out)
+(ccomp _ out whether)
+(ccomp _ whether done)
+(ncsubj done she _)
+(aux done had)
+(ncmod _ done n't)
+(dobj done job)
+(det job her)
+
+they_PPHS2 figured_VVD out_RP whether_CSW she_PPHS1 had_VHD n't_XX done_VVD her_AT job_NN1
+(ncsubj figured they _)
+(ccomp _ figured whether)
+(ccomp _ whether done)
+(ncsubj done she _)
+(aux done had)
+(ncmod _ done n't)
+(dobj done job)
+(det job her)
+(ncmod prt figured out)
+
+they_PPHS2 figured_VVD out_II what_DDQ she_PPHS1 had_VHD n't_XX done_VVD
+(ncsubj figured they _)
+(ccomp _ figured out)
+(ccomp _ out done)
+(obj done what _)
+(ncsubj done she _)
+(aux done had)
+(ncmod _ done n't)
+
+they_PPHS2 figured_VVD out_RP what_DDQ she_PPHS1 had_VHD n't_XX done_VVD
+(ncsubj figured they _)
+(ccomp _ figured done)
+(obj done what _)
+(ncsubj done she _)
+(aux done had)
+(ncmod _ done n't)
+(ncmod prt figured out)
+
+they_PPHS2 figured_VVD out_II whether_CSW to_TO go_VV0
+(ncsubj figured they _)
+(pcomp figured out)
+(xcomp _ out whether)
+(xcomp to whether go)
+
+they_PPHS2 figured_VVD out_RP whether_CSW to_TO go_VV0
+(ncsubj figured they _)
+(xcomp _ figured whether)
+(xcomp to whether go)
+(ncmod prt figured out)
+
+they_PPHS2 figured_VVD out_II what_DDQ to_TO do_VV0
+(ncsubj figured they _)
+(iobj figured out)
+(dobj out what)
+(obj do what)
+(xmod to what do)
+
+they_PPHS2 figured_VVD out_RP what_DDQ to_TO do_VV0
+(ncsubj figured they _)
+(dobj figured what)
+(obj do what)
+(xmod to what do)
+(ncmod prt figured out)
+
+they_PPHS2 figured_VVD out_II that_CST she_PPHS1 had_VHD n't_XX done_VVD her_AT job_NN1
+(ncsubj figured they _)
+(ccomp _ figured out)
+(ccomp that out done)
+(ncsubj done she _)
+(aux done had)
+(ncmod _ done n't)
+(dobj done job)
+(det job her)
+
+he_PPHS1 dismissed_VVD their_PP$ writing_VVG novels_NN2
+(ncsubj dismissed he _)
+(xcomp _ dismissed writing)
+(ncsubj writing their _)
+(dobj writing novels)
+
+she_PPHS1 attributed_VVD his_PP$ drinking_VVG too_RG much_DA1 to_II his_AT anxiety_NN1
+(ncsubj attributed she _)
+(iobj attributed to)
+(xcomp _ attributed drinking)
+(ncsubj drinking his _)
+(dobj to anxiety)
+(det anxiety his)
+(xcomp _ drinking much)
+(ncmod _ much too)
+
+they_PPHS2 limited_VVD smoking_VVG a_AT pipe_NN1 to_II the_AT lounge_NN1
+(ncsubj limited they _)
+(iobj limited to)
+(xcomp _ limited smoking)
+(dobj to lounge)
+(det lounge the)
+(dobj smoking pipe)
+(det pipe a)
+
+they_PPHS2 apologized_VVD to_II him_PPHO1
+(ncsubj apologized they _)
+(iobj apologized to)
+(dobj to him)
+
+they_PPHS2 contracted_VVD with_IW him_PPHO1 for_IF the_AT man_NN1 to_TO go_VV0
+(ncsubj contracted they _)
+(ccomp _ contracted for)
+(iobj contracted with)
+(ccomp _ for man)
+(ncsubj go man _)
+(det man the)
+(dobj with him)
+
+he_PPHS1 explained_VVD to_II her_PPHO1 how_RGQ she_PPHS1 did_VDD it_PPH1
+(ncsubj explained he _)
+(ccomp _ explained did)
+(iobj explained to)
+(arg_mod _ did how)
+(ncsubj did she _)
+(dobj did it)
+(dobj to her)
+
+he_PPHS1 explained_VVD to_II them_PPHO2 how_RGQ to_TO do_VV0 it_PPH1
+(ncsubj explained he _)
+(xcomp _ explained how)
+(iobj explained to)
+(xcomp to how do)
+(dobj do it)
+(dobj to them)
+
+I_PPHS1 agreed_VVD with_IW him_PPHO1 about_II whether_CSW he_PPHS1 should_VM kill_VV0 the_AT peasants_NN2
+(ncsubj agreed I _)
+(pcomp agreed about)
+(iobj agreed with)
+(ccomp _ about whether)
+(ccomp _ whether kill)
+(ncsubj kill he _)
+(aux kill should)
+(dobj kill peasants)
+(det peasants the)
+(dobj with him)
+
+I_PPHS1 agreed_VVD with_IW him_PPHO1 about_II what_DDQ he_PPHS1 should_VM do_VV0
+(ncsubj agreed I _)
+(ccomp _ agreed about)
+(iobj agreed with)
+(ccomp _ about do)
+(obj do what _)
+(ncsubj do he _)
+(aux do should)
+(dobj with him)
+
+I_PPHS1 agreed_VVD with_IW him_PPHO1 about_II what_DDQ to_TO do_VV0
+(ncsubj agreed I _)
+(iobj agreed about)
+(iobj agreed with)
+(dobj about what)
+(obj do what)
+(xmod to what do)
+(dobj with him)
+
+I_PPHS1 agreed_VVD with_IW him_PPHO1 about_II whether_CSW to_TO go_VV0
+(ncsubj agreed I _)
+(pcomp agreed about)
+(iobj agreed with)
+(xcomp _ about whether)
+(xcomp to whether go)
+(dobj with him)
+
+they_PPHS2 flew_VVD from_II London_NP1 to_II Rome_NP1
+(ncsubj flew they _)
+(iobj flew to)
+(iobj flew from)
+(dobj to Rome)
+(dobj from London)
+
+the_AT matter_NN1 seems_VVZ in_II dispute_NN1
+(ncsubj seems matter _)
+(iobj seems in)
+(dobj in dispute)
+(det matter the)
+
+they_PPHS2 admitted_VVD to_II the_AT authorities_NN2 that_CST they_PPHS2 had_VHD entered_VVD illegally_RR
+(ncsubj admitted they _)
+(ccomp that admitted entered)
+(iobj admitted to)
+(ncsubj entered they _)
+(ncmod _ entered illegally)
+(aux entered had)
+(dobj to authorities)
+(det authorities the)
+
+they_PPHS2 suggested_VVD to_II him_PPHO1 that_CST he_PPHS1 go_VV0
+(ncsubj suggested they _)
+(ccomp that suggested go)
+(iobj suggested to)
+(ncsubj go he _)
+(dobj to him)
+
+he_PPHS1 appeared_VVD to_II her_PPHO1 to_TO be_VB0 ill_JJ
+(ncsubj appeared he _)
+(iobj appeared to)
+(xcomp to appeared be)
+(xcomp _ be ill)
+(dobj to her)
+
+they_PPHS2 asked_VVD about_II everybody_NP1 whether_CSW they_PPHS2 had_VHD enrolled_VVN
+(ncsubj asked they _)
+(ccomp _ asked whether)
+(iobj asked about)
+(ccomp _ whether enrolled)
+(ncsubj enrolled they _)
+(aux enrolled had)
+(dobj about everybody)
+
+they_PPHS2 asked_VVD about_II everybody_NP1 what_DDQ they_PPHS2 had_VHD done_VVN
+(ncsubj asked they _)
+(ccomp _ asked done)
+(iobj asked about)
+(obj done what _)
+(ncsubj done they _)
+(aux done had)
+(dobj about everybody)
+
+they_PPHS2 deduced_VVD from_II kim_NP1 whether_CSW to_TO go_VV0
+(ncsubj deduced they _)
+(xcomp _ deduced whether)
+(iobj deduced from)
+(xcomp to whether go)
+(dobj from kim)
+
+they_PPHS2 deduced_VVD from_II kim_NP1 what_DDQ to_TO do_VV0
+(ncsubj deduced they _)
+(iobj deduced from)
+(dobj deduced what)
+(obj do what)
+(xmod to what do)
+(dobj from kim)
+
+they_PPHS2 thought_VVD that_CST he_PPHS1 was_VBZ always_RR late_JJ
+(ncsubj thought they _)
+(ccomp that thought was)
+(ncsubj was he _)
+(xcomp _ was late)
+(ncmod _ late always)
+
+to_TO report_VV0 the_AT theft_NN1 indicates_VVD that_CST he_PPHS1 was_VBZ n't_XX guilty_JJ
+(xsubj indicates report to)
+(ccomp that indicates was)
+(ncsubj was he _)
+(xcomp _ was guilty)
+(ncmod _ guilty n't)
+(dobj report theft)
+(det theft the)
+
+She_PPHS1 demanded_VVD that_CST he_PPHS1 leave_VV0
+(ncsubj demanded She _)
+(ccomp that demanded leave)
+(ncsubj leave he _)
+
+it_PPH1 seems_VVZ that_CST they_PPHS2 left_VVD
+(ncsubj seems it _)
+(ccomp that seems left)
+(ncsubj left they _)
+
+it_PPH1 seems_VVZ to_II her_PPHO1 that_CST they_PPHS2 were_VBDR wrong_JJ
+(ncsubj seems it _)
+(ccomp that seems were)
+(iobj seems to)
+(ncsubj were they _)
+(xcomp _ were wrong)
+(dobj to her)
+
+he_PPHS1 complained_VVD that_CST they_PPHS2 were_VBDR coming_VVG
+(ncsubj complained he _)
+(ccomp that complained coming)
+(ncsubj coming they _)
+(aux coming were)
+
+He_PPHS1 helped_VVD to_TO save_VV0 the_AT child_NN1
+(ncsubj helped He _)
+(xcomp to helped save)
+(dobj save child)
+(det child the)
+
+he_PPHS1 seemed_VVD to_TO come_VV0
+(ncsubj seemed he _)
+(xcomp to seemed come)
+
+I_PPHS1 wanted_VVD to_TO come_VV0
+(ncsubj wanted I _)
+(xcomp to wanted come)
+
+he_PPHS1 asked_VVD whether_CSW he_PPHS1 should_VM come_VV0
+(ncsubj asked he _)
+(ccomp _ asked whether)
+(ccomp _ whether come)
+(ncsubj come he _)
+(aux come should)
+
+he_PPHS1 asked_VVD what_DDQ he_PPHS1 should_VM do_VV0
+(ncsubj asked he _)
+(ccomp _ asked do)
+(obj do what _)
+(ncsubj do he _)
+(aux do should)
+
+he_PPHS1 asked_VVD whether_CSW to_TO clean_VV0 the_AT house_NN1
+(ncsubj asked he _)
+(xcomp _ asked whether)
+(xcomp to whether clean)
+(dobj clean house)
+(det house the)
+
+he_PPHS1 asked_VVD what_DDQ to_TO do_VV0
+(ncsubj asked he _)
+(dobj asked what)
+(obj do what)
+(xmod to what do)
+
+I_PPHS1 opened_VVD him_PPHO1 up_RP a_AT new_JJ bank_NN1 account_NN1
+(ncsubj opened I _)
+(ncmod prt opened up)
+(obj2 opened account)
+(dobj opened him)
+(det account a)
+(ncmod _ account new)
+(ncmod _ account bank)
+
+he_PPHS1 made_VVD comments_NN2 on_II the_AT paper_NN1
+(ncsubj made he _)
+(iobj made on)
+(dobj made comments)
+(dobj on paper)
+(det paper the)
+
+he_PPHS1 breaks_VVZ away_RP from_II the_AT abbey_NN1
+(ncsubj breaks he _)
+(iobj breaks from)
+(dobj from abbey)
+(det abbey the)
+(ncmod prt breaks away)
+
+he_PPHS1 brought_VVD a_AT book_NN1 back_RP for_IF me_PPHO1
+(ncsubj brought he _)
+(iobj brought for)
+(ncmod prt brought back)
+(dobj brought book)
+(dobj for me)
+(det book a)
+
+he_PPHS1 came_VVD down_RP on_II him_PPHO1 for_IF his_AT bad_JJ behaviour_NN1
+(ncsubj came he _)
+(iobj came for)
+(iobj came on)
+(dobj for behaviour)
+(det behaviour his)
+(ncmod _ behaviour bad)
+(dobj on him)
+(ncmod prt came down)
+
+he_PPHS1 turned_VVD it_PPHO1 from_II a_AT disaster_NN1 into_II a_AT victory_NN1
+(ncsubj turned he _)
+(iobj turned into)
+(iobj turned from)
+(dobj turned it)
+(dobj into victory)
+(det victory a)
+(dobj from disaster)
+(det disaster a)
+
+it_PPHS1 cost_VVD ten_MC pounds_NNU2
+(ncsubj cost it _)
+(dobj cost pounds)
+(ncmod _ pounds ten)
+
+it_PPHS1 cost_VVD him_PPHO1 ten_MC pounds_NNU2
+(ncsubj cost it _)
+(obj2 cost pounds)
+(dobj cost him)
+(ncmod _ pounds ten)
+
+it_PPHS1 set_VVD him_PPHO1 back_RP ten_MC pounds_NNU2
+(ncsubj set it _)
+(ncmod prt set back)
+(obj2 set pounds)
+(dobj set him)
+(ncmod _ pounds ten)
+
+he_PPHS1 came_VVD off_RP badly_RP
+(ncsubj came he _)
+(ncmod prt came badly)
+(ncmod prt came off)
+
+things_NN2 augur_VV0 well_RP for_IF him_PPHO1
+(ncsubj augur things _)
+(iobj augur for)
+(dobj for him)
+(ncmod prt augur well)
+
+it_PPHS1 turns_VVZ out_RP that_CST he_PPHS1 did_VVD it_PPHO1
+(ncsubj turns it _)
+(ccomp that turns did)
+(ncsubj did he _)
+(dobj did it)
+(ncmod prt turns out)
+
+that_CST he_PPHS1 came_VVD matters_VVZ
+(csubj matters came that)
+(ncsubj came he _)
+
+he_PPHS1 had_VVD her_PPHO1 on_RP that_CST he_PPHO1 attended_VVD
+(ncsubj had he _)
+(ccomp that had attended)
+(ncmod prt had on)
+(dobj had her)
+(ncsubj attended he _)
+
+she_PPHS1 gets_VVZ through_RP to_II him_PPHO1 that_CST he_PPHS1 came_VVD
+(ncsubj gets she _)
+(ccomp that gets came)
+(iobj gets to)
+(ncsubj came he _)
+(dobj to him)
+(ncmod prt gets through)
+
+he_PPHS1 bet_VVD her_PPHO1 ten_MC pounds_NNU2 that_CST he_PPHS1 came_VVD
+(ncsubj bet he _)
+(ccomp that bet came)
+(obj2 bet pounds)
+(dobj bet her)
+(ncsubj came he _)
+(ncmod _ pounds ten)
+
+he_PPHS1 petitioned_VVD them_PPHO2 that_CST he_PPHS1 be_VB0 freed_VVN
+(ncsubj petitioned he _)
+(ccomp that petitioned freed)
+(dobj petitioned them)
+(ncsubj freed he _)
+(aux freed be)
+(passive freed)
+
+I_PPHS1 would_VM appreciate_VV0 it_PPHO1 if_CF he_PPHS1 came_VVD
+(ncsubj appreciate I _)
+(aux appreciate would)
+(ccomp _ appreciate if)
+(dobj appreciate it)
+(ccomp _ if came)
+(ncsubj came he _)
+
+it_PPHS1 dawned_VVD on_II him_PPHO1 what_DDQ he_PPHS1 should_VM do_VV0
+(ncsubj dawned it _)
+(ccomp _ dawned do)
+(iobj dawned on)
+(obj do what _)
+(ncsubj do he _)
+(aux do should)
+(dobj on him)
+
+he_PPHS1 turned_VVD out_RP a_AT fool_NN1
+(ncsubj turned he _)
+(dobj turned fool)
+(det fool a)
+(ncmod prt turned out)
+
+he_PPHS1 started_VVD out_RP poor_JJ
+(ncsubj started he _)
+(xcomp _ started poor)
+(ncmod prt started out)
+
+he_PPHS1 turned_VVD out_RP to_TO be_VB0 a_AT crook_NN1
+(ncsubj turned he _)
+(xcomp to turned be)
+(xcomp _ be crook)
+(det crook a)
+(ncmod prt turned out)
+
+he_PPHS1 set_VVD out_RP to_TO win_VV0
+(ncsubj set he _)
+(xcomp to set win)
+(ncmod prt set out)
+
+he_PPHS1 set_VVD out_II to_TO win_VV0
+(ncsubj set he _)
+(xcomp _ set out)
+(xcomp to out win)
+
+he_PPHS1 got_VVD around_RP to_II leaving_VVG
+(ncsubj got he _)
+(xcomp _ got to)
+(xcomp _ to leaving)
+(ncmod prt got around)
+
+he_PPHS1 got_VBD given_VVN a_AT book_NN1
+*** Error, word got_VBD not found
+*** Warning: no parses
+
+he_PPHS1 dared_VVD dance_VV0
+(ncsubj dared he _)
+(xcomp _ dared dance)
+
+he_PPHS1 strikes_VVZ me_PPHO1 as_CSA foolish_JJ
+(ncsubj strikes he _)
+(xcomp _ strikes as)
+(dobj strikes me)
+(xcomp _ as foolish)
+
+he_PPHS1 considers_VVZ Fido_NP1 a_AT fool_NN1
+(ncsubj considers he _)
+(obj2 considers fool)
+(dobj considers Fido)
+(det fool a)
+
+he_PPHS1 makes_VVD him_PPHO1 out_RP crazy_JJ
+(ncsubj makes he _)
+(ncmod prt makes out)
+(ncsubj crazy him _)
+(dobj makes him)
+
+he_PPHS1 sands_VVZ it_PPHO1 down_RP smooth_JJ
+(ncsubj sands he _)
+(ncmod prt sands down)
+(ncsubj smooth it _)
+(dobj sands it)
+
+he_PPHS1 condemned_VVD him_PPHO1 as_CSA stupid_JJ
+(ncsubj condemned he _)
+(xcomp _ condemned as)
+(dobj condemned him)
+(xcomp _ as stupid)
+
+he_PPHS1 put_VVD him_PPHO1 down_RP as_CSA stupid_JJ
+(ncsubj put he _)
+(xcomp _ put as)
+(ncmod prt put down)
+(dobj put him)
+(xcomp _ as stupid)
+
+he_PPHS1 made_VVD him_PPHO1 out_RP to_TO be_VV0 crazy_JJ
+(ncsubj made he _)
+(ncsubj be him _)
+(ncmod prt made out)
+(xcomp to made be)
+(dobj made him)
+(xcomp _ be crazy)
+
+he_PPHS1 spurred_VVD him_PPHO1 on_RP to_TO try_VV0
+(ncsubj spurred he _)
+(ncsubj try him _)
+(ncmod prt spurred on)
+(xcomp to spurred try)
+(dobj spurred him)
+
+he_PPHS1 kept_VVD on_RP at_II him_PPHO1 to_TO join_VV0
+(ncsubj kept he _)
+(iobj kept at)
+(xcomp to kept join)
+(dobj at him)
+(ncmod prt kept on)
+
+he_PPHS1 talked_VVD him_PPHO1 around_RP into_II leaving_VVG
+(ncsubj talked he _)
+(xcomp _ talked into)
+(ncmod prt talked around)
+(dobj talked him)
+(xcomp _ into leaving)
+
+he_PPHS1 looked_VVD at_II him_PPHO1 leave_VV0
+(ncsubj looked he _)
+(ccomp _ looked at)
+(ccomp _ at leave)
+(ncsubj leave him _)
+
+to_TO see_VV0 them_PPHO2 hurts_VVZ
+(xsubj hurts see to)
+(dobj see them)
+
+he_PPHS1 stood_VVD it_PPHO1 alone_RL
+(ncsubj stood he _)
+(dobj stood it)
+(ncmod prt stood alone)
+
+he_PPHS1 asked_VVD him_PPHO1 how_RGQ he_PPHS1 came_VVD
+(ncsubj asked he _)
+(ccomp _ asked came)
+(dobj asked him)
+(arg_mod _ came how)
+(ncsubj came he _)
+
+he_PPHS1 gave_VVD money_NN2 for_IF him_PPHO1 to_TO go_VV0
+(ncsubj gave he _)
+(ccomp _ gave for)
+(dobj gave money)
+(ccomp _ for him)
+(ncsubj go him _)
+
+it_PPHS1 is_VBZ believed_VVN that_CST he_PPHS1 came_VVD
+(ncsubj believed it _)
+(aux believed is)
+(passive believed)
+(ccomp that believed came)
+(ncsubj came he _)
+
+he_PPHS1 seems_VVZ as_CSA if_CS he_PPHS1 is_VBZ clever_JJ
+(ncsubj seems he _)
+(pcomp seems as)
+(ccomp _ as if)
+(ccomp _ if is)
+(ncsubj is he _)
+(xcomp _ is clever)
+
+it_PPHS1 carves_VVZ easily_RP
+(ncsubj carves it _)
+(ncmod prt carves easily)
+
+he_PPHS1 felt_VVD a_AT fool_NN1
+(ncsubj felt he _)
+(dobj felt fool)
+(det fool a)
+
+he_PPHS1 accepted_VVD him_PPHO1 as_CSA associated_VVN
+(ncsubj accepted he _)
+(xcomp _ accepted as)
+(dobj accepted him)
+(passive associated)
+(xcomp _ as associated)
+
+he_PPHS1 accepted_VVD him_PPHO1 as_CSA being_VBG normal_JJ
+(ncsubj accepted he _)
+(xcomp _ accepted as)
+(dobj accepted him)
+(xcomp _ as being)
+(xcomp _ being normal)
+
+it_PPH1 rains_VVZ
+(ncsubj rains it _)
+
+it_PPH1 sufficed_VVD to_TO smile_VV0
+(ncsubj sufficed it _)
+(xcomp to sufficed smile)
+
+I_PPHS1 used_VVD the_AT knife_NN1 to_TO cut_VV0 the_AT1 bread_NN1
+(ncsubj used I _)
+(ncsubj cut knife _)
+(xcomp to used cut)
+(dobj used knife)
+(dobj cut bread)
+(det bread the)
+(det knife the)
+
+I_PPHS1 kept_VVD on_RP driving_VVG
+(ncsubj kept I _)
+(xcomp _ kept driving)
+(ncmod prt kept on)
+
+I_PPHS1 left_VVD it_PPH1 to_II Kim_NP1 to_TO fix_VV0
+(ncsubj left I _)
+(ccomp _ left to)
+(dobj left it)
+(ccomp _ to Kim)
+(ncsubj fix Kim _)
+
+I_PPHS1 arranged_VVD it_PPH1 with_IW Kim_NP1 to_TO meet_VV0
+(ncsubj arranged I _)
+(ccomp _ arranged with)
+(dobj arranged it)
+(ccomp _ with Kim)
+(ncsubj meet Kim _)
+
+I_PPHS1 take_VV0 it_PPH1 that_CST Kim_NP1 left_VVD
+(ncsubj take I _)
+(ccomp that take left)
+(dobj take it)
+(ncsubj left Kim _)
+
+It_PPH1 cost_VVD Kim_NP1 a_AT1 pound_NNU1 for_IF us_PPIO2 to_TO go_VV0
+(ncsubj cost It _)
+(ccomp _ cost for)
+(obj2 cost pound)
+(dobj cost Kim)
+(ccomp _ for us)
+(ncsubj go us _)
+(det pound a)
+
+It_PPH1 took_VVD us_PPIO2 an_AT1 hour_NNT1 to_TO find_VV0
+(ncsubj took It _)
+(ncsubj find us _)
+(xcomp to took find)
+(obj2 took hour)
+(dobj took us)
+(det hour an)
+

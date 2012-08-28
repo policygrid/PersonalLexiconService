@@ -1,0 +1,139 @@
+(|23rd_MD| |May_NPM1| |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt" ("N1/n-num_n1-nt" |23rd_MD| ("N1/n-nt" |May_NPM1|)))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|May_NPM1| |23rd_MD| |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-nt" ("N1/cplx-nt/---" |May_NPM1| |23rd_MD|))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|23rd_MD| |May_NPM1| 1993_MC |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt" ("N1/cplx-nt/+--" |23rd_MD| |May_NPM1| 1993_MC))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|23rd_MD| |May_NPM1| |,_,| 1993_MC |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt" ("N1/cplx-nt/+-+" |23rd_MD| |May_NPM1| |,_,| 1993_MC))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|May_NPM1| |23rd_MD| 1993_MC |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt" ("N1/cplx-nt/-+-" |May_NPM1| |23rd_MD| 1993_MC))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|May_NPM1| |23rd_MD| |,_,| 1993_MC |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt" ("N1/cplx-nt/-++" |May_NPM1| |23rd_MD| |,_,| 1993_MC))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|Monday_NPD1| |12th_MD| |May_NPM1| 1993_MC |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt"
+   ("N1/n-nt_n1-nt" |Monday_NPD1|
+    ("N1/cplx-nt/+--" |12th_MD| |May_NPM1| 1993_MC)))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|Monday_NPD1| |,_,| |12th_MD| |May_NPM1| 1993_MC |was_VBDZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-nt_np-nt"
+   ("NP/n1-nt" ("N1/cplx-nt/--+" |Monday_NPD1| |,_,| |12th_MD|))
+   ("NP/n1-nt" ("N1/cplx-nt/---" |May_NPM1| 1993_MC)))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|April_NPM1| |1st_MD| |is_VBZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-nt" ("N1/cplx-nt/---" |April_NPM1| |1st_MD|))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|1st_MD| |April_NPM1| |is_VBZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-nt" ("N1/n-num_n1-nt" |1st_MD| ("N1/n-nt" |April_NPM1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(|The_AT| |1st_MD| |April_NPM1| |is_VBZ| |horrible_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n-num_n1-nt" |1st_MD| ("N1/n-nt" |April_NPM1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |horrible_JJ|)))))
+(10/05/04_MC |is_VBZ| |my_APP$| |birthday_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n-num" 10/05/04_MC)
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |birthday_NN1|)))))
+(10-05-04_MC |is_VBZ| |my_APP$| |birthday_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n-num" 10-05-04_MC)
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |birthday_NN1|)))))
+(|My_APP$| |birthday_NN1| |is_VBZ| |on_II| 10/05_MC)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |My_APP$| ("N1/n" |birthday_NN1|))
+  ("V1/be_pp/---" |is_VBZ|
+   ("PP/p1" ("P1/p_np-pro" |on_II| ("NP/n-num" 10/05_MC))))))
+(0208_MC 892_MC 5144_MC |is_VBZ| |my_APP$| |number_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n-num"
+   ("N0/n-num_n-num" 0208_MC ("N0/n-num_n-num" 892_MC 5144_MC)))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |number_NN1|)))))
+(|L10,4M_NNU| |is_VBZ| |a_AT1| |lot_NN1| |of_IO| |money_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-ms" ("N1/n-ms" |L10,4M_NNU|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |a_AT1|
+    ("N1/n_pp-of" |lot_NN1|
+     ("PP/p1" ("P1/p_n1" |of_IO| ("N1/n" |money_NN1|))))))))
+(L_&FO 10.4_MC M_NNU |is_VBZ| |a_AT1| |lot_NN1| |of_IO| |money_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-name_np-ms" ("NP/n1-name" ("N1/n-name" L_&FO))
+   ("NP/n1-ms" ("N1/n-num_n1-ms" 10.4_MC ("N1/n-ms" M_NNU))))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |a_AT1|
+    ("N1/n_pp-of" |lot_NN1|
+     ("PP/p1" ("P1/p_n1" |of_IO| ("N1/n" |money_NN1|))))))))
+(|L1,210.4M_NP1| |is_VBZ| |an_AT1| |even_RR| |greater_JJR| |amount_NN1| |of_IO| |money_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |L1,210.4M_NP1|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |an_AT1|
+    ("N1/ap_n1/-"
+     ("AP/a1"
+      ("A1/adv_a1" ("AP/a1" ("A1/a" |even_RR|))
+       ("A1/a" |greater_JJR|)))
+     ("N1/n_pp-of" |amount_NN1|
+      ("PP/p1" ("P1/p_n1" |of_IO| ("N1/n" |money_NN1|)))))))))
+(FF_NP1 |1,210_MC| M_NNU |is_VBZ| |money_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-name_np-ms" ("NP/n1-name" ("N1/n-name" FF_NP1))
+   ("NP/n1-ms" ("N1/n-num_n1-ms" |1,210_MC| ("N1/n-ms" M_NNU))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |money_NN1|))))
+(FF_NP1 1_MC |,_,| 210_MC M_NNU |is_VBZ| |money_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-name_np-ms" ("NP/n1-name" ("N1/n-name" FF_NP1))
+   ("NP/n1-ms"
+    ("N1/n-num_n1-ms" ("N0/n-num_pco_n-num" 1_MC |,_,| 210_MC)
+     ("N1/n-ms" M_NNU))))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |money_NN1|))))
+($_NNU 12.65_MC |is_VBZ| |money_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-ms" ("N1/n-ms_n-num" $_NNU 12.65_MC))
+  ("V1/be_n1/----" |is_VBZ| ("N1/n" |money_NN1|))))
+(125_MC |,_,| 170_MC |and_CC| 150_MC |respectively_RGA| |came_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np_a1-post"
+   ("NP/n-num"
+    ("N/n_n-coord/+" 125_MC |,_,|
+     ("N/n_n-coord/-" 170_MC ("N/cj-end_n" |and_CC| 150_MC))))
+   ("A1/a" |respectively_RGA|))
+  ("V1/v" |came_VVD|)))
+(10-25_MC |is_VBZ| |manageable_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n-num" 10-25_MC)
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |manageable_JJ|)))))

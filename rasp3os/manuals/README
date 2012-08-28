@@ -1,0 +1,24 @@
+               DOCUMENTATION FOR GDE, GRAMMAR, EVAL SCHEME, etc
+
+This directory contains the user documentation for the Grammar
+Development Environment and a description of the grammar. There are
+versions of the documentation in plain text and/or postscript, and
+latex source:
+
+   'gde' -- documentation for the GDE: the user manual for version 1.32,
+   an appendix for this describing the changes in version 1.35,
+   instructions for using the example scoping and post-processing module,
+   and some practical hints for using the ANLT.
+
+   'gram' -- documentation for the full sentence grammar: a detailed
+   description of the current release grammar - both syntax and
+   semantics.
+
+   tsg-doc.pdf -- a report detailing the output options, tuning etc
+   for the grammar / parser
+
+   claws-tagset.txt brief description of the PoS tags used by RASP
+
+   eval/eval-report.pdf -- a manual for running the GR eval scripts in
+   prob/greval 
+

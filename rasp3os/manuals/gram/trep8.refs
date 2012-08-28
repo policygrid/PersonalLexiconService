@@ -1,0 +1,304 @@
+\section{References}
+\newcommand{\book}[4]{\item #1 (#4) {\it #2,} #3.}
+\newcommand{\barticle}[7]{\item #1 (#7) `#2' in #5 (eds.), {\it #4,} #6, pp.~#3.}
+\newcommand{\bparticle}[6]{\item #1 (#6) `#2' in #4 (eds.), {\it #3,} #5.}
+\newcommand{\boarticle}[5]{\item #1 (#5) `#2' in {\it #3,} #4.}
+\newcommand{\farticle}[6]{\item #1 (#6, forthcoming) `#2' in #4 (eds.), {\it #3,} #5.}
+\newcommand{\uarticle}[5]{\item #1 (#5, forthcoming) `#2' in #4 (eds.), 
+{\it #3}.}
+\newcommand{\jarticle}[6]{\item #1 (#6) `#2', {\it #3,} {\it vol.#4,} pp.~#5.}
+\newcommand{\fjarticle}[4]{\item #1 (#4) `#2', {\it #3,}.}
+\newcommand{\particle}[6]{\item #1 (#6) `#2', {\it Proceedings of the #3,} #4, pp.~#5.}
+
+\begin{list}{}
+   {\leftmargin 1.6em
+    \itemindent -\leftmargin
+    \parsep 0pt plus 1pt}
+
+ 
+\book{Alshawi, H., D. Carter, J. van Eijck, R. Moore, D. Moran, F. Pereira, A. Smith \& S. Pulman}
+{Interim Report on the SRI Core Language Engine}
+{CCSRC-005, SRI Cambridge Research Centre}
+{1988}
+
+\book{Alshawi, H. (ed)}
+{The Core Language Engine}
+{MIT Press, Cambridge, MA}
+{1992}
+
+\jarticle{Bach, E.}
+{The Algebra of Events}
+{Linguistics and Philosophy}
+{9}
+{5--16}
+{1986}
+
+\jarticle{Barwise, J. \& R. Cooper}
+{Generalized Quantifiers and Natural Language}
+{Linguistics and Philosophy}
+{4}
+{159--219}
+{1981}
+
+\particle {Boguraev, B., Briscoe, E., Carroll, J., Carter, D. and Grover, C.} 
+{The derivation of a grammatically indexed lexicon from the Longman Dictionary of Contemporary English} 
+{25th Annual Meeting of the Association for Computational Linguistics} 
+{Stanford, California} {193--200} 
+{1987}
+ 
+\bparticle{Borsley, R.}
+{A Welsh Agreement Process and the Status of VP and S}
+{Order, Concord and Constituency}
+{Gazdar, G., E. Klein \& G. Pullum}
+{Foris, Dordrecht}
+{1983}
+
+\particle{Boguraev, B., J. Carroll, E. Briscoe \& C. Grover}
+{Software Support for Practical Grammar Development}
+{Proceedings of 12th International Conference of Computational Linguistics}
+{Budapest, Hungary}
+{54--58}
+{1988}
+
+\book{Briscoe, E. \& J. Carroll}
+{Generalised Probabilistic LR Parsing of Natural Language (Corpora) Using Unification-based Grammars}
+{University of Cambridge, Computer Laboratory, TR-234}
+{1991}
+
+\fjarticle{Briscoe, E. \& J. Carroll}
+{Generalised Probabilistic LR Parsing of Natural Language (Corpora)
+Using Unification-based Grammars}
+{Computational Linguistics}
+{1992, in press}
+
+\barticle{Briscoe, E., C. Grover, B. Boguraev \& J. Carroll}
+{Feature Defaults, Propagation and Reentrancy}
+{19--34}
+{Categories, Polymorphism and Unification}
+{Klein, E. and van Benthem, J.}
+{Centre for Cognitive Science, University of Edinburgh}
+{1987a}
+
+\particle{Briscoe, E., C. Grover, B. Boguraev \& J. Carroll}
+{A Formalism and Environment for the Development of a Large Grammar of English}
+{10th International Joint Conference on Artificial Intelligence}
+{Milan, Italy}
+{703--708}
+{1987b}
+ 
+\book{Carroll, J.}
+     {Parsing Techniques for Unification-based Grammars}
+     {Doctoral Dissertation, Cambridge University, Computer
+Laboratory}
+     {1993, in prep.}
+
+\particle{Carroll, J., and Briscoe, E.}
+         {Probabilistic normalisation and unpacking of packed
+          parse forests for unification-based grammars}
+         {AAAI Fall Symposium on Probabilistic Approaches to Natural Language}
+         {Cambridge, MA}
+         {33--38}
+         {1992}
+
+\book{Carroll, J., E. Briscoe \& C. Grover}
+{A Development Environment for Large Natural Language Grammars}
+{Technical Report No.\ 233, Computer Laboratory, University of Cambridge}
+{1991}
+
+\bparticle{Carroll, J. \& C. Grover}
+{The Derivation of a Large Computational Lexicon for English from LDOCE}
+{Computational Lexicography for Natural Language Processing}
+{Boguraev, B. \& E. Briscoe}
+{Longman, London}
+{1989}
+
+\jarticle{Chierchia, G.}
+{Formal Semantics and the Grammar of Predication}
+{Linguistic Inquiry}
+{16}
+{417--443}
+{1985}
+
+\jarticle{Chierchia, G. \& R. Turner}
+{Semantics and Property Theory}
+{Linguistics and Philosophy}
+{11}
+{261--302}
+{1988}
+
+\bparticle{Davidson, D.}
+{The Logical Form of Action Sentences}
+{The Logic of Decision and Action}
+{N. Rescher}
+{Univeristy of Pittsburgh Press, Pittsburgh}
+{1967}
+
+\jarticle{Dowty, D.}
+{On recent analyses of the semantics of control}
+{Linguistics and Philosophy}
+{8}
+{291--331}
+{1985}
+
+\book{Dowty, D., R. Wall \& S. Peters}
+{Introduction to Montague Semantics}
+{Reidel, Dordrecht}
+{1981}
+
+\bparticle{Gazdar, G.} 
+{A Phrase Structure Syntax for Comparative Clauses}
+{Lexical Grammar}
+{Hoekstra, T., H. van der Hulst \& M. Moortgat}
+{Foris, Dordrecht}
+{1980}
+
+\bparticle{Gazdar, G., E. Klein, G. Pullum \& I. Sag}
+{Coordinate structure and unbounded dependencies}
+{Developments in Generalized Phrase Structure Grammar}
+{Barlow, Flickinger \& Sag}
+{Stanford Working Papers in Grammatical Theory: Indiana University Linguistics Club}
+{1982}
+
+\book{Gazdar, G., E. Klein, G. Pullum \& I. Sag}
+{Generalized Phrase Structure Grammar}
+{Blackwell, Oxford}
+{1985}
+
+\book{Grover, C., E. Briscoe, J. Carroll \& B. Boguraev}
+{The Alvey Natural Language Tools Project Grammar (Second Release): a Large Computational Grammar of English}
+{Technical Report No.\ 162, Computer Laboratory, University of Cambridge}
+{1989}
+
+\jarticle{Hobbs, J. \& S. Shieber}
+{An Algorithm for Generating Quantifier Scopings}
+{Computational Linguistics}
+{13}
+{47--63}
+{1987}
+
+\book{Horrocks, G.}
+{Generative Grammar}
+{Longman, London} 
+{1987}
+
+\particle{Kilbury, J.}
+{Category Cooccurrence Restrictions and the Elimination of Metarules}
+{Proceedings of 11th International Conference of Computational Linguistics}
+{Bonn, Germany}
+{50--55}
+{1986}
+
+\bparticle{Link, G.}
+{The Logical Analysis of Plurals and Mass Terms: A Lattice-Theoretical       
+Approach}
+{Meaning, Use and Interpretation of Language}
+{B\"{a}uerle, R., {\it et al.}}
+{De Gruyter, Berlin}
+{1983}
+
+\bparticle{Link, G.}
+{Generalized Quantifiers and Plurals}
+{Generalized Quantifiers}
+{G\"{a}rdenfors, P.}
+{Reidel, Dordrecht}
+{1987}
+
+\book{Nunberg, G.}
+     {The Linguistics of Punctuation}
+     {Univ. of Chicago Press, Chicago}
+     {1990}
+
+\book{Parsons, T.}
+{Events in the Semantics of English: a study in subatomic semantics}
+{MIT Press. Cambridge, MA}
+{1990}
+ 
+\book{Pereira, F. \& S. Shieber}
+{An Introduction to Natural Language Processing in Prolog}
+{University of Chicago Press}
+{1987}
+
+\jarticle{Phillips, J.}
+{A Simple, Efficient Parser for Phrase-Structure Grammars}
+{SSAISB Quarterly Newsletter}
+{59}
+{14--18}
+{1986}
+
+\bparticle{Phillips, J. \& H. Thompson}
+{A Parser and an Appropriate Computational Representation for GPSG}
+{Cognitive Science Working Papers 1}
+{Klein, E. and Haddock, N.}
+{Centre for Cognitive Science, University of Edinburgh}
+{1987}
+
+\book     {Pollard C, Sag I} {Head-Driven Phrase Structure Grammar} {CSLI Lecture Notes 12, Stanford, California} {1987}
+
+\particle{Pulman, S.}
+{Comparatives and Ellipsis}
+{Proceedings of the 5th European ACL}
+{Berlin, Germany}
+{2--7}
+{1991}
+
+\jarticle{Pulman, S., G. Russell, G. Ritchie \& A. Black}
+{Computational Morphology of English} 
+{Linguistics}
+{26}
+{545--560}
+{1988}
+
+\jarticle{Rayner, M. \& A. Banks}
+{An Implementable Semantics for Comparative Constructions}
+{Computational Linguistics}
+{16}
+{86--112}
+{1990}
+
+\book{Ritchie, G., A. Black, S. Pulman \& G. Russell}
+{The Edinburgh/Cambridge Morphological Analyser and Dictionary System (Version 3.0) User Manual}
+{Software Paper No.\ 10, Department of Artificial Intelligence, University of Edinburgh}
+{1987}
+
+\book{Ritchie, G., G. Russell, A. Black \& S. Pulman}
+{Computational Morphology: Practical Mechanisms for the English Lexicon}
+{MIT Press, Cambridge, Mass.}
+{1992}
+
+\particle{Russell, G., S. Pulman, G. Ritchie \& A. Black}
+{A Dictionary and Morphological Analyser for English}
+{11th International Conference on Computational Linguistics}
+{Bonn, Germany}
+{277--279}
+{1986}
+
+\book{Sells, P.}
+{Lectures on Contemporary Syntactic Theories}
+{CSLI, Stanford}
+{1985}
+
+\jarticle{von Stechow, A.}
+{Comparing Semantic Theories of Comparison}
+{Journal of Semantics}
+{3}
+{1--77}
+{1984}
+
+\particle{Vestre, E.J.}
+{An Algorithm for Generating Non-redundant Quantifier Scopings}
+{Proceedings of the 5th European ACL}
+{Berlin, Germany}
+{251--256}
+{1991}
+
+\boarticle
+{Warner, A.}
+{The Structuring of English Auxiliaries: A Phrase Structure Grammar}
+{York Papers in Linguistics}
+{Department of Language and Linguistic Science, University of York}
+{1984} 
+
+\end{list}
+
+
+

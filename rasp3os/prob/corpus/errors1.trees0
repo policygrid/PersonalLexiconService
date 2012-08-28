@@ -1,0 +1,64 @@
+(|For_IF| |information_NN1| |,_,| |go_VV0| |to_II| |http://www.go.co.uk_NP1|)
+(NIL)
+(|No_AT| |wonder_NN1| |he_PPHS1| |died_VVD|)
+(NIL)
+(|In_II| |the_AT| |last_MD| |days_NNT2| |,_,| |and_CC| |particularly_RR| |during_II| |dinner_NN1| |,_,| I_PPIS1 |'ve_VH0| |laughed_VVN| |a_AT1| |lot_NN1|)
+(NIL)
+(|My_APP$| |office_NN1| |can_VM| |tell_VV0| |you_PPY| |(_(| |Phone_VV0| |:_:| 45_MC 47_MC 65_MC 67_MC |;_;| |Fax_VV0| |:_:| 47-30-50-20_MC |)_)|)
+(NIL)
+(|At_II| |2:54_MC| |p.m_RA| |Croatian_JJ| |time_NNT1| |(_(| |4:54_MC| |a.m_RA| PST_NP1 |)_)| |,_,| |the_AT| |plane_NN1| |crashed_VVD|)
+("T/txt-sc1/-"
+ ("S/pp-np_s/+"
+  ("PP/p1"
+   ("P1/p_np-pro" |At_II|
+    ("NP/np-pro_n-r"
+     ("NP/np-pro_ap-r/-"
+      ("NP/np_a1-temp"
+       ("NP/n-num" |2:54_MC|) (A1/a |p.m_RA|))
+        ("AP/a1" ("A1/a" |Croatian_JJ|)))
+     ("T/n_lmta-r" |time_NNT1|
+      ("Taph/brack1/-" |(_(|
+       ("Tph/np/------"
+        ("NP/np-nt_np-name"
+         ("NP/n1-nt" ("N1/n-nt_a-nt" |4:54_MC| |a.m_RA|))
+          ("NP/n1-name" ("N1/n-name" PST_NP1))))
+       |)_)|)))))
+  |,_,|
+  ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |plane_NN1|))
+   ("V1/v" |crashed_VVD|))))
+
+(|Think_VV0| |of_IO| |all_DB| |the_AT| |disasters_NN2| |:_:| AIDS_NP1 |,_,| |the_AT| |Challenger_NN1| |explosion_NN1| |,_,| |floods_NN2|)
+("T/txt-sc1/-"
+ ("S/imp"
+  ("V1/v_pp-of" |Think_VV0|
+   ("PP/p1"
+    ("P1/p_np" |of_IO|
+     ("T/np_leta-cl"
+      ("NP/part_n2-r" |all_DB|
+       ("NP/det_n1" |the_AT| ("N1/n" |disasters_NN2|)))
+      ("Taph/colon/-" |:_:|
+       ("Tph/np/---+--"
+        ("NP/np_pco" ("NP/n1-name" ("N1/n-name" AIDS_NP1)) |,_,|)
+        ("NP/np_pco"
+         ("NP/det_n1" |the_AT|
+          ("N1/n_n1/-" |Challenger_NN1| ("N1/n" |explosion_NN1|)))
+         |,_,|)
+        ("NP/n1-plu" ("N1/n" |floods_NN2|))))))))))
+(|But_CCB| |think_VV0| |of_IO| |all_DB| |the_AT| |disasters_NN2| |:_:| AIDS_NP1 |,_,| |the_AT| |Challenger_NN1| |explosion_NN1| |,_,| |floods_NN2|)
+("T/txt-sc1/-"
+ ("S/cj-end_s/--" |But_CCB|
+  ("S/imp"
+   ("V1/v_pp-of" |think_VV0|
+    ("PP/p1"
+     ("P1/p_np" |of_IO|
+      ("T/np_leta-cl"
+       ("NP/part_n2-r" |all_DB|
+        ("NP/det_n1" |the_AT| ("N1/n" |disasters_NN2|)))
+       ("Taph/colon/-" |:_:|
+        ("Tph/np/---+--"
+         ("NP/np_pco" ("NP/n1-name" ("N1/n-name" AIDS_NP1)) |,_,|)
+         ("NP/np_pco"
+          ("NP/det_n1" |the_AT|
+           ("N1/n_n1/-" |Challenger_NN1| ("N1/n" |explosion_NN1|)))
+          |,_,|)
+         ("NP/n1-plu" ("N1/n" |floods_NN2|)))))))))))

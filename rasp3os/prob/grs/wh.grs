@@ -1,0 +1,779 @@
+Whose_DDQ$ abacus_NN1 is_VBZ this_DD1 ?_?
+(ncsubj is abacus _)
+(xcomp _ is this)
+(det abacus Whose)
+
+Which_DDQ of_IO the_AT abbots_NN2 is_VBZ here_RL ?_?
+(ncsubj is Which _)
+(ncmod prt is here)
+(ncmod _ Which of)
+(dobj of abbots)
+(det abbots the)
+
+Which_DDQ abbot_NN1 did_VDD you_PPY see_VV0 ?_?
+(obj see abbot _)
+(ncsubj see you _)
+(det abbot Which)
+
+Which_DDQ abbot_NN1 do_VD0 I_PPIS1 agree_VV0 with_IW Lee_NP1 's_$ doubts_NN2 about_II ?_?
+(obj agree abbot _)
+(ncsubj agree I _)
+(ncmod prt agree about)
+(iobj agree with)
+(dobj with doubts)
+(ncmod poss doubts Lee)
+(det abbot Which)
+
+Which_DDQ abbot_NN1 do_VD0 I_PPIS1 have_VH0 some_DD doubts_NN2 about_II ?_?
+(obj have abbot _)
+(ncsubj have I _)
+(ncmod prt have about)
+(dobj have doubts)
+(det doubts some)
+(det abbot Which)
+
+My_APP$ doubts_NN2 all_DB of_IO which_DDQ are_VBR crazy_JJ do_VD0 n't_XX help_VV0 me_PPIO1
+(ncsubj help doubts _)
+(ncsubj help : _)
+(aux help do)
+(ncmod _ help n't)
+(dobj help me)
+(det : My)
+(det doubts My)
+(ccomp _ doubts are)
+(ncsubj are all _)
+(xcomp _ are crazy)
+(ncmod _ all of)
+(dobj of which)
+
+Who_PNQS did_VDD he_PPHS1 apologize_VV0 for_IF having_VHG his_APP$ doubts_NN2 about_II ?_?
+(obj apologize Who _)
+(ncsubj apologize he _)
+(xcomp _ apologize for)
+(xcomp _ for having)
+(ncmod prt having about)
+(dobj having doubts)
+(det doubts his)
+
+How_RGQ many_DA2 abbots_NN2 can_VM the_AT abbey_NN1 afford_VV0 ?_?
+(ncmod _ afford How)
+(ncsubj afford abbey _)
+(det abbey the)
+(dobj How abbots)
+(ncmod _ abbots many)
+
+His_APP$ messages_NN2 many_DA2 of_IO which_DDQ were_VBDR not_XX clear_JJ amazed_VVD me_PPIO1
+(ncsubj amazed messages _)
+(ncsubj amazed : _)
+(dobj amazed me)
+(det : His)
+(det messages His)
+(ccomp _ messages were)
+(ncsubj were many _)
+(xcomp _ were clear)
+(ncmod _ clear not)
+(ncmod _ many of)
+(dobj of which)
+
+Who_PNQS did_VDD he_PPHS1 have_VH0 a_AT1 desire_NN1 to_TO help_VV0 ?_?
+(obj have Who _)
+(ncsubj have he _)
+(dobj have desire)
+(det desire a)
+(comp help desire)
+(xmod to desire help)
+
+Who_PNQS did_VDD he_PPHS1 have_VH0 a_AT1 characteristic_JJ desire_NN1 to_TO help_VV0 ?_?
+(obj have Who _)
+(ncsubj have he _)
+(dobj have desire)
+(det desire a)
+(ncmod _ desire characteristic)
+(comp help desire)
+(xmod to desire help)
+
+How_RGQ confident_JJ is_VBZ he_PPHS1 ?_?
+(ncsubj is How inv)
+(xcomp _ is he)
+(dobj How confident)
+
+How_RGQ easily_RR confident_JJ he_PPHS1 seems_VVZ !_!
+(ncmod _ seems How)
+(ncsubj seems he _)
+(dobj How confident)
+(ncmod _ confident easily)
+
+Who_PNQS is_VBZ he_PPHS1 eager_JJ to_TO help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is eager)
+(ncsubj is he _)
+(xcomp to eager help)
+
+Who_PNQS is_VBZ he_PPHS1 resolutely_RR eager_JJ to_TO help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is eager)
+(ncsubj is he _)
+(ncmod _ eager resolutely)
+(xcomp to eager help)
+
+Who_PNQS is_VBZ he_PPHS1 accountable_JJ to_II ?_?
+(obj is Who _)
+(xcomp _ is accountable)
+(ncsubj is he _)
+(iobj accountable to)
+
+To_II whom_PNQO is_VBZ he_PPHS1 accountable_JJ ?_?
+(arg_mod _ is To)
+(xcomp _ is accountable)
+(ncsubj is he _)
+(dobj To whom)
+
+What_DDQ is_VBZ the_AT abbey_NN1 made_VVD up_RP of_IO ?_?
+(obj made What _)
+(ncsubj made abbey _)
+(ncmod prt made of)
+(ncmod prt made up)
+(det abbey the)
+
+Which_DDQ abbot_NN1 was_VBDZ he_PPHS1 aware_JJ that_CST he_PPHS1 might_VM not_XX get_VV0 to_TO help_VV0 ?_?
+(obj was abbot _)
+(xcomp _ was aware)
+(xcomp _ was :)
+(ncsubj was he _)
+(ccomp that aware get)
+(ncsubj get he _)
+(aux get might)
+(ncmod _ get not)
+(xcomp to get help)
+(det abbot Which)
+
+Which_DDQ abbot_NN1 was_VBDZ he_PPHS1 aware_JJ might_VM not_XX help_VV0 ?_?
+(obj help abbot _)
+(ncsubj help he _)
+(aux help might)
+(ncmod _ help not)
+(det abbot Which)
+
+Who_PNQS is_VBZ it_PPH1 convenient_JJ that_CST he_PPHS1 could_VM help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is convenient)
+(xcomp _ is :)
+(ncsubj is it _)
+(ccomp that convenient help)
+(ncsubj help he _)
+(aux help could)
+
+To_II whom_PNQO was_VBDZ it_PPH1 clear_JJ that_CST he_PPHS1 would_VM n't_XX apologize_VV0 ?_?
+(arg_mod _ was To)
+(xcomp _ was clear)
+(xcomp _ was :)
+(ncsubj was it _)
+(ccomp that clear apologize)
+(ncsubj apologize he _)
+(aux apologize would)
+(ncmod _ apologize n't)
+(dobj To whom)
+
+Who_PNQS is_VBZ it_PPH1 necessary_JJ that_CST he_PPHS1 help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is necessary)
+(xcomp _ is :)
+(ncsubj is it _)
+(ccomp that necessary help)
+(ncsubj help he _)
+
+Who_PNQS is_VBZ it_PPH1 inessential_JJ for_IF him_PPHO1 to_TO help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is inessential)
+(ncsubj is it _)
+(ccomp _ inessential for)
+(ccomp _ for him)
+(ncsubj help him _)
+
+Who_PNQS is_VBZ it_PPH1 crazy_JJ for_IF him_PPHO1 to_TO help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is crazy)
+(ncsubj is it _)
+(ccomp _ crazy for)
+(ccomp _ for him)
+(ncsubj help him _)
+
+Who_PNQS is_VBZ he_PPHS1 certain_JJ to_TO help_VV0 ?_?
+(obj is Who _)
+(xcomp _ is certain)
+(ncsubj is he _)
+(xcomp to certain help)
+
+Who_PNQS is_VBZ he_PPHS1 busy_JJ helping_VVG ?_?
+(obj is Who _)
+(xcomp _ is busy)
+(ncsubj is he _)
+(xcomp _ busy helping)
+
+Who_PNQS is_VBZ he_PPHS1 confident_JJ of_IO having_VHG helped_VVD ?_?
+(obj is Who _)
+(xcomp _ is confident)
+(ncsubj is he _)
+(xcomp _ confident of)
+(xcomp _ of helped)
+(aux helped having)
+
+Who_PNQS was_VBDZ he_PPHS1 abandoned_VVD by_II ?_?
+(obj abandoned Who _)
+(ncsubj abandoned he _)
+(ncmod prt abandoned by)
+
+By_II whom_PNQO was_VBDZ he_PPHS1 abandoned_VVD ?_?
+(arg_mod _ abandoned By)
+(ncsubj abandoned he _)
+(dobj By whom)
+
+Who_PNQS did_VDD she_PPHS1 abandon_VV0 her_APP$ doubts_NN2 about_II ?_?
+(obj abandon Who _)
+(ncsubj abandon she _)
+(ncmod prt abandon about)
+(dobj abandon doubts)
+(det doubts her)
+
+Who_PNQS did_VDD she_PPHS1 abandon_VV0 ?_?
+(obj abandon Who _)
+(ncsubj abandon she _)
+
+Who_PNQS did_VDD she_PPHS1 ask_VV0 out_RP ?_?
+(obj ask Who _)
+(ncsubj ask she _)
+(ncmod prt ask out)
+
+What_DDQ did_VDD she_PPHS1 give_VV0 him_PPHO1 ?_?
+(obj give What _)
+(ncsubj give she _)
+(dobj give him)
+
+What_DDQ did_VDD she_PPHS1 give_VV0 him_PPHO1 back_RL ?_?
+(obj give What _)
+(ncsubj give she _)
+(dobj give him)
+(ncmod prt give back)
+
+What_DDQ did_VDD she_PPHS1 carry_VV0 on_RP with_IW ?_?
+(obj carry What _)
+(ncsubj carry she _)
+(ncmod prt carry with)
+(ncmod prt carry on)
+
+Which_DDQ message_NN1 did_VDD she_PPHS1 give_VV0 to_II him_PPHO1 ?_?
+(obj give message _)
+(ncsubj give she _)
+(iobj give to)
+(dobj to him)
+(det message Which)
+
+What_DDQ did_VDD she_PPHS1 give_VV0 back_RL to_II him_PPHO1 ?_?
+(obj give What _)
+(ncsubj give she _)
+(iobj give to)
+(dobj to him)
+(ncmod prt give back)
+
+Who_PNQS does_VDZ she_PPHS1 answer_VV0 to_II for_IF her_APP$ actions_NN2 ?_?
+(obj answer Who _)
+(ncsubj answer she _)
+(ncmod _ answer for)
+(dobj for actions)
+(det actions her)
+(ncmod prt answer to)
+
+Who_PNQS does_VDZ she_PPHS1 answer_VV0 for_IF her_APP$ actions_NN2 to_II ?_?
+(obj answer Who _)
+(ncsubj answer she _)
+(ncmod prt answer to)
+(iobj answer for)
+(dobj for actions)
+(det actions her)
+
+Where_RRQ did_VDD she_PPHS1 end_VV0 up_RP ?_?
+(arg_mod _ end Where)
+(ncsubj end she _)
+(ncmod prt end up)
+
+Where_RRQ was_VBDZ her_APP$ abacus_NN1 put_VV0 ?_?
+(arg_mod _ put Where)
+(ncsubj put abacus _)
+(det abacus her)
+
+Where_RRQ did_VDD she_PPHS1 put_VVD her_APP$ abacus_NN1 ?_?
+(arg_mod _ put Where)
+(ncsubj put she _)
+(dobj put abacus)
+(det abacus her)
+
+What_DDQ did_VDD it_PPH1 cost_VV0 ?_?
+(obj cost What _)
+(ncsubj cost it _)
+
+What_DDQ did_VDD it_PPH1 cost_VVD her_PPHO1 ?_?
+(obj cost What _)
+(ncsubj cost it _)
+(dobj cost her)
+
+How_RGQ well_RR did_VDD his_APP$ message_NN1 come_VVN across_RP ?_?
+(arg_mod _ come How)
+(ncmod _ come well)
+(ncsubj come message _)
+(ncmod prt come across)
+(det message his)
+
+What_DDQ did_VDD she_PPHS1 anticipate_VV0 that_CST he_PPHS1 would_VM do_VD0 ?_?
+(obj anticipate What _)
+(ncsubj anticipate she _)
+(ccomp that anticipate do)
+(ncsubj do he _)
+(aux do would)
+
+Who_PNQS did_VDD she_PPHS1 anticipate_VV0 would_VM help_VV0 ?_?
+(csubj help anticipate _)
+(aux help would)
+(obj anticipate Who _)
+(ncsubj anticipate she _)
+
+What_DDQ did_VDD she_PPHS1 let_VVD on_RP that_CST she_PPHS1 would_VM do_VD0 ?_?
+(obj let What _)
+(ncsubj let she _)
+(ccomp that let do)
+(ncsubj do she _)
+(aux do would)
+(ncmod prt let on)
+
+Who_PNQS does_VDZ it_PPH1 turn_VV0 out_RP that_CST she_PPHS1 knows_VVZ ?_?
+(obj turn Who _)
+(ncsubj turn it _)
+(ccomp that turn knows)
+(ncsubj knows she _)
+(ncmod prt turn out)
+
+Who_PNQS did_VDD she_PPHS1 promise_VV0 them_PPHO2 that_CST she_PPHS1 would_VM help_VV0 ?_?
+(obj promise Who _)
+(ncsubj promise she _)
+(ccomp that promise help)
+(dobj promise them)
+(ncsubj help she _)
+(aux help would)
+
+Who_PNQS did_VDD she_PPHS1 promise_VV0 that_CST she_PPHS1 would_VM help_VV0 him_PPHO1 ?_?
+(obj promise Who _)
+(ncsubj promise she _)
+(ccomp that promise help)
+(ncsubj help she _)
+(aux help would)
+(dobj help him)
+
+Who_PNQS does_VDZ it_PPH1 amuse_VV0 them_PPHO2 that_CST she_PPHS1 wo_VM n't_XX help_VV0 ?_?
+(obj amuse Who _)
+(ncsubj amuse it _)
+(ccomp that amuse help)
+(dobj amuse them)
+(ncsubj help she _)
+(aux help wo)
+(ncmod _ help n't)
+
+Who_PNQS does_VDZ it_PPH1 amuse_VV0 that_CST he_PPHS1 wo_VM n't_XX help_VV0 ?_?
+(obj amuse Who _)
+(ncsubj amuse it _)
+(ccomp that amuse help)
+(ncsubj help he _)
+(aux help wo)
+(ncmod _ help n't)
+
+Who_PNQS does_VDZ it_PPH1 amuse_VV0 them_PPHO2 wo_VM n't_XX help_VV0 ?_?
+(obj amuse Who _)
+(ncsubj amuse it _)
+(ccomp _ amuse help)
+(ncsubj help them _)
+(aux help wo)
+(ncmod _ help n't)
+
+Who_PNQS does_VDZ it_PPH1 matter_VV0 to_II her_PPHO1 that_CST she_PPHS1 should_VM help_VV0 ?_?
+(obj matter Who _)
+(ncsubj matter it _)
+(ccomp that matter help)
+(iobj matter to)
+(ncsubj help she _)
+(aux help should)
+(dobj to her)
+
+Who_PNQS did_VDD he_PPHS1 bet_VVD his_APP$ abacus_NN1 that_CST he_PPHS1 could_VM do_VD0 it_PPH1 ?_?
+(obj bet Who _)
+(ncsubj bet he _)
+(ccomp that bet do)
+(dobj bet abacus)
+(ncsubj do he _)
+(aux do could)
+(dobj do it)
+(det abacus his)
+
+Who_PNQS did_VDD she_PPHS1 arrange_VV0 with_IW him_PPHO1 for_IF them_PPHO2 to_TO help_VV0 ?_?
+(obj arrange Who _)
+(ncsubj arrange she _)
+(ccomp _ arrange for)
+(iobj arrange with)
+(ccomp _ for them)
+(ncsubj help them _)
+(dobj with him)
+
+Who_PNQS was_VBDZ he_PPHS1 petitioned_VVD that_CST he_PPHS1 help_VV0 ?_?
+(obj petitioned Who _)
+(ncsubj petitioned he _)
+(ccomp that petitioned help)
+(ncsubj help he _)
+
+By_II whom_PNQO was_VBDZ he_PPHS1 asked_VVD what_DDQ they_PPHS2 should_VM do_VD0 ?_?
+(arg_mod _ asked By)
+(ncsubj asked he _)
+(ccomp _ asked do)
+(obj do what _)
+(ncsubj do they _)
+(aux do should)
+(dobj By whom)
+
+Who_PNQS did_VDD they_PPHS2 ask_VV0 whether_CSW they_PPHS2 should_VM help_VV0 ?_?
+(obj ask Who _)
+(ncsubj ask they _)
+(ccomp _ ask whether)
+(ccomp _ whether help)
+(ncsubj help they _)
+(aux help should)
+
+Who_PNQS did_VDD they_PPHS2 ask_VV0 what_DDQ to_TO do_VD0 ?_?
+(obj ask Who _)
+(ncsubj ask they _)
+(dobj ask what)
+(comp do what)
+(xmod to what do)
+
+How_RGQ confident_JJ did_VDD she_PPHS1 start_VV0 off_RP ?_?
+(ncmod _ start How)
+(ncsubj start she _)
+(ncmod prt start off)
+(dobj How confident)
+
+How_RGQ busy_JJ did_VDD she_PPHS1 look_VV0 ?_?
+(ncmod _ look How)
+(ncsubj look she _)
+(dobj How busy)
+
+So_RG many_DA2 doubts_NN2 she_PPHS1 is_VBZ beginning_VVG to_TO have_VH0 !_!
+(ncmod _ : many)
+(ncmod _ doubts many)
+(ccomp _ doubts beginning)
+(ncsubj beginning she _)
+(aux beginning is)
+(xcomp to beginning have)
+(ncmod _ many So)
+
+What_DDQ did_VDD she_PPHS1 set_VVD out_RP to_TO do_VD0 ?_?
+(obj set What _)
+(ncsubj set she _)
+(xcomp to set do)
+(ncmod prt set out)
+
+What_DDQ did_VDD she_PPHS1 start_VV0 doing_VDG ?_?
+(obj start What _)
+(ncsubj start she _)
+(xcomp _ start doing)
+
+What_DDQ did_VDD she_PPHS1 carry_VV0 on_II doing_VDG ?_?
+(obj carry What _)
+(ncsubj carry she _)
+(xcomp _ carry on)
+(xcomp _ on doing)
+
+Who_PNQS did_VDD he_PPHS1 get_VV0 abandoned_VVN by_II ?_?
+(obj get Who _)
+(ncsubj get he _)
+(ncmod prt get by)
+(xcomp _ get abandoned)
+
+Who_PNQS did_VDD she_PPHS1 arrange_VV0 with_IW him_PPHO1 to_TO help_VV0 ?_?
+(obj arrange Who _)
+(ncsubj arrange she _)
+(iobj arrange with)
+(xcomp to arrange help)
+(dobj with him)
+
+Who_PNQS did_VDD she_PPHS1 promise_VV0 them_PPHO2 to_TO help_VV0 ?_?
+(obj promise Who _)
+(ncsubj promise she _)
+(ncsubj help them _)
+(xcomp to promise help)
+(dobj promise them)
+
+Who_PNQS did_VDD she_PPHS1 promise_VV0 to_TO help_VV0 ?_?
+(obj promise Who _)
+(ncsubj promise she _)
+(xcomp to promise help)
+
+Who_PNQS does_VDZ he_PPHS1 strike_VV0 as_CSA crazy_JJ ?_?
+(obj strike Who _)
+(ncsubj strike he _)
+(xcomp _ strike as)
+(xcomp _ as crazy)
+
+What_DDQ does_VDZ he_PPHS1 strike_VV0 you_PPY as_CSA ?_?
+(obj strike What _)
+(ncsubj strike he _)
+(ncmod prt strike as)
+(dobj strike you)
+
+How_RGQ crazy_JJ does_VDZ she_PPHS1 make_VV0 him_PPHO1 out_RP ?_?
+(ncmod _ make How)
+(ncsubj make she _)
+(dobj make him)
+(ncmod prt make out)
+(dobj How crazy)
+
+What_DDQ does_VDZ she_PPHS1 know_VV0 him_PPHO1 to_TO be_VB0 ?_?
+(obj know What _)
+(ncsubj know she _)
+(ncsubj be him _)
+(xcomp to know be)
+(dobj know him)
+
+Who_PNQS does_VDZ she_PPHS1 know_VV0 to_TO be_VB0 crazy_JJ ?_?
+(obj know Who _)
+(ncsubj know she _)
+(xcomp to know be)
+(xcomp _ be crazy)
+
+What_DDQ does_VDZ it_PPH1 hurt_VVD her_PPHO1 to_TO do_VD0 ?_?
+(obj hurt What _)
+(ncsubj hurt it _)
+(ncsubj do her _)
+(xcomp to hurt do)
+(dobj hurt her)
+
+What_DDQ did_VDD she_PPHS1 anticipate_VV0 him_PPHO1 doing_NN1 ?_?
+(obj anticipate What _)
+(ncsubj anticipate she _)
+(dobj anticipate him)
+(ncmod _ him doing)
+
+Who_PNQS did_VDD she_PPHS1 anticipate_VV0 helping_VVG ?_?
+(obj anticipate Who _)
+(ncsubj anticipate she _)
+(xcomp _ anticipate helping)
+
+What_DDQ did_VDD she_PPHS1 let_VVD him_PPHO1 off_II doing_VDG ?_?
+(obj let What _)
+(ncsubj let she _)
+(xcomp _ let off)
+(dobj let him)
+(xcomp _ off doing)
+
+Who_PNQS could_VM she_PPHS1 hear_VV0 apologizing_VVG ?_?
+(obj hear Who _)
+(ncsubj hear she _)
+(xcomp _ hear apologizing)
+
+Who_PNQS did_VDD she_PPHS1 make_VV0 him_PPHO1 help_VV0 ?_?
+(obj make Who _)
+(ncsubj make she _)
+(ccomp _ make help)
+(ncsubj help him _)
+
+Who_PNQS did_VDD she_PPHS1 see_VV0 help_VV0 the_AT abbot_NN1 ?_?
+(obj see Who _)
+(ncsubj see she _)
+(xcomp _ see help)
+(dobj help abbot)
+(det abbot the)
+
+Who_PNQS did_VDD she_PPHS1 get_VV0 them_PPHO2 accepted_VVN by_II ?_?
+(obj get Who _)
+(ncsubj get she _)
+(ncmod prt get by)
+(ccomp _ get accepted)
+(ncsubj accepted them _)
+
+Who_PNQS did_VDD she_PPHS1 see_VV0 accepted_VVN by_II them_PPHO2 ?_?
+(obj see Who _)
+(ncsubj see she _)
+(ncmod _ see by)
+(dobj by them)
+(xcomp _ see accepted)
+
+What_DDQ does_VDZ it_PPH1 hurt_VVD to_TO see_VV0 ?_?
+(obj hurt What _)
+(ncsubj hurt it _)
+(xcomp to hurt see)
+
+Which_DDQ abbey_NN1 is_VBZ he_PPHS1 in_II ?_?
+(obj is abbey _)
+(pcomp is in)
+(ncsubj is he _)
+(det abbey Which)
+
+How_RGQ crazy_JJ is_VBZ he_PPHS1 ?_?
+(ncsubj is How inv)
+(xcomp _ is he)
+(dobj How crazy)
+
+What_DDQ was_VBDZ there_RL a_AT1 message_NN1 about_II ?_?
+(ncsubj was What _)
+(ncmod prt was about)
+(xcomp _ was message)
+(ncmod _ was there)
+(det message a)
+
+What_DDQ was_VBDZ there_RL ?_?
+(ncsubj was What _)
+(ncmod prt was there)
+
+Who_PNQS was_VBDZ it_PPH1 that_CST he_PPHS1 helped_VVD ?_?
+(ncsubj was Who _)
+(xcomp _ was it)
+(cmod that it helped)
+(ncsubj helped he _)
+
+Who_PNQS was_VBDZ it_PPH1 who_PNQS he_PPHS1 helped_VVD ?_?
+(ncsubj was Who _)
+(xcomp _ was it)
+(cmod _ it helped)
+(obj helped who _)
+(ncsubj helped he _)
+
+Who_PNQS is_VBZ she_PPHS1 amused_VVD that_CST he_PPHS1 helps_VVZ ?_?
+(obj amused Who _)
+(ncsubj amused she _)
+(ccomp that amused helps)
+(ncsubj helps he _)
+
+Who_PNQS was_VBDZ she_PPHS1 acknowledged_VVD to_TO have_VH0 helped_VVD ?_?
+(obj acknowledged Who _)
+(ncsubj acknowledged she _)
+(xcomp to acknowledged helped)
+(aux helped have)
+
+What_DDQ was_VBDZ she_PPHS1 made_VVD out_RP to_TO have_VH0 done_VDN ?_?
+(obj made What _)
+(ncsubj made she _)
+(xcomp to made done)
+(aux done have)
+(ncmod prt made out)
+
+What_DDQ was_VBDZ she_PPHS1 not_XX appearing_VVG to_TO do_VD0 ?_?
+(obj appearing What _)
+(ncsubj appearing she _)
+(ncmod _ appearing not)
+(xcomp to appearing do)
+
+What_DDQ was_VBDZ she_PPHS1 appearing_VVG not_XX to_TO do_VD0 ?_?
+(obj appearing What _)
+(ncsubj appearing she _)
+(xmod to appearing do)
+(ncmod _ do not)
+
+How_RGQ can_VM she_PPHS1 help_VV0 him_PPHO1 ?_?
+(arg_mod _ help How)
+(ncsubj help she _)
+(dobj help him)
+
+How_RGQ easily_RR can_VM she_PPHS1 do_VD0 it_PPH1 ?_?
+(arg_mod _ do How)
+(ncmod _ do easily)
+(ncsubj do she _)
+(dobj do it)
+
+In_II which_DDQ abbey_NN1 did_VDD he_PPHS1 see_VV0 her_PPHO1 ?_?
+(arg_mod _ see In)
+(ncsubj see he _)
+(dobj see her)
+(dobj In abbey)
+(det abbey which)
+
+How_RGQ easily_RR was_VBDZ he_PPHS1 being_VBG abandoned_VVN ?_?
+(arg_mod _ was How)
+(arg_mod _ : How)
+(ncmod _ : easily)
+(ncmod _ was easily)
+(ccomp _ was abandoned)
+(ncsubj abandoned he _)
+(arg being he)
+(xmod to he being)
+
+Who_PNQS will_VM help_VV0 and_CC who_PNQS wo_VM n't_XX help_VV0 ?_?
+(conj help and)
+(conj and help)
+(ncsubj help who _)
+(aux help wo)
+(ncmod _ help n't)
+(ncsubj help Who _)
+(aux help will)
+
+The_AT abbot_NN1 Lee_NP1 knows_VVZ but_CCB Kim_NP1 does_VDZ n't_XX know_VV0
+(conj knows but)
+(conj but know)
+(ncsubj know Kim _)
+(aux know does)
+(ncmod _ know n't)
+(ncsubj knows abbot _)
+(ncmod _ abbot Lee)
+(det abbot The)
+
+Which_DDQ abbot_NN1 does_VDZ Lee_NP1 know_VV0 but_CCB Kim_NP1 does_VDZ n't_XX know_VV0 ?_?
+(obj but abbot _)
+(conj know but)
+(conj but know)
+(ncsubj know Kim _)
+(aux know does)
+(ncmod _ know n't)
+(ncsubj know Lee _)
+(det abbot Which)
+
+What_DDQ does_VDZ Lee_NP1 do_VD0 confidently_RR and_CC Kim_NP1 do_VD0 fearfully_RR ?_?
+(obj and What _)
+(conj do and)
+(conj and do)
+(ncsubj do Kim _)
+(ncmod _ do fearfully)
+(ncsubj do Lee _)
+(ncmod _ do confidently)
+
+Which_DDQ abbot_NN1 and_CC which_DDQ abbey_NN1 did_VDD you_PPY see_VV0 ?_?
+(obj see and _)
+(ncsubj see you _)
+(conj and abbot)
+(conj and abbey)
+(det abbey which)
+(det abbot Which)
+
+In_II which_DDQ abbey_NN1 and_CC with_IW which_DDQ abbot_NN1 did_VDD he_PPHS1 see_VV0 them_PPHO2 ?_?
+(arg_mod _ see and)
+(ncsubj see he _)
+(dobj see them)
+(conj and In)
+(dobj with abbot)
+(det abbot which)
+(dobj In abbey)
+(det abbey which)
+
+Who_PNQS will_VM he_PPHS1 do_VD0 it_PPH1 with_IW or_CC without_IW ?_?
+(obj do Who _)
+(ncsubj do he _)
+(ncmod prt do or)
+(conj or with)
+(dobj do it)
+
+What_DDQ does_VDZ Lee_NP1 see_VV0 and_CC hear_VV0 ?_?
+(obj and What _)
+(ncsubj and Lee _)
+(conj and see)
+(conj and hear)
+
+What_DDQ will_VM Lee_NP1 agree_VV0 to_II but_CCB not_XX do_VD0 ?_?
+(obj but What _)
+(ncsubj but Lee _)
+(conj but agree)
+(conj but do)
+(ncmod _ do not)
+(ncmod prt agree to)
+

@@ -1,0 +1,157 @@
+He is abandoned.
+He is abandoned by her.
+He is asked out.
+He is asked out by Lee.
+He is allowed an abacus.
+He is promised an abacus.
+He is allowed an abacus by her.
+He is promised an abacus by her.
+He is given it back.
+He is given back his abacus.
+He is given it back by her.
+He is given back his abacus by Kim.
+He is advised of their message.
+He is advised of their message by her.
+He is advised by her of their message.
+He is carried back to the abbey.
+He is carried back to the abbey by them.
+He is carried back by them to the abbey.
+He is allowed into the abbey.
+He is allowed into the abbey by them.
+He is allowed by them into the abbey.
+The message was put well.
+The message was put resolutely.
+The message was put well by him.
+The message was put resolutely by him.
+She was promised that he would help.
+She was promised by him that he would help.
+She was promised that he would help by him.
+She was had on that he would help.
+She was had on by them that he would help.
+She was bet an abacus that he could do it.
+She was bet an abacus by him that he could do it.
+He was petitioned that they be allowed to help.
+He was petitioned by them that they be allowed to help.
+He was asked what he would do.
+He was asked by them what he would do.
+He was asked whether he would help.
+He was asked by them whether he would help.
+He was asked what to do.
+He was asked by them what to do.
+He was asked whether to help.
+He was asked by them whether to help.
+He was acknowledged an able host.
+He was acknowledged an able host by them.
+He was acknowledged by them an able host.
+He was acknowledged resolute.
+He was acknowledged by them resolute.
+He was acknowledged resolute by them.
+It is sanded down better.
+It is sanded down better by them.
+He was condemned as crazy.
+He was condemned by them as crazy.
+He was condemned as crazy by them.
+He was put down as crazy.
+He was put down as crazy by them.
+She was advised to help him.
+She was advised by them to help him.
+She was advised to help him by them.
+He was drawn on to help her.
+He was drawn on by them to help her.
+He was counted on to help them.
+He was counted on by them to help them.
+He was appealed to to help them.
+He was appealed to by her to help them.
+He is come down on to help them.
+He is come down on by them to help them.
+Does Lee abandon her?
+Doesn't Lee abandon her?
+Can Lee abandon her?
+Can't Lee abandon her?
+Can she not help?
+Ought he to help?
+Has he helped?
+Is he helping?
+was she abandoned?
+Is he the abbot?
+Isn't he the abbot?
+Is he not the abbot?
+Is he in the abbey?
+Isn't he in the abbey?
+Is he not in the abbey?
+Is he crazy?
+Isn't he crazy?
+Is he not crazy?
+Is he in the abbey and helping?
+Isn't he in the abbey and helping?
+Is he not in the abbey and helping?
+Are there any abbots?
+Are there any abbots here?
+Aren't there any abbots?
+Was it Lee who helped?
+Wasn't it Lee who helped?
+Was it in the abbey that he abandoned her?
+He agrees with the abbot and with the host.
+He agrees with the abbot or with the host.
+He agrees both with the abbot and with the host.
+He agrees either with the abbot or with the host.
+He agrees neither with the abbot nor with the host.
+He agrees with the abbot but not with the host.
+He agrees with the abbot but not on the host.
+He agrees with and with the abbot.
+He agrees with and on the abbot.
+He puts it either in or outside the abbey.
+He puts them both in and outside the abbey.
+He puts them outside but not in the abbey.
+She appears both resolute and confident.
+He appears neither resolute nor confident.
+She appears both eager to help us and anxious to start.
+He is too crazy and fearful.
+She is so resolute and confident.
+She is adamant and confident that she can help.
+It is clear and certain that she can help.
+That she can help is clear and certain.
+Lee may help us or he may not help us.
+Lee will either help or not help.
+Lee will neither help nor allow Kim to help.
+That he won't help both amazes and amuses sandy.
+Kim will neither help nor abandon Lee.
+That he is crazy both amazes and amuses Lee.
+It amazes or amuses Lee that he is crazy.
+Lee won't help but he will allow Kim to help.
+Lee won't help and Kim won't apologize.
+Either Kim helps or Lee helps.
+Lee wants to help and he will.
+Lee hasn't helped but he wants to.
+He is not the abbot but his host.
+He is the host but not the abbot.
+He is in the abbey but not outside it.
+He is not crazy but anxious.
+He is crazy but not anxious.
+He is crazy and anxious.
+He is crazy or anxious.
+He is crazy and in the abbey.
+He is in the abbey but not crazy.
+Kim and Lee are here.
+Kim and Lee and sandy are here.
+Kim Lee and sandy are here.
+Both Kim and sandy are here.
+Either Kim or Lee is here.
+The abbot or his host has apologized.
+The abbot or his host have apologized.
+The abbots or Lee have apologized.
+Lee or the abbots have apologized.
+The abbots or their hosts have apologized.
+Neither the abbots nor their hosts are here.
+Neither the abbot nor his host are here.
+Neither the abbots nor their host are here.
+Neither their host nor the abbots are here.
+Either the abbots or the hosts are here.
+Either the abbot or his host are here.
+He helps not the abbot but his host.
+His desire and anxiety to help are convenient.
+His desire or anxiety to help is convenient.
+The younger abbots and abbeys are inessential.
+His crazy doubt or anxiety is not helping him.
+His crazy doubts or anxieties are not helping him.
+

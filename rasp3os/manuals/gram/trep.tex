@@ -1,0 +1,90 @@
+\documentstyle[a4,11pt]{article}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.2in}
+\setlength{\oddsidemargin}{0.2in}
+\setlength{\evensidemargin}{0.2in}
+\setlength{\textwidth}{6in}
+\newcommand{\etal}{{\it et al }}
+\newcommand{\ssp}{\setlength{\baselineskip}{14pt}}
+\newcommand{\dsp}{\setlength{\baselineskip}{26pt}}
+\newcommand{\fsp}{\setlength{\baselineskip}{10pt}}
+\newcommand{\nextex}[1]{\addtocounter{examplectr}{1}(\arabic{examplectr}{#1})\addtocounter{examplectr}{-1}}
+\newcommand{\prevex}[1]{(\arabic{examplectr}{#1})}
+\newcommand{\exnum}[2]{\addtocounter{examplectr}{#1}(\arabic{examplectr}{#2})\addtocounter{examplectr}{-#1}}
+\newcounter{examplectr}
+\newcounter{subexamplectr}
+\newenvironment{ex}%
+   { \addtocounter{examplectr}{1}
+     \setcounter{subexamplectr}{0}
+     \begin{list}
+       {(\arabic{examplectr}) \hfill}%
+       {\setlength{\topsep}{0in}
+        \setlength{\leftmargin}{0.5in}
+        \setlength{\rightmargin}{0in}
+       	\setlength{\labelwidth}{0.4in}
+       	\setlength{\labelsep}{0.1in}
+       	\setlength{\itemindent}{0in}
+       }
+       \item \ssp \begin{minipage}[t]{5.5in}
+   }%
+   {\end{minipage}
+    \end{list}}
+\newenvironment{subex}%
+   { \addtocounter{subexamplectr}{1}
+     \begin{list}
+       {\alph{subexamplectr}}%
+       {\setlength{\topsep}{-\parskip}
+	\setlength{\leftmargin}{0.25in}
+	\setlength{\labelsep}{0.15in}}
+       \item \ssp
+   }%
+   {\end{list}}
+\newenvironment{splitex}%
+   { \begin{list}
+       {\hspace{0.05in}}%
+       {\setlength{\parskip}{0in}
+        \setlength{\topsep}{0in}
+        \setlength{\leftmargin}{0.5in}
+        \setlength{\rightmargin}{0in}
+       	\setlength{\labelwidth}{0.4in}
+       	\setlength{\labelsep}{0.1in}
+       	\setlength{\itemindent}{0in}
+       }
+       \item \ssp \begin{minipage}[t]{5.5in}
+   }%
+   {\end{minipage}
+    \end{list}}
+
+\pagestyle{empty}
+
+\begin{document} 
+
+\input{trep0.title}
+\pagebreak
+\tableofcontents
+\pagebreak
+\setcounter{page}{1}
+\input{trep1.overview}
+\pagebreak
+\input{trep2.formalism}
+\pagebreak
+\input{trep3.features}
+\pagebreak
+\input{trep4.semantics}
+\pagebreak
+\input{trep5.synsem}
+\pagebreak
+\input{trep6.constructions}
+\pagebreak
+\input{trep7.scoper}
+\pagebreak
+\input{trep8.refs}
+\pagebreak
+\setcounter{page}{1}
+\pagenumbering{roman}
+\input{trep9.append1}
+\pagebreak
+\input{trep9.append2}
+\pagebreak
+\input{trep9.append3}
+\end{document}

@@ -1,0 +1,89 @@
+23rd_MD May_NPM1 was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod _ May 23rd)
+
+May_NPM1 23rd_MD was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 23rd)
+
+23rd_MD May_NPM1 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+23rd_MD May_NPM1 ,_, 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+May_NPM1 23rd_MD 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+May_NPM1 23rd_MD ,_, 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+Monday_NPD1 12th_MD May_NPM1 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod _ May Monday)
+(ncmod num May 1993)
+(ncmod num May 12th)
+
+Monday_NPD1 ,_, 12th_MD May_NPM1 1993_MC was_VBDZ horrible_JJ
+(ncsubj was Monday _)
+(xcomp _ was horrible)
+(ncmod _ Monday May)
+(ncmod num May 1993)
+(ncmod num Monday 12th)
+
+April_NPM1 1st_MD is_VBZ horrible_JJ
+(ncsubj is April _)
+(xcomp _ is horrible)
+(ncmod num April 1st)
+
+1st_MD April_NPM1 is_VBZ horrible_JJ
+(ncsubj is April _)
+(xcomp _ is horrible)
+(ncmod _ April 1st)
+
+The_AT 1st_MD April_NPM1 is_VBZ horrible_JJ
+(ncsubj is April _)
+(xcomp _ is horrible)
+(det April The)
+(ncmod _ April 1st)
+
+10/05/04_MC is_VBZ my_APP$ birthday_NN1
+(ncsubj is 10/05/04 _)
+(xcomp _ is birthday)
+(det birthday my)
+
+10-05-04_MC is_VBZ my_APP$ birthday_NN1
+(ncsubj is 10-05-04 _)
+(xcomp _ is birthday)
+(det birthday my)
+
+My_APP$ birthday_NN1 is_VBZ on_II 10/05_MC
+(ncsubj is birthday _)
+(pcomp is on)
+(dobj on 10/05)
+(det birthday My)
+
+0208_MC 892_MC 5144_MC is_VBZ my_APP$ number_NN1
+*** Warning: no matching parse
+
+L10,4M_NNU is_VBZ a_AT1 lot_NN1 of_IO money_NN1
+> Error: Comma not inside backquote
+> While executing: CCL::|, reader|
+> Type :POP to abort.
+Type :? for other options.
+1 > 

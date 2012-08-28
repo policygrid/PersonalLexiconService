@@ -1,0 +1,1483 @@
+(|Sandy_NP1| |,_,| |Kim_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |abandoned_VVD|))))
+(|Kim_NP1| |abandoned_VVD| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/v_np-name" |abandoned_VVD|
+   ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |will_VM| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/modal_bse/--" |will_VM| ("V1/v" |abandon_VV0|)))))
+(|Kim_NP1| |will_VM| |abandon_VV0| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/--" |will_VM|
+   ("V1/v_np-name" |abandon_VV0|
+    ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |has_VHZ| |abandoned_VVN|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/have_ppart-r/--" |has_VHZ| ("V1/v" |abandoned_VVN|)))))
+(|Kim_NP1| |has_VHZ| |abandoned_VVN| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/have_ppart-r/--" |has_VHZ|
+   ("V1/v_np-name" |abandoned_VVN|
+    ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))))
+(|Who_PNQS| |has_VHZ| |Sandy_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |has_VHZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+    ("V1/v" |abandoned_VVD|)))))
+(|The_AT| |abbot_NN1| |who_PNQS| |Sandy_NP1| |has_VHZ| |abandoned_VVD| |came_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/np-wh_s-gap" |who_PNQS|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+      ("V1/have_past/--" |has_VHZ| ("V1/v" |abandoned_VVD|))))))
+  ("V1/v" |came_VVD|)))
+(|Who_PNQS| |abandons_VVZ| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" |Who_PNQS|
+  ("V1/v_np-name" |abandons_VVZ|
+   ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)))))
+(|The_AT| |abbot_NN1| |who_PNQS| |abandons_VVZ| |Sandy_NP1| |came_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/np-wh_vp" |who_PNQS|
+     ("V1/v_np-name" |abandons_VVZ|
+      ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))))
+  ("V1/v" |came_VVD|)))
+(|Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2| |about_II| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/have_np/--" |has_VHZ|
+   ("NP/det_n1" |some_DD|
+    ("N1/n1_pp1" ("N1/n" |doubts_NN2|)
+     ("PP/p1"
+      ("P1/p_np-name" |about_II|
+       ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ|
+     ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |has_VHZ| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ| ("NP/n1-plu" ("N1/n" |doubts_NN2|)))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |has_VHZ| |many_DA2| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ|
+     ("NP/n1-plu"
+      ("N1/ap_n1/-" ("AP/a1" ("A1/a" |many_DA2|))
+       ("N1/n" |doubts_NN2|))))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|Who_PNQS| |does_VDZ| |Kim_NP1| |have_VH0| |some_DD| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/vp_pp"
+     ("V1/have_np/--" |have_VH0|
+      ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))
+     ("PP/p1" ("P1/prt-r" |about_II|)))))))
+(|The_AT| |abbot_NN1| |who_PNQS| |Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2| |about_II| |is_VBZ| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/np-wh_s-gap" |who_PNQS|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/vp_pp"
+       ("V1/have_np/--" |has_VHZ|
+        ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))
+       ("PP/p1" ("P1/prt-r" |about_II|)))))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |crazy_JJ|)))))
+(|Sandy_NP1| |asks_VVZ| |who_PNQS| |Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/np-wh_s-gap" |who_PNQS|
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/vp_pp"
+      ("V1/have_np/--" |has_VHZ|
+       ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))
+      ("PP/p1" ("P1/prt-r" |about_II|))))))))
+(|About_II| |Sandy_NP1| |Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |About_II|
+    ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/have_np/--" |has_VHZ|
+    ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|))))))
+(|About_II| |Kim_NP1| |Sandy_NP1| |has_VHZ| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |About_II| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/have_np/--" |has_VHZ| ("NP/n1-plu" ("N1/n" |doubts_NN2|))))))
+(|About_II| |Kim_NP1| |Sandy_NP1| |has_VHZ| |many_DA2| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |About_II| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/have_np/--" |has_VHZ|
+    ("NP/n1-plu"
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |many_DA2|))
+      ("N1/n" |doubts_NN2|)))))))
+(|About_II| |who_PNQS| |does_VDZ| |Kim_NP1| |have_VH0| |some_DD| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |About_II| |who_PNQS|))
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/have_np/--" |have_VH0|
+     ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))))))
+(|The_AT| |abbot_NN1| |about_II| |whom_PNQO| |Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2| |is_VBZ| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |about_II| |whom_PNQO|))
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/have_np/--" |has_VHZ|
+       ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |crazy_JJ|)))))
+(|Sandy_NP1| |asks_VVZ| |about_II| |whom_PNQO| |Kim_NP1| |has_VHZ| |some_DD| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_pp-wh" |asks_VVZ|
+   ("PP/p1"
+    ("P1/p_s-wh" |about_II|
+     ("S/np-wh_s-gap" |whom_PNQO|
+      ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+       ("V1/have_np/--" |has_VHZ|
+        ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|))))))))))
+(|Kim_NP1| |looks_VVZ| |at_II| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/v_pp" |looks_VVZ|
+   ("PP/p1"
+    ("P1/p_np-name" |at_II|
+     ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |looks_VVZ| |at_RP|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" ("V/v_prt" |looks_VVZ| |at_RP|)))))
+(|Who_PNQS| |does_VDZ| |Kim_NP1| |look_VV0| |at_RP|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v" ("V/v_prt" |look_VV0| |at_RP|))))))
+(|The_AT| |abbot_NN1| |who_PNQS| |Kim_NP1| |looks_VVZ| |at_RP| |is_VBZ| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/np-wh_s-gap" |who_PNQS|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" ("V/v_prt" |looks_VVZ| |at_RP|))))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |crazy_JJ|)))))
+(|Sandy_NP1| |asks_VVZ| |who_PNQS| |Kim_NP1| |is_VBZ| |looking_VVG| |at_RP|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/np-wh_s-gap" |who_PNQS|
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/be_ing/--" |is_VBZ|
+      ("V1/v" ("V/v_prt" |looking_VVG| |at_RP|))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |looks_VVZ| |at_II| |some_DD| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/v_pp" |looks_VVZ|
+     ("PP/p1"
+      ("P1/p_np" |at_II|
+       ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|At_II| |Sandy_NP1| |Kim_NP1| |looks_VVZ|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |At_II| ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |looks_VVZ|))))
+(|At_II| |who_PNQS| |does_VDZ| |Kim_NP1| |look_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |At_II| |who_PNQS|))
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v" |look_VV0|)))))
+(|The_AT| |abbot_NN1| |at_II| |who_PNQS| |Kim_NP1| |looks_VVZ| |is_VBZ| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |at_II| |who_PNQS|))
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |looks_VVZ|)))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |crazy_JJ|)))))
+(|Sandy_NP1| |asks_VVZ| |at_II| |who_PNQS| |Kim_NP1| |is_VBZ| |looking_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |at_II| |who_PNQS|))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/be_ing/--" |is_VBZ| ("V1/v" |looking_VVG|)))))))
+(|About_II| |Sandy_NP1| |Kim_NP1| |looks_VVZ| |at_II| |some_DD| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |About_II|
+    ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_pp" |looks_VVZ|
+    ("PP/p1"
+     ("P1/p_np" |at_II|
+      ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|))))))))
+(|Kim_NP1| |abdicates_VVZ| |from_II| |the_AT| |abbey_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/v_pp" |abdicates_VVZ|
+   ("PP/p1"
+    ("P1/p_np" |from_II|
+     ("NP/det_n1" |the_AT| ("N1/n" |abbey_NN1|)))))))
+(|The_AT| |abbey_NN1| |,_,| |Kim_NP1| |abdicates_VVZ| |from_II|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |The_AT| ("N1/n" |abbey_NN1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_pp" |abdicates_VVZ| ("PP/p1" ("P1/prt-r" |from_II|))))))
+(|Which_DDQ| |abbey_NN1| |does_VDZ| |Kim_NP1| |abdicate_VV0| |from_II|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" ("NP/det_n1" |Which_DDQ| ("N1/n" |abbey_NN1|))
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_pp" |abdicate_VV0| ("PP/p1" ("P1/prt-r" |from_II|)))))))
+(|The_AT| |abbey_NN1| |that_CST| |Kim_NP1| |abdicates_VVZ| |from_II| |is_VBZ| |falling_VVG| |down_RP|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n_s" |abbey_NN1|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v_pp" |abdicates_VVZ| ("PP/p1" ("P1/prt-r" |from_II|)))))))
+  ("V1/be_ing/--" |is_VBZ|
+   ("V1/v" ("V/v_prt" |falling_VVG| |down_RP|)))))
+(|Sandy_NP1| |asks_VVZ| |which_DDQ| |abbey_NN1| |Kim_NP1| |abdicates_VVZ| |from_II|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/np-wh_s-gap" ("NP/det_n1" |which_DDQ| ("N1/n" |abbey_NN1|))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/v_pp" |abdicates_VVZ| ("PP/p1" ("P1/prt-r" |from_II|))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |abdicates_VVZ| |from_II| |some_DD| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/v_pp" |abdicates_VVZ|
+     ("PP/p1"
+      ("P1/p_np" |from_II|
+       ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|)))))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|From_II| |the_AT| |abbey_NN1| |Kim_NP1| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np" |From_II| ("NP/det_n1" |the_AT| ("N1/n" |abbey_NN1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |abdicates_VVZ|))))
+(|From_II| |which_DDQ| |abbey_NN1| |does_VDZ| |Kim_NP1| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-np-wh_s"
+  ("PP/p1"
+   ("P1/p_np" |From_II|
+    ("NP/det_n1" |which_DDQ| ("N1/n" |abbey_NN1|))))
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v" |abdicate_VV0|)))))
+(|The_AT| |abbey_NN1| |from_II| |which_DDQ| |Kim_NP1| |abdicates_VVZ| |is_VBZ| |falling_VVG| |down_RP|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbey_NN1|)
+    ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |from_II| |which_DDQ|))
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abdicates_VVZ|)))))
+  ("V1/be_ing/--" |is_VBZ|
+   ("V1/v" ("V/v_prt" |falling_VVG| |down_RP|)))))
+(|Sandy_NP1| |asks_VVZ| |from_II| |which_DDQ| |abbey_NN1| |Kim_NP1| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/pp-np-wh_s"
+    ("PP/p1"
+     ("P1/p_np" |from_II|
+      ("NP/det_n1" |which_DDQ| ("N1/n" |abbey_NN1|))))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/v" |abdicates_VVZ|))))))
+(|About_II| |Sandy_NP1| |Kim_NP1| |abdicates_VVZ| |from_II| |some_DD| |doubts_NN2|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |About_II|
+    ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_pp" |abdicates_VVZ|
+    ("PP/p1"
+     ("P1/p_np" |from_II|
+      ("NP/det_n1" |some_DD| ("N1/n" |doubts_NN2|))))))))
+(|Which_DDQ| |abbey_NN1| |is_VBZ| |Kim_NP1| |in_II|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" ("NP/det_n1" |Which_DDQ| ("N1/n" |abbey_NN1|))
+  ("S/sai-be2/--" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("PP/p1" ("P1/prt-r" |in_II|)))))
+(|Kim_NP1| |is_VBZ| |an_AT1| |abbot_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |an_AT1| ("N1/n" |abbot_NN1|)))))
+(|Kim_NP1| |is_VBZ| |the_AT| |abbot_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|)))))
+(|The_AT| |abbot_NN1| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |abbot_NN1|))
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|Abbots_NN2| |are_VBR| |crazy_JJ| |hosts_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-plu" ("N1/n" |Abbots_NN2|))
+  ("V1/be_np/----" |are_VBR|
+   ("NP/n1-plu"
+    ("N1/ap_n1/-" ("AP/a1" ("A1/a" |crazy_JJ|))
+     ("N1/n" |hosts_NN2|))))))
+(|Kim_NP1| |is_VBZ| |my_APP$| |host_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |my_APP$| ("N1/n" |host_NN1|)))))
+(I_PPIS1 |am_VBM| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/be_np/----" |am_VBM| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|That_DD1| |is_VBZ| |the_AT| |doubt_NN1| |about_II| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |That_DD1|
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |the_AT|
+    ("N1/n1_pp1" ("N1/n" |doubt_NN1|)
+     ("PP/p1"
+      ("P1/p_np-name" |about_II|
+       ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))))))
+(|An_AT1| |abbot_NN1| |,_,| |Kim_NP1| |is_VBZ|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |An_AT1| ("N1/n" |abbot_NN1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_gap-r" |is_VBZ|))))
+(|The_AT| |abbot_NN1| |,_,| |Kim_NP1| |is_VBZ|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |The_AT| ("N1/n" |abbot_NN1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_gap-r" |is_VBZ|))))
+(|An_AT1| |abbot_NN1| |,_,| |Kim_NP1| |appears_VVZ| |to_TO| |be_VB0|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |An_AT1| ("N1/n" |abbot_NN1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_inf" |appears_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/be_gap-r" |be_VB0|))))))
+(|Abbots_NN2| |,_,| |they_PPHS2| |are_VBR|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/n1-plu" ("N1/n" |Abbots_NN2|)) |,_,|
+  ("S/np_vp" |they_PPHS2| ("V1/be_gap-r" |are_VBR|))))
+(|What_DDQ| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" |What_DDQ|
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|Who_PNQS| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" |Who_PNQS|
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|Which_DDQ| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" |Which_DDQ|
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|Whose_DDQ$| |is_VBZ| |this_DD1|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" |Whose_DDQ$| ("V1/be_np/----" |is_VBZ| |this_DD1|)))
+(|Which_DDQ| |abbot_NN1| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" ("NP/det_n1" |Which_DDQ| ("N1/n" |abbot_NN1|))
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|The_AT| |abbot_NN1| |who_PNQS| |Kim_NP1| |is_VBZ| |came_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/np-wh_s-gap" |who_PNQS|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/be_gap-r" |is_VBZ|)))))
+  ("V1/v" |came_VVD|)))
+(|Kim_NP1| |is_VBZ| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |crazy_JJ|)))))
+(|How_RGQ| |crazy_JJ| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/pp_vp-r" ("PP/p1" ("P1/p_a1-r" |How_RGQ| ("A1/a" |crazy_JJ|)))
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|How_RGQ| |certain_JJ| |to_TO| |abdicate_VV0| |is_VBZ| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/pp_vp-r"
+  ("PP/p1"
+   ("P1/p_a1-r" |How_RGQ|
+    ("A1/a_inf" |certain_JJ|
+     ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|)))))
+  ("V1/be_np/----" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))))
+(|How_RGQ| |certain_JJ| |to_TO| |abdicate_VV0| |does_VDZ| |Kim_NP1| |appear_VV0| |to_TO| |be_VB0|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_a1-r" |How_RGQ|
+    ("A1/a_inf" |certain_JJ|
+     ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|)))))
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_inf" |appear_VV0|
+     ("V1/to_bse/-" |to_TO| ("V1/be_gap-r" |be_VB0|)))))))
+(|Who_PNQS| |is_VBZ| |Kim_NP1| |certain_JJ| |to_TO| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai-be3/--" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("AP/a1"
+    ("A1/a_inf" |certain_JJ|
+     ("V1/to_bse/-" |to_TO| ("V1/v" |abandon_VV0|)))))))
+(|What_DDQ| |is_VBZ| |Kim_NP1| |certain_JJ| |to_TO| |be_VB0|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |What_DDQ|
+  ("S/sai-be3/--" |is_VBZ| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("AP/a1"
+    ("A1/a_inf" |certain_JJ|
+     ("V1/to_bse/-" |to_TO| ("V1/be_gap-r" |be_VB0|)))))))
+(|At_II| |what_DDQ| |is_VBZ| |Kim_NP1| |bound_VVD| |to_TO| |look_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |At_II| |what_DDQ|))
+  ("S/sai/-" |is_VBZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_inf" |bound_VVD|
+     ("V1/to_bse/-" |to_TO| ("V1/v" |look_VV0|)))))))
+(|From_II| |which_DDQ| |abbey_NN1| |is_VBZ| |it_PPH1| |convenient_JJ| |that_CST| |Kim_NP1| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/pp-np-wh_s"
+  ("PP/p1"
+   ("P1/p_np" |From_II|
+    ("NP/det_n1" |which_DDQ| ("N1/n" |abbey_NN1|))))
+  ("S/sai-be3/--" |is_VBZ| |it_PPH1|
+   ("AP/a1"
+    ("A1/a_s" |convenient_JJ|
+     ("S/comp" |that_CST|
+      ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+       ("V1/v" |abdicates_VVZ|))))))))
+(|Kim_NP1| |asks_VVZ| |Sandy_NP1| |out_RP|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/v_np-name_prt" |asks_VVZ|
+   ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |out_RP|)))
+(|Who_PNQS| |does_VDZ| |Kim_NP1| |ask_VV0| |out_RP|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v" ("V/v_prt" |ask_VV0| |out_RP|))))))
+(|Who_PNQS| |does_VDZ| |Kim_NP1| |give_VV0| |the_AT| |butter_NN1|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_np" |give_VV0|
+     ("NP/det_n1" |the_AT| ("N1/n" |butter_NN1|)))))))
+(|What_DDQ| |does_VDZ| |Kim_NP1| |give_VV0| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |What_DDQ|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_np-name" |give_VV0|
+     ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)))))))
+(|Who_PNQS| |does_VDZ| |Kim_NP1| |give_VV0| |back_RL| |the_AT| |butter_NN1|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_np" ("V/v_prt" |give_VV0| |back_RL|)
+     ("NP/det_n1" |the_AT| ("N1/n" |butter_NN1|)))))))
+(|Who_PNQS| |does_VDZ| |Kim_NP1| |give_VV0| |the_AT| |butter_NN1| |back_RL|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |Who_PNQS|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_np_prt" |give_VV0|
+     ("NP/det_n1" |the_AT| ("N1/n" |butter_NN1|)) |back_RL|)))))
+(|What_DDQ| |does_VDZ| |Kim_NP1| |give_VV0| |Sandy_NP1| |back_RL|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |What_DDQ|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_np-name_prt" |give_VV0|
+     ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |back_RL|)))))
+(|What_DDQ| |does_VDZ| |Kim_NP1| |give_VV0| |back_RL| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np-wh_s-gap" |What_DDQ|
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("V1/v_np-name" ("V/v_prt" |give_VV0| |back_RL|)
+     ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)))))))
+(|Kim_NP1| |falls_VVZ| |under_II| |the_AT| |abbot_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/v_pp" |falls_VVZ|
+   ("PP/p1"
+    ("P1/p_np" |under_II|
+     ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|)))))))
+(|Under_II| |the_AT| |abbot_NN1| |Kim_NP1| |falls_VVZ|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np" |Under_II| ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |falls_VVZ|))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |acknowledges_VVZ| |Lee_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_s" |acknowledges_VVZ|
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+     ("V1/v" |abandoned_VVD|))))))
+(|At_II| |Sandy_NP1| |Kim_NP1| |acknowledges_VVZ| |that_CST| |Lee_NP1| |looked_VVD|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |At_II| ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_s" |acknowledges_VVZ|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+      ("V1/v" |looked_VVD|)))))))
+(|Who_PNQS| |is_VBZ| |it_PPH1| |who_PNQS| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/np-wh_vp" |Who_PNQS|
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/np-pro_s-wh" |it_PPH1|
+    ("S/np-wh_vp" |who_PNQS| ("V1/v" |abdicates_VVZ|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |appears_VVZ| |certain_JJ| |to_TO| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_ap" |appears_VVZ|
+    ("AP/a1"
+     ("A1/a_inf" |certain_JJ|
+      ("V1/to_bse/-" |to_TO| ("V1/v" |abandon_VV0|))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |starts_VVZ| |abandoning_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_ing" |starts_VVZ| ("V1/v" |abandoning_VVG|)))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |starts_VVZ| |being_VBG| |aware_JJ| |of_IO|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_ing" |starts_VVZ|
+    ("V1/be_ap/-" |being_VBG|
+     ("AP/a1"
+      ("A1/a_pp-of" |aware_JJ| ("PP/p1" ("P1/prt-of" |of_IO|)))))))))
+(|Kim_NP1| |,_,| |Sandy_NP1| |appears_VVZ| |to_II| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/v_pp" |appears_VVZ|
+    ("PP/p1"
+     ("P1/p_inf" |to_II|
+      ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))))
+(|To_II| |Kim_NP1| |Sandy_NP1| |appears_VVZ| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |To_II| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/v_inf" |appears_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|With_IW| |Sandy_NP1| |Lee_NP1| |conspires_VVZ| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |With_IW| ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/v_inf" |conspires_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |promises_VVZ| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_inf" |promises_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |acknowledges_VVZ| |to_TO| |be_VB0| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_inf" |acknowledges_VVZ|
+    ("V1/to_bse/-" |to_TO|
+     ("V1/be_ap/-" |be_VB0| ("AP/a1" ("A1/a" |crazy_JJ|))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |acknowledges_VVZ| |his_APP$| |doubts_NN2| |about_II| |to_TO| |be_VB0| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_inf-r"
+    ("V1/vp_pp"
+     ("V1/v_np" |acknowledges_VVZ|
+      ("NP/det_n1" |his_APP$| ("N1/n" |doubts_NN2|)))
+     ("PP/p1" ("P1/prt-r" |about_II|)))
+    ("V1/to_bse/-" |to_TO|
+     ("V1/be_ap/-" |be_VB0| ("AP/a1" ("A1/a" |crazy_JJ|))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |asks_VVZ| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_inf" |asks_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Sandy_NP1| |,_,| |it_PPH1| |amuses_VVZ| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/v_inf" |amuses_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Sandy_NP1| |,_,| |it_PPH1| |behoves_VVZ| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/v_inf" |behoves_VVZ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Sandy_NP1| |,_,| |it_PPH1| |falls_VVZ| |to_II| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/vp_inf-r"
+    ("V1/v_pp" |falls_VVZ| ("PP/p1" ("P1/prt-r" |to_II|)))
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |anticipates_VVZ| |abdicating_JJ|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_ap" |anticipates_VVZ| ("AP/a1" ("A1/a" |abdicating_JJ|))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |anticipates_VVZ| |being_VBG| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_ing" |anticipates_VVZ|
+    ("V1/be_ap/-" |being_VBG| ("AP/a1" ("A1/a" |crazy_JJ|)))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |gives_VVZ| |over_RP| |to_II| |abdicating_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_pp" ("V/v_prt" |gives_VVZ| |over_RP|)
+    ("PP/p1" ("P1/p_ing" |to_II| ("V1/v" |abdicating_VVG|)))))))
+(|Lee_NP1| |,_,| |Sandy_NP1| |makes_VVZ| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/v_bse" |makes_VVZ| ("V1/v" |abdicate_VV0|)))))
+(|Sandy_NP1| |,_,| |he_PPHS1| |helps_VVZ| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" |he_PPHS1|
+   ("V1/v_bse" |helps_VVZ| ("V1/v" |abdicate_VV0|)))))
+(|In_II| |the_AT| |abbey_NN1| |it_PPH1| |is_VBZ| |he_PPHS1| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np" |In_II|
+    ("NP/det_n1" |the_AT|
+     ("N1/n_s" |abbey_NN1|
+      ("S/np_vp" |it_PPH1| ("V1/be_gap-r" |is_VBZ|))))))
+  ("S/np_vp" |he_PPHS1| ("V1/v" |abdicates_VVZ|))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |amused_VVN| |that_CST| |Sandy_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_s" |amused_VVN|
+     ("S/comp" |that_CST|
+      ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+       ("V1/v" |abandoned_VVD|))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |by_II| |to_TO| |be_VB0| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_pp" |acknowledged_VVN|
+     ("PP/p1"
+      ("P1/p_inf" |by_II|
+       ("V1/to_bse/-" |to_TO|
+        ("V1/be_ap/-" |be_VB0| ("AP/a1" ("A1/a" |crazy_JJ|)))))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |by_II| |Lee_NP1| |to_TO| |have_VH0| |abandoned_VVN|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_pp_inf" |acknowledged_VVN|
+     ("PP/p1"
+      ("P1/p_np-name" |by_II| ("NP/n1-name" ("N1/n-name" |Lee_NP1|))))
+     ("V1/to_bse/-" |to_TO|
+      ("V1/have_ppart-r/--" |have_VH0| ("V1/v" |abandoned_VVN|))))))))
+(|Sandy_NP1| |,_,| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |to_TO| |have_VH0| |abandoned_VVN|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_inf" |acknowledged_VVN|
+     ("V1/to_bse/-" |to_TO|
+      ("V1/have_ppart-r/--" |have_VH0| ("V1/v" |abandoned_VVN|))))))))
+(|By_II| |Lee_NP1| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |to_TO| |be_VB0| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |By_II| ("NP/n1-name" ("N1/n-name" |Lee_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_inf" |acknowledged_VVN|
+     ("V1/to_bse/-" |to_TO|
+      ("V1/be_ap/-" |be_VB0| ("AP/a1" ("A1/a" |crazy_JJ|)))))))))
+(|Kim_NP1| |is_VBZ| |acknowledged_VVN| |crazy_JJ| |by_II| |Lee_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/vp_pp"
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_ap" |acknowledged_VVN| ("AP/a1" ("A1/a" |crazy_JJ|))))
+   ("PP/p1"
+    ("P1/p_np-name" |by_II| ("NP/n1-name" ("N1/n-name" |Lee_NP1|)))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |crazy_JJ| |by_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/be_ppart/--" |is_VBZ|
+     ("V1/v_ap" |acknowledged_VVN| ("AP/a1" ("A1/a" |crazy_JJ|))))
+    ("PP/p1" ("P1/prt-r" |by_II|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |certain_JJ| |to_TO| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/v_ap" |acknowledged_VVN|
+     ("AP/a1"
+      ("A1/a_inf" |certain_JJ|
+       ("V1/to_bse/-" |to_TO| ("V1/v" |abandon_VV0|)))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |acknowledged_VVN| |certain_JJ| |to_TO| |abandon_VV0| |by_II| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/be_ppart/--" |is_VBZ|
+     ("V1/v_ap" |acknowledged_VVN|
+      ("AP/a1"
+       ("A1/a_inf" |certain_JJ|
+        ("V1/to_bse/-" |to_TO| ("V1/v" |abandon_VV0|))))))
+    ("PP/p1"
+     ("P1/p_np-name" |by_II|
+      ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))))))
+(|Lee_NP1| |,_,| |he_PPHS1| |was_VBDZ| |put_VVN| |off_RP| |abandoning_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" |he_PPHS1|
+   ("V1/be_ppart/--" |was_VBDZ|
+    ("V1/v_ing" ("V/v_prt" |put_VVN| |off_RP|)
+     ("V1/v" |abandoning_VVG|))))))
+(|Lee_NP1| |,_,| |Sandy_NP1| |is_VBZ| |given_VVN| |the_AT| |butter_NN1| |back_RL| |by_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/vp_pp"
+    ("V1/be_ppart/--" |is_VBZ|
+     ("V1/v_np_prt" |given_VVN|
+      ("NP/det_n1" |the_AT| ("N1/n" |butter_NN1|)) |back_RL|))
+    ("PP/p1" ("P1/prt-r" |by_II|))))))
+(|Lee_NP1| |,_,| |Sandy_NP1| |appealed_VVD| |to_II| |against_II| |it_PPH1|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/vp_pp"
+    ("V1/v_pp" |appealed_VVD| ("PP/p1" ("P1/prt-r" |to_II|)))
+    ("PP/p1" ("P1/p_np-pro" |against_II| |it_PPH1|))))))
+(|The_AT| |abbey_NN1| |,_,| |he_PPHS1| |ended_VVD| |up_RP| |in_II|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |The_AT| ("N1/n" |abbey_NN1|)) |,_,|
+  ("S/np_vp" |he_PPHS1|
+   ("V1/v_pp" ("V/v_prt" |ended_VVD| |up_RP|)
+    ("PP/p1" ("P1/prt-r" |in_II|))))))
+(|The_AT| |butter_NN1| |,_,| |he_PPHS1| |puts_VVZ| |in_II| |the_AT| |abbey_NN1|)
+("T/txt-sc1/--"
+ ("S/np-nm_pco_s-r" ("NP/det_n1" |The_AT| ("N1/n" |butter_NN1|)) |,_,|
+  ("S/np_vp" |he_PPHS1|
+   ("V1/v_pp" |puts_VVZ|
+    ("PP/p1"
+     ("P1/p_np" |in_II|
+      ("NP/det_n1" |the_AT| ("N1/n" |abbey_NN1|))))))))
+(|So_RG| |crazily_RR| |,_,| |Kim_NP1| |acts_VVZ|)
+("T/txt-sc1/--"
+ ("S/adv_s/+" ("AP/a1" ("A1/dg_a1" |So_RG| ("A1/a" |crazily_RR|)))
+  |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |acts_VVZ|))))
+(|Lee_NP1| |,_,| |it_PPH1| |appears_VVZ| |that_CST| |Kim_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/v_s" |appears_VVZ|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abandoned_VVD|)))))))
+(|Lee_NP1| |,_,| |it_PPH1| |matters_VVZ| |that_CST| |Kim_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/v_s" |matters_VVZ|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abandoned_VVD|)))))))
+(|Lee_NP1| |,_,| |it_PPH1| |amuses_VVZ| |that_CST| |Kim_NP1| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/v_s" |amuses_VVZ|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abdicates_VVZ|)))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |arranges_VVZ| |for_IF| |Sandy_NP1| |to_TO| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v_pp_inf" |arranges_VVZ|
+    ("PP/p1"
+     ("P1/p_np-name" |for_IF|
+      ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abandon_VV0|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |arranges_VVZ| |with_IW| |for_IF| |Sandy_NP1| |to_TO| |abandon_VV0| |him_PPHO1|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/v_pp" |arranges_VVZ| ("PP/p1" ("P1/prt-r" |with_IW|)))
+    ("PP/p1"
+     ("P1/p_sinf" |for_IF| ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+      ("V1/to_bse/-" |to_TO|
+       ("V1/v_np-pro" |abandon_VV0| |him_PPHO1|))))))))
+(|With_IW| |Kim_NP1| |Lee_NP1| |arranges_VVZ| |for_IF| |Sandy_NP1| |to_TO| |abandon_VV0| |him_PPHO1|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |With_IW| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/v_pp_inf" |arranges_VVZ|
+    ("PP/p1"
+     ("P1/p_np-name" |for_IF|
+      ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))
+    ("V1/to_bse/-" |to_TO|
+     ("V1/v_np-pro" |abandon_VV0| |him_PPHO1|))))))
+(|Lee_NP1| |,_,| |Sandy_NP1| |advises_VVZ| |that_CST| |Kim_NP1| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/v_s" |advises_VVZ|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abandon_VV0|)))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |is_VBZ| |confident_JJ| |of_IO| |Sandy_NP1| |abandoning_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_pp-of" |confident_JJ|
+      ("PP/p1"
+       ("P1/p_sing" |of_IO| ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+        ("V1/v" |abandoning_VVG|)))))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |is_VBZ| |anxious_JJ| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_pp" |anxious_JJ| ("PP/p1" ("P1/prt-r" |about_II|))))))))
+(|About_II| |Kim_NP1| |Lee_NP1| |is_VBZ| |anxious_JJ|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |About_II| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |anxious_JJ|))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |is_VBZ| |anxious_JJ| |about_II| |his_APP$| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a1_pp"
+      ("A1/a_pp" |anxious_JJ|
+       ("PP/p1"
+        ("P1/p_np" |about_II|
+         ("NP/det_n1" |his_APP$| ("N1/n" |doubts_NN2|)))))
+      ("PP/p1" ("P1/prt-r" |about_II|))))))))
+(|Kim_NP1| |Lee_NP1| |is_VBZ| |situated_VVN| |behind_RL|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" |Kim_NP1| ("N1/n-name" |Lee_NP1|)))
+  ("V1/be_ppart/--" |is_VBZ|
+   ("V1/v" ("V/v_prt" |situated_VVN| |behind_RL|)))))
+(|To_II| |Kim_NP1| |Lee_NP1| |is_VBZ| |accountable_JJ| |for_IF| |Sandy_NP1|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-name" |To_II| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_pp-for" |accountable_JJ|
+      ("PP/p1"
+       ("P1/p_np-name" |for_IF|
+        ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))))))))))
+(|Sandy_NP1| |,_,| |Lee_NP1| |is_VBZ| |accountable_JJ| |for_IF| |to_II| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/vp_pp"
+    ("V1/be_ap/-" |is_VBZ|
+     ("AP/a1"
+      ("A1/a_pp-for" |accountable_JJ|
+       ("PP/p1" ("P1/prt-r" |for_IF|)))))
+    ("PP/p1"
+     ("P1/p_np-name" |to_II|
+      ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |aware_JJ| |that_CST| |Sandy_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_s" |aware_JJ|
+      ("S/comp" |that_CST|
+       ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+        ("V1/v" |abandoned_VVD|)))))))))
+(|Lee_NP1| |,_,| |it_PPH1| |is_VBZ| |convenient_JJ| |that_CST| |Kim_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_s" |convenient_JJ|
+      ("S/comp" |that_CST|
+       ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+        ("V1/v" |abandoned_VVD|)))))))))
+(|Lee_NP1| |,_,| |it_PPH1| |is_VBZ| |crazy_JJ| |of_IO| |to_TO| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" |it_PPH1|
+   ("V1/vp_inf-r"
+    ("V1/be_ap/-" |is_VBZ|
+     ("AP/a1"
+      ("A1/a_pp-of" |crazy_JJ| ("PP/p1" ("P1/prt-of" |of_IO|)))))
+    ("V1/to_bse/-" |to_TO| ("V1/v" |abdicate_VV0|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |was_VBDZ| |set_VVN| |to_TO| |abandon_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |was_VBDZ|
+    ("V1/v_inf" |set_VVN|
+     ("V1/to_bse/-" |to_TO| ("V1/v" |abandon_VV0|)))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |busy_JJ| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1" ("A1/a_ing" |busy_JJ| ("V1/v" |helping_VVG|)))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |is_VBZ| |confident_JJ| |of_IO| |abandoning_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_pp-of" |confident_JJ|
+      ("PP/p1" ("P1/p_ing" |of_IO| ("V1/v" |abandoning_VVG|)))))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |is_VBZ| |confident_JJ| |of_IO| |having_VHG| |abandoned_VVN|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_pp-of" |confident_JJ|
+      ("PP/p1"
+       ("P1/p_ing" |of_IO|
+        ("V1/have_ppart-r/--" |having_VHG|
+         ("V1/v" |abandoned_VVN|))))))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |is_VBZ| |confident_JJ| |of_IO| |Sandy_NP1| |abandoning_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/be_ap/-" |is_VBZ|
+    ("AP/a1"
+     ("A1/a_pp-of" |confident_JJ|
+      ("PP/p1"
+       ("P1/p_sing" |of_IO| ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+        ("V1/v" |abandoning_VVG|)))))))))
+(|Lee_NP1| |,_,| |Sandy_NP1| |has_VHZ| |Kim_NP1| |'s_$| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ|
+     ("NP/np-poss_n1"
+      ("NP/np_n-poss" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |'s_$|)
+      ("N1/n" |doubts_NN2|)))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |has_VHZ| |Sandy_NP1| |'s_$| |many_DA2| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ|
+     ("NP/np-poss_n1"
+      ("NP/np_n-poss" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|)) |'s_$|)
+      ("N1/ap_n1/-" ("AP/a1" ("A1/a" |many_DA2|))
+       ("N1/n" |doubts_NN2|))))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|The_AT| |abbot_NN1| |whose_DDQ$| |abbey_NN1| |Kim_NP1| |abandoned_VVD| |came_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbot_NN1|)
+    ("S/np-wh_s-gap" ("NP/det_n1" |whose_DDQ$| ("N1/n" |abbey_NN1|))
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abandoned_VVD|)))))
+  ("V1/v" |came_VVD|)))
+(|Lee_NP1| |,_,| |Kim_NP1| |has_VHZ| |all_DB| |three_MC| |doubts_NN2| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ|
+     ("NP/part_n2-r" |all_DB|
+      ("NP/n1-plu" ("N1/n-num_n1" |three_MC| ("N1/n" |doubts_NN2|)))))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|Kim_NP1| |asks_VVZ| |which_DDQ| |abbots_NN2| |Lee_NP1| |helps_VVZ| |three_MC| |of_IO|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/np-wh_s-gap" ("NP/det_n1" |which_DDQ| ("N1/n" |abbots_NN2|))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+     ("V1/v_np-pro" |helps_VVZ| 
+       ("NP/np-pro_pp-r" ("NP/n-num" |three_MC|) ("PP/p1" ("P1/prt-of" |of_IO|)))))))))
+(|Lee_NP1| |asks_VVZ| |which_DDQ| |butter_NN1| |Kim_NP1| |has_VHZ| |much_DA1| |of_IO|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/np-wh_s-gap" ("NP/det_n1" |which_DDQ| ("N1/n" |butter_NN1|))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/have_np/--" |has_VHZ| 
+      ("NP/np-pro_pp-r" |much_DA1| ("PP/p1" ("P1/prt-of" |of_IO|)))))))))
+(|The_AT| |butter_NN1| |much_DA1| |of_IO| |which_DDQ| |Kim_NP1| |has_VHZ| |is_VBZ| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_a1-att-r/+" |The_AT| ("N1/n" |butter_NN1|)
+   ("A1/a_s" |much_DA1|
+    ("S/pp-np-wh_s" ("PP/p1" ("P1/p_np-pro" |of_IO| |which_DDQ|))
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/have_gap-r" |has_VHZ|)))))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |crazy_JJ|)))))
+(|Sandy_NP1| |asks_VVZ| |which_DDQ| |of_IO| |the_AT| |abbots_NN2| |Kim_NP1| |abandoned_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_s" |asks_VVZ|
+   ("S/np-wh_s-gap"
+    ("NP/np-pro_pp-r" |which_DDQ|
+     ("PP/p1"
+      ("P1/p_np" |of_IO|
+       ("NP/det_n1" |the_AT| ("N1/n" |abbots_NN2|)))))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/v" |abandoned_VVD|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |has_VHZ| |a_AT1| |doubt_NN1| |about_II|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/vp_pp"
+    ("V1/have_np/--" |has_VHZ|
+     ("NP/det_n1" |a_AT1| ("N1/n" |doubt_NN1|)))
+    ("PP/p1" ("P1/prt-r" |about_II|))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |has_VHZ| |a_AT1| |desire_NN1| |to_TO| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/have_np/--" |has_VHZ|
+    ("NP/det_n1" |a_AT1|
+     ("N1/n_inf" |desire_NN1|
+      ("V1/to_bse/-" |to_TO| ("V1/v" |help_VV0|))))))))
+(|Kim_NP1| |,_,| |Lee_NP1| |has_VHZ| |a_AT1| |crazy_JJ| |desire_NN1| |to_TO| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/have_np/--" |has_VHZ|
+    ("NP/det_n1" |a_AT1|
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |crazy_JJ|))
+      ("N1/n_inf" |desire_NN1|
+       ("V1/to_bse/-" |to_TO| ("V1/v" |help_VV0|)))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |has_VHZ| |an_AT1| |anxious_JJ| |crazy_JJ| |desire_NN1| |to_TO| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/have_np/--" |has_VHZ|
+    ("NP/det_n1" |an_AT1|
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |anxious_JJ|))
+      ("N1/ap_n1/-" ("AP/a1" ("A1/a" |crazy_JJ|))
+       ("N1/n_inf" |desire_NN1|
+        ("V1/to_bse/-" |to_TO| ("V1/v" |help_VV0|))))))))))
+(|Kim_NP1| |abdicated_VVD| |then_RR|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/vp_advp" ("V1/v" |abdicated_VVD|) ("AP/a1" ("A1/a" |then_RR|)))))
+(|Here_RL| |Kim_NP1| |abdicated_VVD|)
+("T/txt-sc1/--"
+ ("S/adv_s/-" ("AP/a1" ("A1/a" |Here_RL|))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |abdicated_VVD|))))
+(|Lee_NP1| |asked_VVD| |where_RRQ| |Kim_NP1| |abdicated_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+  ("V1/v_s" |asked_VVD|
+   ("S/pp-wh_s" ("PP/p1" ("P1/p-wh" |where_RRQ|))
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/v" |abdicated_VVD|))))))
+(|The_AT| |abbey_NN1| |where_RRQ| |Kim_NP1| |abdicated_VVD| |closed_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_s-wh" ("N1/n" |abbey_NN1|)
+    ("S/pp-wh_s" ("PP/p1" ("P1/p-wh" |where_RRQ|))
+     ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+      ("V1/v" |abdicated_VVD|)))))
+  ("V1/v" |closed_VVD|)))
+(|Lee_NP1| |,_,| |Kim_NP1| |abandoned_VVD| |here_RL|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" ("V/v_prt" |abandoned_VVD| |here_RL|)))))
+(|Lee_NP1| |abdicates_VVZ| |somewhere_RL| |that_CST| |he_PPHS1| |abandoned_VVD| |then_RR|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+  ("V1/vp_advp"
+   ("V1/v_s" ("V/v_prt" |abdicates_VVZ| |somewhere_RL|)
+    ("S/comp" |that_CST|
+     ("S/np_vp" |he_PPHS1| ("V1/v" |abandoned_VVD|))))
+   ("AP/a1" ("A1/a" |then_RR|)))))
+(|Some_DD| |butter_NN1| |of_IO| |Kim_NP1| |'s_$| |melted_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |Some_DD| 
+   ("N1/n_pp-of" |butter_NN1|
+    ("PP/p1"
+     ("P1/p_np-name" |of_IO| 
+      ("NP/np_n-poss-ellip-r"
+       ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |'s_$|)))))
+  ("V1/v" |melted_VVD|)))
+(|Before_ICS| |Kim_NP1| |abdicated_VVD| |he_PPHS1| |helped_VVD| |Lee_NP1|)
+("T/txt-sc1/--"
+ ("S/pp-sfin_s/-"
+  ("PP/p1"
+   ("P1/p_s" |Before_ICS|
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+     ("V1/v" |abdicated_VVD|))))
+  ("S/np_vp" |he_PPHS1|
+   ("V1/v_np-name" |helped_VVD|
+    ("NP/n1-name" ("N1/n-name" |Lee_NP1|))))))
+(|Kim_NP1| |helped_VVD| |Lee_NP1| |before_ICS| |he_PPHS1| |abdicated_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/vp_pp"
+   ("V1/v_np-name" |helped_VVD| ("NP/n1-name" ("N1/n-name" |Lee_NP1|)))
+    ("PP/p1" ("P1/p_s" |before_ICS|
+     ("S/np_vp" |he_PPHS1| ("V1/v" |abdicated_VVD|)))))))
+(|Lee_NP1| |helped_VVD| |Kim_NP1| |after_ICS| |Sandy_NP1| |abdicated_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+  ("V1/vp_pp"
+   ("V1/v_np-name" |helped_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))
+   ("PP/p1" ("P1/p_s" |after_ICS|            
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+     ("V1/v" |abdicated_VVD|)))))))
+(|Because_CS| |Sandy_NP1| |abdicated_VVD| |Lee_NP1| |helped_VVD| |Kim_NP1|)
+("T/txt-sc1/--"
+ ("S/pp-sfin_s/-"
+  ("PP/p1"
+   ("P1/p_s" |Because_CS|
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+     ("V1/v" |abdicated_VVD|))))
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/v_np-name" |helped_VVD|
+    ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))))
+(|Kim_NP1| |certainly_RR| |helped_VVD| |Lee_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/adv_vp" ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/v_np-name" |helped_VVD|
+    ("NP/n1-name" ("N1/n-name" |Lee_NP1|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |certainly_RR| |has_VHZ| |helped_VVN|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/adv_vp" ("AP/a1" ("A1/a" |certainly_RR|))
+    ("V1/have_ppart-r/--" |has_VHZ| ("V1/v" |helped_VVN|))))))
+(|Kim_NP1| |certainly_RR| |was_VBDZ| |being_VBG| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/adv_vp" ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/be_ing/--" |was_VBDZ|
+    ("V1/be_ap/-" |being_VBG| ("AP/a1" ("A1/a" |crazy_JJ|)))))))
+(|Kim_NP1| |was_VBDZ| |certainly_RR| |being_VBG| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ing/+-" |was_VBDZ| ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/be_ap/-" |being_VBG| ("AP/a1" ("A1/a" |crazy_JJ|))))))
+(|Kim_NP1| |must_VM| |certainly_RR| |be_VB0| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/+-" |must_VM| ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/be_ap/-" |be_VB0| ("AP/a1" ("A1/a" |crazy_JJ|))))))
+(|Kim_NP1| |is_VBZ| |certainly_RR| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ap/-" |is_VBZ|
+   ("AP/a1"
+    ("A1/adv_a1" ("AP/a1" ("A1/a" |certainly_RR|))
+     ("A1/a" |crazy_JJ|))))))
+(|Kim_NP1| |is_VBZ| |certainly_RR| |acknowledged_VVN| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ppart/+-" |is_VBZ|
+   ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/v_ap"   |acknowledged_VVN| ("AP/a1" ("A1/a" |crazy_JJ|))))))
+(|Kim_NP1| |certainly_RR| |abdicates_VVZ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/adv_vp" ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/v" |abdicates_VVZ|))))
+(|Kim_NP1| |is_VBZ| |certainly_RR| |abdicating_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ap/-" |is_VBZ|
+   ("AP/a1"
+    ("A1/advp_ing-r" ("AP/a1" ("A1/a" |certainly_RR|))
+     |abdicating_VVG|)))))
+(|Kim_NP1| |has_VHZ| |certainly_RR| |abdicated_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/vp_advp" ("V1/have_gap-r" |has_VHZ|)
+   ("AP/a1"
+    ("A1/advp_ppart-r" ("AP/a1" ("A1/a" |certainly_RR|))
+     |abdicated_VVN|)))))
+(|Kim_NP1| |certainly_RR| |was_VBDZ| |being_VBG| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/adv_vp" ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/be_ing/--" |was_VBDZ|
+    ("V1/be_ap/-" |being_VBG| ("AP/a1" ("A1/a" |crazy_JJ|)))))))
+(|Kim_NP1| |was_VBDZ| |certainly_RR| |being_VBG| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ing/+-" |was_VBDZ| ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/be_ap/-" |being_VBG| ("AP/a1" ("A1/a" |crazy_JJ|))))))
+(|Kim_NP1| |must_VM| |certainly_RR| |have_VH0| |abdicated_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/+-" |must_VM| ("AP/a1" ("A1/a" |certainly_RR|))
+   ("V1/have_ppart-r/--" |have_VH0| ("V1/v" |abdicated_VVN|)))))
+(|Kim_NP1| |is_VBZ| |not_XX| |abdicating_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ing/--" |is_VBZ|
+   ("V1/not_vp" |not_XX| ("V1/v" |abdicating_VVG|)))))
+(|Kim_NP1| |may_VM| |not_XX| |have_VH0| |abdicated_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/--" |may_VM|
+   ("V1/not_vp" |not_XX|
+    ("V1/have_ppart-r/--" |have_VH0| ("V1/v" |abdicated_VVN|))))))
+(|Kim_NP1| |did_VDD| |not_XX| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/do_bse/--" |did_VDD|
+   ("V1/not_vp" |not_XX| ("V1/v" |abdicate_VV0|)))))
+(|Lee_NP1| |,_,| |Kim_NP1| |did_VDD| |not_XX| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/do_bse/--" |did_VDD|
+    ("V1/not_vp" |not_XX| ("V1/v" |help_VV0|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |may_VM| |not_XX| |have_VH0| |been_VBN| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/modal_bse/--" |may_VM|
+    ("V1/not_vp" |not_XX|
+     ("V1/have_ppart-r/--" |have_VH0|
+      ("V1/be_ing/--" |been_VBN| ("V1/v" |helping_VVG|))))))))
+(|Kim_NP1| |is_VBZ| |n't_XX| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ing/--" |is_VBZ|
+   ("V1/not_vp" |n't_XX| ("V1/v" |helping_VVG|)))))
+(|Kim_NP1| |is_VBZ| |n't_XX| |acknowledged_VVN| |to_TO| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ppart/--" |is_VBZ|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_inf" |acknowledged_VVN|
+     ("V1/to_bse/-" |to_TO| ("V1/v" |help_VV0|)))))))
+(|Kim_NP1| |is_VBZ| |n't_XX| |being_VBG| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/be_ing/--" |is_VBZ|
+   ("V1/not_vp" |n't_XX|
+    ("V1/be_ap/-" |being_VBG| ("AP/a1" ("A1/a" |crazy_JJ|)))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |n't_XX| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ing/--" |is_VBZ|
+    ("V1/not_vp" |n't_XX| ("V1/v" |helping_VVG|))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |n't_XX| |acknowledged_VVN| |to_TO| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ppart/--" |is_VBZ|
+    ("V1/not_vp" |n't_XX|
+     ("V1/v_inf" |acknowledged_VVN|
+      ("V1/to_bse/-" |to_TO| ("V1/v" |help_VV0|))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |is_VBZ| |n't_XX| |being_VBG| |aware_JJ| |of_IO|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/be_ing/--" |is_VBZ|
+    ("V1/not_vp" |n't_XX|
+     ("V1/be_ap/-" |being_VBG|
+      ("AP/a1"
+       ("A1/a_pp-of" |aware_JJ| ("PP/p1" ("P1/prt-of" |of_IO|))))))))))
+(|Kim_NP1| |has_VHZ| |n't_XX| |helped_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/have_ppart-r/--" |has_VHZ|
+   ("V1/not_vp" |n't_XX| ("V1/v" |helped_VVN|)))))
+(|Kim_NP1| |has_VHZ| |n't_XX| |been_VBN| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/have_ppart-r/--" |has_VHZ|
+   ("V1/not_vp" |n't_XX|
+    ("V1/be_ing/--" |been_VBN| ("V1/v" |helping_VVG|))))))
+(|Lee_NP1| |does_VDZ| |n't_XX| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+  ("V1/do_bse/--" |does_VDZ|
+   ("V1/not_vp" |n't_XX| ("V1/v" |help_VV0|)))))
+(|Kim_NP1| |,_,| |Lee_NP1| |does_VDZ| |n't_XX| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Lee_NP1|))
+   ("V1/do_bse/--" |does_VDZ|
+    ("V1/not_vp" |n't_XX| ("V1/v" |help_VV0|))))))
+(|Do_VD0| |n't_XX| |be_VB0| |crazy_JJ|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/do_bse/--" |Do_VD0|
+   ("V1/not_vp" |n't_XX|
+    ("V1/be_ap/-" |be_VB0| ("AP/a1" ("A1/a" |crazy_JJ|)))))))
+(|Do_VD0| |n't_XX| |abdicate_VV0|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/do_bse/--" |Do_VD0|
+   ("V1/not_vp" |n't_XX| ("V1/v" |abdicate_VV0|)))))
+(|Do_VD0| |n't_XX| |be_VB0| |looked_VVN| |at_RP|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/do_bse/--" |Do_VD0|
+   ("V1/not_vp" |n't_XX|
+    ("V1/be_ppart/--" |be_VB0|
+     ("V1/v" ("V/v_prt" |looked_VVN| |at_RP|)))))))
+(|Kim_NP1| |ca_VM| |n't_XX| |help_VV0| |Lee_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/--" |ca_VM|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_np-name" |help_VV0|
+     ("NP/n1-name" ("N1/n-name" |Lee_NP1|)))))))
+(|Kim_NP1| |ca_VM| |n't_XX| |not_XX| |help_VV0| |Lee_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/--" |ca_VM|
+   ("V1/not_vp" |n't_XX|
+    ("V1/not_vp" |not_XX|
+     ("V1/v_np-name" |help_VV0|
+      ("NP/n1-name" ("N1/n-name" |Lee_NP1|))))))))
+(|Lee_NP1| |Kim_NP1| |ca_VM| |n't_XX| |be_VB0| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-name"
+   ("N1/n-name_n1-name" |Lee_NP1| ("N1/n-name" |Kim_NP1|)))
+  ("V1/modal_bse/--" |ca_VM|
+   ("V1/not_vp" |n't_XX|
+    ("V1/be_ing/--" |be_VB0| ("V1/v" |helping_VVG|))))))
+(|Kim_NP1| |ought_VMK| |n't_XX| |to_TO| |help_VV0| |Lee_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/cat_inf/--" |ought_VMK|
+   ("V1/not_vp" |n't_XX|
+    ("V1/to_bse/-" |to_TO|
+     ("V1/v_np-name" |help_VV0|
+      ("NP/n1-name" ("N1/n-name" |Lee_NP1|))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |ought_VMK| |n't_XX| |to_TO| |be_VB0| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/cat_inf/--" |ought_VMK|
+    ("V1/not_vp" |n't_XX|
+     ("V1/to_bse/-" |to_TO|
+      ("V1/be_ing/--" |be_VB0| ("V1/v" |helping_VVG|))))))))
+(|Lee_NP1| |,_,| |Kim_NP1| |wo_VM| |n't_XX| |be_VB0| |helping_VVG|)
+("T/txt-sc1/--"
+ ("S/np-voc_pco_s1-r" ("NP/n1-name" ("N1/n-name" |Lee_NP1|)) |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/modal_bse/--" |wo_VM|
+    ("V1/not_vp" |n't_XX|
+     ("V1/be_ing/--" |be_VB0| ("V1/v" |helping_VVG|)))))))

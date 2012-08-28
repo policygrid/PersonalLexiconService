@@ -1,0 +1,942 @@
+\section{The Grammar Formalism}
+
+The grammatical formalism employed is a metagrammatical notation which
+induces an `object' grammar. This notation is based on GPSG85, but has
+been modified and extended to be more flexible and expressive and is
+interpreted somewhat differently. The motivation for these changes is
+to provide a formalism which is a specialised programming language for
+specifying grammatical theories and grammars for particular languages,
+rather than defining a (restrictive) theory directly (see Briscoe
+\etal 1987a).
+
+An object grammar consists of a set of phrase structure (PS) rules
+whose categories are feature complexes and which form the input to the
+parser. Object grammar PS rules may have associated with them a
+definition of their semantic translation (although they need not).
+After the syntactic part of the rule has been used to produce a
+syntactic parse tree, the semantic part is used to produce a
+compositional semantic analysis via the operation of beta-reduction or
+some other well-defined (functional) operation on logical formulae.
+
+Metagrammar rules are input to the GDE either as ID rules or as PS
+rules. ID rules (`immediate dominance' rules---see GPSG85 for details)
+are the same as PS rules except that the daughters are not ordered
+with respect to one another. Information about how to order the
+daughters is expressed by a set of LP rules (`linear precedence'
+rules). A metagrammar ID rule is input in a form such as \nextex{} and
+this will be expanded out into an object grammar PS rule as in
+\exnum{+2}{}.
+
+In both cases a rule consists of a rule name (VP/SFIN1), a comment
+(after the semicolon but note that comments are optional), a rule
+definition ({\tt VP --> H[SUBCAT SFIN, SUBTYPE NONE], S[+FIN]} or its
+expanded form in \exnum{+2}{}) and a semantic translation (the rest,
+separated by a colon).  As can be seen, grammar compilation affects
+the syntax part of the rule definition, turning it from a concisely
+specified, linguistically transparent definition into something which
+is less readable but which contains all the information needed by the
+parser.\footnote{The format shown in \exnum{+2}{} is one which the GDE
+shows to the user (as a response to the command `view normalised
+linearised fully-instantiated idrule VP/SFIN1'). It is not the format
+actually used by the parser---see Carroll \etal (1991) for details.}
+There is no analogous notion of metagrammar and compilation within
+the semantic component of the grammar.
+
+\small
+\begin{ex}
+\begin{verbatim}
+IDRULE VP/SFIN1 : ; believes (that) he can do it
+   VP --> H[SUBCAT SFIN, SUBTYPE NONE], S[+FIN] :
+   2 = [SLASH NOSLASH], (lambda (Q) (Q (lambda (e) (lambda (x) 
+       (1 e x (2 (lambda (prop) (lambda (ta) (lambda (equa)
+         (prop (uqe ((equa some) (e3) (ta e3))))))))))) 
+      (lambda (e2) e2) (lambda (qu) qu))) :
+   2 = [SLASH X2], (lambda (Q) (Q (lambda (e) (lambda (x)
+       (lambda (wh) (1 e x (2 (lambda (prop) (lambda (ta) (lambda (equa)
+         (prop (uqe ((equa some) (e3) (ta e3))) wh))))))))) 
+      (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\small
+\begin{ex}
+\begin{verbatim}
+VP/SFIN1 : ; believes (that) he can do it
+   [N -, V +, BAR 2, SUBJ -, CONJ NULL, VFORM @7, BEGAP -, FIN @11,
+      PAST @12, PRD @13, AUX -, NEG @17, SLASH @19, PRO -, COORD -,
+      AGR [N +, V -, BAR 2, NFORM NORM, PER @21, PLU @22, COUNT @23,
+      CASE @24], ELLIP -] -->
+   [N -, V +, BAR 0, SUBCAT SFIN, CONJ NULL, VFORM @7, H +, FIN @11,
+      PAST @12, PRD @13, AUX -, INV -, PSVE -, NEG @17, PRO -, 
+      COORD @, SUBTYPE NONE, AGR [N +, V -, BAR 2, NFORM NORM, 
+      PER @21, PLU @22, COUNT @23, CASE @24]]
+   [N -, V +, BAR 2, SUBJ +, CONJ NULL, VFORM NOT, BEGAP -, FIN +,
+      PAST @, PRD @, AUX @, INV -, COMP @, SLASH @19, PRO @, WH NO, 
+      UB NO, EVER NO, COORD @, AGR @, UDC -, ELLIP -] :
+\end{verbatim}
+\end{ex}
+\begin{splitex}
+\begin{verbatim}
+   2 = [SLASH [NOSLASH +]], (lambda (Q) (Q
+            (lambda (e) (lambda (x) (1 e x (2 (lambda (prop)
+                 (lambda (ta) (lambda (equa)
+                       (prop (uqe ((equa some) (e3)
+                            (ta e3))))))))))) (lambda (e2) e2)
+             (lambda (qu) qu))) :
+   2 = [SLASH [BAR 2]], (lambda (Q) (Q (lambda (e)
+               (lambda (x) (lambda (wh) (1 e x
+                   (2 (lambda (prop) (lambda (ta) (lambda (equa)
+                            (prop (uqe ((equa some) (e3) (ta e3)))
+                                   wh))))))))) (lambda (e2) e2)
+            (lambda (qu) qu))).
+\end{verbatim}
+\end{splitex}
+\normalsize
+
+Features consist of feature name/feature value pairs. Feature values
+may be variables (introduced by @, as in \prevex{}). Variables are
+either bound (@ followed by a number) or unbound (@ standing alone).
+Where variables are bound, this means that they must be instantiated
+to the same value as a result of the parse. Where they are unbound,
+they can be instantiated by any legitimate value for that feature.
+Parsing with the object grammar involves matching categories by
+unifying their feature sets. Unlike GPSG, our metagrammar defines a
+set of partially instantiated phrase structure rules and not a set of
+fully instantiated local trees. Our definition of what it is for two
+categories to `match' or unify differs from the GPSG definition. In
+GPSG categories match by `extension': that is, a category which is
+less specified in terms of the number of features it contains will
+match a category which is more specified providing that the feature
+values of their common features do not conflict. In our grammar we
+have chosen to define matching in terms of fixed-arity term
+unification whereby for two categories to match we require that they
+each have exactly the same features with non-conflicting values for
+those features. To give an example, in GPSG the feature structures in
+\nextex{a} and \nextex{b} can unify with the result \exnum{+2}{}. For
+us, that unification would fail since the two categories do not have
+the same number of features. In order to get the same result we would
+unify \exnum{+3}{a} and \exnum{+3}{b}.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+[N +, V -, PLU +, PER 3] 
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+[N +, V -] 
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+\small
+\begin{ex}
+\begin{verbatim}
+   [N +, V -, PLU +, PER 3]
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+[N +, V -, PLU +, PER 3] 
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+[N +, V -, PLU @, PER @] 
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+Thus, for each different category type, we define the full set of
+features that it must have. The Category rules described in Section
+2.1.4. are designed to `flesh out', in the course of expanding the
+grammar, a category mentioned in a rule with the full set of features
+that are appropriate to it. (See Briscoe \etal 1987b for further
+discussion of the use of fixed-arity unification.)
+
+Semantic formulae associated with rules are well-formed formulae of
+the lambda calculus. Often different formulas are associated with
+distinct instantiations of features in rules. The formulae associated
+with instantiated local trees at parse time are combined to form the
+semantics of superordinate constituents using beta-reduction on these
+formulae. The resulting logical forms for sentences are usually
+unscoped first-order predicate calculus formulae (see section 4 for
+further details).
+
+\subsection{Rule Types}
+
+The metagrammar is designed to capture linguistic generalisations and
+so simplify and abbreviate the statement of `object' rules, such as
+\exnum{-3}{}, and contains rules of the following eleven kinds.
+
+\subsubsection{Feature Declarations}
+
+Feature Declarations define the feature system used by the grammar.
+They encode the possible values of a given feature. Much of the
+feature system is very similar to that used in GPSG, but a feature can
+additionally take a variable value which ranges over the set of actual
+values as declared. \nextex{a} and \nextex{b} are atomic-valued
+features. \nextex{c} is category-valued.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+FEATURE PLU{+, -}
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+FEATURE VFORM{BSE, ING, EN, TO, NOT}
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+FEATURE SLASH CAT
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+\subsubsection{Feature Set Declarations}
+
+Feature Set Declarations define sets of features which propagate in
+the same manner and which will appear together on particular
+categories. For example, features which propagate between N2s and
+their head daughters (PLU, PER, etc.)  may be grouped together in a
+set called NOMINALHEAD, as in \nextex{}. The name of this set may then
+be used to refer to this collection of features in the rules which
+perform this type of propagation.
+
+\small
+\begin{ex}
+\begin{verbatim}
+SET NOMINALHEAD = {PLU, POSS, CASE, PRD, PN, PRO, PROTYPE, COUNT, 
+                   NFORM, PER, REFL, NUM, DEMON, ADV, PART}
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Alias Declarations}
+
+Aliases are a convenient abbreviatory device for naming categories and 
+feature complexes in rules. They do not affect the expressive power of
+the formalism.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+ALIAS N2 = [N +, V -, BAR 2].
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+ALIAS +NOM = [CASE NOM].
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+\subsubsection{Category Declarations}
+
+Category Declarations define a particular category as consisting of a
+given set of features. These declarations are used to expand out the
+partiallly specified categories which typically occur in the
+specification of immediate dominance or phrase structure rules.  They
+make the formalism more explicit by obliging the grammarian to state
+which features will appear on a given category.  Category Declarations
+replace part of the function of Feature Cooccurrence Restrictions in
+GPSG. The category declaration in \nextex{a} causes all nominal
+categories in immediate dominance and phrase structure rules to be
+expanded with whichever features in the set NOMINALHEAD they are not
+already specified with. These features will be given variable values.
+The category declaration in \nextex{b} adds further features to [BAR
+2] nominal categories.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+CATEGORY NOUN : [N +, V -] => NOMINALHEAD.
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+CATEGORY N2 : N2 => {SPEC, DEF, NEG, AFORM, CONJ, QFEAT, COADV, KIND}
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+\subsubsection{Immediate Dominance Rules}
+
+Immediate dominance (ID) rules encode permissible dominance relations
+in phrase structure trees.  The rules in \nextex{} define an immediate
+dominance relation between a mother and its daughters; however, other
+properties of the object rules which result from compilation (e.g.\ the
+linear order of the daughters in it) are determined by other types of
+rules in the grammar.  \nextex{a} defines a nominal constituent
+consisting of a head and an AP modifier (which will precede the head
+in the linearised version of the rule). The ID rule in \nextex{b}
+builds an infinitival VP from the word {\it to} and a base VP and the
+rule in \nextex{c} builds an imperative S from a single daughter VP.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+IDRULE N1/APMOD1 : ; busy man. The -PRD, DISTR ATT restriction on 
+                   ; the A2 prevents adjectives with complements 
+                   ; matching. The feature MOD on the N1 cuts down 
+                   ; on the number of parses by making premodifiers 
+                   ; attach lower than postmodifiers.
+   N1[MOD PRE] --> A2[-PRD, DISTR ATT, -QUA], H1[MOD NONE, PRO -] : 
+   2 = [SLASH NOSLASH], (lambda (x) (and (2 x) (1 x))) : 
+   2 = [SLASH X2], (lambda (x) (lambda (wh) (and (2 x wh) (1 x)))).
+\end{verbatim}
+\end{subex} 
+\end{ex}
+
+\begin{splitex}
+\begin{subex}
+\begin{verbatim}
+IDRULE VP/TO : ; to + base VP - infinitival VP of the kind 
+               ; which occurs in infinitival S and in numerous 
+               ; control constructions.
+   VP[+AUX, VFORM TO, -FIN, ELLIP -, COORD -] --> H[SUBCAT TO], 
+   VP[BSE, ELLIP -, COORD -] : 2.
+\end{verbatim}
+\end{subex} 
+\end{splitex}
+
+\vspace{2mm}
+
+\begin{splitex}
+\begin{subex}
+\begin{verbatim}
+IDRULE S/IMPER : ; imperative S. Imperatives are distinguished by 
+                 ; being both VFORM BSE and +FIN. All other +FIN 
+                 ; forms are VFORM NOT.
+   S[SLASH NOSLASH, COMP NORM] --> 
+   H2[-SUBJ, BSE, FIN +, AGR N2[NFORM NORM], SLASH NOSLASH] : 
+   (1 (lambda (prop) (lambda (ta) (lambda (equa) 
+        (lambda (Q) (Q (lambda (e) (prop e (pro (the (y) (hearer y))))) 
+                        (lambda (e2) (NOTENSE (ta e2))) equa)))))).
+\end{verbatim}
+\end{subex} 
+\end{splitex}
+\normalsize
+
+The semantic part of an ID rule may vary in complexity: it may consist
+of a single translation as in \prevex{b} and \prevex{c} or it may be
+made conditional on feature instantiations which may arise during a
+parse, as in \prevex{a}. In all cases the semantic part of a rule is
+an instruction as to how to build a translation for the mother node
+out of the translations of the daughters. The categories in a rule are
+numbered from 0, where 0 is the mother, 1 is the first daughter, 2 is
+the second daughter etc.\ and these numbers are used in the semantics
+to represent the translation associated with the daughters. Thus in
+\prevex{b}, the semantic part of the rule simply equates the
+translation of the mother with the translation of its VP daughter, 2,
+i.e.\ the presence of the infinitive marker {\it to} has no effect on
+the semantics of a VP. 
+
+In \prevex{c} the translation is much more complex: it is not
+appropriate to describe it in detail here but note that, as in all the
+semantic translations in the grammar, functional application is at
+work---the daughter category, 1, is applied to an argument (which
+happens to be a complex lambda expression).
+
+In \prevex{a}, the translation differs according to whether the N1
+contains a gap or not. The conditions {\tt 2 = [SLASH NOSLASH]} and
+{\tt 2 = [SLASH X2]} refer to the way in which the feature SLASH
+happens to have become instantiated on the second daughter: a
+different translation will apply depending on whether the feature
+SLASH on this N1 has got the value NOSLASH (which is an alias for
+[NOSLASH +]) or X2 (which is an alias for a [BAR 2] category). Once
+again, the 1 and 2 in the lambda expressions refer to the translations
+of the daughter categories.  In the case of the first conditional of
+\prevex{a}, if the A2 daughter translates as {\tt (lambda (x1) (BUSY
+x1 (degree very)))} and the second daughter translates as {\tt ABBOT}
+then the translation of the phrase {\it very busy abbot} will be
+\nextex{a} which, after beta reduction, becomes \nextex{b}.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+(lambda (x) (and (ABBOT x) 
+  ((lambda (x1) (BUSY x1 (degree very))) x)))
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+(lambda (x) (and (ABBOT x) (BUSY x (degree very))))
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+For the second conditional of \exnum{-1}{a}, if the A2 daughter
+translates as {\tt (lambda (x1) (CRAZY x1 (degree very)))}, and the N1
+daughter translates as {\tt (lambda (x2) (lambda (wh1) (and (DESIRE
+x2) (FOR x2 wh1))))} then the translation of the mother (corresponding
+to the phrase {\it very crazy desire for} as in {\it what does Kim
+have a very crazy desire for}) would be \nextex{a} which reduces to
+\nextex{b}.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+(lambda (x) (lambda (wh) (and
+  ((lambda (x2) (lambda (wh1) (and (DESIRE x2) (ABOUT x2 wh1)))) x wh)
+  ((lambda (x1) (CRAZY x1 (degree very))) x))))
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+(lambda (x) (lambda (wh) (and 
+  (and (DESIRE x) (FOR x wh))
+       (CRAZY x (degree very)))))
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+ID rules may contain optional categories (enclosed in brackets) as in
+the rule in \nextex{}. Compilation causes such rules to be expanded as
+two separate rules, one which contains the optional category and one
+which does not. Each compiled rule has a unique name based on the
+original name: the one without the optional category will be marked
+with `/--' and the one with it will be marked with `/+'. So the result
+of compiling VP/PP/PASS will be two distinct object grammar rules, one
+named VP/PP/PASS/-- and one named VP/PP/PASS/+. ID rules with optional
+categories have semantics defined for both possible expansions. In the
+case of VP/PP/PASS, the first semantic translation is for the version
+where the optional P2 is present and the second is for the version
+where it is absent. The system uses the mention of the number
+associated with the optional category, in this case, 3, as its guide
+for pairing the expanded rules with the appropriate semantic
+translation.
+
+\small
+\begin{ex}
+\begin{verbatim}
+VP/PP/PASS : ; This and the next few rules to do some kinds of 
+             ; passive not produced by the passive metarule. 
+             ; This one does prepositional passives - he hates 
+             ; being looked at - the verb has to be SUBTYPE PVERB.
+   VP[PAS, SLASH NOSLASH] --> H[SUBCAT PP, PFORM @pf, SUBTYPE PVERB], 
+   P[SUBCAT NP, PFORM @pf], ( P2[by, PRD -, SLASH NOSLASH] ) : 
+   (lambda (Q) (Q (lambda (e) 
+         (lambda (y) ((CP 1 2) e (3 (lambda (prep) (lambda (x) x))) 
+                y))) (lambda (e2) e2) (lambda (qu) qu))) : 
+   (lambda (Q) (Q 
+      (lambda (e) (lambda (y) ((CP 1 2) e (uq (some (x) (entity x))) 
+                 y))) (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+ID rules may also contain categories marked with `kleene plus' with
+the usual interpretation of one or more instances of this category. For
+example, the rule in \nextex{}, which is one which coordinates A2s,
+uses the kleene plus notation. The semantic translation uses index
+numbers marked with `+' (e.g.\ 1+) and this is interpreted as meaning
+`each successive category which is an instance of 1'.
+
+\small
+\begin{ex}
+\begin{verbatim}
+A2/COORD1 : A2[COORD +] --> ( A2[CONJ NULL] )+, ( A2[CONJ AND] )+ :
+   0 = [SLASH NOSLASH], (lambda (x) (AND (1+ x))) :
+   0 = [SLASH X2], (lambda (x) (lambda (wh) (AND (1+ x wh)))).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The rule in \prevex{} allows for one or more A2s not preceded by a
+coordinator ([CONJ NULL]) to be followed by one or more A2s each
+preceded by the coordinator {\it and} ([CONJ AND]). This will generate
+all of the strings {\it crazy and eager}, {\it silly crazy and eager},
+{\it silly and crazy and eager}.
+
+
+\subsubsection{Linear Precedence Rules}
+
+Linear Precedence (LP) rules encode permissible precedence relations
+in ID rules. The rule in \nextex{a} places an ordering on [N +]
+(nominal or adjectival) categories, P2s and V2s (VP or S) such that [N
++] categories precede all the others, P2s precede all but [N +]
+categories, etc. \nextex{a} is the equivalent of one of the three LP
+rules in GPSG85. The LP rule in \nextex{b} orders V2 categories with
+respect to one another.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+LPRULE LP2 : ; as in GPSG85 - nominal categories precede PPs which 
+             ; precede VPs and Ss.
+   [N +] < P2 < V2.
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+LP6 : ; this orders V2s with respect to one another. Non-head V2s
+      ; (i.e sentential and VP subjects) precede head VPs (idrule 
+      ; S/V2_SUBJ1 - S/V2_SUBJ5). The exception is tag questions 
+      ; where the non-head follows the head.
+   V2[~H, ~TAG] < V2[H +] < V2[TAG, ~H].
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+The LP rules in the grammar ensure that almost all of the rules have a
+unique linearisation but there are a few cases where a rule has more
+than one possible linearisation. For example, there is a rule named
+N2+/APPOS which allows a limited form of apposition in N2s. The rule
+has two daughters, one of which is a name and one of which is a normal
+N2 and there is no LP rule which orders these categories. As a result,
+either order is possible and the rule generates both {\it Sidney, the
+killer whale} and {\it the killer whale, Sidney}. The process of
+compilation produces as many object grammar rules as there are
+linearisations---in the case of N2+/APPOS, two. Naming conventions
+give these object grammar rules unique names numbered consecutively,
+i.e.\ N2+/APPOS/1 and N2+/APPOS/2.
+
+\subsubsection{Phrase Structure Rules}
+
+Phrase structure (PS) rules encode both dominance and precedence
+relations in one rule. They are included in the formalism so that the
+expressive power of the system is not restricted by the Exhaustive
+Constant Partial Ordering (ECPO) property. (A grammar has the ECPO
+property if the set of expansions, defined by ID rules, of any one
+category observes a partial ordering that is also observed by the
+expansions of all the other categories, see GPSG85).  The grammarian
+may choose not to use PS rules, or may choose to abandon the ID/LP
+format entirely in favour of PS rules, or may choose to use a mixed
+system. Our grammar uses ID/LP format predominantly but it does
+contain a few `marked' PS rules, for example, some rules for cardinal
+numbers (see PS rules NUM1--NUM9) and some rules for names (PS rules
+N/NAME1--N/NAME2B), one of which is reproduced in \nextex{}. Apart
+from the ordering of daughter categories, PSRULES are defined and
+behave in exactly the same way as ID rules.
+
+\small
+\begin{ex}
+\begin{verbatim}
+PSRULE N/NAME2B : ; sandy jones jnr
+   N[-PLU, COUNT +, PN -, -POSS, SUBCAT NULL, ADDRESS -] -->
+   N[+PN, SUBCAT NULL, ADDRESS -] N[ADDRESS +, SUBCAT NULL] :
+   (and 1 (title 2)).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Feature Propagation Rules}
+
+Feature Propagation Rules define how features propagate between mother
+and daughter categories in ID or PS rules. The effect of propagation
+rules is to bind variables or instantiate values of features in rules
+of the `object' grammar.  Propagation rules can be used to encode
+particular feature propagation principles, such as the various
+versions of the Head Feature Convention proposed for GPSG. However,
+such principles are not `hard-wired' into the formalism, in order that
+maximum flexibility and expressiveness can be maintained (see Briscoe
+\etal 1987a,b for further discussion).  The propagation rule in
+\nextex{} propagates nominal head features between a nominal mother
+and its head daughter. 
+
+\small
+\begin{ex}
+\begin{verbatim}
+PROPRULE HFC_NOMINAL : ; head feature propagation for nominal categories
+   [N +, V -] --> [H +], U. F(0) = F(1), F in NOMINALHEAD.
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The rule is stated in terms of an ID rule pattern which prospective
+input ID rules must match. The pattern includes a variable over
+categories (U in this case, but W is used where the input must be a
+lexical ID rule (i.e.\ one with a lexical head)) and thereby specifies
+that the input must be any ID rule which has a nominal mother,
+contains a head and optionally contains other daughters of any type.
+Following the pattern is a statement of feature bindings. The terms 0
+and 1 refer to categories in the input rule where 0 is the mother, 1
+is the first daughter named by the pattern, 2 is the second
+daughter named by the pattern etc. The rule, then, is stating that the
+values of the features defined by the set NOMINALHEAD on the mother
+must be bound to the values of the same features on the head daughter.
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+IDRULE N1/N : ; an N with no complements
+   N1 --> H[SUBCAT NULL] : 1.
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+N1/N : ; an N with no complements
+   [N +, V -, BAR 1, CONJ NULL, PRD @13, SLASH [NOSLASH +], 
+    NFORM @20, PER @21, PLU @22, COUNT @23, CASE @24, PN -, 
+    PRO -, PROTYPE @27, PART @28, DEF @, POSS -, ADV @37, 
+    NUM @38, WH NO, UB NO, EVER NO, MOD NONE, COORD -, 
+    REFL @45, DEMON @75, COADV -] -->
+   [N +, V -, BAR 0, SUBCAT NULL, CONJ NULL, H +, PRD @13,
+    NFORM @20, PER @21, PLU @22, COUNT @23, CASE @24, PN -, 
+    PRO -, PROTYPE @27, PART @28, POSS -, ADV @37, NUM @38, 
+    COORD -, REFL @45, DEMON @75] : 1.
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+\prevex{} illustrates the effect of this propagation rule.  \prevex{a}
+is an ID rule to which the propagation rule can apply.  \prevex{b} is
+the expanded object grammar rule and some parts of it are the result
+of the application of the propagation rule: the features from the set
+NOMINALHEAD have been added to both the mother and the daughter (i.e.\
+the features PLU, POSS, CASE, PRD, PN, PRO, PROTYPE, COUNT, NFORM,
+PER, REFL, NUM, DEMON, ADV, PART) and for each of these features they
+share the same value. In most cases these values are variables which
+will be instantiated at parse time. For example, the variable @22
+which is the value of PLU on the daughter might get instantiated to
+`--' and the fact that this variable is also the value of PLU on the
+mother means that the mother will also be specified as [PLU --]. A few
+of the NOMINALHEAD features have received actual values (e.g.\ [POSS
+--]) which are the same on mother and daughter and which result from
+an application of a default rule (see below) subsequent to the
+application of the propagation rule.
+
+Propagation rules can also be used to bind feature values on
+categories which are the values of category-valued features, as in the
+agreement rule below, where F(2[AGR]) is to be read as `features on
+the category which is the value of 2's AGR feature' and where AGRFEATS
+is a previously defined set comprising the features NFORM, PLU, COUNT,
+PER and CASE.
+
+\small
+\begin{ex}
+\begin{verbatim}
+PROPRULE AGR/NP_VP : ; binds feature values on subject N2 to feature values 
+                     ; on the category that is the value of VP[AGR].
+   S --> N2, H2[-SUBJ, AGR N2], U. 
+   F(1) = F(2[AGR]), F in AGRFEATS.
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Feature Default Rules}
+
+Feature Default Rules default specified values onto features in
+categories in a particular environment in an ID or PS rule. They
+operate only in cases where a category in a rule has not acquired an
+actual value for some feature---they instantiate variable values and
+they also operate where no specification exists at all, but they never
+overwrite existing concrete values.  Default rules replace Feature
+Specification Defaults in GPSG; because the rules assign values to
+features in the context of an ID or PS rule, their application can be
+accurately controlled, and thus the need for Feature Cooccurrence
+Restrictions to prevent the construction of `illegal' categories is
+diminished (see Briscoe \etal 1987b). Both Feature Default rules and
+Feature Propagation rules have a similar syntax to Kilbury's (1986)
+independently motivated Category Cooccurrence Restrictions, although
+their function is somewhat different.  The default rule in \nextex{a}
+states that a N2 complement that has not yet acquired a concrete value
+for CASE will be accusative.  \nextex{b} states that a non-adverbial
+A2 complement will be [PRD +]. Default rules use the variables U and W
+in the same way that propagation rules (and metarules) do---both range
+over any other material in the rule but W requires that the rule must
+be a lexical rule (i.e.\ have a lexical head).
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+DEFRULE N2/CASE : ; defaults N2 complements (sisters 
+                  ; of lexical heads) to CASE ACC.
+   [] --> N2, W. CASE(1) = ACC.
+\end{verbatim}
+\end{subex}
+\begin{subex}
+\begin{verbatim}
+DEFRULE A2/PRD : ; A2 complements default to PRD +.
+   [] --> A2[ADV -], W. PRD(1) = +.
+\end{verbatim}
+\end{subex}
+\end{ex}
+\normalsize
+
+\subsubsection{Metarules}
+
+Metarules encode systematic relationships between sets of ID or PS
+rules by automatically adding further rules to the basic set produced
+by the grammar writer and the derived set produced by the application
+of other metarules. Metarules can be written to apply to ID rules or
+PS rules (including PS rules which result from the linearisation of ID
+rules). They can also be restricted to apply only to ID rules
+containing a lexical head through the use of the W category variable
+(as opposed to the U `unrestricted' category variable) in the input
+pattern. The metarule in \nextex{a} (comment omitted) adds new passive
+VP rules which are like their active counterparts except that the
+object N2 has disappeared and an optional P2[by] occurs. In fact, the
+output the user sees is an expansion of the output rule which has
+factored into two rules, one where the P2[by] is present and one where
+it is absent. The new rules are defined on the basis of the subset of
+existing VP rules which match the input pattern occurring before the
+{\tt ==>}. The ouput pattern (after the {\tt ==>}) defines the form of
+the new rules.
+
+\small
+\begin{ex} 
+\begin{verbatim} 
+PASSIVE : 
+   VP[AGR N2[NFORM NORM], SLASH @] --> 
+   H[SUBCAT (NP, NP_NP, NP_PP, NP_PP_PP, NP_LOC, NP_ADVP, NP_SFIN, 
+            NP_NP_SFIN, NP_SBSE, NP_WHS, NP_WHVP, OC_NP, OC_AP, 
+            OC_INF, OC_ING, OC_PP_ING), SUBTYPE (NONE, DMOVT, EQUI), 
+      AGR N2[NFORM NORM], PSVE -], N2[-PRD, PRO @, SLASH @], W. 
+   ==> 
+   VP[EN, +PRD] --> H[PSVE +, EN, +PRD], ( P2[PFORM BY, PRD -] ), W : 
+\end{verbatim}
+\end{ex}
+\begin{splitex}
+\begin{verbatim}
+   2 = [SLASH NOSLASH], 6 = [SLASH NOSLASH], 
+      (lambda (s) (s (lambda (prop) (lambda (ta) 
+             (lambda (equa) (lambda (Q) (Q 
+                      (lambda (e) (lambda (y) ((lambda (dsubj) 
+                                  ((lambda (2) (prop e dsubj)) y)) 
+                               (2 (lambda (by) (lambda (np) np)))))) 
+                      ta equa))))))) : 
+\end{verbatim}
+\end{splitex}
+\begin{splitex}
+\begin{verbatim}
+   2 = [SLASH NOSLASH], 6 = [SLASH X2], (lambda (s) 
+         (s (lambda (prop) (lambda (ta) 
+                (lambda (equa) (lambda (Q) (Q (lambda (e) 
+                         (lambda (y) (lambda (wh) 
+                               ((lambda (dsubj) ((lambda (2) 
+                                           (prop e dsubj)) y)) 
+                                   (2 (lambda (by) (lambda (np) np)) 
+                                     wh))))) ta equa))))))) : 
+\end{verbatim}
+\end{splitex}
+\begin{splitex}
+\begin{verbatim}
+   2 = [SLASH NOSLASH], 
+      (lambda (s) (s (lambda (prop) (lambda (ta) (lambda (equa) 
+                (lambda (Q) (Q 
+                      (lambda (e) (lambda (y) ((lambda (2) (prop e 
+                                (uq (some (x1) (entity x1))))) y))) 
+                       ta equa))))))).
+\end{verbatim} 
+\end{splitex}
+\normalsize 
+
+The semantics attached to the metarule defines functions which take
+the input semantics and transform them into semantics suitable for the
+output rule: specifically, they change the expectations about the
+order of arguments---the first argument of the verb is now to be found
+as the complement of the P2[by] and the second argument is to be found
+outside the VP altogether. (This may not be obvious given the
+complexity of the lambda expressions but it should become clearer when
+the translations associated with VPs are described in section 5.4.5.)
+The conditions on the semantics pair input conditions with output
+conditions. The categories in the metarule are numbered from 0
+starting with the mother of the input pattern through, in this case,
+to 7, which is the W variable in the output pattern. The condition
+pair {\tt 2 = [SLASH NOSLASH], 6 = [SLASH NOSLASH]} means that the
+semantics associated with the condition {\tt [SLASH NOSLASH]} on the
+N2 daughter of the input rule (2 in the metarule) is to be transformed
+by the function given into a semantics to be associated with a
+condition [SLASH NOSLASH] on the P2[by] in the output rule (6 in the
+metarule). The intuition behind the conditions is that just as the
+semantics of a VP differs according to whether it contains a gap or
+not, so will the semantics of passive versions of that rule. The first
+two pairs of conditions are ones which provide the semantics for the
+version of the output which contains a P2[by]: the first pair, {\tt 2
+= [SLASH NOSLASH], 6 = [SLASH NOSLASH]}, deals with the case where
+there is no gap in the P2[by] in the output rule and the second pair,
+{\tt 2 = [SLASH NOSLASH], 6 = [SLASH X2]}, with the case where there
+is a gap in the P2[by]. (The metarule, together with other aspects of
+the grammar, ensures that the location of the gap will always be the
+object N2 in the input and the P2[by] in the output.) The
+third clause, {\tt 2 = [SLASH NOSLASH]}, provides the semantics for
+the version of the output which doesn't contain a P2[by] (and where
+other aspects of the grammar will ensure there is no
+gap.\footnote{This doesn't mean that gaps are disallowed in passives
+without a P2[by] but it does mean that the rules output from this
+metarule disallow them. Other metarules will produce `gappy'
+versions---see, for example, metarules MSLASH4a--MSLASH4d.}). In this
+case, since there is no possibility of a gap, no condition is
+necessary on the output rule.  In all three cases, the semantic form
+to be transformed is the one which is associated with no gap in the
+input rule.
+
+The ID rule in \nextex{} is one of the inputs to the PASSIVE metarule
+and the two resulting output rules are given in \exnum{+2}{}. Notice
+that each output from a metarule receives a unique name based on the
+input rule name, the metarule name and presence or absence of optional
+categories (`/+' and `/--').
+
+\small
+\begin{ex}
+\begin{verbatim}
+VP/NP : ; abandons his friends
+   VP --> H[SUBCAT NP], N2[-PRD] :
+   2 = [SLASH NOSLASH], (lambda (Q) (Q (lambda (e) (lambda (x) 
+       (1 e x 2))) (lambda (e2) e2) (lambda (qu) qu))) :
+   2 = [SLASH X2], (lambda (Q) (Q (lambda (e) (lambda (x) (lambda (wh) 
+       (1 e x (2 wh))))) (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{ex}
+
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+VP/NP(PASSIVE/-) : 
+   VP[PAS, -AUX, -PRO, CONJ NULL, BEGAP -, FIN @11, PAST @12, 
+       NEG @17, SLASH NOSLASH, COORD -, AGR N2[NFORM NORM, 
+       PER @21, PLU @22, COUNT @23, CASE @24], ELLIP -] --> 
+   V[PAS, -INV, -AUX, -PRO, SUBCAT NP, CONJ NULL, H +, FIN @11,
+       PAST @12, PSVE +, NEG @17, COORD -, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+  (lambda (Q) (Q (lambda (e) (lambda (y) (1 e (uq (some (x1) 
+    (entity x1))) y))) (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{subex}
+\end {ex}
+\begin{splitex}
+\begin{subex}
+\begin{verbatim}
+VP/NP(PASSIVE/+) : 
+   VP[PAS, -AUX, -PRO, CONJ NULL, BEGAP -, FIN @11, PAST @12, 
+      NEG @17, SLASH @19, COORD -, AGR N2[NFORM NORM, PER @21, 
+      PLU @22, COUNT @23, CASE @24], ELLIP -] --> 
+   V[PAS, -INV, -AUX, -PRO, SUBCAT NP, CONJ NULL, H +, FIN @11, 
+      PAST @12, PSVE +, NEG @17, COORD @, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]], 
+   P2[-PRD, -GER, -POSS, by, CONJ NULL, BEGAP @, NEG @, SLASH @19, 
+      PRO @, LOC @, WH NO, UB NO, EVER NO, COORD @, MODTYPE @] : 
+   2 = [SLASH NOSLASH], 
+      (lambda (Q) (Q (lambda (e) (lambda (y) (1 e (2 (lambda (by) 
+                       (lambda (np) np))) y))) (lambda (e2) e2) 
+            (lambda (qu) qu))) : 
+   2 = [SLASH X2], (lambda (Q) (Q (lambda (e) (lambda (y) 
+            (lambda (wh) (1 e (2 (lambda (by) (lambda (np) np)) wh) 
+                    y)))) (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{subex}
+\end{splitex}
+\normalsize
+
+\subsubsection{Top Category Declaration}
+
+An optional declaration is a TOP definition. If one is defined, then
+the parser will only return those parses whose category is consistent
+with the TOP declaration. If it is left undefined then all possible
+parses will be returned. The TOP declaration in the grammar is given
+in \nextex{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+TOP [T S], [T NP].
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsection{Metagrammar Interpretation}
+
+In GPSG, the set of legal local trees is defined declaratively by
+simultaneous application of the various rule types during the
+`projection' from ID rules to fully instantiated local trees. In the
+ANLT system, although the metagrammatical notation shares many
+similarities with GPSG, there are crucial differences in the
+interpretation of the notation.  Metagrammatical rules jointly specify
+a set of partially instantiated phrase structure rules, rather than
+fully instantiated local trees. That is, rules are allowed to contain
+variable values for features and these variables are instantiated at
+parse time by unification. Propagation rules specify restrictions on
+the instantiation of these variables; for example, the expanded
+version of ID rule N2+/DET1a which builds NPs from determiners and
+nominal phrases will force agreement between the determiner and the
+nominal phrase by binding the PLU variables on all the categories as
+illustrated in \nextex{} (irrelevant features, semantics and comment
+excluded).
+
+\small
+\begin{ex}
+\begin{verbatim}
+N2+/DET1a : N2[+SPEC, PLU @22] -->
+   DetN[AGR N2[PLU @22]], N2[-SPEC, H +, PLU @22].
+\end{verbatim}
+\end{ex}
+\normalsize
+
+If we assume that {\it this} is specified as [AGR N2[PLU --]], {\it
+these} is specified as [AGR N2[PLU +]] and {\it the} is specified as
+[AGR N2[PLU @4]], then matching these to the DetN in \prevex{} will
+cause all three instances of @22 to be instantiated to -- in the case
+of {\it this} and + in the case of {\it these} while it will remain
+uninstantiated in the case of {\it the}. Since {\it sandwiches} is
+specified as [PLU +] it can match the head category in \prevex{} so
+long as the determiner is either {\it these} or {\it the} (and in the
+latter case {\it sandwiches} will cause @22 to be instantiated to +).
+{\it sandwiches} cannot match, however, if the determiner is {\it
+this} since @22 would need to be instantiated to -- for the determiner
+but to + for {\it sandwiches}.
+
+The object grammar is produced by applying propagation, default and
+category rules, in that order, to ID (and PS) rules and then applying
+the non-linear metarules one-by-one in a predefined order to the set
+of fleshed out ID rules.  After each metarule has applied, propagation
+and default rules are applied to any new ID rules and these are added
+to the original set before the application of the next metarule. Next,
+the resulting expanded set of rules is linearised according to the LP
+rules and any linear metarules are applied to the complete pool of PS
+rules. This procedure is summarised in Figure 1.
+
+\begin{center}
+{\tt \setlength{\unitlength}{0.92pt}
+\begin{picture}(336,324)
+%\begin{picture}(336,200)
+\thinlines    \put(184,132){\line(2,1){104}}
+              \put(184,72){\vector(0,-1){24}}
+              \put(184,132){\line(0,-1){24}}
+              \put(139,10){\framebox(90,38){\shortstack{object\\ grammar}}}
+              \put(154,76){\shortstack{linear\\ metarule\\ expansion}}
+              \put(124,152){\line(3,-1){60}}
+              \put(49,184){\line(5,-2){48}}
+              \put(81,155){LP rules}
+              \put(242,184){\framebox(90,28){PS rules}}
+              \put(49,239){\vector(0,-1){17}}
+              \put(49,296){\line(0,-1){18}}
+              \put(22,244){\shortstack{non-linear\\ metarule\\ expansion}}
+              \put(4,184){\framebox(90,38){\shortstack{expanded\\ ID rules}}}
+              \put(4,296){\framebox(90,28){ID rules}}
+\end{picture}}
+
+Figure 1. \  \ Metagrammar Compilation
+\end{center}
+
+
+

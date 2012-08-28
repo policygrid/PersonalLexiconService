@@ -1,0 +1,136 @@
+ANLT Example Semantic Scoping and Post-Processing Module
+
+
+The simple scoping and post-processing module supplied on the Tools
+distribution tape (in the file 'applic/interp.lsp') is intended to
+demonstrate how the output produced by the parser using the ANLT
+grammar can be converted into a representation that is easier to deal
+with and more suitable for processing by user applications.
+
+To use the module, the source file should first be compiled (using the
+Lisp function 'compile-file' passing as argument the name of the file
+as a string); the resulting object file can then be loaded into GDE
+sessions when it is wanted using the Lisp function 'load' (executing
+this with the GDE `!' command). Once loaded, scoping and
+post-processing of the semantic representations (SRs) resulting from
+successful parses can be invoked by the GDE parser command
+`interpret'. E.g.
+
+ 
+Gde> !(load "applic/interp")
+ 
+Gde> parse
+ 
+Parse>> she helps 
+100 msec CPU, 110 msec elapsed 
+106 edges generated 
+1 parse 
+ 
+(((she) ((help +s)))) 
+ 
+Parse>> view semantics 
+
+(DECL
+   (HELP (uqe (some (e1) (PRES e1)))
+      (pro (the (x1) (and (sg x1) (female x1))))))
+ 
+Parse>> interpret 
+
+(DECL
+   (the (x1) (and (sg x1) (female x1))
+      (some (e1) (PRES e1) (HELP e1 x1))))
+
+ 
+The module consists of two parts. The first is a simple quantifier
+scoper, and the second, applying to the output of this, is a
+post-processor which carries out a set of simplifications.
+ 
+
+Scoping 
+
+The scoper produces a single scoping of an SR, where the order of
+scoped quantifiers simply reflects their left to right order in the
+input. The only constraint is that a quantified event (marked with
+'uqe') associated with a proposition or embedded proposition is
+assigned narrower scope than all the other quantifiers associated with
+that proposition.
+
+Scoping is local to an embedded proposition in that the quantifier
+which is the translation of an embedded clause is not scoped outside
+of the predicate of the higher clause. For example, the SR assigned by
+the grammar to the sentence ``an abbot knows an acquaintance helps"
+is:
+
+
+(DECL 
+   (KNOW (uqe (some (e1) (PRES e1)))
+      (uq (some (x1) (and (sg x1) (ABBOT x1)))) 
+      (HELP (uqe (some (e2) (PRES e2)))
+         (uq (some (x2) (and (sg x2) (ACQUAINTANCE x2)))))))
+ 
+ 
+which receives the scoping:
+  
+  
+(DECL 
+   (some (x1) (and (sg x1) (ABBOT x1)) 
+      (some (e1) (PRES e1) 
+         (KNOW e1 x1 
+            (some (x2) (and (sg x2) (ACQUAINTANCE x2)) 
+               (some (e2) (PRES e2) (HELP e2 x2)))))))
+ 
+ 
+Representations of noun phrases deriving from quantifiers other than
+'the', 'some' or 'every' have a definiteness specification 'def'
+inserted when appropriate. The default is assumed to be indefinite.
+Likewise, represenations of kind interpretations have a 'generic'
+specification added.
+
+
+Post-Processing 
+
+The post-processor takes a scoped SR and performs a set of
+simplifications on it. The simplifications applied are:
+
+
+A formula representing a named person is replaced by just the name
+itself, e.g. (name (the (x1) (and (sg x1) (named x1 KIM) (animate
+x1)))) becomes KIM.
+
+A formula representing a number is replaced by the number itself, e.g.
+the representation of the string ``three hundred and sixty five", (NN
+(+ (* 3 100) (+ 60 5))), becomes 365. A number formula can also be a
+range, e.g. (NN (RANGE (NN 2) (NN 3))), which becomes (RANGE 2 3).
+
+A non-atomic formula representing a complex predicate (typically a
+phrasal verb) is replaced by an appropriate atomic predicate name,
+e.g. (CP BRING BACK) becomes BRING-BACK.
+
+A non-atomic formula representing a compound is replaced by an
+appropriate atomic name, e.g. (compound BUTTER MOUNTAIN) becomes
+BUTTER_MOUNTAIN.
+
+A formula that is recognised as representing a possession relation is
+replaced by a POSSESSED-BY predicate, e.g. (lambda (R1) (R1 x1 KIM))
+becomes (POSSESSED-BY x1 KIM).
+
+A formula produced from the scoping of a complex quantifer
+corresponding to a comparative or adjective of degree, such as ``more
+abbots than ..."
+
+(((more than)
+    (lambda (c1)
+       (and (pl c1) (ABBOT c1) (some (e2) ...))))
+ (x2) (and (pl x2) (ABBOT x2)) ...)
+ 
+is replaced by
+
+(((more than)
+    (?quant (c1) (and (pl c1) (ABBOT c1)) (some (e2) ...)))
+ (x2) (and (pl x2) (ABBOT x2)) ...)
+ 
+
+Nested 'and's are simplified.
+ 
+
+ 

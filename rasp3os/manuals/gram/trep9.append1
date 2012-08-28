@@ -1,0 +1,367 @@
+\addcontentsline{toc}{section}{Appendix 1: Sample Lexical Entries}
+{\large\bf Appendix 1: Sample Lexical Entries}
+
+\small
+\begin{verbatim}
+(abandon) : 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, +PLU, NFORM NORM, PER @21, COUNT @23]] : ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 1, COUNT @23]] : ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 2, COUNT @23]] : ABANDON, 
+   V[IMP, -PRD, -INV, -NEG, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      PAST NO, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, NFORM NORM, PER @21, PLU @22, COUNT @23]] : ABANDON, 
+   V[BSE, -PRD, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      PAST @12, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, +PLU, NFORM NORM, PER @21, COUNT @23]] : ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 1, COUNT @23]] : ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 2, COUNT @23]] : ABANDON, 
+   V[IMP, -PRD, -INV, -NEG, -AUX, -PRO, SUBCAT NP, CONJ NULL, PAST NO, 
+      PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, NFORM NORM, PER @21, PLU @22, COUNT @23]] : ABANDON, 
+   V[BSE, -PRD, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, 
+      PAST @12, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   N[-POSS, -ADV, -PLU, -PRO, -COUNT, -NUM, SUBCAT NULL, CONJ NULL, 
+      PRD @13, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE NONE, PART -, 
+      COORD @44, REFL @45, DEMON -] : ABANDON.
+
+(abandoned) : 
+   V[PAS, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      PAST NO, PSVE +, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[PSP, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      PAST NO, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      VFORM NOT, PAST +, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[PAS, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, PAST NO, 
+      PSVE +, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[PSP, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, PAST NO, 
+      PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, 
+      VFORM NOT, PAST +, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON.
+
+(abandoning) : 
+   V[ING, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      PAST NO, PRD @13, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON, 
+   V[ING, -INV, -NEG, -FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, PAST NO, 
+      PRD @13, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24]] : 
+   ABANDON.
+
+(abandons) : 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP_PP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, PFORM TO, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 3, COUNT @23]] : ABANDON, 
+   V[-PRD, -INV, -NEG, +FIN, -AUX, -PRO, SUBCAT NP, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 3, COUNT @23]] : ABANDON.
+
+(abbot) : 
+   N[-POSS, -ADV, -PLU, -PRO, +COUNT, -NUM, SUBCAT NULL, CONJ NULL, 
+      PRD @13, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE NONE, PART -, 
+      COORD @44, REFL @45, DEMON -] : ABBOT, 
+   N[-POSS, -ADV, -PLU, -PRO, +COUNT, -NUM, SUBCAT NULL, CONJ NULL, 
+      PRD @13, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE NONE, PART -, 
+      COORD @44, REFL @45, ADDRESS +, DEMON -] : ABBOT.
+
+(abbots) : 
+   N[-POSS, -ADV, +PLU, -PRO, +COUNT, -NUM, SUBCAT NULL, CONJ NULL, 
+      PRD @13, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE NONE, PART -, 
+      COORD @44, REFL @45, DEMON @75] : ABBOT.
+
+(am) : 
+   V[-PRD, -INV, -NEG, +FIN, +AUX, +PRO, SUBCAT NULL, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE @62, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 1, COUNT @23], CONEG -] : 
+   (lambda (Q) 
+         (Q (lambda (e) (lambda (x) (PROVP e x))) (lambda (e2) e2) 
+            (lambda (qu) qu))), 
+   V[-PRD, -NEG, +FIN, +AUX, -PRO, SUBCAT BE, CONJ NULL, VFORM NOT, 
+      PAST -, INV @15, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR N2[+NOM, -PLU, NFORM NORM, PER 1, COUNT @23], CONEG -] : NIL.
+
+(and) : [SUBCAT AND, CONJN +] : AND.
+
+(anxious) : 
+   A[-ADV, -NEG, -QUA, -NUM, SUBCAT SINF, CONJ NULL, PRD @13, PART -, 
+      AFORM NONE, DEF @35, COORD @44, DISTR PRD, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : ANXIOUS, 
+   A[-ADV, -NEG, -QUA, -NUM, SUBCAT SC_INF, CONJ NULL, PRD @13, PART -, 
+      AFORM NONE, DEF @35, COORD @44, DISTR PRD, SUBTYPE EQUI, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : ANXIOUS, 
+   A[-ADV, -NEG, -QUA, -NUM, SUBCAT PP, CONJ NULL, PRD @13, PART -, 
+      PFORM FOR, AFORM NONE, DEF @35, COORD @44, DISTR PRD, 
+      SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : ANXIOUS, 
+   A[-ADV, -NEG, -QUA, -NUM, SUBCAT PP, CONJ NULL, PRD @13, PART -, 
+      PFORM ABOUT, AFORM NONE, DEF @35, COORD @44, DISTR PRD, 
+      SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : ANXIOUS, 
+   A[-ADV, -NEG, -QUA, -NUM, SUBCAT NULL, CONJ NULL, PRD @13, PART -, 
+      AFORM NONE, DEF @35, COORD @44, DISTR ATT, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : ANXIOUS.
+
+(anxiously) : 
+   A[+ADV, -NEG, -QUA, -NUM, SUBCAT NULL, CONJ NULL, PRD @13, PART -, 
+      AFORM NONE, DEF @35, COORD @44, DISTR @57, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : (ANXIOUS LY).
+
+(both) : 
+   A[-PRD, -ADV, -NEG, +DEF, +QUA, -NUM, SUBCAT NULL, CONJ NULL, 
+      PART -, AFORM NONE, COORD @44, DISTR ATT, SUBTYPE NONE, 
+      AGR N2[+PLU, +COUNT, NFORM @20, PER @21, CASE @24, QFEAT -], 
+      COADV @79, GRADE -] : 
+   (lambda (Q) (Q both (lambda (x) (lambda (P) (and (pl x) (P x)))))), 
+   N[-PRD, -POSS, -ADV, +DEF, +PLU, +PRO, +COUNT, -NUM, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE PMOD, 
+      PART -, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : 
+   (lambda (Q) (Q uq both (lambda (x) (and (pl x) (entity x))))), 
+   N[-PRD, -POSS, -ADV, +DEF, +PLU, +PRO, -NUM, SUBCAT NULL, CONJ NULL, 
+      NFORM NORM, PER 3, COUNT @23, CASE @24, PN -, PROTYPE NONE, 
+      PART OF, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : BOTH, 
+   N[-PRD, -POSS, -ADV, +DEF, +PLU, +PRO, -NUM, SUBCAT NULL, CONJ NULL, 
+      NFORM NORM, PER 3, COUNT @23, CASE @24, PN -, PROTYPE NONE, 
+      PART NO_OF, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : BOTH, 
+   [SUBCAT BOTH, CONJN +] : BOTH.
+
+(crazier) : 
+   A[-ADV, -NEG, -QUA, -NUM, er, SUBCAT NULL, CONJ NULL, PRD @13, 
+      PART -, DEF @35, COORD @44, DISTR @57, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : CRAZY, 
+   A[-ADV, -NEG, -QUA, -NUM, er, SUBCAT PP, CONJ NULL, PRD @13, PART -, 
+      PFORM ABOUT, DEF @35, COORD @44, DISTR @57, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : CRAZY, 
+   A[-ADV, -NEG, -QUA, -NUM, er, SUBCAT VPINF, CONJ NULL, PRD @13, 
+      PART -, DEF @35, COORD @44, DISTR @57, SUBTYPE EXTRAP, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : CRAZY, 
+   A[-ADV, -NEG, -QUA, -NUM, er, SUBCAT SINF, CONJ NULL, PRD @13, 
+      PART -, DEF @35, COORD @44, DISTR @57, SUBTYPE EXTRAP, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : CRAZY, 
+   A[-ADV, -NEG, -QUA, -NUM, er, SUBCAT VPINF, CONJ NULL, PRD @13, 
+      PART -, DEF @35, COORD @44, DISTR @57, SUBTYPE SILLY, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE +] : CRAZY.
+
+(either) : 
+   -NEG[CONEG +, SO +] : EITHER, 
+   A[-PRD, -ADV, -NEG, +DEF, +QUA, -NUM, SUBCAT NULL, CONJ NULL, 
+      PART -, AFORM NONE, COORD @44, DISTR ATT, SUBTYPE NONE, 
+      AGR N2[-PLU, +COUNT, NFORM @20, PER @21, CASE @24, QFEAT -], 
+      COADV @79, GRADE -] : 
+   (lambda (Q) (Q either (lambda (x) (lambda (P) 
+                  (and (sg x) (P x)))))), 
+   N[-PRD, -POSS, -ADV, +DEF, -PLU, +PRO, +COUNT, -NUM, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE PMOD, 
+      PART -, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : 
+   (lambda (Q) (Q uq either (lambda (x) (and (pl x) (entity x))))), 
+   N[-PRD, -POSS, -ADV, +DEF, -PLU, +PRO, -NUM, SUBCAT NULL, CONJ NULL, 
+      NFORM NORM, PER 3, COUNT @23, CASE @24, PN -, PROTYPE NONE, 
+      PART OF, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : EITHER, 
+   [SUBCAT EITHER, CONJN +] : EITHER.
+
+(how) : 
+   P[+PRO, +Q, +WH, -EVER, SUBCAT NULL, CONJ NULL, PRD @13, NEG @17, 
+      PFORM NORM, LOC @31, COORD @44, MODTYPE @78] : 
+   (lambda (y) (IN y (pro (the (_wh) (and (manner _wh)))))), 
+   DetA[+Q, +WH, -EVER, AFORM NONE, DISTR PRD] : _wh.
+
+(here) : 
+   N[+PRD, -POSS, -ADV, +DEF, +PRO, -NUM, SUBCAT NULL, CONJ NULL, 
+      NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE PMOD, PART -, AFORM NONE, WH NO, UB NO, EVER NO, 
+      COORD @44, REFL -, DEMON +] : 
+   (lambda (Q) (Q dd the (lambda (x) (and (sg x) (proximal x) 
+                  (place x))) AT)).
+
+(i) : 
+   N[-PRD, -POSS, -ADV, +NOM, +DEF, -PLU, +PRO, -NUM, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 1, COUNT @23, PN -, PROTYPE NONE, 
+      PART -, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : (pro (the (x) (and (sg x) (speaker x)))).
+
+(many) : 
+   A[+PRD, -ADV, -NEG, -DEF, +QUA, -NUM, SUBCAT NULL, CONJ NULL, 
+      PART -, AFORM NONE, COORD @44, DISTR ATT, SUBTYPE NONE, 
+      AGR +N[+PLU, +COUNT, V -, BAR @3, NFORM @20, PER @21, CASE @24], 
+      COADV @79, GRADE +] : 
+   (lambda (P) (lambda (Q) (lambda (T) (T many (lambda (x) 
+                     (and (Q x) (P x))))))), 
+   N[-PRD, -POSS, -ADV, -DEF, +PLU, +PRO, +COUNT, -NUM, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE PMOD+, 
+      PART -, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : 
+   (lambda (Q) (Q uq many (lambda (x) (and (pl x) (entity x))))), 
+   A[+PRD, -ADV, -NEG, -DEF, +QUA, -NUM, SUBCAT NULL, CONJ NULL, 
+      PART OF, AFORM NONE, COORD @44, DISTR ATT, SUBTYPE NONE, 
+      AGR N2[+PLU, +COUNT, NFORM @20, PER @21, CASE @24], COADV @79, 
+      GRADE +] : MANY.
+
+(me) : 
+   N[-PRD, -POSS, -ADV, +ACC, +DEF, -PLU, +PRO, -NUM, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 1, COUNT @23, PN -, PROTYPE NONE, 
+      PART -, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON -] : (pro (the (x) (and (sg x) (speaker x)))).
+
+(mr) : 
+   N[-POSS, -ADV, -PLU, -PRO, +COUNT, -NUM, SUBCAT NULL, CONJ NULL, 
+      PRD @13, NFORM NORM, PER 3, CASE @24, PN -, PROTYPE NONE, PART -, 
+      COORD @44, REFL @45, ADDRESS +, DEMON -] : MR.
+
+(must) : 
+   V[-PRD, -INV, -NEG, +FIN, +AUX, +PRO, SUBCAT MODAL_BSE, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE DEO, AGR @67, 
+      CONEG -] : MUST, 
+   V[-PRD, -INV, -NEG, +FIN, +AUX, +PRO, SUBCAT NULL, CONJ NULL, 
+      VFORM NOT, PAST -, PSVE -, COORD @44, SUBTYPE NONE, AGR @67, 
+      CONEG -] : 
+   (lambda (Q) (Q (lambda (e) (lambda (x) (NEC (PROVP e x)))) 
+            (lambda (e2) e2) (lambda (qu) qu))) : 
+   (lambda (Q) (Q (lambda (e) 
+               (lambda (x) (MUST e x (PROVP (uqe (some (e2) 
+                              (NOTENSE e2))) x)))) (lambda (e3) e3) 
+            (lambda (qu) qu))), 
+   V[-PRD, -NEG, +FIN, +AUX, -PRO, SUBCAT MODAL_BSE, CONJ NULL, 
+      VFORM NOT, PAST -, INV @15, PSVE -, COORD @44, SUBTYPE NONE, 
+      AGR @67, CONEG -] : (lambda (int) (int NEC MUST)).
+
+(often) :
+   A[+ADV, -NEG, -DEF, +QUA, -NUM, SUBCAT NULL, CONJ NULL, PRD @13,
+      PART -, AFORM NONE, COORD @44, DISTR ATT, SUBTYPE NONE, AGR @67,
+      COADV @79, GRADE +] : often.
+
+(sandy) : 
+   N[-POSS, -ADV, -PLU, -PRO, +COUNT, -NUM, +PN, SUBCAT NULL, 
+      CONJ NULL, PRD @13, NFORM NORM, PER 3, CASE @24, PROTYPE NONE, 
+      PART -, COORD @44, REFL @45, ADDRESS -, DEMON -] : 
+   (name (the (x) (and (sg x) (named x SANDY) (animate x)))).
+
+(six) : [CN1 TEN, CN2 SMALL, AND @65, CN4 +] : \6.
+
+(sixth) : DetA[ORD, AFORM NONE, WH NO, UB NO, EVER NO, DISTR @57] : 
+   SIXTH, 
+   A[-ADV, -NEG, -QUA, ORD, SUBCAT NULL, CONJ NULL, PRD @13, PART -, 
+      AFORM NONE, DEF @35, COORD @44, DISTR ATT, SUBTYPE NONE, 
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      COADV @79, GRADE -] : SIXTH, -PLU[FRACT -] : \6.
+
+(so) : -NEG[CONEG -, SO +] : SO, 
+   DetA[AFORM NONE, WH NO, UB NO, EVER NO, DISTR PRD] : so, 
+   P[-PRO, SUBCAT SFIN, CONJ NULL, PRD @13, NEG @17, PFORM NORM, LOC -, 
+      COORD @44, MODTYPE VBL] : SO.
+
+(that) : 
+   N[-PRD, -POSS, -ADV, +PRO, -NUM, +R, -WH, -EVER, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE NONE, PART -, AFORM NONE, DEF @35, COORD @44, REFL -, 
+      DEMON -] : (lambda (z) z), 
+   N[-PRD, -POSS, -ADV, +DEF, -PLU, +PRO, -NUM, SUBCAT NULL, CONJ NULL, 
+      NFORM NORM, PER 3, COUNT @23, CASE @24, PN -, PROTYPE THAT, 
+      PART -, AFORM NONE, WH NO, UB NO, EVER NO, COORD @44, REFL -, 
+      DEMON +] : 
+   (lambda (Q) (Q dd the (lambda (x) (and (or (sg x) (ms x)) (distal x) 
+                  (entity x))))), [SUBCAT THAT] : NIL, 
+   DetN[-POSS, +DEF, WH NO, UB NO, EVER NO, 
+      AGR N2[-PLU, +COUNT, NFORM @20, PER @21, CASE @24, QFEAT -], 
+      DEMON +] : 
+   (lambda (P) (dd (the (x) (and (sg x) (distal x) (P x))))), 
+   DetA[AFORM NONE, WH NO, UB NO, EVER NO, DISTR PRD] : that.
+
+(up) : [PRT UP] : UP, 
+   P[-PRO, SUBCAT PP, CONJ NULL, PRD @13, NEG @17, PFORM NORM, LOC @31, 
+      COORD @44, PREP LOC, MODTYPE @78] : UP, 
+   P[-PRO, SUBCAT NP, CONJ NULL, PRD @13, NEG @17, PFORM UP_TO, LOC -, 
+      COORD @44, MODTYPE @78] : UP, 
+   P[-PRO, SUBCAT NP, CONJ NULL, PRD @13, NEG @17, PFORM NORM, LOC @31, 
+      COORD @44, MODTYPE @78] : UP, 
+   P[-PRO, SUBCAT NP, CONJ NULL, PRD @13, NEG @17, PFORM UP, LOC @31, 
+      COORD @44, MODTYPE @78] : UP.
+
+(where) : 
+   P[+PRO, +R, +WH, -EVER, SUBCAT NULL, CONJ NULL, PRD @13, NEG @17, 
+      PFORM NORM, LOC @31, COORD @44, MODTYPE @78] : 
+   (lambda (y) (lambda (x) (AT y x))), 
+   P[+PRO, +Q, +WH, -EVER, SUBCAT NULL, CONJ NULL, PRD @13, NEG @17, 
+      PFORM NORM, LOC @31, COORD @44, MODTYPE @78] : 
+   (lambda (y) (AT y (pro (the (_wh) (and (place _wh)))))).
+
+(which) : 
+   N[-PRD, -POSS, -ADV, +PRO, -NUM, +R, +WH, -EVER, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE NONE, PART -, AFORM NONE, DEF @35, COORD @44, REFL -, 
+      DEMON -] : (lambda (z) z), 
+   N[-PRD, -POSS, -ADV, +PRO, -NUM, +Q, +WH, -EVER, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE NONE, PART -, AFORM NONE, DEF @35, COORD @44, REFL -, 
+      DEMON -] : (pro (the (_wh) (entity _wh))), 
+   N[-POSS, -ADV, +PRO, -NUM, +Q, SUBCAT NULL, CONJ NULL, PRD @13, 
+      NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE NONE, PART OF, AFORM NONE, DEF @35, WH @39, EVER @41, 
+      COORD @44, REFL -, DEMON -] : _wh, 
+   DetN[-POSS, +DEF, +Q, +WH, -EVER, 
+      AGR N2[+PLU, +COUNT, NFORM @20, PER @21, CASE @24, QFEAT +], 
+      DEMON -] : NIL, 
+   DetN[-POSS, +DEF, +Q, +WH, -EVER, AGR N2[-PLU, -COUNT, NFORM @20, 
+            PER @21, CASE @24, QFEAT -], DEMON -] : 
+   (lambda (P) (dd (the (_wh) (and (ms _wh) (P _wh))))), 
+   DetN[-POSS, +DEF, +Q, +WH, -EVER, 
+      AGR N2[+PLU, +COUNT, NFORM @20, PER @21, CASE @24, QFEAT -], 
+      DEMON -] : (lambda (P) (dd (the (_wh) (and (pl _wh) (P _wh))))), 
+   
+   DetN[-POSS, +DEF, +Q, +WH, -EVER, AGR N2[-PLU, +COUNT, NFORM @20, 
+            PER @21, CASE @24, QFEAT -], DEMON -] : 
+   (lambda (P) (dd (the (_wh) (and (sg _wh) (P _wh))))).
+
+(who) : 
+   N[-PRD, -POSS, -ADV, +PRO, -NUM, +R, +WH, -EVER, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE NONE, PART -, AFORM NONE, DEF @35, COORD @44, REFL -, 
+      DEMON -] : (lambda (z) z), 
+   N[-PRD, -POSS, -ADV, +PRO, -NUM, +Q, +WH, -EVER, SUBCAT NULL, 
+      CONJ NULL, NFORM NORM, PER 3, PLU @22, COUNT @23, CASE @24, PN -, 
+      PROTYPE NONE, PART -, AFORM NONE, DEF @35, COORD @44, REFL -, 
+      DEMON -] : (pro (the (_wh) (human _wh))).
+\end{verbatim}
+\normalsize

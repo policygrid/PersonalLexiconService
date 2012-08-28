@@ -1,0 +1,65 @@
+              USING THE GDE TO DEVELOP GRAMMARS
+
+You can use the GDE on its own if you want to develop your own grammars
+or experiment with existing ones; in that case, read on. On the other
+hand, if you are not interested in grammars themselves but just want to
+get the RASP tools to analyse text then please go to directory scripts/.
+
+
+Running the GDE
+---------------
+
+To invoke the GDE using one of the pre-built binaries, type one of:
+
+   ./ix86_linux/gde
+   ./x86_64_linux/gde
+
+depending on whether you are running Intel/Linux, Sun/Solaris or
+PPC Macintosh OS X, respectively. Please see below if you have built your
+own core image of the GDE from the source code.
+
+The full set of commands which are available in the GDE is described
+in the user manual:
+
+   Carroll, J., E. Briscoe & C. Grover (1991) A development environment
+   for large natural language grammars. Computer Laboratory, Cambridge
+   University, UK, Technical Report 233.
+   <ftp://ftp.cl.cam.ac.uk/nltools/reports/gde.ps>
+
+Visit <http://www.cl.cam.ac.uk/Research/NL/anlt.html> for references to
+work that has used the GDE.
+
+The GDE provides many advanced facilities for developing grammars, but
+you need to know only four commands to get started. They are 'read',
+'set', 'parse' and 'quit'. For example:
+
+   Gde> read grammar_file
+   Gde> set defining messages
+   Gde> parse 
+   Gde> quit 
+
+If you are running one of the pre-built binaries then there is a grammar
+already loaded (this is the grammar in prob/data/tsg15). If you want
+to load your own you should first give the GDE command 'clear'.  You may
+also want to set the flag 'tagged words' to off if the lexical entries
+associated with your grammar are for words rather than part-of-speech
+tags.
+
+
+Running a GDE core image
+------------------------
+
+If you have built your own core image of the GDE from the source code,
+starting up this image should automatically cause the GDE command loop
+to be entered. In Allegro CL 5.0 onwards use the unix command:
+
+   alisp -I GDE.dxl
+
+If you have not built an image, load the two 'load.lsp' files into a
+Lisp session and call the function 'gde-top-loop' directly from the Lisp
+prompt to start up the GDE command loop, e.g.
+
+   (gde-top-loop)
+
+Note that in many Lisp implementations you will NOT get the desired
+behaviour if you put this call in a file and load that file.

@@ -1,0 +1,1507 @@
+\documentclass[10pt]{article}
+%\usepackage{iwpt05}
+\usepackage{harvard}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{url}
+\usepackage{psfrag}
+\usepackage{arydshln}
+\usepackage{subfigure}
+
+\bibliographystyle{agsm}
+
+\newcommand{\stt}[1]{{\small\texttt{#1}}}
+\newcommand {\etal} {{\it et al.}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+\title{RASP Evaluation Schemes}
+\author{Rebecca Watson\\
+Natural Language and Information Processing Group\\
+University of Cambridge\\
+Computer Laboratory\\
+Rebecca.Watson@cl.cam.ac.uk}
+\date{\today}
+ 
+\begin{document}
+
+\hyphenation{machine-readable self-contained}
+\maketitle
+\begin{abstract}
+This report outlines details of the relational
+dependency evaluation schemes written for RASP grammatical
+relations.
+\end{abstract}
+
+\setcounter{tocdepth}{2}
+
+\tableofcontents
+
+%\listoftables
+%\listoffigures
+
+\newpage
+
+\section{Introduction}
+
+The Robust Accurate Statistical Parsing (RASP) system 
+for English developed by \citename{briscoe02}~\citeyear{briscoe02} is 
+publicly available for academic use. 
+The parser is capable of returning
+a number of different output formats including grammatical relations
+(GRs). For details of the manually written tag sequence grammar 
+and details of the GRs readers are referred to~\cite{briscoe05a}. 
+
+This report contains details of the relational
+dependency based evaluation schemes enabling the reader to either
+a) replicate the schemes or 
+b) interpret results output by the evaluation system.
+The test and gold standard files employed %(Section~\ref{gold})
+and the evaluation system outlined herein have been made publicly available 
+for research to enable comparison of research efforts.
+
+\citename{briscoe05a}~\citeyear{briscoe05a} outlines details of
+the GRs output by RASP. 
+All GRs take the following form:
+\begin{verbatim}
+(GR-type subtype head dependent initial-GR)
+\end{verbatim}
+The first item in this list: the \stt{GR-type}, specifies 
+the type of relationship between the \stt{head}
+and \stt{dependent} 
+(e.g. (\stt{subj})ect, (\stt{obj})ect, (\stt{mod})ifier). 
+The remaining items in the list:
+(\stt{subtype, head, dependent, initial-GR}) will be
+referred to as `slots' herein. 
+The \stt{subtype} and \stt{initial-GR} are specified for only a subset of
+all possible GR-types. That is, their presence depends on the GR-type. 
+In the case that these optional 
+slots are present for a given GR-type the slot may appear with 
+the default (unspecified) value of ``\_''. 
+
+For all evaluation schemes, both the GR-type and slot values 
+(the value in the specified slot) must be `equal'.
+The set of evaluation schemes differ only in their definition
+of equality between GR-types and the set of slots to compare
+for slot `equality'. That is, they differ in the criteria 
+for whether the test relation is correct: 
+the test and standard items `match'. 
+Section~\ref{eval} outlines
+the overall architecture of the evaluation schemes while
+Section~\ref{grmatch} and Section~\ref{slot-compare}
+outline alternative definitions of GR-type matching and the
+set of slots to compare, respectively.
+
+We need to consider alternative sets of slots to compare as
+other parsers specify only head and dependent slots. Therefore, the
+evaluation system should be capable of comparing these slots only, 
+to enable us to compare system performance.
+
+There are 17 GR-types that form an inheritance 
+hierarchy enabling relations to be underspecified.
+Readers are referred to \cite{briscoe05a} for
+a figure of the hierarchy.
+This hierarchy of relations %is shown in \cite{briscoe05a}.
+is shown in Figure~\ref{gr-hier}. Note that the \stt{passive} GR-type
+is not included in evaluation as this GR-type represents
+information available in the \stt{ncsubj} GR-type when the
+\stt{initial-GR} value is \stt{obj}.
+This hierarchy enables a number of different schemes to be considered
+as we can define alternative definitions of GR-type match using
+this hierarchy. 
+For example, we may consider GR-types in the test set (test, henceforth) 
+that subsume GR-types in the gold standard set (standard, henceforth) 
+as correct.
+
+\begin{figure}
+\centering
+{\tt    \setlength{\unitlength}{0.65pt}
+{\small \begin{picture}(520,230)(-10,5)
+\put(-10,5){\framebox(520,230){}}
+\thinlines
+
+              \put(354,85){\line(-3,-1){62}}
+              \put(354,85){\line(0,-1){22}}
+              \put(354,85){\line(3,-1){69}}
+
+              \put(436,50){\line(3,-2){36}}
+              \put(436,50){\line(-3,-2){36}}
+
+              \put(289,50){\line(2,-1){47}}
+              \put(289,50){\line(0,-1){24}}
+              \put(289,50){\line(-5,-2){53}}
+
+              \put(180,72){\line(2,-1){40}}
+              \put(180,72){\line(0,-1){18}}
+              \put(180,72){\line(-2,-1){40}}
+
+              \put(310,135){\line(3,-2){56}}
+              \put(310,135){\line(-1,-2){10}}
+              \put(310,135){\line(-5,-2){116}}
+
+              \put(308,98){\line(-1,-1){67}}
+              \put(308,98){\line(-6,-1){107}}
+
+              \put(159,168){\line(-3,-2){37}} % argmod
+              \put(159,168){\line(6,-1){134}}
+
+              \put(95,128){\line(3,-1){68}} % mod
+              \put(95,128){\line(3,-4){17}}
+              \put(95,128){\line(-3,-4){17}}
+              \put(95,128){\line(-3,-1){68}}
+
+              \put(206,210){\line(-5,-1){124}} % dependent
+              \put(206,210){\line(-3,-2){37}}
+              \put(206,210){\line(5,-2){62}}
+              \put(206,210){\line(4,-1){100}}
+              \put(206,210){\line(6,-1){148}}
+
+              \put(176,218){dependent} % \small\it 
+
+              \put(70,174){ta}
+              \put(147,174){arg\_mod}
+              \put(258,174){det} % \small\it 
+              \put(298,174){aux} % \small\it 
+              \put(343,174){conj} % \small\it 
+
+              \put(95,134){mod}
+              \put(300,141){arg} 
+
+              \put(0,94){ncmod}
+              \put(49,94){xmod}
+              \put(90,94){cmod}
+              \put(134,94){pmod}
+
+              \put(260,104){subj\_dobj} % \small\it 
+
+              \put(170,80){subj}
+              \put(345,90){comp} % \small\it 
+
+              \put(101,44){ncsubj}
+              \put(160,44){xsubj}
+              \put(208,44){csubj}
+
+              \put(280,54){obj} % \small\it 
+              \put(340,54){pcomp}
+              \put(411,54){clausal}
+
+              \put(220,14){dobj}
+              \put(277,14){obj2}
+              \put(322,14){iobj}
+
+              \put(385,14){xcomp}
+              \put(455,14){ccomp}
+              
+\end{picture}}}
+\caption{The GR hierarchy}
+\label{gr-hier}
+\end{figure}
+
+%Section~\ref{original} outlines the  previous (`original') evaluation
+%scheme. Full details of the evaluation scheme are provided and the
+%short-comings of this scheme are addressed in Section~\ref{new} in
+%which a number of alternative schemes are outlined to address
+%these short-comings.
+
+Section~\ref{perf} reports current system performance using
+each of the evaluation schemes. Finally, Section~\ref{resources}
+provides details of the files that are publicly available including
+the gold standard files and the file formats required to utilise
+the evaluation script.
+
+\section{Evaluation System}
+\label{eval}
+
+This section outlines the evaluation system's architecture
+and highlights the functions which differ between each evaluation
+scheme (scheme, henceforth).
+These functions refer to the whether the GR-types match
+and which slots to compare
+(the definition of a slot match is constant between schemes).
+Once the reader is familiar with the general architecture,
+we will discuss the alternative sets of slots that may be compared
+and the GR-Type match options
+in Sections~\ref{slot-compare} and~\ref{grmatch}, respectively. 
+Finally, Section~\ref{resources} will outline the script file(s)
+that can be called to invoke the evaluation system over a set of
+test files and the script parameters that
+will select the scheme utilised by the system.
+
+Each sentence is evaluated in-turn whereby the test and standard
+GR sets are compared. The test and standard files are required
+to contain the same number of sentences. An error message
+will be output by the system if this is not the case. 
+The format required for test files is outlined in Section~\ref{resources}.
+
+A GR in the test set `matches' a GR in the standard set if the test
+GR is considered to be correct in the given scheme.
+Duplicate GRs are permitted in the standard set but not in the test set. 
+If duplicate GRs occur in the test set (and not in the standard)
+then these are considered incorrect as only one match 
+is permitted against each GR in the standard.
+
+The evaluation system correlates for each sentence:
+\begin{itemize}
+\item {\bf common}: the set of GRs that matched between the test and
+  standard, where each element in this list are of the form: 
+\{standard GR, test GR\}.
+\item {\bf missing}: the set of GRs in the standard for which no test
+GRs were found to match.
+\item {\bf extra}: the set of GRs in the test set for which no
+  matches were found in the standard set.
+\end{itemize}
+After processing each sentence, the evaluation system outputs
+the list of common, missing, and extra GRs to the output file.
+
+The evaluation system correlates across all sentences in the test
+set\footnote{Note that the std-total- tst-total- and agree- scores
+are recorded for each GR-type}:
+\begin{itemize}
+\item {\bf nsents}: the number of sentences in the test set.
+\item {\bf std-total-\emph{GR-type}}: 
+the number of standard GRs of type \emph{GR-type}.
+\item {\bf tst-total-\emph{GR-type}}: 
+the number of test GRs of type \emph{GR-type}.
+\item {\bf agree-\emph{GR-type}}: 
+the number of GRs of type \emph{GR-type} for which a match was found.
+\end{itemize}
+
+\subsection{Output Formats}
+
+This section briefly outlines the alternative output formats
+available. The output file specified (see Section~\ref{resources})
+contains for each sentence: the sentence number, the sentence, 
+the list of common GRs (``In both''), the missing GRs (``Standard
+only''), and the extra GRs (``Test only'') outlined in the previous
+section. 
+The sentence summary output format outlined in Section~\ref{sentsum} 
+is then output to the file. 
+The micro- and macro-averaged scores for each relation (and
+for the test set overall as outlined in Section~\ref{sum}) 
+are then output to the file (outlined in Section~\ref{relsum}).
+
+\subsubsection{Relation Summary}
+\label{relsum}
+
+The relation summary format reports the precision, recall, and F$_{1}$ for 
+each GR-type. For all but one option these are computed by percolating
+up the counts for std-total- tst-total- and agree- up the heirarchy,
+reflecting the average performance across each GR-type and it's
+associated sub-types in the hierarchy. However, for the hierarchy method
+outlined in Section~\ref{hier}, these counts are not percolated
+upwards in a routine fashion. Section~\ref{hier} outlines full details
+of how the counts are percolated upwards.
+
+Once the counts have been percolated upwards in the hierarchy
+we can determine precision, recall, and F$_{1}$ for each GR-type
+using:
+\begin{equation}
+precision = \frac{agree-GR-type}{tst-total-GR-type}
+\end{equation}
+\begin{equation}
+recall = \frac{agree-GR-type}{std-total-GR-type}
+\end{equation}
+\begin{equation}
+F_{1} =  \frac{2 \times precision \times recall} {precision + recall}
+\end{equation}
+
+Note that the relation summary includes the summary output outlined
+in Section~\ref{sum}.
+
+\subsubsection{Summary}
+\label{sum}
+
+The summary format reports the micro-averaged and macro-averaged
+precision, recall, and F$_{1}$ scores over all relations. 
+The micro-averaged scores represent the performance of these 
+performance measures considered over all GR-types. Thus, these
+scores are identical to the scores reported for the
+\stt{dependency} relation in the relation summary format outlined
+in the previous section.
+
+The macro-averaged scores represent the average of each score
+over the 17 GR-types. 
+However, these scores are not calculated using
+the percolated counts. 
+Precision, recall and F$_{1}$ are determined for each GR-type 
+using the raw counts of std-total- tst-total- and agree- 
+over each GR-type. The average of each of these measures over
+each GR-type is then calculated to report the `macro' 
+average of the scores.
+These scores place equal importance over each GR-type rather
+than over those that occur more frequently.
+
+\subsubsection{Sentence Summary}
+\label{sentsum}
+
+This format outputs precision, recall and F$_{1}$
+for each sentence in the test set. These scores are determined
+for each sentence using the equations outlined in
+Section~\ref{relsum}. 
+
+\subsection{GR Match}
+
+This section outlines the definition of a `match' between
+two GRs (test and standard). This definition holds over all
+GR-type definitions except for the hierarchy method
+outlined in Section~\ref{hier}, which describes
+slight modifications to this definition.
+
+In order for the test GR (tst) to match a given standard GR (std)
+the following must hold:
+\begin{itemize}
+\item the GR-types of std and tst match and
+\item the slots (the values in the slots) match.
+\end{itemize}
+As previously mentioned, the definition of a GR-type match
+differs between schemes and the set of slots to compare differs.
+Section~\ref{slots} will define the slots that occur in each GR-type
+and Section~\ref{slotequality} gives the definition of 
+a match between two given slots.
+
+\subsubsection{Slots}
+\label{slots}
+
+Figure~\ref{gr-slots} illustrates the list of 16 possible GR-types
+(we do not include the \stt{passive} GR-type in evaluation)
+and the set of associated slots. For each GR-type all and only these
+slots must occur. Though the slot values may 
+contain ``\_'' if the optional slot is unspecified. The system
+will output an error message if a GR-type does not occur with
+the specified number of slots shown in the figure.
+
+\begin{figure*}
+{\small
+\begin{center}
+\begin{verbatim}
+(dependent subtype head dependent)
+(mod       subtype head dependent)
+(ncmod     subtype head dependent)
+(xmod      subtype head dependent)
+(cmod      subtype head dependent)
+(pmod              head dependent)
+(det               head dependent)
+(arg_mod   subtype head dependent)
+(arg       subtype head dependent)
+(subj              head dependent initial-gr)
+(ncsubj            head dependent initial-gr)
+(xsubj             head dependent initial-gr)
+(csubj             head dependent initial-gr)
+(subj_dobj         head dependent)
+(comp              head dependent)
+(obj               head dependent)
+(dobj              head dependent)
+(obj2              head dependent)
+(iobj              head dependent)
+(clausal           head dependent)
+(xcomp     subtype head dependent)
+(ccomp     subtype head dependent)
+(pcomp             head dependent)
+(aux               head dependent)
+(conj              head dependent)
+(ta        subtype head dependent)
+%(passive        head)
+\end{verbatim}
+\end{center}}
+\caption{The GR-types with associated required slots. }
+\label{gr-slots}
+\end{figure*}
+
+\subsubsection{Slot Match}
+\label{slotequality}
+
+A number of options are available for the evaluation
+system. One option outlines which set of slots to compare. However,
+the definition of a slot match remains constant across 
+these options.
+Two slots (of the same type) are considered to match if
+one of the following constraints hold given the slot values
+tst-arg and std-arg for test and standard slots, respectively:
+\begin{enumerate}
+\item the values tst-arg and std-arg are identical (including
+unspecified value of \_).
+\item tst-arg and std-arg are both specified (not \_) and:
+\begin{enumerate} 
+\item either tst-arg or std-arg specifies the value
+ \stt{ellip}, signifying that that the argument references an ellipsis or
+\item{\label{NE-match} std-arg is a word in the multiword tst-arg. 
+A multiword represents an NE in the text where words are separated
+by \_.}
+\end{enumerate} 
+\item either tst-arg or std-arg are unspecified (\_) and:
+\begin{enumerate}
+\item the slot is of type \stt{type} and
+\item the GR-type is one of 
+\stt{mod, ncmod, xmod, cmod, pmod, arg, xcomp, ccomp, ta}.
+\end{enumerate}
+\end{enumerate}
+
+Note that the slot match criteria~\ref{NE-match}
+accounts for the use of named-entity recognition 
+during parsing. That is, the test files
+include versions of the text and gold standard using
+NE markup. In this case the last word in the NE item appears
+in the gold standard. When parsing RASP will output
+these multiword constituents as a single word
+where words are separated by ``\_''.
+For example, the second sentence in the test file 
+is\footnote{The beginning of sentence marker 
+is $\wedge$.}:
+\begin{verbatim}
+^ The following issues were recently filed with the 
+<w>Securities and Exchange Commission</w>:
+\end{verbatim}
+
+In this case, the test file (the .parses file outlined
+in Section~\ref{resources}) should include GRs containing
+the multi-word item `Securities\_and\_Exchange\_Commission' 
+to enable the slot value to match with the standard 
+GRs for the sentence:
+\begin{verbatim}
+(ncsubj filed issues obj)
+(ncmod _ filed recently)
+(aux filed were)
+(passive filed)
+(iobj filed with)
+(dobj with Commission)
+(det Commission the)
+(det issues The)
+(ncmod _ issues following)
+\end{verbatim}
+
+\section{Slot Comparison}
+\label{slot-compare}
+
+The definition of a slot match was given in Section~\ref{slotequality}.
+In this section we will outline the alternative slot comparison
+options available. That is, options that define which set of slots
+to compare. All slots in the set compared must match for 
+the slots to match. 
+
+These options, outlined in the following sections, 
+can be summarised as follows:
+\begin{itemize}
+\item All: all slots are compared.
+\item Head-Dependent: only head and dependent slots are compared.
+\item Head-Dependent-NCSUBJ: in addition to comparing the head and dependent slots,
+we compare the \stt{initial-GR} slot for the \stt{ncsubj}
+GR-type if the value of the slot is \stt{obj} in either
+the test or standard.
+\end{itemize}
+
+\subsection{All}
+
+For the ALL slot comparison option, 
+all slots are compared between the standard and test
+relation.
+For each slot in the standard relation, we determine
+whether or not this slot is present in the test relation.
+If the slots are both present in the test relation then we
+compare the slots.
+If a slot is not present in either the test or standard
+relation then the slot is considered correct by
+default.
+All slots that are present in both the standard and test
+relation are required to match.
+
+For example, if the standard relation and the
+test relation specify \stt{ncmod} and \stt{iobj}, respectively,
+then we will compare the slots \stt{head} and \stt{dependent}
+only and we will ignore the \stt{type} slot. If the values in the
+\stt{head} and \stt{dependent} slots match
+then the slots are considered to match.
+
+Note that the original evaluation scheme uses a modified version of this
+definition: the number of slots in both the standard and test relations
+must be equal. However, the scheme does not specify that these slots must
+contain the same set of slot types. We relaxed this original definition for the
+new schemes (as outlined above) to enable comparison between 
+the slots of any two GR-types.
+
+\subsection{Head-Dependent}
+
+For the HEAD-DEPENDENT option, only the head and dependent slots
+are compared.
+
+\subsection{Head-Dependent-NCSUBJ}
+
+For the HEAD-DEPENDENT-NCSUBJ option, the \stt{head} and 
+\stt{dependent} slots are compared. 
+Further, if the GR-type is \stt{ncsubj} then
+we compare the \stt{initial-GR} slot if the slot value 
+is \stt{obj} in either the test or standard.
+
+\section{GR-Type Match}
+\label{grmatch}
+
+This section outlines the various options for determining
+a GR-type match. That is, whether or not the GR-type of
+the standard relation (std-GR) and test relation (tst-GR) match. 
+These options, outlined in the following sections, 
+can be summarised as follows:
+\begin{itemize}
+\item Original: the tst-GR can be
+\begin{itemize} 
+\item equal to the std-GR,
+\item more general than the std-GR by one level in the hierarchy or
+\item more specific than the std-GR by any number of levels in the hierarchy.
+\end{itemize}
+\item Equality: the tst-GR must be equal to the std-GR.
+\item Subsumption: the tst-GR can be:
+\begin{itemize} 
+\item equal to or 
+\item more general than the std-GR by any number of levels in the
+  hierarchy.
+\end{itemize}
+\item Hierarchy: this scheme returns the most specific GR-type in the hierarchy
+that subsumes both the tst-GR and std-GR. A match is always
+returned and, thus, a match is considered to occur at this level in the
+hierachy.
+\end{itemize}
+
+%Precision, recall, and F$_{1}$ is calculated for each GR-type in the
+%hierarchy. Counts are percolated upwards so that the performance
+%of the GR-type \stt{dependency} is in effect the average
+%performance of each GR-type for which test and/or standard GRs
+%occured.
+
+\subsection{Original}
+
+The original GR-type match can be summarised as follows, the tst-GR can be:
+\begin{itemize} 
+\item equal to the std-GR,
+\item more general than the std-GR by one level in the hierarchy or
+\item more specific than the std-GR by any number of levels in the hierarchy.
+\end{itemize}
+
+The original scheme enables the tst-GR to be more general by one level
+in the hierarchy, and only if the std-GR is a leaf node in the hierachy.
+Note that the current standard does not contain
+any GR-types that are not leaf nodes in the hierachy. Therefore,
+the test GR-type will never be more specific than the standard.
+
+\subsection{Equality Based}
+
+The original GR-type match scheme outlined in the previous section
+enables the GR-type to be more general than the standard. Therefore,
+the reported performance does not provide information on how
+well the parser is determining a particular GR-type.
+For example, we may wish to know how well the system performs 
+in terms of the \stt{ncmod} GR-type.
+Currently, if the standard contains a \stt{ncmod}, the test
+may return a \stt{mod} or an \stt{ncmod}. Thus the user 
+does not know the individual counts of these two scenarios. Two
+systems will seem to perform equally as well even if one returns
+the more precise match \stt{ncmod} more frequently than
+ the other.
+Therefore, the equality based GR-type match measures the exact performance 
+of each GR-type. That is, it performs GR-type matching by requiring the GR-type 
+to be equal.
+
+\subsection{Subsumption Based}
+
+As previously mentioned, 
+the GR-types present in the standard are only those that occur 
+as leaf nodes in the hierarchy. That is, the standard contains
+only the most specific GR-type possible. 
+Thus, the test relation will never be more specific 
+than the standard and it would be more beneficial 
+to determine performance by enabling test relations 
+to be more general by \emph{any degree} in the hierachy.
+Therefore, the subsumption based GR-type match considers
+the tst-GR and std-GR to match if
+tst-GR is equal to or more general than the std-GR.
+
+\subsection{Hierarchy Based}
+\label{hier}
+
+While the previous schemes enable the tst-GR to
+be either equal to and optionally more general than the std-GR,
+they do not report the unlabelled dependency accuracy.
+The unlabelled dependency performance reflects how well we 
+determine any type of dependency relation. That is,
+how well we perform just on matching the required slots.
+Many parsers report this measure and it would be beneficial for
+comparison if the evaluation system reported this performance.
+
+The unlabelled dependency performance reflects how well we
+do at the level of \stt{dependent} in the hierarchy. That is,
+if we enable any two GR-types to match and define a GR match
+to occur if the required slots all match. 
+Similarly, we may wish to determine how well we do 
+at the level of \stt{mod}.
+At \stt{mod} level of the hierarchy we can define that
+two GR-types match if they are both one of: \stt{mod, ncmod,
+cmod, pmod}. Determining a score for \stt{mod} in this way
+enables us to compare the performance of RASP at determining
+modifiers to another parser that does not make the fine-grained
+distinction between modifier types. That is, we do not penalise
+RASP for trying to make finer-grained distinctions.
+
+Thus, at any level in the hierarchy we wish
+to see how well we do if we enable GR-type match to occur between
+any two GR-types at that level or lower in the hierarchy.
+We determine the `GR-type match' as the 
+the most specific GR-type in the hierarchy
+that subsumes both the tst-GR and std-GR GR-types. 
+A GR-type match is always returned for a given test GR (tst-GR) 
+and list of standard GRs (std-GR-list). 
+As previously mentioned, a GR match is determined between a test
+and standard GR if the GR-types match and the set of required
+slots match.
+However, we do not wish to match to the first item in the std-GR-list
+for which the slots match. Instead, we wish to match the tst-GR
+to a standard GR for which the slots match and also the GR match 
+(the GR-type that subsumes both the test
+and standard GR) is the most specific.
+
+Given that the relation tst-GR finds a matching std-GR 
+(the slots match) with the GR-type match \emph{grtype-common},
+we percolate up counts for std-total- tst-total- and agree-
+GR-types as follows:
+\begin{itemize}
+\item std-total-\emph{GR-type}: increment this count for 
+the given GR-type in the hierarchy if the \emph{GR-type}
+is equal to or subsumes the std-GR GR-type. 
+\item tst-total-\emph{GR-type}: increment this count for 
+the given GR-type in the hierarchy if the \emph{GR-type}
+is equal to or subsumes the tst-GR GR-type.
+\item agree-\emph{GR-type}: increment this count for 
+the given GR-type in the hierarchy if the \emph{GR-type}
+is equal to or subsumes the grtype-common.
+\end{itemize}
+
+Note that for each GR in `missing' or `extra' lists outlined
+in Section~\ref{eval} we also percolate up the counts for
+std-total- and tst-total-, respectively, 
+for each GR-type as above.
+
+
+\section{Resources}
+\label{resources}
+
+This section outlines all of the key files which
+comprise or are required by the evaluation system.
+Section~\ref{gold} gives details of the gold standard files
+and required format of the test files.
+These resources can be found in \$RASP/extra/neweval 
+(\$RASP-EVAL, henceforth).
+Example files have been included in the \$RASP-EVAL
+directory: example.out, example.grtext, example.parses
+and example.output as well as the NE versions of each.
+
+\subsection{Test Files and Gold Standard}
+\label{gold}
+
+\subsubsection{Gold Standard - Parc700 Depbank}
+
+\citename{king03}~\citeyear{king03} outline the development of the PARC 700 Dependency
+Bank (henceforth, DepBank), a gold-standard set of relational
+dependencies for 700 sentences (originally from the Wall Street 
+Journal) drawn at random from Section 23 of the Penn Treebank. 
+\citename{briscoe05}~\citeyear{briscoe05} extend DepBank with a set of
+gold-standard GRs and (manually corrected) PoS tags.
+The extended DepBank file can be found at
+\$RASP-EVAL/gold700files.rasp, note that this file includes
+all 700 sentences.
+
+We will use the gold-standard GRs to measure parser accuracy,
+over the same 560 sentence test suite from the DepBank 
+utilised by \citename{kaplan04}~\citeyear{kaplan04}.
+The 560 test suite subset and the NE version of this subset 
+can be found in
+\$RASP-EVAL/parc700/gold560.rasp and in 
+\$RASP-EVAL/parc700/gold560ne.rasp, respectively.
+
+\subsubsection{Text and Pre-processed Files}
+
+The text file (to parse) and the NE version of this text file 
+can be found in \$RASP-EVAL/parc700/test.not-ne and in 
+\$RASP-EVAL/parc700/test.ne, respectively.
+These files have sentence boundaries automatically detected
+and the -s option should be used when invoking \$RASP/scripts/rasp.sh
+over these files.
+
+Alternatively, the user can employ  \$RASP/scripts/rasp\_parse.sh
+using the pre-processed versions of test.not-ne and test.ne:
+\$RASP-EVAL/parc700/test.not-ne.stag.data and 
+\$RASP-EVAL/parc700/test.ne.stag.data, respectively. 
+Note that these files contain the pre-processed text using the PoS
+tagger in forced-choice mode.
+
+\subsection{Running the Evaluation System}
+
+Two scripts are provided: eval.sh and eval\_system.sh. 
+This section outlines the details of utilising these
+script files that invoke in the evaluation system.
+The eval.sh script is designed to pre-process the 
+RASP output file ready for the eval\_system.sh script.
+The resulting file formats prepared by eval.sh are
+outlined in Section~\ref{inputformats}. 
+The eval\_system.sh script accepts these pre-processed
+input files and a number of input parameters that
+define the evaluation options including the set
+of slots to compare and the definition of GR-type
+match as outlined previously.
+
+The input parameters for each script are described in
+Section~\ref{scriptparam}. 
+Example invocation (the same evaluation scheme is applied in each) 
+over parser out file example.out:
+\begin{verbatim}
+./eval.sh -d -t example -e'-u -o -s n -g s -m'
+./eval_system.sh -t example -c sents-tst.gr -u -o -s n -g s -m
+\end{verbatim}
+
+\subsubsection{Input Formats}
+\label{inputformats}
+
+\$RASP-EVAL/eval.sh takes the RASP output format in file x.out (see e.g.
+\$RASP-EVAL/example.out) and produces x.trans.grtext and
+x.trans.parses (or x.grtext and x.parses depending on which
+evaluation options are utilised)
+in the format required by \$RASP-EVAL/eval\_system.sh. These files
+contain the sentences and GR sets from x.out, respectively.
+
+This section outlines the required formats for .grtext and
+.parses files to enable users to utilise the evaluation
+system with other parsers, if required. The next section outlines the
+input parameters available to each script.
+
+Users who employ the RASP parser can utilise 
+the eval.sh script to automatically
+create these input files from RASP output file x.out.
+Eval.sh then invokes the eval\_system.sh script with these
+input files.
+
+Note that the files input into eval\_system.sh must contain
+GRs in which the original word occurs and not the morphological
+variant of the word e.g \$RASP-EVAL/parc700/test.not-ne.stag
+compared to \$RASP-EVAL/parc700/test.not-ne.stag.data. 
+The eval.sh script automatically converts the GR words 
+from e.g. asset+s to assets using the eval\_transform.sh script. 
+If the user wishes to parse
+the \$RASP-EVAL/parc700/test.(not-)ne.stag file instead which
+does not include morphological variants (so that RASP will
+output GRs with the original word forms) then the user should
+use the -x option for eval.sh outlined below. However, performance
+using subcategorisation or phrasal verbs (using the rasp\_parse.sh
+options -s and -x respectively) will not correspond to the true
+performance as the stem of the verb is required by RASP in these
+cases. Therefore, the user is directed to parse the 
+\$RASP-EVAL/parc700/test.(not-)ne.stag.data files which include
+the morphological variants of words.
+
+\begin{itemize}
+\item{x.grtext}
+
+An example of the format required is shown in
+\$RASP-EVAL/example.grtext. The file is required to have the sentence
+number (starting at 1) followed on the next line by the sentence
+itself. The sentence should be tokenised into the set 
+that specifies the possible items that may appear in the GR slots
+as values. The evaluation system will output an error if a value
+occurs in a GR slot that is not present in this sentence.
+A blank line should follow each sentence.
+
+\item{x.parses}
+
+An example of the format required is shown in
+\$RASP-EVAL/example.parses. The example file begins with two lines
+that can be ignored and these lines do not necessarily have to
+occur in the .parses file. All input prior to the first sentence
+(the token 1 shown on line 4 of example.parses) will be ignored.
+Each sentence should be numbered (starting from 1) followed by
+a blank line and then the GR set for the sentence (where one GR
+occurs per line).
+A blank line should follow each GR set.
+\end{itemize}
+
+Both the x.parses and x.grtext contain information for each sentence,
+where the information is labelled by the sentence number.
+Note that each file input to eval\_system.sh should specify the
+same number of sentences otherwise an error will be returned by the
+system. Further, the evaluation system ensures that the same sentence
+number is compared from x.grtext, x.parses and the standard file.
+Therefore, these files must contain the sentence information labelled
+with the correct sentence number (sentence numbering starts at 1 for
+all files).
+
+\subsubsection{Script Parameters}
+\label{scriptparam}
+
+Both eval.sh and eval\_system.sh can be used to invoke the
+evaluation system (in eval\_system.sh). The eval.sh script
+should be used if the user first wishes to create the input
+files x.grtext and x.parses from the RASP output file x.out.
+The switches all have a default value of false.
+Example invocations (calling equivalent schemes 
+in the evaluation system):
+\begin{verbatim}
+./eval.sh -d -t example -e'-u -o -s n -g s -m'
+./eval_system.sh -t example -c sents-tst.gr -u -o -s n -g s -m
+\end{verbatim}
+
+{\bf Eval.sh parameters:}
+\begin{itemize}
+\item {\bf -t $<$test-file$>$}
+
+This option is used to specify the the test file name (test-file). 
+That is, the x in the RASP output file x.out. 
+Note that if the -r switch is used the test file 
+specified will be created by parsing the appropriate test suite.
+
+\item {\bf -r : run rasp switch}
+
+This switch specifies to run rasp over the text file
+\$RASP-EVAL/parc700/test.not-ne 
+to create the specified test-file.out file.
+
+\item {\bf -n : NE switch}
+
+This switch specifies that sentences with NE mark-up 
+were or are to be parsed.
+Therefore, the file sent-ne-tst.gr will
+be used as the standard in place of the sents-tst.gr.
+Note that these standard files are automatically created
+by eval.sh using either \$RASP-EVAL/parc700/gold560.rasp or
+\$RASP-EVAL/parc700/gold560ne.rasp. Therefore,
+the most recent version of the gold standard(s) will
+be employed during evaluation.
+
+Used in conjunction with the -r switch results
+in RASP parsing the text file with NE mark-up
+\$RASP-EVAL/parc700/test.ne instead of 
+\$RASP-EVAL/parc700/test.not-ne.
+
+\item {\bf -x : translate switch}
+
+This switch specifies that test-file.out file
+contains GRs that specify the original word already
+(in the case that the user has deliberately parsed
+\$RASP-EVAL/parc700/test.(not-)ne.stag file instead
+of \$RASP-EVAL/parc700/test.(not-)ne.stag.data 
+using the rasp\_parse.sh script. Hence this switch
+specifies that the eval\_transform.sh script should
+not be applied.
+
+\item {\bf -d : debug switch}
+
+This switch should be used if the user wishes to keep copies
+of the x.grtext and x.parses files. Otherwise these files
+are removed after the evaluation system terminates.
+
+\item {\bf -e $<$eval\_system parameters$>$}
+
+The -e option specifies (in single quotes, e.g., -e'-o -u') 
+the evaluation system parameters to be passed 
+to the eval\_system.sh script. These parameters are outlined below.
+
+\end{itemize}
+
+{\bf Eval\_system.sh parameters:}
+\begin{itemize}
+\item {\bf -t $<$test-file$>$}
+
+This option is used to specify the the test file name (test-file). 
+That is, the x in the RASP output file x.out and the input files
+x.grtext and x.parses.
+
+\item {\bf -c $<$std-file$>$}
+
+This is the name of the standard file: sents-tst.gr or
+sents-ne-tst.gr depending on whether NE markup was used.
+
+\item {\bf -g $<$gr-type match$>$}
+
+The different matching schemes for GR-types is outlined in 
+Section~\ref{grmatch} including (e)quality-, (s)ubsumption-
+and (h)ierarchy-based matching. 
+Hence, the specified parameters
+passed with the -g switch are e, s, and h to select
+these schemes, respectively. 
+The default value is h.
+
+\item {\bf -s $<$slot-compare$>$}
+
+Section~\ref{slot-compare} outlines the various sets of
+slots that may be compared including (a)ll, (h)ead-dependent, 
+head-dependent-(n)csubj.
+Hence, the specified parameters
+passed with the -s switch are a, h, and n to select
+these schemes, respectively. 
+The default value is a.
+
+%\item {\bf -p : pre-process the \stt{ncsubj} GRs}
+
+%This option is available for short-term use until Judita
+%can provide code for full post-processing of GRs from RASP.
+%If specified, the \stt{ncsubj} and \stt{passive} GRs
+%are processed prior to evaluation. Given \stt{(ncsubj Vb x i)}
+%and \stt{(passive Vb)} GRs where 
+%\stt{Vb} is a given verb and 
+%\stt{x} and \stt{i} can hold any value: we remove
+%the \stt{(passive Vb)} GR from the GR set and
+%ensure that \stt{i} is set to the value \stt{obj}.
+
+\item {\bf -o : output the original evaluation schemes' performance}
+
+This switch enables the user to output the original evaluation
+schemes' performance in addition to the new schemes'. Note
+that feedback on which GRs matched is provided for each sentence 
+as well (i.e. common, missing and extra GR lists outlined
+in Section~\ref{eval}).
+
+\item {\bf -u : output the unlabelled dependency performance}
+
+This switch enables the user to output the micro- and macro-averaged
+scores for unlabelled dependency performance in addition
+to the new schemes'. 
+Again, feedback on which GRs matched is provided 
+for each sentence as well.
+
+\item {\bf -m : output the confusion matrix to standard-out}
+
+This switch enables the user to output the confusion matrix for the
+new scheme specified.
+
+\end{itemize}
+
+\subsubsection{Error Messages}
+
+This section briefly outlines the possible error messages (output
+by eval\_system.sh) and why these errors occur:
+\begin{itemize}
+\item{\bf ``Reached end of file at different times''}
+
+The user has input .grtext .parses and
+a standard file in which the number of sentences differs between
+files. That is, one or more files does not contain enough sentences
+compared to the longest file. The .grtext and/or .parses
+files must be modified so that the same number of 
+sentences occurs in all three files.
+
+\item{\bf ``Mismatch in sentence numbers: W (text), S (standard), T (test)''}
+
+The user has input .grtext .parses and
+a standard file in which the sentences numbers differ at a 
+point in the files. The files are expected to contain sentence
+numbers starting from 1 and incrementing by 1 until the end of file.
+If a sentence number is missing in one of the input files
+then this error will occur. The user is provided with the sentence
+number specified in the text, standard and test files: W, S, and T,
+respectively. The .grtext and/or .parses files must be modified so
+that the same sentence numbers occur in order in all three files.
+
+\item{\bf ``Unexpected end of file, stream S''}
+
+The stream S may be one of text-str, std-str, or tst-str
+for the .grtext .parses and standard file, respectively.
+The stream specified ended while a GR was being read in.
+The user should check the respective file's end to correct
+the source of error.
+
+%\item{"Expecting number at byte B, stream S"}
+%If weighted GRs are input to the program
+
+\item{\bf ``Expecting left parenthesis at byte B, stream S''}
+
+The stream S may be one of text-str, std-str, or tst-str
+for the .grtext .parses and standard file, respectively.
+The system was expecting to read in `(' (the beginning of
+a GR) at byte B but found a different character.
+The user should check the respective file's end to correct
+the source of error.
+
+\item{\bf ``Unknown relation name G''}
+
+The relation name G is not in the set of possible GR-types allowed
+(see Figure~\ref{gr-slots} containing the list of allowable GR-types).
+This could occur in any of the input files.
+
+\item{\bf ``Not enough arguments to relation in G - expecting S''}
+
+An input file contains a GR G that does not contain the specified
+number of slots. The slots expected are reported as S.
+
+\item{\bf ``Wrong number of slots in relation G - expecting S''}
+
+This error message specifies the same error as the previous
+message.
+\end{itemize}
+
+\section{Current System Performance}
+\label{perf}
+
+This section briefly outlines the `current' performance\footnote{This
+performance was measured in December 2005 since which time the system
+has been modified. Users can ascertain the performance 
+of the system they currently utilise via the scripts outlined herein.}
+of the RASP system (without NE markup) measured
+using the range of evaluation schemes available.
+The performance can be summarised in 
+Table~\ref{perftable}, while 
+system performance using NE mark-up is shown in 
+Table~\ref{NEperftable}.\footnote{Performance for the 
+schemes was derived by pre-processing the input. 
+Given \stt{(ncsubj Vb x i)} and \stt{(passive Vb)} GRs where 
+\stt{Vb} is a given verb and \stt{x} and 
+\stt{i} can hold any value: we remove
+the \stt{(passive Vb)} GR from the GR set and
+ensure that \stt{i} is set to the value \stt{obj}.}
+
+\begin{table*}
+\begin{tabular}{|l||c|c||c|c||c|c||}
+%\begin{longtable}{|c|c|p{60mm}|p{100mm}|}
+\hline
+ & \multicolumn{2}{c||}{All} &  \multicolumn{2}{c||}{Head-Dependent-NCSUBJ} &
+ \multicolumn{2}{c||}{Head-Dependent}\\
+\cline{2-7}
+GR-type/Model & Micro-F$_{1}$ & Macro-F$_{1}$ & Micro-F$_{1}$ &
+ Macro-F$_{1}$ & Micro-F$_{1}$ & Macro-F$_{1}$ \\
+\hline
+Original & 71.73 & 61.25 & - & - & - & -\\
+\hline
+Equality & 71.24 & 56.32 & 71.49  & 56.52 & 71.49  & 56.52 \\
+\hline
+Subsumption & 71.53 & 59.60 & 71.78 & 59.79 & 71.78 & 59.79 \\
+\hline
+Hierarchy & 73.68 & 61.98 & 73.94 & 62.21 & 73.94 & 62.21 \\
+\hline
+Unlabelled & 75.91 & 75.91 &  76.16 &  76.16 & 76.16 &  76.16 \\
+\hline
+\end{tabular}
+\caption{\label{perftable}Parser Performance over Parc DepBank using
+different Slot selection schemes and GR-type match schemes.}
+%\end{longtable}
+\end{table*}
+
+ \begin{table*}
+\begin{tabular}{|l||c|c||c|c||c|c||}
+%\begin{longtable}{|c|c|p{60mm}|p{100mm}|}
+\hline
+ & \multicolumn{2}{c||}{All} &  \multicolumn{2}{c||}{Head-Dependent-NCSUBJ} &
+ \multicolumn{2}{c||}{Head-Dependent}\\
+\cline{2-7}
+GR-type/Model & Micro-F$_{1}$ & Macro-F$_{1}$ & Micro-F$_{1}$ &
+ Macro-F$_{1}$ & Micro-F$_{1}$ & Macro-F$_{1}$ \\
+\hline
+Original & 72.96 & 61.65 & - & - & - & -\\
+\hline
+Equality & 72.47 & 56.75 & 72.74 & 56.96 &  72.74 & 56.96 \\
+\hline
+Subsumption &  72.78 & 59.97 & 73.05 & 60.19 &  73.05 & 60.19 \\
+\hline
+Hierarchy &  74.84 &  62.42 & 75.11 & 62.66 & 75.11 & 62.66 \\
+\hline
+Unlabelled & 77.56 & 77.56 & 77.83 & 77.83 & 77.83 & 77.83  \\
+\hline
+\end{tabular}
+\caption{\label{NEperftable}Parser Performance over Parc DepBank NE
+  data using different Slot selection schemes and GR-type match schemes.}
+%\end{longtable}
+\end{table*}
+
+%current system performance using each evaluation scheme 
+%table for each + table comparing F1 for each type.
+
+
+\bibliography{all-papers-main}
+
+\end{document}
+
+
+\section{Evaluation Schemes}
+
+\subsection{Original}
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                71.12      72.44      71.78   10575.00   10382.00
+   mod                    62.67      65.66      64.13    3603.00    3439.00
+    ncmod                 63.81      68.52      66.08    3308.00    3081.00
+    xmod                  50.88      48.88      49.86     171.00     178.00
+    cmod                  50.45      33.33      40.14     111.00     168.00
+    pmod                  30.77      33.33      32.00      13.00      12.00
+  det                     87.54      90.87      89.17    1148.00    1106.00
+  arg_mod                 69.04      69.83      69.44    7895.00    7806.00
+                          31.25      -5.00     -11.90      16.00       0.00
+   arg                    74.56      73.00      73.77    4276.00    4367.00
+                           0.00       0.00       0.00       3.00       0.00
+    subj                  78.04      66.52      71.82    1161.00    1362.00
+     ncsubj               78.73      66.74      72.24    1147.00    1353.00
+     xsubj                40.00      28.57      33.33       5.00       7.00
+     csubj                11.11      50.00      18.18       9.00       2.00
+    subj_or_dobj          80.47      73.26      76.69    2836.00    3115.00
+    comp                  73.33      75.94      74.61    3112.00    3005.00
+     obj                  77.17      77.00      77.09    2304.00    2309.00
+                          54.55     -24.00     -85.71      44.00       0.00
+      dobj                82.15      78.49      80.28    1675.00    1753.00
+      obj2                15.79      30.00      20.69      38.00      20.00
+      iobj                68.01      69.40      68.70     547.00     536.00
+     clausal              62.29      72.77      67.12     785.00     672.00
+      xcomp               74.55      76.90      75.71     393.00     381.00
+      ccomp               50.00      67.35      57.39     392.00     291.00
+     pcomp                65.22      62.50      63.83      23.00      24.00
+  aux                     92.21      88.75      90.45     385.00     400.00
+  conj                    65.24      71.87      68.39     607.00     551.00
+  ta                      41.62      52.92      46.60     370.00     291.00
+  passive                 94.12      70.18      80.40     170.00     228.00
+
+Micro-averaged
+Precision        71.12   Recall  72.44   F-score  71.78   tst GRs  18.88 std GRs  18.54
+
+Macro-averaged
+Precision        63.78   Recall  60.48   F-score  62.08
+
+\subsection{Equality Based}
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                70.85      72.16      71.50   10575.00   10382.00
+   mod                    62.67      65.66      64.13    3603.00    3439.00
+    ncmod                 63.81      68.52      66.08    3308.00    3081.00
+    xmod                  50.88      48.88      49.86     171.00     178.00
+    cmod                  50.45      33.33      40.14     111.00     168.00
+    pmod                  30.77      33.33      32.00      13.00      12.00
+  det                     87.54      90.87      89.17    1148.00    1106.00
+  arg_mod                 68.68      69.46      69.07    7895.00    7806.00
+                           0.00       0.00       0.00      16.00       0.00
+   arg                    73.99      72.45      73.22    4276.00    4367.00
+                           0.00       0.00       0.00       3.00       0.00
+    subj                  78.04      66.52      71.82    1161.00    1362.00
+     ncsubj               78.73      66.74      72.24    1147.00    1353.00
+     xsubj                40.00      28.57      33.33       5.00       7.00
+     csubj                11.11      50.00      18.18       9.00       2.00
+    subj_or_dobj          80.47      73.26      76.69    2836.00    3115.00
+    comp                  72.56      75.14      73.83    3112.00    3005.00
+     obj                  76.13      75.96      76.05    2304.00    2309.00
+                           0.00       0.00       0.00      44.00       0.00
+      dobj                82.15      78.49      80.28    1675.00    1753.00
+      obj2                15.79      30.00      20.69      38.00      20.00
+      iobj                68.01      69.40      68.70     547.00     536.00
+     clausal              62.29      72.77      67.12     785.00     672.00
+      xcomp               74.55      76.90      75.71     393.00     381.00
+      ccomp               50.00      67.35      57.39     392.00     291.00
+     pcomp                65.22      62.50      63.83      23.00      24.00
+  aux                     92.21      88.75      90.45     385.00     400.00
+  conj                    65.24      71.87      68.39     607.00     551.00
+  ta                      41.62      52.92      46.60     370.00     291.00
+  passive                 94.12      70.18      80.40     170.00     228.00
+
+Micro-averaged
+Precision        70.85   Recall  72.16   F-score  71.50   tst GRs  18.88 std GRs  18.54
+
+Macro-averaged
+Precision        59.01   Recall  60.48   F-score  59.74
+
+with head/dep only
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                71.12      72.44      71.78   10575.00   10382.00
+   mod                    62.67      65.66      64.13    3603.00    3439.00
+    ncmod                 63.81      68.52      66.08    3308.00    3081.00
+    xmod                  50.88      48.88      49.86     171.00     178.00
+    cmod                  50.45      33.33      40.14     111.00     168.00
+    pmod                  30.77      33.33      32.00      13.00      12.00
+  det                     87.54      90.87      89.17    1148.00    1106.00
+  arg_mod                 68.97      69.75      69.36    7895.00    7806.00
+                           0.00       0.00       0.00      16.00       0.00
+   arg                    74.53      72.98      73.75    4276.00    4367.00
+                           0.00       0.00       0.00       3.00       0.00
+    subj                  80.02      68.21      73.64    1161.00    1362.00
+     ncsubj               80.73      68.44      74.08    1147.00    1353.00
+     xsubj                40.00      28.57      33.33       5.00       7.00
+     csubj                11.11      50.00      18.18       9.00       2.00
+    subj_or_dobj          81.28      74.00      77.47    2836.00    3115.00
+    comp                  72.56      75.14      73.83    3112.00    3005.00
+     obj                  76.13      75.96      76.05    2304.00    2309.00
+                           0.00       0.00       0.00      44.00       0.00
+      dobj                82.15      78.49      80.28    1675.00    1753.00
+      obj2                15.79      30.00      20.69      38.00      20.00
+      iobj                68.01      69.40      68.70     547.00     536.00
+     clausal              62.29      72.77      67.12     785.00     672.00
+      xcomp               74.55      76.90      75.71     393.00     381.00
+      ccomp               50.00      67.35      57.39     392.00     291.00
+     pcomp                65.22      62.50      63.83      23.00      24.00
+  aux                     92.21      88.75      90.45     385.00     400.00
+  conj                    65.24      71.87      68.39     607.00     551.00
+  ta                      43.24      54.98      48.41     370.00     291.00
+  passive                 94.12      70.18      80.40     170.00     228.00
+
+Micro-averaged
+Precision        71.12   Recall  72.44   F-score  71.78   tst GRs  18.88 std GRs  18.54
+
+Macro-averaged
+Precision        59.21   Recall  60.69   F-score  59.94
+
+\subsection{Subsumption Based}
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                71.13      72.45      71.79   10575.00   10382.00
+   mod                    62.67      65.66      64.13    3603.00    3439.00
+    ncmod                 63.81      68.52      66.08    3308.00    3081.00
+    xmod                  50.88      48.88      49.86     171.00     178.00
+    cmod                  50.45      33.33      40.14     111.00     168.00
+    pmod                  30.77      33.33      32.00      13.00      12.00
+  det                     87.54      90.87      89.17    1148.00    1106.00
+  arg_mod                 69.06      69.84      69.45    7895.00    7806.00
+                          31.25      -5.00     -11.90      16.00       0.00
+   arg                    74.58      73.02      73.79    4276.00    4367.00
+                          33.33      -1.00      -2.06       3.00       0.00
+    subj                  78.04      66.52      71.82    1161.00    1362.00
+     ncsubj               78.73      66.74      72.24    1147.00    1353.00
+     xsubj                40.00      28.57      33.33       5.00       7.00
+     csubj                11.11      50.00      18.18       9.00       2.00
+    subj_or_dobj          80.47      73.26      76.69    2836.00    3115.00
+    comp                  73.33      75.94      74.61    3112.00    3005.00
+     obj                  77.17      77.00      77.09    2304.00    2309.00
+                          54.55     -24.00     -85.71      44.00       0.00
+      dobj                82.15      78.49      80.28    1675.00    1753.00
+      obj2                15.79      30.00      20.69      38.00      20.00
+      iobj                68.01      69.40      68.70     547.00     536.00
+     clausal              62.29      72.77      67.12     785.00     672.00
+      xcomp               74.55      76.90      75.71     393.00     381.00
+      ccomp               50.00      67.35      57.39     392.00     291.00
+     pcomp                65.22      62.50      63.83      23.00      24.00
+  aux                     92.21      88.75      90.45     385.00     400.00
+  conj                    65.24      71.87      68.39     607.00     551.00
+  ta                      41.62      52.92      46.60     370.00     291.00
+  passive                 94.12      70.18      80.40     170.00     228.00
+
+Micro-averaged
+Precision        71.13   Recall  72.45   F-score  71.79   tst GRs  18.88 std GRs  18.54
+
+Macro-averaged
+Precision        65.63   Recall  60.48   F-score  62.95
+
+with head/dep only:
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                71.40      72.73      72.06   10575.00   10382.00
+   mod                    62.67      65.66      64.13    3603.00    3439.00
+    ncmod                 63.81      68.52      66.08    3308.00    3081.00
+    xmod                  50.88      48.88      49.86     171.00     178.00
+    cmod                  50.45      33.33      40.14     111.00     168.00
+    pmod                  30.77      33.33      32.00      13.00      12.00
+  det                     87.54      90.87      89.17    1148.00    1106.00
+  arg_mod                 69.35      70.14      69.74    7895.00    7806.00
+                          31.25      -5.00     -11.90      16.00       0.00
+   arg                    75.12      73.55      74.33    4276.00    4367.00
+                          33.33      -1.00      -2.06       3.00       0.00
+    subj                  80.02      68.21      73.64    1161.00    1362.00
+     ncsubj               80.73      68.44      74.08    1147.00    1353.00
+     xsubj                40.00      28.57      33.33       5.00       7.00
+     csubj                11.11      50.00      18.18       9.00       2.00
+    subj_or_dobj          81.28      74.00      77.47    2836.00    3115.00
+    comp                  73.33      75.94      74.61    3112.00    3005.00
+     obj                  77.17      77.00      77.09    2304.00    2309.00
+                          54.55     -24.00     -85.71      44.00       0.00
+      dobj                82.15      78.49      80.28    1675.00    1753.00
+      obj2                15.79      30.00      20.69      38.00      20.00
+      iobj                68.01      69.40      68.70     547.00     536.00
+     clausal              62.29      72.77      67.12     785.00     672.00
+      xcomp               74.55      76.90      75.71     393.00     381.00
+      ccomp               50.00      67.35      57.39     392.00     291.00
+     pcomp                65.22      62.50      63.83      23.00      24.00
+  aux                     92.21      88.75      90.45     385.00     400.00
+  conj                    65.24      71.87      68.39     607.00     551.00
+  ta                      43.24      54.98      48.41     370.00     291.00
+  passive                 94.12      70.18      80.40     170.00     228.00
+
+Micro-averaged
+Precision        71.40   Recall  72.73   F-score  72.06   tst GRs  18.88 std GRs  18.54
+
+Macro-averaged
+Precision        65.83   Recall  60.69   F-score  63.15
+
+\subsection{Hiearchy Based}
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                75.27      76.67      75.97   10575.00   10382.00
+   mod                    63.25      66.27      64.73    3603.00    3439.00
+    ncmod                 67.02      71.96      69.40    3308.00    3081.00
+    xmod                  58.48      56.18      57.31     171.00     178.00
+    cmod                  63.06      41.67      50.18     111.00     168.00
+    pmod                  61.54      66.67      64.00      13.00      12.00
+  det                     89.20      92.59      90.86    1148.00    1106.00
+  arg_mod                 73.64      74.48      74.06   15790.00   15612.00
+   arg                    76.52      74.93      75.71    4276.00    4367.00
+    subj                  77.86      66.37      71.66    1161.00    1362.00
+     ncsubj               80.65      68.37      74.00    1147.00    1353.00
+     xsubj                60.00      42.86      50.00       5.00       7.00
+     csubj                33.33     150.00      54.55       9.00       2.00
+    subj_or_dobj          81.06      73.80      77.26    2836.00    3115.00
+    comp                  74.87      77.54      76.18    3112.00    3005.00
+     obj                  77.99      77.83      77.91    2304.00    2309.00
+      dobj                84.36      80.60      82.44    1675.00    1753.00
+      obj2                42.11      80.00      55.17      38.00      20.00
+      iobj                81.90      83.58      82.73     547.00     536.00
+     clausal              62.17      72.62      66.99     785.00     672.00
+      xcomp               81.68      84.25      82.95     393.00     381.00
+      ccomp               63.27      85.22      72.62     392.00     291.00
+     pcomp                82.61      79.17      80.85      23.00      24.00
+  aux                     92.47      89.00      90.70     385.00     400.00
+  conj                    66.06      72.78      69.26     607.00     551.00
+  ta                      50.54      64.26      56.58     740.00     582.00
+  passive                 94.12      70.18      80.40     170.00     228.00
+
+Micro-averaged
+Precision        74.22   Recall  74.75   F-score  74.48   tst GRs  98.79 std GRs  98.10
+
+Macro-averaged
+Precision        70.93   Recall  75.55   F-score  73.17
+
+with head/dependent only:
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                75.96      77.37      76.66   10575.00   10382.00
+   mod                    63.23      66.24      64.70    3603.00    3439.00
+    ncmod                 67.38      72.35      69.78    3308.00    3081.00
+    xmod                  59.65      57.30      58.45     171.00     178.00
+    cmod                  63.96      42.26      50.90     111.00     168.00
+    pmod                  61.54      66.67      64.00      13.00      12.00
+  det                     89.37      92.77      91.04    1148.00    1106.00
+  arg_mod                 73.81      74.65      74.22   15790.00   15612.00
+   arg                    76.87      75.27      76.06    4276.00    4367.00
+    subj                  79.16      67.47      72.85    1161.00    1362.00
+     ncsubj               82.56      69.99      75.76    1147.00    1353.00
+     xsubj                60.00      42.86      50.00       5.00       7.00
+     csubj                33.33     150.00      54.55       9.00       2.00
+    subj_or_dobj          81.59      74.29      77.77    2836.00    3115.00
+    comp                  74.87      77.54      76.18    3112.00    3005.00
+     obj                  77.99      77.83      77.91    2304.00    2309.00
+      dobj                84.60      80.83      82.67    1675.00    1753.00
+      obj2                44.74      85.00      58.62      38.00      20.00
+      iobj                82.08      83.77      82.92     547.00     536.00
+     clausal              62.17      72.62      66.99     785.00     672.00
+      xcomp               82.19      84.78      83.46     393.00     381.00
+      ccomp               64.54      86.94      74.08     392.00     291.00
+     pcomp                78.26      75.00      76.60      23.00      24.00
+  aux                     92.47      89.00      90.70     385.00     400.00
+  conj                    66.06      72.78      69.26     607.00     551.00
+  ta                      54.59      69.42      61.12     740.00     582.00
+  passive                 97.06      72.37      82.91     170.00     228.00
+
+Micro-averaged
+Precision        74.64   Recall  75.16   F-score  74.90   tst GRs  98.79 std GRs  98.10
+
+Macro-averaged
+Precision        71.48   Recall  76.20   F-score  73.77
+
+with ncsubj obj having to match too:
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                75.85      77.26      76.55   10575.00   10382.00
+   mod                    63.23      66.24      64.70    3603.00    3439.00
+    ncmod                 67.38      72.35      69.78    3308.00    3081.00
+    xmod                  59.65      57.30      58.45     171.00     178.00
+    cmod                  63.96      42.26      50.90     111.00     168.00
+    pmod                  61.54      66.67      64.00      13.00      12.00
+  det                     89.37      92.77      91.04    1148.00    1106.00
+  arg_mod                 73.58      74.42      74.00   15790.00   15612.00
+   arg                    76.43      74.83      75.62    4276.00    4367.00
+    subj                  77.52      66.08      71.34    1161.00    1362.00
+     ncsubj               81.52      69.11      74.80    1147.00    1353.00
+     xsubj                60.00      42.86      50.00       5.00       7.00
+     csubj                33.33     150.00      54.55       9.00       2.00
+    subj_or_dobj          80.92      73.68      77.13    2836.00    3115.00
+    comp                  74.87      77.54      76.18    3112.00    3005.00
+     obj                  77.99      77.83      77.91    2304.00    2309.00
+      dobj                84.60      80.83      82.67    1675.00    1753.00
+      obj2                44.74      85.00      58.62      38.00      20.00
+      iobj                82.08      83.77      82.92     547.00     536.00
+     clausal              62.17      72.62      66.99     785.00     672.00
+      xcomp               82.19      84.78      83.46     393.00     381.00
+      ccomp               64.54      86.94      74.08     392.00     291.00
+     pcomp                78.26      75.00      76.60      23.00      24.00
+  aux                     92.47      89.00      90.70     385.00     400.00
+  conj                    66.06      72.78      69.26     607.00     551.00
+  ta                      54.59      69.42      61.12     740.00     582.00
+  passive                 97.06      72.37      82.91     170.00     228.00
+
+Micro-averaged
+Precision        74.43   Recall  74.95   F-score  74.69   tst GRs  98.79 std GRs  98.10
+
+Macro-averaged
+Precision        71.33   Recall  76.06   F-score  73.62
+
+as above + with pre-processing gr lists to get rid of additional passive features
+
+------------
+Summary
+
+Relation                Precision    Recall    F-score   tst GRs    std GRs
+ dependent                75.10      76.93      76.00   10428.00   10179.00
+   mod                    63.20      66.21      64.67    3603.00    3439.00
+    ncmod                 66.99      71.92      69.37    3308.00    3081.00
+    xmod                  58.48      56.18      57.31     171.00     178.00
+    cmod                  63.06      41.67      50.18     111.00     168.00
+    pmod                  61.54      66.67      64.00      13.00      12.00
+  det                     89.20      92.59      90.86    1148.00    1106.00
+  arg_mod                 73.60      74.44      74.02   15790.00   15612.00
+   arg                    76.50      74.90      75.69    4276.00    4367.00
+    subj                  78.12      66.59      71.90    1161.00    1362.00
+     ncsubj               81.17      68.81      74.48    1147.00    1353.00
+     xsubj                60.00      42.86      50.00       5.00       7.00
+     csubj                22.22     100.00      36.36       9.00       2.00
+    subj_or_dobj          81.17      73.90      77.37    2836.00    3115.00
+    comp                  74.81      77.47      76.12    3112.00    3005.00
+     obj                  77.95      77.78      77.87    2304.00    2309.00
+      dobj                84.36      80.60      82.44    1675.00    1753.00
+      obj2                42.11      80.00      55.17      38.00      20.00
+      iobj                81.90      83.58      82.73     547.00     536.00
+     clausal              61.78      72.17      66.58     785.00     672.00
+      xcomp               80.92      83.46      82.17     393.00     381.00
+      ccomp               63.52      85.57      72.91     392.00     291.00
+     pcomp                82.61      79.17      80.85      23.00      24.00
+  aux                     93.51      90.00      91.72     385.00     400.00
+  conj                    66.06      72.78      69.26     607.00     551.00
+  ta                      52.70      67.01      59.00     740.00     582.00
+  passive                 78.26      72.00      75.00      23.00      25.00
+
+Micro-averaged
+Precision        74.15   Recall  74.83   F-score  74.49   tst GRs  98.27 std GRs  97.37
+
+Macro-averaged
+Precision        70.03   Recall  73.90   F-score  71.91

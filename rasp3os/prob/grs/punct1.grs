@@ -1,0 +1,284 @@
+The_AT abbot_NN1 appeared_VVD !_!
+(ncsubj appeared abbot _)
+(det abbot The)
+
+The_AT host_NN1 appeared_VVD ;_; the_AT abbot_NN1 blushed_VVD
+(ncsubj blushed abbot _)
+(det abbot the)
+(ncsubj appeared host _)
+(det host The)
+
+The_AT host_NN1 appeared_VVD ;_; the_AT abbot_NN1 blushed_VVD ;_; Kim_NP1 blubbered_VVD
+(ncsubj blubbered Kim _)
+(ncsubj blushed abbot _)
+(det abbot the)
+(ncsubj appeared host _)
+(det host The)
+
+The_AT host_NN1 appeared_VVD ,_, the_AT abbot_NN1 blushed_VVD
+(ta end appeared blushed)
+(ncsubj blushed abbot _)
+(det abbot the)
+(ncsubj appeared host _)
+(det host The)
+
+He_PPHS1 made_VVD the_AT discovery_NN1 :_: Kim_NP1 was_VBDZ the_AT abbot_NN1
+(ta colon made was)
+(ncsubj was Kim _)
+(xcomp _ was abbot)
+(det abbot the)
+(ncsubj made He _)
+(dobj made discovery)
+(det discovery the)
+
+He_PPHS1 made_VVD the_AT discovery_NN1 :_: Kim_NP1 was_VBDZ the_AT abbot_NN1 ;_; Lee_NP1 was_VBDZ the_AT host_NN1
+(ncsubj made He _)
+(dobj made discovery)
+(ta colon discovery was)
+(ncsubj was Lee _)
+(xcomp _ was host)
+(det host the)
+(ncsubj was Kim _)
+(xcomp _ was abbot)
+(det abbot the)
+(det discovery the)
+
+He_PPHS1 made_VVD the_AT discovery_NN1 -_- Kim_NP1 was_VBDZ the_AT abbot_NN1
+(ta end made was)
+(ncsubj was Kim _)
+(xcomp _ was abbot)
+(det abbot the)
+(ncsubj made He _)
+(dobj made discovery)
+(det discovery the)
+
+The_AT abbot_NN1 (_( Kim_NP1 )_) blushed_VVD
+(ncsubj blushed abbot _)
+(ta bal abbot Kim)
+(det abbot The)
+
+What_DDQ could_VM the_AT abbot_NN1 do_VD0 ?_?
+(obj do What _)
+(ncsubj do abbot _)
+(det abbot the)
+
+The_AT abbot_NN1 appeared_VVD (_( he_PPHS1 was_VBDZ the_AT host_NN1 )_) and_CC bellowed_VVD a_AT1 message_NN1
+(ncsubj and abbot _)
+(conj and appeared)
+(conj and bellowed)
+(dobj bellowed message)
+(det message a)
+(ta bal appeared was)
+(ncsubj was he _)
+(xcomp _ was host)
+(det host the)
+(det abbot The)
+
+The_AT abbot_NN1 appeared_VVD -_- he_PPHS1 was_VBDZ the_AT host_NN1 -_- and_CC bellowed_VVD a_AT1 message_NN1
+(ncsubj and abbot _)
+(conj and appeared)
+(conj and bellowed)
+(dobj bellowed message)
+(det message a)
+(ta bal appeared was)
+(ncsubj was he _)
+(xcomp _ was host)
+(det host the)
+(det abbot The)
+
+The_AT abbot_NN1 (_( who_PNQS appeared_VVD scared_VVN )_) bawled_VVD
+(ncsubj bawled abbot _)
+(ta bal abbot appeared)
+(ncsubj appeared who _)
+(xcomp _ appeared scared)
+(det abbot The)
+
+The_AT abbot_NN1 (_( who_PNQS bellowed_VVD -_- after_ICS he_PPHS1 bawled_VVD )_) was_VBDZ there_RL
+(ncsubj was abbot _)
+(ncmod prt was there)
+(ta bal abbot bellowed)
+(ta end bellowed after)
+(ccomp _ after bawled)
+(ncsubj bawled he _)
+(ncsubj bellowed who _)
+(det abbot The)
+
+The_AT abbot_NN1 ,_, in_II a_AT1 scurry_NN1 ,_, appeared_VVD
+(ncsubj appeared abbot _)
+(ta bal abbot in)
+(dobj in scurry)
+(det scurry a)
+(det abbot The)
+
+The_AT abbot_NN1 ,_, who_PNQS was_VBDZ amused_VVN ,_, appeared_VVD
+(ncsubj appeared abbot _)
+(ta bal abbot amused)
+(ncsubj amused who _)
+(aux amused was)
+(passive amused)
+(det abbot The)
+
+The_AT abbot_NN1 ,_, being_VBG amused_VVN ,_, appeared_VVD
+(ncsubj appeared abbot _)
+(ta bal abbot amused)
+(aux amused being)
+(passive amused)
+(det abbot The)
+
+The_AT abbot_NN1 ,_, Kim_NP1 ,_, appeared_VVD
+(ncsubj appeared abbot _)
+(ta bal abbot Kim)
+(det abbot The)
+
+The_AT abbot_NN1 ,_, the_AT host_NN1 ,_, appeared_VVD
+(ncsubj appeared abbot _)
+(ta bal abbot host)
+(det host the)
+(det abbot The)
+
+The_AT abbot_NN1 ,_, if_CS you_PPY promise_VV0 to_TO accept_VV0 ,_, will_VM answer_VV0 you_PPY
+(ncsubj answer abbot _)
+(aux answer will)
+(dobj answer you)
+(ta bal abbot if)
+(ccomp _ if promise)
+(ncsubj promise you _)
+(xcomp to promise accept)
+(det abbot The)
+
+In_II a_AT1 scurry_NN1 ,_, the_AT abbot_NN1 appeared_VVD
+(ncmod _ appeared In)
+(ncsubj appeared abbot _)
+(det abbot the)
+(dobj In scurry)
+(det scurry a)
+
+The_AT abbot_NN1 (_( who_PNQS appeared_VVD )_) bawled_VVD ;_; Kim_NP1 bawled_VVD -_- what_DDQ could_VM he_PPHS1 do_VD0 ?_?
+(ta end bawled do)
+(obj do what _)
+(ncsubj do he _)
+(ncsubj bawled Kim _)
+(ncsubj bawled abbot _)
+(ta bal abbot appeared)
+(ncsubj appeared who _)
+(det abbot The)
+
+The_AT crazy_JJ ,_, adamant_JJ abbot_NN1 appeared_VVD
+(ncsubj appeared abbot _)
+(det abbot The)
+(ncmod _ abbot crazy)
+(ncmod _ abbot adamant)
+
+The_AT abbot_NN1 appeared_VVD ?_? ;_; it_PPH1 is_VBZ conceivable_JJ
+(ncsubj is it _)
+(xcomp _ is conceivable)
+(ncsubj appeared abbot _)
+(det abbot The)
+
+The_AT abbot_NN1 appeared_VVD :_: he_PPHS1 was_VBDZ better_RRR ;_; but_CCB he_PPHS1 was_VBDZ not_XX confident_JJ
+(ta colon appeared but)
+(conj but was)
+(ncsubj was he _)
+(xcomp _ was confident)
+(ncmod _ confident not)
+(ncsubj was he _)
+(ncmod _ was better)
+(ncsubj appeared abbot _)
+(det abbot The)
+
+The_AT abbot_NN1 appeared_VVD :_: he_PPHS1 was_VBDZ better_RRR ,_, but_CCB he_PPHS1 was_VBDZ not_XX confident_JJ
+(ta colon appeared but)
+(conj was but)
+(conj but was)
+(ncsubj was he _)
+(xcomp _ was confident)
+(ncmod _ confident not)
+(ncsubj was he _)
+(ncmod _ was better)
+(ncsubj appeared abbot _)
+(det abbot The)
+
+Kim_NP1 ,_, Sandy_NP1 ,_, and_CC the_AT abbot_NN1 appeared_VVD
+(ncsubj appeared and _)
+(conj and Kim)
+(conj and Sandy)
+(conj and abbot)
+(det abbot the)
+
+Kim_NP1 ,_, the_AT abbot_NN1 and_CC Sandy_NP1 appeared_VVD
+(ncsubj appeared and _)
+(conj and Kim)
+(conj and abbot)
+(conj and Sandy)
+(det abbot the)
+
+The_AT abbot_NN1 ,_, host_NN1 and_CC abbey_NN1 appeared_VVD
+(ncsubj appeared and _)
+(det and The)
+(conj and abbot)
+(conj and host)
+(conj and abbey)
+
+The_AT abbot_NN1 ,_, host_NN1 ,_, and_CC abbey_NN1 appeared_VVD
+(ncsubj appeared and _)
+(det and The)
+(conj and abbot)
+(conj and host)
+(conj and abbey)
+
+Sandy_NP1 appeared_VVD ,_, bawled_VVD and_CC blushed_VVD
+(ncsubj and Sandy _)
+(conj and appeared)
+(conj and bawled)
+(conj and blushed)
+
+Sandy_NP1 appeared_VVD ,_, bawled_VVD ,_, and_CC blushed_VVD
+(ncsubj and Sandy _)
+(conj and appeared)
+(conj and bawled)
+(conj and blushed)
+
+Sandy_NP1 appeared_VVD ,_, he_PPHS1 bawled_VVD and_CC Kim_NP1 blushed_VVD
+(conj appeared and)
+(conj bawled and)
+(conj and blushed)
+(ncsubj blushed Kim _)
+(ncsubj bawled he _)
+(ncsubj appeared Sandy _)
+
+Sandy_NP1 appeared_VVD ,_, he_PPHS1 bawled_VVD ,_, and_CC Kim_NP1 blushed_VVD
+(conj appeared and)
+(conj bawled and)
+(conj and blushed)
+(ncsubj blushed Kim _)
+(ncsubj bawled he _)
+(ncsubj appeared Sandy _)
+
+Kim_NP1 (_( the_AT abbot_NN1 ,_, the_AT host_NN1 )_) appeared_VVD
+(ncsubj appeared Kim _)
+(ta bal Kim host)
+(det host the)
+(det abbot the)
+
+The_AT abbot_NN1 ?_?
+(det abbot The)
+
+The_AT abbot_NN1 ,_, the_AT host_NN1 came_VVD
+(ta comma came abbot)
+(ncsubj came host _)
+(det host the)
+(det abbot The)
+
+Kim_NP1 amazed_VVD the_AT host_NN1 -_- he_PPHS1 was_VBDZ easily_RR amused_VVN :_: she_PPHS1 could_VM blubber_VV0
+(ta end amazed amused)
+(ta colon amused blubber)
+(ncsubj blubber she _)
+(aux blubber could)
+(ncsubj amused he _)
+(ncmod _ amused easily)
+(aux amused was)
+(passive amused)
+(ncsubj amazed Kim _)
+(dobj amazed host)
+(det host the)
+

@@ -1,0 +1,2123 @@
+\section{Category Structure and Semantics}
+
+In this section we describe the basic structure of major category
+phrases and indicate the range of structures that are defined by the
+grammar. At the same time we describe the semantic translations given
+to the categories.
+
+\subsection{N2}
+
+\subsubsection{Top Level Structure}
+
+The top levels of N2 structure can be schematised as in \nextex{}.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 12.31em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 15.00em\raise1.500ex\hbox{\special{ps::currentpoint /momaaky exch def /momaakx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 7.75em\lower0.500ex\hbox{\special{ps::currentpoint momaakx momaaky lineto stroke moveto}}%
+\hskip 14.12em\lower0.500ex\hbox{\special{ps::currentpoint momaakx momaaky lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 2.75em\hbox to 10.00em{\hss{\mbox{\hspace{1.4in}DetN : the\hspace{1.4in}}}\hss}%
+\hskip 3.88em\hbox to 10.50em{\hss{\mbox{\hspace{1.4in}N2[--SPEC]\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.00em\hbox to 9.50em{\hss{N2[+POSS] : kim's }\hss}%
+\hskip 9.50em\raise1.972ex\hbox{\special{ps::currentpoint /momaany exch def /momaanx exch def}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 0.00em\hbox to 15.50em{\hss{\mbox{\hspace{1.4in}A2[+QUA,--PRD] : all\hspace{1.4in}}}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momaanx momaany lineto stroke moveto}}%
+\hskip 10.25em\lower0.812ex\hbox{\special{ps::currentpoint momaanx momaany lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 10.50em\hbox to 12.50em{\hss{\mbox{\hspace{1.4in}A2[+QUA, +PRD]\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}N1\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 16.75em\vrule width.04em%
+\hskip 10.21em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 13.25em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}many\hspace{1.4in}}}\hss}%
+\hskip 3.00em\hbox to 7.50em{\hss{\mbox{\hspace{1.4in}books\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+In \prevex{}, there are two N2 nodes distinguished by the feature
+SPEC.  This allows us to recognise an extra level of structure inside
+N2 without the need to recognise an extra BAR level. In specifier
+position (under N2[+SPEC]), determiners, possessive N2s or [PRD --]
+quantifying adjectives ({\it all}, {\it both}, etc.) can appear.
+N2[--SPEC] may contain a [PRD +] quantifying adjective ({\it many}, {\it
+few}, cardinals, ordinals etc.) and N1. By identifying two types
+of quantifying adjective which attach at different levels, we are able
+to generate N2s containing more than one specifier/quantifier ({\it
+the many books}, {\it all three books}, {\it John's many virtues})
+without having to build complex determiner phrases. 
+
+\subsubsection{Modifiers}
+
+Modifiers are introduced by means of recursive rules as daughter to N1
+and sister to N1. The set of N2 modifiers defined by the grammar is as
+follows: 
+\begin{itemize}
+\item prenominal A2 ({\it good book})
+\item prenominal possessive N2 ({\it the women's javelin competition})
+\item postnominal A2 ({\it a man taller than Lee})
+\item reduced relatives (described as VP[+PRD])---{\it a book written
+by Tolstoy}, {\it a man writing a book}
+\item P2 ({\it a man with an umbrella})
+\item possessive P2 ({\it a book of Lee's})
+\item infinitival VP ({\it the man to help you}), 
+\item `gappy' infinitival VP ({\it the man to buy books from \_}), 
+\item relative clauses ({\it the man who sold me a book},
+{\it the man who I bought a book from}) 
+\item `that'-less relatives ({\it the man I bought a book from}). 
+\end{itemize}
+Free relatives are also catered for---see the section on relative
+clauses below. A problem arises when both a pre-modifier and a
+post-modifier occur inside an N2, in that a spurious attachment
+ambiguity is created. For example, {\it a good book written by
+Tolstoy} would be analysed as ambiguous between \nextex{a} and
+\nextex{b}
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr}) \\
+a.\begin{minipage}[t]{7cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 2.62em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 5.25em\raise1.500ex\hbox{\special{ps::currentpoint /momacky exch def /momackx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 2.75em\lower0.500ex\hbox{\special{ps::currentpoint momackx momacky lineto stroke moveto}}%
+\hskip 4.75em\lower0.500ex\hbox{\special{ps::currentpoint momackx momacky lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 1.75em\hbox to 2.00em{\hss{DetN}\hss}%
+\hskip 1.00em\hbox to 5.50em{\hss{N2[--SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 2.75em\vrule width.04em%
+\hskip 4.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 5.50em{\hss{\mbox{\hspace{1.4in}a\hspace{1.4in}}}\hss}%
+\hskip 1.50em\hbox to 1.00em{\hss{N1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.69em\raise1.500ex\hbox{\special{ps::currentpoint /momacpy exch def /momacpx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.69em\lower0.500ex\hbox{\special{ps::currentpoint momacpx momacpy lineto stroke moveto}}%
+\hskip 7.62em\lower0.500ex\hbox{\special{ps::currentpoint momacpx momacpy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.19em\hbox to 1.00em{\hss{A2}\hss}%
+\hskip 6.62em\hbox to 1.00em{\hss{N1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.69em\vrule width.04em%
+\hskip 7.71em\raise1.500ex\hbox{\special{ps::currentpoint /momacty exch def /momactx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.19em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}good\hspace{1.4in}}}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momactx momacty lineto stroke moveto}}%
+\hskip 5.75em\lower0.812ex\hbox{\special{ps::currentpoint momactx momacty lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.94em\hbox to 1.00em{\hss{N1}\hss}%
+\hskip 2.75em\hbox to 5.00em{\hss{VP[+PRD] }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.44em\vrule width.04em%
+\hskip 5.71em\raise1.500ex\hbox{\special{ps::currentpoint /momacyy exch def /momacyx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 8.19em\hbox to 0.50em{\hss{N}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint /sisacyy exch def /sisacyx exch def}}%
+\hskip 8.25em\lower0.812ex\hbox{\special{ps::currentpoint sisacyx sisacyy lineto momacyx momacyy lineto closepath stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.44em\vrule width.04em%
+\hskip 1.21em\hbox to 9.00em{\hss{written by Tolstoy}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.94em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}book\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+b. 
+\begin{minipage}[t]{7cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 4.56em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.25em\raise1.500ex\hbox{\special{ps::currentpoint /momabgy exch def /momabgx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.00em\lower0.500ex\hbox{\special{ps::currentpoint momabgx momabgy lineto stroke moveto}}%
+\hskip 6.06em\lower0.500ex\hbox{\special{ps::currentpoint momabgx momabgy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.00em\hbox to 2.00em{\hss{DetN}\hss}%
+\hskip 2.31em\hbox to 5.50em{\hss{N2[--SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.00em\vrule width.04em%
+\hskip 6.02em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 1.25em\hbox to 5.50em{\hss{\mbox{\hspace{1.4in}a\hspace{1.4in}}}\hss}%
+\hskip 2.81em\hbox to 1.00em{\hss{N1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 10.12em\raise1.500ex\hbox{\special{ps::currentpoint /momably exch def /momablx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 5.88em\lower0.500ex\hbox{\special{ps::currentpoint momablx momably lineto stroke moveto}}%
+\hskip 8.38em\lower0.500ex\hbox{\special{ps::currentpoint momablx momably lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 5.38em\hbox to 1.00em{\hss{N1}\hss}%
+\hskip 5.38em\hbox to 5.00em{\hss{VP[+PRD] }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 6.00em\raise1.500ex\hbox{\special{ps::currentpoint /momabny exch def /momabnx exch def}}%
+\hskip 8.25em\raise1.500ex\hbox{\special{ps::currentpoint /momabuy exch def /momabux exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.50em\lower0.500ex\hbox{\special{ps::currentpoint momabnx momabny lineto stroke moveto}}%
+\hskip 4.75em\lower0.500ex\hbox{\special{ps::currentpoint momabnx momabny lineto stroke moveto}}%
+\hskip 1.75em\lower0.500ex\hbox{\special{ps::currentpoint /sisabuy exch def /sisabux exch def}}%
+\hskip 8.25em\lower0.500ex\hbox{\special{ps::currentpoint sisabux sisabuy lineto momabux momabuy lineto closepath stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.00em\hbox to 1.00em{\hss{A2}\hss}%
+\hskip 3.75em\hbox to 1.00em{\hss{N1}\hss}%
+\hskip 1.00em\hbox to 9.00em{\hss{written by Tolstoy}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\vrule width.04em%
+\hskip 4.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}good\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 0.50em{\hss{N}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.25em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.75em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}book\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+To solve this problem we have introduced a feature MOD with values
+PRE, POST and NONE which is used in such a way as to ensure that
+pre-modifiers attach lower in an N1 than post-modifiers. Thus \prevex{b} is
+the only tree which will be produced. \nextex{} demonstrates the
+distribution of the feature MOD.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 5.19em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.88em\raise1.500ex\hbox{\special{ps::currentpoint /momadoy exch def /momadox exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.62em\lower0.500ex\hbox{\special{ps::currentpoint momadox momadoy lineto stroke moveto}}%
+\hskip 8.12em\lower0.500ex\hbox{\special{ps::currentpoint momadox momadoy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 2.62em\hbox to 2.00em{\hss{DetN}\hss}%
+\hskip 4.38em\hbox to 5.50em{\hss{N2[--SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.62em\vrule width.04em%
+\hskip 8.09em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.88em\hbox to 5.50em{\hss{\mbox{\hspace{1.4in}a\hspace{1.4in}}}\hss}%
+\hskip 1.88em\hbox to 7.00em{\hss{N1[MOD POST]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 11.75em\raise1.500ex\hbox{\special{ps::currentpoint /momadty exch def /momadtx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 6.00em\lower0.500ex\hbox{\special{ps::currentpoint momadtx momadty lineto stroke moveto}}%
+\hskip 11.50em\lower0.500ex\hbox{\special{ps::currentpoint momadtx momadty lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.00em\hbox to 6.00em{\hss{N1[MOD PRE]}\hss}%
+\hskip 6.00em\hbox to 5.00em{\hss{VP[+PRD] }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 6.00em\raise1.500ex\hbox{\special{ps::currentpoint /momadvy exch def /momadvx exch def}}%
+\hskip 11.50em\raise1.500ex\hbox{\special{ps::currentpoint /momaecy exch def /momaecx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.50em\lower0.500ex\hbox{\special{ps::currentpoint momadvx momadvy lineto stroke moveto}}%
+\hskip 5.00em\lower0.500ex\hbox{\special{ps::currentpoint momadvx momadvy lineto stroke moveto}}%
+\hskip 4.75em\lower0.500ex\hbox{\special{ps::currentpoint /sisaecy exch def /sisaecx exch def}}%
+\hskip 8.25em\lower0.500ex\hbox{\special{ps::currentpoint sisaecx sisaecy lineto momaecx momaecy lineto closepath stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.00em\hbox to 1.00em{\hss{A2}\hss}%
+\hskip 1.00em\hbox to 7.00em{\hss{N1[MOD NONE]}\hss}%
+\hskip 1.00em\hbox to 9.00em{\hss{written by Tolstoy}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\vrule width.04em%
+\hskip 4.96em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}good\hspace{1.4in}}}\hss}%
+\hskip 1.25em\hbox to 0.50em{\hss{N}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.50em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 5.00em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}book\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+\subsubsection{Complements}
+
+Complements to nouns are introduced as daughters of N1 and sisters of
+N (the lexical head). The lexical head carries a SUBCAT feature to
+ensure that nouns cooccur with appropriate complements. The full set
+of N complements recognised by the grammar can be found in the
+grammar---the rules N1/N--N1/OFN1 are ones which introduce nouns
+with their complements.
+
+\subsubsection{N2 Semantics}
+
+In the previous section we described how non-predicative and
+predicative N2s receive different translations. At the N1 level and
+below they have the same translation but at the N2 levels they are
+treated differently. Predicative N2s have a translation as a predicate
+of the form {\tt (lambda (x) (...))} while at the topmost level,
+non-predicatives receive a translation which is a complete
+beta-reduced expression which cannot be altered in any way (see the
+examples in \exnum{-8}{}). In order to produce such forms, information
+from varying sources is required. The lexical entry for the head noun
+provides the basic predicate and the lexical ID rule that it matches
+provides the predicate-argument structure for that predicate.  In
+\nextex{} we show the SRs for some N1s which dominate lexical heads
+and their complements---each of these is of the form {\tt (lambda (x)
+(....))}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"desire to help"
+(lambda (x1) 
+   (DESIRE x1 
+           (HELP (uqe (some (e1) (NOTENSE e1)))
+                 (pro (the (y1) (animate y1))))))
+
+"doubts about the abbot"
+(lambda (x1)
+      (and (DOUBT x1)
+           (ABOUT x1 (dd (the (x2) (and (sg x2) (ABBOT x2)))))))
+
+"discovery that it was raining"
+(lambda (x1) 
+   (DISCOVERY x1
+              (RAIN (uqe (some (e1) (PAST (PROG e1)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+At the level of N1, the translations of modifiers are conjoined and
+merged with the translations of their N1 sisters:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"crazy abbot"
+(lambda (x1)
+   (and (ABBOT x1) 
+        (CRAZY x1 (degree unknown))))
+\end{verbatim}
+\end{ex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"crazy desire to help"
+(lambda (x1)
+   (and (DESIRE x1
+               (HELP (uqe (some (e1) (NOTENSE e1)))
+                     (pro (the (y1) (animate y1)))))
+        (CRAZY x1 (degree unknown))))
+\end{verbatim}
+\end{splitex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"abbot anxious about abbeys"
+(lambda (x1)
+   (and (ABBOT x1)
+        ((CP ANXIOUS ABOUT) x1 (kind (all (x2) (and (pl x2) (ABBEY x2))))
+            (degree unknown))))
+
+"abbot abandoning the abbey"
+(lambda (x1)
+   (and (ABBOT x1)
+        (ABANDON (uqe (some (e1) (NOTENSE (PROG e1))))
+                  x1 (dd (the (x2) (and (sg x2) (ABBEY x2)))))))
+
+"the abbot who lee helped"
+(lambda (x1)
+   (and (ABBOT x1)
+        (HELP (uqe (some (e1) (PAST e1)))
+              (name (the (x2) (and (sg x2) (named x2 LEE) (animate x2))))
+               x1)))
+\end{verbatim}
+\end{splitex}
+\normalsize
+
+It is at the higher levels that the semantics of N2s begins to become
+complex. At these levels, information about quantifiers, about the
+singular/plural/mass distinction, about definiteness etc.\ needs to be
+brought together. The semantics of N2[--SPEC] varies according to
+whether it contains a low attaching A2[+QUA, +PRD] or not. If it does
+it is [QFEAT +] and receives a translation as in \nextex{}. If it does
+not then it is [QFEAT --] and has a translation like an N1.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"many abbots"
+(lambda (Q1) (lambda (T1)
+    (T1 many (lambda (x1) (and (Q1 x1) (ABBOT x1))))))
+
+"three abbots"
+(lambda (Q1) (lambda (T1)
+    (T1 (NN \3) (lambda (x1) (and (Q1 x1) (ABBOT x1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Here the {\tt (lambda (T1) (T1 ..))} is serving simply to carry up
+information about the quantifier separately from the rest of the
+translation since once the quantifier has bound its variable that
+variable is inaccessible. We can only use the quantifier to bind the
+variable associated with the noun meaning at the point where there is
+definitely no other expression that needs to be predicated of it and
+that point is higher up when the N2[+SPEC] is translated.  In the
+rules for N2[+SPEC], the {\tt T1} is instantiated to a function which
+expects two arguments (a quantifier and the lambda expression
+corresponding to the N1 translation) and which puts the two together
+so that the quantifier binds the variable.  The {\it (lambda (Q1)
+(..))} is also waiting to be instantiated at the N2[+SPEC] level to a
+predicate expressing information about whether the N2[+SPEC] is
+plural, singular or mass, and possibly about possessive determiners or
+N2s in specifier position.
+
+If a quantifier occurs in an N2[--SPEC] then that will be the
+quantifier for the whole N2 irrespective of which
+determiners/quantifiers attach under N2[+SPEC]. Some examples are
+given in \nextex{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"the many abbots"
+(dd (many (x1) (and (pl x1) (ABBOT x1))))
+
+"the three abbots"
+(dd ((NN \3) (x1) (and (pl x1) (ABBOT x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Here the lower quantifier ({\it many}, {\it three}) is the quantifier
+for the N2[+SPEC]. An initial {\it the} before the quantifier has the
+effect of labelling the translation as `dd' (definite decription)
+which implies that an antecedent for the expression should be found.
+
+Information about the singular/plural/mass distinction is incorporated
+at the N2[+SPEC] level and is a translation of the values of the
+syntactic features PLU and COUNT. The predicates `pl', `sg' and `ms'
+represent the feature value-pairs [PLU +, COUNT +], [PLU --, COUNT +]
+and [PLU --, COUNT --] respectively. By this means we preserve
+syntactic information which will be needed for the interpretation of
+N2s. In some cases, `pl' will indicate that the expression denotes a
+plural entity, `sg' that it denotes an individual and `ms' that it
+denotes a mass---\nextex{}. There is still much uncertainty about the
+semantics of plurals and mass terms. We assume, following Link (1983,
+1987) that the domain of individuals should contain plural
+individuals and masses but we have not been able to map from syntactic
+structure to a semantic representation that accurately reflects the
+semantic domain. Since `pl', `sg' and `ms' reflect syntactic
+information rather than semantic, there is not necessarily a direct
+correlation between these and the semantic domain. In the case of
+classical quantifiers such as {\it all} and {\it
+most}---\exnum{+2}{}---we have examples of what Link calls ``spurious
+plural quantification'' where the N2 is syntactically plural but where
+the quantifier actually ranges over singular individuals in the same
+way as {\it every} does---\exnum{+3}{}. In cases such at these it is
+important to remember that `pl', `sg' and `ms' reflect syntax and that
+further processing would be need to achieve an appropriate semantic
+characterisation.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"the abbot"
+(dd (the (x1) (and (sg x1) (ABBOT x1))))
+
+"the abbots"
+(dd (the (x1) (and (pl x1) (ABBOT x1))))
+
+"the butter"
+(dd (the (x1) (and (ms x1) (BUTTER x1))))
+\end{verbatim}
+\end{ex}
+\begin{ex}
+\begin{verbatim}
+"all abbots"
+(uq (all (x1) (and (pl x1) (ABBOT x1))))
+
+"most abbots"
+(uq (most (x1) (and (pl x1) (ABBOT x1))))
+\end{verbatim}
+\end{ex}
+\begin{ex}
+\begin{verbatim}
+"every abbot"
+(uq (every (x1) (and (sg x1) (ABBOT x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+There are related problems concerning collective versus
+distributive readings of plurals and coordinated N2s, and the question
+of group denoting nouns such as {\it committee}. We have been unable
+to make such distinctions in this release of the
+grammar.\footnote{Some nouns, such as {\it committee} are marked as
+[GROUP +] in the lexicon but we have not provided an analysis of
+these in this release.}
+
+\subsubsection{Possessive N2}
+
+Special rules define possessive N2s and the positions in which they
+can occur (see ID rules N2+/POSSNP1--N2+/POSSNP3, N2/POSSa--N2/POSSc,
+N1/POSSMOD1--N1/POSSMOD2 and N1/POSS). The structure assigned to an
+N2 such as {\it the man with the umbrella 's book} is shown in \nextex{}.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 18.19em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 20.81em\raise1.500ex\hbox{\special{ps::currentpoint /momadry exch def /momadrx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 14.06em\lower0.500ex\hbox{\special{ps::currentpoint momadrx momadry lineto stroke moveto}}%
+\hskip 13.25em\lower0.500ex\hbox{\special{ps::currentpoint momadrx momadry lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 7.06em\hbox to 14.00em{\hss{\mbox{\hspace{1.4in}N2[+SPEC, +POSS]\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 10.50em{\hss{\mbox{\hspace{1.4in}N2[--SPEC]\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 14.12em\raise1.500ex\hbox{\special{ps::currentpoint /momadty exch def /momadtx exch def}}%
+\hskip 13.19em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 8.38em\lower0.812ex\hbox{\special{ps::currentpoint momadtx momadty lineto stroke moveto}}%
+\hskip 11.38em\lower0.812ex\hbox{\special{ps::currentpoint momadtx momadty lineto stroke moveto}}%
+\hskip 7.06em\hbox to 1.00em{\hss{N1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 5.38em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}N2\hspace{1.4in}}}\hss}%
+\hskip 3.38em\hbox to 10.00em{\hss{\mbox{\hspace{1.4in}N1[+POSS]\hspace{1.4in}}}\hss}%
+\hskip 2.56em\vrule width.04em%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.50em\raise1.972ex\hbox{\special{ps::currentpoint /momadvy exch def /momadvx exch def}}%
+\hskip 11.25em\vrule width.04em%
+\hskip 7.27em\hbox to 0.50em{\hss{N}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\lower0.812ex\hbox{\special{ps::currentpoint momadvx momadvy lineto stroke moveto}}%
+\hskip 9.75em\lower0.812ex\hbox{\special{ps::currentpoint momadvx momadvy lineto stroke moveto}}%
+\hskip 4.25em\hbox to 4.50em{\hss{N[+POSS]}\hss}%
+\hskip 5.31em\vrule width.04em%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 0.00em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}DetN\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 10.50em{\hss{\mbox{\hspace{1.4in}N2[--SPEC]\hspace{1.4in}}}\hss}%
+\hskip 1.25em\vrule width.04em%
+\hskip 6.52em\hbox to 2.00em{\hss{book}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\vrule width.04em%
+\hskip 9.71em\vrule width.04em%
+\hskip 5.96em\hbox to 1.00em{\hss{'s}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 2.75em\hbox to 1.50em{\hss{the}\hss}%
+\hskip 8.50em\hbox to 1.00em{\hss{N1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 13.38em\raise1.500ex\hbox{\special{ps::currentpoint /momaeay exch def /momaeax exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 9.62em\lower0.500ex\hbox{\special{ps::currentpoint momaeax momaeay lineto stroke moveto}}%
+\hskip 7.25em\lower0.500ex\hbox{\special{ps::currentpoint momaeax momaeay lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 6.62em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}N1\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 6.50em{\hss{\mbox{\hspace{1.4in}P2\hspace{1.4in}} }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 9.62em\vrule width.04em%
+\hskip 7.21em\raise1.500ex\hbox{\special{ps::currentpoint /momaefy exch def /momaefx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 9.38em\hbox to 0.50em{\hss{N}\hss}%
+\hskip 3.00em\lower0.812ex\hbox{\special{ps::currentpoint /sisaefy exch def /sisaefx exch def}}%
+\hskip 7.75em\lower0.812ex\hbox{\special{ps::currentpoint sisaefx sisaefy lineto momaefx momaefy lineto closepath stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 9.62em\vrule width.04em%
+\hskip 2.96em\hbox to 8.50em{\hss{with the umbrella}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.88em\hbox to 1.50em{\hss{man}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+Possessives denote a relationship between the `possessor' and the
+`possessee' but the predicate instantiating this relationship is not
+recovered and is represented by a predicate variable in the SR:
+
+\small
+\begin{ex} 
+\begin{verbatim} 
+"the abbot 's butter"
+(dd (the (x1) (and (ms x1) 
+     (lambda (R1) (R1 x1 (dd (the (x2) (and (sg x2) (ABBOT x2))))))
+     (BUTTER x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Possessive determiners receive a similar interpretation:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"our abbey"
+(uq (some (x1) (and (sg x1)
+     (lambda (R1) (R1 x1 (pro (the (y1) (and (pl y1) (speaker y1))))))
+     (ABBEY x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Partitives}
+
+An additional type of N2[+SPEC] is the partitive. Partitives are
+assigned one of the following two structures (see ID rules
+N2+/PART1--N2+/PART6B):
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 14.75em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 17.25em\raise1.500ex\hbox{\special{ps::currentpoint /momahzy exch def /momahzx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 7.50em\lower0.500ex\hbox{\special{ps::currentpoint momahzx momahzy lineto stroke moveto}}%
+\hskip 9.75em\lower0.500ex\hbox{\special{ps::currentpoint momahzx momahzy lineto stroke moveto}}%
+\hskip 9.75em\lower0.500ex\hbox{\special{ps::currentpoint momahzx momahzy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 15.00em{\hss{\mbox{\hspace{1.4in}N2/A2[PART OF/OF2]\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 2.50em{\hss{P[of]}\hss}%
+\hskip 3.50em\hbox to 10.00em{\hss{\mbox{\hspace{1.4in}N2[+SPEC]\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.50em\vrule width.04em%
+\hskip 9.71em\vrule width.04em%
+\hskip 9.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.50em\hbox to 6.00em{\hss{each, which }\hss}%
+\hskip 3.75em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}of\hspace{1.4in}}}\hss}%
+\hskip 4.50em\hbox to 4.50em{\hss{the book }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\hbox to 8.00em{\hss{all, some, half }\hss}%
+\hskip 13.00em\hbox to 5.00em{\hss{the books }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.75em\hbox to 7.50em{\hss{any, both, one }\hss}%
+\hskip 11.00em\hbox to 9.50em{\hss{\mbox{\hspace{1.4in}the bread\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\hbox to 8.00em{\hss{many, few, much }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.50em\hbox to 8.00em{\hss{either, neither }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.00em\hbox to 9.00em{\hss{three, twenty one }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 2.00em\hbox to 11.00em{\hss{\mbox{\hspace{1.4in}three pounds\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 11.75em\hbox to 5.00em{\hss{N2[+SPEC]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 14.25em\raise1.500ex\hbox{\special{ps::currentpoint /momaisy exch def /momaisx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 7.50em\lower0.500ex\hbox{\special{ps::currentpoint momaisx momaisy lineto stroke moveto}}%
+\hskip 13.50em\lower0.500ex\hbox{\special{ps::currentpoint momaisx momaisy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 15.00em{\hss{\mbox{\hspace{1.4in}N2/A2[PART NO\_OF]\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 10.00em{\hss{\mbox{\hspace{1.4in}N2[+SPEC]\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.50em\vrule width.04em%
+\hskip 13.46em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 6.50em\hbox to 2.00em{\hss{all }\hss}%
+\hskip 10.25em\hbox to 4.50em{\hss{the book }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 6.25em\hbox to 2.50em{\hss{both }\hss}%
+\hskip 9.75em\hbox to 5.00em{\hss{the books }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 6.25em\hbox to 2.50em{\hss{half }\hss}%
+\hskip 9.75em\hbox to 5.00em{\hss{the bread }\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.00em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}such\hspace{1.4in}}}\hss}%
+\hskip 6.00em\hbox to 8.00em{\hss{\mbox{\hspace{1.4in}a book\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+In these structures the leftmost constituent may be an N2 ({\it
+either}, {\it three pounds}) or a quantifying A2 ({\it many}, {\it
+nearly all}). If it is an N2 then it is the head of the partitive and
+features such as PLU propagate from it. If the leftmost constituent is
+an A2 then the final N2[+SPEC] is the head and features propagate from
+there (although the A2 has to agree---see proprule AGR/NOM).  Whether
+head or not, the leftmost constituent is marked with a non-negative
+value for PART and therefore is the constituent which triggers the
+partitive structure and determines whether it will contain an {\it of}
+or not.
+
+Partitives are given translations such as the following:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"all of the abbots"
+(uq
+ (some (x1)
+  (and (pl x1) (part x1 #1=(dd (the (x2) (and (pl x2) (ABBOT x2)))))
+   (proportion x1 #1# ALL))))
+\end{verbatim}
+\end{ex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"half the butter"
+(uq
+ (some (x1)
+  (and (ms x1) (part x1 #1=(dd (the (x2) (and (ms x2) (BUTTER x2)))))
+   (proportion x1 #1# HALF))))
+\end{verbatim}
+\end{splitex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"eighty nine of those abbeys"
+(uq
+ (some (x1)
+  (and (pl x1)
+   (part x1 #1=(dd (the (x2) (and (pl x2) (distal x2) (ABBEY x2)))))
+   (quantity x1 #1# (NN (+ \80 \9))))))
+\end{verbatim}
+\end{splitex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"three grams of butter"
+(uq
+ (some (x1)
+  (and (pl x1)
+   (QUANTITY x1 (uq ((NN \3) (x2) (and (pl x2) (GRAM x2))))
+    (uq (some (x3) (and (ms x3) (BUTTER x3))))))))
+\end{verbatim}
+\end{splitex}
+\normalsize
+
+The first three examples denote a set of x1s (or a mass of x1 in the
+case of {\it half the butter}) such that the x1s form part of the
+set/mass denoted by the translation of the final N2[+SPEC]. The
+relationship between the two sets/masses is indicated by the
+proportion/quantity terms: in the first example, the set of x1s is
+equal to ALL of the set denoted by the N2, in the second the mass x1
+is HALF the mass denoted by the N2 {\it the butter} and in the third,
+the set of x1s is a precise quantity of members of the set denoted by
+the N2 {\it those abbeys}: 89. Numbers are marked as NN and given
+arithmetic translations which are solved by the post-processing
+module. In the fourth example there is a QUANTITY relation between the
+two N2s but no `part' relation.
+
+\subsubsection{Pronominals}
+
+There are a number of different kinds of [PRO +] nominals treated in
+the grammar. The feature PROTYPE distinguishes ones which can be
+modified from ones which cannot. All pronouns occurring on their own
+without modifiers have a structure where an N2[+SPEC] directly
+dominates the lexical head (see ID rule N2+/PRO). For the ones which
+take a modifier (e.g.\ {\it those who helped Kim}, {\it someone with a
+big nose}) an intermediate N1 node occurs but no N2[--SPEC] (see ID
+rules N2+/N1PROa--N2+/N1PROb and N1/PRO1--N1/PRO4).
+
+Not all syntactic pro-forms translate as pronominals in the semantics.
+The simple unmodifiable ones, such as the personal pronouns
+do---\nextex{}, but the more complex ones translate as quantifiers or
+definite descriptions as appropriate---\exnum{+2}{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"us"
+(pro (the (x1) (and (pl x1) (speaker x1))))
+\end{verbatim}
+\end{ex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"ourselves"
+(rpro (the (x1) (and (pl x1) (speaker x1))))
+\end{verbatim}
+\end{splitex}
+
+\begin{ex}
+\begin{verbatim}
+"someone"
+(uq (some (x1) (and (sg x1) (person x1))))
+\end{verbatim}
+\end{ex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"three"
+(uq ((NN \3) (x1) (and (pl x1) (entity x1))))
+\end{verbatim}
+\end{splitex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"someone who helps"
+(uq
+ (some (x1)
+  (and (and (sg x1) (person x1)) (HELP (uqe (some (e1) (PRES e1))) x1))))
+\end{verbatim}
+\end{splitex}
+\vspace{4mm}
+\begin{splitex}
+\begin{verbatim}
+"those in the abbey"
+(dd
+ (the (x1)
+  (and (and (pl x1) (distal x1) (entity x1))
+   (IN x1 (dd (the (x2) (and (sg x2) (ABBEY x2))))))))
+\end{verbatim}
+\end{splitex}
+\normalsize
+
+Some pronominals can head partitives as described in the previous
+section and these have a semantic translation which can be
+incorporated into the translation of the partitive:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"neither" (of the abbots)
+(lambda (x1) (lambda (y1) (proportion x1 y1 NEITHER)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Free Relatives}
+
+Free relatives are generated by the ID rules N2+/FREEREL and
+N2+/FREEREL2 and have SRs such as the following:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"whichever abbot helped lee"
+(dd
+ (the (_wh1)
+  (and (sg _wh1) (ABBOT _wh1)
+   (HELP (uqe (some (e1) (PAST e1))) _wh1
+    (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))))))
+
+"what/whatever kim helps"
+(dd
+ (the (_wh1)
+  (and (entity _wh1)
+   (HELP (uqe (some (e1) (PRES e1)))
+    (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))) _wh1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{WH N2s}
+
+Wh nominal constituents have a straightforward syntax but their
+interpretation varies according to whether they are [UB Q]
+(wh-question constituents) or [UB R] (relative N2s). The former have a
+semantic interpretation which has the same form as an equivalent
+non-wh N2 except that the variable is a `\_wh' variable (so that this
+can be identified as the questioned element):
+
+\small
+\begin{ex}
+\begin{verbatim}
+"the abbot"
+(dd (the (x1) (and (sg x1) (ABBOT x1))))
+
+"which abbot"
+(dd (the (_wh1) (and (sg _wh1) (ABBOT _wh1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+N2s which are [UB R] are lambda abstracts since they have to be
+combined with a relative clause and an N1 interpretation:
+
+\small
+\begin{ex}
+\begin{verbatim}
+(the book) "the cover of which" (is torn)
+(lambda (z1) (dd (the (x1)
+      (and (sg x1) (and (COVER x1) (OF x1 z1))))))
+
+(the man) "whose book" (I read)
+(lambda (z1) (dd (the (x1)
+      (and (and (sg x1) (BOOK x1))
+         (lambda (R1) (R1 x1 z1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Non-restrictive Modification}
+
+There is no provision in the grammar for non-restrictive nominal
+modifiers except for one ID rule, N2+/APPOS, which permits an
+N2[+SPEC] to occur in apposition to a name, or a name to occur in
+apposition to an N2, as in \nextex{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim the abbot"
+(dd
+ (the (x1)
+  (and (sg x1)
+   (equal x1 (name (the (x2) (and (sg x2) (named x2 KIM) (animate x2)))))
+   (equal x1 (dd (the (x3) (and (sg x3) (ABBOT x3))))))))
+
+"the abbot kim"
+(dd
+ (the (x1)
+  (and (sg x1)
+   (equal x1 (name (the (x2) (and 
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Deixis}
+
+Deictic pronouns and N2s containing deictic determiners have a
+standard syntax but have translations as definite descriptions which
+encode whether they require their antecedents to be distal or
+proximal:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"this"
+(dd (the (x1) (and (or (sg x1) (ms x1)) (proximal x1) (entity x1))))
+
+"those abbeys"
+(dd (the (x1) (and (pl x1) (distal x1) (ABBEY x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Bare Plurals}
+
+Bare plurals receive different interpretations in different contexts.
+Although they are syntactically unambiguous, they tend to receive more
+than one semantic interpretation. When they are non-predicative (for
+example, subjects or objects) they are ambiguous between an
+existential quantifier reading and a `natural kind' reading as in
+\nextex{}. The information needed to disambiguate these examples is not
+available in the syntax and so the ambiguity is not resolved.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"abbots seldom abdicate"
+
+(DECL
+ (ABDICATE (uqe (seldom (e1) (PRES e1)))
+  (uq (some (x1) (and (pl x1) (ABBOT x1))))))
+
+(DECL
+ (ABDICATE (uqe (seldom (e1) (PRES e1)))
+  (kind (all (x1) (and (pl x1) (ABBOT x1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Predicative bare plurals (which usually occur after {\it be}) have only
+one interpretation, as predicates:\footnote{Non-predicative N2s can
+also occur after {\it be} where {\it be} is interpretated as a
+predicate asserting equality between two entities---in this case the
+existential quantifier vs. natural kind ambiguity surfaces. This means
+that an example such as {\it they are abbots} actually receives two
+parses and three interpretations.}
+
+\small
+\begin{ex}
+\begin{verbatim}
+"they are abbots"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (ABBOT (pro (the (x1) (and (pl x1) (entity x1)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Names}
+
+Proper names are treated like ordinary nouns, except they are marked
+as [PN +]. In the usual case where they occur as complete N2s, they
+are generated by the rule N2+/PN which builds a N2[+SPEC] from a [PN
++] lexical head. They receive a semantics as a type of expression with
+the label `name'. Otherwise they have the structure of a definite
+description with a `the' quantifier which predicates a naming relation
+between the entity and the name as in \nextex{}. The PS rules
+N/NAME1--N/NAME2B build complex names out of simple names and titles:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim"
+(name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+
+"kim jones jnr"
+(and
+ (and (name (the (x1) (and (sg x1) (named x1 JONES) (animate x1))))
+  (first-name (name (the (x2) (and (sg x2) (named x2 KIM) (animate x2))))))
+ (title JNR))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Proper names can also occur with determiners and modifiers and in this
+case we use the ID rule N1/PN to allow names to behave as if they were
+ordinary common nouns. The semantic representations they receive are
+illustrated in \nextex{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"this kim"
+(dd
+ (the (x1)
+  (and (sg x1) (proximal x1)
+   (equal x1 
+          (name (the (x2) (and (sg x2) (named x2 KIM) (animate x2))))))))
+
+"a mr jones from paris"
+(uq
+ (some (x1)
+  (and (sg x1)
+   (and
+    (equal x1
+     (and (name (the (x2) (and (sg x2) (named x2 JONES) (animate x2))))
+      (title MR)))
+    (FROM x1 
+          (name (the (x3) (and (sg x3) (named x3 PARIS) (place x3)))))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Headless N2s}
+
+Some N2s can contain an adjective but no nominal head (e.g.\ {\it the
+happy}, {\it the happiest}, {\it the happier}, {\it the fourth}).
+These are generated by rules where an N2[+SPEC] immediately dominates
+a determiner and an A2---see ID rules N2+/ADJ1--N2+/ADJ4.  We choose
+this treatment rather than using a lexical rule to convert adjectives
+to nouns because the adjectives can be modified in the same way as
+other adjectives ({\it the extremely poor}). Another possibility would
+have been to generate empty nominal heads but there seemed no need to
+do this. In the semantics, the `missing' lexical head is reconstructed
+and the adjective is predicated of it:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"the crazy"
+(dd (the (x1) (and (pl x1) (and (human x1) (CRAZY x1 (degree unknown))))))
+
+"the fourth"
+(dd (the (x1) (and (sg x1) (and (entity x1) (FOURTH x1)))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Compounds}
+
+The system makes a distinction between morphological compounding and
+syntactic compounding where compounds which have an orthography with
+no blank spaces ({\it tablecloth}, {\it paper-work}) are recognised by
+the word grammar while compounds with blank spaces ({\it shoe lace,
+paper clip}) must be recognised by the sentence grammar.  Accordingly,
+the grammar contains some ID rules (N/COMPOUND1--N/COMPOUND3) for
+noun-noun compounds ({\it shoe lace}), adjective-noun compounds ({\it
+cold drink}) and preposition-noun compounds ({\it after care}),
+respectively.  Our treatment of compounding does not cater for all
+possibilities and leads to a great deal of ambiguity in parses. There
+is no means to decide on the correct structure for several-word
+compounds (such as {\it warm air flow regulator}).  Semantically,
+compounds are not analysed but are given structures paralleling the
+syntactic structures:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"air flow regulator"
+
+(dd (the (x1) (and (sg x1) 
+   ((compound (compound AIR FLOW) REGULATOR) x1))))
+
+(dd (the (x1) (and (sg x1) ((compound AIR (compound FLOW REGULATOR)) x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsection{P2}
+
+\subsubsection{The Structure of P2}
+
+The overall structure of P2 is sketched in \nextex{}.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 10.12em\hbox to 1.00em{\hss{P2}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 10.75em\raise1.500ex\hbox{\special{ps::currentpoint /momaagy exch def /momaagx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 5.75em\lower0.500ex\hbox{\special{ps::currentpoint momaagx momaagy lineto stroke moveto}}%
+\hskip 9.75em\lower0.500ex\hbox{\special{ps::currentpoint momaagx momaagy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 11.50em{\hss{\mbox{\hspace{1.4in}( A2[+ADV] )\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}P1\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 15.50em\raise1.500ex\hbox{\special{ps::currentpoint /momaajy exch def /momaajx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 10.75em\lower0.500ex\hbox{\special{ps::currentpoint momaajx momaajy lineto stroke moveto}}%
+\hskip 9.50em\lower0.500ex\hbox{\special{ps::currentpoint momaajx momaajy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 8.00em\hbox to 5.50em{\hss{\mbox{\hspace{1.4in}P\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 11.50em{\hss{\mbox{\hspace{1.4in}$<$complements$>$\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+Under P2, the optional A2[+ADV] node allows for adverbial modifiers,
+as in {\it almost under the table}---see ID rule P2/ADVMOD.  The set
+of complements of P recognised by the grammar is illustrated in
+\nextex{}.
+
+
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{tabular}[t]{ll}
+in the cupboard          & ID rules P1/NPa--P1/NPb  \\
+on tuesday               & ID rule P1/NPc           \\
+because of the weather   & ID rule P1/PPa           \\
+down in the cellar       & ID rule P1/PPb            \\
+of Kim 's                & ID rule P1/POSS          \\
+because he ate too much  & ID rule P1/SFIN          \\
+after visiting Lee       & ID rule P1/VPING         \\
+despite Kim having left  \hspace{1cm} & ID rule P1/SING          \\
+\end{tabular}
+
+Pro-P2s such as {\it when}, {\it where} and {\it why} are generated by
+the rule P2/PRO1 which makes the lexical head an immediate daughter of
+P2. Other pro-P2s can be modified by relative clauses and P2s ({\it
+here in the garden}, {\it then when he finished}) and so we treat
+these as nominal (N2[+PRO, +PRD]) in order for them to be modified but
+then the ID rule P2/PRO2 picks them up so that they can function as pro-P2s.
+
+\subsubsection{The Semantics of P2}
+
+Like N2s, P2s can be either predicative ([PRD +]) or non-predicative
+([PRD --]).  Adjunct P2s are always predicative and translate as
+two-place relations whose first argument is either an event (in the
+case of VP adjuncts) or an entity (in the case of N2 adjuncts). The
+second argument is always the translation of the complement of the P2:
+
+\small
+\begin{ex} 
+\begin{verbatim} 
+"kim abdicated in the abbey" 
+(DECL
+ (and
+  (ABDICATE #1=(uqe (some (e1) (PAST e1)))
+   (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))))
+  (IN #1# (dd (the (x2) (and (sg x2) (ABBEY x2)))))))
+
+"the abbot with kim abdicated"
+(DECL
+ (ABDICATE (uqe (some (e1) (PAST e1)))
+  (dd (the (x1) (and (sg x1) 
+   (and (ABBOT x1)
+    (WITH x1 
+     (name (the (x2) (and (sg x2) (named x2 KIM) (animate x2)))))))))))
+
+"kim helped because lee helped"
+(DECL
+ (and
+   (HELP #1=(uqe (some (e1) (PAST e1)))
+        (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))))
+   (and
+      (HELP #2=(uqe (some (e2) (PAST e2)))
+            (name (the (x2) (and (sg x2) (named x2 LEE) (animate x2)))))
+      (BECAUSE #1# #2#))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Argument P2s are sometimes predicative (in which case they are
+relations just like adjunct P2s) and sometimes non-predicative.  With
+the non-predicatives, the N2 which is the complement of the
+preposition is seen directly as an argument of the higher predicate.
+In some cases, i.e.\ cases of true `case-marking' prepositions, the
+preposition makes no real contribution to the semantic
+translation and information about it is lost (for example {\it to} in
+{\it Kim gives some butter to the abbot}---\nextex{}). In other cases,
+the preposition is incorporated into the translation of the higher
+predicate to make a new complex predicate (e.g.\ {\it at} in {\it the
+abbot is looking at Kim}---\exnum{+2}{}). Complex predicates are
+bracketed with an initial {\tt CP} which is used to identify them to the
+post-processing module. This changes {\tt (CP LOOK AT)} into the
+predicate {\tt LOOK-AT} (see section 7).
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim gives some butter to the abbot"
+(DECL
+ (GIVE (uqe (some (e1) (PRES e1)))
+  (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (uq (some (x2) (and (ms x2) (BUTTER x2))))
+  (dd (the (x3) (and (sg x3) (ABBOT x3))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\small
+\begin{ex}
+\begin{verbatim}
+"the abbot is looking at kim"
+(DECL
+ ((CP LOOK AT) (uqe (some (e1) (PRES (PROG e1))))
+  (dd (the (x1) (and (sg x1) (ABBOT x1))))
+  (name (the (x2) (and (sg x2) (named x2 KIM) (animate x2))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The mechanism by which we make the semantics of an N2 complement of a
+non-predicative P2 available to be integrated higher up is to assign
+a semantics to the P2 which is a function over the preposition and
+the N2 meaning:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"to the abbot"
+(lambda (Q1) (Q1 TO 
+    (dd (the (x1) (and (sg x1) (ABBOT x1))))))
+
+
+"at kim"
+(lambda (Q1) (Q1 AT 
+    (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+This makes the two pieces of information available separately. In the
+examples in \exnum{-2}{} and \exnum{-1}{}, the N2 meaning is directly
+integrated as an argument of the verb which subcategorises the P2. In
+\exnum{-2}{} the information about the preposition is not used at all
+but in \exnum{-1}{} it is used to create a complex predicate.
+
+Pro-P2s receive an interpretation where an appropriate prepositional
+meaning and second argument has been supplied:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"there"
+(lambda (y1) (AT y1 
+  (dd (the (x1) (and (sg x1) (distal x1) (place x1))))))
+
+"here where he abdicated"
+(lambda (y1) (AT y1
+  (dd (the (x1) (and (and (sg x1) (proximal x1) (place x1))
+                (and (ABDICATE #1=(uqe (some (e1) (PAST e1)))
+                     (pro (the (x2) (and (sg x2) (male x2)))))
+                     (AT #1# x1)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsection{A2}
+
+\subsubsection{The Structure of A2}
+
+A2 structure is outlined in \nextex{}.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 10.12em\hbox to 1.00em{\hss{A2}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 10.75em\raise1.500ex\hbox{\special{ps::currentpoint /momaauy exch def /momaaux exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 5.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaux momaauy lineto stroke moveto}}%
+\hskip 9.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaux momaauy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 11.50em{\hss{\mbox{\hspace{1.4in}( A2[+ADV] )\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}A1\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 15.50em\raise1.500ex\hbox{\special{ps::currentpoint /momaaxy exch def /momaaxx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 11.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaxx momaaxy lineto stroke moveto}}%
+\hskip 7.50em\lower0.500ex\hbox{\special{ps::currentpoint momaaxx momaaxy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 8.25em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}DetA\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}A1\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 19.25em\raise1.500ex\hbox{\special{ps::currentpoint /momabay exch def /momabax exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 14.50em\lower0.500ex\hbox{\special{ps::currentpoint momabax momabay lineto stroke moveto}}%
+\hskip 9.50em\lower0.500ex\hbox{\special{ps::currentpoint momabax momabay lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 11.75em\hbox to 5.50em{\hss{\mbox{\hspace{1.4in}A\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 11.50em{\hss{\mbox{\hspace{1.4in}$<$complements$>$\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+The adverbial attaching at the top level allows for the examples in
+\nextex{}.
+
+\begin{ex}
+\begin{subex}
+extremely stupid
+\end{subex}
+\begin{subex}
+nearly all
+\end{subex}
+\begin{subex}
+incredibly quickly
+\end{subex}
+\end{ex}
+
+DetAs attach at the A1 level to permit the examples in \nextex{}.  The
+recursive nature of the rule means that more than one DetA can occur
+and this seems to be correct in some cases ({\it too too stupid}, {\it
+so very happy}) but not so correct in other cases (*{\it too so
+stupid}).
+
+\begin{ex}
+\begin{subex}
+so stupid
+\end{subex}
+\begin{subex}
+very many
+\end{subex}
+\begin{subex}
+too quickly
+\end{subex}
+\end{ex}
+
+The grammar provides for a number of different complements of A---see
+ID rules A1/A---A1/PP\_WHS. The types of adjective recognized include
+ones taking a variety of P2 and S complements, control adjectives
+({\it eager to see the film}, {\it likely to see the film}),
+tough-movement adjectives ({\it the book is easy to read}), adjectives
+which take V2 subjects ({\it that you haven't read the book is
+obvious}, {\it for you to read the book would be easy, to stay at home
+would be possible}) and adjectives that take pleonastic {\it it} as
+subject ({\it it would be possible (for us) to stay at home}). For
+more details see the sections on control and agreement, unbounded
+dependencies, extraposition and comparatives in section 6.
+
+\subsubsection{The Semantics of A2s}
+
+A2s translate as predicates where the number and type of arguments
+depends on the subcategorisation type. Some examples:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"lee is crazy"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (CRAZY (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))
+   (degree unknown))))
+
+"lee is eager to help"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (EAGER #1=(name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))
+   (HELP (uqe (some (e2) (NOTENSE e2))) #1#) (degree unknown))))
+
+"lee is certain that the abbot abdicated"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (CERTAIN (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))
+   (ABDICATE (uqe (some (e2) (PAST e2)))
+    (dd (the (x2) (and (sg x2) (ABBOT x2)))))
+   (degree unknown))))
+
+"lee is easy to help"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (EASY
+   (HELP (uqe (some (e2) (NOTENSE e2))) (pro (the (z1) (entity z1)))
+    (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1)))))
+   (degree unknown))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+All gradable adjectives are treated as having a final argument which
+represents the `degree' associated with them. In the case of the
+examples above which do not contain degree modifiers, this argument is
+simply {\tt (degree unknown)}. In examples which do contain degree
+modifiers ({\it so}, {\it too}, {\it more}, {\it as} etc.) the degree
+argument is more informative:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"lee is so crazy"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (CRAZY (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))
+   (degree so))))
+\end{verbatim}
+\end{ex}
+
+\begin{ex}
+\begin{verbatim}
+"how crazy is lee"
+(WHQU
+ (BE (uqe (some (e1) (PRES e1)))
+  (CRAZY (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))
+   (degree _wh))))
+\end{verbatim}
+\end{ex}
+
+\begin{ex}
+\begin{verbatim}
+"kim is more crazy than lee is"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (CRAZY (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+   (degree
+    ((more than)
+     (lambda (d1)
+      (BE (uqe (some (e2) (PRES e2)))
+       (CRAZY (name (the (x2) (and (sg x2) (named x2 LEE) (animate x2))))
+        (degree d1)))))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+As illustrated in \prevex{}, in adjectival comparatives, the
+comparison occurs inside the degree argument. See section 6.8 for more
+details.
+
+
+\subsection{VP}
+
+\subsubsection{The Structure of VP}
+
+The general structure of VP is:
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 12.00em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 12.50em\raise1.500ex\hbox{\special{ps::currentpoint /momaevy exch def /momaevx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.25em\lower0.500ex\hbox{\special{ps::currentpoint momaevx momaevy lineto stroke moveto}}%
+\hskip 8.25em\lower0.500ex\hbox{\special{ps::currentpoint momaevx momaevy lineto stroke moveto}}%
+\hskip 8.25em\lower0.500ex\hbox{\special{ps::currentpoint momaevx momaevy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 8.50em{\hss{\mbox{\hspace{1in}$<$modifiers$>$\hspace{1in}}}\hss}%
+\hskip 1.00em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}VP\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 8.50em{\hss{\mbox{\hspace{1in}$<$modifiers$>$\hspace{1in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 12.50em\raise1.500ex\hbox{\special{ps::currentpoint /momaeyy exch def /momaeyx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 8.75em\lower0.500ex\hbox{\special{ps::currentpoint momaeyx momaeyy lineto stroke moveto}}%
+\hskip 7.50em\lower0.500ex\hbox{\special{ps::currentpoint momaeyx momaeyy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 7.00em\hbox to 3.50em{\hss{\mbox{\hspace{1in}V\hspace{1in}}}\hss}%
+\hskip 1.00em\hbox to 9.50em{\hss{\mbox{\hspace{1in}$<$complements$>$\hspace{1in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+\subsubsection{Complements}
+
+A large variety of verb complements are included in the grammar. The
+set of VP rules includes ones for intransitives, transitives,
+ditransitives, verbs taking P2s, verbs taking N2s and P2s, verbs
+taking A2s, verbs taking S complements of various types, auxiliary
+verbs, control verbs (subject raising, subject equi, object raising,
+object equi), verbs taking embedded question complements, copula {\it
+be}, verbs taking sentential or pleonastic {\it it} subjects etc. For
+details see the grammar and the sections below.
+
+\subsubsection{Modifiers}
+
+VP final modifiers may be any of A2[+ADV], P2 or N2[+ADV] or a
+coordination of these (see ID rule VP/MOD1) but VP initial modifiers may
+only be A2[+ADV] (see ID rule VP/MOD2):
+
+\begin{ex}
+\begin{subex}
+Kim played tennis enthusiastically
+\end{subex}
+\begin{subex}
+Kim played tennis in the garden
+\end{subex}
+\begin{subex}
+Kim played tennis this week
+\end{subex}
+\end{ex}
+
+\begin{ex}
+\begin{subex}
+Kim was enthusiastically playing tennis
+\end{subex}
+\begin{subex}
+*Kim has in the garden played tennis
+\end{subex}
+\begin{subex}
+?Kim was this week playing tennis
+\end{subex}
+\end{ex}
+
+Because the structure assigned to auxiliary sequences is a deep
+right-branching structure, care has been taken to restrict the
+positions in which modifiers can attach. VP final modifiers can only
+attach to [AUX --] VPs thus ensuring that in an example like {\it Lee may
+have been reading the book without understanding it}, the modifier
+{\it without understanding it} can only attach to the VP containing
+the main verb ({\it reading the book}).  VP initial adverbs can only
+attach to non-finite VPs since adverbs which attach between a subject
+and a finite VP are dealt with by the S rules.
+
+\subsubsection{Auxiliaries}
+
+Sequences of auxiliaries receive a recursive structure as in \nextex{}
+where the auxiliary is treated as the head of its VP and where its
+complement is another VP. The required VFORM value of the VP
+complement is encoded in the auxiliary rules and this ensures that
+only grammatical sequences of auxiliaries are recognised.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 7.25em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.75em\raise1.500ex\hbox{\special{ps::currentpoint /momacky exch def /momackx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.25em\lower0.500ex\hbox{\special{ps::currentpoint momackx momacky lineto stroke moveto}}%
+\hskip 9.00em\lower0.500ex\hbox{\special{ps::currentpoint momackx momacky lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 3.00em\hbox to 0.50em{\hss{V}\hss}%
+\hskip 8.25em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 3.25em\vrule width.04em%
+\hskip 8.96em\raise1.500ex\hbox{\special{ps::currentpoint /momacoy exch def /momacox exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 6.50em{\hss{\mbox{\hspace{1.4in}may\hspace{1.4in}}}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momacox momacoy lineto stroke moveto}}%
+\hskip 9.00em\lower0.812ex\hbox{\special{ps::currentpoint momacox momacoy lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.50em\hbox to 0.50em{\hss{V}\hss}%
+\hskip 8.25em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.75em\vrule width.04em%
+\hskip 8.96em\raise1.500ex\hbox{\special{ps::currentpoint /momacsy exch def /momacsx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.25em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}have\hspace{1.4in}}}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momacsx momacsy lineto stroke moveto}}%
+\hskip 8.44em\lower0.812ex\hbox{\special{ps::currentpoint momacsx momacsy lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 12.25em\hbox to 0.50em{\hss{V}\hss}%
+\hskip 7.69em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 12.50em\vrule width.04em%
+\hskip 8.46em\raise1.500ex\hbox{\special{ps::currentpoint /momacwy exch def /momacwx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 9.00em\hbox to 7.00em{\hss{\mbox{\hspace{1.4in}been\hspace{1.4in}}}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momacwx momacwy lineto stroke moveto}}%
+\hskip 7.38em\lower0.812ex\hbox{\special{ps::currentpoint momacwx momacwy lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 17.00em\hbox to 0.50em{\hss{V}\hss}%
+\hskip 6.62em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 17.25em\vrule width.04em%
+\hskip 7.46em\raise1.500ex\hbox{\special{ps::currentpoint /momaday exch def /momadax exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 13.25em\hbox to 8.00em{\hss{\mbox{\hspace{1.4in}trying\hspace{1.4in}}}\hss}%
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momadax momaday lineto stroke moveto}}%
+\hskip 4.25em\lower0.812ex\hbox{\special{ps::currentpoint momadax momaday lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 22.25em\hbox to 0.50em{\hss{V}\hss}%
+\hskip 3.50em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 22.50em\vrule width.04em%
+\hskip 4.21em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 19.50em\hbox to 6.00em{\hss{\mbox{\hspace{1.4in}to\hspace{1.4in}}}\hss}%
+\hskip 1.00em\hbox to 0.50em{\hss{V}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 26.75em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 22.75em\hbox to 8.00em{\hss{\mbox{\hspace{1.4in}escape\hspace{1.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+\subsubsection{The Semantics of VPs}
+
+VPs all receive a SR which contains three pieces of information:
+predicate argument structure, tense and aspect information and
+quantifier information. These pieces of information are kept separate
+in order that they may individually be added to or modified higher in
+the tree. The means of keeping them separated is to make them
+arguments of a lambda-abstracted predicate {\tt Q}: each VP has an SR
+of the form {\tt (lambda (Q) (Q} $<$pred-arg structure$>$
+$<$tense-aspect info$>$ $<$quantifier info$>${\tt ))}. The predicate
+argument information is of the form {\tt (lambda (e) (lambda (x)
+(..)))} where {\tt e} is the event variable associated with the verb
+and {\tt x} is a variable which will be instantiated to the entity
+denoted by the subject N2. There is a very large range of verb
+subcategorisation types dealt with by the grammar and each of the
+rules receives a fairly straightforward predicate argument structure.
+The most complicated rules from the semantic point of view are the
+auxiliary and modal verb rules since these are the ones that provide
+tense and aspectual information. We treat tense information by means
+of the four operators PRES, PAST, FUT and NOTENSE over the event
+variable associated with the formula.\footnote{NOTENSE indicates that
+the tense cannot be ascertained.} Aspectual information is encoded by
+the operators PERF and PROG. In the following examples, we show first
+the translation of the S and then the translation of the topmost VP:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim has helped the abbot"
+(DECL
+ (HELP (uqe (some (e1) (PRES (PERF e1))))
+  (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (dd (the (x2) (and (sg x2) (ABBOT x2))))))
+
+"has helped the abbot"
+(lambda (Q1) (Q1 
+  (lambda (e1) (lambda (x1) 
+     (HELP e1 x1 (dd (the (x2) (and (sg x2) (ABBOT x2)))))))
+  (lambda (e2) (PERF e2)) 
+  (lambda (qu1) qu1)))
+\end{verbatim}
+\end{ex}
+\begin{ex}
+\begin{verbatim}
+"kim was often helping the abbot"
+(DECL
+ (HELP (uqe (often (e1) (PAST (PROG e1))))
+  (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (dd (the (x2) (and (sg x2) (ABBOT x2))))))
+
+"was often helping the abbot"
+(lambda (Q1) (Q1
+  (lambda (e1) (lambda (x1)
+     (HELP e1 x1 (dd (the (x2) (and (sg x2) (ABBOT x2)))))))
+  (lambda (e2) (PROG e2)) 
+  (lambda (qu1) often)))
+\end{verbatim}
+\end{ex}
+\begin{ex}
+\begin{verbatim}
+"kim has been helping the abbot"
+(DECL
+ (HELP (uqe (some (e1) (PRES (PERF (PROG e1)))))
+  (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (dd (the (x2) (and (sg x2) (ABBOT x2))))))
+
+"has been helping the abbot"
+(lambda (Q1) (Q1
+  (lambda (e1) (lambda (x1) 
+     (HELP e1 x1 (dd (the (x2) (and (sg x2) (ABBOT x2)))))))
+  (lambda (e2) (PERF (PROG e2))) 
+  (lambda (qu1) qu1)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Most modal verbs are interpreted as ambiguous between epistemic and
+deontic readings. The epistemic readings are described by means of the
+two propositional operators NEC and POS:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim must be in the abbey"
+(DECL
+ (NEC
+  (BE (uqe (some (e1) (PRES e1)))
+   (IN (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+    (dd (the (x2) (and (sg x2) (ABBEY x2))))))))
+
+"must be in the abbey"
+(lambda (Q1) (Q1
+  (lambda (e1) (lambda (x1)
+    (NEC (BE e1 (IN x1 (dd (the (x2) (and (sg x2) (ABBEY x2)))))))))
+  (lambda (e2) e2) 
+  (lambda (qu1) qu1)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Deontic readings are treated just like the SRs of subject equi verbs;
+the subject of the modal verb is the same as the subject of the verb
+of the embedded proposition argument of the modal:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim must be in the abbey"
+(DECL
+ (MUST (uqe (some (e1) (PRES e1)))
+  #1=(name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (BE (uqe (some (e2) (NOTENSE e2)))
+   (IN #1# (dd (the (x2) (and (sg x2) (ABBEY x2))))))))
+
+"must be in the abbey"
+(lambda (Q1) (Q1
+  (lambda (e1) (lambda (x1)
+    (MUST e1 x1
+     (BE (uqe (some (e2) (NOTENSE e2)))
+      (IN x1 (dd (the (x2) (and (sg x2) (ABBEY x2)))))))))
+  (lambda (e3) e3) 
+  (lambda (qu1) qu1)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+VP modifiers are treated as predicates which are applied to the event
+variable associated with the verb and which are conjoined with the
+main predicate:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"lee abdicated in paris"
+(DECL
+ (and
+  (ABDICATE #1=(uqe (some (e1) (PAST e1)))
+   (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1)))))
+  (IN #1# (name (the (x2) (and (sg x2) (named x2 PARIS) (place x2)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Phrasal Verbs}
+
+Phrasal verbs occur with a number of different subcategorisation
+possibilities, for example, there are intransitive phrasal verbs ({\it
+fall over}), transitive ones ({\it blow it up}), ditransitive ones
+({\it give him back the book}), ones taking sentential complements
+({\it point out that he is wrong}) etc. For this reason phrasal verbs
+are treated in exactly the same way as their non-phrasal counterparts,
+except that they have an additional feature PRT to encode the form of
+the particle that they require. ID rules with `PHR' in their names are
+rules specifically for phrasal verbs and look much like the 
+equivalent non-phrasal rules except for the feature PRT both on the
+head and the particle. The presence of particles in so many rules
+leads to a certain degree of complication in the LP rules.
+
+In the semantics, phrasal verbs are treated just like their
+non-phrasal counterparts except that the predicate is a complex one
+made up of the verb plus the particle:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"the abbot falls over"
+(DECL
+ ((CP FALL OVER) (uqe (some (e1) (PRES e1)))
+  (dd (the (x1) (and (sg x1) (ABBOT x1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsubsection{Pro VPs}
+
+Auxiliary verbs are able to occur without their complements under
+certain conditions. The term `VP ellipsis' is usually used to describe
+this phenomenon. An auxiliary's complement can only be missing if
+there is some other VP in the sentence or discourse which serves as an
+antecedent for that complement and constrains its interpretation. 
+The examples in \nextex{} illustrate VP ellipsis.
+
+\begin{ex}
+\begin{subex}
+Kim doesn't like onions and Lee doesn't either.
+\end{subex}
+\begin{subex}
+Kim doesn't want to see the film but Lee might.
+\end{subex}
+\begin{subex}
+You shouldn't have!
+\end{subex}
+\begin{subex}
+Lee can't go to the meeting but somebody ought to.
+\end{subex}
+\end{ex}
+
+Syntactically we treat the auxiliaries which can occur without
+complements as pro-forms (i.e.\ [PRO +]). These head VPs which are also
+[PRO +]---see ID rules VP/PRO and VP/PRO2 and PS rules
+V/PRO/SO1--V/PRO/SO3. Since we do not try to relate pro VPs to their
+antecedents, we do not attempt to restrict their distribution in any way.
+
+Semantically, we represent the propositions associated with pro-VPs as
+involving the predicate `PROVP' which takes an event argument and a
+subject argument:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"lee will have"
+(DECL
+ (PROVP (uqe (some (e1) (FUT (PERF e1))))
+  (name (the (x1) (and (sg x1) (named x1 LEE) (animate x1))))))
+
+"kim is eager to"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (EAGER #1=(name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+   (PROVP (uqe (some (e2) (NOTENSE e2))) #1#) (degree unknown))))
+
+"he isn't"
+(DECL
+ (NOT
+  (PROVP (uqe (some (e1) (PRES e1))) 
+  (pro (the (x1) (and (sg x1) (male x1)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The presence of PROVP in the SR is designed to signal to a resolution
+component that this is a case of VP ellipsis and an antecedent is
+required.  In examples where the pro-VP is supported by {\it either}
+or {\it neither}, as in {\it Kim didn't either}, {\it neither did
+Lee}, the predicate is `NPROVP' rather than `PROVP' to indicate that a
+negative antecedent is required:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim didn't either", "neither did kim"
+(DECL
+ (NOT
+  (NPROVP (uqe (some (e1) (PAST e1)))
+   (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+With modal pro-VPs, the epistemic/deontic ambiguity occurs:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim might"
+
+(DECL
+ (POS
+  (PROVP (uqe (some (e1) (PRES e1)))
+   (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))))))
+
+(DECL
+ (MIGHT (uqe (some (e1) (PRES e1)))
+  #1=(name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (PROVP (uqe (some (e2) (NOTENSE e2))) #1#)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\subsection{S}
+
+\subsubsection{The Structure of S}
+
+ID rules S1a and S2--S/V2\_SUBJ5 expand S as a subject and a VP.  The
+following possibilities are recognised:
+
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{tabular}[t]{lll}
+Kim reads the book       & (nominative N2 subject, finite VP)  & S1a  \\
+fido be a good dog       & (nominative N2 subject, BSE VP)     & S2   \\
+him to read the book     & (accusative subject, infinitive VP) & S3   \\
+him reading the book     & (accusative subject, ING VP)        & S4  \\
+that Kim reads bothers Lee & (finite S subject, finite VP)     & S/V2\_SUBJ1 \\
+for us to go is possible & (non-finite S subject, finite VP) & S/V2\_SUBJ2 \\
+to go is possible & (non-finite VP subject, finite VP)    & S/V2\_SUBJ3 \\
+that he leave is necessary & (BSE S subject, finite VP) & S/V2\_SUBJ4 \\
+whether/what he won isn't clear & (question S subject, finite VP) & S/V2\_SUBJ5 \\
+\end{tabular}
+
+ID rules S/THAT1--S/AS expand S as a complementiser followed by an
+appropriate type of S. The following possibilities are recognised:
+
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{tabular}[t]{lll}
+that Kim reads       & ({\it that} + finite S)    & S/THAT1  \\
+that fido be good    & ({\it that} + BSE S)       & S/THAT2  \\
+for him to read      & ({\it for} + non-finite S) & S/FOR    \\
+whether he reads     & ({\it whether} + finite S) & S/Q1     \\
+if he reads          & ({\it if} + finite S)      & S/Q2     \\
+than Kim reads       & ({\it than} + finite S)    & S/THAN   \\
+as Kim does          & ({\it as} + finite S)      & S/AS     \\
+\end{tabular}
+
+ID rules S/NP\_UDC1--S/AP\_UDC2 expand S as a preposed constituent
+(N2, P2 or A2) followed by a slashed S whose value for SLASH is of the
+same category as the preposed constituent (see section 6.4 for details
+of unbounded dependencies).
+
+ID rule S/IMPER expands S just as VP[FIN +, VFORM BSE] (i.e.\ an
+imperative VP).
+
+ID rules S/TAGQUESTION and S/TAG define complete tag questions and the
+tag part of tag questions, respectively.
+
+Inverted sentences are produced by means of the SAI metarule (see
+section 6.2).
+
+\subsubsection{Modifiers of S}
+
+ID rules S/ADVBLa1 and S/ADVBLa2 permit A2[+ADV], N2[+ADV], P2 or a
+coordination of any of these to precede an S to generate examples such
+as:
+
+\begin{ex}
+\begin{subex}
+enthusiastically Kim played tennis
+\end{subex}
+\begin{subex}
+in the garden Kim played tennis
+\end{subex}
+\begin{subex}
+this week Kim played tennis
+\end{subex}
+\end{ex}
+
+Adverbials which are sentence final always attach to VP rather than S.
+
+ID rules S1b and S1c respectively allow an A2[+ADV, --QUA] and an
+A2[+ADV, +QUA] to attach between an NP subject and the VP:
+
+\begin{ex}
+\begin{subex}
+Kim enthusiastically played tennis
+\end{subex}
+\begin{subex}
+Kim often played tennis
+\end{subex}
+\end{ex}
+
+\subsubsection{Semantics of S}
+
+In section 4 and elsewhere, we have given examples of the SRs which we
+assign to different kinds of main clause S---declaratives, yes-no
+questions, wh-questions and imperatives. In fact these representations
+are not the translations which are associated with the S nodes
+themselves but are the translations of the node which dominates them,
+i.e.\ the top category nodes in ID rules T1--T3. The translation of an
+S node is, in fact, an incomplete expression much like the translation
+of a VP and it falls to the rules which introduce S to take this
+expression and complete it. The translation of an S node, then, is the
+same as VP except that the subject is included: i.e.\ it is an expression of
+the form {\tt (lambda (Q) (Q} $<$pred-arg structure$>$ $<$tense-aspect info$>$
+$<$quantifier info$>${\tt ))} where the predicate argument information is
+of the form {\tt (lambda (e) (..))} and where {\tt e} is the event
+variable. 
+
+Rules which introduce S have to provide a three-place function for the
+{\tt (lambda (Q) (Q ..))} translation of S to apply to where this
+function will specifiy how to put the three pieces of information
+together. To give a concrete example, the SR for the S node in the
+sentence {\it Kim has often helped} is this:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim has often helped" (S node)
+(lambda (Q1) (Q1
+    (lambda (e1) (HELP e1 (pro (the (x1) (and (sg x1) (male x1))))))
+    (lambda (e2) (PRES (PERF e2)))
+    (lambda (qu1) often)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Here the first argument of Q1 is the predicate argument structure, the
+second argument is the tense and aspect information and the third
+argument is information about the quantifier. The top category rule T1
+is specified as follows:
+
+\small
+\begin{ex}
+\begin{verbatim}
+T1 : ; root symbol for the parser. It is here that the information
+     ; that root sentences are always finite is encoded. This means 
+     ; that the parser gives two parses for finite sentences (one as 
+     ; T, one as S) whilst only one parse for non-finite 
+     ; sentences (as S)
+   [T S] --> S[H +, COMP NORM, +FIN] :
+   1 = [VFORM NOT, INV -], (DECL (1 (lambda (prop)
+               (lambda (ta) (lambda (equa)
+                     (prop (uqe ((equa some) (e) (ta e))))))))) :
+   1 = [VFORM NOT, INV +],
+      (YNQU (1 (lambda (prop) (lambda (ta) (lambda (equa)
+                     (prop (uqe ((equa some) (e) (ta e))))))))) :
+   1 = [VFORM BSE],
+      (IMP (1 (lambda (prop) (lambda (ta) (lambda (equa) 
+                    (prop (uqe ((equa some) (e) (ta e))))))))).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The first semantic condition ({\tt 1 = [VFORM NOT, INV --]}) is the
+one that is relevant to our example. The translation specifies that 1,
+the translation of S, should be applied to the function \\ 
+{\tt (lambda (prop) (lambda (ta) (lambda (equa) \\
+\hspace{1cm} (prop (uqe ((equa some) (e) (ta e)))))))}. \\
+This in turn is a three-place function looking for a
+predicate-argument structure ({\tt (lambda (prop)..}), tense and
+aspect information ({\tt (lambda (ta) ..}) and quantifier information
+({\tt (lambda (equa) ..})---the arguments to Q1. The result of
+applying this function to those arguments will be an expression formed
+by applying the predicate-argument expression to a quantifier
+structure built using the tense and aspect information and the
+quantifier information. The final beta-reduced translation of the T
+node is given in \nextex{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+"he has often helped" (T node)
+(DECL
+ (HELP (uqe (often (e1) (PRES (PERF e1))))
+  (pro (the (x1) (and (sg x1) (male x1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Rules which introduce subordinate S categories also have to specify
+the completion of the S. For example, the subordinate S in {\it Kim
+believes he has often helped} has the same translation as it would
+have in a main clause---\exnum{-2}{}. The rule for generating VPs with
+a verb with a finite sentential complement specifies exactly the same
+procedure for putting the three parts of the S translation together:
+
+\small
+\begin{ex}
+\begin{verbatim}
+VP/SFIN1 : ; believes (that) he can do it
+   VP --> H[SUBCAT SFIN, SUBTYPE NONE], S[+FIN] :
+   2 = [SLASH NOSLASH], 
+   (lambda (Q) (Q 
+       (lambda (e) (lambda (x) (1 e x (2 (lambda (prop)
+          (lambda (ta) (lambda (equa)
+            (prop (uqe ((equa some) (e3)
+             (ta e3))))))))))) 
+       (lambda (e2) e2) (lambda (qu) qu))) :
+          .
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The function {\tt (lambda (prop) (lambda (ta) (lambda (equa) ...} is
+the same as before except this time the S translation is embedded
+inside the translation of the higher VP and no {\tt DECL} label is
+introduced. The SR associated with the top category of the whole
+example is given in \nextex{}.\footnote{Our lexicon does not
+distinguish between verbs such as {\it believe} which are generally
+treated as taking intensional arguments and ones such as {\it
+discover} which take extensional arguments. Simililarly, we cannot
+distinguish intensional transitives such as {\it seek} from
+extensional ones such as {\it kick}. Improvements to the lexicon would
+help in this situation although a well-specified knowledge-base might 
+also be sufficient.}
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim believes he has often helped"
+(DECL
+ (BELIEVE (uqe (some (e1) (PRES e1)))
+  (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+  (HELP (uqe (often (e2) (PRES (PERF e2))))
+   (pro (the (x2) (and (sg x2) (male x2)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+A very similar function is needed for VP rules which introduce VP
+complements (i.e.\ rules for control verbs)---the three pieces of
+information in the translation of the VP must be put together to form
+a proposition. The only real difference is that a VP complement must
+first be supplied with a subject. For more details about control
+constructions see section 6.5.
+
+\subsection{X2}
+
+As explained in section 3, the grammar utilises phrasal categories
+which have the specification [BAR 2] but which have no specifications
+for the features N and V. There are two places where X2 categories are
+used: to describe the predicative complements of {\it be} (X2[+PRD])
+and to describe adverbials (X2[+ADV]). In each of these cases, more
+than one type of major category phrase can occur and cross-categorial
+coordinations are possible:
+
+\begin{ex}
+\begin{subex}
+Kim is happy/an idiot/in Paris/laughing/loved by all\hspace{5mm}(A2/N2/P2/VP/VP)
+\end{subex}
+\begin{subex}
+Kim is an idiot but loved by all
+\end{subex}
+\begin{subex}
+Kim is happy and laughing
+\end{subex}
+\end{ex}
+
+\begin{ex}
+\begin{subex}
+Kim ate her supper in the kitchen/later than Lee/an hour ago\hspace{5mm}(P2/A2/N2)
+\end{subex}
+\begin{subex}
+Kim ate her supper in the kitchen and later than Lee did
+\end{subex}
+\begin{subex}
+Kim ate her supper an hour ago or after Lee left.
+\end{subex}
+\end{ex}
+
+In order to generate the cross-categorial coordinations we need rules
+which recognise A2s, N2s, P2s etc.\ as being similar in some way and we do
+this with unary rules which rewrite X2[+PRD] or X2[+ADV] as more
+specific [BAR 2] categories (ID rules PRD1--PRD4 and
+X2/MOD1--X2/MOD4). Once these rules exist for the coordination cases
+it makes sense to use them in the non-coordination cases as well since
+this cuts down on rule numbers. The ID rule VP/BE\_PRD generates VPs
+headed by {\it be} followed by [PRD +] complements of any type and ID
+rule VP/MOD1 generates VPs post-modified by [ADV +] phrases of any type.
+
+Semantically, X2 constituents have much the same representation as the
+more specified phrases which are their daughters.

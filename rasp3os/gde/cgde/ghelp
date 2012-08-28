@@ -1,0 +1,11 @@
+HELP for GDE Generator
+
+
+Expand <node-name> <pattern>
+
+View {Bracketing | Categories | Rules | Full | Semantics}
+
+Automatic {Bracketing | Categories | Rules | Full | Semantics} <length>
+
+Undo  Clear  Interpret  Help  Shell  Lisp  ! (=Lisp)  Quit
+

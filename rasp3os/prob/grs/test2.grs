@@ -1,0 +1,939 @@
+Kim_NP1 came_VVD
+(ncsubj came Kim _)
+
+He_PPHS1 came_VVD
+(ncsubj came He _)
+
+We_PPIS2 came_VVD ourselves_PPX2
+(ncsubj came We _)
+(dobj came ourselves)
+
+Abbots_NP1 came_VVD
+(ncsubj came Abbots _)
+
+Butter_NN1 melts_VVZ
+(ncsubj melts Butter _)
+
+An_AT1 abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot An)
+
+Some_DD abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots Some)
+
+Some_DD butter_NN1 melts_VVZ
+(ncsubj melts butter _)
+(det butter Some)
+
+The_AT abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+
+The_AT abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots The)
+
+The_AT butter_NN1 melts_VVZ
+(ncsubj melts butter _)
+(det butter The)
+
+All_DB2 abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod part abbots All)
+
+Both_DB2 abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod part abbots Both)
+
+No_AT abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot No)
+
+Either_DD1 abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot Either)
+
+Every_AT1 abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot Every)
+
+Each_DD1 abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot Each)
+
+Many_DA2 abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod _ abbots Many)
+
+Three_MC abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod _ abbots Three)
+
+Much_DA1 butter_NN1 came_VVD
+(ncsubj came Much _)
+(ncmod _ Much butter)
+
+Several_DA2 abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod _ abbots Several)
+
+His_APP$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(det abbey His)
+
+His_APP$ abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(det abbeys His)
+
+His_APP$ butter_NN1 melted_VVD
+(ncsubj melted butter _)
+(det butter His)
+
+The_AT many_DA2 abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots The)
+(ncmod _ abbots many)
+
+The_AT three_MC abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots The)
+(ncmod _ abbots three)
+
+Those_DD2 many_DA2 abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots Those)
+(ncmod _ abbots many)
+
+Those_DD2 three_MC abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots Those)
+(ncmod _ abbots three)
+
+No_AT three_MC abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots No)
+(ncmod _ abbots three)
+
+His_APP$ many_DA2 abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(det abbeys His)
+(ncmod _ abbeys many)
+
+His_APP$ three_MC abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(det abbeys His)
+(ncmod _ abbeys three)
+
+Kim_NP1 's_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey Kim)
+
+Kim_NP1 's_$ abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(ncmod poss abbeys Kim)
+
+Kim_NP1 's_$ butter_NN1 melted_VVD
+(ncsubj melted butter _)
+(ncmod poss butter Kim)
+
+Kim_NP1 's_$ many_DA2 abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(ncmod poss abbeys Kim)
+(ncmod _ abbeys many)
+
+Kim_NP1 's_$ three_MC abbeys_NN2 closed_VVN
+(ncsubj closed abbeys _)
+(ncmod poss abbeys Kim)
+(ncmod _ abbeys three)
+
+The_AT abbot_NN1 's_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey abbot)
+(det abbot The)
+
+The_AT abbot_NN1 's_$ abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(ncmod poss abbeys abbot)
+(det abbot The)
+
+The_AT abbot_NN1 's_$ butter_NN1 melted_VVD
+(ncsubj melted butter _)
+(ncmod poss butter abbot)
+(det abbot The)
+
+The_AT abbot_NN1 's_$ many_DA2 abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(ncmod poss abbeys abbot)
+(ncmod _ abbeys many)
+(det abbot The)
+
+The_AT abbot_NN1 's_$ three_MC abbeys_NN2 closed_VVD
+(ncsubj closed abbeys _)
+(ncmod poss abbeys abbot)
+(ncmod _ abbeys three)
+(det abbot The)
+
+Mine_PP$ closed_VVD
+(ncsubj closed Mine _)
+
+Kim_NP1 's_$ closed_VVD
+(ncsubj closed Kim _)
+(ncmod poss ellip Kim)
+
+The_AT abbot_NN1 's_$ closed_VVD
+(ncsubj closed abbot _)
+(ncmod poss ellip abbot)
+(det abbot The)
+
+The_AT crazy_JJ came_VVD
+(ncsubj came crazy _)
+(det crazy The)
+
+The_AT crazy_JJ abbot_NN1 abandoning_VVG the_AT abbey_NN1 laughed_VVD
+(ncsubj laughed abbot _)
+(det abbot The)
+(ncmod _ abbot crazy)
+(ncsubj abandoning abbot _)
+(xmod _ abbot abandoning)
+(dobj abandoning abbey)
+(det abbey the)
+
+The_AT confident_JJ crazy_JJ abbot_NN1 laughed_VVD
+(ncsubj laughed abbot _)
+(det abbot The)
+(ncmod _ abbot confident)
+(ncmod _ abbot crazy)
+
+The_AT abbot_NN1 in_II the_AT abbey_NN1 laughed_VVD
+(ncsubj laughed abbot _)
+(det abbot The)
+(ncmod _ abbot in)
+(dobj in abbey)
+(det abbey the)
+
+The_AT crazy_JJ abbot_NN1 in_II the_AT abbey_NN1 laughed_VVD
+(ncsubj laughed abbot _)
+(det abbot The)
+(ncmod _ abbot in)
+(dobj in abbey)
+(det abbey the)
+(ncmod _ abbot crazy)
+
+An_AT1 abbot_NN1 's_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey abbot)
+(det abbot An)
+
+An_AT1 abbots_NN2 '_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(det abbey An)
+(ncmod poss abbey abbots)
+
+The_AT abbot_NN1 's_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey abbot)
+(det abbot The)
+
+The_AT abbots_NN2 '_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey abbots)
+(det abbots The)
+
+The_AT abbots_NN2 's_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey abbots)
+(det abbots The)
+
+The_AT abbot_NN1 '_$ abbey_NN1 closed_VVD
+(ncsubj closed abbey _)
+(ncmod poss abbey abbot)
+(det abbot The)
+
+This_DD1 Kim_NP1 came_VVD
+(ncsubj came Kim _)
+(det Kim This)
+
+Two_MC Kims_NP1 came_VVD
+(ncsubj came Kims _)
+(ncmod _ Kims Two)
+
+Neither_DD1 Kim_NP1 came_VVD
+(ncsubj came Kim _)
+(det Kim Neither)
+
+Three_MC came_VVD
+(ncsubj came Three _)
+
+One_PN1 came_VVD
+(ncsubj came One _)
+
+Three_MC of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Three _)
+(ncmod _ Three of)
+(dobj of abbots)
+(det abbots the)
+
+None_PN of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came None _)
+(ncmod _ None of)
+(dobj of abbots)
+(det abbots the)
+
+Both_DB2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Both _)
+(ncmod _ Both of)
+(dobj of abbots)
+(det abbots the)
+
+Those_DD2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Those _)
+(ncmod _ Those of)
+(dobj of abbots)
+(det abbots the)
+
+Each_DD1 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Each _)
+(ncmod _ Each of)
+(dobj of abbots)
+(det abbots the)
+
+Either_DD1 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Either _)
+(ncmod _ Either of)
+(dobj of abbots)
+(det abbots the)
+
+Neither_DD1 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Neither _)
+(ncmod _ Neither of)
+(dobj of abbots)
+(det abbots the)
+
+One_MC1 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came One _)
+(ncmod _ One of)
+(dobj of abbots)
+(det abbots the)
+
+All_DB2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came All _)
+(ncmod _ All of)
+(dobj of abbots)
+(det abbots the)
+
+All_DB the_AT abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod part abbots All)
+(det abbots the)
+
+Both_DB2 the_AT abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod part abbots Both)
+(det abbots the)
+
+Both_DB2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Both _)
+(ncmod _ Both of)
+(dobj of abbots)
+(det abbots the)
+
+Many_DA2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Many _)
+(ncmod _ Many of)
+(dobj of abbots)
+(det abbots the)
+
+Some_DD of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Some _)
+(ncmod _ Some of)
+(dobj of abbots)
+(det abbots the)
+
+Much_DA1 of_IO the_AT butter_NN1 melted_VVD
+(ncsubj melted Much _)
+(ncmod _ Much of)
+(dobj of butter)
+(det butter the)
+
+Little_DA1 of_IO the_AT butter_NN1 melted_VVD
+(ncsubj melted Little _)
+(ncmod _ Little of)
+(dobj of butter)
+(det butter the)
+
+Few_DA2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Few _)
+(ncmod _ Few of)
+(dobj of abbots)
+(det abbots the)
+
+Several_DA2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Several _)
+(ncmod _ Several of)
+(dobj of abbots)
+(det abbots the)
+
+Three-quarters_NN2 of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Three-quarters _)
+(iobj Three-quarters of)
+(dobj of abbots)
+(det abbots the)
+
+Half_DB of_IO the_AT abbots_NN2 came_VVD
+(ncsubj came Half _)
+(ncmod _ Half of)
+(dobj of abbots)
+(det abbots the)
+
+Half_DB the_AT abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod part abbots Half)
+(det abbots the)
+
+Half_DB of_IO the_AT abbot_NN1 came_VVD
+(ncsubj came Half _)
+(ncmod _ Half of)
+(dobj of abbot)
+(det abbot the)
+
+Half_DB the_AT abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(ncmod part abbot Half)
+(det abbot the)
+
+Double_NP1 the_AT abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(ncmod _ abbot Double)
+(det abbot the)
+
+Such_DA an_AT1 abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot an)
+(det abbot Such)
+
+What_DDQ an_AT1 abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot an)
+(det abbot What)
+
+Much_DA1 of_IO Kim_NP1 came_VVD
+(ncsubj came Much _)
+(ncmod _ Much of)
+(dobj of Kim)
+
+Much_DA1 of_IO the_AT butter_NN1 melted_VVD
+(ncsubj melted Much _)
+(ncmod _ Much of)
+(dobj of butter)
+(det butter the)
+
+Much_DA1 of_IO the_AT abbot_NN1 came_VVD
+(ncsubj came Much _)
+(ncmod _ Much of)
+(dobj of abbot)
+(det abbot the)
+
+Kim_NP1 the_AT abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(ncmod _ abbot Kim)
+(det abbot the)
+
+The_AT abbot_NN1 Kim_NP1 came_VVD
+(ncsubj came abbot _)
+(ncmod _ abbot Kim)
+(det abbot The)
+
+More_DAR abbeys_NN2 than_CSN Kim_NP1 exist_VV0
+(ncsubj exist abbeys _)
+(ncmod _ abbeys than)
+(dobj than Kim)
+(ncmod _ abbeys More)
+
+More_DAR abbots_NN2 than_CSN abbeys_NN2 exist_VV0
+(ncsubj exist abbots _)
+(ncmod _ abbots than)
+(dobj than abbeys)
+(ncmod _ abbots More)
+
+More_DAR abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(ncmod _ abbots More)
+
+Someone_PN1 crazy_JJ came_VVD
+(ncsubj came Someone _)
+
+My_APP$ discovery_NN1 that_CST the_AT abbot_NN1 abdicated_VVN is_VBZ clear_JJ
+(ncsubj is discovery _)
+(ncsubj is : _)
+(xcomp _ is clear)
+(det : My)
+(det discovery My)
+(ccomp that discovery abdicated)
+(ncsubj abdicated abbot _)
+(det abbot the)
+
+My_APP$ condition_NN1 that_CST Kim_NP1 abdicate_VV0 is_VBZ clear_JJ
+(ncsubj is condition _)
+(ncsubj is : _)
+(xcomp _ is clear)
+(det : My)
+(det condition My)
+(ccomp that condition abdicate)
+(ncsubj abdicate Kim _)
+
+His_APP$ desire_NN1 that_CST the_AT abbot_NN1 abandon_VV0 the_AT abbey_NN1 is_VBZ clear_JJ
+(ncsubj is desire _)
+(ncsubj is : _)
+(xcomp _ is clear)
+(det : His)
+(det desire His)
+(ccomp that desire abandon)
+(ncsubj abandon abbot _)
+(dobj abandon abbey)
+(det abbey the)
+(det abbot the)
+
+His_APP$ desire_NN1 to_TO abandon_VV0 the_AT abbey_NN1 is_VBZ clear_JJ
+(ncsubj is desire _)
+(xcomp _ is clear)
+(det desire His)
+(comp abandon desire)
+(xmod to desire abandon)
+(dobj abandon abbey)
+(det abbey the)
+
+Some_DD abbot_NN1 who_PNQS abandons_VVZ his_APP$ abbey_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot Some)
+(cmod _ abbot abandons)
+(ncsubj abandons who _)
+(dobj abandons abbey)
+(det abbey his)
+
+The_AT abbot_NN1 with_IW the_AT abbey_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(ncmod _ abbot with)
+(dobj with abbey)
+(det abbey the)
+
+The_AT abbot_NN1 abandoning_VVG the_AT abbey_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(ncsubj abandoning abbot _)
+(xmod _ abbot abandoning)
+(dobj abandoning abbey)
+(det abbey the)
+
+The_AT abbot_NN1 who_PNQS is_VBZ looked_VVN at_RP came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot looked)
+(ncsubj looked who _)
+(aux looked is)
+(passive looked)
+(ncmod prt looked at)
+
+The_AT abbot_NN1 looked_VVN at_RP came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(passive looked)
+(ncsubj looked abbot obj)
+(xmod _ abbot looked)
+(ncmod prt looked at)
+
+The_AT abbot_NN1 who_PNQS is_VBZ looked_VVN at_RP by_II Lee_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot looked)
+(ncsubj looked who _)
+(ncmod _ looked by)
+(dobj by Lee)
+(aux looked is)
+(passive looked)
+(ncmod prt looked at)
+
+The_AT abbot_NN1 looked_VVN at_RP by_II Lee_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(passive looked)
+(ncsubj looked abbot obj)
+(xmod _ abbot looked)
+(ncmod _ looked by)
+(dobj by Lee)
+(ncmod prt looked at)
+
+The_AT abbot_NN1 who_PNQS helps_VVZ Kim_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot helps)
+(ncsubj helps who _)
+(dobj helps Kim)
+
+The_AT abbot_NN1 to_TO help_VV0 Kim_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(comp help abbot)
+(xmod to abbot help)
+(dobj help Kim)
+
+The_AT abbot_NN1 who_PNQS is_VBZ helping_VVG Kim_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot helping)
+(ncsubj helping who _)
+(aux helping is)
+(dobj helping Kim)
+
+The_AT abbot_NN1 helping_VVG Kim_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(ncsubj helping abbot _)
+(xmod _ abbot helping)
+(dobj helping Kim)
+
+Anyone_PN1 came_VVD
+(ncsubj came Anyone _)
+
+Anyone_PN1 who_PNQS abdicates_VVZ came_VVD
+(ncsubj came Anyone _)
+(cmod _ Anyone abdicates)
+(ncsubj abdicates who _)
+
+Any_DD abbot_NN1 who_PNQS abdicates_VVZ came_VVD
+(ncsubj came abbot _)
+(det abbot Any)
+(cmod _ abbot abdicates)
+(ncsubj abdicates who _)
+
+Someone_PN1 anxious_JJ about_II Kim_NP1 came_VVD
+(ncsubj came Someone _)
+(iobj anxious about)
+(dobj about Kim)
+
+Someone_PN1 with_IW the_AT abbot_NN1 came_VVD
+(ncsubj came Someone _)
+(ncmod _ Someone with)
+(dobj with abbot)
+(det abbot the)
+
+Something_PN1 to_TO look_VV0 at_RP came_VVD
+(ncsubj came Something _)
+(arg look Something)
+(xmod to Something look)
+(ncmod prt look at)
+
+Somebody_PN1 to_TO help_VV0 Kim_NP1 came_VVD
+(ncsubj came Somebody _)
+(arg help Somebody)
+(xmod to Somebody help)
+(dobj help Kim)
+
+An_AT1 abbot_NN1 to_TO help_VV0 Kim_NP1 came_VVD
+(ncsubj came abbot _)
+(det abbot An)
+(comp help abbot)
+(xmod to abbot help)
+(dobj help Kim)
+
+Everybody_PN1 abandoning_VVG Kim_NP1 came_VVD
+(ncsubj came Everybody _)
+(arg abandoning Everybody)
+(xmod to Everybody abandoning)
+(dobj abandoning Kim)
+
+Everybody_PN1 who_PNQS is_VBZ abandoning_VVG Kim_NP1 came_VVD
+(ncsubj came Everybody _)
+(cmod _ Everybody abandoning)
+(ncsubj abandoning who _)
+(aux abandoning is)
+(dobj abandoning Kim)
+
+Everybody_PN1 who_PNQS is_VBZ looked_VVN at_RP by_II Kim_NP1 came_VVD
+(ncsubj came Everybody _)
+(cmod _ Everybody looked)
+(ncsubj looked who _)
+(aux looked is)
+(passive looked)
+(iobj looked by)
+(dobj by Kim)
+(ncmod prt looked at)
+
+Something_PN1 which_DDQ Kim_NP1 abandons_VVZ came_VVD
+(ncsubj came Something _)
+(cmod _ Something abandons)
+(obj abandons which _)
+(ncsubj abandons Kim _)
+
+Something_PN1 in_II the_AT abbey_NN1 which_DDQ Kim_NP1 abandons_VVZ came_VVD
+(ncsubj came Something _)
+(ncmod _ Something in)
+(dobj in abbey)
+(det abbey the)
+(cmod _ abbey abandons)
+(obj abandons which _)
+(ncsubj abandons Kim _)
+
+Kim_NP1 puts_VVZ the_AT butter_NN1 somewhere_RR
+(ncsubj puts Kim _)
+(ncmod _ puts somewhere)
+(dobj puts butter)
+(det butter the)
+
+Whichever_DDQV abdicated_VVD came_VVD
+(csubj came abdicated _)
+(ncsubj abdicated Whichever _)
+
+Whichever_DDQV abbot_NN1 abdicated_VVN came_VVD
+(ncsubj came abbot _)
+(det abbot Whichever)
+(passive abdicated)
+(ncsubj abdicated abbot obj)
+(xmod _ abbot abdicated)
+
+The_AT abbot_NN1 who_PNQS abdicated_VVD came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot abdicated)
+(ncsubj abdicated who _)
+
+Whichever_DDQV Kim_NP1 abandoned_VVD came_VVD
+(csubj came abandoned _)
+(obj abandoned Whichever _)
+(ncsubj abandoned Kim _)
+
+Whichever_DDQV abbot_NN1 Kim_NP1 abandoned_VVD came_VVD
+(csubj came abandoned _)
+(obj abandoned abbot _)
+(ncsubj abandoned Kim _)
+(det abbot Whichever)
+
+The_AT abbot_NN1 who_PNQS Kim_NP1 abandoned_VVD came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot abandoned)
+(obj abandoned who _)
+(ncsubj abandoned Kim _)
+
+The_AT abbot_NN1 Kim_NP1 abandoned_VVD came_VVD
+(ncsubj came abbot _)
+(ncsubj came : _)
+(det : The)
+(det abbot The)
+(ccomp _ abbot abandoned)
+(ncsubj abandoned Kim _)
+
+Lee_NP1 abandoned_VVD whichever_DDQV Kim_NP1 had_VHD abandoned_VVN
+(ncsubj abandoned Lee _)
+(ccomp _ abandoned abandoned)
+(dobj abandoned whichever)
+(ncsubj abandoned Kim _)
+(aux abandoned had)
+
+Lee_NP1 abandoned_VVD whichever_DDQV abbot_NN1 Kim_NP1 had_VHD been_VBN abandoning_VVG
+(ncsubj abandoned Lee _)
+(dobj abandoned abbot)
+(dobj abandoned :)
+(det : whichever)
+(det abbot whichever)
+(ccomp _ abbot abandoning)
+(ncsubj abandoning Kim _)
+(aux abandoning had)
+(aux abandoning been)
+
+Lee_NP1 abandoned_VVD the_AT abbot_NN1 that_CST Kim_NP1 was_VBDZ abandoning_VVG
+(ncsubj abandoned Lee _)
+(dobj abandoned abbot)
+(dobj abandoned :)
+(det : the)
+(det abbot the)
+(ccomp that abbot abandoning)
+(ncsubj abandoning Kim _)
+(aux abandoning was)
+
+Lee_NP1 abandoned_VVD the_AT abbot_NN1 Kim_NP1 was_VBDZ abandoning_VVG
+(ncsubj abandoned Lee _)
+(dobj abandoned abbot)
+(dobj abandoned :)
+(det : the)
+(det abbot the)
+(ccomp _ abbot abandoning)
+(ncsubj abandoning Kim _)
+(aux abandoning was)
+
+The_AT abbot_NN1 came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+
+The_AT two_MC abbots_NN2 came_VVD
+(ncsubj came abbots _)
+(det abbots The)
+(ncmod _ abbots two)
+
+Which_DDQ abbot_NN1 falls_VVZ over_RP
+(ncsubj falls abbot _)
+(ncmod prt falls over)
+(det abbot Which)
+
+Which_DDQ two_MC abbots_NN2 fall_VV0 over_RP
+(ncsubj fall abbots _)
+(ncmod prt fall over)
+(det abbots Which)
+(ncmod _ abbots two)
+
+Whichever_DDQV abbot_NN1 falls_VVZ over_RP came_VVD
+(csubj came falls _)
+(ncsubj falls abbot _)
+(ncmod prt falls over)
+(det abbot Whichever)
+
+Whichever_DDQV two_MC abbots_NN2 fall_VV0 over_RP came_VVD
+(csubj came fall _)
+(ncsubj fall abbots _)
+(ncmod prt fall over)
+(det abbots Whichever)
+(ncmod _ abbots two)
+
+The_AT abbot_NN1 whose_DDQ$ abbey_NN1 is_VBZ falling_VVG over_RP came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot falling)
+(ncsubj falling abbey _)
+(aux falling is)
+(ncmod prt falling over)
+(det abbey whose)
+
+The_AT abbot_NN1 whose_DDQ$ two_MC abbeys_NN2 are_VBR falling_VVG over_RP came_VVD
+(ncsubj came abbot _)
+(det abbot The)
+(cmod _ abbot falling)
+(ncsubj falling abbeys _)
+(aux falling are)
+(ncmod prt falling over)
+(det abbeys whose)
+(ncmod _ abbeys two)
+
+Whose_DDQ$ falls_VVZ over_RP
+(ncsubj falls Whose _)
+(ncmod prt falls over)
+
+Mine_PP$ falls_VVZ over_RP
+(ncsubj falls Mine _)
+(ncmod prt falls over)
+
+Neither_DD1 of_IO the_AT abbeys_NN2 closed_VVD
+(ncsubj closed Neither _)
+(ncmod _ Neither of)
+(dobj of abbeys)
+(det abbeys the)
+
+Neither_DD1 of_IO whose_DDQ$ abbeys_NN2 closed_VVD
+(ncsubj closed Neither _)
+(ncmod _ Neither of)
+(dobj of abbeys)
+(det abbeys whose)
+
+The_AT abbot_NN1 both_DB2 of_IO whose_DDQ$ abbeys_NN2 fall_VV0 over_RP came_VVD
+(ncsubj came abbot _)
+(ncsubj came : _)
+(det : The)
+(det abbot The)
+(ccomp _ abbot fall)
+(ncsubj fall both _)
+(ncmod prt fall over)
+(ncmod _ both of)
+(dobj of abbeys)
+(det abbeys whose)
+
+The_AT abbeys_NN2 both_DB2 of_IO which_DDQ fall_VV0 over_II closed_VVD
+(ncsubj closed abbeys _)
+(ncsubj closed : _)
+(det : The)
+(det abbeys The)
+(ccomp _ abbeys fall)
+(ncsubj fall both _)
+(ncmod prt fall over)
+(ncmod _ both of)
+(dobj of which)
+
+The_AT abbeys_NN2 one_MC1 of_IO which_DDQ falls_VVZ over_II closed_VVD
+(ncsubj closed abbeys _)
+(ncsubj closed : _)
+(det : The)
+(det abbeys The)
+(ccomp _ abbeys falls)
+(ncsubj falls one _)
+(ncmod prt falls over)
+(ncmod _ one of)
+(dobj of which)
+
+The_AT abbey_NN1 the_AT back_NN1 of_IO which_DDQ falls_VVZ over_II closed_VVD
+(ncsubj closed abbey _)
+(ncsubj closed : _)
+(det : The)
+(det abbey The)
+(ccomp _ abbey falls)
+(ncsubj falls back _)
+(ncmod prt falls over)
+(det back the)
+(iobj back of)
+(dobj of which)
+
+The_AT abbeys_NN2 both_DB2 of_IO the_AT backs_NN2 of_IO which_DDQ fall_VV0 over_II closed_VVD
+(ncsubj closed abbeys _)
+(ncsubj closed : _)
+(det : The)
+(det abbeys The)
+(ccomp _ abbeys fall)
+(ncsubj fall both _)
+(ncmod prt fall over)
+(ncmod _ both of)
+(dobj of backs)
+(det backs the)
+(iobj backs of)
+(dobj of which)
+
+Which_DDQ of_IO the_AT abbots_NN2 abdicate_VV0
+(ncsubj abdicate Which _)
+(ncmod _ Which of)
+(dobj of abbots)
+(det abbots the)
+
+The_AT abbeys_NN2 many_DA2 of_IO which_DDQ fall_VV0 over_II closed_VVD
+(ncsubj closed abbeys _)
+(ncsubj closed : _)
+(det : The)
+(det abbeys The)
+(ccomp _ abbeys fall)
+(ncsubj fall many _)
+(ncmod prt fall over)
+(ncmod _ many of)
+(dobj of which)
+
+The_AT abbots_NN2 many_DA2 of_IO whose_DDQ$ abbeys_NN2 fall_VV0 over_RP came_VVD
+(ncsubj came abbots _)
+(ncsubj came : _)
+(det : The)
+(det abbots The)
+(ccomp _ abbots fall)
+(ncsubj fall many _)
+(ncmod prt fall over)
+(ncmod _ many of)
+(dobj of abbeys)
+(det abbeys whose)
+
+The_AT abbeys_NN2 many_DA2 of_IO the_AT backs_NN2 of_IO which_DDQ fall_VV0 over_II closed_VVD
+(ncsubj closed abbeys _)
+(ncsubj closed : _)
+(det : The)
+(det abbeys The)
+(ccomp _ abbeys fall)
+(ncsubj fall many _)
+(ncmod prt fall over)
+(ncmod _ many of)
+(dobj of backs)
+(det backs the)
+(iobj backs of)
+(dobj of which)
+

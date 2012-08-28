@@ -1,0 +1,35 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Briscoe}{2005}{briscoe05a}
+Briscoe, T.  \harvardyearleft 2005\harvardyearright , An introduction to tag
+  sequence grammars and the rasp system parser.
+
+\harvarditem{Briscoe \harvardand\ Carroll}{2002}{briscoe02}
+Briscoe, T. \harvardand\ Carroll, J.  \harvardyearleft 2002\harvardyearright ,
+  Robust accurate statistical annotation of general text, {\em in} `Proceedings
+  of the Conference on Language Resources and Evaluation (LREC 2002)', Palmas,
+  Canary Islands, pp.~1499--1504.
+
+\harvarditem{Briscoe \harvardand\ Carroll}{2005}{briscoe05}
+Briscoe, T. \harvardand\ Carroll, J.  \harvardyearleft 2005\harvardyearright ,
+  Evaluating the speed and accuracy of a domain-independent stastistical parser
+  on the {PARC Depbank}.
+\newblock Submitted.
+
+\harvarditem[Kaplan et~al.]{Kaplan, Riezler, King, Maxwell, Vasserman
+  \harvardand\ Crouch}{2004}{kaplan04}
+Kaplan, R., Riezler, S., King, T., Maxwell, J., Vasserman, A. \harvardand\
+  Crouch, R.  \harvardyearleft 2004\harvardyearright , Speed and accuracy in
+  shallow and deep stochastic parsing, {\em in} `Proceedings of the Human
+  Language Technology conference / North American chapter of the Association
+  for Computational Linguistics annual meeting', Boston, Massachusetts,
+  pp.~97--113.
+
+\harvarditem[King et~al.]{King, Crouch, Riezler, Dalrymple \harvardand\
+  Kaplan}{2003}{king03}
+King, T., Crouch, R., Riezler, S., Dalrymple, M. \harvardand\ Kaplan, R.
+  \harvardyearleft 2003\harvardyearright , {The PARC700 Dependency Bank}, {\em
+  in} `Proceedings of the 4th International Workshop on Linguistically
+  Interpreted Corpora (LINC-03)'.
+
+\end{thebibliography}

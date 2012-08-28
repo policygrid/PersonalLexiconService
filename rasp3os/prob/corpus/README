@@ -1,0 +1,57 @@
+A development corpus of mostly in coverage sentences .txt with
+hand-corrected tagging .tag for tsg15 batch parsing and .tag2 for
+interactive parsing to create *.trees(1|0) files
+
+Adapted from fullgram corpus but much extended on basis of error files
+from tsg12+ experiments with WSJ, TREC8, BNC, etc
+
+.tag files corrected from output of scripts/tag.sh -- preprocessed in
+emacs to batch format so can be fed to fparse num <file>.tag called
+from gde Parse>> with tsg15 loaded
+
+apb.awk gives av. parse base over file of sentences + parse numbers --
+used to analyse results above (need to print-pretty output of 
+fparse num??)
+
+.tag2 files have been interactively parsed to create .trees1 treebank
+
+There are some gaps in *.trees1 where the input format to the
+interactive parser lead to failures eg. vp.tag2/trees1:
+
+Adam_NP1 was_VBDZ n't_XX able_JJ to_TO help_VV0 although_CS he_PPHS1
+had_VHD promised_VVD that_CST he_PPHS1 would_VM ._. 
+
+has 9 parses in tsg15 but has no parses interactively + all egs. in
+quote.tag2 are un/misparsed 'cos of " in input not accepted in
+interactive mode, + egs ending ._. in spc.tag2, + ??
+
+There are some missing sentences in *.trees1 for out of coverage egs
+and where it turned out that although a sentence was in coverage, it
+had no sensible analysis worth training from. These sentences were
+`skipped' and therefore recorded in *.trees0 (though some many deleted
+as I restarted the interactive parser on some modified tag files after
+correcting further tagging errors not spotted before). Drop from 1896
+*.tag sentences to 1600 parsed sentences in *.trees1 (note we don't
+have .txt versions for some files cos of how they were derived from
+extant test material)
+
+Some parses use -r rules and in some cases were in competition with
+other derivations containing the same number of -r rules. Therefore,
+in training the probabilistic model, it would probably be good to get
+counts for -r rules but to weight them so that the probability of a -r
+rule is lower than that of an unseen non-r rule. (There are also
+cases, I think, where a -r rule occurs in the correct derivation and
+there are competing derivations containing no -r rule -- so the above
+scheme might not be optimal, but identifying the optimal one would
+require extensive analysis of a treebank which should contain the
+Susanne treebank + ideally more data exemplifying the `real'
+distribution of the rules, as opposed to grammatical coverage)
+
+A good test of the effect of tagging would be to measure error rate
+against the *.tag files for retagging and parsing with/without -m
+option 
+
+EJB
+5/05
+
+

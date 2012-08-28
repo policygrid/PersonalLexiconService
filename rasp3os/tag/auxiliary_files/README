@@ -1,0 +1,19 @@
+This directory contains a number of auxiliary files necessary to run
+the tagger:
+
+- sec.trn: transtions created wrt the SEC corpus
+
+- seclarge.lex: dictionary derived from the SEC and the LOB corpus 
+
+- slb.gdbm: gdbm dictionary which combines the seclarge dictionary
+with results from the bncsampler
+  
+- slb.trn: transitions for SEC and the bncsampler
+
+- small-ascii-dictionary: small ASCII dictionary necessary when using
+a gdbm dictionary
+
+- tags.map: mapping file for CLAWS2 tag set
+
+- unkstats-seclarge: unknown word statistics derived wrt to the
+seclarge dictionary

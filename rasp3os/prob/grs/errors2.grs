@@ -1,0 +1,339 @@
+Kim_NP1 cannot_VM abide_VV0 her_PPHO1
+(ncsubj abide Kim _)
+(aux abide cannot)
+(dobj abide her)
+
+Several_DA2 of_IO the_AT children_NN2 had_VHD been_VBN sexually_RR abused_VVN
+(ncsubj abused Several _)
+(aux abused had)
+(ncmod _ abused sexually)
+(aux abused been)
+(passive abused)
+(ncmod _ Several of)
+(dobj of children)
+(det children the)
+
+Nothing_PN1 we_PPIS2 can_VM do_VD0 will_VM help_VV0
+(ncsubj help Nothing _)
+(aux help will)
+(cmod _ Nothing do)
+(ncsubj do we _)
+(aux do can)
+
+Why_RRQ is_VBZ it_PPH1 that_CST it_PPH1 rains_VVZ all_DB the_AT time_NNT1 in_II England_NP1 ?_?
+(arg_mod _ is Why)
+(pcomp is in)
+(ncsubj is it _)
+(dobj in England)
+(cmod that it rains)
+(ncsubj rains it _)
+(ncmod _ rains time)
+(ncmod part time all)
+(det time the)
+
+If_CS necessary_JJ ,_, we_PPIS2 will_VM leave_VV0
+(cmod _ leave If)
+(ncsubj leave we _)
+(aux leave will)
+(dobj If necessary)
+
+We_PPIS2 will_VM leave_VV0 if_CS necessary_JJ
+(ncsubj leave We _)
+(cmod _ leave if)
+(dobj if necessary)
+(aux leave will)
+
+Can_VM you_PPY account_VV0 for_IF how_RGQ it_PPH1 happened_VVD ?_?
+(ncsubj account you _)
+(ccomp _ account for)
+(ccomp _ for happened)
+(arg_mod _ happened how)
+(ncsubj happened it _)
+
+He_PPHS1 aimed_VVD for_IF the_AT shoulder_NN1 ,_, not_XX the_AT heart_NN1
+(ta comma aimed heart)
+(ncmod _ heart not)
+(det heart the)
+(ncsubj aimed He _)
+(iobj aimed for)
+(dobj for shoulder)
+(det shoulder the)
+
+How_RGQ many_DA2 members_NN2 does_VDZ he_PPHS1 have_VH0 ?_?
+(ncmod _ have How)
+(ncsubj have he _)
+(dobj How members)
+(ncmod _ members many)
+
+There_EX is_VBZ no_AT choice_NN1 but_CCB to_TO amputate_VV0
+(ncsubj but There _)
+(conj but is)
+(conj but amputate)
+(xcomp _ is choice)
+(det choice no)
+
+The_AT Prime_NNSB1 Minister_NNS1 resigned_VVD
+(ncsubj resigned Minister _)
+(det Minister The)
+(ncmod _ Minister Prime)
+
+I_PPIS1 ca_VM n't_XX answer_VV0 (_( you_PPY )_) without_IW information_NN1
+(ncsubj answer I _)
+(aux answer ca)
+(ncmod _ answer n't)
+(iobj answer without)
+(dobj without information)
+(ta bal answer you)
+
+He_PPHS1 appeared_VVD (_( to_TO be_VB0 )_) calm_NN1
+(ncsubj appeared He _)
+(dobj appeared calm)
+(ta brack calm be)
+
+The_AT rate_NN1 is_VBZ lower_JJR than_CSN last_MD month_NNT1 's_$
+(ncsubj is rate _)
+(xcomp _ is lower)
+(ncmod _ lower than)
+(dobj than last)
+(ncmod _ last month)
+(det rate The)
+
+It_PPH1 appears_VVZ as_CSA though_CS I_PPIS1 was_VBDZ wrong_JJ
+(ncsubj appears It _)
+(pcomp appears as)
+(ccomp _ as though)
+(ccomp _ though was)
+(ncsubj was I _)
+(xcomp _ was wrong)
+
+Let_VV0 's_PPIO2 assume_VV0 he_PPHS1 is_VBZ wrong_JJ
+(ccomp _ Let assume)
+(ncsubj assume 's _)
+(ccomp _ assume is)
+(ncsubj is he _)
+(xcomp _ is wrong)
+
+Being_VBG on_II his_APP$ own_DA ,_, he_PPHS1 hid_VVD
+(xmod _ hid Being)
+(ncsubj hid he _)
+(pcomp Being on)
+(dobj on own)
+(det own his)
+
+Do_VD0 n't_XX listen_VV0 to_II others_NN2 -_- try_VV0 thinking_NN1
+(ta end listen try)
+(dobj try thinking)
+(aux listen Do)
+(ncmod _ listen n't)
+(iobj listen to)
+(dobj to others)
+
+By_II the_AT time_NNT1 the_AT letter_NN1 reached_VVD them_PPHO2 their_APP$ sister_NN1 had_VHD died_VVN
+(ncmod _ died By)
+(ncsubj died sister _)
+(aux died had)
+(det sister their)
+(dobj By time)
+(dobj By :)
+(det : the)
+(det time the)
+(ccomp _ time reached)
+(ncsubj reached letter _)
+(dobj reached them)
+(det letter the)
+
+Being_VBG bored_VVN is_VBZ something_PN1 she_PPHS1 ca_VM n't_XX bear_VV0
+(xsubj is bored _)
+(xcomp _ is something)
+(cmod _ something bear)
+(ncsubj bear she _)
+(aux bear ca)
+(ncmod _ bear n't)
+(aux bored Being)
+(passive bored)
+
+The_AT meeting_NN1 began_VVD promisingly_RR ,_, but_CCB then_RR things_NN2 started_VVD to_TO go_VV0 wrong_JJ
+(conj began but)
+(conj but started)
+(ncmod _ started then)
+(ncsubj started things _)
+(xcomp to started go)
+(xcomp _ go wrong)
+(ncsubj began meeting _)
+(ncmod _ began promisingly)
+(det meeting The)
+
+These_DD2 changes_NN2 always_RR bite_VV0 the_AT elderly_JJ hard_JJ
+(ncsubj bite changes _)
+(ncmod _ bite always)
+(xcomp _ bite hard)
+(ncsubj hard elderly _)
+(dobj bite elderly _)
+(det elderly the)
+(det changes These)
+
+The_AT interior_NN1 of_IO the_AT house_NNL1 is_VBZ still_RR blackened_VVN from_II the_AT fire_NN1 /_CC smoke_NN1
+(ncsubj blackened interior _)
+(ncmod _ blackened still)
+(aux blackened is)
+(passive blackened)
+(iobj blackened from)
+(dobj from /)
+(det / the)
+(conj / fire)
+(conj / smoke)
+(det interior The)
+(iobj interior of)
+(dobj of house)
+(det house the)
+
+He_PPHS1 did_VDD not_XX want_VV0 to_TO get_VB0 involved_VVN
+(ncsubj want He _)
+(aux want did)
+(ncmod _ want not)
+(xcomp to want involved)
+(aux involved get)
+(passive involved)
+
+Blend_VV0 the_AT ingredients_NN2 together_RR
+(ncmod _ Blend together)
+(dobj Blend ingredients)
+(det ingredients the)
+
+They_PPHS2 blew_VVD the_AT other_JB team_NN1 away_RL in_II the_AT second_MD half_DB
+(ncsubj blew They _)
+(ncmod _ blew in)
+(dobj in second)
+(ncmod _ second half)
+(det second the)
+(dobj blew team)
+(ncmod prt blew away)
+(det team the)
+(ncmod _ team other)
+
+I_PPIS1 thought_VVD that_CST after_ICS a_AT1 few_DA2 months_NNT2 the_AT argument_NN1 would_VM blow_VV0 over_RP
+(ncsubj thought I _)
+(ccomp that thought blow)
+(ncmod _ blow after)
+(ncmod _ blow months)
+(ncsubj blow argument _)
+(aux blow would)
+(ncmod prt blow over)
+(det argument the)
+(dobj after few)
+(det few a)
+
+He_PPHS1 sure_RR blew_VVD his_APP$ cool_JJ
+(ncsubj blew He _)
+(ncmod _ blew sure)
+(dobj blew cool)
+(det cool his)
+
+Your_APP$ knee_NN1 ca_VM n't_XX hurt_VV0 that_RG much_DA1
+(ncsubj hurt knee _)
+(aux hurt ca)
+(ncmod _ hurt n't)
+(xcomp _ hurt much)
+(ncmod _ much that)
+(det knee Your)
+
+That_DD1 was_VBDZ a_AT1 really_RR stupid_JJ thing_NN1 to_TO do_VD0 ,_, you_PPY blundering_JJ idiot_NN1 !_!
+(ta voc was you)
+(ncmod _ you idiot)
+(ncsubj was That _)
+(xcomp _ was thing)
+(det thing a)
+(ncmod _ thing stupid)
+(comp do thing)
+(xmod to thing do)
+(ncmod _ stupid really)
+
+She_PPHS1 blushes_VVZ furiously_RR whenever_CS she_PPHS1 sees_VVZ him_PPHO1
+(ncsubj blushes She _)
+(cmod _ blushes whenever)
+(ccomp _ whenever sees)
+(ncsubj sees she _)
+(dobj sees him)
+(ncmod _ blushes furiously)
+
+She_PPHS1 bobbed_VVD (_( a_AT1 curtsy_NN1 )_) to_II the_AT Queen_NP1
+(ncsubj bobbed She _)
+(ncmod _ bobbed to)
+(dobj to Queen)
+(det Queen the)
+(ta bal bobbed curtsy)
+(det curtsy a)
+
+The_AT journalist_NN1 boiled_VVN down_RP his_APP$ lengthy_JJ report_NN1 to_II just_RR a_AT1 few_DA2 paragraphs_NN2
+(ncsubj boiled journalist _)
+(iobj boiled to)
+(dobj boiled report)
+(dobj to paragraphs)
+(ncmod _ paragraphs just)
+(ncmod _ paragraphs few)
+(det few a)
+(det report his)
+(ncmod _ report lengthy)
+(ncmod prt boiled down)
+(det journalist The)
+
+This_DD1 pub_NN1 was_VBDZ bombed_VVN a_AT1 few_DA2 years_NNT2 ago_RA
+*** Warning: no matching parse
+
+The_AT gap_NN1 between_II the_AT unemployed_JJ and_CC employers_NN2 who_PNQS need_VV0 workers_NN2 widened_VVD
+(ncsubj widened and _)
+(det and The)
+(conj and gap)
+(conj and employers)
+(cmod _ employers need)
+(ncsubj need who _)
+(dobj need workers)
+(ncmod _ gap between)
+(dobj between unemployed)
+(det unemployed the)
+
+The_AT jury_NN1 brought_VVN in_II a_AT1 verdict_NN1 of_IO not_XX guilty_JJ
+(ncsubj brought jury _)
+(iobj brought in)
+(dobj in verdict)
+(det verdict a)
+(iobj verdict of)
+(dobj of guilty)
+(ncmod _ guilty not)
+(det jury The)
+
+She_PPHS1 snogged_VVD the_AT bishop_NN1 a_AT1 lot_NN1
+(ncsubj snogged She _)
+(obj2 snogged lot)
+(dobj snogged bishop)
+(det lot a)
+(det bishop the)
+
+He_PPHS1 need_VM not_XX have_VH0 gone_VVN
+(ncsubj gone He _)
+(aux gone need)
+(ncmod _ gone not)
+(aux gone have)
+
+It_PPH1 was_VBDZ Ovitz_NP1 who_PNQS brokered_VVD the_AT multi-billion_NN1 dollar_NN1 deal_NN1
+(ncsubj was It _)
+(xcomp _ was Ovitz)
+(cmod _ Ovitz brokered)
+(ncsubj brokered who _)
+(dobj brokered deal)
+(det deal the)
+(ncmod _ deal multi-billion)
+(ncmod _ deal dollar)
+
+He_PPHS1 would_VM brook_VV0 no_AT disagreement_NN1
+(ncsubj brook He _)
+(aux brook would)
+(dobj brook disagreement)
+(det disagreement no)
+
+Houses_NNL2 were_VBDR built_VVN to_TO last_VV0 a_AT1 few_DA2 years_NNT2 ago_RA
+> Error: Unexpected end of file on #<FILE-CHARACTER-INPUT-STREAM ("/private/var/automount/home/j/jo/johnca/MacHome/Desktop/nrasp/corpus/errors2.trees1" [4]) #x5E7D0DE>
+> While executing: CCL::%READ-CHAR-NO-EOF
+> Type :POP to abort.
+Type :? for other options.
+1 > 

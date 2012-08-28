@@ -1,0 +1,104 @@
+\begin{center}
+\LARGE
+{\bf The Alvey Natural Language Tools Grammar} \\ 
+{\bf (4th Release)}\footnote{This work was supported by research
+grant GR/F35463 from the U.K. Science and Engineering Research Council
+under the IED programme.}
+
+\vspace{4cm}
+
+\large
+{\bf Claire Grover} \\
+{\it (grover@cogsci.ed.ac.uk)}
+
+\vspace{0.25cm}
+
+{\it Human Communication Research Centre, University of Edinburgh} \\
+{\it 2 Buccleuch Place, Edinburgh, EH8 9LW, UK}
+
+\vspace{2cm}
+
+{\bf John Carroll, Ted Briscoe} \\
+{\it (jac / ejb @cl.cam.ac.uk)}
+
+\vspace{0.25cm}
+
+{\it Computer Laboratory, University of Cambridge} \\
+{\it Pembroke Street, Cambridge, CB2 3QG, UK}
+
+\vspace{4cm}
+
+\today
+
+\normalsize
+\end{center}
+\setcounter{footnote}{0}
+
+\vfill
+
+\pagebreak
+
+\begin{center}
+{\large\bf Abstract}
+\end{center}
+
+This report provides a detailed description of the fourth and final
+funded release of the ANLT grammar. It includes a description of
+both the syntactic and semantic components of the grammar, the ANLT
+grammar formalism and metagrammar compilation process, and a listing
+of the complete grammar. It provides some background and explanation
+for the syntactic and semantic frameworks adopted and pointers to
+relevant literature. It ends with an assessment of the adequacy and
+coverage of the fourth grammar and of possible areas for further work.
+
+\vspace{5mm}
+
+\begin{center}
+{\large\bf ANLT Distribution Arrangements}
+\end{center}
+
+A basic description of the ANLT, distribution arrangements and
+instructions, and a machine-readable specimen licence agreement are
+available in files on the FTP server ftp.cl.cam.ac.uk (128.232.0.56).
+To fetch this information use anonymous FTP (login with user name
+anonymous, and password your e-mail address), go to the directory
+`nltools', and fetch the files:
+
+{\bf basic} : basic description of the ANLT and distribution
+arrangements \\
+{\bf licence} : a machine-readable specimen licence agreement \\
+{\bf instruct} : instructions on how to FTP the ANLT itself
+
+\vspace{5mm}
+
+The following example shows how to fetch these files:
+\begin{verbatim}
+$ ftp ftp.cl.cam.ac.uk
+Connected to swan.cl.cam.ac.uk.
+220- swan.cl.cam.ac.uk FTP server (Version 5.60+UA) ready.
+...
+Name (ftp.cl.cam.ac.uk:jac): anonymous
+Password (ftp.cl.cam.ac.uk:anonymous): <type your e-mail address here>
+...
+ftp> cd nltools
+250 CWD command successful.
+ftp> get basic
+...
+ftp> quit
+221 Goodbye.
+\end{verbatim}
+
+\vspace{5mm}
+
+(The \$ is the Unix shell command prompt). If the FTP command does not
+know about the address ftp.cl.cam.ac.uk, try giving the command the
+internet number (128.232.0.56) instead. If you still have problems, or
+FTP is not available to you, then you can obtain the ANLT on magnetic
+tape by writing to the address below specifying the type of tape and
+format you require:
+
+Lynxvale WCIU Programs\\
+20 Trumpington St\\
+Cambridge, CB2 1QA, UK\\
+Fax: +223 332797
+

@@ -1,0 +1,381 @@
+\section{Semantics}
+
+The GDE provides facilities for defining semantic representations
+associated with all relevant syntactic rule types in the form of
+expressions of the (typed or untyped) lambda calculus as described,
+for example, in Dowty, Wall and Peters (1981). Formulae of the lambda
+calculus are constructed for each (partial) syntactic analysis which
+the parser yields, by taking the semantics of each local tree and
+building larger expressions according to the formulae associated with
+the rules which define the local trees. The GDE performs
+beta-reduction on these formulae (by default).
+
+In the search for suitable semantic representations (SRs)
+for the grammar, it was decided that two distinct levels of
+representation would be optimal: a single unscoped SR should be
+assigned by the grammar and this would be handed to a scoping and
+post-processing module designed to yield a single, `neutral' (usually
+first-order) formula capable of being input to an automated theorem
+prover. This allows the semantics built into the grammar to be
+relatively application-neutral. Specific applications could modify the
+scoping and post-processing module to incorporate appropriate hooks
+into domain-specific components. In the parser, a `view semantics'
+command displays the unscoped SR and an `interpret' command shows the
+output of the scoping module (see section 7 for details). This
+distinction between unscoped SRs and `final' logical forms is similar
+to the distinction made by Alshawi \etal (1988) between `quasi logical
+forms' and `logical forms'.  Indeed, many aspects of our semantic
+analysis owe much to the work of Alshawi \etal (1988) and Alshawi
+(1992).
+
+In this section we give only a brief overview of the semantic
+representations defined by the grammar. More detail about the
+semantics of major categories and of constructions can be found in
+sections 5 and 6 respectively. The illustrative scoping module
+provided with the grammar is described in section 7.
+
+\subsection{The Semantics of Sentences}
+
+The semantic representations (SRs)that are defined in the grammar look
+as much as possible like expressions in first-order predicate logic
+since in almost all cases lambda abstractions are fully reduced. We
+employ `event' (or more accurately what Bach (1986) terms eventuality)
+individual variables (indicated by `e' in their names, but otherwise
+formally indistinct from other individual variables) in order to
+produce the kind of `event-based' semantics described in Davidson
+(1967) and Parsons (1990). We also follow Barwise and Cooper (1981) in
+using generalized quantifiers. These are unscoped in the SRs produced
+by the grammar but can be scoped using the algorithms described in
+Hobbs and Shieber (1987) or Vestre (1991), for example.  (The GDE's
+illustrative scoping module produces just one scoping out of all
+possible scopings.)  \nextex{} shows the SR associated with the the
+declarative sentence {\it those abbots helped him}.
+
+\small
+\begin{ex} 
+\begin{verbatim}
+"those abbots helped him"
+(DECL
+ (HELP (uqe (some (e1) (PAST e1)))
+  (dd (the (x1) (and (pl x1) (distal x1) (ABBOT x1))))
+  (pro (the (x2) (and (sg x2) (male x2))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+`DECL' indicates that the sentence is declarative. The predicate
+involved is HELP and it takes three arguments: the first is the event
+argument, the second corresponds to the subject of {\it help} and the
+third to the object. Each of these arguments is labelled as being of a
+certain type: the event argument is labelled `uqe' (unscoped
+quantifier representing an event), the subject argument is labelled
+`dd' (definite description) and object argument is labelled `pro'
+(pronoun). These different labels are intended to be useful to a
+scoper/resolution module which may follow different strategies with
+different types of verbal argument. Associated with the event argument is tense
+information (PAST) and an existential quantifier (`some') which is the
+default quantifier associated with events in the absence of an overt
+event quantifier. We do not distinguish different types of eventuality
+(events, states, processes etc.) since an accurate computation of such
+distinctions depends on the interaction of a number of factors such as
+the basic type of a verb, tense and aspect, and context. Because our
+lexicon is so large and is not hand-coded, we are unable to record the
+basic type of a verb and so we have no basis on which to compute the
+necessary distinctions. There are sentences which we know should be
+interpreted as states rather than events (e.g.\ ones where the main
+verb is copular {\it be}--{\it Kim is crazy}) but since in general we
+cannot make the distinction there is little point in making it just
+occasionally.
+
+Apart from declaratives, the grammar recognises yes-no questions,
+wh-questions and imperatives. The SRs for these are very similar to
+their declarative equivalents:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"did those abbots help him"
+(YNQU
+ (HELP (uqe (some (e1) (PAST e1)))
+  (dd (the (x1) (and (pl x1) (distal x1) (ABBOT x1))))
+  (pro (the (x2) (and (sg x2) (male x2))))))
+\end{verbatim}
+\end{ex}
+\begin{ex}
+\begin{verbatim}
+"who did those abbots help"
+(WHQU
+ (HELP (uqe (some (e1) (PAST e1)))
+  (dd (the (x1) (and (pl x1) (distal x1) (ABBOT x1))))
+  (pro (the (_wh1) (human _wh1)))))
+\end{verbatim}
+\end{ex}
+\begin{ex}
+\begin{verbatim}
+"help him"
+(IMP
+ (HELP (uqe (some (e1) (NOTENSE e1))) 
+  (pro (the (y1) (hearer y1)))
+  (pro (the (x1) (and (sg x1) (male x1))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Yes-no question SRs are identical to declaratives except for the
+initial `YNQU'.  Wh-question SRs have an initial `WHQU' and also
+contain a `\_wh' variable indicating the questioned element.
+Imperative SRs contain an indication that it is the hearer to whom the
+command is directed.  Subordinate sentences are not prefixed by DECL,
+YNQU, WHQU or IMP.
+
+
+\subsection{The Semantics of Noun Phrases}
+
+Barwise and Cooper (1981) suggest that all N2s can be translated as
+generalized quantifiers, but a distinction is often made between N2
+meanings which are anaphoric (i.e.\ which are cospecified with an
+antecedent / prior discourse referent made available by the linguistic
+context) and those which are true quantifiers. In a system which seeks
+to provide interpretations for entire discourses, it is necessary to
+link anaphoric N2s with their antecedents and it therefore seems
+necessary to distinguish a variety of different types of N2. Although
+neither the SRs produced by the grammar nor the scoping or
+post-processing module that we provide attempt to resolve anaphors, we
+do distinguish different types of N2 for the benefit of those who want
+to build their own resolution component. Some examples of SRs
+associated with N2s are as follows:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"those abbots"
+(dd (the (x1) (and (pl x1) (distal x1) (ABBOT x1))))
+
+"all abbots"
+(uq (all (x1) (and (pl x1) (ABBOT x1))))
+
+"kim"
+(name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+
+"abbots"
+(uq (some (x1) (and (pl x1) (ABBOT x1))))
+
+(kind (all (x1) (and (pl x1) (ABBOT x1))))
+
+"he"
+(pro (the (x1) (and (sg x1) (male x1))))
+
+"ourselves"
+(rpro (the (x1) (and (pl x1) (speaker x1))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Apart from the initial label, all the N2 SRs above have the same
+tri-partite structure---a quantifier followed by a variable that it
+binds followed by a term in which the bound variable occurs.  When
+scoped, this final term becomes the restriction set of the generalized
+quantifier (see section 7 for details). The interpretation of the
+quantifiers is not part of the SR and would have to be specified by
+the user in the context of a particular application.  The common
+structure is consistent with the assumption that all N2s can be
+treated as generalized quantifiers but the initial labels given to
+different kinds of N2 leave open the possibility that different
+strategies may be pursued depending on type. `dd' marks a definite
+description, indicating that an antecedent may be available; `pro'
+marks pronouns and `rpro' reflexive pronouns, indicating again that
+antecedents may be available; `uq' marks an unscoped quantifier and
+indicates that there is no need to search for an antecedent, but that
+quantifier scoping is required; `name' marks names, a kind of definite
+description which applications may need to treat differently; and
+`kind' marks natural kind interpretations of bare plurals. Although we
+mark pronouns and reflexives, we do not attempt to resolve them and do
+not represent in the SR syntactic structural information (e.g.
+c-command relations) that might have been used to constrain
+interpretations.
+
+The SRs above are all associated with non-predicative N2s ([PRD --]).
+Predicative N2s also occur and these are given SRs quite different
+from the examples above. The SR associated with {\it Kim is an abbot}
+is:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim is an abbot"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (ABBOT (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+where the translation of the predicative N2 {\it an abbot} is the
+predicate SR {\tt (lambda (x) (ABBOT x))} which is applied to the SR
+for {\it Kim}.
+
+\subsection{Events and N2s, A2s and P2s}
+
+A standard event-based approach would associate event variables not
+only with predicates deriving from verbs but with predicates deriving
+from nouns, prepositions and adjectives. We have suppressed event
+variables other than those associated with verbs because of the large
+number of existential quantifiers over events which would otherwise
+occur and which would make our SRs somewhat unreadable. Instead,
+wherever N2s, A2s or P2s occur as the main predicate of a clause
+(usually after copula {\it be}) we insert the predicate BE and associate
+an event(uality) variable with it:
+
+\small
+\begin{ex}
+\begin{verbatim}
+"kim is an abbot"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (ABBOT (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1)))))))
+
+"kim is crazy"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (CRAZY (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+   (degree unknown))))
+
+"kim is in the abbey"
+(DECL
+ (BE (uqe (some (e1) (PRES e1)))
+  (IN (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+   (dd (the (x2) (and (sg x2) (ABBEY x2)))))))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+
+\subsection{Building Semantic Representations}
+
+The semantic representions associated with the complete Ss and N2s
+returned by the parser (with the TOP category declaration on) are
+quite simple and readable but the forms associated with
+subconstituents of these are often very complicated and hard to read,
+and the formulae in ID and PS rules can be very complex indeed.
+The reason for this division between simplicity at a high-level and
+complexity at a low-level is that the pieces of information needed for
+a complete translation of a sentence (or an N2) come from various
+sub-parts and these pieces of information cannot be put together to
+form a whole until the topmost level. If they are put together too
+soon then information coming from higher up in a tree cannot be
+incorporated. We can illustrate with a concrete example: consider the
+sentence {\it on tuesday Kim was helping Lee} which has the parse tree
+in \nextex{} (annotated with rule names rather than categories) and
+which has the final semantic form in \exnum{+2}{}.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr})
+\begin{minipage}[t]{14cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 8.69em\hbox to 1.00em{\hss{T1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 9.19em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 6.69em\hbox to 5.00em{\hss{S/ADVBLa1}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 9.25em\raise1.500ex\hbox{\special{ps::currentpoint /momabjy exch def /momabjx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.00em\lower0.500ex\hbox{\special{ps::currentpoint momabjx momabjy lineto stroke moveto}}%
+\hskip 10.38em\lower0.500ex\hbox{\special{ps::currentpoint momabjx momabjy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.50em\hbox to 7.00em{\hss{\mbox{\hspace{1in}X2/MOD2\hspace{1in}}}\hss}%
+\hskip 4.62em\hbox to 4.50em{\hss{\mbox{\hspace{1in}S1a\hspace{1in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.00em\vrule width.04em%
+\hskip 10.46em\raise1.500ex\hbox{\special{ps::currentpoint /momabsy exch def /momabsx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 2.75em\hbox to 2.50em{\hss{P2/P1}\hss}%
+\hskip 4.00em\lower0.812ex\hbox{\special{ps::currentpoint momabsx momabsy lineto stroke moveto}}%
+\hskip 10.25em\lower0.812ex\hbox{\special{ps::currentpoint momabsx momabsy lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.00em\vrule width.04em%
+\hskip 1.21em\hbox to 8.00em{\hss{\mbox{\hspace{0.4in}N2+/PN\hspace{0.4in}}}\hss}%
+\hskip 1.00em\hbox to 10.50em{\hss{\mbox{\hspace{0.4in}VP/BE\_PRD\hspace{0.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 0.00em\hbox to 8.00em{\hss{\mbox{\hspace{0.4in}P1/NPc\hspace{0.4in}}}\hss}%
+\hskip 1.25em\vrule width.04em%
+\hskip 10.34em\raise1.972ex\hbox{\special{ps::currentpoint /momabwy exch def /momabwx exch def}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.00em\raise1.972ex\hbox{\special{ps::currentpoint /momabny exch def /momabnx exch def}}%
+\hskip 4.50em\hbox to 1.50em{\hss{kim}\hss}%
+\hskip 6.88em\lower0.812ex\hbox{\special{ps::currentpoint momabwx momabwy lineto stroke moveto}}%
+\hskip 5.25em\lower0.812ex\hbox{\special{ps::currentpoint momabwx momabwy lineto stroke moveto}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 1.25em\lower0.812ex\hbox{\special{ps::currentpoint momabnx momabny lineto stroke moveto}}%
+\hskip 5.50em\lower0.812ex\hbox{\special{ps::currentpoint momabnx momabny lineto stroke moveto}}%
+\hskip 9.38em\hbox to 1.50em{\hss{was}\hss}%
+\hskip 1.00em\hbox to 7.00em{\hss{\mbox{\hspace{0.4in}PRD4\hspace{0.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 0.75em\hbox to 1.00em{\hss{on}\hss}%
+\hskip 1.00em\hbox to 8.00em{\hss{\mbox{\hspace{0.4in}N2+/PN\hspace{0.4in}}}\hss}%
+\hskip 11.38em\vrule width.04em%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 6.75em\vrule width.04em%
+\hskip 13.84em\hbox to 3.00em{\hss{VP/NP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 5.00em\hbox to 3.50em{\hss{tuesday}\hss}%
+\hskip 13.75em\raise1.972ex\hbox{\special{ps::currentpoint /momacay exch def /momacax exch def}}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 20.00em\lower0.500ex\hbox{\special{ps::currentpoint momacax momacay lineto stroke moveto}}%
+\hskip 4.25em\lower0.500ex\hbox{\special{ps::currentpoint momacax momacay lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 18.25em\hbox to 3.50em{\hss{helping}\hss}%
+\hskip 1.00em\hbox to 3.00em{\hss{N2+/PN}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 24.25em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 23.50em\hbox to 1.50em{\hss{lee}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+\small
+\begin{ex}
+\begin{verbatim}
+(DECL
+ (and
+  (HELP #1=(uqe (some (e1) (PAST (PROG e1))))
+   (name (the (x1) (and (sg x1) (named x1 KIM) (animate x1))))
+   (name (the (x2) (and (sg x2) (named x2 LEE) (animate x2)))))
+  (AT-TIME #1# TUESDAY)))
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The basic predicate-argument structure originates in the lowest VP
+where the lexical item {\it helping} contributes the name of the
+predicate, HELP, and where the rule that builds the VP provides the
+information that HELP is a three-place predicate whose third argument
+is the object N2 and whose other arguments are to be found outside the
+VP. At the higher VP the combination of {\it be} with an [VFORM ING]
+complement tells us that we have progressive aspect (the PROG
+operator) and the fact that {\it was} is finite and past tense can be
+used at the point where the lower S is built to provide the PAST
+operator. It is also here that translation of the subject argument can
+be incorporated. The structure corresponding to the event argument
+cannot be put together at the lower S because there may be a
+quantifier higher up (as, for example, in {\it often Kim was helping
+Lee}). In this case there is no quantifer so the default {\tt some} is
+assumed but only at the point where the S is deemed complete---i.e.\
+at the point where the T1 rule picks it up. At the point of the lower
+S there is also still the possibility of a higher non-quantificational
+modifier which does indeed occur in this example---{\it on tuesday}.
+The translation of this modifier needs to be conjoined with the basic
+predicate-argument structure and both need the event structure as
+their first arguments. 
+
+At each point in the translation, provision needs to be made for
+incorporating information which may occur higher up in the tree and so
+it is inevitable that each node, apart from the top node, has a complex
+lambda expression associated with it which may be hard to decipher.
+In the following sections we try wherever possible to explain these
+expressions since it is necessary to understand them in order to be
+able to alter or add to the grammar. 
+
+

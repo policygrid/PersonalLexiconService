@@ -1,0 +1,346 @@
+\documentstyle[a4,11pt]{report}
+%
+\newenvironment{display}%
+   {\begin{center}
+    \begin{minipage}[t]{5.4in}}%
+   {\end{minipage}
+    \end{center}}
+%
+\newenvironment{ex}%
+   {\begin{display}}%
+   {\end{display}}
+%
+\begin{document} 
+\appendix
+\setcounter{chapter}{4}
+\chapter{Grammar Development Environment version 1.35: New Facilities}
+
+The fourth release of the Alvey Natural Language Tools (ANLT) contains
+version 1.35 of the Grammar Development Environment (GDE); this
+version is substantially the same as that
+described in the main GDE documentation on this tape (and also in
+Cambridge University Computer Laboratory Technical Report no.\ 233). 
+Version 1.35 contains a couple of additional facilities in the area of
+defining semantic formulae in ID rules and metarules, a few user interface
+improvements, and uses a different internal representation for the object
+grammar. This document describes the differences.
+
+
+\section*{Semantics of Kleene-repeated Categories}
+
+Kleene-repeated categories in ID and PS rules are categories which may
+be instantiated an indefinite number of times at parse time. The standard
+type of semantic formulae for ID rules (referring to the semantics of
+daughters by {\tt 1}, {\tt 2} etc.) makes little sense when one of the daughters is
+repeated. What is normally required for such rules is the ability to splice
+a whole sequence of formulae stemming from a repeated daughter into the result
+formula. In version 1.35, this can be done by using the notation
+{\tt 1+}, {\tt 2+} etc.; {\tt 1+} means splice in the semantics of
+all daughter nodes in
+the parse tree starting from the node corresponding to the first occurrence
+of the left-most rule daughter and continuing to the right; {\tt 2+} means start
+from the first occurrence of the second rule daughter, and so on.
+ID rules introducing {\tt VP} and {\tt N} co-ordination can thus be written as:
+\begin{ex}
+\begin{verbatim}
+VP/COORD : VP[COORD +] --> VP[CONJ EITHER], ( VP[CONJ OR] )+ :
+   (lambda (x) (OR (1 x) (2+ x))).
+
+N/COORD : N[COORD +] --> ( N[CONJ NULL] )+, ( N[CONJ AND] )+ :
+   (AND 1+).
+\end{verbatim}
+\end{ex}
+producing for the verb phrase {\it either smiles or laughs or cries}, the semantics
+\begin{ex}
+\begin{verbatim}
+(lambda (x) (OR (SMILE x) (LAUGH x) (CRY x)))
+\end{verbatim}
+\end{ex}
+and for {\it man woman and child}, the semantics
+\begin{ex}
+\begin{verbatim}
+(AND MAN WOMAN CHILD)
+\end{verbatim}
+\end{ex}
+When a repeated index is applied to one or more arguments (as in the
+{\tt (2+ x)} in the {\tt VP} rule above), each formula is first applied to the
+arguments before being spliced in.
+
+Alternative clauses containing conditions can be associated with kleene daughters,
+and when that daughter or any subsequent one satisfies a condition, the part of
+the output semantics referring to the daughter is spliced into the final
+result. E.g. with the rule
+\begin{ex}
+\begin{verbatim}
+N2/COORD : N2[COORD +] --> ( N2[CONJ NULL] )+, ( N2[CONJ AND] )+ : 
+   1 = [PLU -], (lambda (x) (and (1+ (SING x)))) : 
+   1 = [PLU +], (lambda (x) (and (1+ (PLU x)))). 
+\end{verbatim}
+\end{ex}
+and the local tree
+\begin{ex}
+\begin{verbatim}
+                     N2[COORD +]
+               /         |         \
+           N2[PLU -]  N2[PLU -]  N2[PLU +]
+\end{verbatim}
+\end{ex}
+(which might result from parsing {\it kim, sandy and the students}) the
+semantics of the mother node would be
+\begin{ex}
+\begin{verbatim}
+(lambda (x) (and (1 (SING x)) (2 (SING x)) (3 (PLU x))))
+\end{verbatim}
+\end{ex}
+
+
+\section*{Metarule Semantic Conditions}
+
+Version 1.35 allows syntactic conditions to be associated with
+metarule semantic formulae (in 1.32 conditions were only allowed in ID and PS
+rule semantics). Metarule conditions are stated in a similar way to ones in ID
+rules, and they are used to constrain which metarule formulae apply to which ID
+rule formulae, or add new conditions to the output expanded rule. The metarule
+condition's category index controls which of these two roles a particular condition
+plays. The categories in a metarule are numbered from zero, starting with the LHS
+mother, continuing with the LHS daughters, then the RHS mother and finally
+the RHS daughters.
+A condition whose index refers to a category on the metarule LHS allows
+its semantic formula to apply only to input ID rule formulae which either have a 
+matching condition on the same daughter, or which have no condition on that daughter.
+A condition whose index refers to a category on the metarule RHS is
+simply added as a condition on the semantic formula on the output rule. Input
+ID rule conditions which are not matched by any metarule condition are
+carried through unchanged to the output rule.
+
+As an example, the metarule {\tt PASS} below has three semantic formula,
+each of which applies only to input ID rule formulae which either have
+a condition {\tt [SLASH NOSLASH]} on their {\tt N2} daughter, or no condition
+on this daughter. The first and second formulae add conditions on the {\tt P2}
+daughter in the output semantics.
+\begin{ex}
+\begin{verbatim}
+PASS : VP --> W, N2. ==> VP[PAS] --> W, ( P2[by] ) :
+   2 = [~SLASH], 5 = [~SLASH],
+   (lambda (s)
+      (lambda (y)
+         ((lambda (x) ((lambda (2) (s x)) y)) 2))) : 
+   2 = [~SLASH], 5 = [SLASH X2],
+   (lambda (s)
+      (lambda (y)
+         (lambda (wh)
+            ((lambda (x) ((lambda (2) (s x)) y)) (2 wh))))) : 
+   2 = [~SLASH],
+   (lambda (s)
+      (lambda (y)
+         ((lambda (2) (s (some (x) (entity x)))) y))).
+\end{verbatim}
+\end{ex}
+When this metarule is applied to the ID rule
+\begin{ex}
+\begin{verbatim}
+VP/TAKES_NP : VP --> H[SUBCAT NP], N2:
+   (lambda (x) (1 x 2)).
+\end{verbatim}
+\end{ex}
+the semantic formulae on the output rule containing the {\tt P2} (as the
+second daughter) would be:
+\begin{ex}
+\begin{verbatim}
+2 = [~SLASH], (lambda (y) (1 2 y))
+2 = [SLASH X2], (lambda (y) (lambda (wh) (1 (2 wh) y)))
+\end{verbatim}
+\end{ex}
+and the semantic formula on the rule without the {\tt P2} daughter would be
+\begin{ex}
+\begin{verbatim}
+(lambda (y) (1 (some (x) (entity x)) y))
+\end{verbatim}
+\end{ex}
+
+
+\section*{Metarule Semantic Operators}
+
+In some cases, metarule semantic formulae may not be sufficiently powerful
+to perform a desired transformation on ID rule semantics. Version 1.35
+allows these transformations to be coded in Lisp, the compiled Lisp function
+made the value of a symbol's property `semantic-operator' and the symbol's name
+given as the metarule semantic formula. For example, the general case of
+the transformation:
+\begin{ex}
+\begin{verbatim}
+(lambda (x) (1 e x 2 (3 2))))
+->
+(lambda (x)
+   (lambda (wh) (1 e x 2 (3 2 wh)))))
+\end{verbatim}
+\end{ex}
+cannot be expressed as a lambda expression. However, it could be coded directly
+in Lisp as
+\begin{ex}
+\begin{verbatim}
+(defun slash-operator-1 (form idrule-binding-nos)
+   ;; wrap (lambda (wh) ...) around body of form
+   ...
+   (let ((index-3 (nth 3 idrule-binding-nos)))
+      ;; occurrences of index-3 in form refer to daughter number 3
+      ...
+      ;; insert wh as last argument of an application of daughter
+      ;; number 3 semantics
+      ...
+      ))
+
+(setf (get '|slash-operator-1| 'metarule-operator)
+   (compile 'slash-operator-1))
+\end{verbatim}
+\end{ex}
+and the metarule using this transformation as
+\begin{ex}
+\begin{verbatim}
+SLASH : ... . ==> ... : slash-operator-1.
+\end{verbatim}
+\end{ex}
+Note that the casing of the operator name must be the same where it is
+set up and in the metarules in which it is referred to. The function must
+be defined before the metarules are read in, and must be a compiled
+function. It should take two arguments: the first the
+ID rule semantic formula as a Lisp expression; the second a list
+of integers mapping the position of the mother and daughters in the ID rule
+to the numbers referring to the mother and daughters in the semantic formula
+(the number referring to the mother is the zeroth element, the number referring
+to the first daughter the first element, etc.). The function should return the
+transformed formula.
+
+
+\section*{Interface Changes}
+
+In versions before 1.35, when running a core image of a previous GDE session
+in which morphology system lexicons were loaded, the lexicons had to be 
+reloaded manually before looking up a word otherwise Lisp would signal a
+``file not open'' error. In version 1.35,
+if the image is saved with the function `save-gde-image', the lexicon files
+are automatically opened when needed, and the lexicons need not be 
+reloaded.
+
+Version 1.35 contains three new flags. They are:
+
+\newcommand{\gdeflag}[2]{\item #1\\
+#2}
+
+\begin{list}{}
+   {\leftmargin 1.6em
+    \itemindent -\leftmargin
+    \parsep 0pt plus 1pt}
+
+\gdeflag{WIdth of terminal} {Can be set to the length (in characters) of
+the current interaction window to control the point at which the GDE breaks
+lines on output (when running in a setup in which the GDE itself does not
+query the window width). The value must be an integer greater than 40, and is
+initially 78. The Lisp variable holding the value of this flag is
+{\tt *terminal-page-width}.}
+
+\gdeflag{WArning messages} {Controls whether warning messages are
+printed. The initial value is ON. The Lisp variable holding the value
+of this flag is {\tt *warning-messages}. In version 1.35, a metarule
+changing the value of a feature when constructing the output
+rule is regarded as a normal occurence and no warning is ever printed
+when this happens. However, a warning is now output when viewing the
+semantics of a set of parse trees if one or more of the trees has no
+semantics.}
+
+\gdeflag{TAgged words} {When set to ON, words containing an underscore
+character (`{\tt \_}') have the characters before the underscore removed before
+they are looked up in the GDE lexicon or morph system. This allows the type of
+tag sequences usually produced by lexical taggers to be parsed via the GDE
+with minimal editing. The initial value is OFF, and the flag's value is
+held in the Lisp variable {\tt *tagged-words}.}
+\end{list}
+
+In 1.35, changing the value of the `MOrphology system' flag unloads the
+currently loaded lexicons only if the new flag value is OFF, or if the value
+is not the same as the path of the one that was loaded first.
+
+
+\section*{Dumped Grammar Format}
+
+The internal format in which object grammars are held has been changed,
+and so therefore has the type of output produced by the ``dump'' command
+with the ``unreadable'' option.
+
+The output consists of, firstly a list of the names of all the features in
+the grammar; secondly a one-dimensional array, each element being
+a list of features; and finally the object grammar PS rules.
+A rule is represented as a list, the mother
+being the first element, followed by the daughter categories in order.
+A category is a dotted pair whose head is a vector of feature values,
+and whose tail is, for a mother, a string representing the name
+of the rule, or, for a daughter, a symbol indicating whether the
+category is repeated one or more times (`{\tt +}'), occurs
+exactly once (`{\tt nil}'), or is a gap (`{\tt |null|}').
+The zeroth element of each feature value vector is an integer, an
+index into the feature array, thus specifying what the features are
+which correspond to the values. A value may be either a symbol or
+another vector of values.
+
+The following might be the first part of a dumped grammar file:
+{\small
+\begin{ex}
+\begin{verbatim}
+(N V BAR SUBJ SUBCAT CONJ VFORM H T ...)
+
+#((BAR CONJ T BEGAP SLASH WH UB EVER COORD ELLIP)
+  (NOSLASH) 
+  (N V BAR SUBJ CONJ VFORM BEGAP FIN PAST PRD AUX INV COMP SLASH PRO WH UB
+   EVER COORD AGR UDC ELLIP)
+  ...)
+
+((#(2 - + |2| + NULL NOT - + @12 @13 @14 - NORM @19 @93 @39 @40 @41 - 
+    #(11 + - |2| @20 @21 @22 @23 NOM) - -) "S1a")
+   (#(4 + - |2| NULL - - - #(1 +) @20 @21 @22 @23 NOM @ @ @ - + @ @ - @ @
+      @39 @40 @41 @ @ NO @ @ @))
+   (#(12 - + |2| - NULL NOT - + @12 @13 @14 @ @19 @93 - 
+      #(11 + - |2| @20 @21 @22 @23 NOM) -)))
+\end{verbatim}
+\end{ex}
+}
+
+The ''dwords'' command with the ``unreadable'' option produces output in a
+similar form to that produced by the ``dump'' command. A sequence of word
+definitions follows the initial list of features and feature array.
+A word definition is a dotted pair whose head is a
+list of categories, one for each sense of the word, and whose tail is
+the word itself. A category has as its head a list of feature / value
+pairs, and tail the symbol {\tt t}. Thus a file containing a
+definition for the word {\tt kim} might look like
+{\small
+\begin{ex}
+\begin{verbatim}
+(N V BAR SUBJ SUBCAT CONJ VFORM H T ...)
+
+#(...
+  (N V BAR SUBCAT CONJ PRD NFORM PER PLU COUNT CASE PN PRO PROTYPE PART
+   POSS ADV NUM COORD REFL ADDRESS DEMON)
+   ...)
+
+((#(36 + - |0| NULL NULL @13 NORM |3| - + @24 + - NONE - - - - @44 @45 -
+    -)
+   . T)
+ |kim|)
+\end{verbatim}
+\end{ex}
+}
+
+
+\section*{Miscellaneous}
+
+In versions before 1.35, when semantic representations contained re-entrancies,
+beta-reduction and variable renaming sometimes gave incorrect results. These
+bugs are fixed in 1.35.
+
+When using the GDE with the full release 4 ANLT grammar on a UNIX machine,
+16 MBytes of real memory seems to be the absolute minimum to avoid thrashing.
+With some Lisp implementations, this configuration requires 24 MBytes. On Apple
+Macintoshes running MacOS, and PCs running MS-Windows, with this grammar the GDE
+needs to be allocated at least 10 MBytes of memory. 
+
+\end{document}

@@ -1,0 +1,929 @@
+(|Kim_NP1| |cannot_VM| |abide_VV0| |her_PPHO1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+  ("V1/modal_bse/--" |cannot_VM|
+   ("V1/v_np-pro" |abide_VV0| |her_PPHO1|))))
+(|Several_DA2| |of_IO| |the_AT| |children_NN2| |had_VHD| |been_VBN| |sexually_RR| |abused_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pro_pp-r" |Several_DA2|
+   ("PP/p1"
+    ("P1/p_np" |of_IO|
+     ("NP/det_n1" |the_AT| ("N1/n" |children_NN2|)))))
+  ("V1/have_ppart-r/--" |had_VHD|
+   ("V1/be_ppart/+-" |been_VBN| ("AP/a1" ("A1/a" |sexually_RR|))
+    ("V1/v" |abused_VVN|)))))
+(|Nothing_PN1| |we_PPIS2| |can_VM| |do_VD0| |will_VM| |help_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/np-pro_s-r" |Nothing_PN1|
+   ("S/np_vp" |we_PPIS2|
+    ("V1/modal_bse/--" |can_VM| ("V1/do_gap-r" |do_VD0|))))
+  ("V1/modal_bse/--" |will_VM| ("V1/v" |help_VV0|))))
+(|Why_RRQ| |is_VBZ| |it_PPH1| |that_CST| |it_PPH1| |rains_VVZ| |all_DB| |the_AT| |time_NNT1| |in_II| |England_NP1| ?_?)
+("T/txt-sc1/-+"
+ ("S/pp-wh_s-be" ("PP/p1" ("P1/p-wh" |Why_RRQ|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/np-pro_s-r" |it_PPH1|
+    ("S/comp" |that_CST|
+     ("S/np_vp" |it_PPH1|
+      ("V1/vp_pp"
+       ("V1/vp_np-nt-adv" ("V1/v" |rains_VVZ|)
+        ("NP/part_n2-r" |all_DB|
+         ("NP/det_n1" |the_AT| ("N1/n-nt" |time_NNT1|))))
+       ("PP/p1"
+        ("P1/p_np-name" |in_II|
+         ("NP/n1-name" ("N1/n-name" |England_NP1|))))))))))
+ ("End-punct1/---" ?_?))
+(|If_CS| |necessary_JJ| |,_,| |we_PPIS2| |will_VM| |leave_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-sfin_s/+"
+  ("PP/p1" ("P1/p_ap-sfin" |If_CS| ("AP/a1" ("A1/a" |necessary_JJ|))))
+  |,_,|
+  ("S/np_vp" |we_PPIS2|
+   ("V1/modal_bse/--" |will_VM| ("V1/v" |leave_VV0|)))))
+(|We_PPIS2| |will_VM| |leave_VV0| |if_CS| |necessary_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" |We_PPIS2|
+  ("V1/vp_pp" ("V1/modal_bse/--" |will_VM| ("V1/v" |leave_VV0|))
+   ("PP/p1"
+    ("P1/p_ap-sfin" |if_CS| ("AP/a1" ("A1/a" |necessary_JJ|)))))))
+(|Can_VM| |you_PPY| |account_VV0| |for_IF| |how_RGQ| |it_PPH1| |happened_VVD| ?_?)
+("T/txt-sc1/-+"
+ ("S/sai/-" |Can_VM|
+  ("S/np_vp" |you_PPY|
+   ("V1/v_pp-wh" |account_VV0|
+    ("PP/p1"
+     ("P1/p_s-wh" |for_IF|
+      ("S/pp-wh_s" ("PP/p1" ("P1/p-wh" |how_RGQ|))
+       ("S/np_vp" |it_PPH1| ("V1/v" |happened_VVD|))))))))
+ ("End-punct1/---" ?_?))
+(|He_PPHS1| |aimed_VVD| |for_IF| |the_AT| |shoulder_NN1| |,_,| |not_XX| |the_AT| |heart_NN1|)
+("T/txt-sc1/--"
+ ("S/s_pco_np-nm-r"
+  ("S/np_vp" |He_PPHS1|
+   ("V1/v_pp" |aimed_VVD|
+    ("PP/p1"
+     ("P1/p_np" |for_IF|
+      ("NP/det_n1" |the_AT| ("N1/n" |shoulder_NN1|))))))
+  |,_,| ("NP/not_det_n1-r" |not_XX| |the_AT| ("N1/n" |heart_NN1|))))
+(|How_RGQ| |many_DA2| |members_NN2| |does_VDZ| |he_PPHS1| |have_VH0| ?_?)
+("T/txt-sc1/-+"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np" |How_RGQ|
+    ("NP/n1-plu"
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |many_DA2|))
+      ("N1/n" |members_NN2|)))))
+  ("S/sai/-" |does_VDZ|
+   ("S/np_vp" |he_PPHS1| ("V1/have_gap-r" |have_VH0|))))
+ ("End-punct1/---" ?_?))
+(|There_EX| |is_VBZ| |no_AT| |choice_NN1| |but_CCB| |to_TO| |amputate_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp" |There_EX|
+  ("V1/vp_vp-coord-r/-"
+   ("V1/be_np/----" |is_VBZ|
+    ("NP/det_n1" |no_AT| ("N1/n" |choice_NN1|)))
+   ("V1/cj-end_vp/--" |but_CCB|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |amputate_VV0|))))))
+(|The_AT| |Prime_NNSB1| |Minister_NNS1| |resigned_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n-tit" ("N/n-pretit_n-tit" |Prime_NNSB1| |Minister_NNS1|)))
+  ("V1/v" |resigned_VVD|)))
+(I_PPIS1 |ca_VM| |n't_XX| |answer_VV0| |(_(| |you_PPY| |)_)| |without_IW| |information_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/modal_bse/--" |ca_VM|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_pp"
+     ("T/v_lmta-r" |answer_VV0|
+      ("Taph/brack1/-" |(_(| ("Tph/np/------" |you_PPY|) |)_)|))
+     ("PP/p1" ("P1/p_n1" |without_IW| ("N1/n" |information_NN1|))))))))
+(|He_PPHS1| |appeared_VVD| |(_(| |to_TO| |be_VB0| |)_)| |calm_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/v_n1" |appeared_VVD|
+   ("T/rmta_n1"
+    ("Taph/brack1/-" |(_(|
+     ("Tph/vp/-" ("V1/to_bse/-" |to_TO| ("V1/be_gap-r" |be_VB0|)))
+     |)_)|)
+    ("N1/n" |calm_NN1|)))))
+(|The_AT| |rate_NN1| |is_VBZ| |lower_JJR| |than_CSN| |last_MD| |month_NNT1| |'s_$|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |rate_NN1|))
+  ("V1/be_ap/-" |is_VBZ|
+   ("AP/a1"
+    ("A1/a_pp-than" |lower_JJR|
+     ("PP/p1"
+      ("P1/p_np-pro" |than_CSN|
+       ("NP/np_n-poss-ellip-r"
+        ("NP/np-pro_n-r" ("NP/n-num" |last_MD|) |month_NNT1|)
+        |'s_$|))))))))
+(|It_PPH1| |appears_VVZ| |as_CSA| |though_CS| I_PPIS1 |was_VBDZ| |wrong_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" |It_PPH1|
+  ("V1/v_pp" |appears_VVZ|
+   ("PP/p1"
+    ("P1/p_pp" |as_CSA|
+     ("PP/p1"
+      ("P1/p_s" |though_CS|
+       ("S/np_vp" I_PPIS1
+        ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |wrong_JJ|)))))))))))
+(|Let_VV0| |'s_PPIO2| |assume_VV0| |he_PPHS1| |is_VBZ| |wrong_JJ|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/v_s" |Let_VV0|
+   ("S/np_vp" |'s_PPIO2|
+    ("V1/v_s" |assume_VV0|
+     ("S/np_vp" |he_PPHS1|
+      ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |wrong_JJ|)))))))))
+(|Being_VBG| |on_II| |his_APP$| |own_DA| |,_,| |he_PPHS1| |hid_VVD|)
+("T/txt-sc1/--"
+ ("S/ing_s-r/+"
+  ("V1/be_pp/---" |Being_VBG|
+   ("PP/p1"
+    ("P1/p_np" |on_II|
+     ("NP/det_a1-att-r/-" |his_APP$| ("A1/a" |own_DA|)))))
+  |,_,| ("S/np_vp" |he_PPHS1| ("V1/v" |hid_VVD|))))
+(|Do_VD0| |n't_XX| |listen_VV0| |to_II| |others_NN2| -_- |try_VV0| |thinking_NN1|)
+("T/txt-sc1/--"
+ ("T/s_leta"
+  ("S/imp"
+   ("V1/do_bse/--" |Do_VD0|
+    ("V1/not_vp" |n't_XX|
+     ("V1/v_pp" |listen_VV0|
+      ("PP/p1"
+       ("P1/p_np" |to_II| ("NP/n1-plu" ("N1/n" |others_NN2|))))))))
+  ("Taph/dash-/-" -_-
+   ("Tph/vp/-" ("V1/v_n1" |try_VV0| ("N1/n" |thinking_NN1|))))))
+(|By_II| |the_AT| |time_NNT1| |the_AT| |letter_NN1| |reached_VVD| |them_PPHO2| |their_APP$| |sister_NN1| |had_VHD| |died_VVN|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/-"
+  ("PP/p1"
+   ("P1/p_np-nt" |By_II|
+    ("NP/det_n1" |the_AT|
+     ("N1/n-nt_s" |time_NNT1|
+      ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |letter_NN1|))
+       ("V1/v_np-pro" |reached_VVD| |them_PPHO2|))))))
+  ("S/np_vp" ("NP/det_n1" |their_APP$| ("N1/n" |sister_NN1|))
+   ("V1/have_ppart-r/--" |had_VHD| ("V1/v" |died_VVN|)))))
+(|Being_VBG| |bored_VVN| |is_VBZ| |something_PN1| |she_PPHS1| |ca_VM| |n't_XX| |bear_VV0|)
+("T/txt-sc1/--"
+ ("S/ing_vp-r" ("V1/be_ppart/--" |Being_VBG| ("V1/v" |bored_VVN|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/np-pro_s-r" |something_PN1|
+    ("S/np_vp" |she_PPHS1|
+     ("V1/modal_bse/--" |ca_VM|
+      ("V1/not_vp" |n't_XX| ("V1/v" |bear_VV0|))))))))
+(|The_AT| |meeting_NN1| |began_VVD| |promisingly_RR| |,_,| |but_CCB| |then_RR| |things_NN2| |started_VVD| |to_TO| |go_VV0| |wrong_JJ|)
+("T/txt-sc1/--"
+ ("S/s_s-coord-r/+"
+  ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |meeting_NN1|))
+   ("V1/vp_advp" ("V1/v" |began_VVD|)
+    ("AP/a1" ("A1/a" |promisingly_RR|))))
+  |,_,|
+  ("S/cj-end_s/--" |but_CCB|
+   ("S/adv_s/-" ("AP/a1" ("A1/a" |then_RR|))
+    ("S/np_vp" ("NP/n1-plu" ("N1/n" |things_NN2|))
+     ("V1/v_inf" |started_VVD|
+      ("V1/to_bse/-" |to_TO|
+       ("V1/v_ap" |go_VV0| ("AP/a1" ("A1/a" |wrong_JJ|))))))))))
+(|These_DD2| |changes_NN2| |always_RR| |bite_VV0| |the_AT| |elderly_JJ| |hard_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |These_DD2| ("N1/n" |changes_NN2|))
+  ("V1/adv_vp" ("AP/a1" ("A1/a" |always_RR|))
+   ("V1/v_np_ap" |bite_VV0|
+    ("NP/det_a1-r/--" |the_AT| ("A1/a" |elderly_JJ|))
+    ("AP/a1" ("A1/a" |hard_JJ|))))))
+(|The_AT| |interior_NN1| |of_IO| |the_AT| |house_NNL1| |is_VBZ| |still_RR| |blackened_VVN| |from_II| |the_AT| |fire_NN1| /_CC |smoke_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n_pp-of" |interior_NN1|
+    ("PP/p1"
+     ("P1/p_np-pl" |of_IO|
+      ("NP/det_n1" |the_AT| ("N1/n-pl" |house_NNL1|))))))
+  ("V1/be_ppart/+-" |is_VBZ| ("AP/a1" ("A1/a" |still_RR|))
+   ("V1/v_pp" |blackened_VVN|
+    ("PP/p1"
+     ("P1/p_np" |from_II|
+      ("NP/det_n1" |the_AT|
+       ("N1/n"
+        ("N/n_n-coord/-" |fire_NN1|
+         ("N/cj-end_n" /_CC |smoke_NN1|))))))))))
+(|He_PPHS1| |did_VDD| |not_XX| |want_VV0| |to_TO| |get_VB0| |involved_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/do_bse/--" |did_VDD|
+   ("V1/not_vp" |not_XX|
+    ("V1/v_inf" |want_VV0|
+     ("V1/to_bse/-" |to_TO|
+      ("V1/be_ppart/--" |get_VB0| ("V1/v" |involved_VVN|))))))))
+(|Blend_VV0| |the_AT| |ingredients_NN2| |together_RR|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/vp_advp"
+   ("V1/v_np" |Blend_VV0|
+    ("NP/det_n1" |the_AT| ("N1/n" |ingredients_NN2|)))
+   ("AP/a1" ("A1/a" |together_RR|)))))
+(|They_PPHS2| |blew_VVD| |the_AT| |other_JB| |team_NN1| |away_RL| |in_II| |the_AT| |second_MD| |half_DB|)
+("T/txt-sc1/--"
+ ("S/np_vp" |They_PPHS2|
+  ("V1/vp_pp"
+   ("V1/v_np_prt" |blew_VVD|
+    ("NP/det_n1" |the_AT|
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |other_JB|)) ("N1/n" |team_NN1|)))
+    |away_RL|)
+   ("PP/p1"
+    ("P1/p_np-pro" |in_II|
+     ("NP/np-pro_n-r" ("NP/det_n-num" |the_AT| |second_MD|)
+      |half_DB|))))))
+(I_PPIS1 |thought_VVD| |that_CST| |after_ICS| |a_AT1| |few_DA2| |months_NNT2| |the_AT| |argument_NN1| |would_VM| |blow_VV0| |over_RP|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/v_s" |thought_VVD|
+   ("S/comp" |that_CST|
+    ("S/pp-np_s/-"
+     ("PP/p1"
+      ("P1/p_np" |after_ICS|
+       ("NP/det_a1-att-r/-" |a_AT1| ("A1/a" |few_DA2|))))
+     ("S/np-nt-adv_s/-" ("NP/n1-nt" ("N1/n-nt" |months_NNT2|))
+      ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |argument_NN1|))
+       ("V1/modal_bse/--" |would_VM|
+        ("V1/v" ("V/v_prt" |blow_VV0| |over_RP|))))))))))
+(|He_PPHS1| |sure_RR| |blew_VVD| |his_APP$| |cool_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/adv_vp" ("AP/a1" ("A1/a" |sure_RR|))
+   ("V1/v_np" |blew_VVD|
+    ("NP/det_a1-r/--" |his_APP$| ("A1/a" |cool_JJ|))))))
+(|Your_APP$| |knee_NN1| |ca_VM| |n't_XX| |hurt_VV0| |that_RG| |much_DA1|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |Your_APP$| ("N1/n" |knee_NN1|))
+  ("V1/modal_bse/--" |ca_VM|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_ap" |hurt_VV0|
+     ("AP/a1" ("A1/dg_a1" |that_RG| ("A1/a" |much_DA1|))))))))
+(|That_DD1| |was_VBDZ| |a_AT1| |really_RR| |stupid_JJ| |thing_NN1| |to_TO| |do_VD0| |,_,| |you_PPY| |blundering_JJ| |idiot_NN1| !_!)
+("T/txt-sc1/-+"
+ ("S/s_pco_np-voc2-r"
+  ("S/np_vp" |That_DD1|
+   ("V1/be_np/----" |was_VBDZ|
+    ("NP/det_n1" |a_AT1|
+     ("N1/ap_n1/-"
+      ("AP/a1"
+       ("A1/adv_a1" ("AP/a1" ("A1/a" |really_RR|))
+        ("A1/a" |stupid_JJ|)))
+      ("N1/n_inf" |thing_NN1|
+       ("V1/to_bse/-" |to_TO| ("V1/do_gap-r" |do_VD0|)))))))
+  |,_,|
+  ("NP/np-pro_n-r"
+   ("NP/np-pro_ap-r/-" |you_PPY| ("AP/a1" ("A1/a"
+   |blundering_JJ|)))
+   |idiot_NN1|))
+ ("End-punct2/--" !_!))
+(|She_PPHS1| |blushes_VVZ| |furiously_RR| |whenever_CS| |she_PPHS1| |sees_VVZ| |him_PPHO1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |She_PPHS1|
+  ("V1/vp_pp"
+   ("V1/vp_advp" ("V1/v" |blushes_VVZ|)
+    ("AP/a1" ("A1/a" |furiously_RR|)))
+   ("PP/p1"
+    ("P1/p_s" |whenever_CS|
+     ("S/np_vp" |she_PPHS1| ("V1/v_np-pro" |sees_VVZ| |him_PPHO1|)))))))
+(|She_PPHS1| |bobbed_VVD| |(_(| |a_AT1| |curtsy_NN1| |)_)| |to_II| |the_AT| |Queen_NP1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |She_PPHS1|
+  ("V1/vp_pp"
+   ("V1/v"
+    ("T/v_lmta-r" |bobbed_VVD|
+     ("Taph/brack1/-" |(_(|
+      ("Tph/np/------" ("NP/det_n1" |a_AT1| ("N1/n" |curtsy_NN1|)))
+      |)_)|)))
+   ("PP/p1"
+    ("P1/p_np-name" |to_II|
+     ("NP/det_n1" |the_AT| ("N1/n-name" |Queen_NP1|)))))))
+(|The_AT| |journalist_NN1| |boiled_VVN| |down_RP| |his_APP$| |lengthy_JJ| |report_NN1| |to_II| |just_RR| |a_AT1| |few_DA2| |paragraphs_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |journalist_NN1|))
+  ("V1/v_np_pp" ("V/v_prt" |boiled_VVN| |down_RP|)
+   ("NP/det_n1" |his_APP$|
+    ("N1/ap_n1/-" ("AP/a1" ("A1/a" |lengthy_JJ|))
+     ("N1/n" |report_NN1|)))
+   ("PP/p1"
+    ("P1/p_np" |to_II|
+     ("NP/a1-cat_np-r" ("A1/a" |just_RR|)
+      ("NP/det_a1-att_n1-plu-r" |a_AT1| ("A1/a" |few_DA2|)
+       ("N1/n" |paragraphs_NN2|))))))))
+(|This_DD1| |pub_NN1| |was_VBDZ| |bombed_VVN| |a_AT1| |few_DA2| |years_NNT2| |ago_RA|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |This_DD1| ("N1/n" |pub_NN1|))
+  ("V1/vp_np-nt-adv" ("V1/be_ppart/--" |was_VBDZ| ("V1/v" |bombed_VVN|))
+   ("NP/np-nt_a1-nt"
+    ("NP/det_a1-att_n1-nt-r" |a_AT1| ("A1/a" |few_DA2|) 
+     ("N1/n-nt" |years_NNT2|))
+     ("A1/a" |ago_RA|)))))
+(|The_AT| |gap_NN1| |between_II| |the_AT| |unemployed_JJ| |and_CC| |employers_NN2| |who_PNQS| |need_VV0| |workers_NN2| |widened_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n1_pp1" ("N1/n" |gap_NN1|)
+    ("PP/p1"
+     ("P1/p_np" |between_II|
+      ("NP/np_np-coord/-"
+       ("NP/det_a1-r/--" |the_AT| ("A1/a" |unemployed_JJ|))
+       ("NP/cj-end_np/-----" |and_CC|
+        ("NP/n1-plu" ("N1/n1_s-wh" ("N1/n" |employers_NN2|)
+         ("S/np-wh_vp" |who_PNQS|
+          ("V1/v_np" |need_VV0| ("NP/n1-plu" ("N1/n" |workers_NN2|))))))))))))
+  ("V1/v" |widened_VVD|)))
+(|The_AT| |jury_NN1| |brought_VVN| |in_II| |a_AT1| |verdict_NN1| |of_IO| |not_XX| |guilty_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |jury_NN1|))
+  ("V1/v_pp" |brought_VVN|
+   ("PP/p1"
+    ("P1/p_np" |in_II|
+     ("NP/det_n1" |a_AT1|
+      ("N1/n_pp-of" |verdict_NN1|
+       ("PP/p1"
+        ("P1/p_a1-r" |of_IO|
+         ("A1/not_a1" |not_XX| ("A1/a" |guilty_JJ|)))))))))))
+(|She_PPHS1| |snogged_VVD| |the_AT| |bishop_NN1| |a_AT1| |lot_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |She_PPHS1|
+  ("V1/v_np_np" |snogged_VVD|
+   ("NP/det_n1" |the_AT| ("N1/n" |bishop_NN1|))
+   ("NP/det_n1" |a_AT1| ("N1/n" |lot_NN1|)))))
+(|He_PPHS1| |need_VM| |not_XX| |have_VH0| |gone_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/modal_bse/--" |need_VM|
+   ("V1/not_vp" |not_XX|
+    ("V1/have_ppart-r/--" |have_VH0| ("V1/v" |gone_VVN|))))))
+(|It_PPH1| |was_VBDZ| |Ovitz_NP1| |who_PNQS| |brokered_VVD| |the_AT| |multi-billion_NN1| |dollar_NN1| |deal_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |It_PPH1|
+  ("V1/be_np/----" |was_VBDZ|
+   ("NP/n1-name"
+    ("N1/n1_s-wh" ("N1/n-name" |Ovitz_NP1|)
+     ("S/np-wh_vp" |who_PNQS|
+      ("V1/v_np" |brokered_VVD|
+       ("NP/det_n1" |the_AT|
+        ("N1/n_n1" |multi-billion_NN1|
+         ("N1/n_n1" |dollar_NN1| ("N1/n" |deal_NN1|)))))))))))
+(|He_PPHS1| |would_VM| |brook_VV0| |no_AT| |disagreement_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/modal_bse/--" |would_VM|
+   ("V1/v_np" |brook_VV0|
+    ("NP/det_n1" |no_AT| ("N1/n" |disagreement_NN1|))))))
+(|Houses_NNL2| |were_VBDR| |built_VVN| |to_TO| |last_VV0| |a_AT1| |few_DA2| |years_NNT2| |ago_RA|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-pl" ("N1/n-pl" |Houses_NNL2|))
+  ("V1/be_ppart/--" |were_VBDR|
+   ("V1/v_inf" |built_VVN|
+    ("V1/vp_np-nt-adv"
+     ("V1/to_bse/-" |to_TO|
+      ("V1/v" |last_VV0|))
+     ("NP/np-nt_a1-nt"
+      ("NP/det_a1-att_n1-nt-r" |a_AT1| ("A1/a" |few_DA2|) 
+       ("N1/n-nt" |years_NNT2|))
+       ("A1/a" |ago_RA|)))))))
+(|Quit_VV0| |bullshitting_JJ| |,_,| |will_VM| |you_PPY| ?_?)
+("T/txt-sc1/--"
+ ("S/s_tag-qu/-"
+  ("S/imp" ("V1/v_ap" |Quit_VV0| ("AP/a1" ("A1/a" |bullshitting_JJ|))))
+  |,_,| |will_VM| |you_PPY| ?_?))
+(|Unable_JJ| |to_TO| |escape_VV0| |,_,| |six_MC| |people_NN| |were_VBDR| |burnt_VVN| |alive_JJ|)
+("T/txt-sc1/--"
+ ("S/ap_s-r"
+  ("AP/a1"
+   ("A1/a_inf" |Unable_JJ|
+    ("V1/to_bse/-" |to_TO| ("V1/v" |escape_VV0|))))
+  |,_,|
+  ("S/np_vp"
+   ("NP/n1-plu" ("N1/n-num_n1" |six_MC| ("N1/n" |people_NN|)))
+   ("V1/be_ppart/--" |were_VBDR|
+    ("V1/v_ap" |burnt_VVN| ("AP/a1" ("A1/a" |alive_JJ|)))))))
+(I_PPIS1 |am_VBM| |a_AT1| |bit_NN1| |busy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/be_np/----" |am_VBM|
+   ("NP/det_a1-r/--" |a_AT1| ("A1/n_a-r" |bit_NN1| |busy_JJ|)))))
+(|Do_VD0| |the_AT| |best_NN1| |you_PPY| |can_VM|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/do_np/--" |Do_VD0|
+   ("NP/det_n1" |the_AT|
+    ("N1/n_s" |best_NN1|
+     ("S/np_vp" |you_PPY| ("V1/mod_gap-r" |can_VM|)))))))
+(|Can_VV0| |it_PPH1| |,_,| |please_VV0|)
+("T/txt-sc1/--"
+ ("T/s_leta" ("S/imp" ("V1/v_np-pro" |Can_VV0| |it_PPH1|))
+  ("Tacl/comma-e" |,_,| ("S/imp" ("V1/v" |please_VV0|)))))
+(|Did_VDD| |he_PPHS1| |see_VV0| |it_PPH1| |coming_VVG| ?_?)
+("T/txt-sc1/-+"
+ ("S/sai/-" |Did_VDD|
+  ("S/np_vp" |he_PPHS1|
+   ("V1/v_s" |see_VV0|
+    ("S/np_ing-r" |it_PPH1| ("V1/v" |coming_VVG|)))))
+ ("End-punct1/---" ?_?))
+(|My_APP$| |legs_NN2| |wo_VM| |n't_XX| |carry_VV0| |me_PPIO1| |any_DD| |further_JJR|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |My_APP$| ("N1/n" |legs_NN2|))
+  ("V1/modal_bse/--" |wo_VM|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_np-pro_np" |carry_VV0| |me_PPIO1|
+     ("NP/det_a1-r/--" |any_DD| ("A1/a" |further_JJR|)))))))
+(I_PPIS1 |will_VM| |live_VV0| |for_IF| |ever_NNT1|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/vp_pp" ("V1/modal_bse/--" |will_VM| ("V1/v" |live_VV0|))
+   ("PP/p1"
+    ("P1/p_np-nt" |for_IF| ("NP/n1-nt" ("N1/n-nt" |ever_NNT1|)))))))
+(|We_PPIS2| |cannot_VM| |employ_VV0| |people_NN| |who_PNQS| |do_VD0| |n't_XX| |work_VV0| |as_CSA| |hard_JJ| |as_CSA| |they_PPHS2| |should_VM|)
+("T/txt-sc1/--"
+ ("S/np_vp" |We_PPIS2|
+  ("V1/modal_bse/--" |cannot_VM|
+   ("V1/v_np" |employ_VV0|
+    ("NP/n1-plu"
+     ("N1/n1_s-wh" ("N1/n" |people_NN|)
+      ("S/np-wh_vp" |who_PNQS|
+       ("V1/do_bse/--" |do_VD0|
+        ("V1/not_vp" |n't_XX|
+         ("V1/v_pp" |work_VV0|
+          ("PP/p1"
+           ("P1/as_ap" |as_CSA|
+            ("AP/a1"
+             ("A1/a_s" |hard_JJ|
+              ("S/pp_vp-r"
+               ("PP/p1" ("P1/p_np-pro" |as_CSA| |they_PPHS2|))
+               ("V1/mod_gap-r" |should_VM|))))))))))))))))
+(|The_AT| |ice_NN1| |is_VBZ| |two_MC| |inches_NNU2| |thick_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |ice_NN1|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/np-ms_a1-r"
+    ("NP/n1-ms" ("N1/n-num_n1-ms" |two_MC| ("N1/n-ms" |inches_NNU2|)))
+    ("A1/a" |thick_JJ|)))))
+(|He_PPHS1| |looked_VVD| |about_RP| |,_,| |as_CSA| |if_CS| |he_PPHS1| |were_VBDR| |casing_VVG| |the_AT| |joint_NN1|)
+("T/txt-sc1/--"
+ ("S/s_pco_pp"
+  ("S/np_vp" |He_PPHS1| ("V1/v" ("V/v_prt" |looked_VVD| |about_RP|)))
+  |,_,|
+  ("PP/p1"
+   ("P1/p_pp" |as_CSA|
+    ("PP/p1"
+     ("P1/p_s" |if_CS|
+      ("S/np_vp" |he_PPHS1|
+       ("V1/be_ing/--" |were_VBDR|
+        ("V1/v_np" |casing_VVG|
+         ("NP/det_n1" |the_AT| ("N1/n" |joint_NN1|)))))))))))
+(|In_II| |case_NN1| |he_PPHS1| |comes_VVZ| |,_,| |we_PPIS2| |will_VM| |leave_VV0|)
+("T/txt-sc1/--"
+ ("S/pp-np_s/+"
+  ("PP/p1"
+   ("P1/p_n1" |In_II|
+    ("N1/n_s" |case_NN1| ("S/np_vp" |he_PPHS1| ("V1/v" |comes_VVZ|)))))
+  |,_,|
+  ("S/np_vp" |we_PPIS2|
+   ("V1/modal_bse/--" |will_VM| ("V1/v" |leave_VV0|)))))
+(|Her_APP$| |attitude_NN1| |has_VHZ| |changed_VVN| |for_IF| |the_AT| |better_JJR|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |Her_APP$| ("N1/n" |attitude_NN1|))
+  ("V1/have_ppart-r/--" |has_VHZ|
+   ("V1/v_pp" |changed_VVN|
+    ("PP/p1"
+     ("P1/p_np" |for_IF|
+      ("NP/det_a1-r/--" |the_AT| ("A1/a" |better_JJR|))))))))
+(|You_PPY| |look_VV0| |great_JJ| |as_CSA| |you_PPY| |are_VBR|)
+("T/txt-sc1/--"
+ ("S/np_vp" |You_PPY|
+  ("V1/vp_pp" ("V1/v_ap" |look_VV0| ("AP/a1" ("A1/a" |great_JJ|)))
+   ("PP/p1"
+    ("P1/p_s" |as_CSA|
+     ("S/np_vp" |you_PPY| ("V1/be_gap-r" |are_VBR|)))))))
+(|What_DDQ| |if_CS| |you_PPY| |'d_VHD| |had_VHN| |your_APP$| |passport_NN1| |stolen_VVN| |as_CSA| |well_RR| |as_CSA| |your_APP$| |money_NN1| !_!)
+("T/txt-sc1/-+"
+ ("S/what_pp-if-r" |What_DDQ|
+  ("PP/p1"
+   ("P1/p_s" |if_CS|
+    ("S/np_vp" |you_PPY|
+     ("V1/have_ppart-r/--" |'d_VHD|
+      ("V1/have_np_ppt/--" |had_VHN|
+       ("NP/det_n1" |your_APP$| ("N1/n" |passport_NN1|))
+       ("V1/v_pp" |stolen_VVN|
+        ("PP/p1"
+         ("P1/as_ap" |as_CSA|
+          ("AP/a1"
+           ("A1/a_pp-as" |well_RR|
+            ("PP/p1"
+             ("P1/p_np" |as_CSA|
+              ("NP/det_n1" |your_APP$|
+               ("N1/n" |money_NN1|)))))))))))))))
+ ("End-punct2/--" !_!))
+(|His_APP$| |country_NN1| |was_VBDZ| |a_AT1| |free_JJ| |country_NN1| |and_CC| |would_VM| |always_RR| |remain_VV0| |so_RG|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |His_APP$| ("N1/n" |country_NN1|))
+  ("V1/vp_vp-coord-r/-"
+   ("V1/be_np/----" |was_VBDZ|
+    ("NP/det_n1" |a_AT1|
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |free_JJ|))
+      ("N1/n" |country_NN1|))))
+   ("V1/cj-end_vp/--" |and_CC|
+    ("V1/vp_advp"
+     ("V1/modal_bse/+-" |would_VM| ("AP/a1" ("A1/a" |always_RR|))
+      ("V1/v" |remain_VV0|))
+     ("AP/a1" ("A1/a" |so_RG|)))))))
+(|Turn_VV0| |the_AT| |music_NN1| |down_II| |a_AT1| |little_DA1|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/v_np_pp" |Turn_VV0| ("NP/det_n1" |the_AT| ("N1/n" |music_NN1|))
+   ("PP/p1"
+    ("P1/p_np" |down_II|
+     ("NP/det_a1-att-r/-" |a_AT1| ("A1/a" |little_DA1|)))))))
+(|The_AT| |work_NN1| |that_CST| |the_AT| |students_NN2| |do_VD0| |during_II| |the_AT| |year_NNT1| |will_VM| |count_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/n_s" |work_NN1|
+    ("S/comp" |that_CST|
+     ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |students_NN2|))
+      ("V1/vp_pp" ("V1/do_gap-r" |do_VD0|)
+       ("PP/p1"
+        ("P1/p_np-nt" |during_II|
+         ("NP/det_n1" |the_AT| ("N1/n-nt" |year_NNT1|)))))))))
+  ("V1/modal_bse/--" |will_VM| ("V1/v" |count_VV0|))))
+(|Women_NN2| |often_RR| |devalue_VV0| |themselves_PPX2| |,_,| |she_PPHS1| |said_VVD|)
+("T/txt-sc1/--"
+ ("T/s_leta"
+  ("S/np_vp" ("NP/n1-plu" ("N1/n" |Women_NN2|))
+   ("V1/adv_vp" ("AP/a1" ("A1/a" |often_RR|))
+    ("V1/v_np-refl" |devalue_VV0| |themselves_PPX2|)))
+  ("Tacl/comma-e" |,_,| ("S/np_vp" |she_PPHS1| ("V1/v" |said_VVD|)))))
+(|The_AT| |government_NN1| |ought_VMK| |to_TO| |be_VB0| |doing_NN1| |more_DAR| |to_TO| |help_VV0| |the_AT| |homeless_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |government_NN1|))
+  ("V1/cat_inf/--" |ought_VMK|
+   ("V1/to_bse/-" |to_TO|
+    ("V1/be_n1/----" |be_VB0|
+     ("N1/n_inf" |doing_NN1|
+      ("V1/adv_vp" ("AP/a1" ("A1/a" |more_DAR|))
+       ("V1/to_bse/-" |to_TO|
+        ("V1/v_np" |help_VV0|
+         ("NP/det_a1-r/--" |the_AT| ("A1/a" |homeless_JJ|)))))))))))
+(|She_PPHS1| |tried_VVD| |to_TO| |palm_VV0| |her_APP$| |old_JJ| |car_NN1| |off_RP| |on_II| |me_PPIO1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |She_PPHS1|
+  ("V1/v_inf" |tried_VVD|
+   ("V1/to_bse/-" |to_TO|
+    ("V1/v_np_prt_pp" |palm_VV0|
+     ("NP/det_n1" |her_APP$|
+      ("N1/ap_n1/-" ("AP/a1" ("A1/a" |old_JJ|)) ("N1/n" |car_NN1|)))
+     |off_RP| ("PP/p1" ("P1/p_np-pro" |on_II| |me_PPIO1|)))))))
+(|He_PPHS1| |is_VBZ| |smart_JJ| |enough_RGA| |to_TO| |come_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/be_ap/-" |is_VBZ|
+   ("AP/a1"
+    ("A1/a_inf" |smart_JJ|
+     ("V1/adv_vp" ("AP/a1" ("A1/a" |enough_RGA|))
+      ("V1/to_bse/-" |to_TO| ("V1/v" |come_VV0|))))))))
+(|He_PPHS1| |ate_VVD| |so_RG| |many_DA2| |sweets_NN2| |that_CST| |he_PPHS1| |was_VBDZ| |sick_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/v_np" |ate_VVD|
+   ("NP/n1-plu"
+    ("N1/ap_n1/-" ("AP/a1" ("A1/dg_a1" |so_RG| ("A1/a" |many_DA2|)))
+     ("N1/n_s" |sweets_NN2|
+      ("S/comp" |that_CST|
+       ("S/np_vp" |he_PPHS1|
+        ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |sick_JJ|)))))))))))
+(|If_CS| |he_PPHS1| |sat_VVD| |in_II| |the_AT| |pond_NN1| |he_PPHS1| |would_VM| |get_VB0| |sick_JJ|)
+("T/txt-sc1/--"
+ ("S/pp-sfin_s/-"
+  ("PP/p1"
+   ("P1/p_s" |If_CS|
+    ("S/np_vp" |he_PPHS1|
+     ("V1/v_pp" |sat_VVD|
+      ("PP/p1"
+       ("P1/p_np" |in_II|
+        ("NP/det_n1" |the_AT| ("N1/n" |pond_NN1|))))))))
+  ("S/np_vp" |he_PPHS1|
+   ("V1/modal_bse/--" |would_VM|
+    ("V1/be_ap/-" |get_VB0| ("AP/a1" ("A1/a" |sick_JJ|)))))))
+(|Again_RR| |and_CC| |again_RR| |he_PPHS1| |smiled_VVD|)
+("T/txt-sc1/--"
+ ("S/adv_s/-"
+  ("AP/a1"
+   ("A1/a"
+    ("A/a_a-coord/-" |Again_RR| ("A/cj-end_a/-" |and_CC| |again_RR|))))
+  ("S/np_vp" |he_PPHS1| ("V1/v" |smiled_VVD|))))
+(|No_AT| |more_DAR| |than_CSN| 21_MC |were_VBDR| |lost_VVN|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_np-pro-r" |No_AT|
+   ("NP/np-pro_pp-r" |more_DAR|
+    ("PP/p1" ("P1/p_np-pro" |than_CSN| ("NP/n-num" 21_MC)))))
+  ("V1/be_ppart/--" |were_VBDR| ("V1/v" |lost_VVN|))))
+(|The_AT| |penning_VVG| |in_RP| |of_IO| |the_AT| |cattle_NN2| |was_VBDZ| |difficult_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/ing_pp-of-r" ("V/v_prt" |penning_VVG| |in_RP|)
+    ("PP/p1"
+     ("P1/p_np" |of_IO|
+      ("NP/det_n1" |the_AT| ("N1/n" |cattle_NN2|))))))
+  ("V1/be_ap/-" |was_VBDZ| ("AP/a1" ("A1/a" |difficult_JJ|)))))
+(|He_PPHS1| |is_VBZ| |in_II| |a_AT1| |mood_NN1| |to_TO| |cause_VV0| |trouble_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/be_pp/---" |is_VBZ|
+   ("PP/p1"
+    ("P1/p_sinf" |in_II| ("NP/det_n1" |a_AT1| ("N1/n" |mood_NN1|))
+     ("V1/to_bse/-" |to_TO|
+      ("V1/v_n1" |cause_VV0| ("N1/n" |trouble_NN1|))))))))
+(|Trouble_NN1| |free_JJ| |long_JJ| |life_NN1| |quality_NN1| |components_NN2| |are_VBR| |better_RRR|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/n1-plu"
+   ("N1/ap_n1/-" ("AP/a1" ("A1/n_a-r" |Trouble_NN1| |free_JJ|))
+    ("N1/ap_n1/-" ("AP/a1" ("A1/a" |long_JJ|))
+     ("N1/n_n1" |life_NN1|
+      ("N1/n_n1" |quality_NN1| ("N1/n" |components_NN2|))))))
+  ("V1/vp_advp" ("V1/be_gap-r" |are_VBR|)
+   ("AP/a1" ("A1/a" |better_RRR|)))))
+(|It_PPH1| |is_VBZ| |hard_JJ| |to_TO| |imagine_VV0| |how_RGQ| |things_NN2| |could_VM| |be_VB0| |worse_JJR|)
+("T/txt-sc1/--"
+ ("S/np_vp" |It_PPH1|
+  ("V1/be_ap/-" |is_VBZ|
+   ("AP/a1"
+    ("A1/a_inf" |hard_JJ|
+     ("V1/to_bse/-" |to_TO|
+      ("V1/v_s" |imagine_VV0|
+       ("S/pp-wh_s" ("PP/p1" ("P1/p-wh" |how_RGQ|))
+        ("S/np_vp" ("NP/n1-plu" ("N1/n" |things_NN2|))
+         ("V1/modal_bse/--" |could_VM|
+          ("V1/be_ap/-" |be_VB0|
+           ("AP/a1" ("A1/a" |worse_JJR|)))))))))))))
+(|He_PPHS1| |moved_VVD| |from_II| |rung_NN1| |to_II| |rung_NN1| |until_ICS| |he_PPHS1| |reached_VVD| |the_AT| |top_NN|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/vp_pp"
+   ("V1/v_pp_pp" |moved_VVD|
+    ("PP/p1" ("P1/p_n1" |from_II| ("N1/n" |rung_NN1|)))
+    ("PP/p1" ("P1/p_n1" |to_II| ("N1/n" |rung_NN1|))))
+   ("PP/p1"
+    ("P1/p_s" |until_ICS|
+     ("S/np_vp" |he_PPHS1|
+      ("V1/v_np" |reached_VVD|
+       ("NP/det_n1" |the_AT| ("N1/n" |top_NN|)))))))))
+(|Is_VBZ| |this_DD1| |the_AT| |wrong_JJ| |moment_NNT1| |to_TO| |raise_VV0| |such_DA| |an_AT1| |issue_NN1| ?_?)
+("T/txt-sc1/-+"
+ ("S/sai-be1-r/---" |Is_VBZ| |this_DD1|
+  ("NP/det_n1" |the_AT|
+   ("N1/ap_n1/-" ("AP/a1" ("A1/a" |wrong_JJ|))
+    ("N1/n-nt_inf" |moment_NNT1|
+     ("V1/to_bse/-" |to_TO|
+      ("V1/v_np" |raise_VV0|
+       ("NP/det_det_n1" |such_DA| |an_AT1| ("N1/n" |issue_NN1|))))))))
+ ("End-punct1/---" ?_?))
+(|It_PPH1| |is_VBZ| |a_AT1| |problem_NN1| |akin_JA| |to_II| |one_PN1| |we_PPIS2| |solved_VVD| |many_DA2| |years_NNT2| |ago_RA|)
+("T/txt-sc1/--"
+ ("S/np_vp" |It_PPH1|
+  ("V1/vp_np-nt-adv"
+   ("V1/be_np/----" |is_VBZ|
+    ("NP/np_a1" ("NP/det_n1" |a_AT1| ("N1/n" |problem_NN1|))
+     ("A1/a1_pp" ("A1/a" |akin_JA|)
+      ("PP/p1"
+       ("P1/p_np-pro" |to_II|
+        ("NP/np-pro_s-r" |one_PN1|
+         ("S/np_vp" |we_PPIS2| ("V1/v" |solved_VVD|))))))))
+   ("NP/np-nt_a1-nt"
+    ("NP/n1-nt"
+     ("N1/ap_n1/-" ("AP/a1" ("A1/a" |many_DA2|))
+      ("N1/n-nt" |years_NNT2|)))
+    ("A1/a" |ago_RA|)))))
+(|Work_NN1| |is_VBZ| |a_AT1| |drug_NN1| |,_,| |success_NN1| |is_VBZ| |a_AT1| |stimulus_NN1| |to_TO| |work_VV0| |,_,| |and_CC| |we_PPIS2| |are_VBR| |all_RR| |addicted_VVN|)
+("T/txt-sc1/--"
+ ("S/s_s-coord/+"
+  ("S/n1_vp" ("N1/n" |Work_NN1|)
+   ("V1/be_np/----" |is_VBZ|
+    ("NP/det_n1" |a_AT1| ("N1/n" |drug_NN1|))))
+  |,_,|
+  ("S/s_s-coord-r/+"
+   ("S/n1_vp" ("N1/n" |success_NN1|)
+    ("V1/be_np/----" |is_VBZ|
+     ("NP/det_n1" |a_AT1|
+      ("N1/n_inf" |stimulus_NN1|
+       ("V1/to_bse/-" |to_TO| ("V1/v" |work_VV0|))))))
+   |,_,|
+   ("S/cj-end_s/--" |and_CC|
+    ("S/np_vp" |we_PPIS2|
+     ("V1/be_ppart/+-" |are_VBR| ("AP/a1" ("A1/a" |all_RR|))
+      ("V1/v" |addicted_VVN|)))))))
+(|He_PPHS1| |flew_VVD| |from_II| |the_AT| |airport_NNL1| |to_II| |the_AT| |oil_NN1| |field_NN1|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/v_pp_pp" |flew_VVD|
+   ("PP/p1"
+    ("P1/p_np-pl" |from_II|
+     ("NP/det_n1" |the_AT| ("N1/n-pl" |airport_NNL1|))))
+   ("PP/p1"
+    ("P1/p_np" |to_II|
+     ("NP/det_n1" |the_AT|
+      ("N1/n_n1" |oil_NN1| ("N1/n" |field_NN1|))))))))
+(|He_PPHS1| |offered_VVD| |Kim_NP1| |a_AT1| |job_NN1| |but_CCB| |Sandy_NP1| |nearly_RR| |had_VHN| |a_AT1| |fit_JJ|)
+("T/txt-sc1/--"
+ ("S/s_s-coord-r/-"
+  ("S/np_vp" |He_PPHS1|
+   ("V1/v_np-name_np" |offered_VVD|
+    ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+    ("NP/det_n1" |a_AT1| ("N1/n" |job_NN1|))))
+  ("S/cj-end_s/--" |but_CCB|
+   ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+    ("V1/adv_vp" ("AP/a1" ("A1/a" |nearly_RR|))
+     ("V1/have_np/--" |had_VHN|
+      ("NP/det_a1-r/--" |a_AT1| ("A1/a" |fit_JJ|))))))))
+(|He_PPHS1| |tried_VVD| |to_TO| |establish_VV0| |controls_NN2| |that_CST| |were_VBDR| |more_DAR| |or_CC| |less_DAR| |effective_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/v_inf" |tried_VVD|
+   ("V1/to_bse/-" |to_TO|
+    ("V1/v_np" |establish_VV0|
+     ("NP/n1-plu"
+      ("N1/n_rel" |controls_NN2| |that_CST|
+       ("V1/be_ap/-" |were_VBDR|
+        ("AP/a1"
+         ("A1/adv_a1"
+          ("AP/a1"
+           ("A1/a"
+            ("A/a_a-coord/-" |more_DAR|
+             ("A/cj-end_a/-" |or_CC| |less_DAR|))))
+          ("A1/a" |effective_JJ|)))))))))))
+(|It_PPH1| |is_VBZ| |made_VVN| |up_RP| |of_IO| |three_MC| |pieces_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp" |It_PPH1|
+  ("V1/be_ppart/--" |is_VBZ|
+   ("V1/v_pp-of" ("V/v_prt" |made_VVN| |up_RP|)
+    ("PP/p1"
+     ("P1/p_np" |of_IO|
+      ("NP/n1-plu"
+       ("N1/n-num_n1" |three_MC| ("N1/n" |pieces_NN2|)))))))))
+(|Have_VH0| |a_AT1| |clear_VV0| |out_RP| |or_CC| |hold_VV0| |a_AT1| |coffee_NN1| |morning_NNT1|)
+("T/txt-sc1/--"
+ ("S/imp"
+  ("V1/vp_vp-coord-r/-"
+   ("V1/have_np/--" |Have_VH0|
+    ("NP/det_v-bse-pt-r" |a_AT1| |clear_VV0| |out_RP|))
+   ("V1/cj-end_vp/--" |or_CC|
+    ("V1/vp_np-nt-adv" ("V1/v" |hold_VV0|)
+     ("NP/det_n1" |a_AT1|
+      ("N1/n_n1-nt-r" |coffee_NN1| ("N1/n-nt" |morning_NNT1|))))))))
+(|He_PPHS1| |helped_VVD| |look_NN1| |after_ICS| |them_PPHO2|)
+("T/txt-sc1/--"
+ ("S/np_vp" |He_PPHS1|
+  ("V1/v_n1" |helped_VVD|
+   ("N1/n1_pp1" ("N1/n" |look_NN1|)
+    ("PP/p1" ("P1/p_np-pro" |after_ICS| |them_PPHO2|))))))
+(A_AT1 |dog_NN1| |is_VBZ| |an_AT1| |animal_NN1| |with_IW| |four_MC| |legs_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" A_AT1 ("N1/n" |dog_NN1|))
+  ("V1/be_np/----" |is_VBZ|
+   ("NP/det_n1" |an_AT1|
+    ("N1/n1_pp3" ("N1/n" |animal_NN1|)
+     ("PP/p1"
+      ("P1/p_np" |with_IW|
+       ("NP/n1-plu"
+        ("N1/n-num_n1" |four_MC| ("N1/n" |legs_NN2|))))))))))
+(|The_AT| |North_ND1| |American_JJ| |frog_NN1| |is_VBZ| |horrid_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp"
+  ("NP/det_n1" |The_AT|
+   ("N1/ap_n1/-" ("AP/a1" ("A1/n-dir_a" |North_ND1| |American_JJ|))
+    ("N1/n" |frog_NN1|)))
+  ("V1/be_ap/-" |is_VBZ| ("AP/a1" ("A1/a" |horrid_JJ|)))))
+(I_PPIS1 |do_VD0| |n't_XX| |know_VV0| |what_DDQ| |they_PPHS2| |are_VBR|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/do_bse/--" |do_VD0|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_s" |know_VV0|
+     ("S/np-wh_s-gap" |what_DDQ|
+      ("S/np_vp" |they_PPHS2| ("V1/be_gap-r" |are_VBR|))))))))
+(I_PPIS1 |can_VM| |remember_VV0| |how_RGQ| I_PPIS1 |used_VMK| |to_TO| |be_VB0|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/modal_bse/--" |can_VM|
+   ("V1/v_s" |remember_VV0|
+    ("S/pp-wh_s" ("PP/p1" ("P1/p-wh" |how_RGQ|))
+     ("S/np_vp" I_PPIS1
+      ("V1/cat_inf/--" |used_VMK|
+       ("V1/to_bse/-" |to_TO| ("V1/be_gap-r" |be_VB0|)))))))))
+(I_PPIS1 |did_VDD| |n't_XX| |tell_VV0| |you_PPY| |what_DDQ| |Kim_NP1| |thought_VVD|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/do_bse/--" |did_VDD|
+   ("V1/not_vp" |n't_XX|
+    ("V1/v_np_s" |tell_VV0| |you_PPY|
+     ("S/np-wh_s-gap" |what_DDQ|
+      ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+       ("V1/v" |thought_VVD|))))))))
+(I_PPIS1 |want_VV0| |you_PPY| |to_TO| |show_VV0| |me_PPIO1| |where_RRQ| |the_AT| |car_NN1| |went_VVD| |off_RP|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/v_np_s" |want_VV0|
+   ("NP/np-pro_inf-r" |you_PPY|
+    ("V1/to_bse/-" |to_TO| ("V1/v_np-pro" |show_VV0| |me_PPIO1|)))
+   ("S/pp-wh_s" ("PP/p1" ("P1/p-wh" |where_RRQ|))
+    ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |car_NN1|))
+     ("V1/v" ("V/v_prt" |went_VVD| |off_RP|)))))))
+(|It_PPH1| |depends_VVZ| |whether_CSW| |you_PPY| |think_VV0| |about_II| |what_DDQ| |you_PPY| |'re_VBR| |seeing_VVG|)
+("T/txt-sc1/--"
+ ("S/np_vp" |It_PPH1|
+  ("V1/v_pp" |depends_VVZ|
+   ("PP/p1"
+    ("P1/p_s" |whether_CSW|
+     ("S/np_vp" |you_PPY|
+      ("V1/v_pp-wh" |think_VV0|
+       ("PP/p1"
+        ("P1/p_s-wh" |about_II|
+         ("S/np-wh_s-gap" |what_DDQ|
+          ("S/np_vp" |you_PPY|
+           ("V1/be_ing/--" |'re_VBR| ("V1/v" |seeing_VVG|)))))))))))))
+(|Sandy_NP1| |stood_VVD| |wondering_VVG| |what_DDQ| |their_APP$| |relationship_NN1| |was_VBDZ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Sandy_NP1|))
+  ("V1/v_ing" |stood_VVD|
+   ("V1/v_s" |wondering_VVG|
+    ("S/np-wh_s-gap" |what_DDQ|
+     ("S/np_vp" ("NP/det_n1" |their_APP$| ("N1/n" |relationship_NN1|))
+      ("V1/be_gap-r" |was_VBDZ|)))))))
+(I_PPIS1 |would_VM| |tell_VV0| |them_PPHO2| |where_RRQ| |to_TO| |go_VV0|)
+("T/txt-sc1/--"
+ ("S/np_vp" I_PPIS1
+  ("V1/modal_bse/--" |would_VM|
+   ("V1/v_np_pp" |tell_VV0| |them_PPHO2|
+    ("PP/p1"
+     ("P1/p_inf" |where_RRQ|
+      ("V1/to_bse/-" |to_TO| ("V1/v" |go_VV0|))))))))
+(|You_PPY| |must_VM| |understand_VV0| |how_RGQ| |to_TO| |check_VV0| |their_APP$| |accuracy_NN1| |at_II| |recognized_VVN| |stages_NN2|)
+("T/txt-sc1/--"
+ ("S/np_vp" |You_PPY|
+  ("V1/modal_bse/--" |must_VM|
+   ("V1/v_pp" |understand_VV0|
+    ("PP/p1"
+     ("P1/p_inf" |how_RGQ|
+      ("V1/to_bse/-" |to_TO|
+       ("V1/v_np_pp" |check_VV0|
+        ("NP/det_n1" |their_APP$| ("N1/n" |accuracy_NN1|))
+        ("PP/p1"
+         ("P1/p_np" |at_II|
+          ("NP/n1-plu"
+           ("N1/ppart_n1-r/-" |recognized_VVN|
+            ("N1/n" |stages_NN2|)))))))))))))
+(|It_PPH1| |made_VVD| |him_PPHO1| |a_AT1| |little_DA1| |sick_JJ| |,_,| |and_CC| |he_PPHS1| |let_VVD| |go_VV0| |of_IO| |her_PPHO1|)
+("T/txt-sc1/--"
+ ("S/s_s-coord/+"
+  ("S/np_vp" |It_PPH1|
+   ("V1/v_np-pro_np-pro" |made_VVD| |him_PPHO1|
+    ("NP/det_np-pro-r" |a_AT1|
+     ("NP/np-pro_ap-r/-" |little_DA1| ("AP/a1" ("A1/a" |sick_JJ|))))))
+  |,_,|
+  ("S/cj-end_s/--" |and_CC|
+   ("S/np_vp" |he_PPHS1|
+    ("V1/v_bse" |let_VVD|
+     ("V1/v_pp-of" |go_VV0|
+      ("PP/p1" ("P1/p_np-pro" |of_IO| |her_PPHO1|))))))))
+(|It_PPH1| |was_VBDZ| |hotter_JJR| |and_CC| |drier_JJR| |,_,| |but_CCB| |the_AT| |grass_NN1| |was_VBDZ| |better_RRR|)
+("T/txt-sc1/--"
+ ("S/s_s-coord/+"
+  ("S/np_vp" |It_PPH1|
+   ("V1/be_ap/-" |was_VBDZ|
+    ("AP/a1"
+     ("A1/a"
+      ("A/a_a-coord/-" |hotter_JJR|
+       ("A/cj-end_a/-" |and_CC| |drier_JJR|))))))
+  |,_,|
+  ("S/cj-end_s/--" |but_CCB|
+   ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |grass_NN1|))
+    ("V1/vp_advp" ("V1/be_gap-r" |was_VBDZ|)
+     ("AP/a1" ("A1/a" |better_RRR|)))))))
+(|As_CSA| |can_VM| |be_VB0| |seen_VVN| |,_,| |the_AT| |results_NN2| |are_VBR| |good_JJ|)
+("T/txt-sc1/--"
+ ("T/s_leta"
+  ("S/pp_vp-r" ("PP/p1" ("P1/prt-r" |As_CSA|))
+   ("V1/modal_bse/--" |can_VM|
+    ("V1/be_ppart/--" |be_VB0| ("V1/v" |seen_VVN|))))
+  ("Tacl/comma-e" |,_,|
+   ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |results_NN2|))
+    ("V1/be_ap/-" |are_VBR| ("AP/a1" ("A1/a" |good_JJ|)))))))
+(|His_APP$| |car_NN1| |is_VBZ| |especially_RR| |noteworthy_JJ|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/det_n1" |His_APP$| ("N1/n" |car_NN1|))
+  ("V1/be_ap/-" |is_VBZ|
+   ("AP/a1"
+    ("A1/adv_a1" ("AP/a1" ("A1/a" |especially_RR|))
+     ("A1/a" |noteworthy_JJ|))))))

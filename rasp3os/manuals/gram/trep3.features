@@ -1,0 +1,1840 @@
+\section{Syntactic Features}
+
+In Section 3.1 we describe the feature system, explaining which
+features appear on which categories and what purpose they serve. In
+Section 3.2 we outline the way in which we achieve the kinds of
+feature propagation which, in GPSG, are dealt with by means of feature
+propagation principles such as the Head Feature Convention.
+
+
+\subsection{The Feature Make-up of Categories}
+
+\subsubsection{Major Categories}
+
+Major categories are ones which are defined in terms of the features
+N, V and BAR. If a category has the features N and V it must also have
+BAR (although the opposite is not the case).  N and V combine to
+define the four major category types: verbal categories are [V +, N
+--], nominal categories are [N +, V --], adjectival categories are [V
++, N +] and prepositional categories are [V --, N --]. The feature BAR
+distinguishes lexical categories ([BAR 0]) from phrasal categories
+([BAR 2]).  [BAR 1] describes a level which is intermediate between
+lexical and phrasal.  For each major category type there is a set of
+head features which must appear on all instances of that category
+type, regardless of their BAR feature value. In addition there are
+other features which must appear on only some instances of a category
+type depending on their BAR feature value or some other feature value.
+The tables in sections 3.1.1.1---3.1.1.4 indicate the distribution of
+features for the four major category types and following each table is
+a brief description of the purpose of most of the features mentioned.
+There are a few features which occur with all four major category
+types and it seems more appropriate to describe these separately.
+Section 3.1.1.7, therefore, describes features common to all major
+category types. In two cases the grammar uses categories which are
+specified for BAR but which do not have N and V specifications. These
+categories generalise across major categories which share some
+features in common but not all. The two cases are [PRD +] categories
+and [ADV +] categories and the features relevant to them are described
+in sections 3.1.1.5 and 3.1.1.6 repectively.
+
+{\bf 3.1.1.1 Verbal Categories}
+
+The feature specification [V +, N --] differentiates verbal categories
+from the other major categories. Lexical verbal categories (i.e.\
+verbs) are [BAR 0]. Following the analysis in GPSG85 (which originates
+from Borsley (1983)), there are no [BAR 1] verbal categories and VP
+and S are both [BAR 2] (i.e.\ full phrasal projections). VP and S are
+differentiated by means of the feature SUBJ (to indicate the presence
+or absence of a subject): VP is [SUBJ --] and S is [SUBJ +].  In the
+grammar, and in this text, the symbols S, VP and V are aliases for the
+feature specifications at the beginning of Table 1.
+
+Table 1 displays all the features which occur on verbal
+categories. The first four are shown with values since these are the
+feature value pairs which are used in the definition of the aliases S,
+VP and V. The next seven features (PRD, FIN, AUX, VFORM, PAST, AGR,
+PRO---marked in bold font) are head features for verbal categories (as
+defined by the set definition VERBALHEAD) and are propagated between
+mother and head in verbal rules by the propagation rule HFC\_VERBAL.
+Features in parentheses are ones which occur on some instances of the
+category they are listed under, but not on all (for example, a few VPs
+are specified for the feature WH, but most are not). Features marked
+with an asterix are ones which play a similar role on several
+categories and which are described in Section 3.1.1.7.\footnote{PRD
+and PRO are features which occur on all or nearly all major categories
+but since they are also head features and since they reflect different
+linguistic phenomena according to which category they occur with, we
+describe them in each major category section instead of in Section
+3.1.1.7.}
+
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\hspace{4cm} & \hspace{4cm}     &   \hspace{4cm}   \\
+{\bf S}      &    {\bf VP}      & {\bf V} \\
+  \ \        &       \ \        &   \ \    \\
+\hline
+  \ \        &       \ \        &   \ \    \\
+   \mbox{[V +]}     &    \mbox{[V +]}        &     \mbox{[V +]}  \\
+   \mbox{[N --]}    &     \mbox{[N --]}       &     \mbox{[N --]} \\
+   \mbox{[BAR 2]}   &     \mbox{[BAR 2]}      &    \mbox{[BAR 0]}   \\
+ \mbox{[SUBJ +]}    &     \mbox{[SUBJ --]}    &    \ \    \\
+  \ \        &       \ \        &   \ \    \\
+\hline
+  \ \        &       \ \        &   \ \    \\
+{\bf VFORM}  &   {\bf VFORM}    &  {\bf VFORM} \\
+{\bf PRD}    &     {\bf PRD}    &  {\bf PRD} \\
+{\bf AUX}    &     {\bf AUX}    &  {\bf AUX} \\
+{\bf PAST}   &    {\bf PAST}    &  {\bf PAST} \\
+{\bf AGR}    &     {\bf AGR}    &  {\bf AGR} \\
+{\bf PRO}    &     {\bf PRO}    &  {\bf PRO} \\
+    INV      &        \ \       &  INV \\
+    COMP     &        \ \       &  \ \    \\
+    UDC      &       \ \        &  \  \  \\
+   (TAG)     &       \ \        &  \ \   \\
+    \ \      &       \ \        &  PSVE \\
+    \ \      &      NEG         &  NEG \\
+    \ \      &      \ \         &  (CONEG) \\
+    \ \      &       \ \        &  *(PRT) \\
+    \ \      &      \ \         &  *(PFORM) \\ 
+    \ \      &      \ \         &  *(PREP) \\
+    \ \      &       \ \        &  *SUBCAT \\
+    \ \      &       \ \        &  *SUBTYPE \\
+   {*}CONJ     &      *CONJ       &  *CONJ \\
+   {*}COORD    &      *COORD      &  *COORD \\
+   {*}SLASH    &      *SLASH      &  \ \   \\
+   {*}BEGAP    &      *BEGAP      &  \ \   \\
+   {*}ELLIP    &      *ELLIP      &  \  \  \\
+   {*}WH       &      *(WH)       &  \ \   \\
+   {*}UB       &      *(UB)       &  \ \  \\
+   {*}EVER     &      *(EVER)     &  \ \   \\ 
+  \ \        &       \ \        &   \ \    \\
+\hline
+\end{tabular}
+
+{\bf Table 1: Verbal Features}
+\end{center}
+\normalsize
+
+{\bf VFORM \hfill \vspace{2mm} values: BSE, ING, EN, TO, NOT} \\
+The feature VFORM (verb form) distinguishes between a number of
+possible untensed forms. [VFORM BSE] marks the base or uninflected
+form of the verb as in:
+
+\begin{ex}
+\begin{subex}
+Kim wants to {\it help}
+\end{subex}
+\begin{subex}
+Kim may {\it help}
+\end{subex}
+\begin{subex}
+Kim wants to {\it be} an astronaut
+\end{subex}
+\begin{subex}
+They require that Kim {\it attend}  
+\end{subex}
+\end{ex}
+
+[VFORM ING] appears on all verbs with the {\it ing} suffix, whether
+present participle \nextex{a} or gerund \nextex{b}.
+
+\begin{ex}
+\begin{subex}
+Kim is {\it reading} the book 
+\end{subex}
+\begin{subex}
+Kim {\it reading} the book surprised me
+\end{subex}
+\end{ex}
+
+[VFORM EN] appears on both the past participle and the passive
+form of the verb, for example:
+
+\begin{ex}
+\begin{subex}
+Lee has {\it finished} his tea
+\end{subex}
+\begin{subex}
+The mouse was {\it eaten} by the cat
+\end{subex}
+\end{ex}
+
+[VFORM TO] is used to identify infinitive VPs. Following GPSG85, we
+treat the word {\it to} occuring in infinitives ({\it John wants} to
+{\it go}) as a main verb albeit of a rather marked type since it
+doesn't inflect in any way: {\it to} is the only verb in the
+dictionary specified as [VFORM TO] and this feature-value pair
+propagates up to the VP dominating it, thus ensuring that the VP
+immediately containing it is also marked as [VFORM TO].
+
+[VFORM NOT] appears on all finite, non-imperative verb forms and is to
+be interpreted as meaning that the verb has no meaningful value for
+VFORM---the purpose of the VFORM feature is to distinguish between
+different types of non-finite forms and as such it has no real
+contribution to make to the specification of finite forms.
+
+{\bf FIN \hfill \vspace{2mm} values: +, --} \\
+The feature FIN (finite) distinguishes tensed forms of a verb ([FIN
++]) from untensed forms ([FIN --]). FIN interacts with VFORM in the
+following way: in general [FIN +] verbs will be VFORM NOT whilst [FIN
+--] verbs will have one of BSE, ING, EN, TO as a VFORM value. The only
+exception to this are imperatives which are [+FIN, VFORM BSE],
+following the analysis of Warner (1984).
+
+{\bf PRD \hfill \vspace{2mm} values: +, --} \\
+The feature PRD (predicative) appears on major categories. When it
+appears on verbs, it interacts with the VFORM feature to distinguish
+between passives and past participles, and present participles and
+gerunds: passive verbs are [VFORM EN, PRD +]; past participles are
+[VFORM EN, PRD --]; present participles are [VFORM ING, PRD +];
+gerunds are [VFORM ING, PRD --].  The linguistic motivation for this
+analysis stems from the observation that the verb {\it be}
+subcategorises for predicative complements. Passive verbs and present
+participles are both complements of {\it be}, therefore they are [PRD
++]. Past participles and gerunds are not complements of {\it be},
+therefore they are [PRD --].
+
+{\bf AUX \hfill \vspace{2mm} values: +, --} \\
+The feature AUX distinguishes auxiliaries from non-auxiliaries: the
+auxiliaries {\it be}, {\it have}, {\it do}, {\it will}, the modals
+{\it can}, {\it may}, {\it ought} etc, and the infinitive verb {\it
+to} are all [AUX +]. All other verbs are [AUX --].
+
+{\bf PAST \hfill \vspace{2mm} values: +, --, FUT} \\
+The feature PAST encodes past tense ([PAST +]), present tense ([PAST
+--]) and future tense ([PAST FUT]).  All finite verbs are either [PAST
++] or [PAST --] with the exception of the future marking auxiliaries
+{\it will} and {\it shall} which are [PAST FUT]. Since tense is not
+relevant to non-finite forms these are all marked as [PAST NOT] where
+this is interpreted as meaning that the verb has no meaningful value
+for PAST. Earlier versions of the grammar (before semantics were
+added) used PAST to distinguish between past and present tense
+morphology.  (With the addition of semantics, there was a need to
+distinguish between past, present and future temporal reference and it
+was at this point that the value FUT was added. It would probably be
+more logical to replace the PAST feature by one called TENSE with
+values {PAST, PRES, FUT} but since there are many irregular entries in
+the large lexicon with specifications for the feature PAST which would
+need to be changed it was decided to keep the feature name PAST.)
+
+{\bf AGR \hfill \vspace{2mm} category-valued} \\
+AGR is a category-valued feature which encodes information about the
+category that verbs, adjectives or determiners agree with. The value
+of AGR is restricted such that only a limited set of features appear
+as part of the category value and this means that AGR in our grammar
+is really only `pseudo' category-valued, unlike GPSG85 where the value
+of AGR is an exact copy of the category agreed with.
+
+Verbs will be either [AGR N2] (agrees with an N2 subject) or [AGR V2]
+(agrees with an S or VP subject). These AGR values will be further
+instantiated:
+
+The N2 in [AGR N2] has additional features defined by the set AGRFEATS
+(NFORM, PER, PLU, CASE, COUNT) since these are the ones relevant to
+agreement. The values for these features will be bound to the values
+for the same features on the subject N2. The NFORM feature is the one
+which defines whether a verb can agree with a dummy subject ({\it it},
+{\it there}) or not.
+
+The V2 in [AGR V2] has the additional features FIN, SUBJ, VFORM and
+UB. The values for these features will be bound to the values for the
+same features on the V2 subject. These features define the type of V2
+subject (finite S, infinitival S, infinitival VP, base S and question
+S) that a verb can cooccur with (see ID rules
+S/V2\_SUBJ1--S/V2\_SUBJ5 and propagation rule AGR/V2\_VP).
+
+{\bf PRO \hfill \vspace{2mm} values: +, --} \\
+Under certain conditions, auxiliary verbs can occur without their
+usual VP complements as in the examples in \nextex{}. In these cases,
+the form of the missing complement is understood to be the same as
+some previously occurring VP complement which acts as an antecedent
+for the missing (or ellided) VP. Our analysis of cases like this
+involves allowing the auxiliary to stand in place of itself and its
+missing complement: i.e.\ to analyse it as a pro-form. The feature PRO
+marks the relevant auxiliary entries in the lexicon and is picked up by
+rules for building [PRO +] VP constituents (see, for example, ID rules
+VP/PRO and VP/PRO2). All other verbs and VP rules are specified as
+[PRO --].
+
+\begin{ex}
+\begin{subex}
+Kim wants to go to the zoo and Lee wants {\it to} too.
+\end{subex}
+\begin{subex}
+Kim will have finished the book by Monday. Lee won't {\it have}.
+\end{subex}
+\end{ex}
+
+{\bf INV \hfill \vspace{2mm} values: +, --} \\
+The feature INV distinguishes inverted sentences from uninverted ones.
+The S rules which are output from the subject-auxiliary inversion
+(SAI) metarule are [INV +]. S and V are specified for INV, whilst VP
+is not.  Non-auxiliary verbs are specified as [INV --] since they
+cannot invert.  Most auxiliaries have a variable value for INV to allow
+them to appear in both inverted and non-inverted structures. Some,
+however, are always [INV +], e.g.\ the 1st person singular entry for
+{\it aren't} ([INV +, AGR N2[PER 1, PLU --]]) as in {\it aren't I
+clever}.
+
+{\bf COMP \hfill \vspace{2mm} values: THAT, FOR, IF, WHETHER, NORM, ER, AS} \\
+The COMP feature occurs on S and encodes the type of complementiser an
+S contains. For example, an S[COMP THAT] contains a {\it that}
+complementiser, an S[COMP WHETHER] contains a {\it whether}
+complementiser etc.\ An S with no complementiser is [COMP NORM].
+
+{\bf UDC \hfill \vspace{2mm} values: +, --} \\
+The feature UDC occurs only on S categories and indicates whether that
+S is an unbounded dependency construction or not (i.e.\ whether it
+contains an initial preposed constituent or not). This is used to
+constrain the distribution of such S categories: all complement S's
+are required to be [UDC --] in order to block examples such as those
+in \nextex{}. This may be a little too restrictive but it helps to
+cut down on spurious ambiguities.
+
+\begin{ex}
+\begin{subex}
+? Kim acknowledges the fact that S[ Kim, Lee helped \_ ].
+\end{subex}
+\begin{subex}
+? Sandy wonders whether [ Kim, Lee helped \_ ].
+\end{subex}
+\end{ex}
+
+{\bf TAG \hfill \vspace{2mm} values: +, --} \\
+The feature TAG is used to mark the tag in a tag-question (i.e.\ {\it
+isn't he} in {\it he is clever, isn't he}). We analyse the tag as a
+rather marked type of S (see ID rule S/TAG) and distinguish it as [TAG
++]. No other S has the feature TAG.
+
+{\bf PSVE \hfill \vspace{2mm} values: +, --}  \\
+All verbs have an extra feature PSVE (passive). This feature is
+necessary since there is nothing in the grammar to prevent passive
+verbs from matching active VP rules. (Passive verbs are distinguished
+by the feature specification [VFORM EN, PRD +] but since active VP
+rules are left unspecified for VFORM and PRD, these features cannot be
+used to prevent passive verbs from matching.) All passive verbs are
+therefore specified as [PSVE +] and a default rule (V/PASS) ensures
+that the lexical head of all passive VP rules is similarly specified.
+All active verbs are marked as [PSVE --] and this feature
+specification is also defaulted onto the heads of all active VP rules
+(default rule V/UNPASS). Without this feature *{\it fido is attacked
+the dog} would get a successful parse.
+
+{\bf NEG \hfill \vspace{2mm} values: +, --}  \\
+The feature NEG (negative) occurs on V and VP but not on S. Most
+lexical entries for verbs are [NEG --] but auxiliaries with the {\it
+n't} suffix are [NEG +].  VPs are [NEG +] either by virtue of
+containing a [NEG +] verb or because they are modified by {\it not}
+(see ID rule VP/NEG).
+
+{\bf CONEG \hfill \vspace{2mm} values: +, --} \\
+CONEG is a feature which only occurs on auxiliary verbs and which is
+used to constrain the possibility of them occurring with negative
+complements. There is a metarule, NEGATION, which creates new versions
+of the auxiliary rules which are just like the basic ones except that
+the word {\it not} is inserted between the auxiliary and its
+complement ({\it did/can not leave}). There is also an ID rule VP/NEG
+which allows {\it not} to precede a non-finite VP and this makes it
+possible for examples like {\it did/can not leave} to receive two parses.
+In the case of modals, this seems appropriate: {\it Kim can not leave}
+is ambiguous between a reading where the {\it not} scopes just over
+the complement (Kim is capable of not leaving) and one where it scopes
+over the modal and its complement (Kim is not able to leave). In the
+case of tense and aspect carrying auxiliaries, this ambiguity is not
+so readily available---{\it Kim did not leave} cannot really be said
+to be ambiguous. Lexical entries for non-negative auxiliaries receive
+a [CONEG --] specification by default and a propagation rule,
+AUX/CONEG, binds the value of CONEG on the auxiliary to the value of
+NEG on the VP complement in the ID rules which are responsible for the
+tense and aspect auxiliaries. This prevents a parse of {\it Kim does
+not leave} where the {\it not} forms a constituent with the VP
+complement. The rules for modal verbs are not affected by the
+propagation rule so the (somewhat redundant) presence of CONEG on
+modal verbs does not affect their ability to cooccur with a negative
+VP complement. There are also lexical entries for auxiliaries which
+are inherently negative---ones with {\it not} cliticised to them and
+these entries have a variable value for CONEG since they can
+cooccur with negative complements: {\it Kim didn't not help}, {\it Kim
+can't not help}. The semantics of negatives is decribed in more detail
+in section 6.6.
+
+{\bf 3.1.1.2 Nominal Categories}
+
+The feature specification [N +, V --] differentiates nominal
+categories from the other major categories. Lexical nominal categories
+(i.e.\ nouns) are [BAR 0]. There is a [BAR 1] nominal category and
+this is the level at which modifiers are attached. The [BAR 2] level
+is the phrasal projection although there are two distinct types of
+[BAR 2] nominal categories: ones which are [SPEC +] and ones which are
+[SPEC --]. It is N2[SPEC +] which corresponds to the standard category
+of NP. In the grammar, and in this text, the symbols N2, N1 and N are
+aliases for the feature specifications at the beginning of Table 2.
+
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\hspace{4cm}    & \hspace{4cm}     &   \hspace{4cm}    \\
+{\bf N2}        &    {\bf N1}      &   {\bf N}         \\
+  \ \           &       \ \        &   \ \             \\
+\hline
+  \ \           &       \ \        &   \ \             \\
+\mbox{[N +]}    & \mbox{[N +]}     & \mbox{[N +]}      \\
+\mbox{[V --]}   & \mbox{[V --]}    & \mbox{[V --]}     \\
+\mbox{[BAR 2]}  & \mbox{[BAR 1]}   & \mbox{[BAR 0]}    \\
+  \ \           &       \ \        &   \ \             \\
+\hline
+  \ \           &       \ \        &   \ \             \\
+{\bf NFORM}     &   {\bf NFORM}    &  {\bf NFORM}      \\
+{\bf PER}       &   {\bf PER}      &  {\bf PER}        \\
+{\bf PLU}       &   {\bf PLU}      &  {\bf PLU}        \\
+{\bf COUNT}     &   {\bf COUNT}    &  {\bf COUNT}      \\
+{\bf CASE}      &   {\bf CASE}     &  {\bf CASE}       \\
+{\bf POSS}      &   {\bf POSS}     &  {\bf POSS}       \\
+{\bf PN}        &   {\bf PN}       &  {\bf PN}         \\
+{\bf PRO}       &   {\bf PRO}      &  {\bf PRO}        \\
+{\bf PROTYPE}   &   {\bf PROTYPE}  &  {\bf PROTYPE}    \\
+{\bf REFL}      &   {\bf REFL}     &  {\bf REFL}       \\
+{\bf DEMON}     &   {\bf DEMON}    &  {\bf DEMON}      \\
+{\bf NUM}       &   {\bf NUM}      &  {\bf NUM}        \\
+{\bf PART}      &   {\bf PART}     &  {\bf PART}       \\
+{\bf ADV}       &   {\bf ADV}      &  {\bf ADV}        \\
+{\bf PRD}       &   {\bf PRD}      &  {\bf PRD}        \\
+    SPEC        &   \ \            &  \ \              \\
+    QFEAT       &   \ \            &  \ \              \\
+    DEF         &   DEF            &  (DEF)            \\
+    KIND        &   \ \            &  \ \              \\
+    AFORM       &   \ \            &  (AFORM)          \\
+    COADV       &   COADV          &  \ \              \\
+    \ \         &   MOD            &  \ \              \\
+    NEG         &   \ \            &  \ \              \\
+    \ \         &   \ \            &  (ADDRESS)        \\
+    \ \         &   \ \            &  *(PRT)           \\
+    \ \         &   \ \            &  *(PFORM)         \\ 
+    \ \         &   \ \            &  *SUBCAT          \\
+   {*}CONJ       &   *CONJ          &  *CONJ            \\
+   {*}COORD      &   *COORD         &  *COORD           \\
+   {*}SLASH      &   *SLASH         &  \ \              \\
+   {*}BEGAP      &   \ \            &  \ \              \\
+   {*}WH         &   *WH            &  *(WH)            \\
+   {*}UB         &   *UB            &  *(UB)            \\
+   {*}EVER       &   *EVER          &  *(EVER)          \\ 
+    \ \         &   \ \            &   \ \             \\
+\hline
+\end{tabular}
+
+{\bf Table 2: Nominal Features}
+\end{center}
+\normalsize
+
+Table 2 displays all the features which occur on nominal
+categories. The first three are shown with values since these are the
+feature value pairs which are used in the definition of the aliases
+N2, N1 and N. The next fifteen features (NFORM, PER, PLU, COUNT, CASE,
+POSS, PN, PRO, PROTYPE, REFL, DEMON, NUM, PART, ADV, PRD---marked in
+bold font) are head features for nominal categories (as defined by the
+set definition NOMINALHEAD) and are propagated between mother and head
+in nominal rules by the propagation rule HFC\_NOMINAL.  Features in
+parentheses are ones which occur on some instances of the category
+they are listed under, but not on all. Features marked with
+an asterix are ones which play a similar role on several categories
+and which are described in Section 3.1.1.7.
+
+{\bf NFORM \hfill \vspace{2mm} values: NORM, THERE, IT} \\
+This feature distinguishes `dummy' forms ({\it it}, {\it there})
+from normal nouns; pleonastic {\it it} is specified as [NFORM IT],
+existential {\it there} is specified as [NFORM THERE], whilst all
+other nouns, pronouns and proper names are specified as [NFORM NORM].
+NFORM is relevant to agreement since not all verbs and adjectives can
+have N2 subjects of all types.
+
+{\bf PER \hfill \vspace{2mm} values: 1, 2, 3} \\
+This feature indicates whether a noun, pronoun or proper name is 1st,
+2nd or 3rd person.
+
+{\bf PLU  \hfill \vspace{2mm} values: +, --} \\
+This feature indicates whether a noun is singular ([PLU --]) or plural
+([PLU +]).
+
+{\bf COUNT \hfill \vspace{2mm} values: +, --} \\
+COUNT distinguishes mass nouns ([COUNT --]) from countable
+nouns ([COUNT +]).
+
+{\bf CASE \hfill \vspace{2mm} values: NOM, ACC} \\
+CASE indicates case marking and has two values, NOM (nominative) and
+ACC (accusative). Almost all lexical entries for nouns have variable
+values for CASE since common nouns and names do not inflect for case.
+Pronouns, however, do exhibit case-marking and so these do have a
+specification for CASE.
+
+{\bf POSS \hfill \vspace{2mm} values: +, --} \\
+The feature POSS encodes possessiveness. All noun entries are [POSS
+--] except for the entry for the possessive morphemes {\it 's}, {\it
+s'} and {\it '} which are [POSS +]. The grammar contains special rules
+for building a possessive N2 out of a non-possessive N2 and a
+possessive morpheme (ID rules N2/POSSa--N2/POSSc). The morphological
+analyser is not able to separate the possessive morpheme from the word
+it attaches to, so a possessive N2 has to be entered to the parser
+with a space between the N2 and the possessive morpheme (i.e.\ instead
+of {\it the cat's} one must type {\it the cat 's}.
+
+{\bf PN \hfill \vspace{2mm} values: +, --} \\
+The feature PN distinguishes proper names ([PN +]) from
+other nouns ([PN --]).
+
+{\bf PRO \hfill \vspace{2mm} values: +, --} \\
+The feature PRO distinguishes pronouns ([PRO +]) from other nouns
+([PRO --]). Although pronouns are often thought of as pro-NPs rather
+than pro-nouns, we give them [BAR 0] entries in the lexicon and then
+use ID rules to build pro-N2s. This allows postmodifiable pronouns to
+be simply treated and helps to keep [BAR 2] entries out of the lexicon
+(something that is desirable for the LR parser).
+
+{\bf PROTYPE \hfill \vspace{2mm} values: NONE, COMPOUND, PMOD, PMOD+, THAT} \\
+PROTYPE distinguishes between different types of pronoun. [PROTYPE
+NONE] pronouns are ones such as the personal pronouns which do not
+generally permit postmodification. The other values indicate that
+modification is possible. [PROTYPE COMPOUND] pronouns are a compound
+of a quantifier plus a place/time/thing indication ({\it something},
+{\it anywhere}). They can be postmodified ({\it somewhere in France})
+and they are also the only nominals which can be postmodified by a
+simple adjective ({\it somewhere quiet}: see ID rule N1/POST\_APMOD2).
+[PROTYPE PMOD] pronouns are bare quantifiers or deictics ({\it all},
+{\it this}) which can be postmodified ({\it all that you do}).
+[PROTYPE PMOD+] pronouns are similar but can additionally occur with a
+determiner: {\it the few that were left}. [PROTYPE THAT] singles out
+the pronoun {\it that} which because it is a homograph of the
+complementizer {\it that}, the relative pronoun {\it that} and the
+determiner {\it that} gives rise to a great deal of spurious
+ambiguity. Treating it in a class of its own enables us to reduce this
+ambiguity to an extent.
+
+{\bf REFL \hfill \vspace{2mm} values: +, --} \\
+REFL indicates whether a noun has reflexive morphology ([REFL +] --
+{\it myself}, {\it himself}) or not ([REFL --]). The default is [REFL
+--].
+
+{\bf DEMON \hfill \vspace{2mm} values: +, --} \\
+This feature indicates whether a pronoun is demonstrative or not. It
+is used to constrain the possibilities of postmodification of
+demonstrative pronouns (see ID rules N1/RELMOD2 and N1/RELMOD3).
+
+{\bf NUM \hfill \vspace{2mm} values: CARD, ORD, +, --} \\
+The feature NUM is used to encode whether a noun is a cardinal or
+ordinal number or neither. All noun entries are [NUM --] since there
+are no nominal entries in the lexicon for cardinals or ordinals.
+Instead, cardinal and ordinal nominal constituents are built from
+cardinal and ordinal A2s (see ID rules N/NUMBER1, N/NUMBER2 and
+N2+/ADJ4).
+
+{\bf PART \hfill \vspace{2mm} values: OF, OF2, NO\_OF, --} \\
+The grammar contains rules for several different kinds of partitive
+construction (ID rules N2+/PART1--N2+/PART6B). Each of these rules
+builds an N2[+SPEC] from an initial N2 or A2 (for example, {\it some},
+{\it several}, {\it three}, {\it few}, {\it a pound}) followed by {\it
+of} followed by an N2[+SPEC] (e.g.\ {\it the biscuits}).  Occasionally
+the {\it of} need not occur ({\it all/both the biscuits}).  The
+initial N2 or A2 is required to be specified for the feature PART with
+values OF, OF2 or NO\_OF and this constrains the type of constituent
+that can occur in this position.  Most nouns and noun positions are
+marked by default as [PART --].
+
+{\bf ADV \hfill \vspace{2mm} values: +, --} \\
+Nouns such as {\it time}, {\it year}, {\it second} can head N2s which
+can be used adverbially: {\it I saw him last year/ten seconds ago}.
+Such nouns are marked as [ADV +] and, by default, all others are [ADV --].
+
+{\bf PRD \hfill \vspace{2mm} values: +, --} \\
+The feature PRD encodes whether an N2 is being used predicatively or
+not and the semantic translation differs considerably according to
+this distinction. Noun entries have a variable value for PRD which
+will become instantiated according to the N2 they head (indefinites
+can be [PRD +] but definites cannot). Furthermore N2s will be required
+to be either [PRD +] or [PRD --] by rules that licence them (for
+example ID rules VP/BE\_PRD and VP/BE\_NP). Most N2 complements of verbs
+will be required to be [PRD --]---i.e.\ this is the default.
+
+{\bf SPEC \hfill \vspace{2mm} values: +, --} \\
+The feature SPEC (specifier) appears on N2 but not on N1 or N, thereby
+creating two distinct types of N2 (N2[+SPEC] and N2[--SPEC]). The
+distinction between the two types of N2 was introduced because of the
+need to recognise more levels of structure while keeping N2 as the
+phrasal projection. In earlier versions of the grammar, most N2
+positions permitted either N2[+SPEC] or N2[--SPEC] to appear but in
+this version only N2[+SPEC] is allowed to occur as the complement of
+other categories and N2[--SPEC] now only occurs as the daughter of
+N2[+SPEC].
+
+{\bf QFEAT \hfill \vspace{2mm} values: +, --, NO} \\
+One of the motivations for the +/-- SPEC distinction was the fact that
+there are two distinct levels at which quantifiers can attach: in
+determiner position ({\it all the books}) and below determiner
+position ({\it the many books}) i.e.\ under N2[SPEC +] and N2 [SPEC
+--] respectively. The feature QFEAT appears on an N2[--SPEC] and
+indicates whether it contains one of these low attaching quantifiers
+or not. The feature is needed because the semantic translation will
+differ considerably depending on the presence or absence of such a
+quantifier.
+
+{\bf DEF \hfill \vspace{2mm} values: +, --} \\
+This feature encodes definiteness. DEF appears on all N2s and N1s.  An
+N2 acquires its DEF value from the DEF value of its determiner (see
+proprule PDEF3). DEF also occurs on N[PRO +] but not on any other N.
+Pronouns can be either definite or indefinite (e.g. {\it some} is
+indefinite whilst {\it all} is definite). DEF is used to restrict the
+distribution of some N2s: for example, the N2 complement occurring
+with existential {\it there} ({\it there is a mouse in the bathtub})
+must be indefinite.
+
+{\bf KIND \hfill \vspace{2mm} values: +, --} \\
+The feature KIND occurs only on N2 and is used to allow for a `natural
+kind' interpretation of non-predicative indefinites, e.g.\ {\it lions}
+in {\it lions are dangerous}. There are not many positions where there
+is an absolute requirement that an indefinite N2 should or should not
+have a `kind' interpretation but this feature is used to that end in
+one or two rules (see ID rules N2+/COMPAR*, N2+/N2-b, N2/POSSb etc.).
+
+{\bf AFORM \hfill \vspace{2mm} values: ER, EST, AS, NONE} \\
+The feature AFORM (adjective form) reflects whether
+an adjective is comparative, equative, superlative or none of these.
+The feature has to appear on N2 as well as on adjectival categories
+since the rules for comparatives need to know whether an N2 contains a
+comparative quantifier or not. For example, in {\it Lee ate more
+chocolates than Kim ate}, the N2 {\it more chocolates} has to be
+marked for AFORM in order to licence the {\it than}-clause. Pronouns
+are also marked for AFORM since these can be comparative/superlative
+({\it more, most}).
+
+{\bf COADV \hfill \vspace{2mm} values: +, --} \\
+This feature is used to constrain the distribution of words such as
+{\it ago} and {\it later} which can only post-modify [ADV +] nouns.
+Adjectival categories and non-lexical nominal categories have the
+feature COADV and propagation rules such as COADV1--COADV4 ensure a
+pattern of bindings which achieve an appropriate distribution.
+
+{\bf MOD \hfill \vspace{2mm} values: PRE, POST, NONE} \\
+The feature MOD (modified) appears only on N1. It is used to control
+the order in which modifiers attach to N1 (pre-modifiers attach lower
+than post-modifiers). It is simply a device to prevent multiple parses
+reflecting syntactically spurious attachment ambiguities in N2s which
+contain both pre- and post-modifiers. With the addition of semantics,
+there is less justification for this feature since low vs high
+attachment could reflect scope. However, since modification of nominals is
+currently represented as simple conjunction with no particular scoping
+intended, the feature has been retained.
+
+{\bf NEG \hfill \vspace{2mm} values: +, --} \\
+NEG appears on N2 but not on N1 or N. A class of negative N2s (ones
+modified by {\it not}) is recognised in the grammar but their
+distribution is restricted such that they only appear in coordinations
+of N2 (e.g. {\it a pencil but not a pen}). The {\it not} occurring
+between copula `be' and an N2 (e.g. {\it fido is not a cat}) is not
+treated as being in constituency with the N2.
+
+{\bf ADDRESS \hfill \vspace{2mm} values: +,  --} \\
+The specification [ADDRESS +] occurs on nouns which are titles such as
+{\it Ms}, {\it Sir}, {\it jnr} etc. This feature does not occur on any
+other noun and so the distribution of such nouns is highly
+constrained---they can only occur in conjunction with proper names
+(see PS rules N/NAME2A and N/NAME2B).
+
+
+{\bf 3.1.1.3 Adjectival Categories}
+
+The feature specification [N +, V +] differentiates adjectival
+categories from the other major categories. Lexical adjectival
+categories (i.e.\ adjectives and adverbs) are [BAR 0]. There is a [BAR
+1] adjectival category and this is the level at which degree
+specifiers are attached. The [BAR 2] level is the phrasal projection.
+Adverbs are treated as a special kind of adjective so the feature
+specifications [ADV +] and [ADV --] have a very distinctive role to
+play. In the grammar, and in this text, the symbols A2, A1 and A are
+aliases for the feature specifications at the beginning of Table 3.
+
+Table 3 displays all the features which occur on
+adjectival categories. The first three are shown with values since
+these are the feature value pairs which are used in the definition of
+the aliases A2, A1, and A. The next ten features (ADV, QUA, AGR, PRD,
+GRADE, NEG, DEF, NUM, PART, COADV---marked in bold font) are head
+features for adjectival categories (as defined by the set definition
+ADJHEAD) and are propagated between mother and head in adjectival
+rules by the propagation rule HFC\_ADJ.  Features in parentheses are
+ones which occur on some instances of the category they are listed
+under, but not on all. Features marked with an asterix are ones which
+play a similar role on several categories and which are described in
+Section 3.1.1.7.
+
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\hspace{4cm}    & \hspace{4cm}     &   \hspace{4cm}    \\
+{\bf A2}        &    {\bf A1}      &   {\bf A}         \\
+  \ \           &       \ \        &   \ \             \\
+\hline
+  \ \           &       \ \        &   \ \             \\
+\mbox{[N +]}    & \mbox{[N +]}     & \mbox{[N +]}      \\
+\mbox{[V +]}    & \mbox{[V +]}     & \mbox{[V +]}      \\
+\mbox{[BAR 2]}  & \mbox{[BAR 1]}   & \mbox{[BAR 0]}    \\
+  \ \           &       \ \        &   \ \             \\
+\hline
+  \ \           &       \ \        &   \ \             \\
+{\bf ADV}       &   {\bf ADV}      &  {\bf ADV}        \\
+{\bf QUA}       &   {\bf QUA}      &  {\bf QUA}        \\
+{\bf AGR}       &   {\bf AGR}      &  {\bf AGR}        \\
+{\bf PRD}       &   {\bf PRD}      &  {\bf PRD}        \\
+{\bf GRADE}     &   {\bf GRADE}    &  {\bf GRADE}      \\
+{\bf NEG}       &   {\bf NEG}      &  {\bf NEG}        \\
+{\bf DEF}       &   {\bf DEF}      &  {\bf DEF}        \\
+{\bf NUM}       &   {\bf NUM}      &  {\bf NUM}        \\
+{\bf PART}      &   {\bf PART}     &  {\bf PART}       \\
+{\bf COADV}     &   {\bf COADV}    &  {\bf COADV}      \\ 
+    AFORM       &      AFORM       &    AFORM          \\
+    DISTR       &      DISTR       &    DISTR          \\
+    \ \         &   \ \            &  *(PRT)           \\
+   *(PFORM)     &   \ \            &  *(PFORM)         \\ 
+    \ \         &   \ \            &  *SUBCAT          \\
+    \ \         &   \ \            &  *SUBTYPE         \\
+   {*}CONJ       &   *CONJ          &  *CONJ            \\
+   {*}COORD      &   *COORD         &  *COORD           \\
+   {*}SLASH      &   *SLASH         &   \ \             \\
+   {*}BEGAP      &   \ \            &   \ \             \\
+   {*}WH         &   *WH            &   \ \             \\
+   {*}UB         &   *UB            &   \ \             \\
+   {*}EVER       &   *EVER          &   \ \             \\ 
+    \ \         &   \ \            &   \ \             \\
+\hline
+\end{tabular}
+
+{\bf Table 3: Adjectival Features}
+\end{center}
+\normalsize
+
+{\bf ADV \hfill \vspace{2mm} values: +, --} \\
+The feature ADV distinguishes adverbs from adjectives. For example,
+{\it clever} is an A[ADV~--] while {\it cleverly} is an A[ADV +].
+
+{\bf QUA \hfill \vspace{2mm} values: +, --} \\
+The feature QUA distinguishes quantifying adjectives and adverbs ([QUA
++]: {\it all}, {\it many}, {\it some}, {\it both}, {\it often}) from
+non-quantifying ones ([QUA --]: {\it big}, {\it stupid}, i.e.\ most
+adjectives and adverbs). Quantifying adjectives are seen as a special
+case since they occur in positions not available to other adjectives
+and since they function semantically as quantifiers. Quantifying
+adverbs (e.g.  {\it often}, {\it frequently}) also have a special
+distribution and semantics.
+
+{\bf AGR \hfill \vspace{2mm} category-valued} \\
+All adjectives have an AGR specification and most behave exactly like
+verbs with respect to the AGR feature---they are either [AGR N2] or
+[AGR V2].  The exception is predicative quantifying adjectives, such
+as {\it many} or {\it few}, which can occur either in predicative
+position or prenominally as quantifiers.  When they occur in
+predicative position they must agree with an N2 but when they occur
+prenominally they must agree with an N1. For this reason the BAR
+feature on the [N +, V --] category value of AGR on the lexical
+entries for such adjectives has been left unspecified.
+Non-predicative quantifying adjectives, such as {\it all}, attach
+under N2[+SPEC] ({\it all books}) and some of these are able to
+cooccur with with an N2[--SPEC] sister which already contains a
+quantifier ({\it all three books}) while others cannot (*{\it both two
+books}).  For these adjectives, QFEAT is added to the set of features
+on the category value of AGR in order to achieve a correct
+distribution.  QFEAT occurs as part of AGR on determiners as well.
+Since adverbs are a kind of adjective, they also have the feature AGR.
+This specification is somewhat redundant since adverbs do not enter
+into agreement relations with other categories.
+
+{\bf PRD \hfill \vspace{2mm} values: +, --} \\
+The feature PRD, in combination with the feature DISTR, controls the
+distribution of adjectives and adjective phrases.  In the lexicon,
+some adjectives are marked as [PRD --] because they can only head APs
+which occur in attributive position, for example, {\it main} ({\it the
+main reason}, *{\it the reason is main}), and others must be [PRD +],
+for example, {\it asleep} ({\it the man is asleep}, *{\it an asleep
+man}).  Quantifying adjectives fall into two classes depending on
+whether they are [PRD +] or [PRD --]: {\it all} and {\it some} are
+A[QUA +, PRD --] while {\it many} and {\it few} are A[QUA +, PRD +].
+Each type attaches at a different level inside an N2 and the [PRD --]
+type cannot occur in predicative position.
+
+{\bf GRADE \hfill \vspace{2mm} values: +, --} \\
+This feature distinguishes adjectives and adverbs which
+are `gradable' from those which are not. Gradable adjectives are ones
+which can participate in comparative constructions ({\it more stupid
+than Lee}) and which can occur with degree specifiers ({\it so
+stupid}).  Two other classes of adjectives are the truly intersective
+ones such as {\it four-legged} and non-restricting ones such as {\it
+bogus} and {\it alleged}. These classes are not distinguished
+in the large lexicon and we therefore only distinguish between
+gradable and non-gradable adjectives.
+
+{\bf NEG \hfill \vspace{2mm} values: +, --} \\
+NEG appears as a feature on all major categories but it is only in the
+case of adjectives that it is a head feature. This is because some
+quantifying adjectives are inherently negative, for example, {\it no}
+and {\it neither} etc.  A2s modified by {\it not} ({\it not clever},
+{\it not many}, {\it not often}---see ID rule A2/NEG and A2/NOT) are
+also [NEG +]
+
+{\bf DEF \hfill \vspace{2mm} values: +, --} \\
+When quantifying adjectives occur as N2 specifiers the DEF value of
+the N2 is derived from their DEF value. For example, {\it many} in
+{\it many books} is indefinite and so is the containing N2, and {\it
+both} in {\it both books} is definite and so is the containing N2.
+
+{\bf NUM \hfill \vspace{2mm} values: CARD, ORD, --, +} \\
+Cardinal numbers are described in the lexicon with features which are
+outside of the usual feature system (CN1, CN2, CN3, CN4, AND) and PS
+rules NUM1--NUM9 combine them to make more complex cardinals.  ID
+rules A/NUMBER1 and A/NUMBER2 recognize cardinals as quantifying
+adjectives ({\it three books}) where the A category is marked as [NUM
+CARD]. Ordinals are treated as ordinary adjectives ({\it the fourth
+book}) except that they are marked as [NUM ORD]. Other adjectives and
+adverbs are [NUM --].
+
+{\bf PART \hfill \vspace{2mm} values: OF, OF2, NO\_OF, --} \\
+PART plays the same role on adjectival constituents as it does on
+nominal ones: adjectives which can head the initial A2 in a partitive
+(e.g.\ {\it all} in {\it nearly all (of) the books}) are specified as
+[PART OF] or [PART NO\_OF]. All other adjectives and adverbs and A2
+positions are marked by default as [PART --].
+
+{\bf COADV \hfill \vspace{2mm} values: +, --} \\
+This feature is marks adjectives such as {\it ago} and {\it later}
+which can post-modify only [ADV +] nouns. The propagation rules 
+COADV1--COADV4 ensure a pattern of bindings which achieve an
+appropriate distribution.
+
+{\bf AFORM \hfill \vspace{2mm} values: ER, EST, AS, NONE} \\
+The feature AFORM (adjective form) encodes information about whether
+an adjectival constituent is comparative ([AFORM ER]), equative
+([AFORM AS]), superlative ([AFORM EST]), or none of these ([AFORM
+NONE]). It appears on A2, A1 and A but has not been treated as a head
+feature, since sometimes the AFORM value of an A2 derives from the
+lexical head ({\it bigger}, {\it biggest}) and sometimes it derives
+from the DetA ({\it more stupid}, {\it as stupid}, {\it most stupid}).
+Propagation rules A2/AFORM, A1/AFORM1 and A1/AFORM2 ensure an
+appropriate pattern of propagation.
+
+{\bf DISTR \hfill \vspace{2mm} values: PRD, ATT, PST, PREPP} \\
+DISTR (distribution), in combination with PRD, controls the
+distribution of adjective phrases. There are three positions in which
+non-quantifying, non-adverbial A2s can occur: prenominal modifer
+position, postnominal modifier position and predicative positions (as
+a complement to a verb). It is not the case that all A2s can occur in
+all three positions.  A2s containing complements or a `than/as' clause
+of comparison cannot occur in prenominal position ({\it *the happy to
+see you man}), most A2s which do not contain complements or `than/as'
+clauses cannot occur in postnominal position ({\it *the man happy}),
+but the presence or absence of complements does not affect the ability
+of APs to occur in predicative position ({\it the man is happy to see
+you, the man is happy}). The grammar reflects these facts by marking
+the three positions as follows: prenominal = [DISTR ATT, PRD --],
+postnominal = [DISTR PRD, PRD +] and predicative = [DISTR @, PRD +].
+The rules that build A2s, with or without complements, are then
+suitably marked for the features PRD and DISTR so that the resulting
+A2s will only occur in appropriate places. The presence of a degree
+specifier also affects the specification for DISTR: {\it so} prevents
+the A2 from occurring prenominally (*{\it a so happy woman}) but {\it
+rather} does not ({\it a rather happy woman}).
+
+
+{\bf 3.1.1.4 Prepositional Categories}
+
+The feature specification [N --, V --] differentiates prepositional
+categories from the other major categories. Lexical prepositional
+categories (i.e.\ prepositions) are [BAR 0]. There is a [BAR 1]
+prepositional category and the [BAR 2] level is the phrasal
+projection.  In the grammar, and in this text, the symbols P2, P1 and
+P are aliases for the feature specifications at the beginning of Table
+4.
+
+Table 4 displays all the features which occur on
+prepositional categories. The first three are shown with values since
+these are the feature value pairs which are used in the definition of
+the aliases P2, P1, and P. The next five features (PFORM, PRD, PRO,
+LOC, MODTYPE---marked in bold font) are head features for
+prepositional categories (as defined by the set definition PREPHEAD)
+and are propagated between mother and head in adjectival rules by the
+propagation rule HFC\_PREP.  Features in parentheses are ones which
+occur on some instances of the category they are listed under, but not
+on all. Features marked with an asterix are ones which play a similar
+role on several categories and which are described in Section 3.1.1.7.
+
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\hspace{4cm}    & \hspace{4cm}     &   \hspace{4cm}    \\
+{\bf P2}        &    {\bf P1}      &   {\bf P}         \\
+  \ \           &       \ \        &   \ \             \\
+\hline
+  \ \           &       \ \        &   \ \             \\
+\mbox{[N --]}   & \mbox{[N --]}    & \mbox{[N --]}     \\
+\mbox{[V --]}   & \mbox{[V --]}    & \mbox{[V --]}     \\
+\mbox{[BAR 2]}  & \mbox{[BAR 1]}   & \mbox{[BAR 0]}    \\
+  \ \           &       \ \        &   \ \             \\
+\hline
+  \ \           &       \ \        &   \ \             \\
+{\bf PFORM}     &   {\bf PFORM}    &  {\bf PFORM}      \\
+{\bf PRD}       &   {\bf PRD}      &  {\bf PRD}        \\
+{\bf PRO}       &   {\bf PRO}      &  {\bf PRO}        \\
+{\bf LOC}       &   {\bf LOC}      &  {\bf LOC}        \\
+{\bf MODTYPE}   &   {\bf MODTYPE}  &  {\bf MODTYPE}    \\
+    POSS        &    POSS          &    \ \            \\
+    GERUND      &    GERUND        &   GERUND          \\
+    NEG         &   \ \            &   NEG             \\
+    \ \         &   \ \            &  *(PREP)          \\
+    \ \         &   \ \            &  *SUBCAT          \\
+   {*}CONJ       &   \ \            &  *CONJ            \\
+   {*}COORD      &   *COORD         &  *COORD           \\
+   {*}SLASH      &   *SLASH         &   \ \             \\
+   {*}BEGAP      &   \ \            &   \ \             \\
+   {*}WH         &   *WH            &   *(WH)           \\
+   {*}UB         &   *UB            &   *(UB)           \\
+   {*}EVER       &   *EVER          &   *(EVER)         \\ 
+    \ \         &   \ \            &   \ \             \\
+\hline
+\end{tabular}
+
+{\bf Table 4: Prepositional Features}
+\end{center}
+\normalsize
+
+{\bf PFORM \hfill \vspace{2mm} values: numerous---see grammar listing} \\ 
+The feature PFORM (prepositional form) encodes the type of preposition
+appearing in a P2. For example, the preposition {\it with} is marked
+as [PFORM WITH] and this information passes from the preposition to
+the P2 mother. This enables categories to subcategorize for particular
+prepositions: for example, the verb {\it give} subcategorises for a
+P2[PFORM TO]. One value for PFORM which is not the name of a
+preposition is NORM. This value is usually used for P2s which occur in
+modifying positions where there is no requirement for a particular
+preposition. Since most prepositions can head both subcategorized P2s
+and modifier P2s, there are at least two lexical entries for most
+prepositions, one which reflects which preposition it is (e.g.\ [PFORM
+WITH]) and one which characterises it as [PFORM NORM].  In this way we
+capture the distinction between subcategorized prepositions and
+modifier ones. Some verbs subcategorize for more than one P2, e.g.\
+{\it Kim talked about the proposal with her colleagues}, and, in the
+absence of list-valued features, our solution involves special double
+values for PFORM, in this case, [PFORM ABOUT\_WITH]. The prepositions
+{\it about} and {\it with} have entries with this specification in
+order for the VP rule to pick them up.
+
+{\bf PRD \hfill \vspace{2mm} values: +, --} \\
+As with all major categories, PRD appears on prepositional categories.
+Here it is used to distinguish between `case-marking' prepositions
+([PRD --]) and `contentful' ones ([PRD +]). Prepositions such as {\it
+to} in {\it Kim gives a book to Lee} are generally considered not to
+contribute any information to the semantic translation.  The semantic
+translation rules therefore pick up on the [PRD --] specification and
+ignore the {\it to}, returning just the meaning of its N2 complement.
+[PRD +] P2s receive a translation where the preposition is a relation
+over two arguments, the second one being the N2 complement of the
+preposition.
+
+{\bf PRO \hfill \vspace{2mm} values: +, --} \\
+The feature PRO identifies prepositional pro-forms such as {\it
+where}, {\it there}, {\it now}, {\it then}, {\it when} etc. These are
+marked as [PRO +] and dealt with by special rules for building
+pro-P2s, while all other prepositional categories are marked as [PRO
+--].
+
+{\bf LOC \hfill \vspace{2mm} values: +, --} \\
+The feature LOC distinguishes between locative and non-locative
+prepositional categories. It is necessary because some lexical heads
+subcategorise not for P2s headed by a particular preposition but for
+P2s which are locative. For example {\it put} takes a P2 complement
+which may be headed by any of a range of distinct prepositions ({\it
+on/under/in}, etc.) so long as they are locative.
+
+{\bf MODTYPE \hfill \vspace{2mm} values: NML, VBL} \\
+MODTYPE helps to avoid some spurious attachment ambiguities by
+encoding whether a P2 headed by a particular preposition can be a
+modifier of verbal categories ([MODTYPE VBL]) or a modifier of nominal
+categories ([MODTYPE NML]). Most prepositions head P2s which can
+modify either V2 or N2 and so these entries have a variable value for
+MODTYPE. A few types of P2 can only modify one of V2 or N2, for
+example, {\it because} taking a finite S complement cannot modify an
+N2 (*{\it the biscuit because you like them}) so it is marked as
+[MODTYPE VBL].
+
+{\bf POSS \hfill \vspace{2mm} values: +, --} \\
+The feature POSS appears on P2 and P1, but not on P. It is used to
+identify possessive P2s such as {\it of Lee's} in {\it a book of
+Lee's}---a P2 or P1 will be [POSS +] if it contains a possessive N2
+and [POSS --] otherwise.
+
+{\bf GERUND \hfill \vspace{2mm} values: +, --} \\
+The feature GERUND appears on P2 and P1 but not on P and is used to
+identify a P2 containing a gerundive complement; for example, {\it
+despite (Lee) arriving on time}. A P2 or P1 will be [GERUND +] if it
+contains a gerund and [GERUND --] otherwise.
+
+{\bf NEG \hfill \vspace{2mm} values: +, --} \\
+NEG appears on P2 and on P but not on P1. A class of negative P2s and
+Ps (ones modified by {\it not}) is recognised in the grammar but their
+distribution is restricted such that they only appear in coordinations
+of P2 ({\it on the table but not under it}) and P ({\it on but not
+under the table}). The {\it not} occurring between copula {\it be} and
+a P2 (e.g. {\it fido is not in his kennel}) is not treated as being in
+constituency with the P2.
+
+
+{\bf 3.1.1.5 Predicative Categories}
+
+There are places in the grammar where it is convenient to group
+phrases together which differ in major category features but which
+have some other feature in common. One such case concerns the position
+after {\it be} which can be filled by any kind of predicative
+category: {\it Kim is helping/helped} (VP); {\it Kim is crazy} (A2);
+{\it Kim is in the kitchen} (P2); {\it Kim is a genius} (N2).
+Moreover, these can be coordinated irrespective of whether they have
+the same values for the features N and V: {\it Kim is in the kitchen
+and helping} (P2 and VP); {\it Kim is a genius and proud of it} (N2
+and A2). In order to describe this more succinctly a category with the
+alias X2 ([BAR 2]) is used. This category does not have the features N
+and V but it does count as a major category because it has the feature
+BAR and because X2[+PRD] dominates [PRD +] major categories (see ID
+rules PRD1--PRD4). There are no [BAR 1] and [BAR 0] versions of
+X2---it is always a category which `sits on top of' other more
+specified categories.
+
+X2[+PRD] occurs with a few other features: AGR, NEG, CONJ, COORD,
+SLASH, BEGAP, ELLIP, WH, UB, EVER. NEG is inherited from the daughter,
+and so is AGR if the daughter is VP or A2. Since N2 and P2 are not
+specified for AGR there is no propagation between X2[+PRD] and N2 and
+P2 daughters. The other features are all ones which occur on most
+major categories and which are described in section 3.1.1.7 below.
+
+
+{\bf 3.1.1.6 Adverbial Categories}
+
+Another place where it is convenient to group differing major
+categories is some adverbial positions. Each of the four major
+category types can be used adverbially: {\it having waited an hour,
+Kim left} (VP); {\it on Sunday Kim left} (P2); {\it the next day Kim
+left} (N2); {\it Angrily Kim left} (A2). To an extent these can also
+be coordinated without regard for the features N and V: {\it Kim left
+quickly but taking care to shut the door} (A2 and VP); {\it Kim left
+either last week or at the weekend} (N2 and P2). Following the same
+strategy as with predicatives, the alias X2 is used. Again X2 does not
+have the features N and V but X2[+ADV] dominates [ADV +] major
+categories (see ID rules X2/MOD1--X2/MOD4).
+
+X2[+ADV] occurs with the following other features: QUA, LOC, PRD, NEG,
+CONJ, COORD, SLASH, BEGAP, ELLIP, WH, UB, EVER. It inherits QUA from
+an A2 daughter, but with all other daughters an X2[+ADV] is [QUA --].
+LOC and PRD are inherited from a P2 daughter and with all other
+daughters they are left unspecified. NEG is inherited from all
+daughters.  The other features are all ones which occur on most major
+categories and which are described in section 3.1.1.7 below.
+
+
+{\bf 3.1.1.7 Features Common across Major Category Type}
+
+\small
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\hspace{4cm}    & \hspace{4cm}     &   \hspace{4cm}    \\
+{\bf [BAR 2]}   & {\bf [BAR 1]}    & {\bf [BAR 0]}     \\
+    \ \         &   \ \            &   \ \             \\
+\hline
+    \ \         &   \ \            &   \ \             \\
+    \ \         &   \ \            &  (PRT)            \\
+   (PFORM)      &   \ \            &  (PFORM)          \\
+    \ \         &   \ \            &  (PREP)           \\
+    \ \         &   \ \            &  SUBCAT           \\
+    \ \         &   \ \            &  (SUBTYPE)        \\
+   CONJ         &   (CONJ)         &  CONJ             \\
+   COORD        &   COORD          &  COORD            \\
+   SLASH        &   SLASH          &   \ \             \\
+   BEGAP        &   \ \            &   \ \             \\
+   (ELLIP)      &   \ \            &   \ \             \\
+   (WH)         &   WH             &   (WH)            \\
+   (UB)         &   UB             &   (UB)            \\
+   (EVER)       &   EVER           &   (EVER)          \\ 
+    \ \         &   \ \            &   \ \             \\
+\hline
+\end{tabular}
+
+{\bf Table 5: Features Common across Major Categories}
+\end{center}
+\normalsize
+
+{\bf PRT \hfill \vspace{2mm} values: numerous---see grammar listing} \\
+The feature PRT is used to describe particles but it also occurs on
+those verbs, adjectives and nouns which need to cooccur with a
+particle ({\it fall over}, {\it full up}, {\it rummage around}).
+(Verbs occurring with particles are generally referred to as `phrasal
+verbs'.) When PRT occurs on a lexical head, it describes which
+particle that head is to occur with. For example, the verb {\it fall
+over} has an entry under the head word {\it fall} and this entry
+contains the feature specification [PRT OVER]. This ensures that it is
+recognised as a phrasal verb and that it only occurs with the particle
+{\it over}.  In rules which introduce phrasal verbs, adjectives and
+nouns (see any rule with `PHR' as part of its name) the value for PRT
+on the head is bound to the value for PRT on the particle. Non-phrasal
+verbs, adjectives and nouns do not have the feature PRT.
+
+{\bf PFORM \hfill \vspace{2mm} values: numerous---see grammar listing} \\
+PFORM is a feature which describes prepositions but it also occurs on
+verbs, adjectives and nouns which subcategorise for a P2 complement
+of a particular type.  Its function on these lexical heads is to
+ensure that they occur with the right preposition. For example, one
+subcategorisation for the verb {\it agree} is for a P2[PFORM WITH]
+({\it I agree with you}), so the entry for this use of {\it agree} has
+the feature specification [PFORM WITH]. The rules which introduce P2
+complements bind the value of PFORM on the head to the value of PFORM
+on the P2 to ensure correct pairings.  Only verbs, adjectives and
+nouns which subcategorise for a P2 have a specification for PFORM.
+
+There is one place where PFORM occurs on a non-lexical,
+non-prepositional category: on the A2 mother in ID rule A2/THAN/AS.
+This rule generates strings such as {\it than annoyed}, {\it as
+annoyed} which occur in comparatives like {\it more angry than
+annoyed} and {\it as much angry as annoyed}. The presence of PFORM is
+necessary in order to achieve the correct {\it er....than} or {\it
+as....as} pairings.
+
+{\bf PREP \hfill \vspace{2mm} values: numerous---see grammar listing} \\
+Some verbs occur with a free-floating preposition (one that is not
+part of a P2) such as {\it on} in {\it I was banking on seeing him}.
+The feature PREP encodes the nature of this preposition and functions
+in exactly the same way as the feature PFORM on verbs. Only verbs
+which subcategorise for this kind of preposition have a specification
+for PREP.
+
+A few prepositions subcategorise for particular P2 complements, e.g.\
+{\it because} subcategorises for a P2[PFORM OF] ({\it because of his
+bad leg}). Because these prepositions already have the feature PFORM
+to describe themselves, this feature can't be used to constrain the
+type of their P2 complements. Instead the feature PREP is used:
+{\it because} has an entry as P[SUBCAT PP, PFORM NORM, PREP OF].
+
+{\bf SUBCAT \hfill \vspace{2mm} values: numerous---see grammar listing} \\
+All lexical major categories are marked for the feature SUBCAT.  This
+feature describes which complements a lexical head subcategorises for.
+The heads in all lexical ID rules have a non-variable value for SUBCAT
+and by this means we ensure that major category lexical entries can
+only match rules which introduce appropriate complements. For example,
+{\it accept} has three entries corresponding to three different
+subcategorisations: [SUBCAT NULL] ({\it I accept}---simple
+intransitive), [SUBCAT NP] ({\it Lee accepted Kim's apology}---simple
+transitive) and [SUBCAT SFIN] ({\it Lee accepted that it wasn't Kim's
+fault}---sentential complement). The ID rules VP/INTR, VP/NP and
+VP/SFIN1 are responsible for building intransitive, transitive and
+sentential-complement-taking VPs respectively and the heads in these
+rules are specified as [SUBCAT NULL], [SUBCAT NP] and [SUBCAT SFIN]
+repectively. This means that each instance of {\it accept} can only
+occur with just the complements it requires.
+
+{\bf SUBTYPE \hfill \vspace{2mm} values: numerous---see grammar listing} \\
+All major categories have the feature SUBCAT but verbs and adjectives
+are additionally specified for the feature SUBTYPE which provides
+further information about a particular subcategorisation. For example,
+the verbs {\it tell} and {\it bother} can both occur with an N2 object
+and a sentential complement ({\it he tells me that it will rain} and
+{\it it bothers me that it will rain}) and both have the SUBCAT value
+NP\_SFIN.  They are, however, very different from one another---{\it
+tell} has normal agreement properties whilst {\it bother} agrees with
+the dummy NP {\it it} and, furthermore, it is an `extraposition' verb
+which means it can also occur with a sentential subject as in {\it
+that it rains bothers me}.  To distinguish these two verbs, we use the
+feature SUBTYPE with values NONE and EXTRAP respectively and this
+feature is picked up by the appropriate ID rules (see VP/NP\_SFIN1,
+VP/NP\_SFIN2A and VP/NP\_SFIN2B). Often SUBTYPE doesn't really have a
+role to play since not all SUBCAT types have variants---in this case
+the default SUBTYPE NONE is used.
+
+SUBTYPE operates on adjectives in exactly the same way as it operates
+on verbs in that it provides extra distinctions between adjectives
+that have the same SUBCAT value. For example, many adjectives take an
+infinitival VP complement and are marked as [SUBCAT VPINF], but there
+are differences between them---{\it easy} is marked as [SUBTYPE TOUGH]
+because it is a `tough-movement' adjective (its VP complement contains
+an object gap: {\it he is easy to beat \_}), while {\it normal} is
+marked as [SUBTYPE EXTRAP] because it allows extraposition of its VP
+complement ({\it to stare wildly at people is not normal, it is not
+normal to stare wildly at people}).
+
+{\bf CONJ \hfill \vspace{2mm} values: NULL, BOTH, NEITHER, EITHER, AND, OR, NOR, BUT} \\
+Within a coordinate structure, conjuncts preceded by a coordinating
+word such as {\it and}, {\it but}, {\it neither} etc.\ are given an
+appropriate value for the feature CONJ ([CONJ AND], [CONJ BUT], [CONJ
+NEITHER] etc.). Conjuncts which are not preceded by a coordinating
+word (e.g.\ the initial conjunct in {\it Kim walks and Lee runs}) are
+marked as [CONJ NULL], as are all major category constituents which do
+not occur as part of a coordinate structure. The only exception here
+is [BAR 1] prepositional categories---since there are no rules for
+coordinating P1, there is no need to mark P1 with CONJ.
+
+{\bf COORD \hfill \vspace{2mm} values: +, --} \\
+The feature COORD (coordinated) occurs on all major categories of all
+BAR levels.  The top node of a coordination of categories is marked as
+[COORD +] and any occurrence of a non-coordinated major category is
+[COORD --]. The only exception to this rule is with some S and VP
+rules (see ID rules ELL/*) which have a complex pattern of binding
+between COORD and the feature ELLIP which indicates the presence of a
+form of ellipsis. 
+
+{\bf SLASH \hfill \vspace{2mm} values: numerous---see grammar listing} \\
+The category-valued feature SLASH encodes information about the
+`missing' category in an unbounded dependency construction and this
+information is propagated through the tree between the point where the
+dependency is introduced (usually by the preposing rules
+S/NP\_UDC1--S/AP\_UDC2) and the point where it terminates (usually a
+gap generated by the rules TRACE1--TRACE8). By this means we ensure
+that the category at the top of the dependency and the category at the
+bottom agree with repect to relevant features. 
+
+The category which is the value of SLASH is not a category like any
+basic category in the grammar. Instead it is a [BAR 2] category which
+also has the following features: N, V, PLU, COUNT, PER, NFORM, CASE,
+PFORM, LOC, GERUND, ADV, PRD, QUA, SUBJ. Not all of these features are
+relevent to all missing categories. N and V establish the basic
+identity of the category (N2, P2, A2, V2) and the other features
+either play a role or not depending on this. If the category is an N2
+then PLU, COUNT, NFORM, CASE, PRD and ADV are bound at the top and
+bottom of the dependency, if it is a P2 then PFORM, LOC, GERUND, PRD
+are bound, and if it is an A2 then PRD, QUA and ADV are bound. The
+value of SLASH is only instantiated to V2 in a very constrained way:
+it only occurs in comparatives such as {\it more apples than you
+thought}, {\it more apples than Kim can} and here the only relevant
+feature is SUBJ (is the missing material an S or a VP).  A detailed
+description of our treatment of unbounded dependency constructions can
+be found in section 6.4.
+
+{\bf BEGAP \hfill \vspace{2mm} values: +, --} \\
+BEGAP occurs on all [BAR 2] categories and indicates whether that
+constituent can be a gap or not. Such a feature is needed because the
+SLASH feature by itself does not distinguish between a category which
+contains a gap and one which {\it is} a gap. For example, an N2
+containing an N2 gap (as in {\it who does Kim have} N2[ {\it a picture of}
+\_\_ ]) is specified as N2[SLASH N2] and since an N2 gap (as in {\it what
+does Kim have} NP[ \_\_ ]) is also specified as N2[SLASH N2] there would
+be no way of distinguishing them without the feature BEGAP. The former
+is N2[SLASH N2, BEGAP --] and the latter is N2[SLASH N2, BEGAP +].
+
+The feature BEGAP is useful both for increasing parser efficiency and
+for capturing linguistic constraints on the positions in which gaps can
+appear. For example, coordinate constructions can contain gaps so long
+as each conjunct contains the same kind of gap ({\it who does Kim
+have} [[ {\it a picture of} \_ ] {\it and} [ {\it a book about} \_ ]),
+but individual conjuncts cannot be gaps (*{\it what does Kim
+have} [[ {\it a picture of} \_ ] {\it and} [ \_ ]).
+
+{\bf ELLIP \hfill \vspace{2mm} values: +, --} \\
+The feature ELLIP is used to guide the semantic translations in some
+VP and S rules in order to reconstruct a limited amount of ellipsis in
+coordinations. In examples such as {\it Kim will have finished her
+supper and gone to bed} we want to achieve a semantic translation
+which involves two complete propositions each seen as a separate
+event, i.e.\ we want a translation like the one which we get from the
+coordination of two sentences: {\it Kim will have finished her supper
+and Kim will have gone to bed}. The problem here is that the
+coordination is of two VPs low in the sentence and tense and aspect
+information and distinct event variables have to be added into the
+translation of the VPs higher up in the parse tree than the
+coordination node. We are able to achieve the correct translation by
+marking coordinations of non-finite VPs such as {\it finished her
+supper and gone to bed} as being elliptical ([ELLIP +]) and by marking
+the VP and S nodes higher up as [ELLIP +] as well. The semantic
+translation rules are then made sensitive to the instantiation of the
+feature ELLIP (see ID rules ELL/*).
+
+{\bf WH \hfill \vspace{2mm} values: +, --, NO} \\
+The feature WH encodes whether a constituent is a `wh' constituent or
+not.  Lexical items such as {\it who}, {\it what} and {\it where} are
+marked as [WH +] and this specification is inherited by the larger
+constituent in which such words occur. N2s, P2s and A2s may be [WH +]
+({\it which books}, {\it on which table}, {\it how happy}) and so may
+Ss ({\it who helped Kim}). When there is no wh-word present then the
+constituent is [WH --]. WH does not generally occur as a feature on
+VPs except in the case of the infinitival interrogative VP complements
+of verbs such as {\it wonder} and {\it ask} as in {\it Kim wondered
+who to talk to} and {\it Kim wondered whether to talk to Lee} (see ID
+rules VP/WH1 and VP/WH2). WH also occurs on [BAR 1] categories since
+these are part of the path of upwards propagation of `wh-ness'. It
+only occurs on [BAR 0] categories which are also pro-forms ({\it
+what}, {\it where}). WH always cooccurs with the features UB and EVER.
+
+{\bf UB \hfill \vspace{2mm} values: R, Q, NO} \\
+The feature UB distinguishes between different types of unbounded
+dependency: [UB Q] marks `wh' questions, [UB R] marks relative clauses
+and [UB NO] either indicates topicalisation or that the construction
+is not unbounded. The value for UB originates with the wh-word which
+also determines the value for WH. For example, {\it what} can be a
+question pronoun ({\it what did Kim do}) and is therefore marked as
+[UB Q]---this specification is inherited by the S in which it occurs.
+
+{\bf EVER \hfill \vspace{2mm} values: +, --, NO} \\
+Some wh-words such as {\it whichever}, {\it whoever} etc.\ are
+marked as [EVER +]. This reflects not just their morphology but also
+the fact that they can participate in the `free relative' construction
+({\it whatever Kim does annoys Lee}, {\it Kim reads whichever books
+Lee reads}---see ID rules N2+/FREEREL and N2+/FREEREL2). 
+
+
+\subsubsection{Minor Categories}
+
+{\bf DetN}
+
+DetNs (noun determiners) are characterised by the feature set [QUA +,
+SUBCAT DETN]. In addition they have the features DEF, POSS, DEMON,
+AGR, WH, UB, EVER. The feature DEF indicates definiteness and
+propagates from the DetN to its N2 mother (e.g.\ {\it the} is [DEF +]
+and {\it a} is [DEF --]). POSS identifies possessive determiners such
+as {\it my} and {\it her}---other DetNs are [POSS --]. DEMON
+distinguishes demonstrative determiners ([DEMON +]) from
+non-demonstrative ones ([DEMON --]). The feature AGR ensures that
+determiners agree with their nominal sisters. In addition to the usual
+features (PER, PLU, COUNT, NFORM, CASE), which appear on AGR N2, the
+AGR N2 on DetNs is also specified for QFEAT since not all determiners
+can occur when there is a lower quantifier (i.e.\ when the N2[--SPEC]
+is [QFEAT +])---{\it those few books} vs. *{\it a one book}.
+
+The features WH, UB and EVER also occur on DetNs. For example, {\it
+whose book} ([WH +, UB Q, EVER --] ) and ([WH +, UB R,
+EVER --] ); {\it whichever book} ([WH +, UB Q, EVER +] ); {\it this
+book} ([WH NO, UB NO, EVER NO] ).
+
+{\bf DetA}
+
+DetAs (adjective determiners or `degree modifiers') are characterised
+by the feature set [SUBCAT DETA] and have the additional features
+AFORM, DISTR, WH, UB and EVER. The value for AFORM on a DetA
+determines the AFORM value of the entire A2. For example, {\it more}
+is [AFORM ER] and the A2 {\it more happy} acquires this specification.
+DISTR also propagates from a DetA to the entire A2 and overrides an
+existing value for DISTR that an adjective may have. For example, the
+[SUBCAT NULL] entry for {\it crazy} is [DISTR ATT] which means it can
+occur in prenominal position but {\it too} is specified as [DISTR PRD]
+and so an A2 which contains {\it too} cannot occur prenominally (*{\it
+a too crazy man}). The DetAs {\it how} and {\it however} are [WH +, UB
+Q] (and [EVER --] and [EVER +] respectively). All other DetAs have NO as
+values for these features. The only wh-A2s are ones which contain {\it
+how} or {\it however}.
+
+{\bf Complementisers}
+
+Complementisers are characterised simply by a SUBCAT feature:
+
+{\it that} = [SUBCAT THAT] \\
+{\it for} = [SUBCAT FOR] \\
+{\it whether} = [SUBCAT WHETHER] \\
+{\it if} = [SUBCAT IF] \\
+{\it as} = [SUBCAT AS] \\
+{\it than} = [SUBCAT THAN]
+
+{\bf Coordinators}
+
+Coordinators are characterised by the feature specification [CONJN +]
+and they additionally have a SUBCAT value which reflects their form,
+i.e.\ one of AND, OR, NOR, BOTH, BUT, EITHER, NEITHER. For example,
+{\it and} is [CONJN +, SUBCAT AND] and {\it nor} is [CONJN +, SUBCAT
+NOR].
+
+{\bf Particles}
+
+Particles which appear with phrasal verbs, adjectives and nouns ({\it
+turn off}, {\it pick up}, etc.) are simply characterised by the
+feature PRT, i.e.\ [PRT UP] defines the particle in {\it pick up} and
+[PRT DOWN] defines the particle in {\it put down}.
+
+{\bf Partitive `of'}
+
+The {\it of} which appears in partitives has the specification [PFORM OF].
+
+{\bf Cardinal Numbers}
+
+PS rules NUM1--NUM9 generate complex cardinals such as {\it fifty
+seven}, {\it three thousand two hundred and twenty one} etc. These
+rules and the lexical entries for cardinals use the following
+features:
+\begin{verbatim}
+FEATURE CN1{ZERO, TEN, TEEN, TY, HUN, THOU}
+FEATURE CN2{BIG, SMALL, -}
+FEATURE CN3{A, ONE}
+FEATURE CN4{+, -}
+FEATURE AND{+, -}
+\end{verbatim}
+These features are independent of the main feature system and are
+sufficient to generate most complex cardinals. Cardinals only start to
+participate in the main grammar and feature system by virtue of ID
+rules A/NUMBER and A/NUMBER2.
+
+\subsubsection{Other Features}
+
+There are three features used in the grammar which have not been
+described in previous sections:
+\begin{verbatim}
+FEATURE T{S, NP}
+FEATURE H{+, -} 
+FEATURE NULL{+, -}
+\end{verbatim}
+T is used to pick out `top' categories for the parser to prevent it
+from returning all possible analyses of a string. The ID rules T1--T3
+and T/NP1 and T/NP2 define a variety Ss and N2s which are considered
+to be parses which it would be appropriate to return. In order for
+only these parses to be returned, the TOP construct must also be
+defined:
+\begin{verbatim}
+TOP [T S], [T NP].
+\end{verbatim}
+The feature specification [H +] is used to pick out the head daughter
+in a rule (in order for head feature propagation to work properly). It
+behaves unusually in that unification ignores it. For example, in its
+expanded form, the head daughter in the intransitive VP rule looks
+like this:
+
+\begin{ex}
+\begin{verbatim}
+   [N -, V +, BAR 0, SUBCAT NULL, CONJ NULL, VFORM @7, H +, FIN @11,
+      PAST @12, PRD @13, AUX -, INV -, PSVE -, NEG @17, PRO -, 
+      COORD -, SUBTYPE NONE, AGR [N +, V -, BAR 2, NFORM @20, 
+      PER @21, PLU @22, COUNT @23, CASE @24]]
+\end{verbatim}
+\end{ex}
+
+An expanded entry for an intransitive verb such as {\it laugh} looks
+like this:
+
+\begin{ex}
+\begin{verbatim}
+   [N -, V +, BAR 0, SUBCAT NULL, CONJ NULL, VFORM NOT, FIN +, 
+      PAST -, PRD -, AUX -, INV -, PSVE -, NEG -, PRO -, 
+      COORD @44, SUBTYPE NONE, AGR [N +, V -, BAR 2, NFORM NORM, 
+      PER 3, PLU -, COUNT @23, CASE NOM]]
+\end{verbatim}
+\end{ex}
+
+The two categories will unify even though the one in the rule is
+specified as [H +] and the one which is the verb entry is not.
+
+The feature NULL is used by the parser to create empty categories
+(`gaps' or `traces'). The daughter category in the rules
+TRACE1--TRACE8 is specified simply as [NULL +] and this is a signal to
+the parser to insert an empty category (which it indicates as `E').
+For example, the result of parsing {\it who does Kim help} is.
+
+\begin{ex}
+\begin{verbatim}
+(((who) (does (kim) (help (E)))))
+\end{verbatim}
+\end{ex}
+
+\subsection{Feature Propagation}
+
+The GDE provides two methods of encoding information about the way
+in which features propagate in trees---propagation rules and
+explicit statements in ID rules. These methods are used to express
+various feature propagation principles similar to those of GPSG, such
+as the Head Feature Convention (HFC), the Foot Feature Principle (FFP)
+and the Control Agreement Principle (CAP), and to encode more
+idiosyncratic propagation regimes.
+
+\subsubsection{Capturing the HFC}
+
+The HFC is designed to capture the intuition that mothers and heads
+share values for many features. In the ANLT formalism, we state this
+relationship by means of propagation rules which bind the values of
+head features on mother categories to the values of those features on
+their head daughters. Firstly a propagation rule binds values for the
+features N and V between mothers and heads:
+
+\small
+\begin{ex}
+\begin{verbatim}
+PROPRULE PROP_NV : ; copy value of V and N from mother 
+                   ; to head daughter.
+   [V (+, -), N (+, -)] --> [H +], U. 
+       F(1) = F(0), F in {V, N}.
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Thereafter, we define a set of head features for each major category
+type (the sets NOMINALHEAD, VERBALHEAD, ADJHEAD and PREPHEAD) and
+propagation rules which bind values for these features between mother
+and head (propagation rules HFC\_VERBAL, HFC\_NOMINAL, HFC\_ADJ and
+HFC\_PREP). The result of such propagation rules is to block analyses
+in which mother and head have conflicting values for some head
+feature; for example, the tree in \nextex{a} is licensed by the
+grammar, but the tree in \nextex{b} is not, since the N2 subject is
+required by the S rule to be nominative but the lexical item {\it her}
+is accusative. 
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr}) \hspace{2mm}
+a. \begin{minipage}[t]{6.5cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 8.38em\hbox to 0.50em{\hss{S}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.75em\raise1.500ex\hbox{\special{ps::currentpoint /momaaiy exch def /momaaix exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaix momaaiy lineto stroke moveto}}%
+\hskip 7.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaix momaaiy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 1.25em\hbox to 7.00em{\hss{N2[CASE NOM]}\hss}%
+\hskip 3.75em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.75em\vrule width.04em%
+\hskip 7.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 9.50em{\hss{N[+PRO, CASE NOM]}\hss}%
+\hskip 2.75em\hbox to 0.50em{\hss{V}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.75em\vrule width.04em%
+\hskip 7.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 1.50em\hbox to 6.50em{\hss{\mbox{\hspace{0.3in}she\hspace{0.3in}}}\hss}%
+\hskip 1.00em\hbox to 7.00em{\hss{\mbox{\hspace{0.3in}left\hspace{0.3in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+b. \begin{minipage}[t]{6.5cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 8.38em\hbox to 0.50em{\hss{S}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 8.75em\raise1.500ex\hbox{\special{ps::currentpoint /momaaxy exch def /momaaxx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaxx momaaxy lineto stroke moveto}}%
+\hskip 7.75em\lower0.500ex\hbox{\special{ps::currentpoint momaaxx momaaxy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 1.25em\hbox to 7.00em{\hss{N2[CASE NOM]}\hss}%
+\hskip 3.75em\hbox to 1.00em{\hss{VP}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.75em\vrule width.04em%
+\hskip 7.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 9.50em{\hss{N[+PRO, CASE ACC]}\hss}%
+\hskip 2.75em\hbox to 0.50em{\hss{V}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 4.75em\vrule width.04em%
+\hskip 7.71em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 1.50em\hbox to 6.50em{\hss{\mbox{\hspace{0.3in}her\hspace{0.3in}}}\hss}%
+\hskip 1.00em\hbox to 7.00em{\hss{\mbox{\hspace{0.3in}left\hspace{0.3in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+\subsubsection{Capturing the FFP}
+
+The FFP controls the propagation of a set of features (known as `foot'
+features) which propagate in a less predictable way than head features
+do. The features in our grammar which are equivalent to GPSG's foot
+features are WH, UB, EVER and SLASH. We group WH, UB and EVER together
+but have a separate treatment of SLASH. The GPSG definition of the FFP
+requires that the foot features on a mother be the unification of the
+FOOT features on its daughters.  This basically means that a mother
+might acquire its foot feature specifications from any of its
+daughters, be they heads or non-heads.  In unary rules there is only
+one daughter which can possibly pass its features up and in some other
+rules there is still only one possible propagation path---for example,
+in VP rules which have a lexical head and just one complement, SLASH
+can only pass between the complement and the VP since SLASH does not
+occur on lexical categories. In other rules there may be more than one
+propagation path, for example, in a rule in which an N2 dominates a
+determiner and a head, wh-ness may propagate from the determiner ({\it
+which book}) or from the head ({\it a picture of whom}). Propagation
+rules (see PFOOT1--PFOOT8, PSLASH1--PSLASH10) establish one
+propagation path per rule, whether that it is the only possible path
+or whether there is another possibility as well. In the latter case we
+have to produce other versions of the rule where the other path is
+established. In the case of WH, UB and EVER, the places where we have
+to produce a second rule are so few that they have been done by hand,
+as for example with the rules in \nextex{} (semantics suppressed).
+
+\small
+\begin{ex}
+\begin{subex}
+\begin{verbatim}
+IDRULE N2+/DET1a : ; the, a, this dog. A number of different specifiers 
+                   ; attach under N2[+SPEC] ie Det, POSS NP, A2[+QUA]
+                   ;  - in complementary distribution. This rule does 
+                   ; Det and only [PRD -]. [PRD +] must be indefinite 
+                   ;  and the semantics is different - see N2+/DET1b.
+   N2[+SPEC, PRD -] --> 
+         DetN[AGR N2, WH NO, UB NO, EVER NO], H2[-SPEC] :
+\end{verbatim}
+\end{subex}
+\end{ex}
+
+\vspace{3mm}
+
+\begin{splitex}
+\begin{subex}
+\begin{verbatim}
+IDRULE N2+/DET2 : ; FOOT features propagate from determiner - which 
+                  ; book
+   N2[+SPEC, +WH, EVER @ev, UB @ub, PRD -] -->
+      DetN[AGR N2, +WH, EVER @ev, UB @ub], 
+      H2[-SPEC, WH NO, EVER NO, UB NO] :
+\end{verbatim}
+\end{subex}
+\end{splitex}
+\normalsize
+
+In N2+/DET1a a propagation rule establishes a propagation path
+between the mother and the head such that both will have the same
+variable value for WH, UB and EVER -- this will handle both cases
+where there is a wh-word inside the head ({\it a picture of whom}) and
+cases where there is no wh-word at all ({\it the book}). The rule
+N2+/DET2 explicitly binds WH, UB and EVER between the determiner and
+the mother (and requires the head to be [WH NO, EVER NO, UB NO]). The
+fact that determiner and mother must be [WH +] prevents this rule from
+being used to parse N2s which do not contain a wh-determiner.
+
+We treat SLASH similarly except that the number of rules in which
+there is an alternative propagation path is large enough to warrant a
+treatment where we generate alternate versions by means of metarule
+(see metarules MSLASH1a--MSLASH5b) rather than by hand. For example,
+the rule in \nextex{} generates VPs containing an N2 object and a
+finite S complement. A propagation rule binds SLASH between the mother
+and the N2 and a default rule defaults the S to [SLASH NOSLASH]. This
+means the rule can generate examples where there is no gap ({\it Kim
+tells Lee that it is true}) and examples where the gap is at/in the N2
+object ({\it who does Kim tell E that it is true}). It cannot,
+however, generate examples where there is a gap in the S complement
+({\it who did Kim tell Lee that he saw E})---to do that we have a
+second rule generated by metarule, as in \exnum{+2}{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+IDRULE VP/NP_SFIN1 : ; tells her (that) he can do it
+   VP --> 
+     H[SUBCAT NP_SFIN, SUBTYPE NONE], N2[-PRD, NFORM NORM], S[+FIN] :
+   2 = [SLASH NOSLASH],
+      (lambda (Q) (Q (lambda (e) (lambda (x) (1 e x 2 
+         (3 (lambda (prop) (lambda (ta) (lambda (equa) 
+              (prop (uqe ((equa some) (e3) (ta e3)))))))))))
+                (lambda (e2) e2) (lambda (qu) qu))) :
+   2 = [SLASH X2], (lambda (Q) (Q (lambda (e) (lambda (x)
+         (lambda (wh) (1 e x (2 wh)
+            (3 (lambda (prop) (lambda (ta) (lambda (equa)
+                 (prop (uqe ((equa some) (e3) (ta e3)))))))))))) 
+                    (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{ex}
+\normalsize
+\small
+\begin{ex}
+\begin{verbatim}
+VP/NP_SFIN1(MSLASH1b) :
+   VP[-AUX, -PRO, CONJ NULL, VFORM @7, BEGAP -, FIN @11, PAST @12, 
+      PRD @13, NEG @17, SLASH X2[N @1, V @2, SUBJ @4, PRD @85, 
+      NFORM @20, PER @111, PLU @112, COUNT @113, CASE @114, 
+      PFORM @30, LOC @31, GERUND @32, QUA @34, ADV @37], COORD -,
+      AGR N2[NFORM NORM, PER @21, PLU @22, COUNT @23, CASE @24], 
+      ELLIP -]] -->
+\end{verbatim}
+\end{ex}
+\begin{splitex}
+\begin{verbatim}
+   V[-INV, -AUX, -PRO, SUBCAT NP_SFIN, CONJ NULL, VFORM @7, H +, 
+     FIN @11, PAST @12, PRD @13, PSVE -, NEG @17, COORD @, 
+     SUBTYPE NONE, AGR N2[NFORM NORM, PER @21, PLU @22, 
+     COUNT @23, CASE @24]],
+\end{verbatim}
+\end{splitex}
+\begin{splitex}
+\begin{verbatim}
+   N2[-PRD, -POSS, -ADV, +ACC, -NEG, +SPEC, CONJ NULL, BEGAP -,
+      SLASH NOSLASH, NFORM NORM, PER @, PLU @, COUNT @, PN @, 
+      PRO @, PROTYPE @, PART -, AFORM @, DEF @, NUM @, WH NO, 
+      UB NO, EVER NO, COORD @, REFL @, QFEAT NO, DEMON -, 
+      COADV @, KIND @], 
+\end{verbatim}
+\end{splitex}
+\begin{splitex}
+\begin{verbatim}
+   S[-INV, +FIN, CONJ NULL, VFORM NOT, BEGAP -, PAST @, PRD @, 
+     AUX @, COMP @, SLASH X2[N @1, V @2, SUBJ @4, PRD @85, 
+     NFORM @20, PER @111, PLU @112, COUNT @113, CASE @114, 
+     PFORM @30, LOC @31, GERUND @32, QUA @34, ADV @37], PRO @, 
+     WH NO, UB NO, EVER NO, COORD @, AGR @, UDC -, ELLIP -] :
+\end{verbatim}
+\end{splitex}
+\begin{splitex}
+\begin{verbatim}
+   (lambda (Q) (Q (lambda (e) (lambda (x) (lambda (wh) 
+      (1 e x 2 
+         (3 (lambda (prop) (lambda (ta) (lambda (equa) 
+            (prop (uqe ((equa some) (e3) (ta e3))) wh))))))))) 
+         (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{splitex}
+\normalsize
+
+Notice that the metarule not only binds SLASH between the mother and
+the S, it also instantiates its value to be at least [SLASH X2]---this
+ensures that the rule will only be used for cases where the S does
+contain a gap. It also causes the N2 object to become [SLASH NOSLASH].
+More details about SLASH can be found in Section 6.4.
+
+\subsubsection{Capturing the CAP}
+
+The CAP is responsible for ensuring that categories which need to
+agree with other categories do, in fact, do so. In our grammar we
+state explicit bindings of agreement features by means of propagation
+rules. For example, \nextex{} is an example of a propagation rule
+which forces agreement between an NP subject and a VP: 
+
+\small
+\begin{ex}
+\begin{verbatim}
+PROPRULE AGR/NP_VP : ; binds feature values on subject N2 to feature 
+                     ; values on the category that is the value of 
+                     ; VP[AGR]
+   S --> N2, H2[-SUBJ, AGR N2], U. F(1) = F(2[AGR]), F in AGRFEATS.
+\end{verbatim}
+\end{ex}
+\normalsize
+
+The effect of this is to make the values of the features defined by
+the set AGRFEATS on the subject N2 (i.e. F(1)) be equal to the values
+of the same features on the N2 which is the category value of the VP
+(i.e. F(2[AGR])).  More details about agreement and the places where
+agreement takes place are provided in section 6.5.
+
+\subsubsection{Other Propagations}
+
+Many other feature propagations fall outside of the scope of the GPSG
+feature principles. For these, a miscellaneous set of propagation
+rules is used.  For example, some features are very like head features
+in that they propagate between mother and head, but are not included
+in the set of head features because they do not appear on all
+instances of a category type. For example, the feature POSS appears on
+P2 and P1 but not on P, as in \nextex{}.
+
+\small
+\addtocounter{examplectr}{1}
+(\arabic{examplectr}) \hspace{1cm}
+\begin{minipage}[t]{7cm}
+{\parskip=0pt\offinterlineskip%
+\hskip 4.50em\hbox to 5.50em{\hss{P2[POSS +]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.25em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 4.50em\hbox to 5.50em{\hss{P1[POSS +]}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 7.25em\raise1.500ex\hbox{\special{ps::currentpoint /momaajy exch def /momaajx exch def}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 2.75em\lower0.500ex\hbox{\special{ps::currentpoint momaajx momaajy lineto stroke moveto}}%
+\hskip 9.00em\lower0.500ex\hbox{\special{ps::currentpoint momaajx momaajy lineto stroke moveto}}%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 0.00em\hbox to 5.50em{\hss{\mbox{\hspace{0.4in}P\hspace{0.4in}}}\hss}%
+\hskip 1.00em\hbox to 10.50em{\hss{\mbox{\hspace{0.4in}N2[POSS +]\hspace{0.4in}}}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 2.75em\vrule width.04em%
+\hskip 8.96em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 2.25em\hbox to 1.00em{\hss{of}\hss}%
+\hskip 8.25em\hbox to 0.50em{\hss{N}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par\penalty10000
+\hskip 11.75em\vrule width.04em%
+\vrule width0em height1.500ex depth0.500ex\par\penalty10000
+\hskip 10.50em\hbox to 2.50em{\hss{Kim's}\hss}%
+\vrule width0em height1.972ex depth0.812ex\par}
+\end{minipage}
+\normalsize
+
+In such cases, these features are bound by rather more specific
+propagation rules. \nextex{} is the propagation rule responsible for
+POSS propagation between P1 and P2 in \prevex{}. (It is also
+responsible for propagating the feature GERUND, which also appears on
+P2 and P1 but not P.)
+
+\small
+\begin{ex}
+\begin{verbatim}
+PROPRULE PP : ; POSS and GERUND not head features (only appear on P2
+              ; and P1) since the values come from the NP not from 
+              ; P0. This passes them from a P2 mother to either a P1 
+              ; or a P2 head daughter.
+   P2 --> [H +, BAR (1, 2)], U. F(0) = F(1), F in {POSS, GERUND}.
+\end{verbatim}
+\end{ex}
+\normalsize
+
+Other features may propagate from non-heads to mothers. For example
+the definiteness of an N2 is generally determined by the definiteness
+of the specifier, that is, DEF propagates from a specifier to its N2
+mother as expressed by the following propagation rule:
+
+\small
+\begin{ex}
+\begin{verbatim}
+PROPRULE PDEF3 : ; binds DEF on [+QUA] (DetN or AP) to N2 mother
+   N2 --> [+QUA], U. DEF(0) = DEF(1).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+As mentioned above, bindings between feature values can be stated
+explicitly in ID or PS rules. For example, the rules which introduce
+particles for phrasal verbs, adjectives and nouns explicitly bind PRT
+on the head to PRT on the particle as in \nextex{} to ensure the
+grammaticality patterns in \exnum{+2}{}.
+
+\small
+\begin{ex}
+\begin{verbatim}
+IDRULE VP/NP_PHRA : ; turn the light off / turn it off. Linearises 
+                    ; so NP preceds Prt. Idrule VP/NP_PHRB deals 
+                    ; with the other linearisation where NP must 
+                    ; be -PRO.
+   VP --> H[SUBCAT NP, PRT @p], N2[-PRD], [PRT @p] :
+   2 = [SLASH NOSLASH], (lambda (Q)
+         (Q (lambda (e) (lambda (x) ((CP 1 3) e x 2))) 
+               (lambda (e2) e2) (lambda (qu) qu))) :
+   2 = [SLASH X2], (lambda (Q) (Q (lambda (e) (lambda (x)
+                  (lambda (wh) ((CP 1 3) e x (2 wh))))) 
+               (lambda (e2) e2) (lambda (qu) qu))).
+\end{verbatim}
+\end{ex}
+\normalsize
+
+\begin{ex}
+\begin{subex}
+He rang up his sister
+\end{subex}
+\begin{subex}
+* He rang away his sister
+\end{subex}
+\begin{subex}
+* He rang over sister
+\end{subex}
+\end{ex}
+
+\subsubsection{Feature Defaults}
+
+Feature default rules state default values for features on particular
+categories in particular environments. As such, they prevent the need
+for restating regular feature value specifications on each individual
+rule. An explanation for each particular default rule can be found in
+the grammar.  Default rules enrich the featural specification of
+categories in ID or PS rules to ensure, for example, that all N2
+complements will be [CASE ACC] unless they are already marked as [CASE
+NOM], or that most N2 complements will be [NFORM NORM], or that all VP
+mothers will be marked as [AUX --] unless they are already marked as
+[AUX +], and so forth. \nextex{} is the rule that achieves the AUX
+default:
+
+\small
+\begin{ex}
+\begin{verbatim}
+DEFRULE AUX : ; lhs VP defaults to [AUX -]
+   VP --> W. AUX(0) = -.
+\end{verbatim}
+\end{ex}
+\normalsize
+

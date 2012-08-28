@@ -1,0 +1,69 @@
+
+This directory contains a Flex (and C) program that tokenises English
+text in plain ASCII (7-bit) encoding. Sentence boundaries
+are assumed to have been marked already, by '^ ' (perhaps using the
+'sentence' tool also provided here). Text needs to be tokenised before
+tagging, morphological analysis and parsing. The tokeniser (the file
+token.flex) was written by John Carroll (University of Sussex, 2001-3).
+  
+----------------------------------------------------------------
+
+Files:
+
+token.flex
+token.test
+
+
+Compilation:
+
+$ flex ../enc/charclasses.flex token.flex
+                                  - compiling the flex code
+$ gcc lex.yy.c -o token           - compiling the C code
+$ rm lex.yy.c                     - deleting the intermediate file
+
+Command line options: none.
+
+Run the tokeniser:
+
+   token < input_text > output
+
+   A test run:   
+
+   $ token < token.test > output     
+
+----------------------------------------------------------------
+
+About the tokeniser:
+
+The tokeniser determines the basic units (words/tokens) for the tagger
+and parser. The basic function is to separate words from punctuation
+(taking care with ellipses, double quotes etc.), possessive markers
+("'s", "'") and contractions ("n't", "'ll").
+
+The program also handles multi-character punctuation ("...", "--").
+Character classes are defined in $RASP/enc/charclasses.flex.
+
+The program is just based on regular expressions and simple rules, and
+is therefore far from failproof. However, the tokeniser should give a
+very fast initial processing of raw ASCII text (e.g. from the Internet)
+with a relatively high accuracy, and can easily be customised and
+adjusted for special cases.
+
+For further details, see the comments included in token.flex.
+
+________________________________________________________________
+
+Won't compile properly with versions of flex later than 2.5.4
+
+The following quote styles are supposed to be supported:
+
+`quoted' ``quoted'' 'quoted' "quoted" 
+
+The entity &raspsquo is used to allow the tagger to
+distinguish between apostrophes and single quotes, which share the
+character ('); it is converted back later in the pipeline.
+
+Odd numbers of quote marks in sentences, created by quotations
+extending across sentence boundaries, are fixed (heuristically in the
+case of 3 or more quote marks) later in the pipeline by deleting the
+mark.

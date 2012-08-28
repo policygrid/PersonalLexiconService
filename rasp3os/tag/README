@@ -1,0 +1,212 @@
+RASP TAGGER
+
+*********************************************
+
+Subdirectories:
+
+auxiliary_files/ contains a number of auxiliary files necessary to run
+the tagger
+              
+database/ Berkeley DB library and header files
+
+documentation/ contains various pieces of documentation including
+three manual-type documents describing various aspects of the tagger
+that can be useful to get started
+
+ix86_linux/ Intel/Linux executable, links to source files and own makefile
+
+x86_64_linux/ 64-bit Linux executable, links to source files and own makefile
+
+scripts/ contains scripts
+
+src/ contains all the source files
+
+
+*********************************************
+
+To run the tagger:
+
+A sample run (on Linux, on the test file "test.notag" which should
+contain untagged text) can be executed from the top level tagger
+directory with:
+
+./ix86_linux/label test.notag B1 b C1 N t auxiliary_files/slb.trn d auxiliary_files/seclarge.lex j auxiliary_files/unkstats-seclarge m auxiliary_files/tags.map O512 > test.tag
+
+(Note: the above command should contain no line breaks)
+
+
+*********************************************
+
+To recompile the tagger:
+
+1) Create all the necessary symbolic links by executing 
+the scripts/create_symlinks.pl command in the top level tagger 
+directory
+2) Select the directory corresponding to your operating system.
+3) In the chosen directory, run the "make" command.
+
+
+**********************************************
+
+Command line options:
+
+See the subdirectory 'documentation' for detailed information on
+command line options.  A quick guide to the command line syntax and
+the list of options follows.
+
+
+Syntax: label <input_corpus -o> [tagging_algorithm_options] (-o input_transitions) 
+[-o output_transitions] (-o input_dictionary) [-o output_dictionary] [-o inference_rules]
+[-o unknown_word_statistics] [v gdbm_dictionary] <-o taglist> [output_corpus_options] 
+[> output_file]  
+
+(This list is not exhaustive, see also the "Additional Options" below)
+
+Meaning of brackets:
+< > compulsory
+( ) compulsory unless training used
+[ ] optional
+-o option(s) (use with or without flag)
+
+
+Syntax explained: 
+
+(Note that "fn" stands for a filename and "no" for a value)
+
+1) input_corpus options
+
+Corpus format:
+C1 (untagged)
+C2 (LOB - default)
+C3 (tagged Penn treebank)
+C4 (Lancpars)
+
+Exclusion list (words to be skipped):
+x fn
+ 
+Numbers (defines the treatment of numbers):
+n (Treat any word containing a digit as a number)
+N (Treat words as numbers if they "parse", if they may have
+   leading + or *+ (for LOB), followed by a string containing 
+   at least one digit and made up of only digits, commas, points 
+   and minuses as numbers)                                               
+
+
+2) tagging_algorithm_options
+
+V    (Viterbi)
+F    (Forward-backward - default. Use lF if training)
+B no (Baum-Welch re-estimation with n iterations. Default: 1)
+b    (Numerical stabilisation to Baum-Welch)
+l    (Training) 
+f    (Pick the tag which is the most frequent one for the word in the
+      dictionary. Baseline for performance)
+p    (Set transitions to product of from and to scores during training.
+      Default: "from" score alone)
+a    (Tag sequences delimited by anchors - sentence level tagging)
+L no (When re-estimating, do not use data from any hypotheses which
+      fall below the given score n)
+ 
+
+3) Options for input_transitions, output_transitions, input_dictionary, 
+output_dictionary, gdbm_dictionary and inference_rules 
+
+(Output data files are produced from training or Baum-Welch re-estimation.
+Input data files are needed unless training is being used.)
+
+d fn (Input dictionary)
+v fn (Gdbm dictionary)
+t fn (Input transitions)
+r fn (Root of input dictionary and transition file names. 
+      A fast way of specifying 'd' and 't' names) 
+w    (Treat the dictionary as a word list when training) 
+D fn (Output dictionary)
+T fn (Output transitions)
+R fn (Root of output dictionary and transition file names)
+A no (Allocate dictionary of given size)
+i fn (Filename of inference rules for tags)                                     
+
+4) unknown_word_statistics options 
+
+h no (Maximum number of unknown words in the test corpus. Default: 100,000 words)          
+H no (Suffix length when collecting suffix statistics. Default: 3 letters)    
+J fn (output for lexical statistics, need to specify H, K and h for this to work) 
+j fn (use previously gathered unknown word statistics)
+k no (The maximum length of a prefix cut)
+K no (The maximum length of a suffix cut)
+s fn (Output file containing unknown words which were counted as incorrectly tagged)
+Y    (Sends unknown word debug output to stderr. If the U option
+      is also active, both features and rule numbers will 
+      be displayed as they contribute to the tag hypotheses)   
+
+5) taglist options
+
+m fn (Filename for tag list. Defaults to "tags.map")
+M fn (Reduce the tag set, using file fn which consists
+      of lines containing pairs of tags: a tag as found in the corpus 
+      and the tag which it is to be changed to)       
+
+6) output_corpus_options
+
+o fn (Filename for output corpus. Defaults to stdout)
+O no (Output format. no is either 0, or results from summing codes as
+     follows. Default value: 1)
+
+	0   No output.
+	1   Standard output format: flags, word, correct tag, chosen tag on
+	    error, no scores; may be modified by some of the values that follow.
+	2   Output sequences containing errors only (Default: all). 
+	4   Don't output flags.
+	8   Output all tags (Default: correct tag + error tag).  
+	16  Output scores with tags (default: no scores).
+        32  Compressed format. Uses more compact output lines.
+        64  Delimit sentences (print a line before anchor; ignored if error only)
+        128 Output results in a suitable format for analysing errors. 
+        256 Report observation and tag probabilities. 
+	512 One word to a line with the chosen tag (if any). 
+
+S    (Report performance statistics at the end of the output file)
+u    (Report unknown words in the form "word" or "word_tag" on stderr)
+c no (Reject hypotheses on ambiguous words which have a relative
+      tag probability below the threshold no) 
+           
+7) Additional options *not* included in the syntax list above:
+
+a) Initialisation 
+
+These override the values in the dictionary and/or transitions, and are intended for 
+use with Baum-Welch re-estimation where the initial data is not reliable and hence may 
+need smoothing:
+
+I no  Do initialisation as specified by no. See Elworthy (1997) 
+      for a full explanation:
+  0  
+  +1 
+  +2 
+  +4 
+  +8 
+  +16 
+  +32
+
+b) Phrasal tagging
+
+Finite state machines:
+e fn (Read finite state machine definitions from the file fn) 
+E    (Trace finite state machines, by printing out the stack after reading
+      each word)
+
+Parser:
+q fn (Read a grammar from the file fn)
+Q    (Trace parser, by printing out the stack after reading each word)
+
+
+P    (Use anchor bracketing)
+                                                                      
+
+c) Others
+
+X  ("Special'' option : reserved for various additional tests)
+z  (Verbose: report iterations and number of words processed)
+Z  (Debug: dump stack after tagging each sequence)
+    Bug: Option Z asks questions even when running from stdin.
+         This can never terminate.

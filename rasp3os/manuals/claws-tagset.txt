@@ -1,0 +1,223 @@
+	CLAWS2 TAGLIST
+
+	(The second column of tags, containing an asterisk, are known
+	as 'cover tags', and are used in the development of automatic
+	parsing techniques.  They are not relevant to the task of
+	post-editing.  They are include for interest because they do
+	occur in some types of CLAWS2 output)
+
+
+	!	.*	punctuation tag - exclamation mark
+	"	"	punctuation tag - quotation marks
+	$	$*	germanic genitive marker - (' or 's)
+	&FO	N*	formula
+	&FW	N*	foreign word
+	(	(	punctuation tag - left bracket
+	)	)	punctuation tag - right bracket
+	,	,*	punctuation tag - comma
+	-	,*	punctuation tag - dash
+	-----	^	new sentence marker
+	.	.*	punctuation tag - full-stop
+	...	.*	punctuation tag - ellipsis
+	:	;*	punctuation tag - colon
+	;	;*	punctuation tag - semi-colon
+	?	?*	punctuation tag - question-mark
+  	APP$	A*	possessive pronoun, pre-nominal (my, your, our etc.)
+  	AT	A*	article (the, no)
+  	AT1	A*	singular article (a, an, every)
+  	BCS	EX*	before-conjunction (in order (that), even (if etc.))
+  	BTO	EX*	before-infinitive marker (in order, so as (to))
+  	CC    	CC*	coordinating conjunction (and, or)
+  	CCB   	CC*	coordinating conjunction (but)
+  	CF    	CC*	semi-coordinating conjunction (so, then, yet)
+  	CS    	CS*     subordinating conjunction (if, because, unless)
+  	CSA   	CS*     'as' as a conjunction
+  	CSN   	CS*     'than' as a conjunction
+  	CST	CS*     'that' as a conjunction
+  	CSW	CS*	'whether' as a conjunction
+  	DA	D*	after-determiner (capable of pronominal function)
+				(such, former, same)
+  	DA1	D*	singular after-determiner (little, much)
+  	DA2	D*	plural after-determiner (few, several, many)
+  	DA2R	D*R	comparative plural after-determiner (fewer)
+  	DAR	D*R	comparative after-determiner (more, less)
+  	DAT	D*      superlative after-determiner (most, least)	
+  	DB	D*	before-determiner (capable of pronominal function) 
+				(all, half)
+  	DB2	D*	plural before-determiner (capable of pronominal
+				function) (eg. both)
+  	DD	D*	determiner  (capable of pronominal function) (any, some)
+  	DD1   	D*      singular determiner (this, that, another)
+  	DD2	D*	plural determiner (these, those)
+  	DDQ	D*Q	wh-determiner (which, what)
+  	DDQ$	D*Q	wh-determiner, genitive (whose)
+  	DDQV	D*Q	wh-ever determiner (whichever, whatever)
+  	EX	EX*	existential 'there'
+  	ICS	ICS*	preposition-conjunction (after, before, since, until)
+  	IF	IF*	'for' as a preposition
+  	II	I*	preposition
+  	IO	IO*	'of' as a preposition
+  	IW	I*	'with'; 'without' as preposition	
+  	JA	J*	predicative adjective (tantamount, afraid, asleep)
+  	JB	J*	attributive adjective (main, chief, utter)
+  	JBR	J*R	attributive comparative adjective (upper, outer)
+  	JBT	J*	attributive superlative adjective (utmost, uttermost)
+  	JJ	J*	general adjective
+	JJR	J*R	general comparative adjective (older, better, bigger)
+	JJT	J*	general superlative adjective (oldest, best, biggest)
+	JK	J*	adjective catenative ('able' in 'be able to';
+				'willing' in 'be willing to')
+	LE      UH*	leading co-ordinator ('both' in 'both...and...';
+				'either' in 'either... or...')
+	MC	M*	cardinal number neutral for number (two, three...)
+	MC$	M*	genitive cardinal number, neutral for number (10's)
+	MC-MC	M*	hyphenated number 40-50, 1770-1827)
+	MC1	M*	singular cardinal number (one)
+	MC2	M*      plural cardinal number (tens, twenties)
+	MD	MD*	ordinal number (first, 2nd, next, last)
+	MF	M*	fraction, neutral for number (quarters, two-thirds)
+	NC2	N*	plural cited word ('ifs' in 'two ifs and a but')
+	ND1	N*	singular noun of direction (north, southeast)
+	NN	N*	common noun, neutral for number (sheep, cod)
+	NN1	N*	singular common noun (book, girl)
+	NN1$	N*	genitive singular common noun (domini)
+	NN2 	N*	plural common noun (books, girls)
+	NNJ	N*	organization noun, neutral for number (department,
+				council, committee)
+	NNJ1	N*	singular organization noun (Assembly, commonwealth)
+	NNJ2 	N*	plural organization noun (governments, committees)
+	NNL	N*	locative noun, neutral for number (Is.)
+	NNL1	N*	singular locative noun (street, Bay)
+	NNL2	N*	plural locative noun (islands, roads)
+	NNO	M*	numeral noun, neutral for number (dozen, thousand)
+	NNO1	M*	singular numeral noun (no known examples)
+	NNO2	M*	plural numeral noun (hundreds, thousands)
+	NNS	N*	noun of style, neutral for number (no known examples)
+	NNS1	N*	singular noun of style (president, rabbi)
+	NNS2	N*	plural noun of style (presidents, viscounts)
+	NNSA1	N*	following noun of style or title, abbreviatory (M.A.)
+	NNSA2	N*	following plural noun of style or title, abbreviatory
+	NNSB 	N*	preceding noun of style or title, abbr. (Rt. Hon.)
+	NNSB1	N*	preceding sing. noun of style or title, abbr. (Prof.)
+	NNSB2	N*	preceding plur. noun of style or title, abbr. (Messrs.)
+	NNT	N*	temporal noun, neutral for number (no known examples)
+	NNT1	N*	singular temporal noun (day, week, year)
+	NNT2	N*	plural temporal noun (days, weeks, years)
+	NNU	N*	unit of measurement, neutral for number (in., cc.)
+	NNU1	N*	singular unit of measurement (inch, centimetre)
+	NNU2	N*	plural unit of measurement (inches, centimetres)
+	NP	N*	proper noun, neutral for number (Indies, Andes)
+	NP1	N*	singular proper noun (London, Jane, Frederick)
+	NP2	N*	plural proper noun (Browns, Reagans, Koreas)
+	NPD1	N*	singular weekday noun (Sunday)
+	NPD2	N*	plural weekday noun (Sundays)
+	NPM1	N*	singular month noun (October)
+	NPM2	N*	plural month noun (Octobers)
+	PN	P*	indefinite pronoun, neutral for number ("none")
+	PN1	P*	singular indefinite pronoun (one, everything, nobody)
+	PNQO	P*Q	whom
+	PNQS	P*Q	who
+	PNQV$	P*Q	whosever
+	PNQVO	P*Q	whomever, whomsoever
+	PNQVS	P*Q	whoever, whosoever
+	PNX1	P*	reflexive indefinite pronoun (oneself)
+	PP$	P*	nominal possessive personal pronoun (mine, yours)
+	PPH1	P*	it	
+	PPHO1	P*	him, her
+	PPHO2	P*	them
+	PPHS1	P*S	he, she
+	PPHS2	P*S	they
+	PPIO1	P*	me
+	PPIO2	P*	us
+	PPIS1	P*S	I
+	PPIS2	P*S	we
+	PPX1	P*	singular reflexive personal pronoun (yourself, itself)
+	PPX2	P*	plural reflexive personal pronoun (yourselves,
+				ourselves)
+	PPY	P*	you
+	RA	R*	adverb, after nominal head (else, galore)
+	REX	R*	adverb introducing appositional constructions
+				(namely, viz, eg.)
+	RG	RG*	degree adverb (very, so, too)
+	RGA	R*	post-nominal/adverbial/adjectival degree adverb
+				(indeed, enough)
+	RGQ	RGQ*	wh- degree adverb (how)
+	RGQV	RGQ*	wh-ever degree adverb (however)
+	RGR	RGR*	comparative degree adverb (more, less)
+	RGT	RG*	superlative degree adverb (most, least)
+	RL	R*	locative adverb (alongside, forward)
+	RP	RP*	prep. adverb; particle (in, up, about)
+	RPK	RP*	prep. adv., catenative ('about' in 'be about to')
+	RR	R*	general adverb
+	RRQ	R*Q	wh- general adverb (where, when, why, how)
+	RRQV	R*Q	wh-ever general adverb (wherever, whenever)
+	RRR	R*R	comparative general adverb (better, longer)
+	RRT	R*	superlative general adverb (best, longest)
+	RT	NR*	nominal adverb of time (now, tommorow)
+	TO	TO*	infinitive marker (to)
+  	UH	UH*	interjection (oh, yes, um)
+  	VB0	VB0*	be
+  	VBDR	VB0*	were
+  	VBDZ  	VB0*	was
+  	VBG	VBG*	being
+  	VBM	VB0*	am
+  	VBN	VBN*	been
+  	VBR	VB0*    are
+  	VBZ	VB0*	is
+  	VD0	VD0*	do
+  	VDD	VD0*	did
+  	VDG	VDG*	doing
+  	VDN 	VDN*	done
+  	VDZ	VD0*	does
+  	VH0	VH0*	have
+  	VHD	VH0*	had (past tense)
+  	VHG	VHG*	having
+  	VHN	VHN*	had (past participle)
+  	VHZ	VH0*	has
+  	VM	VD0*	modal auxiliary (can, will, would etc.)
+  	VMK	VD0*    modal catenative (ought, used)
+  	VV0	VV0*	base form of lexical verb (give, work etc.)
+  	VVD	VV0*	past tense form of lexical verb (gave, worked etc.)
+  	VVG	VVG*	-ing form of lexical verb (giving, working etc.)
+  	VVN	VVN*	past participle form of lexical verb (given,
+				worked etc.)
+  	VVZ	VV0*	-s form of lexical verb (gives, works etc.)
+  	VVGK	VVG*	-ing form in a catenative verb ('going' in
+				'be going to')
+  	VVNK	VVN*	past part. in a catenative verb ('bound' in 
+				'be bound to')
+  	XX	XX*	not, n't
+  	ZZ1	N*	singular letter of the alphabet:'A', 'a', 'B', etc.
+  	ZZ2	N*	plural letter of the alphabet: 'As', b's, etc. 
+ 
+
+
+	NOTE: "DITTO TAGS"
+
+	Any of the tags listed above may in theory be modified by the 
+	addition of a pair of numbers to it: eg. DD21, DD22.
+	This signifies that the tag occurs as part of a sequence of similar
+	tags, representing a sequence of words which for grammatical purposes
+	are treated as a single unit. For example the expression "in terms of"
+	is treated as a single preposition, receiving the tags:
+ 
+			 in_II31 terms_II32 of_II33 
+
+	The first of the two digits indicates the number of words/tags
+	in the sequence, and the second digit the position of each
+	word within that sequence.
+
+	Such "ditto tags" are not included in the lexicon, but are
+	assigned automatically by a program called "IDIOMTAG" which
+	looks for a range of multi-word sequences included in the
+	"idiomlist".  The following sample entries from the idiomlist
+	show that syntactic ambiguity is taken into account, and also
+	that, depending on the context, ditto-tags may or may not be
+	required for a particular word sequence:
+
+			at_RR21 length_RR22
+			a_DD21/RR21 lot_DD22/RR22
+			in_CS21/II that_CS22/DD1 
+
+
+

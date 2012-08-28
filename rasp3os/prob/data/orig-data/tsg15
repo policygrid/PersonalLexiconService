@@ -1,0 +1,2938 @@
+; Grammar for Tag Sequences (CLAWS tagset; data: Susanne/SEC/BNC/WSJ/TREC8) 
+; Copyright Ted Briscoe, 2001--2005
+;
+; Last date modified: tsg15, 1/06
+;
+; See http:/www.cl.cam.ac.uk/Research/NL/anlt.html for background
+; on the parser / grammar formalism, publications, etc
+;
+; The grammar assumes a 2-level X-bar theory where a head daughter is
+; BAR 0 (e.g. N), an intermediate phrase is BAR 1 (e.g. N1 or VP/V1)
+; and the maximal projection of the head / constituent is BAR 2 (e.g. 
+; NP/N2, V2/S etc)
+;
+; Major rewrite of tsg12/14 to cover BNC/WSJ/TREC improved MOD, added
+; ASUBCAT and NSUBCAT, VSUBCAT values, split up VP complement rules, etc
+;
+; GR semantics version -- inference rules needed to specialise / correct
+; underspecified GRs: e.g. arg_mod -> arg or ncmod in UBCs, (passive
+; X) -> (ncsubj X Y _->obj)+(obj->obj2 X Z), NOT (passive X)+(dobj X Y) ->
+; (obj2->dobj X Z), (xcomp _ be Y)+(ncsubj be X) -> (ncsubj Y X) etc. 
+; Other underspecified GRs may require lexical or contextual info to
+; fully specify 
+;
+; Better comments! + see tsgram/README, and search ? for things to
+; check / fix 
+;
+; Rule name convention: Mother/d1_d2_dN or Mother/d1-feat_d2-feat,
+; except for few like S/sai
+;
+; Rare -r suffix rules to improve coverage without reducing parse
+; selection accuracy (but decrease efficiency)
+;
+; UBCs covered better, but some gaps esp with auxs, clefts, etc
+;
+; Still needs work on NTYPE and NP/ N1/ rules and fixing of special N
+; tags in seclarge.lex -- now preserve more distinctions for `named
+; entity recognition', NER, but e.g. months to TEMP etc
+;
+; No case feature on Ns so `...(him and he)' went -- adding wld mess
+; up `him going' etc all covered by S --> NP VP
+;
+; Comparatives/equatives not done well -- want (XP (more XP) (than XP))
+; esp. semantics
+;
+; PSUBCAT shld be lrnt for indiv preps (bit like verbs): for/?to him to
+; come is difficult -- reliable contexts + split (for him) (to come)
+; with some vb subcats
+;
+; Some rules, eg -r, loc inv, quote inv, wh, voc etc, not good for
+; high prec. subcat extraction -- check new V/A/NSUBCAT values v.
+; anlt/comlex/... + remove these rules for subcat extract?
+;
+; **********************************************
+
+FEATURE N{+, -}
+FEATURE V{+, -}
+FEATURE BAR{0, 1, 2}
+FEATURE H{+, -}
+FEATURE MINOR{DET, COMP, DEG, PRT, CONJ, INTERJ, NOT}
+FEATURE PLU{+, -}
+FEATURE POSS{+, -}
+FEATURE NTYPE{PRO, REFL, NAME, NORM, PART, THERE, NUM, DIR, TIT, PRETIT, 
+   POSTTIT, TEMP, MEAS, POSS, PLACE, ORG} ; 16 `sem' ntypes
+FEATURE ATYPE{NORM, ATT, PRD, POST, CAT, DG, PLACE, NUM, XCOMP, ORI, TEMP}
+FEATURE AFORM{ER, EST, NONE}
+FEATURE VSUBCAT{SCOMP, SINF, SING, SING_PP, VPINF, VPING, VPING_PP, VPPRT, 
+   VPBSE, NP, NP_NP, NP_NP_VPINF, NP_NP_PP, NP_PP, NP_WHPP,
+   NP_PPOF, NP_PP_PP, NP_AP, NP_SCOMP, NP_NP_SCOMP, PP, PPOF, WHPP,
+   PP_PP, PP_WHPP, PP_SCOMP, PP_WHS, PP_WHVP, PP_VPINF, PP_AP, AP, NONE}
+FEATURE PSUBCAT{SFIN, SINF, SING, NP, PP, AP, VP, VPINF, VPING, VPPRT,
+   WHS, NONE} 
+FEATURE NSUBCAT{SFIN, PPOF}
+FEATURE ASUBCAT{NONE, NP, SFIN, SINF, VPINF, VPING, PP, PPOF, WHPP,
+   PP_PP, PP_WHPP}  
+FEATURE PFORM{FOR, OF, WITH, WH, THAN, AS, PREP, PREPS}
+FEATURE PRT{+, -}
+FEATURE ADJ{+, -}
+FEATURE CJTYPE{BEGIN, END}
+FEATURE WH{+, -}
+FEATURE ADV{+, -}
+FEATURE MOD{+, -}
+FEATURE AUX{TO, BE, HAVE, DO, MODAL, CAT, -}
+FEATURE VFORM{BSE, INF, ING, PPART, PAST, PRES}
+FEATURE INV{+, -}
+FEATURE IMP{+, -}
+FEATURE COMP{+, -}
+FEATURE FIN{+, -}
+FEATURE CONJ{+, -}
+FEATURE T{+}
+FEATURE PUNCT{comma, semicolon, colon, exmark, qumark, quote, dash, 
+   lbrack, rbrack, dot, ellip, slash}
+FEATURE SCOLON{+, -}
+FEATURE COLON{+, -}
+FEATURE DASH{+, -}
+FEATURE DOT{+, -}
+FEATURE QUOTE{+, -}
+FEATURE TA{+, -}
+FEATURE BAL{+, B, E}
+FEATURE BRACK{+, -}
+FEATURE COMMA{+, -}
+FEATURE TXTCAT{UNIT, ADJUNCT, BEGPUNCT, ENDPUNCT}
+FEATURE TXT{CL, PH}
+
+SET VHEAD = {N, V, PLU, VFORM, AUX, FIN}
+SET NHEAD = {N, V, PLU, NTYPE, POSS}
+SET PHEAD = {N, V, PFORM, PSUBCAT, ADJ}
+SET AHEAD = {N, V, AFORM, ATYPE, ADV, ASUBCAT}
+SET PUNCTS = {SCOLON, COLON, DASH, COMMA, BRACK, DOT, QUOTE}
+
+ALIAS V2 = [V +, N -, BAR 2, TXTCAT UNIT, TXT CL].
+ALIAS V1 = [V +, N -, BAR 1].
+ALIAS V0 = [V +, N -, BAR 0].
+ALIAS N2 = [V -, N +, BAR 2, TXTCAT UNIT, TXT PH].
+ALIAS N1 = [V -, N +, BAR 1, TXTCAT UNIT, TXT PH].
+ALIAS N0 = [V -, N +, BAR 0].
+ALIAS P2 = [V -, N -, BAR 2].
+ALIAS P1 = [V -, N -, BAR 1].
+ALIAS P0 = [V -, N -, BAR 0].
+ALIAS A2 = [V +, N +, BAR 2].
+ALIAS A1 = [V +, N +, BAR 1].
+ALIAS A0 = [V +, N +, BAR 0].
+ALIAS H2 = [H +, BAR 2].
+ALIAS H1 = [H +, BAR 1].
+ALIAS H0 = [H +, BAR 0].
+ALIAS DT = [MINOR DET].
+ALIAS CP = [MINOR COMP].
+ALIAS PT = [MINOR PRT].
+ALIAS CJ = [MINOR CONJ].
+ALIAS IJ = [MINOR INTERJ].
+ALIAS NG = [MINOR NOT].
+ALIAS Tp = [T +].
+ALIAS Tu = [TXTCAT UNIT].
+ALIAS Tph = [TXTCAT UNIT, TXT PH].
+ALIAS Ta = [TXTCAT ADJUNCT].
+ALIAS Ep = [TXTCAT ENDPUNCT].
+ALIAS Bp = [TXTCAT BEGPUNCT].
+ALIAS +psc = [PUNCT semicolon].
+ALIAS +pco = [PUNCT comma].
+ALIAS +pcl = [PUNCT colon].
+ALIAS +pqu = [PUNCT qumark].
+ALIAS +pex = [PUNCT exmark].
+ALIAS +pda = [PUNCT dash].
+ALIAS +plb = [PUNCT lbrack].
+ALIAS +prb = [PUNCT rbrack].
+ALIAS +pdo = [PUNCT dot].
+ALIAS +pel = [PUNCT ellip].
+ALIAS +psl = [PUNCT slash].
+ALIAS +pqo = [PUNCT quote].
+ALIAS +sc = [SCOLON +].
+ALIAS -sc = [SCOLON -].
+ALIAS -cl = [COLON -].
+ALIAS +cl = [COLON +].
+ALIAS -da = [DASH -].
+ALIAS +da = [DASH +].
+ALIAS -co = [COMMA -].
+ALIAS +co = [COMMA +].
+ALIAS -br = [BRACK -].
+ALIAS +br = [BRACK +].
+ALIAS +do = [DOT +].
+ALIAS -do = [DOT -].
+ALIAS +qo = [QUOTE +].
+ALIAS -qo = [QUOTE -].
+ALIAS nopunct = [-sc, -cl, -da, -co, -do, -qo].
+ALIAS +bal = [BAL +].
+ALIAS +end = [BAL E].
+ALIAS +beg = [BAL B].
+ALIAS +ta = [TA +].
+ALIAS -ta = [TA -].
+
+CATEGORY TXT : [TXTCAT]
+   => {TA, BAL, SCOLON, TXT, COLON, DASH, COMMA, BRACK, DOT, CONJ, QUOTE}.
+CATEGORY CN : [N +, V -] 
+   => {PLU, NTYPE, BAR, WH, POSS, CONJ, MOD, QUOTE}.
+CATEGORY CNw : [N +, V -, BAR 0] => {TA, NSUBCAT}.
+CATEGORY CV : [N -, V +] => {PLU, BAR, VFORM, AUX, FIN, CONJ, QUOTE}.
+CATEGORY CV1 : [N -, V +, BAR 1] => {MOD, SCOLON}.
+CATEGORY CV2 : [N -, V +, BAR 2] => {INV, IMP, WH, COMP}.
+CATEGORY CVw1 : [N -, V +, BAR 0] => {TA}.
+CATEGORY CVw2 : [~INV, N -, V +, BAR 0] => {VSUBCAT, PRT}.
+CATEGORY CP : [N -, V -] => {BAR, PFORM, PSUBCAT, ADJ, CONJ, MOD, QUOTE}.
+CATEGORY CPb : [N -, V -, BAR 0] => {TA}.
+CATEGORY CPw1 : [N -, V -, BAR 1] => {WH}.
+CATEGORY CPw2 : [N -, V -, BAR 2] => {WH, SCOLON}.
+CATEGORY CAw : [N +, V +, BAR 0] => {ASUBCAT}.
+CATEGORY CA : [N +, V +] 
+   => {BAR, AFORM, ATYPE, ASUBCAT, ADV, CONJ, MOD, TA, QUOTE}.
+CATEGORY CA2 : [N +, V +, BAR 2] => {SCOLON}.
+CATEGORY CDET : [MINOR DET] => {PLU, POSS, WH}.
+CATEGORY CCOMP : [MINOR COMP] => {TA}.
+CATEGORY CDEG : [MINOR DEG] => {}.
+CATEGORY CPRT : [MINOR PRT] => {}.
+CATEGORY CNOT : [MINOR NOT] => {}.
+CATEGORY CINTERJ : [MINOR INTERJ] => {}.
+CATEGORY CCJ : [MINOR CONJ] => {CJTYPE, TA}.
+
+; **************************************
+
+TOP Tp. 
+
+; Text / punctuation rules begin with T/ and also define top, 'Tp'.
+; Semantics of text grammar (sometimes) doesn't deal with contrib. 
+; of punct 
+; 
+; Phrasal fragments which have clear text sentence end punctuation 
+; e.g. Good grief!
+; relaxing this to no end punct wld increase ambiguity, so
+; redefine top if eg you want to parse dict defs or tokenise
+; as ._. . to batch parser
+
+PSRULE T/txt-ph1-r : Tp --> Tph[CONJ -] +pqu.
+PSRULE T/txt-ph2-r : Tp --> Tph[CONJ -] +pex.
+; following too ambig, even -r?: (vp|np|ap|pp) ditto ._.
+; PSRULE T/txt-ph3-r : Tp --> +plb Tph[CONJ -] +prb.
+; PSRULE T/txt-ph4-r : Tp --> Tph[CONJ -] +pdo.
+
+; Text sentences which are clauses + begin/end punct 
+
+PSRULE T/txt-sc1 : Tp --> (Bp) V2[-sc, FIN +, QUOTE @q, CONJ @c, IMP @i] (Ep). 
+
+; clause ; clause -- sem (conj ; cl1) (conj ; cl2)?, but:
+; sem wrong as kleene sem doesn't work properly! -- removed kleene +
+; on 1st dgter and added above GRs: won't get S ; S : S. etc
+PSRULE T/txt-sc2 : V2[-sc, CONJ @c, IMP @i] --> 
+   V2[+sc, FIN +, QUOTE @q1, CONJ @c1, IMP @i]
+   H2[-sc, COLON @x, FIN +, QUOTE @q2, IMP @i, CONJ @c] (Ep) :
+   (conj \; 1) : (conj \; 2).
+
+PSRULE Beg-punct1 : Bp --> +pda ( +prb ). 
+PSRULE Beg-punct2 : Bp --> +pcl ( +pda ) ( +prb ).
+PSRULE Beg-punct3 : Bp --> +prb.
+
+PSRULE End-punct1 : Ep --> +pqu ( +pex ) ( +pdo ) (+pel ). 
+PSRULE End-punct2 : Ep -->  +pex  ( +pdo ) (+pel ). 
+PSRULE End-punct3 : Ep -->  +pdo (+pel ). 
+
+; ellipses can occur anywhere any text adjunct can occur?
+PSRULE Ta/ellipses : Ta --> +pel : 1.
+
+; Embedded multiple text sentences/clauses with punct 
+; revised rules don't do all attachments of sc, com, dash etc 
+
+PSRULE T/txt-cl1 : V2[+sc, CONJ @c] --> H2[-sc, CONJ @c] (Ep) +psc : 1.
+PSRULE T/txt-cl2 : V2[+sc, CONJ @c] --> H2[-sc, CONJ @c] Ep +pda : 1.
+PSRULE T/txt-cl3 : V2[+sc, CONJ @c] --> H2[-sc, CONJ @c] Ep +pco : 1.
+
+; Bracketed top-level text sentence clauses
+
+PSRULE T/txt-cl-brack : Tp --> +plb V2[-br, -do, QUOTE @q, IMP @i,
+   CONJ @c] (Ep) +prb. 
+PSRULE T/txt-cl-brack-r : Tp --> +plb V2[-br, -do, QUOTE @q, IMP @i,
+   CONJ @c] +prb +pdo. 
+
+; Quotation (AmE/BrE order) -- currently only V2, V1, N2, N1, P2, A2 or
+; N,A,V -- semantics (ta quote ellip|head quote)
+; deals with multiple quotes in one sentence, but lots of ambiguity?
+
+; S quotes
+; "Go home!", "I like that!", "I like that(!),"
+PSRULE S/s-quo  : V2[+qo, IMP @i] --> +pqo H2[-qo, CONJ @c, IMP @i]
+   (Ep) (+pco) +pqo : 2 : (ta quote ellip 2).
+
+; NP quotes / interjections: `yes(, your honour)' -- semantics?
+PSRULE NP/np-quo : N2[+qo, WH @x] --> +pqo ( IJ )* ( +pco ) 
+   H2[-qo, WH @x, CONJ @c] (Ep) (+pco) +pqo : 4 : (ta quote ellip 4).
+PSRULE NP/interj-quo : N2[+qo, WH @x] --> +pqo ( IJ )* ( +pco ) 
+   IJ (Ep) (+pco) +pqo : 4 : (ta quote ellip 4).
+
+; John said, (: / that) "I love you!" | `No'.
+PSRULE S/s_np-quo : V2[-sc, FIN +, INV -] -->  H2[-ta, CONJ @c] ( +pco ) 
+  ( +pcl ) N2[+qo, CONJ @c1] : 1 : (ta quote 1 4).
+PSRULE S/s_s-quo : V2[-sc, FIN +, INV -] -->  H2[-ta, CONJ @c]  ( +pco )  
+   ( +pcl ) V2[+qo, CONJ @c1, IMP @i] : 1 
+   : 4 = [COMP -], (ta quote 1 4)
+   : 4 = [COMP +], (ta quote 1 (4 (lambda (c) (lambda (v) v)))).
+
+; Quote inversion cases  
+; `No' | `I love you!' | `Love me' John said 
+; `The car,' he said, `has come.'
+
+PSRULE S/np-quo_s : V2[-sc, FIN +, INV -] --> N2[+qo, CONJ @c, PLU @p]
+( +pco ) H2[-ta, CONJ @c1] ( +pco ) ( V1[+qo, FIN +, PLU @p] ) : 3 :
+(ta quote 3 1) : (ta quote 3 4) : (ncsubj 5 1 _). 
+PSRULE S/s-quo_s : V2[-sc, FIN +, INV -] --> V2[+qo, CONJ @c, IMP @i] ( +pco )
+   H2[-ta, CONJ @c1] : 3 : (ta quote 3 1).
+
+; `No' | `I love you' | `Love me', said John.
+
+PSRULE S/np-quo_v_np : V2[WH -, INV -, +co] --> N2[+qo, -cl, CONJ @c] (
+   +pco ) H0[AUX -, CONJ @c1] N2 : 3 : (ta quote 3 1) : (ncsubj 3 4 inv).
+PSRULE S/s-quo_v_np : V2[WH -, INV -, +co] --> V2[+qo, -cl, CONJ @c, IMP @i] 
+   ( +pco ) H0[AUX -, CONJ @c1] N2 : 3 : (ta quote 3 1) : (ncsubj 3 4 inv).
+
+; `No' | `I love you' | `Love me', said John, (the) CEO of ClearForest.
+
+PSRULE S/np-quo_v_np_pco_n1 : V2[WH -, INV -, +co] --> N2[+qo, -cl, CONJ @c] (
+   +pco ) H0[AUX -, CONJ @c1] N2[NTYPE NAME] +pco N1[NTYPE NORM] : 3 :
+   (ta quote 3 1) : (ncsubj 3 4 inv) : (ncmod _ 4 6). 
+PSRULE S/np-quo_v_np_pco_np : V2[WH -, INV -, +co] --> N2[+qo, -cl, CONJ @c] (
+   +pco ) H0[AUX -, CONJ @c1] N2[NTYPE NAME] +pco N2[NTYPE NORM] : 3 :
+   (ta quote 3 1) : (ncsubj 3 4 inv) : (ncmod _ 4 6). 
+PSRULE S/s-quo_v_np_pco_n1 : V2[WH -, INV -, +co] --> V2[+qo, -cl,
+   CONJ @c, IMP @i] ( +pco ) H0[AUX -, CONJ @c1] N2[NTYPE NAME] +pco
+   N1[NTYPE NORM] : 3 : (ta quote 3 1) : (ncsubj 3 4 inv) : (ncmod _ 4 6). 
+PSRULE S/s-quo_v_np_pco_np : V2[WH -, INV -, +co] --> V2[+qo, -cl,
+   CONJ @c, IMP @i] ( +pco ) H0[AUX -, CONJ @c1] N2[NTYPE NAME] +pco
+   N2[NTYPE NORM] : 3 : (ta quote 3 1) : (ncsubj 3 4 inv) : (ncmod _ 4 6). 
+
+; N1 quotes: a `reasonable man' would agree (-r to force np where poss.)
+
+PSRULE N1/n1-quo-r : N1[+qo, MOD @m] --> +pqo H1[-qo, CONJ @c, MOD @m]
+   (Ep) (+pco) +pqo : 2 : (ta quote ellip 2).
+
+; V1 quotes: a reasonable man `would agree.'
+
+PSRULE VP/vp-quo : V1[+qo] --> +pqo H1[-qo, CONJ @c] (Ep) (+pco) +pqo
+   : 2 : (ta quote ellip 2).
+
+; AP quotes: a `reasonable' man would agree
+
+PSRULE AP/ap-quo : A2[+qo, MOD @m] --> +pqo H2[-qo, CONJ @c, MOD @m]
+   (Ep) (+pco) +pqo : 2 : (ta quote ellip 2).
+
+; PP quotes: a man `of rational mind' would agree
+
+PSRULE PP/pp-quo : P2[+qo, WH @x, MOD @m] --> +pqo H2[-qo, CONJ @c, WH
+   @x, MOD @m] (Ep) (+pco) +pqo : 2 : (ta quote ellip 2).
+
+; X0, though other minor lex. cats easy
+; when tokenised, try quotes around Tph / Tcl, etc?
+; -r to force higher level analysis where possible
+
+PSRULE N/quo_n-r  : N0[+qo] --> +pqo H0[-qo] +pqo : 2 : (ta quote ellip 2).
+PSRULE A/quo_a-r  : A0[+qo] --> +pqo H0[-qo] +pqo : 2 : (ta quote ellip 2).
+PSRULE V/quo_v-r  : V0[+qo] --> +pqo H0[-qo] +pqo : 2 : (ta quote ellip 2).
+PSRULE P/quo_p-r  : P0[+qo] --> +pqo H0[-qo] +pqo : 2 : (ta quote ellip 2).
+
+; NP-wh with question marks
+
+PSRULE T/npq : N2 --> H2[WH +, CONJ @c] +pqu : 1.
+
+; IJ - interjections (no sem. 'cos kleene problem)
+
+PSRULE Tcl/interj_c_s : V2[-sc, +co] --> ( IJ )+ +pco H2[CONJ @x] : 3.
+PSRULE Tcl/interj_c_vp : V2[-sc, +co] --> ( IJ )+ +pco H1[FIN +] : 3.
+PSRULE Tcl/s_c_interj : V2[-sc, +co] --> H2[CONJ -] +pco ( IJ )+ : 1.
+PSRULE Tcl/interj_d_s : V2[-sc, +da] --> ( IJ )+ +pda H2[CONJ @x] : 3.
+PSRULE Tcl/s_d_interj : V2[-sc, +da] --> H2[CONJ -] +pda ( IJ )+ : 1.
+PSRULE S/ij-r : V2[-sc] --> ( IJ )+ : 1.
+
+; Text adjunct left middle / end attachment -- leta_* restrict attchmt
+; to reduce ambig stopping recursion -- too restrictive?
+;
+; Semantics can't be reduced to std GRs unless rules are expanded, so
+; (ta _ h d) where h=tu, d=ta, _ = subtype if can be inferred:
+; end, bal, colon, brack, dash, comma, quote
+
+PSRULE T/s_leta : V2[FIN +, IMP @i, +ta, WH @x] --> H2[-ta, IMP @i,
+   WH @x] Ta[-cl, +end] : 1 : (ta end 1 2). 
+PSRULE T/s_leta-cl : V2[FIN +, +ta, WH @x] --> H2[-ta, WH @x] Ta[+cl,
+   +end] : 1 : (ta colon 1 2).
+PSRULE T/conj_lmta : CJ[CJTYPE @c, +ta] --> CJ[CJTYPE @c, -ta] Ta[-cl,
+   +bal] : 1 : (ta bal 1 2). 
+PSRULE T/comp_lmta : CP[+ta] --> CP[-ta] Ta[+bal] : 1 : (ta bal 1 2).
+PSRULE T/prep_lmta : P0[+ta, PSUBCAT @x] --> H0[-ta, PSUBCAT @x]
+   Ta[-cl, +bal] : 1 : (ta bal 1 2).
+PSRULE T/auxv_lmta : V0[+ta, INV @y] --> H0[-ta, INV @y] Ta[-cl, +bal]
+   : 1 : (ta bal 1 2).
+PSRULE T/np_lmta : N2[+ta, WH @x, MOD +] --> H2[WH @x, MOD +] Ta[-cl,
+   +bal] : 1 : (ta bal 1 2).
+PSRULE T/n1_lmta-r : N1[+ta, WH @x, MOD +] --> H1[WH @x, MOD +] Ta[-cl,
+   +bal] : 1 : (ta bal 1 2).
+PSRULE T/n_lmta-r : N0[+ta, WH @x, MOD +] --> H0[WH @x] Ta[-cl, +bal]
+   : 1 : (ta bal 1 2). 
+PSRULE T/np_leta-cl : N2[+ta, WH @x, MOD +] --> H2[-ta, WH @x, MOD +] 
+   Ta[+cl, +end] : 1 : (ta colon 1 2).
+PSRULE T/v_lmta-r : V0[+ta, VSUBCAT @x] --> H0[-ta, VSUBCAT @x]
+   Ta[-cl, +bal] : 1 : (ta bal 1 2).
+PSRULE T/adv_lmta : A0[+ta] --> H0[-ta] Ta[-cl, +bal] : 1 : (ta bal 1 2).
+PSRULE T/not_lmta : NG --> NG Ta[-cl, +bal] : 1 : (ta bal 1 2).
+
+; Text adjunct right middle attachment
+; bracketed adjuncts are (ta brack ...) only when right attached
+
+PSRULE T/rmta_n1 : N1[+br, WH @x] --> Ta[+br] H1[WH @x, MOD -] : 2 :
+   (ta brack 2 1). 
+PSRULE T/rmta_a1 : A1[+br] --> Ta[+br] H1[MOD -] : 2 : (ta brack 2 1).
+PSRULE T/rmta_s : V2[FIN +, +ta, WH @x] --> Ta[+br] (+pda) (+pcl)
+   H2[-cl, -da, WH @x] : 4 : (ta brack 4 1).
+
+; Text adjunct phrase types
+; tightened up restrictions on dash, comma int. structure
+; but allow CONJ + in /comma+ for `finds, and has always found, ...'
+; relaxed Ta attchmt for Tphs: S :/- Tph -/: S/Tph where initial Tph.
+; Ta blocks (low) attchmt of subsequent one with either ordering of 
+; colon/dash
+
+PSRULE Taph/colon : Ta[+cl, +end, TXT PH] --> +pcl Tph (Ta[+da, +end, -qo])
+   : 2 : (ta dash 2 3).
+PSRULE Taph/dash+ : Ta[+da, +bal, TXT PH] --> +pda Tph[-da, -do, -sc]
+   ( +pqo ) ( +pex ) +pda : 2. 
+PSRULE Taph/dash- : Ta[+da, +end, TXT PH] --> +pda Tph[-da, -do, -sc]
+   (Ta[+cl, +end]) : 2 : (ta colon 2 3).
+PSRULE Taph/comma+ : Ta[+co, +bal, -ta, TXT PH] --> +pco Tph[-do, -sc,
+   -co, -qo]  +pco ( Ta[+co, +beg, TXT PH] ) : 2 : (ta comma 2 4).
+PSRULE Taph/comma-b : Ta[+co, +beg, TXT PH] --> Tph[CONJ -, -do, -da, 
+   -sc, -qo] +pco : 1. 
+PSRULE Taph/brack1 : Ta[+br, TXT PH] --> +plb Tph[-br] (Ta[+da, +end])
+   +prb : 2 : (ta dash 2 3).
+
+; relaxed text adjunct attachment inside a bracketed text adjunct
+PSRULE Taph/brack2 : Ta[+br, TXT PH] --> +plb N2[WH @x, MOD +, CONJ @c] Ta[-cl,
+   +end] +prb : 2 : (ta end 2 3). 
+
+; Text adjunct clause types (split sem on COMP +/-, `that' ignored in GRs)
+
+; He believes in God : (that) there is a deity.
+PSRULE Tacl/colon : Ta[+cl, TXT CL] --> +pcl V2[-cl, -qo, CONJ @c] 
+  : 2 = [COMP -], 2 : 2 = [COMP +], (2 (lambda (c) (lambda (v) v))).
+; -do ensures high attchmt of semi-colon delimited Ss (where is +do?)
+PSRULE Tacl/dash- : Ta[+da, +end, TXT CL] --> +pda V2[-da, -do, CONJ
+  @c] : 2 = [COMP -], 2 : 2 = [COMP +], (2 (lambda (c) (lambda (v) v))).
+PSRULE Tacl/dash+ : Ta[+da, +bal, TXT CL] --> +pda V2[-da, -do, CONJ
+   @c] (Ep) +pda : 2 = [COMP -], 2 : 2 = [COMP +], (2 (lambda (c)
+   (lambda (v) v))). 
+PSRULE Tacl/comma+ : Ta[+co, +bal, TXT CL] --> +pco V2[-sc, -co, CONJ @c] +pco
+   : 2 = [COMP -], 2 : 2 = [COMP +], (2 (lambda (c) (lambda (v) v))).
+PSRULE Tacl/comma-e : Ta[+co, +end, TXT CL] --> +pco V2[-sc, -co, -qo] : 2
+   = [COMP -], 2 : 2 = [COMP +], (2 (lambda (c) (lambda (v) v))). 
+PSRULE Tacl/brack : Ta[+br, TXT CL] --> +plb V2[-br, CONJ @c] (Ep)
+  +prb : 2 = [COMP -], 2 : 2 = [COMP +], (2 (lambda (c) (lambda (v) v))). 
+
+; Interface btwn main phrasal grammar and the text grammar, but info
+; is lost e.g. type of nominal (name, proN, etc) on mother, so need to 
+; look under these nodes for `named entity recognition' 
+;
+; Text units, maybe separated by commas, can be elliptical clauses
+; with temp advbs, PPs, coord. without conjunctions -- +sc is used
+; 'cos of complex propagation and semantic similarity to semi-colon
+; `coordination' of Ss 
+;
+; Comma->semi-colon promotion when (left) conjunct contains a comma not
+; done -- (NP , NP) not covered 'cos too ambig.?
+;
+; Semantics wrong because of kleene operators? + more commas, conj+neg?
+
+PSRULE Tph/np : Tph[CONJ @x] --> (CJ) (N2[NTYPE TEMP, MOD -, CONJ -]) 
+   (P2[MOD -, ADJ -, WH -, PSUBCAT NP]) (N2[+sc])* N2[CONJ @x] (+pco) 
+   (P2[MOD -, ADJ -, WH -, PSUBCAT NP]) : 5 : (ncmod _ 5 2) : 
+   (ncmod _ 5 3) : (ncmod _ 5 7).
+PSRULE Tph/n1-r : Tph[CONJ @x] --> (CJ) (N2[NTYPE TEMP, MOD -, CONJ -]) 
+   (P2[MOD -, ADJ -, WH -, PSUBCAT NP]) (NG) (N1[+sc])* N1[PLU -, CONJ @x] 
+   : 6 : (ncmod _ 6 2) : (ncmod _ 6 3) : (ncmod _ 6 4).
+PSRULE Tph/pp : Tph[CONJ @x] -->  ( N2[NTYPE TEMP, MOD -, CONJ -] ) 
+   ( NG ) ( P2[+sc] )* P2[CONJ @x] : 4 : (ncmod _ 4
+   1) : (ncmod _ 4 3).
+PSRULE Tph/ap : Tph[CONJ @x] -->  ( N2[NTYPE TEMP, MOD -, CONJ -] ) 
+   ( NG ) ( A2[+sc] )* A2[CONJ @x] : 4 : (ncmod _ 4
+   1) : (ncmod _ 4 3).
+PSRULE Tph/vp : Tph[CONJ @x] --> ( V1[+sc] )* V1[CONJ @x] : 2.
+
+; these only license `comma coord.' in TAs
+; e.g. NN1 VVD : JJ , JJ
+PSRULE NP/np_pco : N2[+sc] --> H2[-sc] +pco : 1.
+PSRULE N1/n1_pco-r : N1[+sc] --> H1[-sc] +pco : 1.
+PSRULE PP/pp_pco : P2[+sc] --> H2[-sc] +pco : 1.
+PSRULE AP/ap_pco : A2[+sc] --> H2[-sc] +pco : 1.
+PSRULE VP/v1_pco : V1[+sc] --> H1[-sc] +pco : 1.
+
+
+; ************************************ 
+; The main grammar S rules
+;
+; Pre/postposed agrs/adjuncts
+;
+; Fronted PPs
+; not all possible PPs here, so split into cases
+;
+; `Of course,...' means not ADJ - here
+PSRULE S/pp-np_s : V2[WH @w, INV @i] --> P2[WH -,
+   PSUBCAT NP] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (ncmod _ 3 1).
+PSRULE S/pp-ing_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT VPING] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (xmod _ 3 1).
+PSRULE S/pp-inf_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT VPINF] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (xcomp _ 3 1).
+PSRULE S/pp-prt_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT VPPRT] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (xmod _ 3 1).
+PSRULE S/pp-sfin_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT SFIN] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (cmod _ 3 1).
+PSRULE S/pp-sinf_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT SINF] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (cmod _ 3 1).
+PSRULE S/pp-sing_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT SING] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (cmod _ 3 1).
+PSRULE S/pp-whs_s : V2[WH +, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT WHS] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (cmod _ 3 1).
+PSRULE S/pp-pp_s : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT PP] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (pmod 3 1).
+; for better or worse, he left
+PSRULE S/pp-ap_s-r : V2[WH @w, INV @i] --> P2[WH -,  ADJ -,
+   PSUBCAT AP] ( +pco ) H2[FIN +, WH @w, INV @i, -ta] : 3 
+   : (ncmod _ 3 1).
+; Fronted VPs
+PSRULE S/ppart_s-r : V2[WH @w, INV @i] --> V1[VFORM PPART] ( +pco )
+   H2[WH @w, INV @i, FIN +, -ta] : 3 : (xmod _ 3 1).
+; not nec. if all vbs correctly VVN  in seclarge.lex
+PSRULE S/past_s-r :  V2[WH @x, INV @y, +co] --> V0[VFORM PAST] ( +pco )
+   H2[WH @x, INV @y, FIN +, -co, -ta] : (xmod _ 3 1). 
+PSRULE S/ing_s-r : V2[WH @w, INV @i] --> V1[VFORM ING] ( +pco )  
+   H2[WH @w, INV @i, FIN +, -ta] : 3 : (xmod _ 3 1).
+; Fronted advbls incl. NPs
+PSRULE S/np-nt-adv_s : V2[WH @y, INV @x] --> 
+   N2[WH -, POSS -, NTYPE TEMP, -ta] ( +pco ) 
+   H2[WH @y, FIN +, -ta, INV @x] : 3 : (ncmod _ 3 1).
+PSRULE S/np-ms-adv_s : V2[WH @y, INV @x] --> 
+   N2[WH -, POSS -, NTYPE MEAS, -ta] ( +pco ) 
+   H2[WH @y, FIN +, -ta, INV @x]  : 3 : (ncmod _ 3 1).
+PSRULE S/adv_s : V2[WH @x, INV @y] --> A2[ADV +, MOD -] ( +pco ) 
+   H2[WH @x, INV @y, FIN +, -ta]  : 3 : (ncmod _ 3 1).
+; `needless to say,...', `childless, she married.'
+PSRULE S/ap_s-r : V2[WH @x, INV @y] --> A2[ADV -, MOD -, ATYPE NORM] 
+   +pco H2[WH @x, INV @y, FIN +, -ta]  : 3 : (ncmod _ 3 1).
+; Postposed PPs
+PSRULE S/s_pco_pp : V2[WH -, INV -, +co] --> H2[FIN +,
+   -ta] +pco P2[WH -, ADJ -, CONJ @c]  : 1 
+   : 3 = [PSUBCAT (NP, NONE)], (ncmod _ 1 3)
+   : 3 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 3)
+   : 3 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 3)
+   : 3 = [PSUBCAT PP], (pmod 1 3).
+PSRULE S/s_pco_ppart : V2[WH -, INV -, +co] --> H2[WH -, FIN +, -ta] +pco 
+   V1[VFORM PPART] : 1 : (xmod _ 1 3).
+; not nec if all vbs VVN correctly?
+PSRULE S/s_pco_past-r : V2[WH -, INV -, +co] --> H2[WH -, FIN +, -ta] +pco 
+   V1[VFORM PAST] : 1 : (xmod _ 1 3).
+PSRULE S/s_pco_ing : V2[WH -, INV -, +co] --> H2[WH -, FIN +,
+    -ta] +pco  V1[VFORM ING] : 1 : (xmod _ 1 3).
+PSRULE S/s_pco_np-nt-adv : V2[WH @x, INV @y, +co] --> H2[WH @x, INV
+   @y, FIN +, -ta] +pco N2[NTYPE TEMP, -ta] : 1 : (ncmod _ 1 3).
+PSRULE S/s_pco_np-ms-adv : V2[WH @x, INV @y, +co] --> H2[WH @x, INV
+   @y, FIN +, -ta] +pco N2[NTYPE MEAS, -ta] : 1 : (ncmod _ 1 3).
+PSRULE S/s_pco_adv : V2[WH @x, INV @y, +co] --> H2[WH @x, INV
+   @y, FIN  +, -ta] +pco A2[ADV +] : 1 : (ncmod _ 1 3).
+PSRULE S/s_pco_a1-r : V2[WH @x, INV @y, +co] --> H2[WH @x, INV
+   @y, FIN +, -ta] +pco A1[ADV -] : 1 : (ncmod _ 1 3).
+
+; Echo, vocative, refl, tag S+NP or NP+S rules and other messiness
+; esp. NP[norm] rules below resp. for lots of misparses, so 
+; made most -r and some -co to prevent immed. recursion. Perhaps some
+; of the NPs shld be MOD -?
+; 
+; Note (ta subtype hd dep) = voc, echo, refl, tag, mod .. here, but
+; voc sometimes topicalised (names, etc more often voc than top?) --
+; cld back off on all/most to (ta comma..)?
+
+PSRULE S/s_pco_np-voc-r : V2[WH -, INV -, +co] --> H2[FIN +,
+   -co, -ta] +pco N2[WH -, POSS -, NTYPE NAME] : 1 : (ta voc 1 3). 
+PSRULE S/s_np-voc-r : V2[WH -, INV -, +co] --> H2[FIN +, 
+   -co, -ta] N2[WH -, POSS -, NTYPE NAME] : 1 : (ta voc 1 2). 
+PSRULE S/s_pco_np-voc1-r : V2[WH -, INV -, +co] --> H2[FIN +,
+   -co, -ta] +pco N2[WH -, POSS -, NTYPE TIT] : 1 : (ta voc 1 3). 
+PSRULE S/s_pco_np-voc2-r : V2[WH -, INV -, +co] --> H2[FIN +,
+   -co, -ta] +pco N2[WH -, POSS -, NTYPE PRO] : 1 : (ta voc 1 3). 
+PSRULE S/np-voc_pco_s1-r : V2[WH -, INV -, +co] --> N2[WH -, POSS -,
+   NTYPE NAME] +pco H2[FIN +, -co, -ta] : 1 : (ta voc 3 1). 
+PSRULE S/np-voc_pco_s2 : V2[WH -, INV -, +co] --> N2[WH -, POSS -,
+   NTYPE TIT] +pco H2[FIN +, -co, -ta] : 1 : (ta voc 3 1). 
+PSRULE S/np-voc_pco_s3 : V2[WH -, INV -, +co] --> N2[NTYPE PRO, WH -,
+   POSS -] +pco H2[FIN +, -ta, -co] : 1 : (ta voc 3 1). 
+PSRULE S/np-wh_pco_s : V2[WH -, INV -, +co] --> N2[WH +] +pco H2[FIN
+   +, -co,-ta] : 1 : (ta echo 3 1). 
+PSRULE S/s_pco_np-wh : V2[WH -, INV -, +co] --> H2[FIN +, -co, -ta]
+   +pco  N2[WH +] : 1 : (ta echo 1 3). 
+PSRULE S/s_np-refl-r : V2[WH @x, INV @y, +co] --> H2[WH @x, INV @y, FIN
+   +, -co, -ta] ( +pco ) N2[NTYPE REFL] : 1 : (ta refl 1 3). 
+PSRULE S/np-refl_pco_s :  V2[WH @x, INV @y, +co] --> N2[NTYPE REFL]
+   +pco H2[WH @x, INV @y, FIN +, -co, -ta] : 1 : (ta refl 3 1). 
+; he is nice, is (n't) he
+PSRULE S/s_tag-qu : V2[WH -, INV -, IMP @i, +co] --> H2[FIN +, IMP @i]
+   +pco V0[INV @x] ( NG ) N2[NTYPE PRO] +pqu : 1 : (ta tag 1 3) :
+   (ncmod _ 3 4) : (ncsubj 3 5 _).  
+; topicalisation: `the man, I think',`laundry, I hate' (pro/name is voc!)
+PSRULE S/np-nm_pco_s-r : V2[+co] --> N2[WH -, POSS -, NTYPE NORM]
+   +pco H2[FIN +, -ta, -co] : 1 : (ta comma 3 1).
+PSRULE S/s_pco_np-nm-r : V2[WH -, INV -, +co] --> H2[FIN +, -co, -ta]
+   +pco N2[WH -, POSS -, NTYPE NORM] : 1 : (ta comma 1 3).
+; ..., says/said Mr X (, (the) CEO) -- without quotes
+; ta end so same as non-inverted cases
+PSRULE S/s_pco_v_np-name-r : V2[+co] --> H2[-qo, FIN +] +pco V0[AUX -]
+   N2[NTYPE NAME] : (ta end 1 3) : (ncsubj 3 4 inv).
+PSRULE S/s_pco_v_np-name_pco_n1-nm-r : V2[+co] --> H2[-qo, FIN +] +pco
+   V0[AUX -] N2[NTYPE NAME] +pco N1[NTYPE NORM]: (ta end 1 3) :
+   (ncsubj 3 4 inv) : (ncmod _ 4 6).
+PSRULE S/s_pco_v_np-name_pco_np-nm-r : V2[+co] --> H2[-qo, FIN +] +pco
+   V0[AUX -] N2[NTYPE NAME] +pco N2[NTYPE NORM]: (ta end 1 3) :
+   (ncsubj 3 4 inv) : (ncmod _ 4 6).
+; ..., said he
+PSRULE S/s_pco_v_np-pro-r : V2[+co] --> H2[-qo, FIN +] +pco V0[AUX -]
+   N2[NTYPE PRO] : (ta end 1 3) : (ncsubj 3 4 inv).
+
+; ********************************
+;
+; Main clausal rules
+
+PSRULE S/np_vp : V2[WH @w, INV -] --> N2[WH @w] H1[FIN +] : 2 :
+   (ncsubj 2 1 _). 
+PSRULE S/n1_vp : V2[WH -, INV -] --> N1[NTYPE NORM, PLU -] H1[FIN +] :
+   2: (ncsubj 2 1 _). 
+
+; Small clauses, but rare (overgen cos nom/acc distinction not made)
+
+PSRULE S/np-poss_vp-r : V2[WH -, INV -] --> N2[NTYPE PRO, POSS +] H1[FIN +]
+   : 2 : (ncsubj 2 1 _).
+PSRULE S/np_ing-r : V2[WH -, INV -] --> N2 H1[FIN -, VFORM ING]
+   : 2 : (ncsubj 2 1 _).
+PSRULE S/n1_ing-r : V2[WH -, INV -] --> N1[NTYPE NORM, PLU -] H1[FIN
+   -, VFORM ING] : 2 : (ncsubj 2 1 _). 
+
+; Raising type clausal rules, rare, were CONJ @, but then not raising
+; and wrong semantics
+;
+; that she came matters
+PSRULE S/scomp_vp-r : V2[WH -, INV -] --> V2[COMP +, WH -, FIN +, -ta,
+   nopunct] H1[FIN +] : 2 : (csubj 2 (1 (lambda (c) (lambda (v) v))) that). 
+; her coming matters
+PSRULE S/s-ing_vp-r : V2[WH -, INV -] --> V2[WH -, FIN -, VFORM ING] 
+   H1[FIN +] : 2 : (csubj 2 1 _).
+; who she left matters
+PSRULE S/s-wh_vp-r : V2[WH -, INV -] --> V2[COMP -, WH +, FIN +, -ta,
+   nopunct] H1[FIN +] : 2 : (csubj 2 1 _).
+; leaving matters
+PSRULE S/ing_vp-r : V2[WH -, INV -] --> V1[FIN -, VFORM ING] 
+   H1[FIN +] : 2 : (xsubj 2 1 _).
+; to leave bothers Kim; extrapos. so inv
+PSRULE S/inf_vp-r : V2[WH -, INV -] --> V1[FIN -, VFORM INF] 
+   H1[FIN +] : 2 : (xsubj 2 1 inv).
+
+; Locative/heavy inversion/extrap - rare (be, appear, etc)
+; in the garden is a tree, whether to go seems not clear,
+; for him to go is necessary, ...
+; semantics messy as don't distinguish aux/vb cases?
+; shld also be restricted by PFORM value (eg not WH)
+; note subj 'inv' subtype (+ overlap with raising cases
+; above -- inv with be?)
+
+PSRULE S/pp_vp-r :  V2[WH -, INV -] --> P2[WH -, ADJ -] H1[FIN +] : 2
+   : 1 = [PSUBCAT (NP, NONE)], (ncsubj 2 1 inv) 
+   : 1 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xsubj 2 1 inv)
+   : 1 = [PSUBCAT (SFIN, SINF, SING, WHS)], (csubj 2 1 inv)
+   : 1 = [PSUBCAT PP], (ncsubj 2 1 inv).
+; here / there is a tree
+PSRULE S/advp_vp-r : V2[WH -, INV -] --> A2[AFORM NONE, ATYPE PLACE, ADV +]
+   H1[FIN +] : 2 : (ncsubj 2 1 inv).
+
+;  Clefts - rare 
+
+; all you do is sit around
+PSRULE S/s_be_vp-r : V2[WH -, INV -, FIN +] --> V2[INV -, FIN +,
+   nopunct, -ta] V0[INV @x, AUX BE, FIN +] ( NG ) V1[FIN +, nopunct,
+   -ta] : 2 : (csubj 2 1 _) : (ncmod _ 4 3) : (xcomp _ 2 4).
+
+; Subj raising with `be' (what you do is sit around)
+PSRULE S/s-wh_be_vp-r : V2[WH -, INV -, FIN +] --> V2[WH +, INV -, FIN
+   +, -ta, nopunct] V0[INV @x, AUX BE, FIN +] V1[FIN +, nopunct, -ta]
+   : 2 : (csubj 2 1 _) : (xcomp _ 2 3). 
+
+; Subj-aux inversion (sai)
+
+PSRULE S/sai : V2[INV +, FIN +,  WH -] --> V0[INV @x] ( NG ) 
+   V2[WH -, INV -, COMP -, -ta]  : 3 : (ncmod _ 3 2) : (aux 3 1) : 
+   3 = [VFORM PPART], (passive 3).
+; special cases for `be' (-r cos prefer S/sai eg with VVG)
+; is (not) he (not) the abbot (clearly)
+PSRULE S/sai-be1-r : V2[INV +,  WH -] --> V0[INV @x, AUX BE]
+   ( NG ) N2 ( NG ) N2  ( A2[ADV +] ) : 1 : (ncsubj 1 3 _) : (xcomp _
+   1 5) : (ncmod _ 1 2) : (ncmod _ 1 4) : (ncmod _ 1 6). 
+; is he doctor
+PSRULE S/sai-be-n1-r : V2[INV +,  WH -] --> V0[INV @x, AUX BE]
+   ( NG ) N2 ( NG ) N1  ( A2[ADV +] ) : 1 : (ncsubj 1 3 _) : (xcomp _
+   1 5) : (ncmod _ 1 2) : (ncmod _ 1 4) : (ncmod _ 1 6). 
+; (what) is he in
+PSRULE S/sai-be2 : V2[INV +,  WH -] --> V0[INV @x, AUX BE]
+   ( NG ) N2 ( NG ) P2[WH -]  :  1 : (ncsubj 1 3 _) : (ncmod _ 1 2) : 
+   (ncmod _ 1 4) : (pcomp 1 5).  
+; (who) is he eager to help
+PSRULE S/sai-be3 : V2[INV +,  WH -] --> V0[INV @x, AUX BE]
+   ( NG ) N2 ( NG ) A2[ADV -] : 1 : (ncsubj 1 3 _) : (ncmod _ 1 2) : 
+   (ncmod _ 1 4) : (xcomp _ 1 5).   
+; (what) is he up
+PSRULE S/sai-be4 : V2[INV +,  WH -] --> V0[INV @x, AUX BE]
+   ( NG ) N2 ( NG ) PT : 1 : (ncsubj 1 3 _) : (ncmod _ 1 2) : (ncmod _
+   1 4) : (ncmod prt 1 5). 
+; ought/used you to go
+PSRULE S/sai-ought : V2[INV +,  WH -] --> V0[INV @x, AUX CAT]
+   ( NG ) N2 ( NG ) V1[VFORM INF, FIN -] : 5 : (ncsubj 5 3 _) : (ncmod
+   _ 5 2) : (ncmod _ 5 4) : (aux 5 1).
+
+; Sbar / sentential complements
+
+PSRULE S/comp : V2[WH -, INV -, COMP +] --> CP H2 
+   : (lambda (P) ((P 1) 2)).
+
+; UBCs, means relative clauses are root Ss 
+;
+; Note semantics uses underspecified obj and arg_mod GRs but
+; this will still fail where 2+ vbs and 1st vb is not correct
+; attachment point, eg: `who did he have a desire to help e' or where  
+; gap is inside adj or n, eg: `to who(m) is he accountable e' or `who
+; is he eager to help e'
+; Best to keep as most UBCs only contain one vb, but adj/n cases
+; are quite numerous -- problem here really /sai-be* rules
+
+; which (car) (do) they like
+PSRULE S/np-wh_s-gap : V2[WH +, INV @x] --> N2[WH +] H2[FIN +, INV @x]
+   : 2 : (obj 2 1).
+; which (car) crashed
+PSRULE S/np-wh_vp : V2[WH +, INV -] --> N2[WH +] H1[FIN +] : 2 :
+   (ncsubj 2 1 _).
+; how (do) they meet
+PSRULE S/pp-wh_s : V2[WH +, INV @x] --> P2[WH +, PSUBCAT NONE] 
+   H2[WH -, FIN +, INV @x, -ta] : 2 : (arg_mod _ 2 1).
+; to which house (do) they go
+PSRULE S/pp-np-wh_s : V2[WH +, INV @i] --> P2[WH +, PSUBCAT NP] 
+   H2[FIN +, WH -, INV @i, -ta] : 2  : (arg_mod _ 2 1).
+; how is that man? (wrong sem for `that man')
+PSRULE S/pp-wh_s-be : V2[WH +, INV +] --> P2[WH +, PSUBCAT NONE]
+   H1[FIN +, AUX BE] : 2 : (arg_mod _ 2 1).
+
+; `what if...' rare, semantics? -- add `if' ?
+
+PSRULE S/what_pp-if-r : V2[WH +, INV -] --> DT[WH +]
+   P2[PFORM PREPS, WH -, -sc] : 1 : (ccomp _ 1 2).
+
+; Imperatives -- IMP +, mostly just root S
+; Shld also allow with vocatives (names, (pre)tits, pronouns): 
+; e.g. `Comrades, strike!' and PPs: e.g. `For info, go to URL'
+; but integration with S-->XP,S rules lead to lots of spurious
+; XP,V1 analyses
+
+PSRULE S/imp : V2[IMP +, WH -] --> H1[VFORM BSE, FIN +, -qo] : 1.
+
+; All *coord rules are syn. unheaded to allow for relaxed feature bindings
+; btwn conjuncts, but semantically coordinator is head
+; S coord -- added with oblig comma without conj, use -r when relax
+; feature bindings
+;
+; These rules' semantics conditioned on COMP +/- (complementiser is
+; packaged with conjunction and passed up to mother node, if present)
+
+PSRULE S/cj-beg_s : V2[COMP @c, WH @x, CONJ -, INV @i] --> CJ[CJTYPE BEGIN]
+   H2[COMP @c, WH @x, CONJ +, INV @i] : 2.
+PSRULE S/cj-end_s : V2[COMP @c, WH @w, CONJ +, INV @i, IMP @m] --> (+plb)
+   CJ[CJTYPE END] (+prb) H2[COMP @c, WH @w, CONJ -, INV @i, IMP @m] :
+   4 = [COMP -], 2 :
+   4 = [COMP +], (lambda (P) ((P (4 (lambda (c) (lambda (v) c)))) 2)) :
+   4 = [COMP -], (conj 2 4) : 
+   4 = [COMP +], (conj 2 (4 (lambda (c) (lambda (v) v)))). 
+
+PSRULE S/s_s-coord : V2[COMP @c, CONJ @x, WH @w, INV @i, PLU @p, VFORM @v, AUX
+   @a, FIN @f, IMP @m] --> V2[COMP @c, WH @w, CONJ -, -ta, INV @i, PLU @p,
+   VFORM @v, AUX @a, FIN @f, IMP @m] ( +pco ) V2[COMP @c, WH @w, CONJ +, -ta,
+   INV @i, PLU @p, VFORM @v, AUX @a, FIN @f, IMP @m] : 3 :
+   1 = [COMP -], (conj 3 1) : 
+   1 = [COMP +], (conj (3 (lambda (c) (lambda (v) v))) (1 (lambda (c)
+   (lambda (v) v)))).  
+
+PSRULE S/s_s-coord-r : V2[COMP @c, WH @w, CONJ @x, INV @i, PLU @p, VFORM @v,
+   AUX @a, FIN @f, IMP @m] --> V2[COMP @c, WH @w, CONJ -, -ta, INV @i, PLU @p,
+   VFORM @v, AUX @a, FIN @f, IMP @m] ( +pco ) V2[COMP @c, WH @w, CONJ +, -ta,
+   INV @i, IMP @m1] : 3 :
+   1 = [COMP -], (conj 3 1) : 
+   1 = [COMP +], (conj (3 (lambda (c) (lambda (v) v))) (1 (lambda (c)
+   (lambda (v) v)))).  
+
+
+; *********************************** 
+; V1 complement rules 
+; Rule name convention is /v_c1_c2_cn, p=particle, pp=prep phrase, etc
+;
+; Special particle rules -- prts + make sense of, take advtg of
+; `of' treated as particle (elsewhere PPof) First rule breaks
+; patternset extraction code
+
+PSRULE V/v_prt :  V0[VSUBCAT @x, PRT +] --> H0[VSUBCAT @x] PT : 1
+   : (ncmod prt 1 2).
+PSRULE V1/v_n_of_np : V1 --> H0[VSUBCAT NP, PRT +] N0[PLU -, NTYPE NORM] 
+   P0[PFORM OF] N2 : 1 : (ncmod prt 1 3) : (dobj 1 2).
+
+; Specialised NPs in v_np(_p)(_np) to tighten up subcat acquis and
+; remove spurious ambig (but not other v_np_x cases)
+;
+; Note predicative NPs are dobj/obj, not xcomp (not structurally
+; resolvable); obj2->obj given that not always passive
+
+PSRULE V1/v : V1 --> H0[VSUBCAT NONE] : 1.
+PSRULE V1/v_np : V1 --> H0[VSUBCAT NP] N2[NTYPE NORM] : 1 
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-pro : V1 --> H0[VSUBCAT NP] N2[NTYPE PRO] : 1
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-name : V1 --> H0[VSUBCAT NP] N2[NTYPE NAME] : 1 
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-tit : V1 --> H0[VSUBCAT NP] N2[NTYPE TIT] : 1
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-pl : V1 --> H0[VSUBCAT NP] N2[NTYPE PLACE] : 1
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-org : V1 --> H0[VSUBCAT NP] N2[NTYPE ORG] : 1
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-refl : V1 --> H0[VSUBCAT NP] N2[NTYPE REFL] : 1
+   : (dobj 1 2).
+PSRULE V1/v_np-dir : V1 --> H0[VSUBCAT NP] N2[NTYPE DIR] : 1
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_n1 : V1 --> H0[VSUBCAT NP] N1[NTYPE NORM, WH -, POSS -, PLU -] : 1
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_n1-tit : V1 --> H0[VSUBCAT NP] N1[NTYPE TIT, WH -, POSS -,
+   PLU -] : 1 : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+; cost ten pounds (still dobj + below) -- incl. pass. for metonymy
+PSRULE V1/v_np-ms : V1 --> H0[VSUBCAT NP] N2[NTYPE MEAS] : 1 
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-num : V1 --> H0[VSUBCAT NP] N2[NTYPE NUM] : 1 
+   : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE NORM] PT : 1
+   : (ncmod prt 1 3)  : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-pro_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE PRO] PT : 1 
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-name_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE NAME] PT : 1
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-tit_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE TIT] PT : 1
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-pl_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE PLACE] PT : 1
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-org_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE ORG] PT : 1
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-refl_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE
+   REFL] PT : 1  : (ncmod prt 1 3) : (dobj 1 2).
+PSRULE V1/v_n1_prt : V1 --> H0[VSUBCAT NP, PRT +] N1[NTYPE NORM, WH -,
+   POSS -, PLU -] PT : 1 : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_n1-tit_prt : V1 --> H0[VSUBCAT NP, PRT +] N1[NTYPE TIT, WH
+   -, POSS -, PLU -] PT : 1 : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-ms_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE MEAS] PT : 1 
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_np-num_prt : V1 --> H0[VSUBCAT NP, PRT +] N2[NTYPE NUM] PT : 1 
+   : (ncmod prt 1 3) : 1 = [VFORM PPART], (obj 1 2)
+   : 1 = [VFORM (BSE, INF, ING, PAST, PRES)], (dobj 1 2).
+PSRULE V1/v_pp : V1 --> H0[VSUBCAT PP] P2[WH -, ADJ -, MOD -] : 1 
+   : 2 = [PSUBCAT NP], (iobj 1 2)
+   : 2 = [PSUBCAT NONE], (ncmod prt 1 2)
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 2) 
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 2)
+   : 2 = [PSUBCAT PP], (pcomp 1 2).
+PSRULE V1/v_pp-of : V1 --> H0[VSUBCAT PPOF] P2[ADJ +, PFORM OF, WH -, MOD -] : 1
+   : 2 = [PSUBCAT NONE], (ncmod prt 1 2)
+   : 2 = [PSUBCAT NP], (iobj 1 2) 
+   : 2 = [PSUBCAT VPING], (xcomp _ 1 2) 
+   : 2 = [PSUBCAT SING], (ccomp _ 1 2)
+   : 2 = [PSUBCAT PP], (pcomp 1 2). 
+; SCFs + lex sanction: PSUBCAT WHS, NP, NONE (latter can take VPinf)
+PSRULE V1/v_pp-wh : V1 --> H0[VSUBCAT WHPP] P2[WH +, ADJ -, MOD -]
+   : 1 : 2 = [PSUBCAT (NONE, NP)], (iobj 1 2) : 2 = [PSUBCAT WHS],
+   (ccomp _ 1 2).
+PSRULE V1/v_inf : V1 --> H0[VSUBCAT VPINF] V1[FIN -, VFORM INF] : 1
+   : (xcomp to 1 2).
+PSRULE V1/v_ing : V1 --> H0[VSUBCAT VPING] V1[FIN -, VFORM ING] : 1
+   : (xcomp _ 1 2).
+; following 2 rules now PSUBCAT NP (see SCF-86) 
+PSRULE V1/v_ing_pp : V1 --> H0[VSUBCAT VPING_PP] V1[FIN -, VFORM ING] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] : 1 : (xcomp _ 1 2) : (iobj 1 3).
+; heavy shift variant
+PSRULE V1/v_pp_ing-hs-r : V1 --> H0[VSUBCAT VPING_PP]  P2[WH -, ADJ -,
+   MOD -, PSUBCAT NP] V1[FIN -, VFORM ING] : 1 : (xcomp _ 1 3) : (iobj
+   1 2).
+PSRULE V1/v_ppart : V1 --> H0[VSUBCAT VPPRT] V1[VFORM PPART] : 1 :
+   (xcomp _ 1 2) : (passive 2).
+PSRULE V1/v_bse : V1 --> H0[VSUBCAT VPBSE] V1[VFORM BSE] : 1 :
+   (xcomp _ 1 2).
+PSRULE V1/v_s : V1 --> H0[VSUBCAT SCOMP, -ta] V2[nopunct, -ta] : 1 
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+; said : (") I know (")
+PSRULE V1/v_tcl : V1 --> H0[VSUBCAT SCOMP, -ta] Ta[+cl] : 1 
+   : (comp 1 2).
+PSRULE V1/v_s-subjgap-r : V1 --> H0[VSUBCAT SCOMP, -ta] V1[FIN +, COMP -]
+   : 1 : (ccomp _ 1 2).
+PSRULE V1/v_ap : V1 --> H0[VSUBCAT AP] A2[ADV -] : 1 : (xcomp _ 1 2).
+PSRULE V1/v_np_np : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM] N2[NTYPE
+   NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_np-pl : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM]
+   N2[NTYPE PLACE] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_np-org : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM]
+   N2[NTYPE ORG] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_np-name : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM]
+   N2[NTYPE NAME] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_np-tit : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM]
+   N2[NTYPE TIT] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_np-ms : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM]
+   N2[NTYPE MEAS] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_np-num : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NORM]
+   N2[NTYPE NUM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_n1_np : V1 --> H0[VSUBCAT NP_NP] N1[NTYPE NORM, WH -, POSS
+   -, PLU -] N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np-pl : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE PLACE] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np-org : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE ORG] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np-name : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE NAME] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np-tit : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE TIT] : 1 : (dobj 1 2) : (obj2 1 3).
+; no WH - np-*_np-pro so *give the abbot them back, etc
+PSRULE V1/v_np-pro_np-pro : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE PRO, WH -] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np-ms : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE MEAS] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pro_np-num : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PRO]
+   N2[NTYPE NUM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np-pl : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE PLACE] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np-org : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE ORG] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np-name : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE NAME] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np-tit : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE TIT] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np-ms : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE MEAS] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-name_np-num : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE NAME]
+   N2[NTYPE NUM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np-pl-r : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE PLACE] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np-org-r : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE ORG] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np-pl : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE PLACE] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np-org : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE ORG] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np-name : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE NAME] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np-name : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE NAME] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np-tit : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE TIT] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np-tit : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE TIT] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np-ms : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE MEAS] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np-ms : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE MEAS] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-pl_np-num : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE PLACE]
+   N2[NTYPE NUM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-org_np-num : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE ORG]
+   N2[NTYPE NUM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-refl_np : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE REFL]
+   N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-refl_np-pl : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE
+   REFL] N2[NTYPE PLACE] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-refl_np-name : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE
+   REFL] N2[NTYPE NAME] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-refl_np-tit : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE
+   REFL] N2[NTYPE TIT] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-refl_np-ms : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE
+   REFL] N2[NTYPE MEAS] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np-refl_np-num : V1 --> H0[VSUBCAT NP_NP] N2[NTYPE
+   REFL] N2[NTYPE NUM] : 1 : (dobj 1 2) : (obj2 1 3).
+PSRULE V1/v_np_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[NTYPE NORM]
+   PT N2 : 1 : (dobj 1 2) : (obj2 1 4) : (ncmod prt 1 3).
+PSRULE V1/v_np_prt_n1 : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[NTYPE NORM]
+   PT N1[NTYPE NORM, WH -, POSS -, PLU -] : 1 : (dobj 1 2) : (obj2 1
+   4) : (ncmod prt 1 3). 
+PSRULE V1/v_n1_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +] N1[NTYPE NORM,
+   WH -, POSS -, PLU -] PT N2[NTYPE NORM] : 1 : (dobj 1 2) : (obj2 1
+   4) : (ncmod prt 1 3). 
+PSRULE V1/v_np-pro_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[NTYPE
+   PRO] PT N2 : 1 : (dobj 1 2) : (obj2 1 4) : (ncmod prt 1 3).
+PSRULE V1/v_np-name_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[NTYPE
+   NAME] PT N2 : 1 : (dobj 1 2) : (obj2 1 4) : (ncmod prt 1 3).
+PSRULE V1/v_np-pl_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[NTYPE
+   PLACE] PT N2 : 1 : (dobj 1 2) : (obj2 1 4) : (ncmod prt 1 3).
+PSRULE V1/v_np-org_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[NTYPE
+   ORG] PT N2 : 1 : (dobj 1 2) : (obj2 1 4) : (ncmod prt 1 3).
+PSRULE V1/v_np-refl_prt_np : V1 --> H0[VSUBCAT NP_NP, PRT +]
+   N2[NTYPE REFL] PT N2 : 1 : (dobj 1 2) : (obj2 1 4) : (ncmod prt 1 3).
+; she gives him it back
+PSRULE V1/v_np_np_prt : V1 --> H0[VSUBCAT NP_NP, PRT +] N2[WH -]
+   N2[WH -] PT  : 1 : (dobj 1 2) : (obj2 1 3) : (ncmod prt 1 4).
+; advised Lee [np-wh who to kiss]
+PSRULE V1/v_np_np-wh : V1 --> H0[VSUBCAT NP_NP] N2[WH -] N2[NTYPE PRO, WH +]
+   : 1 : (dobj 1 2) : (obj2 1 3). 
+; obj equi control assumed on following rules 
+PSRULE V1/v_np_inf : V1 --> H0[VSUBCAT SINF] N2[WH -] V1[FIN -, VFORM INF] : 1
+   : (dobj 1 2) : (xcomp to 1 3) : (ncsubj 3 2 _).
+PSRULE V1/v_np_prt_inf : V1 --> H0[VSUBCAT SINF, PRT +] N2 PT V1[FIN
+   -, VFORM INF] : 1 : (dobj 1 2) : (xcomp to 1 4) : (ncmod prt 1 3)
+   : (ncsubj 4 2 _).
+PSRULE V1/v_np_ing : V1 --> H0[VSUBCAT SING] N2 V1[FIN -, VFORM ING] : 1
+   : (dobj 1 2) : (xcomp _ 1 3) : (ncsubj 3 2 _). 
+; restricted to PSUBCAT NP (see SCF-85) 
+PSRULE V1/v_np_ing_pp : V1 --> H0[VSUBCAT SING_PP] N2 V1[FIN -, VFORM
+   ING] P2[WH -, ADJ -, MOD -, PSUBCAT NP] : 1 : (dobj 1 2) : (xcomp
+   _ 1 3) : (ncsubj 3 2 _) : (iobj 1 4).  
+; obj rais control assumed on following poss np cases 
+PSRULE V1/v_poss_ing : V1 --> H0[VSUBCAT SING] N2[POSS +] V1[FIN -,
+   VFORM ING] : 1 : (ncsubj 3 2 _) : (xcomp _ 1 3).
+PSRULE V1/v_poss_ing_pp : V1 --> H0[VSUBCAT SING_PP] N2[POSS +] V1[FIN
+   -, VFORM ING] P2[WH -, ADJ -, MOD -, PSUBCAT NP] : 1 : (ncsubj 3 2
+   _) : (xcomp _ 1 3) : (iobj 1 4). 
+PSRULE V1/v_np_prt_ing : V1 --> H0[VSUBCAT SING, PRT +] N2 PT V1[FIN
+   -, VFORM ING] : 1 : (ncsubj 4 2 _) : (xcomp _ 1 4) : (ncmod prt 1 3).
+; all PSUBCAT values, though only NP, VPING, VPINF, VPPRT, AP, SING,
+; SFIN, PP sanctioned in SCF patterns
+PSRULE V1/v_np_pp : V1 --> H0[VSUBCAT NP_PP] N2 P2[WH -, ADJ -, MOD -]
+   : 1 : (dobj 1 2) : 3 = [PSUBCAT NP], (iobj 1 3)
+   : 3 = [PSUBCAT NONE], (ncmod prt 1 3)
+   : 3 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 3) 
+   : 3 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 3) 
+   : 3 = [PSUBCAT PP], (pcomp 1 3).
+; all PSUBCAT values, though only NP, VPING, AP sanctioned in SCF patterns
+PSRULE V1/v_np_prt_pp : V1 --> H0[VSUBCAT NP_PP, PRT +] N2 PT P2[WH -,
+   ADJ -, MOD -] : 1 : (dobj 1 2) : (ncmod prt 1 3) 
+   : 4 = [PSUBCAT NP], (iobj 1 4) 
+   : 4 = [PSUBCAT NONE], (ncmod prt 1 4)
+   : 4 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 4) 
+   : 4 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 4) 
+   : 4 = [PSUBCAT PP], (pcomp 1 4). 
+; only PSUBCAT NP (SCF-50) or VPING (SCF-40)
+PSRULE V1/v_np_of-np : V1 --> H0[VSUBCAT NP_PPOF] N2 P2[PFORM OF, WH
+   -, MOD -, PSUBCAT NP] : 1 : (dobj 1 2) : (iobj 1 3).
+PSRULE V1/v_np_of-ing : V1 --> H0[VSUBCAT NP_PPOF] N2 P2[PFORM OF, WH
+   -, MOD -, PSUBCAT VPING] : 1 : (dobj 1 2) : (xcomp _ 1 3).
+PSRULE V1/v_n1_pp : V1 --> H0[VSUBCAT NP_PP] N1[NTYPE NORM, WH -, POSS
+   -, PLU -] P2[WH -, ADJ -, MOD -] : 1 : (dobj 1 2) 
+   : 3 = [PSUBCAT NP], (iobj 1 3)
+   : 3 = [PSUBCAT NONE], (ncmod prt 1 3)
+   : 3 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 3)  
+   : 3 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 3) 
+   : 3 = [PSUBCAT PP], (pcomp 1 3). 
+; restrict to PSUBCAT NP to reduce ambig of heavy shift variant --
+; curr. rule doesn't do temporal PPs VVO II NNT ...
+PSRULE V1/v_pp_np-hs-r : V1 --> H0[VSUBCAT NP_PP] P2[WH -, ADJ -, MOD
+   -, PSUBCAT NP] N2[MOD +, WH -] : 1 : (dobj 1 3) 
+   : 2 = [PSUBCAT NP], (iobj 1 2).
+; only PSUBCAT NONE, NP, WHS, sanctioned by SCFs and lex?
+PSRULE V1/v_np_pp-wh : V1 --> H0[VSUBCAT NP_WHPP] N2[WH -] P2[WH +,
+   ADJ -, MOD -] : 1 : (dobj 1 2) 
+   : 3 = [PSUBCAT (NONE, NP)], (iobj 1 3)  
+   : 3 = [PSUBCAT WHS], (ccomp _ 1 3).
+; PSUBCAT combinations: NP+NP, NP+SINF, NP+SFIN, NP+VPINF, NP+PP
+; sanctioned by SCFs so restricted first PP below, but assumed all 
+; values for 2nd PP
+PSRULE V1/v_pp_pp : V1 --> H0[VSUBCAT PP_PP] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] P2[WH -, ADJ -, MOD -]
+   : 1 : (iobj 1 2) : 3 = [PSUBCAT NP], (iobj 1 3) 
+   : 3 = [PSUBCAT NONE], (ncmod prt 1 3) 
+   : 3 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 3) 
+   : 3 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 3)
+   : 3 = [PSUBCAT PP], (pcomp 1 3).
+; PSUBCAT combinations NP+WHS, NP+NP, NP+NONE
+PSRULE V1/v_pp_pp-wh : V1 --> H0[VSUBCAT PP_WHPP] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] P2[WH +, ADJ -, MOD -]
+   : 1 : (iobj 1 2) : 3 = [PSUBCAT (NP, NONE)], (iobj 1 3)
+   : 3 = [PSUBCAT WHS], (ccomp _ 1 3).
+; restrict to PSUBCAT NP below
+PSRULE V1/v_pp_s : V1 --> H0[VSUBCAT PP_SCOMP] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] V2[WH -, INV -,
+   nopunct, -ta] : 1 : (iobj 1 2) : 3 = [COMP -], (ccomp _ 1 3)
+   : 3 = [COMP +], (ccomp (3 (lambda (c) (lambda (v) c))) 1 (3 (lambda (c)
+   (lambda (v) v)))).
+PSRULE V1/v_pp_s-wh : V1 --> H0[VSUBCAT PP_WHS] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] V2[WH +, INV -, nopunct, -ta] : 1
+   : (iobj 1 2) : 3 = [COMP -], (ccomp _ 1 3)
+   : 3 = [COMP +], (ccomp (3 (lambda (c) (lambda (v) c))) 1 (3 (lambda (c)
+   (lambda (v) v)))).
+; dictated to him what to say (dobj?)
+PSRULE V1/v_pp_np-wh : V1 --> H0[VSUBCAT PP_WHVP] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] N2[WH +, MOD +] 
+   : 1 : (dobj 1 3) : (iobj 1 2). 
+PSRULE V1/v_pp_inf : V1 --> H0[VSUBCAT PP_VPINF] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] V1[FIN -, VFORM INF] 
+   : 1 : (xcomp to 1 3) : (iobj 1 2). 
+PSRULE V1/v_pp_ap : V1 --> H0[VSUBCAT PP_AP] 
+   P2[WH -, ADJ -, MOD -, PSUBCAT NP] A2[ADV -]
+   : 1 : (xcomp _ 1 3) : (iobj 1 2). 
+PSRULE V1/v_np_pp_pp : V1 --> H0[VSUBCAT NP_PP_PP] N2 P2[WH -, ADJ -,
+   MOD -, PSUBCAT NP] P2[WH -, ADJ -, MOD -, PSUBCAT NP] : 1 : (dobj 1
+   2) : (iobj 1 3) : (iobj 1 4).
+; assume obj equi
+PSRULE V1/v_np_np-ms_inf : V1 --> H0[VSUBCAT NP_NP_VPINF] N2
+   N2[NTYPE MEAS] V1[FIN -, VFORM INF] : 1 
+   : (dobj 1 2) : (obj2 1 3) : (xcomp to 1 4) : (ncsubj 4 2 _).
+PSRULE V1/v_np_np-nt_inf : V1 --> H0[VSUBCAT NP_NP_VPINF] N2
+   N2[NTYPE TEMP] V1[FIN -, VFORM INF] : 1 
+   : (dobj 1 2) : (obj2 1 3) : (xcomp to 1 4) : (ncsubj 4 2 _).
+PSRULE V1/v_np_np-ms_pp : V1 --> H0[VSUBCAT NP_NP_PP] N2
+   N2[NTYPE MEAS] P2[WH -, ADJ -, MOD -, PFORM FOR, PSUBCAT SINF] : 1 
+   : (dobj 1 2) : (obj2 1 3) : (ccomp _ 1 4).
+PSRULE V1/v_np_np-nt_pp : V1 --> H0[VSUBCAT NP_NP_PP] N2
+   N2[NTYPE TEMP] P2[WH -, ADJ -, MOD -, PFORM FOR, PSUBCAT SINF] : 1 
+   : (dobj 1 2) : (obj2 1 3) : (ccomp _ 1 4).
+PSRULE V1/v_np_s : V1 --> H0[VSUBCAT NP_SCOMP] N2 V2[INV -, nopunct,
+   -ta] : 1 : (dobj 1 2) 
+   : 3 = [COMP +], (ccomp (3 (lambda (c) (lambda (v) c))) 1 (3 (lambda (c)
+   (lambda (v) v)))) 
+   : 3 = [COMP -], (ccomp _ 1 3).
+PSRULE V1/v_np_prt_s : V1 --> H0[VSUBCAT NP_SCOMP, PRT +] N2 PT V2[INV
+   -, nopunct, -ta] : 1 : (dobj 1 2) : (ncmod prt 1 3) 
+   : 4 = [COMP +], (ccomp (4 (lambda (c) (lambda (v) c))) 1 (4 (lambda (c)
+   (lambda (v) v)))) 
+   : 4 = [COMP -], (ccomp _ 1 4).
+; assume object equi control and that APs can have subjs
+PSRULE V1/v_np_ap : V1 --> H0[VSUBCAT NP_AP] N2 A2[ADV -] : 1 : (dobj
+   1 2) : (ncsubj 3 2 _) : (xcomp _ 1 3). 
+; heavy shift rule, restrict NTYPE NORM to reduce spurious ambig.
+PSRULE V1/v_ap_np-hs-r : V1 --> H0[VSUBCAT NP_AP] A2[ADV -] N2[NTYPE
+   NORM] : 1 : (dobj 1 3) : (xcomp _ 1 2) : (ncsubj 3 2 _).
+PSRULE V1/v_np_prt_ap : V1 --> H0[VSUBCAT NP_AP, PRT +] N2 PT A2[ADV
+   -] : 1 : (dobj 1 2) : (ncsubj 4 2 _) : (ncmod prt 1 3). 
+PSRULE V1/v_np_np_s : V1 --> H0[VSUBCAT NP_NP_SCOMP] N2 N2 V2[WH -, INV
+  -, nopunct, -ta] : 1 : (dobj 1 2) : (obj2 1 3) 
+   : 4 = [COMP +], (ccomp (4 (lambda (c) (lambda (v) c))) 1 (4 (lambda (c)
+   (lambda (v) v)))) 
+   : 4 = [COMP -], (ccomp _ 1 4).
+
+; VP pre/postmod rules
+
+PSRULE V1/adv_vp : V1[MOD +] --> A2[ADV +, MOD -, ASUBCAT NONE] H1 : 2
+   : (ncmod _ 2 1).
+PSRULE V1/vp_advp : V1[MOD +] --> H1 A2[ADV +] : 1 : (ncmod _ 1 2).
+; assume all non-wh psubcats
+PSRULE V1/vp_pp : V1[MOD +] --> H1 P2[ADJ -, WH -] : 1 
+   : 2 = [PSUBCAT NP], (ncmod _ 1 2)
+   : 2 = [PSUBCAT NONE], (ncmod prt 1 2)
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+PSRULE V1/vp_np-nt-adv : V1[MOD +] --> H1 N2[NTYPE TEMP, -ta] : 1 :
+   (ncmod _ 1 2).
+PSRULE V1/vp_np-ms-adv : V1[MOD +] --> H1 N2[NTYPE MEAS, -ta] : 1 :
+   (ncmod _ 1 2).
+; to spend (two hours working out) is hard
+PSRULE V1/np-nt-adv_vp-r : V1[MOD -] --> N2[NTYPE TEMP, -ta] H1 : 2 :
+   (ncmod _ 2 1).
+PSRULE V1/np-ms-adv_vp-r : V1[MOD -] --> N2[NTYPE MEAS, -ta] H1 : 2 :
+   (ncmod _ 2 1).
+; (in order) to mods always subj control? - how?, -r to prefer arg
+PSRULE V1/vp_inf-r : V1[MOD +] --> H1 V1[FIN -, VFORM INF] : 1 :
+   (xmod to 1 2).
+PSRULE V1/not_vp : V1[MOD @x] --> NG H1[MOD @x] : 2 : (ncmod _ 2 1).
+
+; V1/V coord -- MOD is passed here, but relaxed on relaxed binding -r
+; coord; added coord with oblig comma without conj, 
+
+PSRULE V1/cj-beg_vp : V1[CONJ -, MOD @x] --> CJ[CJTYPE BEGIN] 
+   H1[CONJ +, MOD @x] : 2.
+PSRULE V1/cj-end_vp : V1[CONJ +, MOD @m] --> (+plb) CJ[CJTYPE END] 
+   (+prb) H1[CONJ -, MOD @m] : 2 : (conj 2 4).
+
+PSRULE V1/vp_vp-coord : V1[CONJ @x, MOD @z, PLU @p, VFORM @v, AUX @a,
+   FIN @f] --> V1[CONJ -, MOD @z, PLU @p, VFORM @v, AUX @a, FIN @f] (
+   +pco ) V1[CONJ +, MOD @z, PLU @p, VFORM @v, AUX @a, FIN @f] : 3 :
+   (conj 3 1).
+
+PSRULE V1/vp_vp-coord-r : V1[CONJ @x, MOD @z, PLU @p, VFORM @v, AUX
+   @a, FIN @f] --> V1[CONJ -, MOD @z, PLU @p, VFORM @v, AUX @a, FIN
+   @f] ( +pco ) V1[CONJ +] : 3 : (conj 3 1).
+
+PSRULE V/cj-beg_v : V0[CONJ -, VSUBCAT @y] --> CJ[CJTYPE BEGIN] 
+   H0[CONJ +, VSUBCAT @y] : 2.
+PSRULE V/cj-end_v : V0[CONJ +, VSUBCAT @y] --> CJ[CJTYPE END] 
+   H0[CONJ -, VSUBCAT @y] : 1 : (conj 1 2).
+PSRULE V/sl-end_v : V0[CONJ +, VSUBCAT @y] --> +psl H0[CONJ -,
+   VSUBCAT @y] : 1 : (conj 1 2).
+
+PSRULE V/v_v-coord : V0[CONJ @x, VSUBCAT @y, PLU @p, VFORM @v, AUX @a,
+   FIN @f] --> V0[CONJ -, VSUBCAT @y, PLU @p, VFORM @v, AUX @a, FIN
+   @f] ( +pco ) V0[CONJ +, VSUBCAT @y, PLU @p, VFORM @v, AUX @a, FIN
+   @f] : 3 : (conj 3 1).
+
+PSRULE V/v_v-coord-r : V0[CONJ @x, VSUBCAT @y, PLU @p, VFORM @v, AUX
+   @a, FIN @f] --> V0[CONJ -, VSUBCAT @y, PLU @p, VFORM @v, AUX @a,
+   FIN @f] ( +pco ) V0[CONJ +, VSUBCAT @y, PLU @p] : 3 : (conj 3 1).
+
+; *********************************************
+;
+; Auxiliaries a special case for subcat etc
+; Lots of optional elements to deal with interleaved / heavy shifted
+; adverbials (ap,pp) and negation (these increase spurious ambig
+; in be/have so cld split rules and make interleaved -r?)
+; 
+; PP mods assumed to be PSUBCAT NP in syn/sem
+;
+; 'be' rules (incl. copular `be')
+; 'be' aux / cop distinction based on finiteness of verbal complement
+;
+
+PSRULE V1/be_ppart : V1 --> H0[INV @x, AUX BE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM PPART]
+   : 4 : (passive 4) : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 1 3).
+; to deal with occasional VVN missing in lexicon, rare?
+PSRULE V1/be_past-r : V1 --> H0[INV @x, AUX BE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM PAST]
+   : 4 : (passive 4) : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 1 3). 
+PSRULE V1/be_ing : V1 --> H0[INV @x, AUX BE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM ING,
+   FIN -] : 4 : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 1 3). 
+; rest `be' is main (finite) verb, so xcomp, subj raising control - how?
+PSRULE V1/be_inf : V1 --> H0[INV @x, AUX BE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM INF,
+   FIN -] : 1 : (ncmod _ 4 2) : (xcomp to 1 4) : (ncmod _ 1 3).
+PSRULE V1/be_pp : V1 --> H0[INV @x, AUX BE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) ( NG ) P2[WH -] : 1 :
+   (ncmod _ 1 2) : (pcomp 1 5) : (ncmod _ 1 3) : (ncmod _ 1 4).  
+PSRULE V1/be_prt : V1 --> H0[INV @x, AUX BE] ( NG ) PT : 1 : (ncmod
+   prt 1 3) : (ncmod _ 1 2).
+PSRULE V1/be_ap : V1 --> H0[INV @x, AUX BE] ( P2[MOD -, WH -, PSUBCAT
+   NP] ) A2[ADV -] : 1 : (ncmod _ 1 2) : (xcomp _ 1 3). 
+PSRULE V1/be_np : V1 --> H0[INV @x, AUX BE] ( A2[ADV +] )
+   ( P2[MOD -, WH -, PSUBCAT NP] ) ( NG ) N2 ( PT ) : 1 :
+   (ncmod _ 1 2) : (ncmod _ 1 4) : (xcomp _ 1 5) : (ncmod _ 1 3) : (ncmod
+   prt 1 6).
+PSRULE V1/be_n1 : V1 --> H0[INV @x, AUX BE]  ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) ( NG ) N1[WH -, POSS -,
+   PLU -] ( PT ) : 1 : (ncmod _ 1 2) : (ncmod _ 1 4) : (xcomp _ 1 5) :
+   (ncmod _ 1 3) : (ncmod prt 1 6).
+PSRULE V1/be_s : V1 --> H0[INV @x, AUX BE]  V2[nopunct, -ta] : 1 
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE V1/be_ta : V1 --> H0[INV @x, AUX BE] Ta[+cl] : 1 
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE V1/be_t-quo : V1 --> H0[INV @x, AUX BE] ( +pcl ) V2[+qo] : 1 
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+
+; Interleaved temporal advbls - in most aux complement rules
+; MEAS / DIR NP-advbls too?
+
+PSRULE V1/be_adv_ppart : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -]
+   V1[MOD -, VFORM PPART] : 3 : (passive 3) : (aux 3 1) : (ncmod _ 3 2).
+PSRULE V1/be_adv_past-r : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -]
+   V1[MOD -, VFORM PAST] : 3 : (passive 3) : (aux 3 1) : (ncmod _ 3 2).
+PSRULE V1/be_adv_ing : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -]
+   V1[MOD -, VFORM ING, FIN -] : 3 : (aux 3 1) : (ncmod _ 3 2).
+PSRULE V1/be_adv_inf : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -] 
+   V1[MOD -, VFORM INF, FIN -] : 1 : (xcomp to 1 3) : (ncmod _ 3 2).
+PSRULE V1/be_adv_pp : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -] ( NG ) 
+   P2[WH -] : 1 : (ncmod _ 1 2) : (ncmod _ 1 3) : (pcomp 1 4).
+PSRULE V1/be_adv_ap : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -]
+   ( NG ) A2[ADV -] : 1 : (ncmod _ 1 2) : (ncmod _ 1 3) : (xcomp _ 1 4).
+PSRULE V1/be_adv_np : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -]
+   ( NG ) N2 ( PT ) : 1 : (ncmod _ 1 2) : (ncmod _ 1 3) : (xcomp _ 1
+   4) : (ncmod prt 1 5).
+PSRULE V1/be_adv_n1 : V1 --> H0[INV @x, AUX BE] N2[NTYPE TEMP, MOD -]
+   ( NG ) N1[WH -, POSS -, PLU -] ( PT ) : 1 : (ncmod _ 1 2) : (ncmod
+   _ 1 3) : (xcomp _ 1 4) : (ncmod prt 1 5).
+
+; `do' rules (incl. main vb `do')
+
+PSRULE V1/do_bse : V1 --> H0[INV @x, AUX DO] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM BSE] :
+   4 : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 4 3).  
+PSRULE V1/do_np : V1 --> H0[INV @x, AUX DO]  ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) N2 : 1 : (dobj 1 4) :
+   (ncmod _ 1 2) : (ncmod _ 1 3).   
+PSRULE V1/do_np_np  : V1 --> H0[INV @x, AUX DO]  ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) N2 N2 : 1 : (dobj 1 4) :
+   (ncmod _ 1 2) : (ncmod _ 1 3) : (obj2 1 5).   
+PSRULE V1/do_np_pp : V1 --> H0[INV @x, AUX DO] N2 P2[PFORM FOR,
+   PSUBCAT NP] : 1 : (dobj 1 2) : (iobj 1 3).
+PSRULE V1/do_pp : V1 --> H0[INV @x, AUX DO] P2[PFORM FOR, PSUBCAT NP]
+   : 1 : (iobj 1 2). 
+PSRULE V1/do_as-pp : V1 --> H0[INV @x, AUX DO] P2[PFORM AS, PSUBCAT
+   PP] : 1 : (pcomp 1 2).  
+PSRULE V1/do_as-s : V1 --> H0[INV @x, AUX DO] P2[PFORM AS, PSUBCAT
+   SFIN] : 1 : (ccomp as 1 2).
+PSRULE V1/do_adv_bse : V1 --> H0[INV @x, AUX DO] N2[NTYPE TEMP, MOD -] 
+   V1[MOD -, VFORM BSE] : 3 : (aux 3 1) : (ncmod _ 3 2).
+
+; Infinitive `to'
+
+PSRULE V1/to_bse : V1 --> H0[INV @x, AUX TO] ( A2[ADV +] ) V1[VFORM
+   BSE, MOD -] : 3 : (ncmod _ 3 2). 
+PSRULE V1/to_adv_bse : V1 --> H0[INV @x, AUX TO] N2[NTYPE TEMP, MOD -]
+   V1[VFORM BSE, MOD -]  : 3 : (ncmod _ 3 2). 
+
+; `have' rules
+
+; when first rule matches, need to correct obj2 GR if not passive
+PSRULE V1/have_ppart-r : V1 --> H0[INV @x, AUX HAVE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM PPART]
+   : 4 : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 4 3). 
+PSRULE V1/have_past : V1 --> H0[INV @x, AUX HAVE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[MOD -, VFORM PAST]
+   : 4 : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 4 3). 
+; `have to' = must
+PSRULE V1/have_inf : V1 --> H0[INV @x, AUX HAVE] ( A2[ADV +] ) (
+   P2[MOD -, WH -, PSUBCAT NP] ) V1[VFORM INF, FIN -, MOD
+   -] : 4 : (aux 4 1) : (ncmod prt 1 to) : (ncmod _ 4 2) : (ncmod _
+   4 3). 
+; (more) `main verb' have, obj equi control?, passive / active
+; ? has this happened yet -- only sai?
+PSRULE V1/have_np_ppt : V1 --> H0[INV -, AUX HAVE] N2 ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[VFORM PPART, MOD
+   -] : 1 : (ncmod _ 5 3) : (dobj 1 2) : (ncmod _ 5 4) : (ncsubj 5
+   2 obj) : (passive 5). 
+; we can have this (always) happen now
+PSRULE V1/have_np_bse : V1 --> H0[INV -, AUX HAVE] N2 ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[VFORM BSE, MOD -] 
+   : 1 : (ncmod _ 5 3) : (dobj 1 2) : (ncmod _ 5 4) : (ncsubj 5
+   2 _).
+PSRULE V1/have_np : V1 --> H0[INV @x, AUX HAVE] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) N2 : 1 : (ncmod _ 1 2)
+   : (ncmod _ 1 3) : (dobj 1 4).
+PSRULE V1/have_n1 : V1 --> H0[INV @x, AUX HAVE] ( A2[ADV +] ) (
+   P2[MOD -, WH -, PSUBCAT NP] ) N1[NTYPE NORM, WH -, POSS
+   -, PLU -]  : 1 : (ncmod _ 1 2) : (ncmod _ 1 3) : (dobj 1 4).
+
+PSRULE V1/have_adv_ppart-r : V1 --> H0[INV @x, AUX HAVE] N2[NTYPE TEMP, MOD -] 
+   V1[MOD -, VFORM PPART] : 3 : (aux 3 1) : (ncmod _ 3 2).
+PSRULE V1/have_adv_past: V1 --> H0[INV @x, AUX HAVE] N2[NTYPE TEMP, MOD -] 
+   V1[MOD -, VFORM PAST] : 3 : (aux 3 1) : (ncmod _ 3 2).
+PSRULE V1/have_adv_inf : V1 --> H0[INV @x, AUX HAVE] N2[NTYPE TEMP, MOD -] 
+   V1[VFORM INF, FIN -, MOD -] : 3 : (aux 3 1) : (ncmod prt 1 to) :
+   (ncmod _ 3 2).
+; `main verb' have
+PSRULE V1/have_np_adv_ppt : V1 --> H0[INV -, AUX HAVE] N2 N2[NTYPE
+   TEMP, MOD -] V1[VFORM PPART, MOD -] : 1 : (ncmod _ 4 3) : (dobj 1
+   2) : (ncsubj 4 2 obj) : (passive 4). 
+PSRULE V1/have_np_adv_bse : V1 --> H0[INV -, AUX HAVE] N2 N2[NTYPE
+   TEMP, MOD -] V1[VFORM BSE, MOD -] : 1 : (ncmod _ 4 3) : (dobj 1 2)
+   : (ncsubj 4 2 _). 
+PSRULE V1/have_adv_np : V1 --> H0[INV @x, AUX HAVE] N2[NTYPE TEMP, MOD
+   -] N2 : 1 : (dobj 1 3) : (ncmod _ 1 2).
+PSRULE V1/have_adv_n1 : V1 --> H0[INV @x, AUX HAVE] N2[NTYPE TEMP, MOD -]  
+   N1[NTYPE NORM, WH -, POSS -, PLU -] : 1 : (dobj 1 3) : (ncmod _ 1 2).
+
+; had better / best but *had worse etc
+PSRULE V1/have_adver_bse : V1 --> H0[INV @x, AUX HAVE] A0[ATYPE CAT,
+   AFORM ER, ADV +] V1[VFORM BSE, MOD -] : 3 : (aux 3 1) : (ncmod _
+   1 2).
+PSRULE V1/have_advest_bse : V1 --> H0[INV @x, AUX HAVE] A0[ATYPE CAT,
+   AFORM EST, ADV +] V1[VFORM BSE, MOD -] : 3 : (aux 3 1) : (ncmod _
+   1 2).
+; have him on (that ...)
+PSRULE V1/have_np_on : V1 --> H0[INV -, AUX HAVE] N2 PT (V2[FIN +,
+   INV -, WH -]) : 1 : (ncmod prt 1 3) : (dobj 1 2)
+   : 4 = [COMP -], (ccomp _ 1 4)
+   : 4 = [COMP +], (ccomp (4 (lambda (c) (lambda (v) c))) 1 (4 (lambda (c)
+   (lambda (v) v)))).
+PSRULE V1/had_on :  V1 --> H0[INV -, AUX HAVE, VFORM PPART] PT
+   (P2[PSUBCAT NP, MOD -, WH -]) (V2[FIN +,    INV -, WH -]) 
+   : 1 : (ncmod prt 1 2) : (iobj 1 3) 
+   : 4 = [COMP -], (ccomp _ 1 4)
+   : 4 = [COMP +], (ccomp (4 (lambda (c) (lambda (v) c))) 1 (4 (lambda (c)
+   (lambda (v) v)))).
+; have as many problems as me (hacky)
+PSRULE V1/have_as : V1 --> H0[INV -, AUX HAVE] P2[PFORM AS, PSUBCAT
+   NP] : 1 : (iobj 1 2).
+
+; Modals / cat (used, ought,...)
+
+PSRULE V1/modal_bse : V1 --> H0[INV @x, AUX MODAL] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[VFORM BSE, MOD -] :
+   4 : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 4 3).	 
+PSRULE V1/cat_inf : V1 --> H0[INV @x, AUX CAT] ( A2[ADV +] ) 
+   ( P2[MOD -, WH -, PSUBCAT NP] ) V1[VFORM INF, FIN -,
+   MOD -] : 4 : (aux 4 1) : (ncmod _ 4 2) : (ncmod _ 4 3) : (ncmod prt 1
+   to).
+
+; Adding elliptical rules for aux increases coverage but also spurious
+; ambiguity, so add rules but mostly insist on sentence final ._.  or
+; comma punct and make rare -r, Note ellip `value' in sem
+; be/have/do rules must have neg so don't interact with `gap' rules below
+
+PSRULE V1/be-ellip_pdo : V1 --> H0[INV -, AUX BE]  NG  +pdo : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/do-ellip_pdo : V1 --> H0[INV -, AUX DO]  NG  +pdo : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/have-ellip_pdo-r : V1 --> H0[INV -, AUX HAVE] NG ( V0[AUX
+   TO] ) +pdo : 1 : (ncmod _ ellip 2) : (aux ellip 1) : (ncmod prt 1 3).
+PSRULE V1/to-ellip_pdo-r : V1 --> H0[INV -, AUX TO]  ( NG ) +pdo : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/modal-ellip_pdo-r : V1 --> H0[INV -, AUX MODAL]  ( NG ) +pdo : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/cat-ellip_pdo-r : V1 --> H0[INV -, AUX CAT]  ( NG )  ( V0[AUX
+   TO] ) +pdo : 1 : (ncmod _ ellip 2) : (aux ellip 1) : (ncmod prt 1 3).
+PSRULE V1/be-ellip_pco : V1 --> H0[INV -, AUX BE]  NG  +pco  : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/do-ellip_pco : V1 --> H0[INV -, AUX DO]  NG  +pco : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/have-ellip_pco-r : V1 --> H0[INV -, AUX HAVE]   NG   ( V0[AUX
+   TO] ) +pco  : 1 : (ncmod _ ellip 2) : (aux ellip 1) : (ncmod prt 1 3).
+PSRULE V1/to-ellip_pco-r : V1 --> H0[INV -, AUX TO]  ( NG ) +pco : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/modal-ellip_pco-r : V1 --> H0[INV -, AUX MODAL]  ( NG ) +pco : 1 :
+   (ncmod _ ellip 2) : (aux ellip 1).
+PSRULE V1/cat-ellip_pco-r : V1 --> H0[INV -, AUX CAT]  ( NG ) ( V0[AUX
+   TO] ) +pco  : 1 : (ncmod _ ellip 2) : (aux ellip 1) : (ncmod prt 1 3).
+
+; UBCs and `do', `have' and `be' gap hack -- increases spurious ambig. so
+; -r -- what did he start doing / having / being e? / the best you can
+
+PSRULE V1/do_gap-r : V1 --> H0[INV @x, AUX DO] : 1.
+PSRULE V1/have_gap-r : V1 --> H0[INV @x, AUX HAVE] : 1.
+PSRULE V1/be_gap-r : V1 --> H0[INV @x, AUX BE] : 1.
+PSRULE V1/mod_gap-r : V1 --> H0[INV -, AUX MODAL] : 1.
+
+; Aux coord rules, no oblig comma, no -r relaxed rule
+
+PSRULE V/cj-beg_aux : V0[INV @x, CONJ -, AUX @y] --> CJ[CJTYPE BEGIN] 
+   H0[INV @x, CONJ +, AUX @y] : 2.
+PSRULE V/cj-end_aux : V0[INV @x, CONJ +, AUX @y] --> CJ[CJTYPE END] 
+   H0[INV @x, CONJ -, AUX @y] : 1 : (conj 1 2).
+
+PSRULE V/aux_aux-coord : V0[INV @x, CONJ @z, PLU @p, VFORM
+   @v, AUX @a, FIN @f] --> V0[INV @x, CONJ -, PLU @p, VFORM @v, AUX
+   @a, FIN @f] ( +pco ) V0[INV @x, CONJ +, PLU @p, VFORM @v, AUX @a,
+   FIN @f] : 3 : (conj 3 1).
+
+; Special `be' unlike-cat coord rules, all -r -- there's more + sai
+; versions not dealt with
+
+PSRULE V1/be_n1-np-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) N1[POSS -, WH -, CONJ -, -ta] N2[POSS -, WH -, CONJ +, -ta] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_np_n1-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) N2[POSS -, WH -, CONJ -, -ta] N1[POSS -, WH -, CONJ +, -ta] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_ap_np-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) A2[CONJ -] N2[POSS -, WH -, CONJ +, -ta] : 1 : 
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_np_ap-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) N2[POSS -, WH -, CONJ -, -ta] A2[CONJ +] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_np_pp-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) N2[POSS -, WH -, CONJ +, -ta] P2[CONJ +, PSUBCAT NP] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_ap_pp-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) A2[CONJ -] P2[CONJ +, PSUBCAT NP] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_pp_ap-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) P2[CONJ -, PSUBCAT NP] A2[ADV -, CONJ +] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_vp_pp-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   V1[AUX -, CONJ -] P2[CONJ +, PSUBCAT NP] : 1 :
+   (conj 3 2) : (xcomp _ 1 3).
+PSRULE V1/be_pp_vp-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   (NG) P2[CONJ -, PSUBCAT NP] V1[AUX -, CONJ +] : 1 :
+   (conj 4 3) : (xcomp _ 1 4) : (ncmod _ 1 2).
+PSRULE V1/be_vp_ap-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   V1[AUX -, CONJ -] A2[CONJ +, ADV -] : 1 :
+   (conj 3 2) : (xcomp _ 1 3).
+PSRULE V1/be_ap_vp-ucc-r : V1 --> H0[INV @x, AUX BE] 
+   A2[CONJ -, ADV -] V1[AUX -, CONJ +] : 1 :
+   (conj 3 2) : (xcomp _ 1 3).
+
+; ************************************
+
+; NP rules
+
+; Named entity recognition! -- limited to CLAWS tagset noun classif.
+; see NTYPE feature above, work better if seclarge.lex improved
+;
+; N2 --> ... H2 ... MOD - on hd dgter if blocking postmods, + on mther if
+; there is a postmod
+;
+;
+; Numbers
+;
+; needs tokenised training data to prefer combining numbers and punct
+; ncmod values num, range, decim 
+
+PSRULE N0/n-num_n-num : N0[WH -, POSS -, MOD +]  --> H0[NTYPE NUM, MOD
+   -] N0[NTYPE NUM] : 1 : (ncmod num 1 2).
+; complx nos sep by comma
+PSRULE N0/n-num_pco_n-num : N0[WH -, POSS -, MOD +]  --> H0[NTYPE NUM, MOD
+   +] +pco N0[NTYPE NUM, MOD +] : 1 : (ncmod num 1 3).
+; shld do decimals if tokenised 1_MC ._. 49_MC
+PSRULE N0/dec-num : N0[WH -, POSS -, MOD -]  --> H0[NTYPE NUM] +pdo 
+   N0[NTYPE NUM] : 1 : (ncmod decim 1 3).
+; numerical ranges - dependent on tokenising (MC-MC still single NUM)
+PSRULE N0/range-num1 : N0[WH -, POSS -, MOD -] --> H0[NTYPE NUM] +pda 
+   N0[NTYPE NUM] : 3 : (ncmod range 3 1).
+PSRULE N0/range-num2 : N0[WH -, POSS -, MOD -] --> H0[NTYPE NUM] +pcl 
+   N0[NTYPE NUM] : 3 : (ncmod range 3 1).
+; dates, times, etc
+PSRULE N1/cplx-nt : N1[NTYPE TEMP, WH -, POSS -] --> ( N0[NTYPE NUM] ) H0 
+   ( N0[NTYPE NUM] ) (+pco) N0[NTYPE NUM] : 2 : (ncmod num 2 1) :
+   (ncmod num 2 3) : (ncmod num 2 5).
+PSRULE N1/n-nt_a-nt : N1[NTYPE TEMP, WH -, POSS -] --> H0[NTYPE NUM]
+   A0[ATYPE TEMP, MOD -] : 1 : (ncmod num 1 2).
+; premod `about 3...'
+PSRULE N0/deg_n1-num : N0[WH -, POSS -, MOD -] --> A0[ATYPE
+   DG, ADV +] H0[NTYPE NUM] : 2 : (ncmod _ 2 1).
+
+; number standalone rules
+;
+; change type for `(the) twenty who came', `(the) twenty of them' etc
+PSRULE NP/det_n-num : N2[WH @w, POSS -, NTYPE PRO]  --> 
+   DT[WH @w] H0[NTYPE NUM] : 2 : (det 2 1).
+PSRULE NP/n-num : N2[WH -, POSS -, NTYPE PRO]  --> H0[NTYPE NUM] : 1.
+
+; Ordinal / numerical comparison (collapse with partitives?)
+
+; a third / nine-tenths my salary (only MD)
+PSRULE NP/det_ord_np : N2[WH -, POSS -] --> (DT[WH -, PLU -])
+   A0[ATYPE NUM] H2[NTYPE NORM, MOD -, WH -] : 3 : (ncmod _ 3 2) : (det 2 1).
+; one third / two thirds my salary (only MD)
+PSRULE NP/num_ord_np : N2[WH -, POSS -] --> N0[NTYPE NUM, PLU -]
+   A0[ATYPE NUM] H2[NTYPE NORM, MOD -, WH -] : 3 : (ncmod _ 3 2) : (ncmod _ 2 1).
+
+; NP --> N1 `standalone' rules by NTYPE, MOD passed up
+
+PSRULE NP/n1-plu  : N2[WH @x, POSS -, NTYPE NORM, MOD @m] -->
+   H1[WH @x, PLU +, MOD @m] : 1.
+PSRULE NP/n1-ms : N2[WH @x, POSS -, NTYPE MEAS, MOD @m] --> 
+   H1[WH @x, MOD @m] : 1.
+PSRULE NP/n1-name : N2[WH @x, POSS -, NTYPE NAME, MOD @m] -->
+   H1[WH @x, MOD @m] : 1.
+PSRULE NP/n1-nt : N2[WH @x, POSS -, NTYPE TEMP, MOD @m] --> 
+   H1[WH @x, MOD @m] : 1.
+PSRULE NP/n1-pl : N2[WH @x, POSS -, NTYPE PLACE, MOD @m] --> 
+   H1[WH @x, MOD @m] : 1.
+PSRULE NP/n1-org : N2[WH @x, POSS -, NTYPE ORG, MOD @m] --> 
+   H1[WH @x, MOD @m] : 1.
+PSRULE NP/n1-dir-adv : N2[POSS -, WH -, PLU -, MOD @m] --> 
+   H1[NTYPE DIR, MOD @m, -ta] : 1.
+PSRULE NP/n1-tit : N2[WH @x, POSS -, NTYPE TIT, MOD @m] --> 
+   H1[WH @x, MOD @m] : 1.
+PSRULE NP/n1-pretit-r : N2[WH @x, POSS -, NTYPE TIT, MOD @m] --> 
+   H1[NTYPE PRETIT, WH @x, MOD @m] : 1.
+
+; Det and partitive, mostly MOD passed
+
+; the old man, which man
+PSRULE NP/det_n1 : N2[WH @x, POSS -, MOD @m] --> DT[WH @x] H1[WH -,
+   MOD @m] : 2 : (det 2 1).
+; the sides of which
+PSRULE NP/det_n1-wh : N2[WH +, POSS -, MOD @m] --> DT H1[WH +, MOD @m]
+   : 2 : (det 2 1). 
+; eg?, semantics?
+PSRULE NP/det_det_n1 : N2[WH @x, POSS -, MOD @m] --> DT[WH @x] DT 
+   H1[WH -, MOD @m] : 3 : (det 3 1) : (det 3 2).
+; a little/lot/bit (small)er
+; not that man (standalone?)
+PSRULE NP/not_det_n1-r : N2[WH @x, POSS -, MOD @m] --> NG DT[WH @x]
+   H1[WH -, MOD @m] : 3 : (det 3 2) : (ncmod _ 3 1).
+; half the drinks
+PSRULE NP/part_n2-r : N2[POSS -, WH @x, MOD @m] --> N0[NTYPE PART, WH -]
+   H2[MOD @m, WH @x] : 2 : (ncmod part 2 1).
+; half black dog
+PSRULE NP/part_n1-r : N2[POSS -, WH -, MOD @m] --> N0[NTYPE PART, WH -] 
+   H1[PLU -, MOD @m] : 2 : (ncmod part 2 1).
+; a half (of) the drinks, the both (of) them
+PSRULE NP/det_part_n2 : N2[WH @x, POSS -, NTYPE NORM, PLU @p,
+   MOD @m] --> DT[PLU @p] N0[NTYPE PART, WH -] (P0[PFORM OF]) 
+   N2[MOD @m, WH @x, NTYPE NORM] : 2 : (det 2 1) : (ncmod of 4 2). 
+; half/all (of them) (attended)
+PSRULE NP/part : N2[WH @x, POSS -, NTYPE PRO, MOD @m] --> 
+   H0[NTYPE PART, WH @x, MOD @m] : 1.
+
+; Possessives
+
+; (the old man's) (new car)
+PSRULE NP/np-poss_n1 : N2[POSS -, WH @x] --> N2[POSS +, WH @x] H1[POSS
+   -]  : 2 : (ncmod poss 2 1).  
+; ((the old man) 's)
+PSRULE NP/np_n-poss : N2[POSS +, WH @x] --> H2[POSS -, WH @x] N0[NTYPE
+   POSS] : 1.   
+; he is at ((the butcher) 's) -- rare/marked, semantics?
+PSRULE NP/np_n-poss-ellip-r : N2[POSS -, WH @x] --> H2[POSS -, WH @x]
+   N0[NTYPE POSS] : 1 : (ncmod poss ellip 1).
+
+; Pronominal premodified NPs: no more, (the) loved one(s), the sumptuous
+; something, silly him, which loved ones, etc
+
+PSRULE NP/det_np-pro-r : N2[WH @x, POSS -, MOD -] --> DT[WH -]
+   H2[NTYPE PRO, WH @x] : 2 : (det 2 1).
+PSRULE NP/ap_np-pro-r : N2[WH @x, POSS -, MOD -] -->
+   A2[ADV -, MOD -, ASUBCAT NONE] H2[NTYPE PRO, WH @x] : 2
+   : (ncmod _ 2 1).
+PSRULE NP/det-wh_ap_np-pro-r : N2[WH +, POSS -, MOD -] --> DT[WH +]
+   A2[ADV -, MOD -, ASUBCAT NONE] H2[NTYPE PRO, WH -] : 3 
+   : (det 3 1) : (ncmod _ 2 1).
+PSRULE NP/ppart_np-pro-r : N2[WH @x, POSS -, MOD -] -->
+   V0[VFORM PPART] H2[NTYPE PRO, WH @x] : 2 : (ncmod _ 2 1) : (ncsubj
+   1 2 obj) : (passive 1).
+PSRULE NP/det-wh_ppart_np-pro-r : N2[WH +, POSS -, MOD -] --> DT[WH +]
+   V0[VFORM PPART] H2[NTYPE PRO, WH -] : 3 : (det 3 1) : (ncmod _ 2 1)
+   : (ncsubj 2 3 obj) : (passive 2).
+
+; Pronominal postmodified NPs (`someone from the govt', etc)
+
+; all PSUBCAT values? -- only restricted via PFORM + ADJ +
+; -r to prefer advbls or vbl arg rdgs of PP, etc
+PSRULE NP/np-pro_pp-r : N2[WH @x, POSS -, MOD +] --> H2[NTYPE PRO, WH @x] 
+   P2[ADJ +] : 1 
+   : 2 = [PSUBCAT (NONE, NP)], (ncmod _ 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT PP], (pmod 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2).
+PSRULE NP/np-pro_inf-r : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO, WH -] 
+   V1[VFORM INF, FIN -] : 1 : (xmod to 1 2) : (arg _ 2 1).
+; who to marry, what to buy, not -r
+PSRULE NP/np-whpro_inf : N2[WH +, POSS -, MOD +] --> H2[WH +, NTYPE PRO] 
+   V1[VFORM INF, FIN -] : 1 : (xmod to 1 2) : (obj 2 1).
+PSRULE NP/np-pro_ing-r : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO, WH -] 
+   V1[VFORM ING, FIN -] : 1 : (xmod to 1 2) : (arg _ 2 1).
+PSRULE NP/np-pro_ppart-r : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO,
+   WH -] V1[VFORM PPART] : 1 : (xmod _ 1 2) : (ncsubj 2 1 obj) : (passive 2).
+; the one who came
+PSRULE NP/np-pro_s-r : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO, WH -] 
+   V2[nopunct, -ta, INV -, FIN +, WH -] : 1 
+   : 2 = [COMP +], (cmod (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (cmod _ 1 2).
+; the one who I like
+PSRULE NP/np-pro_s-wh : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO, WH -] 
+   V2[nopunct, -ta, COMP -, INV -, FIN +, WH +] : 1 : (cmod _ 1 2).
+; the one that came
+PSRULE NP/np-pro_rel-r : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO, WH
+   -] CP V1[FIN +] : 1 : (cmod that 1 3) : (ncsubj 3 1 _).
+PSRULE NP/np-pro_ap-r : N2[WH @x, POSS -, MOD +] --> H2[NTYPE PRO, WH @x] 
+   ( +pco ) A2[ATYPE NORM] : 1 : (ncmod _ 1 3).
+PSRULE NP/np-pro_n-r : N2[WH -, POSS -, MOD +] --> H2[NTYPE PRO, WH -,
+   PLU @p] N0[PLU @p, POSS -] : 1 : (ncmod _ 1 2).
+PSRULE NP/np-pro_a1-er : N2[WH @w, POSS -, NTYPE PRO] --> H2[WH @w]
+   A1[AFORM ER] : 1 : (ncmod _ 1 2).
+
+; Postmodification of other NP types
+
+; a man free to marry
+PSRULE NP/np_a1 : N2[POSS -, WH @x, MOD +] --> H2[WH @x] A1[MOD +] : 1 :
+   (ncmod _ 1 2).
+; a man , very scared
+PSRULE NP/np_pco_ap-r : N2[POSS -, WH -, MOD +] --> H2[WH -] +pco A2 : 1 :
+   (ncmod _ 1 3).
+; a man asleep
+PSRULE NP/np_a1-prd : N2[POSS -, WH @x, MOD +] --> H2[WH @x] A1[ATYPE PRD, MOD
+   -] : 1 : (ncmod _ 1 2).
+; a man indeed
+PSRULE NP/np_a1-post : N2[POSS -, WH @x, MOD +] --> H2[WH @x] A1[ATYPE POST,
+   MOD -] : 1 : (ncmod _ 1 2). 
+PSRULE NP/np_a1-temp : N2[POSS -, WH @x, MOD +] --> H2[WH @x] A1[ATYPE TEMP,
+   MOD -] : 1 : (ncmod _ 1 2). 
+; a car behind
+PSRULE NP/np_a1-pl : N2[POSS -, WH @x, MOD +] --> H2[WH @x] A1[ATYPE PLACE,
+   MOD -] : 1 : (ncmod _ 1 2). 
+; a man himself
+PSRULE NP/np_np-refl : N2[POSS -, MOD +, WH @x] --> H2[PLU @p, WH @x]
+   N2[NTYPE REFL, PLU @p] : 1 : (ncmod _ 1 2). 
+; an hour ago, 4:30 a.m
+PSRULE NP/np-nt_a1-nt :  N2[POSS -, WH @x, MOD +] --> H2[NTYPE TEMP,
+   MOD -, WH @x] A1[ATYPE TEMP, MOD -] : 1 : (ncmod _ 1 2).
+; 4:30 a.m Croatian time
+PSRULE NP/np-nt_np-nt : N2[POSS -, WH @x, MOD +] --> H2[NTYPE TEMP,
+   MOD -, WH @x] N2[NTYPE TEMP, WH -]  : 1 : (ncmod _ 1 2).
+; eg?
+PSRULE NP/np-ms_a1-r : N2[POSS -, WH -, MOD +] --> H2[NTYPE MEAS, WH -]
+   A1[MOD -] : 1 : (ncmod _ 1 2).
+
+; Rules dealing with interaction of NTYPEs with names, including (NP
+; Name) no comma appositives
+
+; `girls' band Bananarama', shld be comma, so rare?
+PSRULE NP/n1_n1-name-r : N2[WH -, POSS -] --> N1[NTYPE NORM, MOD -]
+   H1[NTYPE NAME, POSS -, MOD -] : 2 : (ncmod _ 2 1).
+; `James Browne the singer', shld be comma, so rare?
+PSRULE NP/n1-name_np-r : N2[WH -, POSS -] --> N1[NTYPE NAME, POSS -, MOD -] 
+   H2[NTYPE NORM, WH -] : 2 : (ncmod _ 2 1).
+; the singer James Browne
+PSRULE NP/np_np-name : N2[WH -, POSS -, MOD +] --> H2[NTYPE NORM, MOD
+   -, WH -] N2[NTYPE NAME, POSS -, MOD -] : 1 : (ncmod _ 1 2).
+; Vice President (Dr. Al) Gore
+PSRULE NP/n-pretit_n2-name : N2[WH -, POSS -] --> N0[NTYPE PRETIT, POSS -] 
+   H2[NTYPE NAME, MOD -, WH -] : 2 : (ncmod _ 2 1).
+; Dr. Andrews, (B.A, Ph.D)
+PSRULE NP/n2-name_n-posttit : N2[WH -, POSS -] --> H2[NTYPE NAME, MOD
+   -, WH -] (+pco) (+plb) N0[NTYPE POSTTIT, POSS -] (+prb) : 1 : (ncmod _ 1 4).
+; Lord Castlemaine of Neasden
+PSRULE NP/np-name_pp-of : N2[WH -, POSS -, MOD +] --> H2[NTYPE NAME,
+   WH -] P2[ADJ +, PFORM OF, PSUBCAT NP]  : 1 : (ncmod _ 1 2). 
+; Southern Unites States
+PSRULE NP/n-dir_np-name : N2[WH -, POSS -] --> N0[NTYPE DIR, POSS -] 
+   H2[NTYPE NAME, MOD -, WH -] : 2 : (ncmod _ 2 1).
+; delightful Lord C of X (-r -- most names are N1)
+PSRULE NP/ap_np-name-r : N2[WH -, POSS -] --> A2[ADV -, MOD -, ASUBCAT NONE] 
+   H2[NTYPE NAME, MOD -, WH -] : 2 : (ncmod _ 2 1).
+; 10 Lord Castlemaines have...
+PSRULE NP/n-num_np-name : N2[WH -, POSS -] --> N0[NTYPE NUM, POSS -] 
+   H2[NTYPE NAME, MOD -, WH -] : 2 : (ncmod _ 2 1).
+; (The) Guildford four were...
+PSRULE NP/np-name_n-num : N2[WH -, POSS -] --> H2[NTYPE NAME, POSS -,
+   MOD -, WH -] ( +pco ) N0[NTYPE NUM, POSS -] : 1 : (ncmod _ 1 3).
+; (10) Neasden Palace acres, (in) Fahrenheit degrees
+PSRULE NP/np-name_np-ms : N2[WH -, POSS -] --> H2[NTYPE NAME, POSS -,
+   MOD -, WH -] N2[NTYPE MEAS, POSS -, WH -] : 1 : (ncmod _ 1 2).
+; degrees Celsius
+PSRULE NP/np-ms_np-name : N2[WH -, POSS -] --> N2[NTYPE MEAS, POSS -,
+   WH -] H2[NTYPE NAME, POSS -, MOD -, WH -] : 2 : (ncmod _ 2 1).
+; Summer Palace?, what?
+PSRULE NP/np-nt_np-name : N2[WH -, POSS -] --> N2[NTYPE TEMP, POSS -, WH -] 
+   H2[NTYPE NAME, MOD -, WH -] : 2 : (ncmod _ 2 1).
+; the estuary, Tyne??
+PSRULE NP/np-pl_pco_np-name : N2[WH -, POSS -] --> H2[NTYPE PLACE, MOD
+   -, WH -] +pco N2[NTYPE NAME, POSS -, WH -] : 1 : (ncmod _ 1 3). 
+
+; appositive organisations
+
+; the recruitment consultants Rapacious Inc.
+PSRULE NP/np_np-org : N2[WH -, POSS -, MOD +] --> H2[NTYPE NORM, PLU
+   +, WH -, MOD -] N2[NTYPE ORG, POSS -] : 1 : (ncmod _ 1 2).
+
+; Compound / pre/post-mod meas NPs (not -r as specialised enough)
+
+; 10-metre sailing yachts
+PSRULE NP/np-ms_n1 : N2[POSS -, WH -] --> N2[NTYPE MEAS, POSS -, MOD
+   -, WH -] H1[NTYPE NORM, WH -] : 2 : (ncmod _ 2 1).
+
+; Friday the 13th
+PSRULE NP/n1-nt_np-nt : N2[POSS -, WH -] --> H1[NTYPE TEMP, MOD -]
+  DT[WH -] N0[NTYPE NUM, WH -, MOD -] : 1 : (ncmod _ 1 3) : (det 3 2).
+
+; the first five months
+PSRULE NP/np-num_np-temp : N2[POSS -, WH -] --> N2[NTYPE PRO, WH -,
+  PLU -, POSS -, MOD -, CONJ -] N0[NTYPE NUM] H0[PLU +, NTYPE TEMP,
+  CONJ -] : 3 : (ncmod num 3 2) : (ncmod _ 3 1).
+
+; Unheaded or special case NP rules, mostly -r 
+; thresholding tags doesn't solve: poor, (most) resolute, etc only JJ in
+; seclarge.lex 
+
+; the (abject) poor, a clear out
+PSRULE NP/det_a1-r : N2[WH @x, POSS -, NTYPE NORM, PLU @p, MOD @m,
+   CONJ -] --> DT[WH @x, PLU @p] ( N1 ) (A0[ADV -, ATYPE CAT]) A1[ADV
+   -, ATYPE NORM, MOD @m] : 4 : (det 4 1) : (ncmod _ 3 4) : (ncmod _ 4 2).
+; a few, a little
+PSRULE NP/det_a1-att-r : N2[WH @x, POSS -, NTYPE NORM, PLU @p, MOD @m,
+   CONJ -] --> DT[WH @x, PLU @p] ( N1 ) A1[ADV -, ATYPE ATT,
+   MOD @m] : 3 : (det 3 1) : (ncmod _ 3 2).
+; a little/lot/bit (long)er
+PSRULE NP/det_det_a-er : N2[WH @x, POSS -, MOD @m] --> DT[PLU -, WH
+   @x] DT[PLU -, WH -] A0[AFORM ER, MOD @m] : 3 : (det 2 1) :
+   (ncmod _ 3 2). 
+; a few cars
+PSRULE NP/det_a1-att_n1-plu-r : N2[WH @x, POSS -, NTYPE NORM, MOD @m,
+   CONJ -] --> DT[WH @x, PLU -, POSS -] A1[ADV -, ATYPE ATT, MOD -]
+   H1[PLU +, MOD @m, WH -] : 3 : (det 2 1) : (ncmod _ 3 2).
+; a few years (ago)
+PSRULE NP/det_a1-att_n1-nt-r : N2[WH @x, POSS -, NTYPE TEMP, MOD @m,
+   CONJ -] --> DT[WH @x, PLU -, POSS -] A1[ADV -, ATYPE ATT, MOD -]
+   H1[PLU +, MOD @m, WH -] : 3 : (det 2 1) : (ncmod _ 3 2).
+; the clearing up
+PSRULE NP/det_ing-r : N2[WH @x, POSS -, PLU -, NTYPE NORM, 
+   MOD -] -->  DT[WH @x] V0[VFORM ING, FIN -] (PT) : 2 :
+   (det 2 1) : (ncmod prt 2 3).
+; the given up 
+PSRULE NP/det_ppart-r : N2[WH @x, POSS -, PLU -, NTYPE NORM, 
+   MOD -] --> DT[WH @x] V0[VFORM PPART] (PT) : 2 : (det
+   2 1) : (ncmod prt 2 3).
+; a clear out, a try on
+PSRULE NP/det_v-bse-pt-r : N2[WH @x, POSS -, PLU -, NTYPE NORM, 
+   MOD -] --> DT[WH @x] V0[VFORM BSE] PT : 2 : (det
+   2 1) : (ncmod prt 2 3). 
+; the poor in the ghetto
+PSRULE NP/det_ap_pp-r : N2[POSS -, WH @x, NTYPE NORM,  MOD +]
+   --> DT[WH @x] A2[ADV -, AFORM NONE, ATYPE ATT, ASUBCAT NONE] P2[ADJ
+   +, PSUBCAT NP] : 2 : (det 2 1) : (ncmod _ 2 3).
+
+; NP premod rules (`even this man' `around 10', about 10 pounds?), rare
+
+PSRULE NP/a1-dg_np-r : N2[POSS -, WH @w] --> A1[ADV +, ATYPE DG,
+   ASUBCAT NONE]  H2[MOD -, NTYPE NORM, WH @w] : 2 : (ncmod _ 2 1).
+PSRULE NP/a1-cat_np-r : N2[POSS -, WH @w] --> A1[ADV +, ATYPE CAT,
+   ASUBCAT NONE] H2[MOD -, WH @w] : 2 : (ncmod _ 2 1).
+
+; **********************************
+;
+; N1 rules
+
+; Generic N1/n too loose -- restrict to NTYPE:
+; NORM, TEMP, PLACE, ORG, MEAS, DIR, NAME, PRE(TIT) (ntypes which need N1)
+; not PART,NUM,PRO,REFL,THERE,POSTTIT,POSS etc N1s 
+
+PSRULE N1/n : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE NORM] : 1.
+PSRULE N1/n-name : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE NAME] : 1.
+PSRULE N1/n-nt : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE TEMP] : 1.
+PSRULE N1/n-pl : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE PLACE] : 1.
+PSRULE N1/n-org : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE ORG] : 1.
+PSRULE N1/n-ms : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE MEAS] : 1.
+PSRULE N1/n-dir : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE DIR] : 1. 
+PSRULE N1/n-tit : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE TIT] : 1.
+PSRULE N1/n-pretit : N1[POSS -, MOD @m] --> H0[MOD @m, NTYPE PRETIT] : 1.
+
+; N1 premod rules
+
+PSRULE N1/ap_n1 : N1[POSS -] --> A2[ADV -, MOD -, ASUBCAT NONE] ( +pco )  
+   H1[MOD -] : 3 : (ncmod _ 3 1).
+
+; about $10 (really shld be wider N2 modifier but too ambig.)
+PSRULE N1/deg_n1-ms : N1[POSS -] --> A0[ADV +, ATYPE DG] H1[NTYPE
+   MEAS, MOD -] : 2 : (ncmod _ 2 1). 
+
+; N1 possessive rules, -r to prefer NP attchmt
+
+; (old man's) (new look)
+PSRULE N1/n1-poss_n1-r : N1[POSS -] --> N1[POSS +] H1[POSS -, MOD -] : 2
+   : (ncmod poss 2 1).
+; (old man) 's) 
+PSRULE N1/n1_n-poss-r : N1[POSS +, MOD @m] --> H1[POSS -, MOD @m]
+   N0[NTYPE POSS] : 1.
+
+; Unheaded special case N1 rules, rare
+
+; the tedious cleaning (up) (of the house)
+PSRULE N1/ap_ing-r : N1[POSS -, PLU -, NTYPE NORM, WH -] --> A2[ADV -, MOD
+   -, ASUBCAT NONE] V0[VFORM ING, FIN -] : 2 : (ncmod _ 2 1).
+PSRULE N1/ing_pp-of-r : N1[POSS -, PLU -, NTYPE NORM, WH -] --> V0[VFORM
+   ING, FIN -] P2[ADJ +, PFORM OF] : 1 
+   : 2 = [PSUBCAT NONE], (ncmod prt 1 2)
+   : 2 = [PSUBCAT VPING], (xcomp _ 1 2)
+   : 2 = [PSUBCAT SING], (ccomp _ 1 2)
+   : 2 = [PSUBCAT NP], (iobj 1 2)
+   : 2 = [PSUBCAT PP], (pcomp 1 2).
+
+; Special `verbal' premods - semantics?
+; ((food_NN1 processing_VVG) plant_NN1) adds ambig.?
+;
+; stolen cars
+PSRULE N1/ppart_n1-r : N1 --> V0[VFORM PPART] ( +pco ) H1[NTYPE NORM,
+   MOD -] : 3 : (ncmod _ 3 1) : (ncsubj 1 3 obj) : (passive 1).
+; smoking guns, ((food_NN1 processing_VVG) plant_NN1)
+PSRULE N1/ing_n1-r : N1 --> (N0[NTYPE NORM]) V0[VFORM ING, FIN -] (
+   +pco ) H1[MOD -] :  4 : (ncmod _ 4 2) : (ncsubj 2 4 _) : (dobj 2 1).
+; go codes
+PSRULE N1/bse_n1-r : N1 --> V0[VFORM BSE] ( +pco ) H1[NTYPE NORM, MOD -] :
+   3 : (ncmod _ 3 1).
+
+; N1/n_n1 rules (split for NTYPE) -- MOD - on rightmost H1
+; first 3 shld be checked for usefulness (spur. ambig.)?
+
+PSRULE N1/n_n1-dir-r : N1[POSS -] --> N0[POSS -, NTYPE NORM] 
+   H1[NTYPE DIR, MOD -] : 2 : (ncmod _ 2 1).
+PSRULE N1/n_n1-ms-r : N1[POSS -] --> N0[POSS -, NTYPE NORM] 
+   H1[NTYPE MEAS, MOD -] : 2 : (ncmod _ 2 1).
+PSRULE N1/n_n1-nt-r : N1[POSS -] --> N0[POSS -, NTYPE NORM] 
+   H1[NTYPE TEMP, MOD -] : 2 : (ncmod _ 2 1).
+PSRULE N1/n_n1 : N1[POSS -] --> N0[POSS -, NTYPE NORM]
+   H1[NTYPE NORM, MOD -, -ta] : 2 : (ncmod _ 2 1).
+PSRULE N1/n-name_n1 : N1[POSS -] --> N0[NTYPE NAME] H1[NTYPE NORM, MOD
+   -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-name_n1-name : N1[POSS -] --> N0[NTYPE NAME] H1[NTYPE
+   NAME, MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-name_n1-org : N1[POSS -] --> N0[NTYPE NAME] H1[NTYPE ORG,
+   MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-name_n1-pl : N1[POSS -] --> N0[NTYPE NAME] H1[NTYPE PLACE,
+   MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-nt_n1-nt : N1[POSS -] --> N0[NTYPE TEMP, POSS -] H1[NTYPE
+   TEMP, MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-ms_n1-ms : N1[POSS -] --> N0[NTYPE MEAS, POSS -] H1[NTYPE
+   MEAS, MOD -] : 2 : (ncmod _ 2 1).
+PSRULE N1/n_n1-pl : N1[POSS -] --> N0[POSS -, NTYPE NORM] H1[NTYPE
+   PLACE, MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-pl_n1 : N1[POSS -] --> N0[NTYPE PLACE] H1[NTYPE NORM, MOD
+   -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-pl_n1-pl : N1[POSS -] --> N0[NTYPE PLACE] H1[NTYPE PLACE,
+   MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-org_n1 : N1[POSS -] --> N0[NTYPE ORG] H1[NTYPE NORM, MOD
+   -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-org_n1-pl : N1[POSS -] --> N0[NTYPE ORG] H1[NTYPE PLACE,
+   MOD -] : 2 : (ncmod _ 2 1). 
+PSRULE N1/n-pl_n1-org : N1[POSS -] --> N0[NTYPE PLACE] H1[NTYPE ORG,
+   MOD -]  : 2 : (ncmod _ 2 1).
+PSRULE N1/n-org_n1-org : N1[POSS -] --> N0[NTYPE ORG, POSS -] H1[NTYPE
+   ORG, MOD -]  : 2 : (ncmod _ 2 1).
+; Dr. Fred Perry
+PSRULE N1/n-tit_n1-name : N1[WH -, POSS -] --> N0[NTYPE TIT, POSS -] 
+   H1[NTYPE NAME, MOD -] : 2 : (ncmod _ 2 1).
+
+; Numbers as mods of N1/N0
+
+; no PLU agr for `the twenty pounder' / `the twenty men'
+PSRULE N1/n-num_n1 : N1[POSS -] --> N0[NTYPE NUM, POSS -] 
+   H1[NTYPE NORM, MOD -]  : 2 : (ncmod num 2 1). 
+PSRULE N1/n-num_n1-nt : N1[POSS -, PLU @x] --> N0[NTYPE NUM, POSS -,
+   PLU @x] H1[NTYPE TEMP, MOD -]  : 2 : (ncmod num 2 1).
+PSRULE N1/n-num_n1-ms : N1[POSS -, PLU @x] --> N0[NTYPE NUM, POSS -,
+   PLU @x] H1[NTYPE MEAS, MOD -]  : 2 : (ncmod num 2 1).
+PSRULE N1/n-ms_n-num : N1[POSS -] --> H0[NTYPE MEAS] N0[NTYPE NUM,
+   POSS -] : 1 : (ncmod num 1 2).
+; round four -- maybe no NTYPE restrict on head?
+PSRULE N1/n_n-num : N1[POSS -] --> H0[NTYPE NORM] N0[NTYPE NUM, POSS
+   -] : 1 : (ncmod num 1 2).
+; 24 Primrose St
+PSRULE N1/n-num_n1-pl : N1[POSS -] -->  N0[NTYPE NUM, POSS -] H1[NTYPE
+   PLACE] : 2 : (ncmod num 2 1).
+; Channel/Canal Four -- see above?
+PSRULE N1/n-pl_n-num : N1[POSS -] --> H0[NTYPE PLACE] N0[NTYPE NUM, POSS
+   -] : 1 : (ncmod num 1 2).
+
+; N0 pre/postmod rules (often stop recursion on combinations of ntypes) 
+; -- more named entity recognition / splitting on NTYPE
+; Messy + combinations may be missing...
+
+; Thames Valley
+PSRULE N/np-name_n-pl : N0[POSS -] --> N2[NTYPE NAME, POSS -, MOD -] 
+   (+pco) H0[NTYPE PLACE] : 3 (ncmod _ 3 1).
+; Chateau Loire
+PSRULE N/n-pl_np-name : N0[POSS -] --> H0[NTYPE PLACE] N2[NTYPE NAME,
+   POSS -, MOD -] : 1 : (ncmod _ 1 2).
+; 24 hour shop
+PSRULE N/n1-nt_n : N0[POSS -] --> N1[NTYPE TEMP, POSS -, MOD -]
+   H0[NTYPE NORM] : 2 : (ncmod _ 2 1).
+; 24 hour Association
+PSRULE N/n1-nt_n-org : N0[POSS -] --> N1[NTYPE TEMP, POSS -, MOD -]
+   H0[NTYPE ORG] : 2 : (ncmod _ 2 1).
+; $10 Chateau
+PSRULE N/n1-ms_n-pl : N0[POSS -] --> N1[NTYPE MEAS, POSS -, MOD -]
+   H0[NTYPE PLACE] : 2 : (ncmod _ 2 1).
+; Chateau shop
+PSRULE N/n-pl_n : N0[POSS -] --> N0[NTYPE PLACE, POSS -] H0[NTYPE
+   NORM] : 2 : (ncmod _ 2 1).
+; Camp West
+PSRULE N/n-pl_n-dir : N0[POSS -] --> H0[NTYPE PLACE] N0[NTYPE DIR,
+   POSS -] : 1 : (ncmod _ 1 2).
+; $10 Association
+PSRULE N/n1-ms_n-org : N0[POSS -] --> N1[NTYPE MEAS, POSS -, MOD -]
+   H0[NTYPE ORG] : 2 : (ncmod _ 2 1).
+; Shop Association
+PSRULE N/n1_n-org : N0[POSS -] --> N1[NTYPE NORM, POSS -, MOD -]
+   H0[NTYPE ORG] : 2 : (ncmod _ 2 1).
+; Association Shop
+PSRULE N/n-org_n : N0[POSS -] --> N0[NTYPE ORG, POSS -] H0[NTYPE NORM]
+   : 2 : (ncmod _ 2 1). 
+; Cambridge University Professor (Joe Bloggs)
+PSRULE N/n1-org_n-tit : N0[POSS -] --> N1[NTYPE ORG, POSS -] H0[NTYPE TIT]
+   : 2 : (ncmod _ 2 1).
+; North Shop
+PSRULE N/n-dir_n : N0[POSS -] --> N0[NTYPE DIR, POSS -] H0[NTYPE NORM]
+   : 2 : (ncmod _ 2 1). 
+; North London
+PSRULE N/n-dir_n-pl : N0[POSS -] --> N0[NTYPE DIR, POSS -] H0[NTYPE
+   PLACE] : 2 : (ncmod _ 2 1).
+; North Club
+PSRULE N/n-dir_n-org : N0[POSS -] --> N0[NTYPE DIR, POSS -] H0[NTYPE
+   ORG] : 2 : (ncmod _ 2 1).
+; (Major General) (Joe Bloggs)
+PSRULE N/n-pretit_n-tit : N0[POSS -] --> N0[NTYPE PRETIT]
+   H0[NTYPE TIT, POSS -, MOD -] : 2 : (ncmod _ 2 1).
+PSRULE N/n-pretit_n-pretit : N0[POSS -, NTYPE TIT] --> N0[NTYPE PRETIT]
+   H0[NTYPE PRETIT, POSS -, MOD -] : 2 : (ncmod _ 2 1).
+; shop assistant (Joe Bloggs)
+PSRULE N/n_n-tit : N0[POSS -] --> N0[NTYPE NORM] H0[NTYPE TIT, MOD -]
+   : 2 : (ncmod _ 2 1). 
+; London Professor
+PSRULE N/n-name_n-tit : N0[POSS -] --> H0[NTYPE NAME, POSS -, MOD -]
+   N0[NTYPE TIT] : 1 : (ncmod _ 1 2).
+; Professor Sir
+PSRULE N/n-tit_n-pretit : N0[POSS -] --> H0[NTYPE TIT, POSS -, MOD -]
+   N0[NTYPE PRETIT] : 1 : (ncmod _ 1 2).
+; half man
+PSRULE N/n-part_n : N0[POSS -] --> N0[NTYPE PART, WH -] H0 : 2 :
+   (ncmod part 2 1). 
+; ambiguity with period, but `the FCA . is...' 
+PSRULE N/n-name-abbrev-r : N0[POSS -] --> H0[NTYPE NAME, POSS -, MOD -]
+   +pdo : 1.
+; Titles in measures: a (master of science) degree
+PSRULE N/n1-tit_n-ms : N0[POSS -] --> N1[NTYPE TIT, POSS -, MOD -]
+   H0[NTYPE MEAS] : 2 : (ncmod _ 2 1).
+; titles in normal compounds: doctor bills
+PSRULE N/n1-tit_n-nm : N0[POSS -] --> N1[NTYPE TIT, POSS -, MOD -]
+   H0[NTYPE NORM] : 2 : (ncmod _ 2 1).
+
+; N1 complement SFIN and PPOF rules (other PPs treated as modifiers)
+; also incl. non-wh sentential mods: the man (that) the girls like
+; so ccomp sometimes cmod below(?)
+
+PSRULE N1/n_s : N1[POSS -, MOD -] --> H0[NTYPE NORM, NSUBCAT SFIN] 
+   V2[INV -, FIN +, WH -, nopunct, -ta] : 1 
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE N1/n-nt_s : N1[POSS -, MOD -] --> H0[NTYPE TEMP, NSUBCAT SFIN] 
+   V2[INV -, FIN +, WH -, nopunct, -ta] : 1  
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE N1/n-pl_s : N1[POSS -, MOD -] --> H0[NTYPE PLACE, NSUBCAT SFIN] 
+   V2[INV -, FIN +, WH -, nopunct, -ta] : 1  
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE N1/n-org_s : N1[POSS -, MOD -] --> H0[NTYPE ORG, NSUBCAT SFIN] 
+   V2[INV -, FIN +, WH -, nopunct, -ta] : 1  
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE N1/n-ms_s : N1[POSS -, MOD -] --> H0[NTYPE MEAS, NSUBCAT SFIN] 
+   V2[INV -, FIN +, WH -, nopunct, -ta] : 1  
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE N1/n_pp-of : N1[POSS -, MOD -] --> H0[NSUBCAT PPOF] 
+   P2[PFORM OF] : 1
+   : 2 = [PSUBCAT NONE], (ncmod _ 1 2)
+   : 2 = [PSUBCAT VPING], (xcomp _ 1 2)
+   : 2 = [PSUBCAT SING], (ccomp _ 1 2)
+   : 2 = [PSUBCAT NP], (iobj 1 2)   
+   : 2 = [PSUBCAT PP], (pcomp 1 2).
+
+; N1 Comp (or postmod) rules (not N1 rules to block recursion -- add
+; NSUBCAT but ambig?) 
+; Now restricted to NORM, TEMP, PLACE ORG, MEAS for NER + block
+; `non-restrict.' without commas (e.g. n1[November to be nice])
+
+PSRULE N1/n_rel : N1[POSS -, MOD -] --> H0[NTYPE NORM] CP V1[FIN +] :
+   1 : (cmod that 1 3) : (ncsubj 3 1 _).
+PSRULE N1/n-nt_rel : N1[POSS -, MOD -] --> H0[NTYPE TEMP] CP V1[FIN +]
+   : 1 : (cmod that 1 3) : (ncsubj 3 1 _).
+PSRULE N1/n-pl_rel : N1[POSS -, MOD -] --> H0[NTYPE PLACE] CP V1[FIN
+   +] : 1 : (cmod that 1 3) : (ncsubj 3 1 _).
+PSRULE N1/n-org_rel : N1[POSS -, MOD -] --> H0[NTYPE ORG] CP V1[FIN +]
+   : 1 : (cmod that 1 3) : (ncsubj 3 1 _). 
+PSRULE N1/n-ms_rel : N1[POSS -, MOD -] --> H0[NTYPE MEAS] CP V1[FIN +]
+   : 1 : (cmod that 1 3) : (ncsubj 3 1 _).
+
+; the present to give her vs. the message to abandon her -- obj gr 
+; wrong for latter, so not on main and meas np rules but assume
+; (mostly) correct otherwise
+PSRULE N1/n_inf : N1[POSS -, MOD -] --> H0[NTYPE NORM] V1[VFORM INF,
+   FIN -] : 1 : (xmod to 1 2).
+PSRULE N1/n-nt_inf : N1[POSS -, MOD -] --> H0[NTYPE TEMP] V1[VFORM
+   INF, FIN -] : 1 : (xmod to 1 2) : (obj 2 1). 
+PSRULE N1/n-pl_inf : N1[POSS -, MOD -] --> H0[NTYPE PLACE] V1[VFORM
+   INF, FIN -] : 1 : (xmod to 1 2) : (obj 2 1). 
+PSRULE N1/n-org_inf : N1[POSS -, MOD -] --> H0[NTYPE ORG] V1[VFORM
+   INF, FIN -] : 1 : (xmod to 1 2) : (obj 2 1). 
+PSRULE N1/n-ms_inf : N1[POSS -, MOD -] --> H0[NTYPE MEAS] V1[VFORM
+   INF, FIN -] : 1 : (xmod to 1 2). 
+
+PSRULE N1/n_ppart : N1[POSS -, MOD -] --> H0[NTYPE NORM] V1[VFORM
+   PPART] : 1 : (xmod _ 1 2) : (ncsubj 2 1 obj) : (passive 2).
+PSRULE N1/n-nt_ppart : N1[POSS -, MOD -] --> H0[NTYPE TEMP] V1[VFORM
+   PPART] : 1 : (xmod _ 1 2) : (ncsubj 2 1 obj) : (passive 2).
+PSRULE N1/n-pl_ppart : N1[POSS -, MOD -] --> H0[NTYPE PLACE] V1[VFORM
+   PPART] : 1 : (xmod _ 1 2) : (ncsubj 2 1 obj) : (passive 2).
+PSRULE N1/n-org_ppart : N1[POSS -, MOD -] --> H0[NTYPE ORG] V1[VFORM
+   PPART] : 1 : (xmod _ 1 2) : (ncsubj 2 1 obj) : (passive 2).
+PSRULE N1/n-ms_ppart : N1[POSS -, MOD -] --> H0[NTYPE MEAS] V1[VFORM
+   PPART] : 1 : (xmod _ 1 2) : (ncsubj 2 1 obj) : (passive 2).
+
+PSRULE N1/n_ing : N1[POSS -, MOD -] --> H0[NTYPE NORM] V1[VFORM ING,
+   FIN -] : 1 : (xmod _ 1 2) : (ncsubj 2 1 _).
+PSRULE N1/n-nt_ing : N1[POSS -, MOD -] --> H0[NTYPE TEMP] V1[VFORM
+   ING, FIN -]  : 1 : (xmod _ 1 2) : (ncsubj 2 1 _).
+PSRULE N1/n-pl_ing : N1[POSS -, MOD -] --> H0[NTYPE PLACE] V1[VFORM
+   ING, FIN -] : 1 : (xmod _ 1 2) : (ncsubj 2 1 _). 
+PSRULE N1/n-org_ing : N1[POSS -, MOD -] --> H0[NTYPE ORG] V1[VFORM
+   ING, FIN -] : 1 : (xmod _ 1 2) : (ncsubj 2 1 _). 
+PSRULE N1/n-ms_ing : N1[POSS -, MOD -] --> H0[NTYPE MEAS] V1[VFORM
+   ING, FIN -] : 1 : (xmod _ 1 2) : (ncsubj 2 1 _). 
+
+; N1 postmod rules (makes acquiring NSUBCAT difficult?)
+
+; all PSUBCAT possibilities, PFORM constrains after first rule
+PSRULE N1/n1_pp1 : N1[WH @x, MOD +] --> H1 P2[ADJ +, PFORM PREP, WH
+   @x] : 1 
+   : 2 = [PSUBCAT NONE], (ncmod prt 1 2)
+   : 2 = [PSUBCAT NP], (ncmod _ 1 2)
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT PP], (pmod 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2).
+PSRULE N1/n1_pp2 : N1[WH @x, MOD +] --> H1 P2[PFORM THAN, WH @x] : 1
+   : 2 = [PSUBCAT (NONE, NP)], (ncmod _ 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT PP], (pmod 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2).
+PSRULE N1/n1_pp3 : N1[WH @x, MOD +] --> H1 P2[ADJ +, PFORM WITH, WH @x] : 1
+   : 2 = [PSUBCAT (NONE, NP)], (ncmod _ 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT PP], (pmod 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2).
+PSRULE N1/n1_pp4 : N1[WH @x, MOD +] --> H1 P2[ADJ +, PFORM FOR, WH @x] : 1
+   : 2 = [PSUBCAT (NONE, NP)], (ncmod _ 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT PP], (pmod 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2).
+PSRULE N1/n1_pp5 : N1[WH @x, MOD +] --> H1 P2[PFORM AS, WH @x] : 1
+   : 2 = [PSUBCAT (NONE, NP)], (ncmod _ 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT PP], (pmod 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2).
+
+; Interleaved adverbial NPs -- `the market, now, for camels
+; (ncmod ta ...) 'cos semantically wrong attachment
+
+PSRULE N1/n1_np-nt_pp-r : N1[WH -, MOD +] --> H1 (+pco) N2[NTYPE TEMP,
+   MOD -] (+pco) P2[WH -] : 1 : (ncmod ta 1 3)
+   : 5 = [PSUBCAT (NONE, NP)], (ncmod _ 1 5)
+   : 5 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 5) 
+   : 5 = [PSUBCAT PP], (pmod 1 5)
+   : 5 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 5).
+PSRULE N1/n1_np-ms_pp-r : N1[WH -, MOD +] --> H1 (+pco) N2[NTYPE MEAS,
+   MOD -] (+pco) P2[WH -]  : 1 : (ncmod ta 1 3) 
+   : 5 = [PSUBCAT (NONE, NP)], (ncmod _ 1 5)
+   : 5 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 5) 
+   : 5 = [PSUBCAT PP], (pmod 1 5)
+   : 5 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 5).
+PSRULE N1/n1_np-dir_pp-r : N1[WH -, MOD +] --> H1 (+pco) N2[NTYPE DIR,
+   MOD -] (+pco) P2[WH -]  : 1 : (ncmod ta 1 3) 
+   : 5 = [PSUBCAT (NONE, NP)], (ncmod _ 1 5)
+   : 5 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 5) 
+   : 5 = [PSUBCAT PP], (pmod 1 5)
+   : 5 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 5).
+
+; N1 wh-sentential postmods (relative clauses / clefts)
+
+PSRULE N1/n1_s-wh : N1[WH -, POSS -, MOD +] --> H1 
+   V2[INV -, FIN +, WH +, COMP -, nopunct, -ta] : 1 : (cmod _ 1 2).
+
+; N1 wh-non-sentential stuff -r
+; no matter how (small)
+PSRULE N1/n1_pp-wh-r : N1[WH @x, MOD +] --> H1[WH -] P2[PFORM WH, 
+   PSUBCAT NONE, WH @x] : 1 : (ncmod _ 1 2).
+PSRULE N1/n1_pp-wh-np-r : N1[WH @x, MOD +] --> H1[WH -] P2[PFORM WH, 
+   PSUBCAT NP, WH @x] : 1 : (ncmod _ 1 2).
+
+
+; Nominal coord rules -- shld these be -ta? 
+; eg the_AT theory_NN1 (_( named_VVN )_) and_CC the_AT p_NN1 (WSJ)
+; Added oblig comma coord, -r relax on ucc n1+np rule
+; Bound MOD btwn mother and first dgter -- bind both as with VP coord?
+; argument for this is eg. (AP (N1 PP) and (N1 PP))
+
+PSRULE NP/cj-beg_np : N2[CONJ -, WH @y, MOD @m] --> CJ[CJTYPE BEGIN]
+   H2[CONJ +, WH @y, -ta, MOD @m] : 2. 
+PSRULE NP/cj-end_np : N2[CONJ +, WH @y, MOD @m] --> (+plb) CJ[CJTYPE END] 
+   (+prb) ( NG ) ( A2[ADV +] ) ( +pco ) H2[CONJ -, WH @y, MOD @m] 
+   : 2 : (conj 2 7) : (ncmod _ 7 4) : (ncmod _ 7 5).
+
+PSRULE NP/np_np-coord : N2[CONJ @c, WH @y, MOD @m, PLU @p, POSS @x,
+   NTYPE @z] --> N2[POSS @x, WH @y, MOD @m, NTYPE @z, CONJ -, -ta] (
+   +pco ) N2[POSS @x, WH @y, PLU @p, CONJ +, -ta] : 3 : (conj 3 1).
+
+; added NTYPE to 2nd conjunct to restrivt (over)application
+
+PSRULE NP/n1_np-coord-r : N2[CONJ @c, WH @y, MOD @m, PLU -, POSS @x,
+   NTYPE @z] --> N1[POSS @x, WH @y, MOD @m, PLU -, CONJ -, -ta, NTYPE
+   @z] ( +pco ) N2[POSS @x, WH @y, PLU +, CONJ +, -ta, NTYPE @z] : 3 :
+   (conj 3 1). 
+
+; inadequate for conjuncts containing single commas
+PSRULE NP/np_psc_np-coord : N2[CONJ @c, WH @y, MOD @m, PLU @p, POSS @x,
+   NTYPE @z] --> N2[POSS @x, WH @y, MOD @m, NTYPE @z, CONJ -, -ta]
+   +psc N2[POSS @x, WH @y, PLU @p, CONJ +, -ta] : 3 : (conj 3 1).
+
+PSRULE N1/cj-beg_n1 : N1[CONJ -, WH @y, MOD @m] --> CJ[CJTYPE BEGIN] 
+   H1[CONJ +, WH @y, MOD @m] : 2.
+PSRULE N1/cj-end_n1 : N1[CONJ +, WH @y, MOD @m] --> CJ[CJTYPE END] 
+   H1[CONJ -, WH @y, MOD @m] : 1 : (conj 1 2).
+
+PSRULE N1/n1_n1-coord : N1[CONJ @c, WH @y, PLU @p, POSS @x,
+   NTYPE @z, MOD @m] --> N1[POSS @x, WH @y, NTYPE @z, CONJ -, PLU @p,
+   -ta, MOD @m] ( +pco ) N1[POSS @x, WH @y, CONJ +, -ta] : 3 : (conj 3 1).
+
+PSRULE N/cj-beg_n : N0[CONJ -, WH @y, NSUBCAT @s] --> CJ[CJTYPE BEGIN] 
+   H0[CONJ +, WH @y, NSUBCAT @s] : 2.
+PSRULE N/cj-end_n : N0[CONJ +, WH @y, NSUBCAT @s] --> CJ[CJTYPE END] 
+   H0[CONJ -, WH @y, NSUBCAT @s] : 1 : (conj 1 2).
+PSRULE N/sl-end_n : N0[CONJ +, WH @y, NSUBCAT @s] --> +psl 
+   H0[CONJ -, WH @y, NSUBCAT @s] : 1 : (conj 1 2).
+
+PSRULE N/n_n-coord : N0[CONJ @c, WH @y, NSUBCAT @s, PLU @p, POSS @x,
+   NTYPE @z] --> N0[CONJ -, NSUBCAT @s, PLU @p, POSS @x, NTYPE @z] (
+   +pco ) N0[CONJ +, WH @y, NSUBCAT @s, PLU @p, POSS @x, NTYPE @z] : 3
+   : (conj 3 1).
+
+; his or her successors, this and that car, whose or what cat
+PSRULE N/det_det-coord : DT[PLU @x, POSS @y, WH @z] --> DT[PLU @x,
+   POSS @y, WH @z] CJ[CJTYPE END] DT[PLU @x, POSS @y, WH @z] 
+   : 2 : (conj 2 1) : (conj 2 3). 
+
+;******************************************
+;
+; P1/p comp rules
+;
+; than_CSN / of_IO are ADJ +
+; MOD is used to identify N2 compl NTYPEs that can only be verbal
+; adjuncts -- means passing btwn P0 and P1 as ICS tags temporal Ps;
+; p_np rule subdivided by NTYPE -- +/-ta correct?
+
+
+PSRULE P1/p_np : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE NORM, WH @x, +ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-name : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE NAME, WH @x, +ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-tit : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE TIT, WH @x, -ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-pl : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE PLACE, WH @x, +ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-org : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE ORG, WH @x, +ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-pro : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE PRO, POSS -, WH @x, -ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_refl : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE REFL, WH @x, -ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-ms : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE MEAS, WH @x, +ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-num : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE NUM, WH @x, +ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-nt : P1[WH @x, MOD +] --> 
+   H0[PSUBCAT NP] N2[NTYPE TEMP, WH @x, -ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_np-dir : P1[WH @x, MOD +] --> 
+   H0[PSUBCAT NP] N2[NTYPE DIR, WH @x, -ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_n1 : P1[WH -, MOD @m] -->
+   H0[PSUBCAT NP, MOD @m] N1[NTYPE NORM, WH -, POSS -, PLU -]
+   : 1 : (dobj 1 2).
+; in mine
+PSRULE P1/p_np-poss-r : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE PRO, WH -, POSS +]
+   : 1 : (dobj 1 2).
+; wrong semantics on ellipsis?
+PSRULE P1/p_np-poss-ellip-r : P1[WH @x, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] N2[NTYPE POSS, WH @x, -ta]
+   : 1 : (dobj 1 2).
+PSRULE P1/p_ap-pl : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] A2[ATYPE PLACE]
+   : 1 : (dobj 1 2).
+; how (easily) confident(ly), non-wh eg? - once again - rare
+; better if `how' treated more specifically?
+PSRULE P1/p_a1-r : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT NP, MOD @m] A1[AFORM NONE] : 1 : (dobj 1 2).
+; than Lee is confdident
+PSRULE P1/p_s : P1[WH -, MOD @m] --> H0[PSUBCAT SFIN, MOD @m] V2[WH
+   -, INV -, FIN +, nopunct, -ta] : 1 : 2 = [COMP -], (ccomp _ 1 2) :
+   2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda
+   (c) (lambda (v) v)))).
+; if/when (absolutely) necessary,...
+PSRULE P1/p_ap-sfin : P1[WH -, MOD @m] --> H0[PFORM PREPS, PSUBCAT
+   SFIN, MOD @m] A2[ADV -, ATYPE NORM, AFORM NONE] : 1 : (dobj 1 2).
+PSRULE P1/p_s-wh : P1[WH +, MOD @m] --> 
+   H0[PSUBCAT WHS, MOD @m] V2[WH +, INV -, FIN +, COMP -, nopunct, -ta]
+   : 1 : (ccomp _ 1 2).
+; semantics of NONE below -- `of out'?
+PSRULE P1/p_pp : P1[WH -, MOD @m] --> H0[PSUBCAT PP, MOD @m] P2[WH -,
+   MOD @m] : 1 
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT)], (xcomp _ 1 2)
+   : 2 = [PSUBCAT (NP, AP)], (iobj 1 2)   
+   : 2 = [PSUBCAT (PP, NONE)], (pcomp 1 2).
+; for him to go -- but with vbs mostly: (for him) (to go)
+PSRULE P1/p_sinf :  P1[WH -, MOD @m] --> 
+   H0[PSUBCAT SINF, MOD @m] N2[WH -] V1[VFORM INF, FIN -]
+   : (ncsubj 3 2 _) : 1 : (ccomp _ 1 2).
+; of him leaving
+PSRULE P1/p_sing : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT SING, MOD @m] N2[WH -] V1[VFORM ING, FIN -]
+   : (ncsubj 3 2 _) : 1 : (ccomp _ 1 2).
+; about Kim's leaving
+PSRULE P1/p_sing-poss : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT SING, MOD @m] N2[WH -, POSS +] V1[VFORM ING, FIN -]
+   : (ncsubj 3 2 _) : 1 : (ccomp _ 1 2).
+; about leaving
+PSRULE P1/p_ing : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT VPING, MOD @m] V1[VFORM ING, FIN -]
+   : 1 : (xcomp _ 1 2).
+; about to leave
+PSRULE P1/p_inf : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT VPINF, MOD @m] V1[VFORM INF, FIN -]
+   : 1 : (xcomp to 1 2).
+; when stolen
+PSRULE P1/p_ppart : P1[WH -, MOD @m] --> 
+   H0[PSUBCAT VPPRT, MOD @m] V1[VFORM PPART]
+   : 1 : (xcomp _ 1 2) : (passive 2).
+
+; Comparative/equative constructions very elliptical, so almost any
+; compl -- lots of spurious ambig., eg. with gapped aux comp/equats:
+; `as/more clever/money as/than I am/have
+
+PSRULE P1/as_ap : P1[WH -] --> H0[PFORM AS, PSUBCAT AP] A2 
+   : 1 : (xcomp _ 1 2).
+PSRULE P1/as_pp : P1[WH -] --> H0[PFORM AS, PSUBCAT PP] P2 
+   : 1 : (xcomp _ 1 2).
+PSRULE P1/as_vp-past : P1[WH -] --> H0[PFORM AS, PSUBCAT VP] 
+   V1[FIN +, VFORM PAST] : 1 : (xcomp _ 1 2).
+PSRULE P1/as_vp-pres : P1[WH -] --> H0[PFORM AS, PSUBCAT VP] 
+   V1[FIN +, VFORM PRES] : 1 : (xcomp _ 1 2).
+PSRULE P1/as_vp-bse : P1[WH -] --> H0[PFORM AS, PSUBCAT VP] 
+   V1[FIN +, VFORM BSE] : 1 : (xcomp _ 1 2).
+PSRULE P1/than_ap : P1[WH -] --> H0[PFORM THAN, PSUBCAT AP] A2
+   : 1 : (xcomp _ 1 2).
+PSRULE P1/than_vp-past : P1[WH -] --> H0[PFORM THAN, PSUBCAT VP] 
+   V1[FIN +, VFORM PAST] : 1 : (xcomp _ 1 2).
+PSRULE P1/than_vp-pres : P1[WH -] --> H0[PFORM THAN, PSUBCAT VP] 
+   V1[FIN +, VFORM PRES] : 1 : (xcomp _ 1 2).
+PSRULE P1/than_vp-bse : P1[WH -] --> H0[PFORM THAN, PSUBCAT VP] 
+   V1[FIN +, VFORM BSE] : 1 : (xcomp _ 1 2).
+
+; for better or for worse
+PSRULE P1/for_ap-er-r : P1[WH -] --> H0[PFORM FOR, PSUBCAT AP] 
+   A2[AFORM ER] : 1 : (iobj 1 2).
+
+; `for' particles/preps (in V1 ctxts where PSUBCAT NONE licensed)
+; incl. wh-extraction cases (but ADJ - rules out `neither/much/three
+; of e' etc -- too ambig eg gets PFORM WH -- why, etc?)
+
+PSRULE P1/prt-r : P1[ADJ -, WH -, MOD -] --> 
+   H0[PSUBCAT NP, MOD -] : 1.
+
+PSRULE P1/prt-of : P1[ADJ +, WH -, MOD -] -->
+   H0[ADJ +, PFORM OF, PSUBCAT NONE, MOD -] : 1.
+
+; WH, when, where, why, how etc, without complement 
+; VPINF and NP compls covered by P1/p_x rules
+
+PSRULE P1/p-wh : P1[ADJ -, WH +, MOD +] --> 
+   H0[PSUBCAT NONE, PFORM WH] : 1.
+
+; ********************************
+;
+; PP rules
+;
+
+PSRULE PP/p1 : P2[WH @x, MOD @m] --> H1[WH @x, MOD @m] : 1.
+
+; MOD is used to stop premodified PPs being verbal args and, passed,
+; as above to stop some adjuncts appearing as args
+;
+; partly because ..., partly in ...
+PSRULE PP/adv_p1 : P2[WH @x, MOD +] --> A2[ADV +, MOD -, ASUBCAT NONE]
+  H1[WH @x] : 2 : (ncmod _ 2 1). 
+; in part because ... (in part by ...?)
+PSRULE PP/p1_p1 : P2[WH -, MOD +] --> P0[ADJ -, PSUBCAT NP] N0[WH -,
+  NTYPE NORM] H1[ADJ -, PFORM PREPS] : 3 : (ncmod _ 3 1) : (dobj 1 2). 
+
+; P(P) coord rules -- no oblig comma or -r relax, but MOD bound and
+; passed on P2, PSUBCAT passed from first daughter (2nd better if ellipsis?)
+
+PSRULE PP/cj-beg_pp : P2[CONJ -, WH @x, MOD @m, PSUBCAT @s] -->
+   CJ[CJTYPE BEGIN]  
+   H2[CONJ +, WH @x, MOD @m, PSUBCAT @s] : 2.
+PSRULE PP/cj-end_pp : P2[CONJ +, WH @x, MOD @m, PSUBCAT @s] -->
+   CJ[CJTYPE END] ( NG ) H2[CONJ -, WH @x, MOD @m, PSUBCAT @s] : 1 :
+   (conj 1 3) : (ncmod _ 3 2). 
+
+PSRULE PP/pp_pp-coord : P2[CONJ @c, WH @x, ADJ @a, PFORM @p, MOD @m,
+   PSUBCAT @s] -->  
+   P2[CONJ -, WH @x, ADJ @a, PFORM @p, MOD @m, PSUBCAT @s] ( +pco )
+   P2[CONJ +, MOD @m] : 3 : (conj 3 1).
+
+PSRULE P/cj-beg_p : P0[CONJ -, PSUBCAT @s] --> CJ[CJTYPE BEGIN]
+   H0[CONJ +, PSUBCAT @s] : 2.
+PSRULE P/cj-end_p : P0[CONJ +, PSUBCAT @s] --> CJ[CJTYPE END] ( NG )
+   H0[CONJ -, PSUBCAT @s] : 1 : (conj 1 3) : (ncmod _ 3 2).
+PSRULE P/sl-end_p : P0[CONJ +, PSUBCAT @s] --> +psl H0[CONJ -,
+   PSUBCAT @s] : 1 : (conj 1 2).
+
+PSRULE P/p_p-coord : P0[CONJ @x, PSUBCAT @s, ADJ @a, PFORM @p] --> 
+   P0[CONJ -, PSUBCAT @s, ADJ @a, PFORM @p] P0[CONJ +] : 2 : (conj 2 1).
+
+; **************************************
+;
+; A1 premod rules
+
+PSRULE A1/a : A1[MOD -] --> H0 : 1.
+
+; so very slow(ly)
+PSRULE A1/dg_a1 : A1 --> A0[ATYPE DG] H1[MOD -] : 2 : (ncmod _ 2 1).
+
+; not very | very not slow(ly) | certainly very slow | slower | the slower 
+
+PSRULE A1/not_a1 : A1 --> NG H1[MOD -] : 2 : (ncmod _ 2 1).
+PSRULE A1/adv_a1 : A1[ADV -] --> A2[ADV +, MOD -, ATYPE CAT, ASUBCAT
+   NONE] H1[MOD -] : 2 : (ncmod _ 2 1).
+PSRULE A1/adv_a-er : A1[ADV +, MOD -] --> A0[ADV +] H0[AFORM ER] : 2 :
+   (ncmod _ 2 1).
+PSRULE A1/det_a-er : A1[ADV +, MOD -] --> DT H0[AFORM ER] : 2 : (det
+   2 1).
+
+; host specific(ly)
+PSRULE A1/n_a-r : A1[MOD -] --> N0[PLU -, NTYPE NORM] H0[ATYPE NORM] :
+   2 : (ncmod _ 2 1).
+
+; host orient(at)ed, trouble free, add JK to others in seclarge.lex?
+PSRULE A1/n_a : A1[MOD -, ADV -] --> N0[PLU -] H0[ATYPE ORI] : 2 :
+   (ncmod _ 2 1).
+
+; east german | slower certainly | completely destroyed | heavily smoking
+
+PSRULE A1/n-dir_a : A1[MOD -] --> N0[PLU -, NTYPE DIR] H0[ATYPE NORM]
+   : 2 : (ncmod _ 2 1).
+PSRULE A1/a-er_adv : A1[ADV -, MOD -] --> H0[AFORM ER] A0[ADV +] : 1 :
+   (ncmod _ 1 2).
+PSRULE A1/advp_ppart-r : A1[MOD -] --> A2[ADV +, MOD -, ASUBCAT NONE]
+   V0[VFORM PPART] : 2 : (ncmod _ 2 1).
+PSRULE A1/advp_ing-r : A1[MOD -] --> A2[ADV +, MOD -, ASUBCAT NONE]
+   V0[VFORM ING, FIN -] : 2 : (ncmod _ 2 1).
+
+; Ordinal / numerical comparison -- see NP rules too -- better if
+; `more adj' inherited AFORM ER from `more'?
+
+; a/one third / two-thirds easier / more difficult (to win than to...)
+PSRULE AP/det_ord_a1 : A1 --> (DT[WH -, PLU -]) A0[ATYPE NUM] 
+   H1[MOD -, WH -] : 3 : (ncmod _ 3 2) : (det 2 1).
+PSRULE AP/num_ord_a1 : A1 --> N0[NTYPE NUM, PLU -] A0[ATYPE NUM] 
+   H1[MOD -, WH -] : 3 : (ncmod _ 3 2) : (ncmod _ 2 1).
+
+; A comp rules (not as fine-grained as V1/ and organised by PFORM)
+
+; clear to him | clear about him leaving
+PSRULE A1/a_pp : A1[ADV -, MOD -] --> H0[ASUBCAT PP] P2[MOD -,
+   PFORM PREP] : 1  
+   : 2 = [PSUBCAT (NONE, NP)], (iobj 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 2)
+   : 2 = [PSUBCAT PP], (pcomp 1 2). 
+; certain of him leaving
+PSRULE A1/a_pp-of : A1[ADV -, MOD -] --> H0[ASUBCAT PPOF] P2[MOD -,
+   PFORM OF] : 1  
+   : 2 = [PSUBCAT (NONE, NP)], (iobj 1 2) 
+   : 2 = [PSUBCAT VPING], (xcomp _ 1 2) 
+   : 2 = [PSUBCAT SING], (ccomp _ 1 2)
+   : 2 = [PSUBCAT PP], (pcomp 1 2). 
+; clear for him to go
+PSRULE A1/a_pp-for : A1[ADV -, MOD -] --> H0[ASUBCAT PP] P2[MOD -,
+   PFORM FOR] : 1 
+   : 2 = [PSUBCAT (NP, NONE)], (iobj 1 2)  
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 2) 
+   : 2 = [PSUBCAT PP], (pcomp 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 2).   
+; playful with him
+PSRULE A1/a_pp-with : A1[ADV -, MOD -] --> H0[ASUBCAT PP] P2[MOD -,
+   PFORM WITH] : 1 
+   : 2 = [PSUBCAT (NONE, NP)], (iobj 1 2)
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xcomp _ 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (ccomp _ 1 2).
+; not really comp? -- better than me
+PSRULE A1/a_pp-than : A1[MOD -] --> H0[ASUBCAT PP] P2[PFORM THAN] : 1 
+   : 2 = [PSUBCAT (NONE NP)], (ncmod _ 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+; (as) clear as water
+PSRULE A1/a_pp-as : A1[MOD -] --> H0[ASUBCAT PP] P2[PFORM AS] : 1 
+   : 2 = [PSUBCAT (NONE NP)], (ncmod _ 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+; accountable to us for his action
+PSRULE A1/a_pp_pp : A1[ADV -, MOD -] --> H0[ASUBCAT PP_PP] P2[PFORM
+   PREP, PSUBCAT NP] P2[PFORM FOR, PSUBCAT NP] : 1 : (iobj 1 2) : (iobj 1 3).
+; clear (to us) whether to go
+PSRULE A1/a_pp-s : A1[ADV -, MOD -] --> H0[ASUBCAT PP] P2[PFORM PREPS,
+   ADJ -, MOD -] : 1 
+   : 2 = [PSUBCAT (NONE NP)], (ncmod _ 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+PSRULE A1/a_pp_pp-s : A1[ADV -, MOD -] --> H0[ASUBCAT PP_PP]  P2[PFORM
+   PREP, PSUBCAT NP] P2[PFORM PREPS, ADJ -, MOD -] : 1
+   : 3 = [PSUBCAT (NONE NP)], (ncmod _ 1 2) 
+   : 3 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 3 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 3 = [PSUBCAT PP], (pmod 1 2). 
+; clear (to us) how to go
+PSRULE A1/a_pp-wh : A1[ADV -, MOD -] --> H0[ASUBCAT WHPP] P2[PFORM WH,
+   ADJ -, MOD -] : 1 
+   : 2 = [PSUBCAT (NONE NP)], (ncmod _ 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 2 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+PSRULE A1/a_pp_pp-wh : A1[ADV -, MOD -] --> H0[ASUBCAT PP_WHPP] P2[PFORM
+   PREP, PSUBCAT NP] P2[PFORM WH, ADJ -, MOD -] : 1 
+   : 3 = [PSUBCAT (NONE NP)], (ncmod _ 1 2) 
+   : 3 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2) 
+   : 3 = [PSUBCAT (SFIN, SINF, SING)], (cmod _ 1 2)
+   : 3 = [PSUBCAT PP], (pmod 1 2). 
+; clear (to us) that he left
+PSRULE A1/a_s : A1[ADV -, MOD -] --> H0[ASUBCAT SFIN] V2[INV -, FIN +,
+   nopunct, -ta] : 1 
+   : 2 = [COMP +], (ccomp (2 (lambda (c) (lambda (v) c))) 1 (2 (lambda (c)
+   (lambda (v) v)))) 
+   : 2 = [COMP -], (ccomp _ 1 2).
+PSRULE A1/a_pp_s : A1[ADV -, MOD -] --> H0[ASUBCAT SFIN]  P2[PFORM
+   PREP, PSUBCAT NP] V2[INV -, FIN +, nopunct, -ta] : 1 : (pcomp 1 2)
+   : 3 = [COMP +], (ccomp (3 (lambda (c) (lambda (v) c))) 1 (3 (lambda (c)
+   (lambda (v) v)))) 
+   : 3 = [COMP -], (ccomp _ 1 3).
+; certain to go
+PSRULE A1/a_inf : A1[ADV -, MOD -] --> H0[ASUBCAT VPINF] V1[VFORM INF,
+   FIN -] : 1 : (xcomp to 1 2).
+; busy helping her
+PSRULE A1/a_ing : A1[ADV -, MOD -] --> H0[ASUBCAT VPING] V1[VFORM ING,
+   FIN -] : 1 : (xcomp _ 1 2).
+; namely my salary / i.e. my salary / double my salary (only REX)
+PSRULE A1/adv_np : A1[MOD -] --> H0[ASUBCAT NP, ATYPE XCOMP]
+   N2[MOD -, WH -] : 1 : (obj 1 2). 
+
+; A1 postmod rules, MOD + like V1/vp rules 
+
+PSRULE A1/a1_pp : A1[ADV -, MOD +] --> H1 P2[PFORM PREP] : 1 
+   : 2 = [PSUBCAT (NP, NONE)], (ncmod _ 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+PSRULE A1/a1_pp-with : A1[ADV -, MOD +] --> H1 P2[PFORM WITH] : 1 
+   : 2 = [PSUBCAT (NP, NONE)], (ncmod _ 1 2) 
+   : 2 = [PSUBCAT (VP, VPINF, VPING, VPPRT, AP)], (xmod _ 1 2)
+   : 2 = [PSUBCAT (SFIN, SINF, SING, WHS)], (cmod _ 1 2)
+   : 2 = [PSUBCAT PP], (pmod 1 2). 
+
+; AP pre/postmod and special unheaded rules (-r, delete if thresholding?)
+
+PSRULE AP/a1 : A2[MOD @m] --> H1[MOD @m] : 1.
+; moderately quickly, almost exclusively
+PSRULE AP/adv_adv : A2[MOD -] --> H0[ATYPE @x, ADV +] A0[ATYPE @x, ADV
+   +] : 2 : (ncmod _ 2 1).
+; smart(ly) enough
+PSRULE AP/a_a-post : A2[MOD -] --> H0[AFORM NONE] A0[ATYPE POST, ADV
+   +] : 1 : (ncmod _ 1 2).
+; eg.?, head?
+PSRULE AP/adv_adv-pl : A2[MOD -] --> H0[ATYPE CAT, ADV +] A0[ATYPE
+   PLACE, ADV +] : 1 : (ncmod _ 1 2).
+PSRULE AP/adv_pp-of-r : A2[MOD -] --> H0[ATYPE CAT, ADV +, ASUBCAT
+   PPOF] P2[PFORM OF] : 1 
+   : 2 = [PSUBCAT NP], (iobj 1 2)
+   : 2 = [PSUBCAT VPING], (xcomp _ 1 2)  
+   : 2 = [PSUBCAT SING], (ccomp _ 1 2)
+   : 2 = [PSUBCAT PP], (pcomp 1 2). 
+PSRULE AP/dg_ppart-r : A2[MOD -] --> A0[ATYPE DG] V0[VFORM PPART] : 2
+   : (ncmod _  2 1).
+PSRULE AP/dg_ing-r : A2[MOD -] --> A0[ATYPE DG] V0[VFORM ING, FIN -] : 2 :
+   (ncmod _ 2 1).
+
+; *******************************
+;
+; AP/A coord rules -- no oblig comma (interact
+; with recursive advbl mod rules?) relaxed binding -r rule
+
+PSRULE AP/cj-beg_ap : A2[CONJ -, MOD @m] --> CJ[CJTYPE BEGIN]
+   H2[CONJ +, MOD @m] : 2.
+PSRULE AP/cj-end_ap : A2[CONJ +, MOD @m] --> CJ[CJTYPE END] H2[CONJ
+   -, MOD @m] : 1 : (conj 1 2).
+
+PSRULE AP/ap_ap-coord : A2[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE
+   @t, ASUBCAT @s] -->  A2[CONJ -, AFORM @x, ADV @y, MOD @m, ATYPE
+   @t, ASUBCAT @s] (+pco) A2[CONJ +, AFORM @x, ADV @y, MOD @m, ATYPE
+   @t, ASUBCAT @s] : 3 : (conj 3 1).
+
+PSRULE AP/ap_ap-coord-r : A2[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE
+   @t, ASUBCAT @s] --> A2[CONJ -, AFORM @x, ADV @y, MOD @m, ATYPE @t] 
+   (+pco) A2[CONJ +, AFORM @x, ADV @y, ASUBCAT @s]  : 3 : (conj 3 1).
+
+PSRULE A/cj-beg_a : A0[CONJ -] --> CJ[CJTYPE BEGIN] H0[CONJ +] : 2.
+PSRULE A/cj-end_a : A0[CONJ +] --> CJ[CJTYPE END] ( NG ) H0[CONJ -]
+   : 1 : (conj 1 3) : (ncmod _ 3 2).
+PSRULE A/sl-end_a : A0[CONJ +] --> +psl H0[CONJ -] : 1 : (conj 1 2).
+
+PSRULE A/a_a-coord : A0[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE @t,
+   ASUBCAT @s] --> A0[CONJ -, MOD @m, AFORM @x, ADV @y, ATYPE @t,
+   ASUBCAT @s] (+pco) A0[CONJ +, MOD @m, AFORM @x, ADV @y, ATYPE @t,
+   ASUBCAT @s] : 3 : (conj 3 1).
+
+; Unlike-cat coord rules
+
+PSRULE A/a_ppart-coord : A0[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE
+   @t, ASUBCAT @s] --> A0[CONJ -, MOD @m, AFORM @x, ADV @y, ATYPE @t,
+   ASUBCAT @s] (+pco) V0[CONJ +, VFORM PPART] : 3 : (conj 3 1).
+
+PSRULE A/ppart_a-coord : A0[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE
+   @t, ASUBCAT @s] --> V0[CONJ -, VFORM PPART] (+pco) A0[CONJ +, MOD
+   @m, AFORM @x, ADV @y, ATYPE @t, ASUBCAT @s] : 3 : (conj 3 1).
+
+PSRULE A/a_ing-coord : A0[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE
+   @t, ASUBCAT @s] --> A0[CONJ -, MOD @m, AFORM @x, ADV @y, ATYPE @t,
+   ASUBCAT @s] (+pco) V0[CONJ +, VFORM ING] :  3 : (conj 3 1).
+
+PSRULE A/ing_a-coord : A0[CONJ @c, MOD @m, AFORM @x, ADV @y, ATYPE
+   @t, ASUBCAT @s] --> V0[CONJ -, VFORM ING] (+pco) A0[CONJ +, MOD
+   @m, AFORM @x, ADV @y, ATYPE @t, ASUBCAT @s] : 3 : (conj 3 1).
+
+PSRULE A/adv_nt-coord : A0[CONJ @c, ADV +, MOD @m, AFORM @x, ATYPE
+   @t, ASUBCAT @s] --> A0[CONJ -, MOD @m, AFORM @x, ADV +, ATYPE @t,
+   ASUBCAT @s] (+pco) N2[NTYPE TEMP, MOD -, CONJ +, POSS -, WH -] : 3
+   : (conj 3 1).
+
+PSRULE A/adv_pp-coord : A0[CONJ @c, ADV +, MOD @m, AFORM @x, ATYPE
+   @t, ASUBCAT @s] --> A0[CONJ -, MOD @m, AFORM @x, ADV +, ATYPE @t,
+   ASUBCAT @s] (+pco) P2[MOD -, CONJ +, ADJ -, WH -] : 3 : (conj 3 1).
+
+PSRULE A/pp_adv-coord : A0[CONJ @c, ADV +, MOD @m, AFORM @x, ATYPE
+   @t, ASUBCAT @s] -->  P2[MOD -, CONJ -, ADJ -, WH -]  (+pco) A0[CONJ
+   +, MOD @m, AFORM @x, ADV +, ATYPE @t, ASUBCAT @s]: 3 : (conj 3 1).
+
+; conj rule (`not only ... but (also) ...') -- semantics not done as
+; CJ/beg rules all ignore?
+PSRULE CJ/beg_beg : CJ[CJTYPE BEGIN] --> CJ[CJTYPE BEGIN] CJ[CJTYPE
+   BEGIN] : 1.
+
+; ***********************************
+;
+; Propagation and Default feature constraints
+
+PROPRULE HFC_V : [V +, N -] --> [H +], U. F(0) = F(1), F in VHEAD.
+PROPRULE HFC_N : [V -, N +] --> [H +], U. F(0) = F(1), F in NHEAD.
+PROPRULE HFC_P : [V -, N -] --> [H +], U. F(0) = F(1), F in PHEAD.
+PROPRULE HFC_A : [V +, N +] --> [H +], U. F(0) = F(1), F in AHEAD.
+PROPRULE AGR1 : V2 --> [N +, V -], [H +, BAR 1]. PLU(1) = PLU(2).
+PROPRULE AGR2 : N2 --> [MINOR DET], [H +]. PLU(1) = PLU(2).
+PROPRULE WH1 : N1[~WH] --> [H +], U. WH(0) = WH(1).
+PROPRULE WH2 : N0[~WH] --> [H +], U. WH(0) = WH(1).
+PROPRULE INV : V2 --> H2, U. INV(0) = INV(1).
+PROPRULE TXTCAT1 : V2 --> H2, U. TXTCAT(0) = TXTCAT(1).
+PROPRULE TXTCAT2 : N2 --> [H +, BAR (1, 2)], U. TXTCAT(0) = TXTCAT(1).
+PROPRULE TXTCAT3 : N1 --> H1, U. TXTCAT(0) = TXTCAT(1).
+PROPRULE PUNCT1 : [TA +, BAR (1, 2)] --> [H +], [TXTCAT ADJUNCT]. 
+   F(0) = F(2), F in PUNCTS.
+PROPRULE PUNCT2 : [V2] --> [H2], U. F(0) = F(1), F in PUNCTS.
+PROPRULE CONJ : [TA +, BAR (1, 2)] --> [H +], [TXTCAT ADJUNCT]. CONJ(0) = CONJ(1).
+
+DEFRULE CONJ1 : [] --> [N, V, ~CONJ], U. CONJ(1) = -.
+DEFRULE CONJ2 : [] --> [H +, ~CONJ], U. CONJ(1) = -.
+DEFRULE CONJ3 : [N, V, ~CONJ] --> U. CONJ(0) = -.
+DEFRULE AUX : V1 --> [H0], U. AUX(1) = -.
+DEFRULE POSS1 : N1 --> U. POSS(0) = -.
+DEFRULE POSS2 : [] --> [N2, ~POSS, NTYPE(NORM, NAME, NUM, PLACE, ORG, MEAS, TIT, TEMP, ~)], U. POSS(1) = -.
+DEFRULE WHNP : V2 --> [N2], U. WH(1) = -.
+DEFRULE WHPP : V2 --> [P2], U. WH(1) = -.
+DEFRULE ADJUNCT : [TXTCAT ADJUNCT] --> U. F(0) = -, F in PUNCTS.
+DEFRULE COLON : V2[COLON (@, -)] --> H2[COLON(~)], U. COLON(1) = -.
+DEFRULE SCOLON1 : [TXTCAT(UNIT,~)] --> [BAR 2], U. SCOLON(1) = -.
+DEFRULE SCOLON2 : [TXTCAT(UNIT,~)] --> H2, U. SCOLON(1) = -.
+DEFRULE SCOLON3 : [BAR 2] --> U. SCOLON(0) = -.
+DEFRULE SCOLON4 : N1 --> U. SCOLON(0) = -.
+DEFRULE SCOLON5 : V1 --> U. SCOLON(0) = -.
+DEFRULE SCOLON6 : [N +, V -] --> H1, U. SCOLON(1) = -.
+DEFRULE SCOLON7 : [N -, V +] --> H1, U. SCOLON(1) = -.
+DEFRULE SCOLON8 : [] --> N1, U. SCOLON(1) = -.
+DEFRULE SCOLON9 : [] --> V1, U. SCOLON(1) = -.
+DEFRULE IMP1 : [N, V, ~IMP] --> V2[~IMP], U. IMP(1) = -.
+DEFRULE IMP2 : V2[~IMP] --> H2[~IMP], U. IMP(1) = -.
+DEFRULE IMP3 : V2[~IMP] --> U. IMP(0) = -.
+DEFRULE TA1 : [N +, V -] --> [H +, BAR 1], U. TA(1) = -.
+DEFRULE TA2 : N2 --> [H +], [N +, V -, BAR (1, 2)], U. TA(2) = -.
+DEFRULE TA3 : N2 --> [H +], V2, U. TA(2) = -.
+DEFRULE QUO1 : [N, V, BAR (1, 2)] --> U. QUOTE(0) = -.
+DEFRULE QUO2 : [~T] --> V2, U. QUOTE(1) = -.
+DEFRULE COMP1 : Tp --> V2, U. COMP(1) = -.
+DEFRULE COMP2 : V2[~COMP] --> H2, U. COMP(1) = -.
+DEFRULE COMP3 : V2[~COMP] --> U. COMP(0) = -.
+
+; Lexicon, tagset split btwn current seclarge.lex (151 tags) 
+; and older ones that may occur in training data 
+;
+; add/check CAP, Cap, cap entries to seclarge.lex for all closed tags?
+; add case nom/acc to pronouns, interog, etc? (but S rules?)
+
+WORD APP$ : DT[WH -, PLU @x, POSS +]. ; his,her,its,...
+WORD AT : DT[PLU @x, POSS -, WH -].   ; the, no
+WORD AT1 : DT[PLU -, POSS -, WH -].   ; a,an,every
+WORD CC : CJ[CJTYPE END]. ; and, or, nor, plus
+WORD CCB : CJ[CJTYPE END]. ; but
+WORD CS : P0[PSUBCAT SFIN, PFORM PREPS, ADJ -, CONJ -], 
+   P0[PSUBCAT VPPRT, PFORM PREPS, ADJ -, CONJ -], 
+   P0[PSUBCAT VPING, PFORM PREPS, ADJ -, CONJ -], P0[PSUBCAT PP,
+   PFORM PREPS, ADJ -, CONJ -]. ; though, unless, when,...
+WORD CSA : P0[PSUBCAT @y, PFORM AS, CONJ -]. ; though, unless, when,...
+WORD CSN : P0[PSUBCAT @y, PFORM THAN, CONJ -, ADJ +]. ; than
+WORD CST : CP. ; that, like (as compl.)
+WORD CSW : P0[PSUBCAT SFIN, PFORM PREPS, ADJ -, CONJ -], 
+   P0[PSUBCAT VPINF, PFORM PREPS, ADJ -, CONJ -]. ; whether
+WORD DA : A0[ADV -, ATYPE ATT, AFORM NONE, CONJ -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH -, CONJ -], 
+   DT[POSS -, WH -, PLU @x]. ; same, former, latter, such, own
+WORD DA1 : A0[ADV -, ATYPE ATT, AFORM NONE, CONJ -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; little, much
+WORD DA2 : A0[ADV -, ATYPE ATT, AFORM NONE, CONJ -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; few, many, several
+WORD DA2R : A0[ADV -, ATYPE CAT, AFORM ER, CONJ -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; fewer
+WORD DAR : A0[ADV @x, ATYPE CAT, AFORM ER, CONJ -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH -, CONJ -]. ; less,more
+WORD DAT : A0[ADV -, ATYPE CAT, AFORM EST, CONJ -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH -, CONJ -]. ; most,least
+WORD DB : N0[NTYPE PART, PLU -, POSS -, WH -, CONJ -]. ; all, half
+WORD DB2 : N0[NTYPE PART, PLU +, POSS -, WH -, CONJ -]. ; both, all
+WORD DD : DT[PLU @x, WH -, POSS -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH -, CONJ -]. ; any,enough,some,lot,rest
+WORD DD1 : DT[PLU -, WH -, POSS -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; each,another,neither,either,this,that
+WORD DD2 : DT[PLU +, WH -, POSS -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; these,those
+WORD DDQ : DT[WH +, PLU @x, POSS -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH +, CONJ -]. ; what,which
+WORD DDQ$ : DT[WH +, POSS -, PLU @x], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH +, CONJ -]. ; whose
+WORD DDQV : DT[WH +, PLU @x, POSS -], 
+   N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH +, CONJ -]. ; whatever,whichever
+WORD EX : N2[QUOTE -, SCOLON -, NTYPE THERE, PLU @x, POSS -, WH -, CONJ -]. ; there
+WORD ICS : P0[PSUBCAT SFIN, PFORM PREPS, MOD +], 
+   P0[PSUBCAT VPING, PFORM PREPS, MOD +], 
+   P0[PSUBCAT NP, PFORM PREP, MOD +], 
+   P0[PSUBCAT PP, PFORM PREP, MOD +]. ; before,after,like,save,except,...
+WORD IF : 
+   P0[PSUBCAT NONE, PFORM FOR, CONJ -], 
+   P0[PSUBCAT SINF, PFORM FOR, CONJ -], 
+   P0[PSUBCAT WHS, PFORM FOR, CONJ -], 
+   P0[PSUBCAT NP, PFORM FOR, CONJ -], 
+   P0[PSUBCAT AP, PFORM FOR, CONJ -], 
+   P0[PSUBCAT PP, PFORM FOR, CONJ -], 
+   P0[PSUBCAT VPING, PFORM FOR, CONJ -]. ; for
+WORD II : P0[PSUBCAT @x, PFORM PREP, CONJ -]. ; 154 preps
+WORD IO :
+   P0[PSUBCAT NONE, PFORM OF, ADJ +, CONJ -], 
+   P0[PSUBCAT NP, PFORM OF, ADJ +, CONJ -], 
+   P0[PSUBCAT PP, PFORM OF, ADJ +, CONJ -], 
+   P0[PSUBCAT VPING, PFORM OF, ADJ +, CONJ -],
+   P0[PSUBCAT SING, PFORM OF, ADJ +, CONJ -]. ; of
+WORD IW : 
+   P0[PSUBCAT NONE, PFORM WITH, CONJ -], 
+   P0[PSUBCAT NP, PFORM WITH, CONJ -], 
+   P0[PSUBCAT VPING, PFORM WITH, CONJ -],
+   P0[PSUBCAT SINF, PFORM WITH, CONJ -], 
+   P0[PSUBCAT SING, PFORM WITH, CONJ -]. ; with, without
+WORD JA : A0[ADV -, ATYPE PRD, AFORM NONE, CONJ -]. ; ablaze, asleep,...
+WORD JB : A0[ADV -, ATYPE ATT, AFORM NONE, CONJ -]. ; NUM-yard, car-hire,...
+WORD JBR : A0[ADV -, ATYPE ATT, AFORM ER, CONJ -]. ; upper,inner,...
+WORD JBT : A0[ADV -, ATYPE ATT, AFORM EST, CONJ -]. ; utmost
+WORD JJ : A0[ADV -, ATYPE NORM, AFORM NONE, CONJ -]. ; 8k+ adjs
+WORD JJR : A0[ADV -, ATYPE NORM, AFORM ER, CONJ -]. ; 154 adj+er
+WORD JJT : A0[ADV -, ATYPE NORM, AFORM EST, CONJ -]. ; 126 adj+est
+WORD JK : A0[ADV -, ATYPE ORI, AFORM NONE, CONJ -]. ; orient(at)ed
+WORD LE : CJ[CJTYPE BEGIN]. ; both, (n)either, not only
+WORD MC : N0[NTYPE NUM, PLU @x, POSS -, WH -, CONJ -]. ; 208 numbers
+WORD MC-MC : N2[QUOTE -, SCOLON -, NTYPE NUM, PLU @x, POSS -, WH -, CONJ -]. ; number ranges, 1-2
+WORD MC1 : N0[NTYPE NUM, PLU -, POSS -, WH -, CONJ -], 
+   DT[POSS -, PLU -, WH -]. ; one
+WORD MC2 : N0[NTYPE NUM, PLU +, POSS -, WH -, CONJ -]. ; num+s,zeros,eighties
+WORD MD : N0[NTYPE NUM, PLU -, POSS -, WH -, CONJ -],
+   A0[ADV -, ATYPE NUM, ASUBCAT NP, CONJ -]. ; ordinal,first,thirtieth
+WORD ND1 : N0[NTYPE DIR, PLU -, POSS -, WH -, CONJ -]. ; north, southeast,...
+WORD NN : N0[NTYPE NORM, PLU @x, POSS -, WH -, CONJ -]. ; sheep, media,...
+WORD NN1 : N0[NTYPE NORM, PLU -, POSS -, WH -, CONJ -]. ; 14k sg nouns
+WORD NN2 : N0[NTYPE NORM, PLU +, POSS -, WH -, CONJ -]. ; 7k pl nouns
+WORD FW : N0[NTYPE NORM, PLU @x, POSS -, WH -, CONJ -]. ; 1.4k foreign wds
+WORD FO : N0[NTYPE NAME, PLU @x, POSS -, WH -, CONJ -]. ; 300+ formulas
+WORD NNJ : N0[NTYPE ORG, PLU @x, POSS -, WH -, CONJ -]. ; co,corp,Revenue
+WORD NNJ1 : N0[NTYPE ORG, PLU -, POSS -, WH -, CONJ -]. ; School,committee,...
+WORD NNJ2 : N0[NTYPE ORG, PLU +, POSS -, WH -, CONJ -]. ; associates
+WORD NNL : N0[NTYPE PLACE, PLU -, POSS -, WH -, CONJ -]. ; Ave,Dr,Rd,St
+WORD NNL1 : N0[NTYPE PLACE, PLU -, POSS -, WH -, CONJ -]. ; Street, river,...
+WORD NNL2 : N0[NTYPE PLACE, PLU +, POSS -, WH -, CONJ -]. ; gardens,...
+WORD NNO : N0[NTYPE NUM, PLU @x, POSS -, WH -, CONJ -]. ; thousand,billion,...
+WORD NNO2 : N0[NTYPE NUM, PLU +, POSS -, WH -, CONJ -]. ; hundreds, dozens,...
+WORD NNS : N0[NTYPE TIT, PLU @x, POSS -, WH -, CONJ -]. ; Gen,Gov,Sir,...
+WORD NNS1 : N0[NTYPE TIT, PLU -, POSS -, WH -, CONJ -]. ; Mayor,Major,...
+WORD NNS2 : N0[NTYPE TIT, PLU +, POSS -, WH -, CONJ -]. ; Masters,generals,...
+WORD NNSA1 : N0[NTYPE POSTTIT, PLU -, POSS -, WH -, CONJ -]. ; esq, jr,...
+WORD NNSB1 : N0[NTYPE PRETIT, PLU -, POSS -, WH -, CONJ -]. ; Baron, Brig,...
+WORD NNSB2 : N0[NTYPE PRETIT, PLU +, POSS -, WH -, CONJ -]. ; Ministers,...
+WORD NNT1 : N0[NTYPE TEMP, PLU -, POSS -, WH -, CONJ -]. ; autumn, day,...
+WORD NNT2 : N0[NTYPE TEMP, PLU +, POSS -, WH -, CONJ -]. ; weeks, hours,...
+WORD NNU : N0[NTYPE MEAS, PLU @x, POSS -, WH -, CONJ -]. ; cent,bhp,...
+WORD NNU1 : N0[NTYPE MEAS, PLU -, POSS -, WH -, CONJ -]. ; gram,yard,...
+WORD NNU2 : N0[NTYPE MEAS, PLU +, POSS -, WH -, CONJ -]. ; mins,miles,...
+WORD NP1 : N0[NTYPE NAME, PLU -, POSS -, WH -, CONJ -].  ; 9k+ sg names
+WORD NP2 : N0[NTYPE NAME, PLU +, POSS -, WH -, CONJ -].  ; 252 pl names
+WORD NPD1 : N0[NTYPE TEMP, PLU -, POSS -, WH -, CONJ -]. ; Monday,...
+WORD NPD2 : N0[NTYPE TEMP, PLU +, POSS -, WH -, CONJ -]. ; Fridays,...
+WORD NPM1 : N0[NTYPE TEMP, PLU -, POSS -, WH -, CONJ -]. ; April,...
+WORD PN : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH -, CONJ -]. ; none
+WORD PN1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; everybody,...
+WORD PNQO : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH +, CONJ -]. ; whom
+WORD PNQS : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH +, CONJ -]. ; who
+WORD PNQV$ : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH +, CONJ -]. ; whosever
+WORD PNQVO : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH +, CONJ -]. ; whomsoever
+WORD PNQVS : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH +, CONJ -]. ; whoever
+WORD PP$ : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS +, WH -, CONJ -]. ; hers, theirs,..
+WORD PPH1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; it
+WORD PPHO1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; him,her
+WORD PPHO2 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; them
+WORD PPHS1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; he,she
+WORD PPHS2 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; they
+WORD PPIO1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; me
+WORD PPIO2 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; us
+WORD PPIS1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -]. ; I
+WORD PPIS2 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU +, POSS -, WH -, CONJ -]. ; we
+WORD PPX1 : N2[QUOTE -, SCOLON -, NTYPE REFL, PLU -, POSS -, WH -, CONJ -]. ; himself,..
+WORD PPX2 : N2[QUOTE -, SCOLON -, NTYPE REFL, PLU +, POSS -, WH -, CONJ -]. ; each other, one another, themselves
+WORD PPY : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU @x, POSS -, WH -, CONJ -]. ; you
+WORD RA : A0[AFORM NONE, ATYPE TEMP, ADV +, CONJ -]. ; ago,p.m.,after,before
+WORD REX : A0[AFORM NONE, ATYPE XCOMP, ADV +, CONJ -]. ; i.e.,e.g.
+WORD RG : A0[AFORM NONE, ATYPE DG, ADV +, CONJ -]. ; very,so,as,over,too,about
+WORD RGA : A0[AFORM NONE, ATYPE POST, ADV +, CONJ -]. ; indeed, enough
+WORD RGQ : P0[PFORM WH, PSUBCAT NONE, CONJ -],
+  P0[PFORM WH, PSUBCAT NP, CONJ -],
+  P0[PFORM WH, PSUBCAT VPINF, CONJ -]. ; how
+WORD RGQV : P0[PFORM WH, PSUBCAT NONE, CONJ -],
+  P0[PFORM WH, PSUBCAT NP, CONJ -]. ; however
+WORD RL : A0[AFORM NONE, ATYPE PLACE, ADV +, CONJ -], PT. ; upstairs,inside,..
+WORD RP : A0[AFORM NONE, ATYPE CAT, ADV +, CONJ -], PT. ; out,over,about...
+WORD RR : A0[AFORM NONE, ATYPE CAT, ADV +, CONJ -]. ; 2k advbs
+WORD RRQ : P0[PFORM WH, PSUBCAT NONE, CONJ -],
+           P0[PFORM WH, PSUBCAT VPINF, CONJ -]. ; where, why, when
+WORD RRQV : P0[PFORM WH, PSUBCAT NONE, CONJ -].; wherever, whenever
+WORD RRR : A0[AFORM ER, ATYPE CAT, ADV +, CONJ -]. ; adv+er
+WORD RRT : A0[AFORM EST, ATYPE CAT, ADV +, CONJ -]. ; adv+est
+WORD RT : N2[QUOTE -, NTYPE TEMP, POSS -, PLU -, WH -, CONJ -, MOD -, SCOLON -], PT. ; today,again,now,then,...
+WORD TO : V0[FIN -, INV -, AUX TO, VFORM INF, CONJ -]. ; to inf
+WORD UH : IJ. ; dammit,yes,eh,...
+WORD VB0 : V0[FIN +, INV @y, AUX BE, VFORM BSE, PLU @x, CONJ -]. ; be
+WORD VBDR : V0[FIN +, INV @y, AUX BE, VFORM PAST, PLU @x, CONJ -]. ; were
+WORD VBDZ : V0[FIN +, INV @y, AUX BE, VFORM PAST, PLU -, CONJ -]. ; was
+WORD VBG : V0[FIN -, INV @y, AUX BE, VFORM ING, PLU @x, CONJ -]. ; being
+WORD VBM : V0[FIN +, INV @y, AUX BE, VFORM PRES, PLU -, CONJ -]. ; am
+WORD VBN : V0[FIN +, INV @y, AUX BE, VFORM PPART, PLU @x, CONJ -]. ; been
+WORD VBR : V0[FIN +, INV @y, AUX BE, VFORM PRES, PLU @x, CONJ -]. ; are
+WORD VBZ : V0[FIN +, INV @y, AUX BE, VFORM PRES, PLU -, CONJ -]. ; is
+WORD VD0 : V0[FIN +, INV @y, AUX DO, VFORM BSE, PLU @x, CONJ -]. ; do
+WORD VDD : V0[FIN +, INV @y, AUX DO, VFORM PAST, PLU @x, CONJ -]. ; did
+WORD VDG : V0[FIN -, INV @y, AUX DO, VFORM ING, PLU @x, CONJ -]. ; doing
+WORD VDN : V0[FIN +, INV @y, AUX DO, VFORM PPART, PLU @x, CONJ -]. ; done
+WORD VDZ : V0[FIN +, INV @y, AUX DO, VFORM PRES, PLU -, CONJ -]. ; does
+WORD VH0 : V0[FIN +, INV @y, AUX HAVE, VFORM BSE, PLU @x, CONJ -]. ; have
+WORD VHD : V0[FIN +, INV @y, AUX HAVE, VFORM PAST, PLU @x, CONJ -]. ; had
+WORD VHG : V0[FIN -, INV @y, AUX HAVE, VFORM ING, PLU @x, CONJ -]. ; having
+WORD VHN : V0[FIN +, INV @y, AUX HAVE, VFORM PPART, PLU @x, CONJ -]. ; had
+WORD VHZ : V0[FIN +, INV @y, AUX HAVE, VFORM PRES, PLU -, CONJ -]. ; has
+WORD VM : V0[FIN +, INV @y, AUX MODAL, VFORM PRES, PLU @x, CONJ -]. ; can,...
+WORD VMK : V0[FIN +, INV @y, AUX CAT, VFORM PRES, PLU @x, CONJ -]. ; ought,used
+WORD VVD : V0[FIN +, AUX -, VFORM PAST, PLU @x, CONJ -]. ; 2k+ verb+ed
+WORD VVG : V0[FIN -, AUX -, VFORM ING, PLU @x, CONJ -]. ; 2k+ verb+ing
+WORD VVN : V0[FIN +, AUX -, VFORM PPART, PLU @x, CONJ -]. ; 3k verb+en
+WORD VVZ : V0[FIN +, AUX -, VFORM PRES, PLU -, CONJ -]. ; 1k+ verb+s
+WORD VV0 : V0[FIN +, AUX -, VFORM BSE, PLU @x, CONJ -]. ; 2.5k verb
+WORD XX : NG. ; not
+WORD ZZ1 : N0[PLU -, NTYPE NAME, POSS -, WH -, CONJ -], 
+   N2[QUOTE -, SCOLON -, PLU -, NTYPE NAME, POSS -, WH -, CONJ -]. ;
+WORD ZZ2 : N0[PLU +, NTYPE NAME, POSS -, WH -, CONJ -]. ; letters, A,Alpha
+WORD $ : N0[PLU @x, NTYPE POSS, POSS +, WH -, CONJ -]. ; 's, 'S, '
+
+; punctuation words recognised -- other types of brackets and quotes
+; shld be tokenised to () and only *balanced* "
+; # crops up as £ in WSJ so shld be tokenised &pound
+; / is not part of tagset (/ is currently CC in seclarge.lex)
+; what else?
+
+WORD , : [PUNCT comma].
+WORD \; : [PUNCT semicolon].
+WORD : : [PUNCT colon].
+WORD ! : [PUNCT exmark].
+WORD ? : [PUNCT qumark].
+WORD - : [PUNCT dash].
+WORD -- : [PUNCT dash].
+WORD ( : [PUNCT lbrack].
+WORD ) : [PUNCT rbrack].
+WORD . : [PUNCT dot].
+WORD \.\.\. : [PUNCT ellip].
+WORD / : [PUNCT slash].
+WORD " : [PUNCT quote].
+
+; seclarge.lex includes these as transition table trained on them, but 
+; grammar also has &-less variants (above) so that &s may be stripped 
+; before parsing, etc (XML compatibility issue)
+
+WORD \&FW : N0[NTYPE NORM, PLU @x, POSS -, WH -, CONJ -].
+WORD \&FO : N0[NTYPE NAME, PLU @x, POSS -, WH -, CONJ -].
+
+; 18 tags only needed for training on pretagged data -- not in
+; seclarge.lex so not assigned to untagged data
+
+WORD BCS : P0[PSUBCAT SFIN, PFORM PREPS].
+WORD BTO : P0[PSUBCAT VPINF, PFORM PREPS], P0[PSUBCAT PP, PFORM PREPS].
+WORD CF : P0[PSUBCAT SFIN, PFORM PREPS, CONJ -], 
+   P0[PSUBCAT NONE, PFORM PREPS, CONJ -].
+WORD MC$ : N2[QUOTE -, SCOLON -, NTYPE NUM, PLU @x, POSS +, WH -, CONJ -].
+WORD MF : N2[QUOTE -, SCOLON -, NTYPE NUM, PLU @x, POSS -, WH -, CONJ -].
+WORD NC2 : N0[NTYPE NORM, PLU +, POSS -, WH -, CONJ -].
+WORD FA : N0[NTYPE NORM, PLU @x, POSS -, WH -, CONJ -].
+WORD FB : N0[NTYPE NORM, PLU @x, POSS -, WH -, CONJ -].
+WORD NNO1 : N0[NTYPE NORM, PLU -, POSS -, WH -, CONJ -].
+WORD NNT : N0[NTYPE TEMP, PLU @x, POSS -, WH -, CONJ -].
+WORD NP : N0[NTYPE NAME, PLU @x, POSS -, WH -, CONJ -].
+WORD NPM2 : N0[NTYPE MEAS, PLU +, POSS -, WH -, CONJ -].
+WORD PNX1 : N2[QUOTE -, SCOLON -, NTYPE PRO, PLU -, POSS -, WH -, CONJ -].
+WORD RGR : A0[AFORM ER, ATYPE NORM, ADV +, CONJ -].
+WORD RGT : A0[AFORM EST, ATYPE NORM, ADV +, CONJ -].
+WORD RPK : A0[AFORM NONE, ATYPE CAT, ADV +, CONJ -].
+WORD VVGK : V0[FIN -, AUX -, VFORM ING, PLU @x, CONJ -].
+WORD VVNK : V0[FIN +, AUX -, VFORM PPART, PLU @x, CONJ -].
+
+

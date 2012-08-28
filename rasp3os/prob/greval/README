@@ -1,0 +1,48 @@
+
+gold700files.rasp is our version of the Parc 700 dependency bank with
+RASP GRs from tsg15 added either manually or interactively
+
+sents-ne.* JAC's run and test data (now edited by me for quotes)
+
+check-parc.lsp|fasl checks our GRs against Parc's and highlights
+differences, etc -- see comp-rels.txt for current output
+
+runeval.sh runs a trained parser on the Parc (NE) sentences
+
+creat non-NE version of sents-ne-tst.txt by removing <w> </w> tags
+
+gramreleval-new(-noquotes).lsp evaluates results v. gold standard
+
+park700/
+
+gold560)ne).rasp is the gold standard for the 560 sentences used by
+Parc in their NAACL04 paper
+
+(the latter include balanced quotes, marked up as (ta quote link|ellip
+word|head) -- remove these from eval if not using latest version of tsg15)
+
+test files for above with ne and pos mark up
+
+EJB
+12/9/05
+
+NEW EVALUATION CODE: 
+
+applies code in gramreleval-new-scheme.lsp
+
+use eval.sh as outlined in $RASP/manuals/eval/eval-report.pdf
+
+example usage of the main script eval.sh:
+
+./eval.sh -d -t example -e'-u -o -s n -g s -m'
+
+eval.sh processes the rasp output file example.out and creates the
+files example.(trans.)parses and example.(trans.)grtext. These files are
+then processed by the eval_system.sh script which is invoked within
+the eval.sh script.
+
+If users wish to evaluate given OTHER parser output they can create
+their own intermediate file formats (.parses and .grtext see the
+report pdf) and invoke the evaluation system directly.
+
+./eval_system.sh -t example.trans -c sents-tst.gr -u -o -s n -g s -m

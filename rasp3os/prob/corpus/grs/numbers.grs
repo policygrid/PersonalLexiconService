@@ -1,0 +1,141 @@
+23rd_MD May_NPM1 was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod _ May 23rd)
+
+May_NPM1 23rd_MD was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 23rd)
+
+23rd_MD May_NPM1 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+23rd_MD May_NPM1 ,_, 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+May_NPM1 23rd_MD 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+May_NPM1 23rd_MD ,_, 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod num May 1993)
+(ncmod num May 23rd)
+
+Monday_NPD1 12th_MD May_NPM1 1993_MC was_VBDZ horrible_JJ
+(ncsubj was May _)
+(xcomp _ was horrible)
+(ncmod _ May Monday)
+(ncmod num May 1993)
+(ncmod num May 12th)
+
+Monday_NPD1 ,_, 12th_MD May_NPM1 1993_MC was_VBDZ horrible_JJ
+(ncsubj was Monday _)
+(xcomp _ was horrible)
+(ncmod _ Monday May)
+(ncmod num May 1993)
+(ncmod num Monday 12th)
+
+April_NPM1 1st_MD is_VBZ horrible_JJ
+(ncsubj is April _)
+(xcomp _ is horrible)
+(ncmod num April 1st)
+
+1st_MD April_NPM1 is_VBZ horrible_JJ
+(ncsubj is April _)
+(xcomp _ is horrible)
+(ncmod _ April 1st)
+
+The_AT 1st_MD April_NPM1 is_VBZ horrible_JJ
+(ncsubj is April _)
+(xcomp _ is horrible)
+(det April The)
+(ncmod _ April 1st)
+
+10/05/04_MC is_VBZ my_APP$ birthday_NN1
+(ncsubj is 10/05/04 _)
+(xcomp _ is birthday)
+(det birthday my)
+
+10-05-04_MC is_VBZ my_APP$ birthday_NN1
+(ncsubj is 10-05-04 _)
+(xcomp _ is birthday)
+(det birthday my)
+
+My_APP$ birthday_NN1 is_VBZ on_II 10/05_MC
+(ncsubj is birthday _)
+(pcomp is on)
+(dobj on 10/05)
+(det birthday My)
+
+0208_MC 892_MC 5144_MC is_VBZ my_APP$ number_NN1
+(ncsubj is 0208 _)
+(xcomp _ is number)
+(det number my)
+(ncmod num 0208 892)
+(ncmod num 892 5144)
+
+L10,4M_NNU is_VBZ a_AT1 lot_NN1 of_IO money_NN1
+(ncsubj is L10,4M _)
+(xcomp _ is lot)
+(det lot a)
+(iobj lot of)
+(dobj of money)
+
+L_&FO 10.4_MC M_NNU is_VBZ a_AT1 lot_NN1 of_IO money_NN1
+(ncsubj is L _)
+(xcomp _ is lot)
+(det lot a)
+(iobj lot of)
+(dobj of money)
+(ncmod _ L M)
+(ncmod _ M 10.4)
+
+L1,210.4M_NP1 is_VBZ an_AT1 even_RR greater_JJR amount_NN1 of_IO money_NN1
+(ncsubj is L1,210.4M _)
+(xcomp _ is amount)
+(det amount an)
+(ncmod _ amount greater)
+(iobj amount of)
+(dobj of money)
+(ncmod _ greater even)
+
+FF_NP1 1,210_MC M_NNU is_VBZ money_NN1
+(ncsubj is FF _)
+(xcomp _ is money)
+(ncmod _ FF M)
+(ncmod _ M 1,210)
+
+FF_NP1 1_MC ,_, 210_MC M_NNU is_VBZ money_NN1
+(ncsubj is FF _)
+(xcomp _ is money)
+(ncmod _ FF M)
+(ncmod _ M 1)
+(ncmod num 1 210)
+
+$_NNU 12.65_MC is_VBZ money_NN1
+(ncsubj is $ _)
+(xcomp _ is money)
+(ncmod _ $ 12.65)
+
+125_MC ,_, 170_MC and_CC 150_MC respectively_RGA came_VVD
+(ncsubj came and _)
+(ncmod _ and respectively)
+(conj and 125)
+(conj and 170)
+(conj and 150)
+
+10-25_MC is_VBZ manageable_JJ
+(ncsubj is 10-25 _)
+(xcomp _ is manageable)
+

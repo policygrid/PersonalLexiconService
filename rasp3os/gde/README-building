@@ -1,0 +1,85 @@
+          COMMON LISP SOURCES FOR GDE AND PARSER
+
+            COMPILING AND LOADING INSTRUCTIONS
+
+
+Contents of this Directory
+--------------------------
+
+This directory contains two sub-directories holding the Common Lisp
+sources. The sub-directories are:
+
+   'cgde' -- source code for the Grammar Development Environment (GDE),
+   version 1.41
+
+   'cpar' -- source code for the chart parser.
+
+Although only the parser is strictly necessary to be able to parse
+sentences, for initial use of the tools we recommend that you use them
+in conjunction with the GDE software. The GDE provides a convenient
+interface, amongst other things allowing the grammar to be browsed and
+parse trees to be inspected at various levels of detail.
+
+
+To Make a Runnable System
+-------------------------
+
+To set up the software, you should first create a suitable disk
+directory to hold the system, and then copy the contents of the tape
+into it. Make sure that the access protection on the files in the
+grammar development environment (GDE) sub-directory ('cgde/')
+with 'help' in their names will allow all potential users of the
+system to read them.
+
+Before compiling and loading the software, you may need to make a few
+small changes to some of the files to take account of the particular
+implementation of Common Lisp you are using. These alterations may be
+necessary if your implementation of Common Lisp is not one of those
+currently recognised. The Common Lisp implementations currently
+recognised are:
+
+   Franz Allegro Common Lisp, versions 3.1, 4.0, 4.1, 5.0, 5.1, 6.0, 6.1
+   Austin Kyoto Common Lisp, versions 1.530 and 1.605
+   CMU CL, version 15, 17f
+   Coral Common Lisp (now Macintosh CL), version 1.2
+   Harlequin LispWorks, version 2.1
+   Hewlett Packard Common Lisp I, version 1.01
+   Hewlett Packard Common Lisp II, rev A.02.16 and A.04.00
+   Kyoto Common Lisp, version 1.25
+   Lucid Common Lisp (now Liquid Common Lisp), versions 2.1.1, 3.0.1 and 4.0
+   Macintosh Common Lisp, 4.0-4.3
+   OpenMCL Version (Beta: Darwin) 0.11, 0.12.1
+   POPLOG Common Lisp, version 1.0
+   Procyon Common Lisp, version 2.1, 3.3
+   Xerox Common Lisp, Lyric release
+
+Changes would involve the GDE files 'custom.lsp' and 'load.lsp'. The
+functions 'shell' and 'catch-all-errors' in 'custom.lsp', and
+'save-gde-image' in 'load.lsp' may need changing.
+
+Once the modifications described above have been carried out, the
+programs are ready to be compiled. The files called 'boot.lsp' in each
+of the directories contain Lisp calls to do this, so just loading
+these files in turn will compile and produce object code for the right
+files (the ones whose names end in '.lsp'). In some Lisp
+implementations the parser may run faster if it is compiled after the
+GDE. Subsequently loading the 'load.lsp' files will load the object
+code.
+
+In implementations of Common Lisp (such as POPLOG) with no
+'compile-file' function, or those in which the 'load' function calls
+the compiler (such as MCL), the files called 'load.lsp' should be
+loaded and the 'boot.lsp' files ignored.
+
+After the object code has been loaded, a core image may be saved by
+calling the function 'save-gde-image' (defined in the GDE 'load.lsp'
+file), passing the name of the file to hold the image as an argument,
+e.g.
+
+   (save-gde-image "GDE")
+
+Note that for Allegro CL the image file name should have the extension
+"dxl", e.g. "GDE.dxl".
+
+See the file README in this directory for instructions on using the
+GDE to parse sentences.

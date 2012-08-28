@@ -1,0 +1,14 @@
+This directory contains various pieces of documentation including
+three manual type documents describing various aspects of the Tagger
+Suite that can be useful to get started:
+
+- /manual/tagger.*.gz: The original manual written by David Elworthy
+describing all original options and auxiliary programs. 
+
+- /manual/version1.3.*.gz: Brief description of various aspects of the
+extension of the Tagger Suite with a more sophisticated unknown word
+handler by Larry Piano.
+
+- /manual/gdbm.*.gz: Brief description of various aspects of extending
+the Tagger Suite with GDBM lexical lookup and some added auxiliary
+programs by Guido Minnen.

@@ -1,0 +1,363 @@
+(|Kim_NP1| |said_VVD| |,_,| |"_"| |the_AT| |abbot_NN1| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_np-quo/+-"
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|))
+  |,_,|
+  ("NP/np-quo/----" |"_"| ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|Kim_NP1| |said_VVD| |,_,| |"_"| |the_AT| |abbot_NN1| ?_? |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_np-quo/+-"
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|))
+  |,_,|
+  ("NP/np-quo/--+-" |"_"| ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))
+   ("End-punct1/---" ?_?) |"_"|))
+ ("End-punct3/-" ._.))
+(|Kim_NP1| |said_VVD| |:_:| |"_"| |the_AT| |abbot_NN1| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_np-quo/-+"
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|))
+  |:_:|
+  ("NP/np-quo/----" |"_"| ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|Kim_NP1| |said_VVD| |,_,| |"_"| |the_AT| |abbot_NN1| |came_VVD| ._. |"_"|)
+("T/txt-sc1/--"
+ ("S/s_s-quo/+-"
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|))
+  |,_,|
+  ("S/s-quo/+-" |"_"|
+   ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))
+    ("V1/v" |came_VVD|))
+   ("End-punct3/-" ._.) |"_"|)))
+(|Kim_NP1| |said_VVD| |"_"| |the_AT| |abbot_NN1| |came_VVD| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_s-quo/--"
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|))
+  ("S/s-quo/--" |"_"|
+   ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))
+    ("V1/v" |came_VVD|))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|Kim_NP1| |said_VVD| |:_:| |"_"| |the_AT| |abbot_NN1| |came_VVD| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_s-quo/-+"
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|))
+  |:_:|
+  ("S/s-quo/--" |"_"|
+   ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |abbot_NN1|))
+    ("V1/v" |came_VVD|))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|"_"| |The_AT| |abbot_NN1| |came_VVD| |"_"| |,_,| |Kim_NP1| |said_VVD| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_s/+"
+  ("S/s-quo/--" |"_"|
+   ("S/np_vp" ("NP/det_n1" |The_AT| ("N1/n" |abbot_NN1|))
+    ("V1/v" |came_VVD|))
+   |"_"|)
+  |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|)))
+ ("End-punct3/-" ._.))
+(|"_"| |No_UH| !_! |"_"| |,_,| |said_VVD| |Kim_NP1| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_v_np/+"
+  ("NP/interj-quo/--+-" |"_"| |No_UH| ("End-punct2/--" !_!) |"_"|)
+  |,_,| |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))
+ ("End-punct3/-" ._.))
+(|"_"| |No_UH| |"_"| |said_VVD| |Kim_NP1| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_v_np/-" ("NP/interj-quo/----" |"_"| |No_UH| |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |do_VD0| |n't_XX| |think_VV0| |so_PN| ._. |"_"|)
+("T/txt-sc1/--"
+ ("S/s-quo/+-" |"_"|
+  ("S/np_vp" I_PPIS1
+   ("V1/do_bse/--" |do_VD0|
+    ("V1/not_vp" |n't_XX| ("V1/v_np-pro" |think_VV0| |so_PN|))))
+  ("End-punct3/-" ._.) |"_"|))
+(|"_"| I_PPIS1 |do_VD0| |n't_XX| |think_VV0| |so_RG| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo/--" |"_"|
+  ("S/np_vp" I_PPIS1
+   ("V1/vp_advp"
+    ("V1/do_bse/--" |do_VD0|
+     ("V1/not_vp" |n't_XX| ("V1/v" |think_VV0|)))
+    ("AP/a1" ("A1/a" |so_RG|))))
+  |"_"|)
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |do_VD0| |n't_XX| |think_VV0| |so._NN1| |"_"| |said_VVD| |Kim_NP1| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_v_np/-"
+  ("S/s-quo/--" |"_"|
+   ("S/np_vp" I_PPIS1
+    ("V1/do_bse/--" |do_VD0|
+     ("V1/not_vp" |n't_XX|
+      ("V1/v_n1" |think_VV0| ("N1/n" |so._NN1|)))))
+   |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))
+ ("End-punct3/-" ._.))
+(|"_"| |Stay_NN1| |tuned_VVN| |,_,| |"_"| |said_VVD| |Kim_NP1| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_v_np/-"
+  ("S/s-quo/-+" |"_"|
+   ("S/n1_vp" ("N1/n" |Stay_NN1|) ("V1/v" |tuned_VVN|)) |,_,| |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)))
+ ("End-punct3/-" ._.))
+(|"_"| |Stay_NN1| |tuned_VVN| |,_,| |"_"| |he_PPHS1| |said_VVD| |,_,| |"_"| |the_AT| |show_NN1| |is_VBZ| |starting._VVG| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_s/-"
+  ("S/s-quo/-+" |"_"|
+   ("S/n1_vp" ("N1/n" |Stay_NN1|) ("V1/v" |tuned_VVN|)) |,_,| |"_"|)
+  ("S/s_s-quo/+-" ("S/np_vp" |he_PPHS1| ("V1/v" |said_VVD|)) |,_,|
+   ("S/s-quo/--" |"_"|
+    ("S/np_vp" ("NP/det_n1" |the_AT| ("N1/n" |show_NN1|))
+     ("V1/be_ing/--" |is_VBZ| ("V1/v" |starting._VVG|)))
+    |"_"|)))
+ ("End-punct3/-" ._.))
+(|"_"| |Economic_JJ| |problems_NN2| |"_"| |abound_VV0| ._.)
+("T/txt-sc1/-+"
+ ("S/np_vp"
+  ("NP/np-quo/----" |"_"|
+   ("NP/n1-plu"
+    ("N1/ap_n1/-" ("AP/a1" ("A1/a" |Economic_JJ|))
+     ("N1/n" |problems_NN2|)))
+   |"_"|)
+  ("V1/v" |abound_VV0|))
+ ("End-punct3/-" ._.))
+(|"_"| |Economic_JJ| |problems_NN2| |,_,| |"_"| |he_PPHS1| |said_VVD| |,_,| |"_"| |abound_VV0| ._. |"_"|)
+("T/txt-sc1/--"
+ ("S/np-quo_s/-++"
+  ("NP/np-quo/---+" |"_"|
+   ("NP/n1-plu"
+    ("N1/ap_n1/-" ("AP/a1" ("A1/a" |Economic_JJ|))
+     ("N1/n" |problems_NN2|)))
+   |,_,| |"_"|)
+  ("S/np_vp" |he_PPHS1| ("V1/v" |said_VVD|)) |,_,|
+  ("VP/vp-quo/+-" |"_"| ("V1/v" |abound_VV0|) ("End-punct3/-" ._.)
+   |"_"|)))
+(A_AT1 |"_"| |reasonable_JJ| |man_NN1| |"_"| |would_VM| |agree_VV0| ._.)
+("T/txt-sc1/-+"
+ ("S/np_vp"
+  ("NP/det_n1" A_AT1
+   ("N1/n1-quo-r/--" |"_"|
+    ("N1/ap_n1/-" ("AP/a1" ("A1/a" |reasonable_JJ|))
+     ("N1/n" |man_NN1|))
+    |"_"|))
+  ("V1/modal_bse/--" |would_VM| ("V1/v" |agree_VV0|)))
+ ("End-punct3/-" ._.))
+(|Demand_NN1| |for_IF| |shares_NN2| |"_"| |has_VHZ| |never_RR| |been_VBN| |stronger_JJR| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/n1_vp"
+  ("N1/n1_pp4" ("N1/n" |Demand_NN1|)
+   ("PP/p1" ("P1/p_np" |for_IF| ("NP/n1-plu" ("N1/n" |shares_NN2|)))))
+  ("VP/vp-quo/--" |"_"|
+   ("V1/have_ppart-r/+-" |has_VHZ| ("AP/a1" ("A1/a" |never_RR|))
+    ("V1/be_ap/-" |been_VBN| ("AP/a1" ("A1/a" |stronger_JJR|))))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|Demand_NN1| |for_IF| |shares_NN2| |"_"| |has_VHZ| |never_RR| |been_VBN| |stronger_JJR| ._. |"_"|)
+("T/txt-sc1/--"
+ ("S/n1_vp"
+  ("N1/n1_pp4" ("N1/n" |Demand_NN1|)
+   ("PP/p1" ("P1/p_np" |for_IF| ("NP/n1-plu" ("N1/n" |shares_NN2|)))))
+  ("VP/vp-quo/+-" |"_"|
+   ("V1/have_ppart-r/+-" |has_VHZ| ("AP/a1" ("A1/a" |never_RR|))
+    ("V1/be_ap/-" |been_VBN| ("AP/a1" ("A1/a" |stronger_JJR|))))
+   ("End-punct3/-" ._.) |"_"|)))
+(|Demand_NN1| |for_IF| |shares_NN2| |"_"| |has_VHZ| |never_RR| |been_VBN| |stronger_JJR| |,_,| |"_"| |said_VVD| |Kim_NP1| ._.)
+("T/txt-sc1/-+"
+ ("S/n1_vp"
+  ("N1/n_s" |Demand_NN1|
+   ("S/pp_vp-r"
+    ("PP/p1" ("P1/p_np" |for_IF| ("NP/n1-plu" ("N1/n" |shares_NN2|))))
+    ("VP/vp-quo/-+" |"_"|
+     ("V1/have_ppart-r/+-" |has_VHZ| ("AP/a1" ("A1/a" |never_RR|))
+      ("V1/be_ap/-" |been_VBN| ("AP/a1" ("A1/a" |stronger_JJR|))))
+     |,_,| |"_"|)))
+  ("V1/v_np-name" |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|))))
+ ("End-punct3/-" ._.))
+(|Profits_NN2| |"_"| |on_II| |margin_NN1| |"_"| |remain_VV0| |strong_JJ| ._.)
+("T/txt-sc1/-+"
+ ("S/np_vp"
+  ("NP/n1-plu"
+   ("N1/n1_pp1" ("N1/n" |Profits_NN2|)
+    ("PP/pp-quo/--" |"_"|
+     ("PP/p1" ("P1/p_n1" |on_II| ("N1/n" |margin_NN1|))) |"_"|)))
+  ("V1/v_ap" |remain_VV0| ("AP/a1" ("A1/a" |strong_JJ|))))
+ ("End-punct3/-" ._.))
+(|Profits_NN2| |remain_VV0| |"_"| |very_RG| |strong_JJ| ._. |"_"|)
+("T/txt-sc1/--"
+ ("S/np_vp" ("NP/n1-plu" ("N1/n" |Profits_NN2|))
+  ("V1/v_ap" |remain_VV0|
+   ("AP/ap-quo/+-" |"_"|
+    ("AP/a1" ("A1/dg_a1" |very_RG| ("A1/a" |strong_JJ|)))
+    ("End-punct3/-" ._.) |"_"|))))
+(|Profits_NN2| |remain_VV0| |"_"| |very_RG| |strong_JJ| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/np_vp" ("NP/n1-plu" ("N1/n" |Profits_NN2|))
+  ("V1/v_ap" |remain_VV0|
+   ("AP/ap-quo/--" |"_"|
+    ("AP/a1" ("A1/dg_a1" |very_RG| ("A1/a" |strong_JJ|))) |"_"|)))
+ ("End-punct3/-" ._.))
+(|Profits_NN2| |remain_VV0| |"_"| |a_AT1| |problem_NN1| ._. |"_"|)
+("T/txt-sc1/--"
+ ("S/s_np-quo/--"
+  ("S/np_vp" ("NP/n1-plu" ("N1/n" |Profits_NN2|))
+   ("V1/v" |remain_VV0|))
+  ("NP/np-quo/--+-" |"_"| ("NP/det_n1" |a_AT1| ("N1/n" |problem_NN1|))
+   ("End-punct3/-" ._.) |"_"|)))
+(|Profits_NN2| |remain_VV0| |a_AT1| |"_"| |problem._NN1| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/np_vp" ("NP/n1-plu" ("N1/n" |Profits_NN2|))
+  ("V1/v_np" |remain_VV0|
+   ("NP/det_n1" |a_AT1|
+    ("N1/n" ("N/quo_n-r" |"_"| |problem._NN1| |"_"|)))))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |love_VV0| |you_PPY| !_! |,_,| |"_"| |Kim_NP1| |said_VVD| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_s/-"
+  ("S/s-quo/++" |"_"|
+   ("S/np_vp" I_PPIS1 ("V1/v_np-pro" |love_VV0| |you_PPY|))
+   ("End-punct2/--" !_!) |,_,| |"_"|)
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|)))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |love_VV0| |you_PPY| !_! |"_"| |,_,| |Kim_NP1| |said_VVD| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_s/+"
+  ("S/s-quo/+-" |"_"|
+   ("S/np_vp" I_PPIS1 ("V1/v_np-pro" |love_VV0| |you_PPY|))
+   ("End-punct2/--" !_!) |"_"|)
+  |,_,|
+  ("S/np_vp" ("NP/n1-name" ("N1/n-name" |Kim_NP1|))
+   ("V1/v" |said_VVD|)))
+ ("End-punct3/-" ._.))
+(|"_"| |That_DD1| |man_NN1| |"_"| |,_,| |he_PPHS1| |said_VVD| |,_,| |"_"| |is_VBZ| |a_AT1| |fraud_NN1| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_s/+++"
+  ("NP/np-quo/----" |"_"| ("NP/det_n1" |That_DD1| ("N1/n" |man_NN1|))
+   |"_"|)
+  |,_,| ("S/np_vp" |he_PPHS1| ("V1/v" |said_VVD|)) |,_,|
+  ("VP/vp-quo/--" |"_"|
+   ("V1/be_np/----" |is_VBZ|
+    ("NP/det_n1" |a_AT1| ("N1/n" |fraud_NN1|)))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|"_"| |That_DD1| |man_NN1| |is_VBZ| |a_AT1| |fraud_NN1| |"_"| |,_,| |he_PPHS1| |said_VVD| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_s/+"
+  ("S/s-quo/--" |"_"|
+   ("S/np_vp" ("NP/det_n1" |That_DD1| ("N1/n" |man_NN1|))
+    ("V1/be_np/----" |is_VBZ|
+     ("NP/det_n1" |a_AT1| ("N1/n" |fraud_NN1|))))
+   |"_"|)
+  |,_,| ("S/np_vp" |he_PPHS1| ("V1/v" |said_VVD|)))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |love_VV0| |you_PPY| !_! |,_,| |"_"| |said_VVD| |Kim_NP1| |,_,| |his_APP$| |best_JJT| |friend_NN1| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_v_np_pco_np/-"
+  ("S/s-quo/++" |"_"|
+   ("S/np_vp" I_PPIS1 ("V1/v_np-pro" |love_VV0| |you_PPY|))
+   ("End-punct2/--" !_!) |,_,| |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("NP/det_n1" |his_APP$|
+   ("N1/ap_n1/-" ("AP/a1" ("A1/a" |best_JJT|)) ("N1/n" |friend_NN1|))))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |love_VV0| |you_PPY| !_! |"_"| |,_,| |said_VVD| |Kim_NP1| |,_,| |his_APP$| |best_JJT| |friend_NN1| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_v_np_pco_np/+"
+  ("S/s-quo/+-" |"_"|
+   ("S/np_vp" I_PPIS1 ("V1/v_np-pro" |love_VV0| |you_PPY|))
+   ("End-punct2/--" !_!) |"_"|)
+  |,_,| |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("NP/det_n1" |his_APP$|
+   ("N1/ap_n1/-" ("AP/a1" ("A1/a" |best_JJT|)) ("N1/n" |friend_NN1|))))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |love_VV0| |you_PPY| !_! |,_,| |"_"| |said_VVD| |Kim_NP1| |,_,| |director_NN1| |of_IO| |Friends_NN2| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_v_np_pco_n1/-"
+  ("S/s-quo/++" |"_"|
+   ("S/np_vp" I_PPIS1 ("V1/v_np-pro" |love_VV0| |you_PPY|))
+   ("End-punct2/--" !_!) |,_,| |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("N1/n_pp-of" |director_NN1|
+   ("PP/p1" ("P1/p_np" |of_IO| ("NP/n1-plu" ("N1/n" |Friends_NN2|))))))
+ ("End-punct3/-" ._.))
+(|"_"| I_PPIS1 |love_VV0| |you_PPY| !_! |"_"| |,_,| |said_VVD| |Kim_NP1| |,_,| |director_NN1| |of_IO| |Friends_NN2| ._.)
+("T/txt-sc1/-+"
+ ("S/s-quo_v_np_pco_n1/+"
+  ("S/s-quo/+-" |"_"|
+   ("S/np_vp" I_PPIS1 ("V1/v_np-pro" |love_VV0| |you_PPY|))
+   ("End-punct2/--" !_!) |"_"|)
+  |,_,| |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("N1/n_pp-of" |director_NN1|
+   ("PP/p1" ("P1/p_np" |of_IO| ("NP/n1-plu" ("N1/n" |Friends_NN2|))))))
+ ("End-punct3/-" ._.))
+(|"_"| |No_UH| !_! |,_,| |"_"| |said_VVD| |Kim_NP1| |,_,| |his_APP$| |best_JJT| |friend_NN1| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_v_np_pco_np/-"
+  ("NP/interj-quo/--++" |"_"| |No_UH| ("End-punct2/--" !_!) |,_,|
+   |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("NP/det_n1" |his_APP$|
+   ("N1/ap_n1/-" ("AP/a1" ("A1/a" |best_JJT|)) ("N1/n" |friend_NN1|))))
+ ("End-punct3/-" ._.))
+(|"_"| |No_UH| !_! |"_"| |,_,| |said_VVD| |Kim_NP1| |,_,| |his_APP$| |best_JJT| |friend_NN1| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_v_np_pco_np/+"
+  ("NP/interj-quo/--+-" |"_"| |No_UH| ("End-punct2/--" !_!) |"_"|)
+  |,_,| |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("NP/det_n1" |his_APP$|
+   ("N1/ap_n1/-" ("AP/a1" ("A1/a" |best_JJT|)) ("N1/n" |friend_NN1|))))
+ ("End-punct3/-" ._.))
+(|"_"| |No_UH| !_! |,_,| |"_"| |said_VVD| |Kim_NP1| |,_,| |director_NN1| |of_IO| |Friends_NN2| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_v_np_pco_n1/-"
+  ("NP/interj-quo/--++" |"_"| |No_UH| ("End-punct2/--" !_!) |,_,|
+   |"_"|)
+  |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("N1/n_pp-of" |director_NN1|
+   ("PP/p1" ("P1/p_np" |of_IO| ("NP/n1-plu" ("N1/n" |Friends_NN2|))))))
+ ("End-punct3/-" ._.))
+(|"_"| |No_UH| !_! |"_"| |,_,| |said_VVD| |Kim_NP1| |,_,| |director_NN1| |of_IO| |Friends_NN2| ._.)
+("T/txt-sc1/-+"
+ ("S/np-quo_v_np_pco_n1/+"
+  ("NP/interj-quo/--+-" |"_"| |No_UH| ("End-punct2/--" !_!) |"_"|)
+  |,_,| |said_VVD| ("NP/n1-name" ("N1/n-name" |Kim_NP1|)) |,_,|
+  ("N1/n_pp-of" |director_NN1|
+   ("PP/p1" ("P1/p_np" |of_IO| ("NP/n1-plu" ("N1/n" |Friends_NN2|))))))
+ ("End-punct3/-" ._.))
+(|He_PPHS1| |is_VBZ| |"_"| |How_NP1| |are_VBR| |you_PPY| |,_,| I_PPIS1 |'m_VBM| |fine_JJ| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_s-quo/--" ("S/np_vp" |He_PPHS1| ("V1/be_gap-r" |is_VBZ|))
+  ("S/s-quo/--" |"_"|
+   ("T/s_leta"
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |How_NP1|))
+     ("V1/be_np/----" |are_VBR| |you_PPY|))
+    ("Tacl/comma-e" |,_,|
+     ("S/np_vp" I_PPIS1
+      ("V1/be_ap/-" |'m_VBM| ("AP/a1" ("A1/a" |fine_JJ|))))))
+   |"_"|))
+ ("End-punct3/-" ._.))
+(|He_PPHS1| |is_VBZ| |:_:| |"_"| |How_NP1| |are_VBR| |you_PPY| |,_,| I_PPIS1 |'m_VBM| |fine_JJ| |"_"| ._.)
+("T/txt-sc1/-+"
+ ("S/s_s-quo/-+" ("S/np_vp" |He_PPHS1| ("V1/be_gap-r" |is_VBZ|)) |:_:|
+  ("S/s-quo/--" |"_"|
+   ("T/s_leta"
+    ("S/np_vp" ("NP/n1-name" ("N1/n-name" |How_NP1|))
+     ("V1/be_np/----" |are_VBR| |you_PPY|))
+    ("Tacl/comma-e" |,_,|
+     ("S/np_vp" I_PPIS1
+      ("V1/be_ap/-" |'m_VBM| ("AP/a1" ("A1/a" |fine_JJ|))))))
+   |"_"|))
+ ("End-punct3/-" ._.))

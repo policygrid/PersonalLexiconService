@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: eval-report.aux
+The style file: agsm.bst
+Database file #1: all-papers-main.bib
+Warning--empty note in briscoe05a
+You've used 5 entries,
+            2909 wiz_defined-function locations,
+            665 strings with 5789 characters,
+and the built_in function-call counts, 24767 in all, are:
+= -- 4043
+> -- 363
+< -- 0
++ -- 1959
+- -- 112
+* -- 2145
+:= -- 4926
+add.period$ -- 6
+call.type$ -- 5
+change.case$ -- 70
+chr.to.int$ -- 5
+cite$ -- 6
+duplicate$ -- 85
+empty$ -- 163
+format.name$ -- 132
+if$ -- 4465
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 3
+newline$ -- 19
+num.names$ -- 52
+pop$ -- 28
+preamble$ -- 1
+purify$ -- 75
+quote$ -- 0
+skip$ -- 79
+stack$ -- 0
+substring$ -- 5729
+swap$ -- 19
+text.length$ -- 70
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 1
+while$ -- 111
+width$ -- 0
+write$ -- 70
+(There was 1 warning)

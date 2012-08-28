@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Evaluation System}{}
+\BOOKMARK [2][-]{subsection.2.1}{Output Formats}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{GR Match}{section.2}
+\BOOKMARK [1][-]{section.3}{Slot Comparison}{}
+\BOOKMARK [2][-]{subsection.3.1}{All}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Head-Dependent}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Head-Dependent-NCSUBJ}{section.3}
+\BOOKMARK [1][-]{section.4}{GR-Type Match}{}
+\BOOKMARK [2][-]{subsection.4.1}{Original}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Equality Based}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Subsumption Based}{section.4}
+\BOOKMARK [2][-]{subsection.4.4}{Hierarchy Based}{section.4}
+\BOOKMARK [1][-]{section.5}{Resources}{}
+\BOOKMARK [2][-]{subsection.5.1}{Test Files and Gold Standard}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Running the Evaluation System}{section.5}
+\BOOKMARK [1][-]{section.6}{Current System Performance}{}

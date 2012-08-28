@@ -1,0 +1,65 @@
+(The_AT silly_JJ man_NN1 smoked_VVD) 1
+(The_AT man_NN1 silly_JJ with_IW drink_NN smoked_VVD) 8
+(Kim_NP1 is_VBZ likely_JJ to_TO go_VV0) 2
+(Kim_NP1 is_VBZ easy_JJ to_TO please_VV0) 2
+(Kim_NP1 is_VBZ kind_JJ to_TO invite_VV0 Sandy_NP1) 4
+(Kim_NP1 is_VBZ anxious_JJ for_IF Sandy_NP1 to_TO go_VV0) 4
+(Kim_NP1 is_VBZ easy_JJ for_IF Sandy_NP1 to_TO please_VV0) 4
+(Kim_NP1 is_VBZ certain_JJ he_PPHS1 came_VVD) 2
+(Kim_NP1 is_VBZ certain_JJ that_CST Sandy_NP1 came_VVD) 1
+(Kim_NP1 is_VBZ insistent_JJ that_CST Sandy_NP1 leave_VV0) 1
+(Kim_NP1 is_VBZ certain_JJ about_II Sandy_NP1) 6
+(Kim_NP1 is_VBZ uncertain_JJ whether_CSW to_TO go_VV0) 2
+(Kim_NP1 is_VBZ uncertain_JJ what_DDQ to_TO leave_VV0) 4
+(Kim_NP1 is_VBZ uncertain_JJ how_RGQ to_TO go_VV0) 4
+(Kim_NP1 is_VBZ uncertain_JJ whether_CSW Sandy_NP1 smokes_VVZ) 2
+(Kim_NP1 is_VBZ uncertain_JJ how_RGQ Sandy_NP1 smokes_VVZ) 3
+(Kim_NP1 is_VBZ uncertain_JJ who_PNQS Sandy_NP1 likes_VVZ) 2
+(It_PPH1 is_VBZ probable_JJ he_PPHS1 left_VVD) 2
+(It_PPH1 is_VBZ probable_JJ that_CST Kim_NP1 left_VVD) 1
+(It_PPH1 is_VBZ imperative_JJ that_CST Sandy_NP1 leave_VV0) 1
+(It_PPH1 is_VBZ unclear_JJ whether_CSW to_TO go_VV0) 2
+(It_PPH1 is_VBZ unclear_JJ how_RGQ to_TO go_VV0) 4
+(It_PPH1 is_VBZ unclear_JJ what_DDQ to_TO leave_VV0) 4
+(It_PPH1 is_VBZ unclear_JJ whether_CSW Sandy_NP1 smokes_VVZ) 2
+(It_PPH1 is_VBZ unclear_JJ how_RGQ Sandy_NP1 smokes_VVZ) 3
+(It_PPH1 is_VBZ unclear_JJ what_DDQ Sandy_NP1 smokes_VVZ) 3
+(It_PPH1 is_VBZ unclear_JJ who_PNQS to_TO marry_VV0) 4
+(It_PPH1 is_VBZ practical_JJ to_TO go_VV0) 2
+(It_PPH1 is_VBZ practical_JJ for_IF Sandy_NP1 to_TO go_VV0) 4
+(Kim_NP1 considers_VVZ it_PPH1 practical_JJ for_IF Sandy_NP1 to_TO
+ go_VV0) 20
+(that_CST Sandy_NP1 came_VVD is_VBZ certain_JJ) 1
+(that_CST Sandy_NP1 leave_VV0 is_VBZ imperative_JJ) 1
+(whether_CSW Sandy_NP1 came_VVD is_VBZ uncertain_JJ) 1
+(what_DDQ Sandy_NP1 wanted_VVD is_VBZ uncertain_JJ) 2
+(how_RGQ Sandy_NP1 came_VVD is_VBZ uncertain_JJ) 1
+(whether_CSW to_TO go_VV0 is_VBZ uncertain_JJ) 1
+(how_RGQ to_TO go_VV0 is_VBZ uncertain_JJ) 3
+(what_DDQ to_TO do_VV0 is_VBZ uncertain_JJ) 2
+(It_PPH1 is_VBZ imperative_JJ to_II Kim_NP1 that_CST Sandy_NP1
+ leave_VV0) 1
+(It_PPH1 is_VBZ clear_JJ to_II Kim_NP1 that_CST Sandy_NP1 left_VVD) 1
+(Kim_NP1 is_VBZ busy_JJ helping_VVG Sandy_NP1) 11
+(Kim_NP1 is_VBZ scared_JJ silly_JJ) 0
+(It_PPH1 is_VBZ kind_JJ of_IO Kim_NP1 to_TO invite_VV0 Sandy_NP1) 12
+(Kim_NP1 is_VBZ confident_JJ about_II winning_VVG) 3
+(Kim_NP1 is_VBZ confident_JJ about_II Sandy_NP1 winning_VVG) 3
+(Kim_NP1 is_VBZ accountable_JJ to_II him_PPHO1 for_IF Fido_NP1) 11
+(For_IF Kim_NP1 to_TO go_VV0 is_VVZ unnecessary_JJ) 2
+(to_TO go_VV0 is_VVZ unnecessary_JJ) 1
+(to_TO go_VV0 is_VVZ unnecessary_JJ of_IO Kim_NP1) 2
+(It_PPH1 is_VBZ unclear_JJ to_II Kim_NP1 whether_CSW Sandy_NP1
+ smokes_VVZ) 4
+(It_PPH1 is_VBZ unclear_JJ to_II Kim_NP1 how_RGQ Sandy_NP1 smokes_VVZ) 42
+(It_PPH1 is_VBZ unclear_JJ to_II Kim_NP1 who_PNQS Sandy_NP1 likes_VVZ) 8
+(Kim_NP1 is_VBZ uncertain_JJ of_IO whether_CSW to_TO go_VV0) 2
+(Kim_NP1 is_VBZ uncertain_JJ of_IO who_PNQS to_TO marry_VV0) 2
+(Kim_NP1 is_VBZ uncertain_JJ of_IO whether_CSW Sandy_NP1 went_VVD) 2
+(Kim_NP1 is_VBZ uncertain_JJ of_IO who_PNQS Sandy_NP1 likes_VVZ) 1
+(Kim_NP1 is_VBZ uncertain_JJ about_II who_PNQS Sandy_NP1 likes_VVZ) 6
+(Kim_NP1 is_VBZ uncertain_JJ about_II whether_CSW Sandy_NP1 went_VVD) 7
+(Kim_NP1 is_VBZ silly_JJ but_CC enthusiastic_JJ) 3
+(Kim_NP1 is_VBZ very_JB silly_JJ but_CC enthusiastic_JJ) 2
+(Kim_NP1 is_VBZ a_AT1 silly_JJ but_CC enthusiastic_JJ person_NN1) 4
+(Kim_NP1 is_VBZ eager_JJ and_CC enthusiastic_JJ to_TO go_VV0) 5

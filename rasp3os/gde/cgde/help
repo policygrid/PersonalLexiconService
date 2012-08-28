@@ -1,0 +1,24 @@
+HELP for Grammar Development Environment - v1.42
+
+
+<construct>
+COMment  FEature  Set  Alias  CAtegory  LCategory  EXtension  Top
+Idrule  PSrule  PRoprule  Defrule  MEtarule  LPrule  Word  ALL
+
+<pattern>
+Special characters are  *  ?  =  &
+
+
+Input  Edit  Delete  Move  Parse  Generate  COmpile  Order
+
+View [Normalised] [LInearised] [FUlly-instantiated] <construct> <pattern>
+
+Names [Normalised] [LInearised] <construct> <pattern>
+
+
+FWords  DUmp  DWords
+
+FIles  Read  Write  FOrget  CLear  Uncache
+
+SEt  FLags  Help  SHell  Lisp  ! (=Lisp)  Quit
+

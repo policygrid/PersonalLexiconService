@@ -1,0 +1,436 @@
+April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews April)
+
+Dr._NNSB1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Dr.)
+(ncmod _ Andrews April)
+
+Dr_NNSB1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Dr)
+(ncmod _ Andrews April)
+
+Ms_NP1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Ms)
+(ncmod _ Andrews April)
+
+Ms._NNSB1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Ms.)
+(ncmod _ Andrews April)
+
+Miss_NNSB1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Miss)
+(ncmod _ Andrews April)
+
+Mrs_NNSB1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Mrs)
+(ncmod _ Andrews April)
+
+Mrs._NNSB1 April_NP1 Andrews_NP1 is_VBZ my_APP$ sister-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is sister-in-law)
+(det sister-in-law my)
+(ncmod _ Andrews Mrs.)
+(ncmod _ Andrews April)
+
+Mr._NNSB1 Andrews_NP1 is_VBZ my_APP$ father-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is father-in-law)
+(det father-in-law my)
+(ncmod _ Andrews Mr.)
+
+Mr_NNSB1 Andrews_NP1 is_VBZ my_APP$ father-in-law_NN1
+(ncsubj is Andrews _)
+(xcomp _ is father-in-law)
+(det father-in-law my)
+(ncmod _ Andrews Mr)
+
+General_NNS1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews General)
+
+General_NNS1 Abraham_NP1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews General)
+(ncmod _ Andrews Abraham)
+
+General_NNS1 Abraham_NP1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews General)
+(ncmod _ Andrews Abraham)
+
+Major-General_NNSB1 Abraham_NP1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews Major-General)
+(ncmod _ Andrews Abraham)
+
+Major_NNS1 General_NNS1 Abraham_NP1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews Major)
+(ncmod _ Andrews General)
+(ncmod _ Andrews Abraham)
+
+President_NNS1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews President)
+
+Vice-President_NNSB1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews Vice-President)
+
+Deputy_NNSB1 Director_NNSB1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews Deputy)
+(ncmod _ Andrews Director)
+
+Deputy-Director_NP1 Andrews_NP1 is_VBZ dead_JJ
+(ncsubj is Andrews _)
+(xcomp _ is dead)
+(ncmod _ Andrews Deputy-Director)
+
+CEO_NP1 Frank_NP1 Fuller_NP1 has_VHZ retired_VVN
+(ncsubj retired Fuller _)
+(aux retired has)
+(ncmod _ Fuller CEO)
+(ncmod _ Fuller Frank)
+
+Attorney-General_NNSB1 Hutton_NP1 retired_VVD
+(ncsubj retired Hutton _)
+(ncmod _ Hutton Attorney-General)
+
+Attorney_NNS1 General_NNS1 Hutton_NP1 retired_VVD
+(ncsubj retired Hutton _)
+(ncmod _ Hutton Attorney)
+(ncmod _ Hutton General)
+
+Vice-Chief_NNSB1 Andrews_NP1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Vice-Chief)
+
+Vice_NNSB1 Chief_NNS1 Andrews_NP1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Vice)
+(ncmod _ Andrews Chief)
+
+Fire-Chief_NP1 Andrews_NP1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Fire-Chief)
+
+Fire_NN1 Chief_NNS1 Andrews_NP1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Fire)
+(ncmod _ Fire Chief)
+
+Molly_NP1 Andrews_NP1 Ph.D._NNSA1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Ph.D.)
+(ncmod _ Andrews Molly)
+
+Molly_NP1 Andrews_NP1 B.Sc_NNSA1 ,_, Ph.D_NNSA1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Ph.D)
+(ncmod _ Andrews B.Sc)
+(ncmod _ Andrews Molly)
+
+Baroness_NNSB1 Andrews_NP1 ,_, 3rd_MD Duchess_NNSB1 of_IO Windsor_NP1 ,_, retired_VVD
+(ncsubj retired Andrews _)
+(ta bal Andrews 3rd)
+(ncmod _ 3rd of)
+(dobj of Windsor)
+(ncmod _ 3rd Duchess)
+(ncmod _ Andrews Baroness)
+
+Vice-Chancellor_NNSB1 Andrews_NP1 retired_VVD
+(ncsubj retired Andrews _)
+(ncmod _ Andrews Vice-Chancellor)
+
+Prof._NNSB1 Emeritus_NP1 Andrews_NP1 is_VBZ retired_VVN
+(ncsubj retired Andrews _)
+(aux retired is)
+(passive retired)
+(ncmod _ Andrews Prof.)
+(ncmod _ Andrews Emeritus)
+
+Commissioners_NNSB2 Andrews_NP1 and_CC Hutton_NP1 headed_VVD the_AT enquiry_NN1
+(ncsubj headed and _)
+(dobj headed enquiry)
+(det enquiry the)
+(ncmod _ and Commissioners)
+(conj and Andrews)
+(conj and Hutton)
+
+The_AT New_NP1 York_NP1 Times_NP1 and_CC The_AT Guardian_NN1 are_VBR newspapers_NN2
+(ncsubj are and _)
+(xcomp _ are newspapers)
+(conj and Times)
+(conj and Guardian)
+(det Guardian The)
+(det Times The)
+(ncmod _ Times New)
+(ncmod _ Times York)
+
+IBM_NP1 Plc._NNJ is_VBZ bankrupt_JJ
+(ncsubj is Plc. _)
+(xcomp _ is bankrupt)
+(ncmod _ Plc. IBM)
+
+IBM_NP1 Plc_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Plc _)
+(xcomp _ is bankrupt)
+(ncmod _ Plc IBM)
+
+IBM_NP1 PLC_NNJ is_VBZ bankrupt_JJ
+(ncsubj is PLC _)
+(xcomp _ is bankrupt)
+(ncmod _ PLC IBM)
+
+ILexIR_NP1 Ltd._NNJ is_VBZ bankrupt_JJ
+(ncsubj is Ltd. _)
+(xcomp _ is bankrupt)
+(ncmod _ Ltd. ILexIR)
+
+ILexIR_NP1 Ltd_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Ltd _)
+(xcomp _ is bankrupt)
+(ncmod _ Ltd ILexIR)
+
+ILexIR_NP1 Limited_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Limited _)
+(xcomp _ is bankrupt)
+(ncmod _ Limited ILexIR)
+
+InXight_NP1 Corp._NNJ is_VBZ bankrupt_JJ
+(ncsubj is Corp. _)
+(xcomp _ is bankrupt)
+(ncmod _ Corp. InXight)
+
+InXight_NP1 Corp_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Corp _)
+(xcomp _ is bankrupt)
+(ncmod _ Corp InXight)
+
+InXight_NP1 Corporation_NNJ1 is_VBZ bankrupt_JJ
+(ncsubj is Corporation _)
+(xcomp _ is bankrupt)
+(ncmod _ Corporation InXight)
+
+Network_NN1 Solutions_NN2 Inc._NNJ is_VBZ bankrupt_JJ
+(ncsubj is Inc. _)
+(xcomp _ is bankrupt)
+(ncmod _ Inc. Solutions)
+(ncmod _ Solutions Network)
+
+Network_NN1 Solutions_NN2 Inc_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Inc _)
+(xcomp _ is bankrupt)
+(ncmod _ Inc Solutions)
+(ncmod _ Solutions Network)
+
+Network_NN1 Solutions_NN2 Incorporated_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Incorporated _)
+(xcomp _ is bankrupt)
+(ncmod _ Incorporated Solutions)
+(ncmod _ Solutions Network)
+
+Thompson_NP1 and_CC Jones_NP1 Partners_NNJ2 is_VBZ bankrupt_JJ
+(ncsubj is and _)
+(xcomp _ is bankrupt)
+(conj and Thompson)
+(conj and Partners)
+(ncmod _ Partners Jones)
+
+Thompson_NP1 and_CC Jones_NP1 Partners_NNJ2 are_VBR bankrupt_JJ
+(ncsubj are Partners _)
+(xcomp _ are bankrupt)
+(ncmod _ Partners and)
+(conj and Thompson)
+(conj and Jones)
+
+Thompson_NP1 and_CC Jones_NP1 Partners_NNJ2 Inc._NNJ is_VBZ bankrupt_JJ
+(ncsubj is Inc. _)
+(xcomp _ is bankrupt)
+(ncmod _ Inc. and)
+(ncmod _ Inc. Partners)
+(conj and Thompson)
+(conj and Jones)
+
+Thomson_NP1 and_CC Son_NNJ1 are_VBR bankrupt_JJ
+(ncsubj are and _)
+(xcomp _ are bankrupt)
+(conj and Thomson)
+(conj and Son)
+
+Computer_NN1 Consultants_NNJ2 are_VBR bankrupt_JJ
+(ncsubj are Consultants _)
+(xcomp _ are bankrupt)
+(ncmod _ Consultants Computer)
+
+Computer_NN1 Consultants_NNJ2 Ltd._NNJ are_VBR bankrupt_JJ
+(ncsubj are Ltd. _)
+(xcomp _ are bankrupt)
+(ncmod _ Ltd. Consultants)
+(ncmod _ Consultants Computer)
+
+Associated_NNJ Press_NNJ is_VBZ bankrupt_JJ
+(ncsubj is Press _)
+(xcomp _ is bankrupt)
+(ncmod _ Press Associated)
+
+The_AT Moorings_NN2 ,_, Thrifts_NP1 Walk_NNL1 ,_, Cambridge_NP1 ,_, CB4_NP1 1NR_NP1 is_VBZ home_NN1
+*** Warning: no matching parse
+
+24_MC Gundreda_NP1 Road_NNL1 ,_, Lewes_NP1 is_VBZ home_NN1
+(ncsubj is Road _)
+(xcomp _ is home)
+(ncmod _ Road Lewes)
+(ncmod _ Road 24)
+(ncmod _ Road Gundreda)
+
+24_MC Gundreda_NP1 Rd._NNL1 ,_, Lewes_NP1 is_VBZ home_NN1
+(ncsubj is Rd. _)
+(xcomp _ is home)
+(ncmod _ Rd. Lewes)
+(ncmod _ Rd. 24)
+(ncmod _ Rd. Gundreda)
+
+24_MC Gundreda_NP1 Rd_NNL1 ,_, Lewes_NP1 is_VBZ home_NN1
+(ncsubj is Rd _)
+(xcomp _ is home)
+(ncmod _ Rd Lewes)
+(ncmod _ Rd 24)
+(ncmod _ Rd Gundreda)
+
+24_MC ,_, Gundreda_NP1 Rd._NNL1 ,_, Lewes_NP1 is_VBZ home_NN1
+(ncsubj is Lewes _)
+(xcomp _ is home)
+(ncmod _ Lewes 24)
+(ta bal 24 Rd.)
+(ncmod _ Rd. Gundreda)
+
+24_MC Chesterton_NP1 Street_NNL1 ,_, Cambridge_NP1 is_VBZ home_NN1
+(ncsubj is Street _)
+(xcomp _ is home)
+(ncmod _ Street Cambridge)
+(ncmod _ Street 24)
+(ncmod _ Street Chesterton)
+
+24_MC Chesterton_NP1 St._NNL1 ,_, Cambridge_NP1 is_VBZ home_NN1
+(ncsubj is St. _)
+(xcomp _ is home)
+(ncmod _ St. Cambridge)
+(ncmod _ St. 24)
+(ncmod _ St. Chesterton)
+
+24_MC Chesterton_NP1 St_NNL1 ,_, Cambridge_NP1 is_VBZ home_NN1
+(ncsubj is St _)
+(xcomp _ is home)
+(ncmod _ St Cambridge)
+(ncmod _ St 24)
+(ncmod _ St Chesterton)
+
+234_MC Ferdinand_NP1 Avenue_NNL1 is_VBZ home_NN1
+(ncsubj is Avenue _)
+(xcomp _ is home)
+(ncmod _ Avenue 234)
+(ncmod _ Avenue Ferdinand)
+
+234_MC Ferdinand_NP1 Av._NNL1 is_VBZ home_NN1
+(ncsubj is Av. _)
+(xcomp _ is home)
+(ncmod _ Av. 234)
+(ncmod _ Av. Ferdinand)
+
+234_MC Ferdinand_NP1 Ave._NNL1 is_VBZ home._NN1
+(ncsubj is Ave. _)
+(xcomp _ is home.)
+(ncmod _ Ave. 234)
+(ncmod _ Ave. Ferdinand)
+
+234_MC Ferdinand_NP1 Ave_NNL1 is_VBZ home_NN1
+(ncsubj is Ave _)
+(xcomp _ is home)
+(ncmod _ Ave 234)
+(ncmod _ Ave Ferdinand)
+
+234_MC Moreton_NP1 Close_NNL1 is_VBZ home_NN1
+(ncsubj is Close _)
+(xcomp _ is home)
+(ncmod _ Close 234)
+(ncmod _ Close Moreton)
+
+234_MC Moreton_NP1 Cl._NNL1 is_VBZ home_NN1
+(ncsubj is Cl. _)
+(xcomp _ is home)
+(ncmod _ Cl. 234)
+(ncmod _ Cl. Moreton)
+
+He_PPHS1 attended_VVD The_AT House_NNL1 Finance_NN1 Committee_NNJ1
+(ncsubj attended He _)
+(dobj attended Committee)
+(det Committee The)
+(ncmod _ Committee Finance)
+(ncmod _ Finance House)
+
+He_PPHS1 is_VBZ a_AT1 member_NN1 of_IO The_AT Automobile_NN1 Association_NNJ1
+(ncsubj is He _)
+(xcomp _ is member)
+(det member a)
+(iobj member of)
+(dobj of Association)
+(det Association The)
+(ncmod _ Association Automobile)
+
+He_PPHS1 is_VBZ a_AT1 member_NN1 of_IO the_AT Royal_JJ Automobile_NN1 Club_NNJ1
+(ncsubj is He _)
+(xcomp _ is member)
+(det member a)
+(iobj member of)
+(dobj of Club)
+(det Club the)
+(ncmod _ Club Royal)
+(ncmod _ Club Automobile)
+
+He_PPHS1 is_VBZ with_IW The_AT Bank_NNL1 of_IO England_NP1
+(ncsubj is He _)
+(pcomp is with)
+(dobj with Bank)
+(det Bank The)
+(iobj Bank of)
+(dobj of England)
+
+He_PPHS1 is_VBZ a_AT1 Companion_NN1 of_IO the_AT Order_NN1
+(ncsubj is He _)
+(xcomp _ is Companion)
+(det Companion a)
+(iobj Companion of)
+(dobj of Order)
+(det Order the)
+
